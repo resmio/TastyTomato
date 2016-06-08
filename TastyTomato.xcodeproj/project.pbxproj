@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		25879B45F1221FB152C8E2F32B83DCB5 /* UIColor (PredefinedColors).swift in Sources */ = {isa = PBXBuildFile; fileRef = 286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */; };
 		3185E4A34E657E1E4D2C11BD57F4AD5C /* Pods_TastyTomato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF27510B98A8A47A7BE8A2FFE862AE7 /* Pods_TastyTomato.framework */; };
+		36619180DB22B571E2199B3C6CDD67A4 /* UIColor (WithAlpha).swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */; };
 		4DABED4544C6D370297F11FD117FEDEC /* TastyTomato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */; };
 		93EAC8CFEA337415C4B97B90F661E88B /* TastyTomatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF12E5F5D09CC277B307C8A27456151 /* TastyTomatoTests.swift */; };
 		AC9D9866E065E12DCB2AD07AC6627022 /* TastyTomato.h in Headers */ = {isa = PBXBuildFile; fileRef = 083386230915027A1693F0088C82312B /* TastyTomato.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +37,7 @@
 		3CF27510B98A8A47A7BE8A2FFE862AE7 /* Pods_TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4979BD2C2DEEA5509DFFC0914CA17089 /* Pods-TastyTomatoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoTests/Pods-TastyTomatoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		94154F1BD684F2C672C76A4BFDB379C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (WithAlpha).swift"; sourceTree = "<group>"; };
 		AC280804706B40B958EEE8284ED922F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (FromHex_).swift"; sourceTree = "<group>"; };
 		D82912975BA70D5CA99088A909DD14E3 /* Pods-TastyTomato.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomato.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomato/Pods-TastyTomato.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */,
+				9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			files = (
 				CA9124BD236AE4D0D64EFC021D5BB391 /* UIColor (FromHex_).swift in Sources */,
 				25879B45F1221FB152C8E2F32B83DCB5 /* UIColor (PredefinedColors).swift in Sources */,
+				36619180DB22B571E2199B3C6CDD67A4 /* UIColor (WithAlpha).swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
