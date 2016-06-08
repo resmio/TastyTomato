@@ -7,107 +7,141 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5EC6F1781D082502001C7B1B /* TastyTomato.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EC6F1771D082502001C7B1B /* TastyTomato.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5EC6F17F1D082502001C7B1B /* TastyTomato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC6F1741D082502001C7B1B /* TastyTomato.framework */; };
-		5EC6F1841D082502001C7B1B /* TastyTomatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC6F1831D082502001C7B1B /* TastyTomatoTests.swift */; };
+		3185E4A34E657E1E4D2C11BD57F4AD5C /* Pods_TastyTomato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF27510B98A8A47A7BE8A2FFE862AE7 /* Pods_TastyTomato.framework */; };
+		4DABED4544C6D370297F11FD117FEDEC /* TastyTomato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */; };
+		93EAC8CFEA337415C4B97B90F661E88B /* TastyTomatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF12E5F5D09CC277B307C8A27456151 /* TastyTomatoTests.swift */; };
+		AC9D9866E065E12DCB2AD07AC6627022 /* TastyTomato.h in Headers */ = {isa = PBXBuildFile; fileRef = 083386230915027A1693F0088C82312B /* TastyTomato.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEB6EF9C1A282785F98954FB932635B5 /* Pods_TastyTomatoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 335E0602D8FCC26287CB706DF07D5EC7 /* Pods_TastyTomatoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5EC6F1801D082502001C7B1B /* PBXContainerItemProxy */ = {
+		06A29463E92A4C636533F9A1C5116865 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5EC6F16B1D082502001C7B1B /* Project object */;
+			containerPortal = 5069C7C03228600E179028734BF762CF /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5EC6F1731D082502001C7B1B;
+			remoteGlobalIDString = 517580651DAB345693709175BEC4073C;
 			remoteInfo = TastyTomato;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5EC6F1741D082502001C7B1B /* TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EC6F1771D082502001C7B1B /* TastyTomato.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TastyTomato.h; sourceTree = "<group>"; };
-		5EC6F1791D082502001C7B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EC6F17E1D082502001C7B1B /* TastyTomatoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TastyTomatoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EC6F1831D082502001C7B1B /* TastyTomatoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastyTomatoTests.swift; sourceTree = "<group>"; };
-		5EC6F1851D082502001C7B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		083386230915027A1693F0088C82312B /* TastyTomato.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TastyTomato.h; sourceTree = "<group>"; };
+		110CB58DB9DDDA2C9F160F9BC574F54D /* TastyTomatoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TastyTomatoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9D65FEE51993FB00087A90AFCFA569 /* Pods-TastyTomato.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomato.release.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomato/Pods-TastyTomato.release.xcconfig"; sourceTree = "<group>"; };
+		335E0602D8FCC26287CB706DF07D5EC7 /* Pods_TastyTomatoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomatoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CF27510B98A8A47A7BE8A2FFE862AE7 /* Pods_TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4979BD2C2DEEA5509DFFC0914CA17089 /* Pods-TastyTomatoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoTests/Pods-TastyTomatoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		94154F1BD684F2C672C76A4BFDB379C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC280804706B40B958EEE8284ED922F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D82912975BA70D5CA99088A909DD14E3 /* Pods-TastyTomato.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomato.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomato/Pods-TastyTomato.debug.xcconfig"; sourceTree = "<group>"; };
+		DCF12E5F5D09CC277B307C8A27456151 /* TastyTomatoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastyTomatoTests.swift; sourceTree = "<group>"; };
+		FCCF2A64D2539198D7C99D2D66DAAE1E /* Pods-TastyTomatoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoTests/Pods-TastyTomatoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5EC6F1701D082502001C7B1B /* Frameworks */ = {
+		1DF08CF9FA90E2D2EC18047F04A5D21C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3185E4A34E657E1E4D2C11BD57F4AD5C /* Pods_TastyTomato.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5EC6F17B1D082502001C7B1B /* Frameworks */ = {
+		630DD274FF90B1048DD886A760489593 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EC6F17F1D082502001C7B1B /* TastyTomato.framework in Frameworks */,
+				AEB6EF9C1A282785F98954FB932635B5 /* Pods_TastyTomatoTests.framework in Frameworks */,
+				4DABED4544C6D370297F11FD117FEDEC /* TastyTomato.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5EC6F16A1D082502001C7B1B = {
+		4A5930AB88C4B454F2E6FD5FEA4C4578 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5EC6F1761D082502001C7B1B /* TastyTomato */,
-				5EC6F1821D082502001C7B1B /* TastyTomatoTests */,
-				5EC6F1751D082502001C7B1B /* Products */,
+				3CF27510B98A8A47A7BE8A2FFE862AE7 /* Pods_TastyTomato.framework */,
+				335E0602D8FCC26287CB706DF07D5EC7 /* Pods_TastyTomatoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0797CADAA242E6EF3AC04B83BE063FFA = {
+			isa = PBXGroup;
+			children = (
+				4A5930AB88C4B454F2E6FD5FEA4C4578 /* Frameworks */,
+				B86771969A1F1EC83F2C4F4EFFB871C0 /* Pods */,
+				087D62F85789E9BA2921482544C68BB4 /* Products */,
+				EE22ED39034017661019E659F4958502 /* TastyTomato */,
+				6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */,
 			);
 			sourceTree = "<group>";
 		};
-		5EC6F1751D082502001C7B1B /* Products */ = {
+		087D62F85789E9BA2921482544C68BB4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5EC6F1741D082502001C7B1B /* TastyTomato.framework */,
-				5EC6F17E1D082502001C7B1B /* TastyTomatoTests.xctest */,
+				01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */,
+				110CB58DB9DDDA2C9F160F9BC574F54D /* TastyTomatoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5EC6F1761D082502001C7B1B /* TastyTomato */ = {
+		EE22ED39034017661019E659F4958502 /* TastyTomato */ = {
 			isa = PBXGroup;
 			children = (
-				5EC6F1771D082502001C7B1B /* TastyTomato.h */,
-				5EC6F1791D082502001C7B1B /* Info.plist */,
+				AC280804706B40B958EEE8284ED922F8 /* Info.plist */,
+				083386230915027A1693F0088C82312B /* TastyTomato.h */,
 			);
 			path = TastyTomato;
 			sourceTree = "<group>";
 		};
-		5EC6F1821D082502001C7B1B /* TastyTomatoTests */ = {
+		6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */ = {
 			isa = PBXGroup;
 			children = (
-				5EC6F1831D082502001C7B1B /* TastyTomatoTests.swift */,
-				5EC6F1851D082502001C7B1B /* Info.plist */,
+				94154F1BD684F2C672C76A4BFDB379C2 /* Info.plist */,
+				DCF12E5F5D09CC277B307C8A27456151 /* TastyTomatoTests.swift */,
 			);
 			path = TastyTomatoTests;
+			sourceTree = "<group>";
+		};
+		B86771969A1F1EC83F2C4F4EFFB871C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D82912975BA70D5CA99088A909DD14E3 /* Pods-TastyTomato.debug.xcconfig */,
+				2C9D65FEE51993FB00087A90AFCFA569 /* Pods-TastyTomato.release.xcconfig */,
+				4979BD2C2DEEA5509DFFC0914CA17089 /* Pods-TastyTomatoTests.debug.xcconfig */,
+				FCCF2A64D2539198D7C99D2D66DAAE1E /* Pods-TastyTomatoTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5EC6F1711D082502001C7B1B /* Headers */ = {
+		8A261083153DF6C4443C8AF745DFF0EC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EC6F1781D082502001C7B1B /* TastyTomato.h in Headers */,
+				AC9D9866E065E12DCB2AD07AC6627022 /* TastyTomato.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5EC6F1731D082502001C7B1B /* TastyTomato */ = {
+		517580651DAB345693709175BEC4073C /* TastyTomato */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5EC6F1881D082502001C7B1B /* Build configuration list for PBXNativeTarget "TastyTomato" */;
+			buildConfigurationList = FE1942CC76C78C04376997A22C1DDE29 /* Build configuration list for PBXNativeTarget "TastyTomato" */;
 			buildPhases = (
-				5EC6F16F1D082502001C7B1B /* Sources */,
-				5EC6F1701D082502001C7B1B /* Frameworks */,
-				5EC6F1711D082502001C7B1B /* Headers */,
-				5EC6F1721D082502001C7B1B /* Resources */,
+				0231E8301E11E29697332FBD6693F168 /* [CP] Check Pods Manifest.lock */,
+				F7B853C27FD687858316219E49A39D47 /* Sources */,
+				1DF08CF9FA90E2D2EC18047F04A5D21C /* Frameworks */,
+				8A261083153DF6C4443C8AF745DFF0EC /* Headers */,
+				23DFE944A16ECA0311AB2A53C735D6C1 /* Resources */,
+				1C32C5573D1EA6279964BC005E5DC817 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -115,72 +149,75 @@
 			);
 			name = TastyTomato;
 			productName = TastyTomato;
-			productReference = 5EC6F1741D082502001C7B1B /* TastyTomato.framework */;
+			productReference = 01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5EC6F17D1D082502001C7B1B /* TastyTomatoTests */ = {
+		0E7680876764C3020A8CF0627D6E3476 /* TastyTomatoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5EC6F18B1D082502001C7B1B /* Build configuration list for PBXNativeTarget "TastyTomatoTests" */;
+			buildConfigurationList = 6421144D3E84191201035A01CAD17A8F /* Build configuration list for PBXNativeTarget "TastyTomatoTests" */;
 			buildPhases = (
-				5EC6F17A1D082502001C7B1B /* Sources */,
-				5EC6F17B1D082502001C7B1B /* Frameworks */,
-				5EC6F17C1D082502001C7B1B /* Resources */,
+				27CAF051A46E26E41E62C30BE968100E /* [CP] Check Pods Manifest.lock */,
+				35B3724FC1ADEC6AA7F2193760DA11CA /* Sources */,
+				630DD274FF90B1048DD886A760489593 /* Frameworks */,
+				94181FE122095712F9F3E596F62187C8 /* Resources */,
+				74ABB5B5A70A1C8D0ED2FDBFC17577BD /* [CP] Embed Pods Frameworks */,
+				9D5478E13466818AFBC1FEA7F9D697C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5EC6F1811D082502001C7B1B /* PBXTargetDependency */,
+				BD855CC05FE312DB1AC20F4A7773015F /* PBXTargetDependency */,
 			);
 			name = TastyTomatoTests;
 			productName = TastyTomatoTests;
-			productReference = 5EC6F17E1D082502001C7B1B /* TastyTomatoTests.xctest */;
+			productReference = 110CB58DB9DDDA2C9F160F9BC574F54D /* TastyTomatoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5EC6F16B1D082502001C7B1B /* Project object */ = {
+		5069C7C03228600E179028734BF762CF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = resmio;
 				TargetAttributes = {
-					5EC6F1731D082502001C7B1B = {
+					517580651DAB345693709175BEC4073C = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
-					5EC6F17D1D082502001C7B1B = {
+					0E7680876764C3020A8CF0627D6E3476 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 5EC6F16E1D082502001C7B1B /* Build configuration list for PBXProject "TastyTomato" */;
+			buildConfigurationList = 060A183A5F89CDDB0C50EDA6279C87A8 /* Build configuration list for PBXProject "TastyTomato" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 5EC6F16A1D082502001C7B1B;
-			productRefGroup = 5EC6F1751D082502001C7B1B /* Products */;
+			mainGroup = 0797CADAA242E6EF3AC04B83BE063FFA;
+			productRefGroup = 087D62F85789E9BA2921482544C68BB4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5EC6F1731D082502001C7B1B /* TastyTomato */,
-				5EC6F17D1D082502001C7B1B /* TastyTomatoTests */,
+				517580651DAB345693709175BEC4073C /* TastyTomato */,
+				0E7680876764C3020A8CF0627D6E3476 /* TastyTomatoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5EC6F1721D082502001C7B1B /* Resources */ = {
+		23DFE944A16ECA0311AB2A53C735D6C1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5EC6F17C1D082502001C7B1B /* Resources */ = {
+		94181FE122095712F9F3E596F62187C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -189,34 +226,112 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C32C5573D1EA6279964BC005E5DC817 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TastyTomato/Pods-TastyTomato-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D5478E13466818AFBC1FEA7F9D697C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TastyTomatoTests/Pods-TastyTomatoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27CAF051A46E26E41E62C30BE968100E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0231E8301E11E29697332FBD6693F168 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		74ABB5B5A70A1C8D0ED2FDBFC17577BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TastyTomatoTests/Pods-TastyTomatoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		5EC6F16F1D082502001C7B1B /* Sources */ = {
+		F7B853C27FD687858316219E49A39D47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5EC6F17A1D082502001C7B1B /* Sources */ = {
+		35B3724FC1ADEC6AA7F2193760DA11CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EC6F1841D082502001C7B1B /* TastyTomatoTests.swift in Sources */,
+				93EAC8CFEA337415C4B97B90F661E88B /* TastyTomatoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5EC6F1811D082502001C7B1B /* PBXTargetDependency */ = {
+		BD855CC05FE312DB1AC20F4A7773015F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5EC6F1731D082502001C7B1B /* TastyTomato */;
-			targetProxy = 5EC6F1801D082502001C7B1B /* PBXContainerItemProxy */;
+			target = 517580651DAB345693709175BEC4073C /* TastyTomato */;
+			targetProxy = 06A29463E92A4C636533F9A1C5116865 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		5EC6F1861D082502001C7B1B /* Debug */ = {
+		CAC3A750DCED99E19CE70D64C62D059D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -265,7 +380,7 @@
 			};
 			name = Debug;
 		};
-		5EC6F1871D082502001C7B1B /* Release */ = {
+		4BD485ECA32363D712B4CBC719A7D7C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -307,8 +422,9 @@
 			};
 			name = Release;
 		};
-		5EC6F1891D082502001C7B1B /* Debug */ = {
+		4E4F561F5D33BDCF3053AACDA94E624E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D82912975BA70D5CA99088A909DD14E3 /* Pods-TastyTomato.debug.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -323,8 +439,9 @@
 			};
 			name = Debug;
 		};
-		5EC6F18A1D082502001C7B1B /* Release */ = {
+		70C449598983010F137CCD9AC8CE3BCA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C9D65FEE51993FB00087A90AFCFA569 /* Pods-TastyTomato.release.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -339,8 +456,9 @@
 			};
 			name = Release;
 		};
-		5EC6F18C1D082502001C7B1B /* Debug */ = {
+		9BB45C74E94B1E4770E6EB8EC34C7939 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4979BD2C2DEEA5509DFFC0914CA17089 /* Pods-TastyTomatoTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TastyTomatoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -349,8 +467,9 @@
 			};
 			name = Debug;
 		};
-		5EC6F18D1D082502001C7B1B /* Release */ = {
+		66526BFC2FE6BD5389E7979AABD049AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCCF2A64D2539198D7C99D2D66DAAE1E /* Pods-TastyTomatoTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TastyTomatoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -362,32 +481,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5EC6F16E1D082502001C7B1B /* Build configuration list for PBXProject "TastyTomato" */ = {
+		060A183A5F89CDDB0C50EDA6279C87A8 /* Build configuration list for PBXProject "TastyTomato" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5EC6F1861D082502001C7B1B /* Debug */,
-				5EC6F1871D082502001C7B1B /* Release */,
+				CAC3A750DCED99E19CE70D64C62D059D /* Debug */,
+				4BD485ECA32363D712B4CBC719A7D7C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5EC6F1881D082502001C7B1B /* Build configuration list for PBXNativeTarget "TastyTomato" */ = {
+		FE1942CC76C78C04376997A22C1DDE29 /* Build configuration list for PBXNativeTarget "TastyTomato" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5EC6F1891D082502001C7B1B /* Debug */,
-				5EC6F18A1D082502001C7B1B /* Release */,
+				4E4F561F5D33BDCF3053AACDA94E624E /* Debug */,
+				70C449598983010F137CCD9AC8CE3BCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		5EC6F18B1D082502001C7B1B /* Build configuration list for PBXNativeTarget "TastyTomatoTests" */ = {
+		6421144D3E84191201035A01CAD17A8F /* Build configuration list for PBXNativeTarget "TastyTomatoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5EC6F18C1D082502001C7B1B /* Debug */,
-				5EC6F18D1D082502001C7B1B /* Release */,
+				9BB45C74E94B1E4770E6EB8EC34C7939 /* Debug */,
+				66526BFC2FE6BD5389E7979AABD049AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5EC6F16B1D082502001C7B1B /* Project object */;
+	rootObject = 5069C7C03228600E179028734BF762CF /* Project object */;
 }
