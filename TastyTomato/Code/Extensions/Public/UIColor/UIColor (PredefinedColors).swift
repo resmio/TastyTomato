@@ -11,43 +11,43 @@ import Foundation
 
 // MARK: // Public
 public extension UIColor {
-    static var RedE62C4F: UIColor {
+    public static func RedE62C4F() -> UIColor {
         return self._RedE62C4F
     }
     
-    static var YellowF8C150: UIColor {
+    public static func YellowF8C150() -> UIColor {
         return self._YellowF8C150
     }
     
-    static var Green22CCAA: UIColor {
+    public static func Green22CCAA() -> UIColor {
         return self._Green22CCAA
     }
     
-    static var Blue00A7C4: UIColor {
+    public static func Blue00A7C4() -> UIColor {
         return self._Blue00A7C4
     }
     
-    static var Blue018EA6: UIColor {
+    public static func Blue018EA6() -> UIColor {
         return self._Blue018EA6
     }
     
-    static var Gray555555: UIColor {
+    public static func Gray555555() -> UIColor {
         return self._Gray555555
     }
     
-    static var Gray999999: UIColor {
+    public static func Gray999999() -> UIColor {
         return self._Gray999999
     }
     
-    static var GrayCCCCCC: UIColor {
+    public static func GrayCCCCCC() -> UIColor {
         return self._GrayCCCCCC
     }
     
-    static var GrayDDDDDD: UIColor {
+    public static func GrayDDDDDD() -> UIColor {
         return self._GrayDDDDDD
     }
     
-    static var GrayF7F7F7: UIColor {
+    public static func GrayF7F7F7() -> UIColor {
         return self._GrayF7F7F7
     }
 }
@@ -55,43 +55,14 @@ public extension UIColor {
 
 // MARK: // Private
 private extension UIColor {
-    private static var _RedE62C4F: UIColor {
-        return self.colorFromHex_("E62C4F")
-    }
-    
-    private static var _YellowF8C150: UIColor {
-        return self.colorFromHex_("F8C150")
-    }
-    
-    private static var _Green22CCAA: UIColor {
-        return self.colorFromHex_("22CCAA")
-    }
-    
-    private static var _Blue00A7C4: UIColor {
-        return self.colorFromHex_("00A7C4")
-    }
-    
-    private static var _Blue018EA6: UIColor {
-        return self.colorFromHex_("018EA6")
-    }
-    
-    private static var _Gray555555: UIColor {
-        return self.colorFromHex_("555555")
-    }
-    
-    private static var _Gray999999: UIColor {
-        return self.colorFromHex_("999999")
-    }
-    
-    private static var _GrayCCCCCC: UIColor {
-        return self.colorFromHex_("CCCCCC")
-    }
-    
-    private static var _GrayDDDDDD: UIColor {
-        return self.colorFromHex_("DDDDDD")
-    }
-    
-    private static var _GrayF7F7F7: UIColor {
-        return self.colorFromHex_("F7F7F7")
-    }
+    private static let _RedE62C4F: UIColor =    UIColor(fromHex_: "E62C4F")
+    private static let _YellowF8C150: UIColor = UIColor(fromHex_: "F8C150")
+    private static let _Green22CCAA: UIColor =  UIColor(fromHex_: "22CCAA")
+    private static let _Blue00A7C4: UIColor =   UIColor(fromHex_: "00A7C4")
+    private static let _Blue018EA6: UIColor =   UIColor(fromHex_: "018EA6")
+    private static let _Gray555555: UIColor =   UIColor(fromHex_: "555555")
+    private static let _Gray999999: UIColor =   UIColor(fromHex_: "999999")
+    private static let _GrayCCCCCC: UIColor =   UIColor(fromHex_: "CCCCCC")
+    private static let _GrayDDDDDD: UIColor =   UIColor(fromHex_: "DDDDDD")
+    private static let _GrayF7F7F7: UIColor =   UIColor(fromHex_: "F7F7F7")
 }

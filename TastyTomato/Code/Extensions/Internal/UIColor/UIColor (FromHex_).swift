@@ -12,15 +12,18 @@ import Foundation
 // MARK: // Internal
 extension UIColor {
     // Input strings should be 6-character Hex strings without the #
-    static func colorFromHex_(hexString: String, withAlpha alpha: CGFloat = 1) -> UIColor {
-        return self._colorFromHex(hexString, withAlpha: alpha)
+    convenience init(fromHex_ hexString: String, withAlpha alpha: CGFloat = 1) {
+        self.init(
+            _fromHex: hexString,
+            withAlpha: alpha
+        )
     }
 }
 
 
 // MARK: // Private
 private extension UIColor {
-    private static func _colorFromHex(hexString: String, withAlpha alpha: CGFloat) -> UIColor {
+    private convenience init(_fromHex hexString: String, withAlpha alpha: CGFloat) {
         let scanner: NSScanner = NSScanner(string: hexString)
         var rgbValue: UInt32 = 0
         scanner.scanHexInt(&rgbValue)
@@ -29,7 +32,7 @@ private extension UIColor {
         let green: CGFloat = CGFloat(((rgbValue & 0xFF00) >> 8) / 255)
         let blue: CGFloat = CGFloat(((rgbValue & 0xFF) >> 0) / 255)
         
-        return self.init(
+        self.init(
             red: red,
             green: green,
             blue: blue,
