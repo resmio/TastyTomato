@@ -9,6 +9,22 @@
 import Foundation
 
 
+// TODO: Define these colors!
+public extension UIColor {
+    public static func RAColorHighlightedBlue() -> UIColor {
+        return self._Blue00A7C4
+    }
+    
+    public static func RAColorHighlightedRed() -> UIColor {
+        return self._RedE62C4F
+    }
+    
+    public static func RAColorSeparator() -> UIColor {
+        return self._GrayDDDDDD
+    }
+}
+
+
 // MARK: // Public
 public extension UIColor {
     public static func RedE62C4F() -> UIColor {

@@ -28,9 +28,9 @@ private extension UIColor {
         var rgbValue: UInt32 = 0
         scanner.scanHexInt(&rgbValue)
         
-        let red: CGFloat = CGFloat(((rgbValue & 0xFF0000) >> 16) / 255)
-        let green: CGFloat = CGFloat(((rgbValue & 0xFF00) >> 8) / 255)
-        let blue: CGFloat = CGFloat(((rgbValue & 0xFF) >> 0) / 255)
+        let red: CGFloat = CGFloat((rgbValue & 0xFF0000) >> 16) / CGFloat(255)
+        let green: CGFloat = CGFloat((rgbValue & 0xFF00) >> 8) / CGFloat(255)
+        let blue: CGFloat = CGFloat((rgbValue & 0xFF) >> 0) / CGFloat(255)
         
         self.init(
             red: red,
