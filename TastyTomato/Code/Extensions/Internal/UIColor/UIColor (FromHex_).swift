@@ -11,7 +11,8 @@ import Foundation
 
 // MARK: // Internal
 extension UIColor {
-    class func colorFromHex_(hexString: String, withAlpha alpha: CGFloat = 1) -> UIColor {
+    // Input strings should be 6-character Hex strings without the #
+    static func colorFromHex_(hexString: String, withAlpha alpha: CGFloat = 1) -> UIColor {
         return self._colorFromHex(hexString, withAlpha: alpha)
     }
 }
@@ -19,7 +20,7 @@ extension UIColor {
 
 // MARK: // Private
 private extension UIColor {
-    private class func _colorFromHex(hexString: String, withAlpha alpha: CGFloat) -> UIColor {
+    private static func _colorFromHex(hexString: String, withAlpha alpha: CGFloat) -> UIColor {
         let scanner: NSScanner = NSScanner(string: hexString)
         var rgbValue: UInt32 = 0
         scanner.scanHexInt(&rgbValue)
