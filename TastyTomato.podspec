@@ -20,6 +20,5 @@ Pod::Spec.new do |s|
     :tag => "v#{s.version}"
   }
   s.source_files = "TastyTomato/**/*.swift"
-  # s.resources = "TastyTomato/Code/CoreData/MPDataModel.{xcdatamodeld,xcdatamodel}"
   s.public_header_files = []
 end
