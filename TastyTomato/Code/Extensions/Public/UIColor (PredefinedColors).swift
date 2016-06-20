@@ -14,11 +14,11 @@ import Foundation
 // then we could implement is as a method .highlighted() -> TTColor
 public extension UIColor {
     public static func RAColorHighlightedBlue() -> UIColor {
-        return self._Blue00A7C4
+        return self._Blue00A7C4.withAlpha(0.3)
     }
     
     public static func RAColorHighlightedRed() -> UIColor {
-        return self._RedE62C4F
+        return self._RedE62C4F.withAlpha(0.3)
     }
     
     public static func RAColorSeparator() -> UIColor {
