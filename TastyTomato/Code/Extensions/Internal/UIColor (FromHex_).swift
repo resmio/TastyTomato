@@ -1,5 +1,5 @@
 //
-//  TTColor (FromHex_).swift
+//  UIColor (FromHex_).swift
 //  TastyTomato
 //
 //  Created by Jan Nash on 6/8/16.
@@ -10,7 +10,7 @@ import Foundation
 
 
 // MARK: // Internal
-extension TTColor {
+extension UIColor {
     // Input strings should be 6-character Hex strings without the #
     convenience init(fromHex_ hexString: String, withAlpha alpha: CGFloat = 1) {
         self.init(
@@ -22,7 +22,7 @@ extension TTColor {
 
 
 // MARK: // Private
-private extension TTColor {
+private extension UIColor {
     private convenience init(_fromHex hexString: String, withAlpha alpha: CGFloat) {
         let scanner: NSScanner = NSScanner(string: hexString)
         var rgbValue: UInt32 = 0
