@@ -19,4 +19,7 @@
    <FileRef
       location = "group:TastyTomato.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>

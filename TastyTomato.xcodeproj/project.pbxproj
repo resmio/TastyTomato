@@ -23,36 +23,6 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>0231E8301E11E29697332FBD6693F168</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
 		<key>060A183A5F89CDDB0C50EDA6279C87A8</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -131,12 +101,9 @@ fi
 			<string>6421144D3E84191201035A01CAD17A8F</string>
 			<key>buildPhases</key>
 			<array>
-				<string>27CAF051A46E26E41E62C30BE968100E</string>
 				<string>35B3724FC1ADEC6AA7F2193760DA11CA</string>
 				<string>630DD274FF90B1048DD886A760489593</string>
 				<string>94181FE122095712F9F3E596F62187C8</string>
-				<string>74ABB5B5A70A1C8D0ED2FDBFC17577BD</string>
-				<string>9D5478E13466818AFBC1FEA7F9D697C9</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -182,30 +149,6 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>1C32C5573D1EA6279964BC005E5DC817</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-TastyTomato/Pods-TastyTomato-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
 		<key>1DF08CF9FA90E2D2EC18047F04A5D21C</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -228,36 +171,6 @@ fi
 			<key>isa</key>
 			<string>PBXResourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>27CAF051A46E26E41E62C30BE968100E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
 		<key>2B5D0A633795C19AE52663F380A3DE7B</key>
@@ -497,12 +410,10 @@ fi
 			<string>FE1942CC76C78C04376997A22C1DDE29</string>
 			<key>buildPhases</key>
 			<array>
-				<string>0231E8301E11E29697332FBD6693F168</string>
 				<string>F7B853C27FD687858316219E49A39D47</string>
 				<string>1DF08CF9FA90E2D2EC18047F04A5D21C</string>
 				<string>8A261083153DF6C4443C8AF745DFF0EC</string>
 				<string>23DFE944A16ECA0311AB2A53C735D6C1</string>
-				<string>1C32C5573D1EA6279964BC005E5DC817</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -599,8 +510,6 @@ fi
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Classes</string>
 			<key>path</key>
 			<string>Classes</string>
 			<key>sourceTree</key>
@@ -614,8 +523,6 @@ fi
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>TTIcon</string>
 			<key>path</key>
 			<string>TTIcon</string>
 			<key>sourceTree</key>
@@ -629,8 +536,6 @@ fi
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>TTIcon.swift</string>
 			<key>path</key>
 			<string>TTIcon.swift</string>
 			<key>sourceTree</key>
@@ -736,30 +641,6 @@ fi
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>74ABB5B5A70A1C8D0ED2FDBFC17577BD</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-TastyTomatoTests/Pods-TastyTomatoTests-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
 		<key>8A261083153DF6C4443C8AF745DFF0EC</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -833,30 +714,6 @@ fi
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
 			<string>Debug</string>
-		</dict>
-		<key>9D5478E13466818AFBC1FEA7F9D697C9</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-TastyTomatoTests/Pods-TastyTomatoTests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
 		</dict>
 		<key>AA5E8C89569C129824714E0138FE4F26</key>
 		<dict>
