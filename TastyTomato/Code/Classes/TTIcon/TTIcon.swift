@@ -11,6 +11,6 @@ import UIKit
 
 // MARK: // Public
 // MARK: Class Declaration
-class TTIcon: UIImage {
+public class TTIcon: UIImage {
     
 }

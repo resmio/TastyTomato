@@ -84,8 +84,6 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
-				<string>4A5930AB88C4B454F2E6FD5FEA4C4578</string>
-				<string>B86771969A1F1EC83F2C4F4EFFB871C0</string>
 				<string>087D62F85789E9BA2921482544C68BB4</string>
 				<string>EE22ED39034017661019E659F4958502</string>
 				<string>6054D7993EB7ADFFC77F9B34313A406C</string>
@@ -213,9 +211,7 @@ fi
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array>
-				<string>3185E4A34E657E1E4D2C11BD57F4AD5C</string>
-			</array>
+			<array/>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -277,41 +273,6 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>2C9D65FEE51993FB00087A90AFCFA569</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-TastyTomato.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-TastyTomato/Pods-TastyTomato.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3185E4A34E657E1E4D2C11BD57F4AD5C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3CF27510B98A8A47A7BE8A2FFE862AE7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>335E0602D8FCC26287CB706DF07D5EC7</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_TastyTomatoTests.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
 		<key>35B3724FC1ADEC6AA7F2193760DA11CA</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -324,19 +285,6 @@ fi
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>3CF27510B98A8A47A7BE8A2FFE862AE7</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_TastyTomato.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>42E41078EEF91A177A46B586398F943B</key>
 		<dict>
@@ -361,35 +309,6 @@ fi
 			<string>PBXGroup</string>
 			<key>path</key>
 			<string>Internal</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4979BD2C2DEEA5509DFFC0914CA17089</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-TastyTomatoTests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-TastyTomatoTests/Pods-TastyTomatoTests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4A5930AB88C4B454F2E6FD5FEA4C4578</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3CF27510B98A8A47A7BE8A2FFE862AE7</string>
-				<string>335E0602D8FCC26287CB706DF07D5EC7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -484,8 +403,6 @@ fi
 		</dict>
 		<key>4E4F561F5D33BDCF3053AACDA94E624E</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>D82912975BA70D5CA99088A909DD14E3</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CLANG_ENABLE_MODULES</key>
@@ -746,7 +663,6 @@ fi
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>AEB6EF9C1A282785F98954FB932635B5</string>
 				<string>4DABED4544C6D370297F11FD117FEDEC</string>
 			</array>
 			<key>isa</key>
@@ -770,8 +686,6 @@ fi
 		</dict>
 		<key>66526BFC2FE6BD5389E7979AABD049AB</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>FCCF2A64D2539198D7C99D2D66DAAE1E</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>INFOPLIST_FILE</key>
@@ -790,8 +704,6 @@ fi
 		</dict>
 		<key>70C449598983010F137CCD9AC8CE3BCA</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>2C9D65FEE51993FB00087A90AFCFA569</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CLANG_ENABLE_MODULES</key>
@@ -906,8 +818,6 @@ fi
 		</dict>
 		<key>9BB45C74E94B1E4770E6EB8EC34C7939</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>4979BD2C2DEEA5509DFFC0914CA17089</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>INFOPLIST_FILE</key>
@@ -985,29 +895,6 @@ fi
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>AEB6EF9C1A282785F98954FB932635B5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>335E0602D8FCC26287CB706DF07D5EC7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B86771969A1F1EC83F2C4F4EFFB871C0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D82912975BA70D5CA99088A909DD14E3</string>
-				<string>2C9D65FEE51993FB00087A90AFCFA569</string>
-				<string>4979BD2C2DEEA5509DFFC0914CA17089</string>
-				<string>FCCF2A64D2539198D7C99D2D66DAAE1E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>BD855CC05FE312DB1AC20F4A7773015F</key>
 		<dict>
@@ -1111,21 +998,6 @@ fi
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>D82912975BA70D5CA99088A909DD14E3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-TastyTomato.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-TastyTomato/Pods-TastyTomato.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>DCF12E5F5D09CC277B307C8A27456151</key>
 		<dict>
 			<key>isa</key>
@@ -1181,21 +1053,6 @@ fi
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>FCCF2A64D2539198D7C99D2D66DAAE1E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-TastyTomatoTests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-TastyTomatoTests/Pods-TastyTomatoTests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>FE1942CC76C78C04376997A22C1DDE29</key>
 		<dict>
