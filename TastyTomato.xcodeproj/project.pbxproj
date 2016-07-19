@@ -174,6 +174,7 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
+				<string>5E5A9D6B1D3D37420023DCAC</string>
 				<string>9999FCCB3A774D4E83A754E53EFE8B64</string>
 			</array>
 			<key>isa</key>
@@ -268,7 +269,6 @@ fi
 			<key>children</key>
 			<array>
 				<string>5E5A9D631D3D32470023DCAC</string>
-				<string>5E5A9D651D3D325C0023DCAC</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -643,39 +643,6 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>5E5A9D651D3D325C0023DCAC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5E5A9D661D3D328E0023DCAC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>UIImage</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5E5A9D661D3D328E0023DCAC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>UIImage (AllImages).swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5E5A9D671D3D328E0023DCAC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5E5A9D661D3D328E0023DCAC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>5E5A9D681D3D355F0023DCAC</key>
 		<dict>
 			<key>children</key>
@@ -684,8 +651,6 @@ fi
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Resources</string>
 			<key>path</key>
 			<string>Resources</string>
 			<key>sourceTree</key>
@@ -697,8 +662,6 @@ fi
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>folder.assetcatalog</string>
-			<key>name</key>
-			<string>Icons.xcassets</string>
 			<key>path</key>
 			<string>Icons.xcassets</string>
 			<key>sourceTree</key>
@@ -708,6 +671,58 @@ fi
 		<dict>
 			<key>fileRef</key>
 			<string>5E5A9D691D3D35A30023DCAC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5E5A9D6B1D3D37420023DCAC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5E5A9D6C1D3D37470023DCAC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Classes</string>
+			<key>path</key>
+			<string>Classes</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E5A9D6C1D3D37470023DCAC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5E5A9D6D1D3D37680023DCAC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>TTIcon</string>
+			<key>path</key>
+			<string>TTIcon</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E5A9D6D1D3D37680023DCAC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>TTIcon.swift</string>
+			<key>path</key>
+			<string>TTIcon.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E5A9D6E1D3D37680023DCAC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E5A9D6D1D3D37680023DCAC</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1157,8 +1172,8 @@ fi
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
+				<string>5E5A9D6E1D3D37680023DCAC</string>
 				<string>59B3496C43BEDE81BF4654D802BF6DB8</string>
-				<string>5E5A9D671D3D328E0023DCAC</string>
 				<string>5BC1273EC4F81F3C0094409EFB4C2DEE</string>
 				<string>0BEDA0934B96F33CD0F68788849B2E48</string>
 			</array>
