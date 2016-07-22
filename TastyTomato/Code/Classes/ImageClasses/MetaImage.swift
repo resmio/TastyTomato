@@ -1,5 +1,5 @@
 //
-//  MetaIcon.swift
+//  MetaImage.swift
 //  TastyTomato
 //
 //  Created by Jan Nash on 7/22/16.
@@ -12,7 +12,7 @@ import CoreGraphics
 
 // MARK: // Public
 // MARK: Class Declaration
-public class MetaIcon: UIImage {
+public class MetaImage: UIImage {
     // Required Initializer
     required public init?(coder aDecoder: NSCoder) {
         super.init()
@@ -47,7 +47,7 @@ public class MetaIcon: UIImage {
     internal override init(CIImage ciImage: CoreImage.CIImage) {
         super.init(CIImage: ciImage)
     }
-
+    
     internal override init(CIImage ciImage: CoreImage.CIImage, scale: CGFloat, orientation: UIImageOrientation) {
         super.init(CIImage: ciImage, scale: scale, orientation: orientation)
     }

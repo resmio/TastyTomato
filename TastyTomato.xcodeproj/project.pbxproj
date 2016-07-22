@@ -446,26 +446,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>5E5459CE1D42076900B31DDD</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>MetaIcon.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5E5459CF1D42076900B31DDD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5E5459CE1D42076900B31DDD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>5E5459D51D42448100B31DDD</key>
 		<dict>
 			<key>children</key>
@@ -474,8 +454,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Meta</string>
 			<key>path</key>
 			<string>Meta</string>
 			<key>sourceTree</key>
@@ -489,8 +467,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>_TastyTomatoBundle_.swift</string>
 			<key>path</key>
 			<string>_TastyTomatoBundle_.swift</string>
 			<key>sourceTree</key>
@@ -500,6 +476,92 @@
 		<dict>
 			<key>fileRef</key>
 			<string>5E5459D61D42449300B31DDD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5E5459D81D424DB700B31DDD</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Images</string>
+			<key>path</key>
+			<string>Images</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E5459D91D424DFB00B31DDD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5E5A9D6C1D3D37470023DCAC</string>
+				<string>5E5459D81D424DB700B31DDD</string>
+				<string>5E5459DA1D424E4700B31DDD</string>
+				<string>5E5459DB1D424E6B00B31DDD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ImageClasses</string>
+			<key>path</key>
+			<string>ImageClasses</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E5459DA1D424E4700B31DDD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5E5459DD1D424EAA00B31DDD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Logos</string>
+			<key>path</key>
+			<string>Logos</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E5459DB1D424E6B00B31DDD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MetaImage.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E5459DC1D424E6B00B31DDD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E5459DB1D424E6B00B31DDD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5E5459DD1D424EAA00B31DDD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ResmioLogo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E5459DE1D424EAA00B31DDD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E5459DD1D424EAA00B31DDD</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -565,7 +627,7 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>5E5A9D6C1D3D37470023DCAC</string>
+				<string>5E5459D91D424DFB00B31DDD</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -580,13 +642,14 @@
 			<array>
 				<string>5EE86D9F1D3E24C100E786EF</string>
 				<string>5EE86DA41D3E2A0200E786EF</string>
-				<string>5E5459CE1D42076900B31DDD</string>
 				<string>5EE86DA61D3E2A9400E786EF</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Icons</string>
 			<key>path</key>
-			<string>IconClasses</string>
+			<string>Icons</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1037,7 +1100,8 @@
 			<key>files</key>
 			<array>
 				<string>5EE86DA71D3E2A9400E786EF</string>
-				<string>5E5459CF1D42076900B31DDD</string>
+				<string>5E5459DE1D424EAA00B31DDD</string>
+				<string>5E5459DC1D424E6B00B31DDD</string>
 				<string>5E5459D71D42449300B31DDD</string>
 				<string>5EE86DA51D3E2A0200E786EF</string>
 				<string>5EE86DA31D3E259700E786EF</string>

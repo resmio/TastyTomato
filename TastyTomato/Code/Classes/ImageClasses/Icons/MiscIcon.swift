@@ -10,8 +10,7 @@ import UIKit
 
 
 // MARK: // Public
-// MARK: Class Declaration
-public class MiscIcon: MetaIcon {
+public class MiscIcon: MetaImage {
     public static let Add: MiscIcon = MiscIcon.named_("add")
     public static let BlockNote: MiscIcon = MiscIcon.named_("block-note")
     public static let Checkmark: MiscIcon = MiscIcon.named_("checkmark")
