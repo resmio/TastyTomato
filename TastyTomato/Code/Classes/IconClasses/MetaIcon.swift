@@ -13,13 +13,10 @@ import CoreGraphics
 // MARK: // Public
 // MARK: Class Declaration
 public class MetaIcon: UIImage {
-    // Required Initializers
-    required public convenience init(imageLiteral name: String) {
-        fatalError("init(imageLiteral:) has not been implemented")
-    }
-    
+    // Required Initializer
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init()
+        fatalError("\(self.dynamicType) does not implement NSCoding")
     }
     
     // Internalized Initializers
