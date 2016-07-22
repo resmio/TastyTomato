@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 // MARK: Class Declaration
-public class ArrowIcon: UIImage {
+public class ArrowIcon: MetaIcon {
     public static let Up: ArrowIcon = ArrowIcon.named_("up")
     public static let Down: ArrowIcon = ArrowIcon.named_("down")
     public static let Left: ArrowIcon = ArrowIcon.named_("left")

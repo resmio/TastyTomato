@@ -445,6 +445,26 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>5E5459CE1D42076900B31DDD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MetaIcon.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E5459CF1D42076900B31DDD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E5459CE1D42076900B31DDD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>5E5A9D631D3D32470023DCAC</key>
 		<dict>
 			<key>children</key>
@@ -522,12 +542,11 @@
 			<array>
 				<string>5EE86D9F1D3E24C100E786EF</string>
 				<string>5EE86DA41D3E2A0200E786EF</string>
+				<string>5E5459CE1D42076900B31DDD</string>
 				<string>5EE86DA61D3E2A9400E786EF</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>IconClasses</string>
 			<key>path</key>
 			<string>IconClasses</string>
 			<key>sourceTree</key>
@@ -561,8 +580,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>UIImage</string>
 			<key>path</key>
 			<string>UIImage</string>
 			<key>sourceTree</key>
@@ -576,8 +593,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>UIImage (Named_).swift</string>
 			<key>path</key>
 			<string>UIImage (Named_).swift</string>
 			<key>sourceTree</key>
@@ -984,6 +999,7 @@
 			<key>files</key>
 			<array>
 				<string>5EE86DA71D3E2A9400E786EF</string>
+				<string>5E5459CF1D42076900B31DDD</string>
 				<string>5EE86DA51D3E2A0200E786EF</string>
 				<string>5EE86DA31D3E259700E786EF</string>
 				<string>59B3496C43BEDE81BF4654D802BF6DB8</string>

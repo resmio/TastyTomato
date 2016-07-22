@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 // MARK: Class Declaration
-public class BookingStatusIcon: UIImage {
+public class BookingStatusIcon: MetaIcon {
     public static let Confirmed: BookingStatusIcon = BookingStatusIcon.named_("confirmed")
     public static let Arrived: BookingStatusIcon = BookingStatusIcon.named_("arrived")
     public static let Seated: BookingStatusIcon = BookingStatusIcon.named_("seated")
