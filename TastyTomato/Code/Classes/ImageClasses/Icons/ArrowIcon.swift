@@ -11,8 +11,8 @@ import UIKit
 
 // MARK: // Public
 public class ArrowIcon: MetaImage {
-    public static let Up: ArrowIcon = ArrowIcon.named_("up")
-    public static let Down: ArrowIcon = ArrowIcon.named_("down")
-    public static let Left: ArrowIcon = ArrowIcon.named_("left")
-    public static let Right: ArrowIcon = ArrowIcon.named_("right")
+    public static let Up: ArrowIcon = ArrowIcon.suffixed_("up")
+    public static let Down: ArrowIcon = ArrowIcon.suffixed_("down")
+    public static let Left: ArrowIcon = ArrowIcon.suffixed_("left")
+    public static let Right: ArrowIcon = ArrowIcon.suffixed_("right")
 }

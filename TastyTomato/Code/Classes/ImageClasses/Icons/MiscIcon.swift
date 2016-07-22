@@ -11,10 +11,11 @@ import UIKit
 
 // MARK: // Public
 public class MiscIcon: MetaImage {
-    public static let Add: MiscIcon = MiscIcon.named_("add")
-    public static let BlockNote: MiscIcon = MiscIcon.named_("block-note")
-    public static let Checkmark: MiscIcon = MiscIcon.named_("checkmark")
-    public static let Location: MiscIcon = MiscIcon.named_("location")
-    public static let Offline: MiscIcon = MiscIcon.named_("offline")
-    public static let WalkIn: MiscIcon = MiscIcon.named_("walk-in")
+    public static let Add: MiscIcon = MiscIcon.suffixed_("add")
+    public static let BlockNote: MiscIcon = MiscIcon.suffixed_("block-note")
+    public static let Checkmark: MiscIcon = MiscIcon.suffixed_("checkmark")
+    public static let Location: MiscIcon = MiscIcon.suffixed_("location")
+    public static let Offline: MiscIcon = MiscIcon.suffixed_("offline")
+    public static let WalkIn: MiscIcon = MiscIcon.suffixed_("walk-in")
+    public static let X: MiscIcon = MiscIcon.suffixed_("x")
 }

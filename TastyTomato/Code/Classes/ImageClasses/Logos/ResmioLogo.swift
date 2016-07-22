@@ -11,6 +11,8 @@ import Foundation
 
 // MARK: // Public
 public class ResmioLogo: MetaImage {
-    public static let Default: ResmioLogo = ResmioLogo.named_("default")
-    public static let Beta: ResmioLogo = ResmioLogo.named_("beta")
+    public static let DefaultBlackText: ResmioLogo = ResmioLogo.suffixed_("default-black-text")
+    public static let DefaultWhiteText: ResmioLogo = ResmioLogo.suffixed_("default-white-text")
+    public static let BetaBlackText: ResmioLogo = ResmioLogo.suffixed_("beta-black-text")
+    public static let BetaWhiteText: ResmioLogo = ResmioLogo.suffixed_("beta-white-text")
 }
