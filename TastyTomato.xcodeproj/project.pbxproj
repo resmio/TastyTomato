@@ -167,6 +167,7 @@
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
+				<string>5E5459E11D4253D000B31DDD</string>
 				<string>5E5A9D6A1D3D35A30023DCAC</string>
 			</array>
 			<key>isa</key>
@@ -485,8 +486,6 @@
 			<array/>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Images</string>
 			<key>path</key>
 			<string>Images</string>
 			<key>sourceTree</key>
@@ -503,8 +502,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ImageClasses</string>
 			<key>path</key>
 			<string>ImageClasses</string>
 			<key>sourceTree</key>
@@ -518,8 +515,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Logos</string>
 			<key>path</key>
 			<string>Logos</string>
 			<key>sourceTree</key>
@@ -565,6 +560,24 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>5E5459E01D4253D000B31DDD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Logos.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E5459E11D4253D000B31DDD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E5459E01D4253D000B31DDD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>5E5A9D631D3D32470023DCAC</key>
 		<dict>
 			<key>children</key>
@@ -597,6 +610,7 @@
 			<key>children</key>
 			<array>
 				<string>5E5A9D691D3D35A30023DCAC</string>
+				<string>5E5459E01D4253D000B31DDD</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -646,8 +660,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Icons</string>
 			<key>path</key>
 			<string>Icons</string>
 			<key>sourceTree</key>
