@@ -1,5 +1,5 @@
 //
-//  UIImage (Init).swift
+//  UIImage (Named_).swift
 //  TastyTomato
 //
 //  Created by Jan Nash on 7/19/16.
@@ -13,17 +13,19 @@ import UIKit
 // MARK: Image With Name
 extension UIImage {
     class func named_(name: String) -> Self {
-        let bundle: NSBundle = NSBundle(forClass: _BundleHelper.self)
-        let combinedString: String = "\(self.classForCoder())-\(name)"
-        let result = self.init(named: combinedString, inBundle: bundle, compatibleWithTraitCollection: nil)
+        let className: String = "\(self.classForCoder())"
+        let combinedString: String = "\(className)-\(name)"
+        
+        let result = self.init(
+            named: combinedString,
+            inBundle: _TastyTomatoBundle_,
+            compatibleWithTraitCollection: nil
+        )
+        
         if result == nil {
-            fatalError("\(self.classForCoder()) named \(combinedString) could not be found!")
+            fatalError("\(className) named \(combinedString) could not be found!")
         }
+        
         return result!
     }
 }
-
-
-// MARK: // Private
-// MARK: Helper Class For Bundle
-private class _BundleHelper {}

@@ -141,6 +141,7 @@
 			<array>
 				<string>5E5A9D6B1D3D37420023DCAC</string>
 				<string>9999FCCB3A774D4E83A754E53EFE8B64</string>
+				<string>5E5459D51D42448100B31DDD</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -462,6 +463,43 @@
 		<dict>
 			<key>fileRef</key>
 			<string>5E5459CE1D42076900B31DDD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5E5459D51D42448100B31DDD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5E5459D61D42449300B31DDD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Meta</string>
+			<key>path</key>
+			<string>Meta</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E5459D61D42449300B31DDD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>_TastyTomatoBundle_.swift</string>
+			<key>path</key>
+			<string>_TastyTomatoBundle_.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E5459D71D42449300B31DDD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E5459D61D42449300B31DDD</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1000,6 +1038,7 @@
 			<array>
 				<string>5EE86DA71D3E2A9400E786EF</string>
 				<string>5E5459CF1D42076900B31DDD</string>
+				<string>5E5459D71D42449300B31DDD</string>
 				<string>5EE86DA51D3E2A0200E786EF</string>
 				<string>5EE86DA31D3E259700E786EF</string>
 				<string>59B3496C43BEDE81BF4654D802BF6DB8</string>
