@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5EC6F1731D082502001C7B1B"
+               BlueprintIdentifier = "517580651DAB345693709175BEC4073C"
                BuildableName = "TastyTomato.framework"
                BlueprintName = "TastyTomato"
                ReferencedContainer = "container:TastyTomato.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5EC6F17D1D082502001C7B1B"
+               BlueprintIdentifier = "0E7680876764C3020A8CF0627D6E3476"
                BuildableName = "TastyTomatoTests.xctest"
                BlueprintName = "TastyTomatoTests"
                ReferencedContainer = "container:TastyTomato.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5EC6F1731D082502001C7B1B"
+            BlueprintIdentifier = "517580651DAB345693709175BEC4073C"
             BuildableName = "TastyTomato.framework"
             BlueprintName = "TastyTomato"
             ReferencedContainer = "container:TastyTomato.xcodeproj">
@@ -64,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5EC6F1731D082502001C7B1B"
+            BlueprintIdentifier = "517580651DAB345693709175BEC4073C"
             BuildableName = "TastyTomato.framework"
             BlueprintName = "TastyTomato"
             ReferencedContainer = "container:TastyTomato.xcodeproj">
@@ -82,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5EC6F1731D082502001C7B1B"
+            BlueprintIdentifier = "517580651DAB345693709175BEC4073C"
             BuildableName = "TastyTomato.framework"
             BlueprintName = "TastyTomato"
             ReferencedContainer = "container:TastyTomato.xcodeproj">
