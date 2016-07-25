@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "TastyTomato"
-  s.version = "0.1.0"
+  s.version = "0.2.0"
   s.summary = "The Tasty Tomato."
   s.description = <<-DESC 
                   Get all the awesome custom UI elements that 

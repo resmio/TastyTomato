@@ -267,9 +267,13 @@
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
+				<string>0.2.0</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
 				<string>dwarf-with-dsym</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>0.2.0</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>0.2.0</string>
 				<key>ENABLE_NS_ASSERTIONS</key>
 				<string>NO</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
@@ -324,13 +328,13 @@
 				<key>CLANG_ENABLE_MODULES</key>
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
-				<string>0.1.0</string>
+				<string>0.2.0</string>
 				<key>DEFINES_MODULE</key>
 				<string>YES</string>
 				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>0.1.0</string>
+				<string>0.2.0</string>
 				<key>DYLIB_CURRENT_VERSION</key>
-				<string>0.1.0</string>
+				<string>0.2.0</string>
 				<key>DYLIB_INSTALL_NAME_BASE</key>
 				<string>@rpath</string>
 				<key>INFOPLIST_FILE</key>
@@ -803,6 +807,10 @@
 		<dict>
 			<key>buildSettings</key>
 			<dict>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>GCC_WARN_ABOUT_MISSING_NEWLINE</key>
+				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
 				<string>TastyTomatoTests/Info.plist</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
@@ -824,13 +832,13 @@
 				<key>CLANG_ENABLE_MODULES</key>
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
-				<string>0.1.0</string>
+				<string>0.2.0</string>
 				<key>DEFINES_MODULE</key>
 				<string>YES</string>
 				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>0.1.0</string>
+				<string>0.2.0</string>
 				<key>DYLIB_CURRENT_VERSION</key>
-				<string>0.1.0</string>
+				<string>0.2.0</string>
 				<key>DYLIB_INSTALL_NAME_BASE</key>
 				<string>@rpath</string>
 				<key>INFOPLIST_FILE</key>
@@ -911,6 +919,10 @@
 		<dict>
 			<key>buildSettings</key>
 			<dict>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>GCC_WARN_ABOUT_MISSING_NEWLINE</key>
+				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
 				<string>TastyTomatoTests/Info.plist</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
@@ -1011,9 +1023,13 @@
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
+				<string>0.2.0</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
 				<string>dwarf</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>0.2.0</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>0.2.0</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
 				<string>YES</string>
 				<key>ENABLE_TESTABILITY</key>
