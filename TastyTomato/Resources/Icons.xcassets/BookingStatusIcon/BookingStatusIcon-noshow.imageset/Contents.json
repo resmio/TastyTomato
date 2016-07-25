@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "idiom" : "ipad",
+      "filename" : "BookingStatusIcon-noshow.pdf"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
