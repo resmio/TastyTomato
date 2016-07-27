@@ -180,6 +180,7 @@
 			<key>children</key>
 			<array>
 				<string>5E5A9D631D3D32470023DCAC</string>
+				<string>5E12DCAC1D4659F7005CF037</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -451,6 +452,63 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>5E12DCA71D46586E005CF037</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MiscImage.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E12DCA81D46586E005CF037</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E12DCA71D46586E005CF037</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5E12DCAC1D4659F7005CF037</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5E12DCAD1D465A0D005CF037</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>UIImage</string>
+			<key>path</key>
+			<string>UIImage</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E12DCAD1D465A0D005CF037</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>UIImage (Named).swift</string>
+			<key>path</key>
+			<string>UIImage (Named).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E12DCAE1D465A0D005CF037</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E12DCAD1D465A0D005CF037</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>5E5459D51D42448100B31DDD</key>
 		<dict>
 			<key>children</key>
@@ -487,7 +545,9 @@
 		<key>5E5459D81D424DB700B31DDD</key>
 		<dict>
 			<key>children</key>
-			<array/>
+			<array>
+				<string>5E12DCA71D46586E005CF037</string>
+			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>path</key>
@@ -1131,12 +1191,14 @@
 				<string>5E5459DE1D424EAA00B31DDD</string>
 				<string>5E5459DC1D424E6B00B31DDD</string>
 				<string>5E5459D71D42449300B31DDD</string>
+				<string>5E12DCA81D46586E005CF037</string>
 				<string>5EE86DA51D3E2A0200E786EF</string>
 				<string>5EE86DA31D3E259700E786EF</string>
 				<string>59B3496C43BEDE81BF4654D802BF6DB8</string>
 				<string>5EE86DA01D3E24C100E786EF</string>
 				<string>5BC1273EC4F81F3C0094409EFB4C2DEE</string>
 				<string>0BEDA0934B96F33CD0F68788849B2E48</string>
+				<string>5E12DCAE1D465A0D005CF037</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
