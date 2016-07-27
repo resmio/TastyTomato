@@ -16,5 +16,5 @@ public class BookingStatusIcon: MetaImage {
     public static let Seated: BookingStatusIcon = BookingStatusIcon.suffixed_("seated")
     public static let Finished: BookingStatusIcon = BookingStatusIcon.suffixed_("finished")
     public static let NoShow: BookingStatusIcon = BookingStatusIcon.suffixed_("noshow")
-    public static let Cancelled: BookingStatusIcon = BookingStatusIcon.fromImageNamed_("MiscIcon-x")
+    public static let Cancelled: BookingStatusIcon = BookingStatusIcon.imageNamed_("MiscIcon-x")
 }
