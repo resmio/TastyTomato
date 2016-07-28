@@ -464,8 +464,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ButtonClasses</string>
 			<key>path</key>
 			<string>ButtonClasses</string>
 			<key>sourceTree</key>
@@ -479,8 +477,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>BaseButton.swift</string>
 			<key>path</key>
 			<string>BaseButton.swift</string>
 			<key>sourceTree</key>
@@ -562,8 +558,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>CGSize</string>
 			<key>path</key>
 			<string>CGSize</string>
 			<key>sourceTree</key>
@@ -577,8 +571,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CGSize (Scaled).swift</string>
 			<key>path</key>
 			<string>CGSize (Scaled).swift</string>
 			<key>sourceTree</key>
@@ -601,8 +593,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>CGRect</string>
 			<key>path</key>
 			<string>CGRect</string>
 			<key>sourceTree</key>
@@ -616,8 +606,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CGRect (ConvenienceInits).swift</string>
 			<key>path</key>
 			<string>CGRect (ConvenienceInits).swift</string>
 			<key>sourceTree</key>
@@ -638,8 +626,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CGRect (Scaled).swift</string>
 			<key>path</key>
 			<string>CGRect (Scaled).swift</string>
 			<key>sourceTree</key>
@@ -937,8 +923,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CGRect (LeftRightTopBottom).swift</string>
 			<key>path</key>
 			<string>CGRect (LeftRightTopBottom).swift</string>
 			<key>sourceTree</key>
@@ -959,8 +943,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>CGPoint</string>
 			<key>path</key>
 			<string>CGPoint</string>
 			<key>sourceTree</key>
@@ -974,8 +956,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CGPoint (ConvenienceInits).swift</string>
 			<key>path</key>
 			<string>CGPoint (ConvenienceInits).swift</string>
 			<key>sourceTree</key>
@@ -996,8 +976,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CGSize (ConvenienceInits).swift</string>
 			<key>path</key>
 			<string>CGSize (ConvenienceInits).swift</string>
 			<key>sourceTree</key>
@@ -1019,8 +997,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>UIView</string>
 			<key>path</key>
 			<string>UIView</string>
 			<key>sourceTree</key>
@@ -1034,10 +1010,8 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>UIView (LeftRightTopBottom).swift</string>
 			<key>path</key>
-			<string>UIView (LeftRightTopBottom).swift</string>
+			<string>UIView (OriginLeftRightTopBottom).swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1056,10 +1030,8 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>UIView (WidthHeight).swift</string>
 			<key>path</key>
-			<string>UIView (WidthHeight).swift</string>
+			<string>UIView (SizeWidthHeight).swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>

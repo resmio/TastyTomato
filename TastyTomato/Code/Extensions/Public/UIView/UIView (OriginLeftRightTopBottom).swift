@@ -11,6 +11,15 @@ import UIKit
 
 // MARK: // Public
 public extension UIView {
+    public var origin: CGPoint {
+        get {
+            return self._origin
+        }
+        set(newOrigin) {
+            self._origin = newOrigin
+        }
+    }
+    
     public var left: CGFloat {
         get {
             return self._left
@@ -51,6 +60,15 @@ public extension UIView {
 
 // MARK: // Private
 private extension UIView {
+    private var _origin: CGPoint {
+        get {
+            return self.frame.origin
+        }
+        set(newOrigin) {
+            self.frame.origin = newOrigin
+        }
+    }
+    
     private var _left: CGFloat {
         get {
             return self.frame.origin.x

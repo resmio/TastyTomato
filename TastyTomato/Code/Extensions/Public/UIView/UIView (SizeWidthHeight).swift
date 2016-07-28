@@ -1,5 +1,5 @@
 //
-//  UIView (WidthHeight).swift
+//  UIView (SizeWidthHeight).swift
 //  TastyTomato
 //
 //  Created by Jan Nash on 7/28/16.
@@ -11,6 +11,15 @@ import Foundation
 
 // MARK: // Public
 public extension UIView {
+    public var size: CGSize {
+        get {
+            return self._size
+        }
+        set(newSize) {
+            self._size = newSize
+        }
+    }
+    
     public var width: CGFloat {
         get {
             return self._width
@@ -33,6 +42,15 @@ public extension UIView {
 
 // MARK: // Private
 private extension UIView {
+    private var _size: CGSize {
+        get {
+            return self.frame.size
+        }
+        set(newSize) {
+            self.frame.size = newSize
+        }
+    }
+    
     private var _width: CGFloat {
         get {
             return self.frame.width
