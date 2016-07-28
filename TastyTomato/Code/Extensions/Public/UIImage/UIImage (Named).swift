@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: // Public
 public extension UIImage {
-    public class func imageNamed(name: String, inBundle bundle: NSBundle) -> Self {
+    public class func imageNamed(name: String, inBundle bundle: NSBundle = NSBundle.mainBundle()) -> Self {
         return self.imageNamed_(name, inBundle: bundle)
     }
 }
