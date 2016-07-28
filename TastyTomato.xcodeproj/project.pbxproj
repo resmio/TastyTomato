@@ -142,6 +142,7 @@
 				<string>5E5A9D6B1D3D37420023DCAC</string>
 				<string>9999FCCB3A774D4E83A754E53EFE8B64</string>
 				<string>5E5459D51D42448100B31DDD</string>
+				<string>5EC5D9051D4A41C000116548</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1099,8 +1100,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>GridClasses</string>
 			<key>path</key>
 			<string>GridClasses</string>
 			<key>sourceTree</key>
@@ -1114,8 +1113,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>GlobalGrid.swift</string>
 			<key>path</key>
 			<string>GlobalGrid.swift</string>
 			<key>sourceTree</key>
@@ -1136,8 +1133,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>Grid.swift</string>
 			<key>path</key>
 			<string>Grid.swift</string>
 			<key>sourceTree</key>
@@ -1159,8 +1154,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>CALayer</string>
 			<key>path</key>
 			<string>CALayer</string>
 			<key>sourceTree</key>
@@ -1174,8 +1167,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CALayer (ConvenienceInits).swift</string>
 			<key>path</key>
 			<string>CALayer (ConvenienceInits).swift</string>
 			<key>sourceTree</key>
@@ -1196,8 +1187,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CALayer (Wireframe).swift</string>
 			<key>path</key>
 			<string>CALayer (Wireframe).swift</string>
 			<key>sourceTree</key>
@@ -1219,8 +1208,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>CAShapeLayer</string>
 			<key>path</key>
 			<string>CAShapeLayer</string>
 			<key>sourceTree</key>
@@ -1234,8 +1221,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CAShapeLayer (Wireframe).swift</string>
 			<key>path</key>
 			<string>CAShapeLayer (Wireframe).swift</string>
 			<key>sourceTree</key>
@@ -1256,8 +1241,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>LayerClasses</string>
 			<key>path</key>
 			<string>LayerClasses</string>
 			<key>sourceTree</key>
@@ -1271,8 +1254,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>TriangleLayer.swift</string>
 			<key>path</key>
 			<string>TriangleLayer.swift</string>
 			<key>sourceTree</key>
@@ -1293,8 +1274,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CAShapeLayer (ConvenienceInits).swift</string>
 			<key>path</key>
 			<string>CAShapeLayer (ConvenienceInits).swift</string>
 			<key>sourceTree</key>
@@ -1315,8 +1294,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>UIButton</string>
 			<key>path</key>
 			<string>UIButton</string>
 			<key>sourceTree</key>
@@ -1330,8 +1307,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>UIButton (SetColor).swift</string>
 			<key>path</key>
 			<string>UIButton (SetColor).swift</string>
 			<key>sourceTree</key>
@@ -1361,6 +1336,104 @@
 		<dict>
 			<key>fileRef</key>
 			<string>5EC5D9031D4A3FF800116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D9051D4A41C000116548</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5EC5D9061D4A41C900116548</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>OperatorOverloads</string>
+			<key>path</key>
+			<string>OperatorOverloads</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9061D4A41C900116548</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5EC5D9071D4A41E600116548</string>
+				<string>5EC5D9091D4A426F00116548</string>
+				<string>5EC5D90B1D4A42F900116548</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>CGFloat</string>
+			<key>path</key>
+			<string>CGFloat</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9071D4A41E600116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>CGFloat (Double).swift</string>
+			<key>path</key>
+			<string>CGFloat (Double).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9081D4A41E600116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D9071D4A41E600116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D9091D4A426F00116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>CGFloat (Int).swift</string>
+			<key>path</key>
+			<string>CGFloat (Int).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D90A1D4A426F00116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D9091D4A426F00116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D90B1D4A42F900116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>CGFloat (UInt).swift</string>
+			<key>path</key>
+			<string>CGFloat (UInt).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D90C1D4A42F900116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D90B1D4A42F900116548</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1826,6 +1899,7 @@
 				<string>5EC5D8FD1D4A3C2100116548</string>
 				<string>5E0C7FE51D4A05AD0022679A</string>
 				<string>5EE86DA71D3E2A9400E786EF</string>
+				<string>5EC5D90C1D4A42F900116548</string>
 				<string>5E5459DE1D424EAA00B31DDD</string>
 				<string>5E5459DC1D424E6B00B31DDD</string>
 				<string>5EC5D8FA1D4A39DC00116548</string>
@@ -1851,9 +1925,11 @@
 				<string>0BEDA0934B96F33CD0F68788849B2E48</string>
 				<string>5E12DCAE1D465A0D005CF037</string>
 				<string>5EC5D8FF1D4A3DA400116548</string>
+				<string>5EC5D9081D4A41E600116548</string>
 				<string>5EC5D8E91D4A2DDE00116548</string>
 				<string>5EC5D9021D4A3F0B00116548</string>
 				<string>5EC5D8DD1D4A0A6200116548</string>
+				<string>5EC5D90A1D4A426F00116548</string>
 				<string>5EC5D9041D4A3FF800116548</string>
 				<string>5EC5D8EC1D4A2F7700116548</string>
 				<string>5E0C7FDD1D4A037B0022679A</string>
