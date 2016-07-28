@@ -553,6 +553,7 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>5EC5D8E81D4A2DDE00116548</string>
 				<string>5EC5D8E11D4A10F400116548</string>
 				<string>5E0C7FDF1D4A04180022679A</string>
 			</array>
@@ -992,6 +993,7 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>5EC5D8EB1D4A2F7700116548</string>
 				<string>5EC5D8E41D4A121200116548</string>
 				<string>5EC5D8E61D4A125E00116548</string>
 			</array>
@@ -1039,6 +1041,46 @@
 		<dict>
 			<key>fileRef</key>
 			<string>5EC5D8E61D4A125E00116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D8E81D4A2DDE00116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGSize (CGRect).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D8E91D4A2DDE00116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D8E81D4A2DDE00116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D8EB1D4A2F7700116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIView (ConvenienceInits).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D8EC1D4A2F7700116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D8EB1D4A2F7700116548</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1522,7 +1564,9 @@
 				<string>5BC1273EC4F81F3C0094409EFB4C2DEE</string>
 				<string>0BEDA0934B96F33CD0F68788849B2E48</string>
 				<string>5E12DCAE1D465A0D005CF037</string>
+				<string>5EC5D8E91D4A2DDE00116548</string>
 				<string>5EC5D8DD1D4A0A6200116548</string>
+				<string>5EC5D8EC1D4A2F7700116548</string>
 				<string>5E0C7FDD1D4A037B0022679A</string>
 			</array>
 			<key>isa</key>

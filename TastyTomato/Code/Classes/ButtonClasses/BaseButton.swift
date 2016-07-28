@@ -9,8 +9,14 @@
 import Foundation
 
 
-class BaseButton: UIButton {
-    init() {
-        
-    }
-}
+//class BaseButton: UIButton {
+//    // Required Init
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("BaseButton does not support NSCoding")
+//    }
+//    
+//    // Init
+//    init() {
+//        
+//    }
+//}
