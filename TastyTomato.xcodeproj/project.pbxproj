@@ -1002,6 +1002,7 @@
 			<array>
 				<string>5EC5D9031D4A3FF800116548</string>
 				<string>5EC5D8EB1D4A2F7700116548</string>
+				<string>5EC5D90F1D4A54AC00116548</string>
 				<string>5EC5D8E41D4A121200116548</string>
 				<string>5EC5D8E61D4A125E00116548</string>
 			</array>
@@ -1097,6 +1098,7 @@
 			<key>children</key>
 			<array>
 				<string>5EC5D8F01D4A310400116548</string>
+				<string>5EC5D9111D4A550B00116548</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1424,6 +1426,46 @@
 		<dict>
 			<key>fileRef</key>
 			<string>5EC5D90D1D4A4CB500116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D90F1D4A54AC00116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIView (Grid).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9101D4A54AC00116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D90F1D4A54AC00116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D9111D4A550B00116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SizeInGrid.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9121D4A550B00116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D9111D4A550B00116548</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1896,6 +1938,7 @@
 				<string>5EC5D8FA1D4A39DC00116548</string>
 				<string>5EC5D8F41D4A35EA00116548</string>
 				<string>5E5459D71D42449300B31DDD</string>
+				<string>5EC5D9121D4A550B00116548</string>
 				<string>5E0C7FE31D4A05060022679A</string>
 				<string>5EC5D8F71D4A365000116548</string>
 				<string>5E12DCA81D46586E005CF037</string>
@@ -1913,6 +1956,7 @@
 				<string>5EC5D8E01D4A10AD00116548</string>
 				<string>5BC1273EC4F81F3C0094409EFB4C2DEE</string>
 				<string>0BEDA0934B96F33CD0F68788849B2E48</string>
+				<string>5EC5D9101D4A54AC00116548</string>
 				<string>5E12DCAE1D465A0D005CF037</string>
 				<string>5EC5D8FF1D4A3DA400116548</string>
 				<string>5EC5D9081D4A41E600116548</string>
