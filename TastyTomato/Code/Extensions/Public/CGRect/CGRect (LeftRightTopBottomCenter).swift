@@ -1,12 +1,12 @@
 //
-//  CGRect (LeftRightTopBottom).swift
+//  CGRect (LeftRightTopBottomCenter).swift
 //  TastyTomato
 //
 //  Created by Jan Nash on 7/28/16.
 //  Copyright © 2016 resmio. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 // MARK: // Public
@@ -44,6 +44,15 @@ public extension CGRect {
         }
         set(newBottom) {
             self._bottom = newBottom
+        }
+    }
+    
+    public var center: CGPoint {
+        get {
+            return self._center
+        }
+        set(newCenter) {
+            self._center = newCenter
         }
     }
 }
@@ -84,6 +93,18 @@ private extension CGRect {
         }
         set(newBottom) {
             self.origin.y += newBottom - self.bottom
+        }
+    }
+    
+    private var _center: CGPoint {
+        get {
+            let x: CGFloat = CGRectGetMidX(self)
+            let y: CGFloat = CGRectGetMidY(self)
+            return CGPoint(x: x, y: y)
+        }
+        set(newCenter) {
+            self.left += newCenter.x - self.center.x
+            self.top += newCenter.y - self.center.y
         }
     }
 }
