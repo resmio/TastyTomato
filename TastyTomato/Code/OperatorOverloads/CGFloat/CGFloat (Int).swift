@@ -11,95 +11,95 @@ import Foundation
 
 // MARK: // Public
 // MARK: Equation
-func ==(l: CGFloat, r: Int) -> Bool {
+public func ==(l: CGFloat, r: Int) -> Bool {
     return (l == CGFloat(r))
 }
 
-func ==(l: Int, r: CGFloat) -> Bool {
+public func ==(l: Int, r: CGFloat) -> Bool {
     return (CGFloat(l) == r)
 }
 
 
-func !=(l: CGFloat, r: Int) -> Bool {
+public func !=(l: CGFloat, r: Int) -> Bool {
     return (l != CGFloat(r))
 }
 
-func !=(l: Int, r: CGFloat) -> Bool {
+public func !=(l: Int, r: CGFloat) -> Bool {
     return (CGFloat(l) != r)
 }
 
 
-func <(l: CGFloat, r: Int) -> Bool {
+public func <(l: CGFloat, r: Int) -> Bool {
     return (l < CGFloat(r))
 }
 
-func <(l: Int, r: CGFloat) -> Bool {
+public func <(l: Int, r: CGFloat) -> Bool {
     return (CGFloat(l) < r)
 }
 
 
-func >(l: CGFloat, r: Int) -> Bool {
+public func >(l: CGFloat, r: Int) -> Bool {
     return (l > CGFloat(r))
 }
 
-func >(l: Int, r: CGFloat) -> Bool {
+public func >(l: Int, r: CGFloat) -> Bool {
     return (CGFloat(l) > r)
 }
 
 
-func <=(l: CGFloat, r: Int) -> Bool {
+public func <=(l: CGFloat, r: Int) -> Bool {
     return (l <= CGFloat(r))
 }
 
-func <=(l: Int, r: CGFloat) -> Bool {
+public func <=(l: Int, r: CGFloat) -> Bool {
     return (CGFloat(l) <= r)
 }
 
 
-func >=(l: CGFloat, r: Int) -> Bool {
+public func >=(l: CGFloat, r: Int) -> Bool {
     return (l >= CGFloat(r))
 }
 
-func >=(l: Int, r: CGFloat) -> Bool {
+public func >=(l: Int, r: CGFloat) -> Bool {
     return (CGFloat(l) >= r)
 }
 
 
 // MARK: Addition
-func +(l: CGFloat, r: Int) -> CGFloat {
+public func +(l: CGFloat, r: Int) -> CGFloat {
     return (l + CGFloat(r))
 }
 
-func +(l: Int, r: CGFloat) -> CGFloat {
+public func +(l: Int, r: CGFloat) -> CGFloat {
     return (CGFloat(l) + r)
 }
 
 
 // MARK: Subtraction
-func -(l: CGFloat, r: Int) -> CGFloat {
+public func -(l: CGFloat, r: Int) -> CGFloat {
     return (l - CGFloat(r))
 }
 
-func -(l: Int, r: CGFloat) -> CGFloat {
+public func -(l: Int, r: CGFloat) -> CGFloat {
     return (CGFloat(l) - r)
 }
 
 
 // MARK: Multiplication
-func *(l: CGFloat, r: Int) -> CGFloat {
+public func *(l: CGFloat, r: Int) -> CGFloat {
     return (l * CGFloat(r))
 }
 
-func *(l: Int, r: CGFloat) -> CGFloat {
+public func *(l: Int, r: CGFloat) -> CGFloat {
     return (CGFloat(l) * r)
 }
 
 
 // MARK: Division
-func /(l: CGFloat, r: Int) -> CGFloat {
+public func /(l: CGFloat, r: Int) -> CGFloat {
     return (l / CGFloat(r))
 }
 
-func /(l: Int, r: CGFloat) -> CGFloat {
+public func /(l: Int, r: CGFloat) -> CGFloat {
     return (CGFloat(l) / r)
 }
