@@ -10,9 +10,18 @@ import Foundation
 
 
 // MARK: // Public
+// MARK: Static Instances
+public extension Grid {
+    public static var GlobalGrid: Grid {
+        return self._GlobalGrid
+    }
+}
+
+
 // MARK: Interface
-extension Grid {
-    var frame: CGRect {
+public extension Grid {
+    // ReadWrite
+    public var frame: CGRect {
         get {
             return self._frame
         }
@@ -21,42 +30,61 @@ extension Grid {
         }
     }
     
-    var hUnits: Int {
+    public var unitSideLength: CGFloat {
+        get {
+            return self._unitSideLength
+        }
+        set(newUnitSideLength) {
+            self._unitSideLength = newUnitSideLength
+        }
+    }
+    
+    // ReadOnly
+    public var hUnits: CGFloat {
         return self._hUnits
     }
     
-    var vUnits: Int {
+    public var vUnits: CGFloat {
         return self._vUnits
     }
-    
-//    var unitWidth: CGFloat {
-//        return self._unitWidth
-//    }
 }
 
 
 // MARK: Class Declaration
-class Grid: AnyObject {
-    init(frame: CGRect, hUnits: Int, vUnits: Int) {
+public class Grid: AnyObject {
+    public init(frame: CGRect) {
         self._frame = frame
-        self._hUnits = hUnits
-        self._vUnits = vUnits
     }
     
-    // Private Constant Stored Properties
-    private let _unitWidth: CGFloat = 10
+    // Private Static Variable Properties
+    private static var __GlobalGrid: Grid?
     
     // Private Variable Stored Properties
     private var _frame: CGRect
-    private var _hUnits: Int
-    private var _vUnits: Int
+    private var _unitSideLength: CGFloat = 10
 }
 
 
 // MARK: // Private
+// MARK: Computed Static Variables
+private extension Grid {
+    private static var _GlobalGrid: Grid {
+        if self.__GlobalGrid == nil {
+            let frame: CGRect = UIScreen.mainScreen().bounds
+            self.__GlobalGrid = Grid(frame: frame)
+        }
+        return self.__GlobalGrid!
+    }
+}
+
+
 // MARK: Computed Variables
 private extension Grid {
-//    private var _unitWidth: CGFloat {
-//        return self.
-//    }
+    private var _hUnits: CGFloat {
+        return self.frame.width / self._unitSideLength
+    }
+    
+    private var _vUnits: CGFloat {
+        return self.frame.height / self._unitSideLength
+    }
 }

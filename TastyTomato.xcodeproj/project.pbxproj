@@ -1096,7 +1096,6 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>5EC5D8EE1D4A30E800116548</string>
 				<string>5EC5D8F01D4A310400116548</string>
 			</array>
 			<key>isa</key>
@@ -1105,26 +1104,6 @@
 			<string>GridClasses</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5EC5D8EE1D4A30E800116548</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>GlobalGrid.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5EC5D8EF1D4A30E800116548</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5EC5D8EE1D4A30E800116548</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>5EC5D8F01D4A310400116548</key>
 		<dict>
@@ -1926,7 +1905,6 @@
 				<string>5EC5D8E51D4A121200116548</string>
 				<string>5E0C7FE01D4A04180022679A</string>
 				<string>59B3496C43BEDE81BF4654D802BF6DB8</string>
-				<string>5EC5D8EF1D4A30E800116548</string>
 				<string>5EE86DA01D3E24C100E786EF</string>
 				<string>5E0C7FDB1D4A02EE0022679A</string>
 				<string>5EC5D8E71D4A125E00116548</string>
