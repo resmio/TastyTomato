@@ -669,6 +669,7 @@
 			<array>
 				<string>5E0C7FD81D49FF320022679A</string>
 				<string>5E12DCAD1D465A0D005CF037</string>
+				<string>5EC5D90D1D4A4CB500116548</string>
 				<string>5E0C7FDA1D4A02EE0022679A</string>
 				<string>5E0C7FDC1D4A037B0022679A</string>
 			</array>
@@ -1347,8 +1348,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>OperatorOverloads</string>
 			<key>path</key>
 			<string>OperatorOverloads</string>
 			<key>sourceTree</key>
@@ -1364,8 +1363,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>CGFloat</string>
 			<key>path</key>
 			<string>CGFloat</string>
 			<key>sourceTree</key>
@@ -1379,8 +1376,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CGFloat (Double).swift</string>
 			<key>path</key>
 			<string>CGFloat (Double).swift</string>
 			<key>sourceTree</key>
@@ -1401,8 +1396,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CGFloat (Int).swift</string>
 			<key>path</key>
 			<string>CGFloat (Int).swift</string>
 			<key>sourceTree</key>
@@ -1423,8 +1416,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CGFloat (UInt).swift</string>
 			<key>path</key>
 			<string>CGFloat (UInt).swift</string>
 			<key>sourceTree</key>
@@ -1434,6 +1425,26 @@
 		<dict>
 			<key>fileRef</key>
 			<string>5EC5D90B1D4A42F900116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D90D1D4A4CB500116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIImage (RenderingModes).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D90E1D4A4CB500116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D90D1D4A4CB500116548</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1898,6 +1909,7 @@
 				<string>5E0C7FD11D4918340022679A</string>
 				<string>5EC5D8FD1D4A3C2100116548</string>
 				<string>5E0C7FE51D4A05AD0022679A</string>
+				<string>5EC5D90E1D4A4CB500116548</string>
 				<string>5EE86DA71D3E2A9400E786EF</string>
 				<string>5EC5D90C1D4A42F900116548</string>
 				<string>5E5459DE1D424EAA00B31DDD</string>

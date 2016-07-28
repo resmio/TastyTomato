@@ -66,12 +66,16 @@ private extension UIView {
     private func _centerHInSuperview() {
         if self.superview != nil {
             self.center.x = self.superview!.bounds.width / 2
+        } else {
+            fatalError("\(self) is not added to a superview and thus cannot be centered horizontally")
         }
     }
     
     private func _centerVInSuperview() {
         if self.superview != nil {
             self.center.y = self.superview!.bounds.height / 2
+        } else {
+            fatalError("\(self) is not added to a superview and thus cannot be centered vertically")
         }
     }
     
