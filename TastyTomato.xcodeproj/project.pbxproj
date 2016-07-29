@@ -82,8 +82,9 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>5EBC03901D4BAA3B0085D7DD</string>
+				<string>3A2573088F58F3ACAB1DCAE581221306</string>
 				<string>087D62F85789E9BA2921482544C68BB4</string>
-				<string>3182BD41005B7CE55A37737874C6E72F</string>
 				<string>EE22ED39034017661019E659F4958502</string>
 				<string>6054D7993EB7ADFFC77F9B34313A406C</string>
 			</array>
@@ -487,23 +488,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>3182BD41005B7CE55A37737874C6E72F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3A2573088F58F3ACAB1DCAE581221306</string>
-				<string>37196A8F97876C378DF1C78593D1FAB8</string>
-				<string>B3693E6FA924295B369B0DC7E2AE4815</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Resources</string>
-			<key>path</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>323024B9C32DBCD16579A5D0E1898452</key>
 		<dict>
 			<key>children</key>
@@ -551,6 +535,8 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>folder.assetcatalog</string>
+			<key>name</key>
+			<string>Icons.xcassets</string>
 			<key>path</key>
 			<string>Icons.xcassets</string>
 			<key>sourceTree</key>
@@ -577,6 +563,8 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Localizations</string>
 			<key>path</key>
 			<string>Localizations</string>
 			<key>sourceTree</key>
@@ -961,6 +949,22 @@
 			<string>B070B8399B4B109A28594202D08619CD</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EBC03901D4BAA3B0085D7DD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>37196A8F97876C378DF1C78593D1FAB8</string>
+				<string>B3693E6FA924295B369B0DC7E2AE4815</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Images</string>
+			<key>path</key>
+			<string>Images</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>5FBBB08F482C2EF8829D937D432DB0AA</key>
 		<dict>
@@ -1652,6 +1656,8 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>folder.assetcatalog</string>
+			<key>name</key>
+			<string>Logos.xcassets</string>
 			<key>path</key>
 			<string>Logos.xcassets</string>
 			<key>sourceTree</key>
