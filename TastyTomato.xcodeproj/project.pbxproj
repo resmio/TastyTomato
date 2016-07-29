@@ -559,8 +559,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Localizations</string>
 			<key>path</key>
 			<string>Localizations</string>
 			<key>sourceTree</key>
@@ -946,6 +944,26 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>5E9408FD1D4BB7D400934441</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TextButton.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E9408FE1D4BB7D400934441</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E9408FD1D4BB7D400934441</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>5EBC03901D4BAA3B0085D7DD</key>
 		<dict>
 			<key>children</key>
@@ -955,8 +973,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Images</string>
 			<key>path</key>
 			<string>Images</string>
 			<key>sourceTree</key>
@@ -1183,6 +1199,7 @@
 			<array>
 				<string>3FBC82B6AD23E06DAA22DC3B2FEAC599</string>
 				<string>E12E3659104848DDD678FE37D39AEAF3</string>
+				<string>5E9408FD1D4BB7D400934441</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -2239,6 +2256,7 @@
 				<string>E07B0B2BF5246EB206433374DEFCE68F</string>
 				<string>48D0397391009A24265A5FEE06D16F89</string>
 				<string>7C8AA1C87BF89C4D6142967CA426F23E</string>
+				<string>5E9408FE1D4BB7D400934441</string>
 				<string>9EDC676FBB4296DB4C630B5E78379EBE</string>
 				<string>F0ECD62C46A02D8138358FBAB1B38285</string>
 				<string>CA9124BD236AE4D0D64EFC021D5BB391</string>
