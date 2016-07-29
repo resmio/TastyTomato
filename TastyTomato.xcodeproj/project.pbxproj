@@ -82,8 +82,6 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>5EBC03901D4BAA3B0085D7DD</string>
-				<string>3A2573088F58F3ACAB1DCAE581221306</string>
 				<string>087D62F85789E9BA2921482544C68BB4</string>
 				<string>EE22ED39034017661019E659F4958502</string>
 				<string>6054D7993EB7ADFFC77F9B34313A406C</string>
@@ -535,8 +533,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>folder.assetcatalog</string>
-			<key>name</key>
-			<string>Icons.xcassets</string>
 			<key>path</key>
 			<string>Icons.xcassets</string>
 			<key>sourceTree</key>
@@ -1478,7 +1474,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
 			<key>path</key>
-			<string>_TastyTomatoBundle_.swift</string>
+			<string>BundleHelper_.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1656,8 +1652,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>folder.assetcatalog</string>
-			<key>name</key>
-			<string>Logos.xcassets</string>
 			<key>path</key>
 			<string>Logos.xcassets</string>
 			<key>sourceTree</key>
@@ -2143,6 +2137,8 @@
 			<key>children</key>
 			<array>
 				<string>18306EDC2A57EEE4D03157F13936E91A</string>
+				<string>5EBC03901D4BAA3B0085D7DD</string>
+				<string>3A2573088F58F3ACAB1DCAE581221306</string>
 				<string>AC280804706B40B958EEE8284ED922F8</string>
 				<string>083386230915027A1693F0088C82312B</string>
 			</array>
