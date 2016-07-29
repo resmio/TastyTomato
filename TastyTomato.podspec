@@ -21,8 +21,8 @@ Pod::Spec.new do |s|
   }
   s.source_files = "TastyTomato/**/*.swift"
   s.ios.resource_bundles = {
-    'ImageAssets' => ['**/*.{xcassets, png}'],
-    'Localizations' => ['**/Localizations/*.lproj']
+    'ImageAssets' => ['Resources/*.{xcassets, png}'],
+    'Localizations' => ['Resources/Localizations/*.lproj']
   }
   s.public_header_files = []
 end

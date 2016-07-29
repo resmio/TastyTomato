@@ -83,6 +83,7 @@
 			<key>children</key>
 			<array>
 				<string>087D62F85789E9BA2921482544C68BB4</string>
+				<string>3182BD41005B7CE55A37737874C6E72F</string>
 				<string>EE22ED39034017661019E659F4958502</string>
 				<string>6054D7993EB7ADFFC77F9B34313A406C</string>
 			</array>
@@ -496,6 +497,8 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
 			<key>path</key>
 			<string>Resources</string>
 			<key>sourceTree</key>
@@ -574,8 +577,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Localizations</string>
 			<key>path</key>
 			<string>Localizations</string>
 			<key>sourceTree</key>
@@ -1936,8 +1937,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>NSL_.swift</string>
 			<key>path</key>
 			<string>NSL_.swift</string>
 			<key>sourceTree</key>
@@ -1951,8 +1950,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>NSLocalizedString</string>
 			<key>path</key>
 			<string>NSLocalizedString</string>
 			<key>sourceTree</key>
@@ -2140,7 +2137,6 @@
 			<key>children</key>
 			<array>
 				<string>18306EDC2A57EEE4D03157F13936E91A</string>
-				<string>3182BD41005B7CE55A37737874C6E72F</string>
 				<string>AC280804706B40B958EEE8284ED922F8</string>
 				<string>083386230915027A1693F0088C82312B</string>
 			</array>
