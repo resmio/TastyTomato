@@ -23,7 +23,7 @@ public extension UIImage {
 // MARK: // Private
 private extension UIImage {
     private static func _coloredRect(size size: CGSize, color: UIColor) -> UIImage? {
-        if size != CGSizeZero {
+        if size.area != 0 {
             let rect: CGRect = CGRect(size: size)
             
             UIGraphicsBeginImageContextWithOptions(size, false, 0)

@@ -24,19 +24,27 @@ public extension FilledButton {
 // MARK: // Private
 // MARK: Predefined Instances
 private extension FilledButton {
+    private static func _SignInAndSelectFacilityButton() -> FilledButton {
+        let button: FilledButton = self.button_()
+        
+        button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        button.titleLabel!.font = UIFont.systemFontOfSize(16)
+        
+        button.heightInGlobalUnits = 0.7
+        button.widthInGlobalUnits = 5.1
+        
+        return button
+    }
+    
     private static func _SignInButton() -> FilledButton {
-        let signInButton: FilledButton = self.button_()
-        
-        signInButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        signInButton.titleLabel!.font = UIFont.systemFontOfSize(16)
-        
-        signInButton.heightInGlobalUnits = 0.7
-        signInButton.widthInGlobalUnits = 5.1
-        
+        let signInButton: FilledButton = self._SignInAndSelectFacilityButton()
+        signInButton.setTitle(NSLocalizedString("Sign In", comment: ""), forState: .Normal)
         return signInButton
     }
     
     private static func _SelectFacilityButton() -> FilledButton {
-        return self.SignInButton()
+        let selectButton: FilledButton = self._SignInAndSelectFacilityButton()
+        selectButton.setTitle(NSLocalizedString("Select", comment: ""), forState: .Normal)
+        return selectButton
     }
 }

@@ -560,6 +560,7 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>5EC5D9221D4B641A00116548</string>
 				<string>5EC5D8E81D4A2DDE00116548</string>
 				<string>5EC5D8E11D4A10F400116548</string>
 				<string>5E0C7FDF1D4A04180022679A</string>
@@ -595,6 +596,7 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>5EC5D9241D4B649200116548</string>
 				<string>5E0C7FE21D4A05060022679A</string>
 				<string>5EC5D8DC1D4A0A6200116548</string>
 				<string>5E0C7FE41D4A05AD0022679A</string>
@@ -1003,6 +1005,7 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>5EC5D9261D4B64B600116548</string>
 				<string>5EC5D9031D4A3FF800116548</string>
 				<string>5EC5D8EB1D4A2F7700116548</string>
 				<string>5EC5D90F1D4A54AC00116548</string>
@@ -1279,8 +1282,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>UIButton</string>
 			<key>path</key>
 			<string>UIButton</string>
 			<key>sourceTree</key>
@@ -1502,8 +1503,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>UIButton (Color).swift</string>
 			<key>path</key>
 			<string>UIButton (Color).swift</string>
 			<key>sourceTree</key>
@@ -1525,8 +1524,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>UIButton</string>
 			<key>path</key>
 			<string>UIButton</string>
 			<key>sourceTree</key>
@@ -1540,8 +1537,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Elements</string>
 			<key>path</key>
 			<string>Elements</string>
 			<key>sourceTree</key>
@@ -1555,8 +1550,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>FilledButtons.swift</string>
 			<key>path</key>
 			<string>FilledButtons.swift</string>
 			<key>sourceTree</key>
@@ -1577,8 +1570,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Buttons</string>
 			<key>path</key>
 			<string>Buttons</string>
 			<key>sourceTree</key>
@@ -1592,8 +1583,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>UIButton (SetTitle).swift</string>
 			<key>path</key>
 			<string>UIButton (SetTitle).swift</string>
 			<key>sourceTree</key>
@@ -1603,6 +1592,66 @@
 		<dict>
 			<key>fileRef</key>
 			<string>5EC5D9201D4B555C00116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D9221D4B641A00116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGSize (Area).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9231D4B641A00116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D9221D4B641A00116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D9241D4B649200116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGRect (Area).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9251D4B649200116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D9241D4B649200116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D9261D4B64B600116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIView (Area).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9271D4B64B600116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D9261D4B64B600116548</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -2068,8 +2117,10 @@
 				<string>5EC5D8FD1D4A3C2100116548</string>
 				<string>5E0C7FE51D4A05AD0022679A</string>
 				<string>5EC5D90E1D4A4CB500116548</string>
+				<string>5EC5D9251D4B649200116548</string>
 				<string>5EE86DA71D3E2A9400E786EF</string>
 				<string>5EC5D90C1D4A42F900116548</string>
+				<string>5EC5D9231D4B641A00116548</string>
 				<string>5E5459DE1D424EAA00B31DDD</string>
 				<string>5E5459DC1D424E6B00B31DDD</string>
 				<string>5EC5D8FA1D4A39DC00116548</string>
@@ -2102,6 +2153,7 @@
 				<string>5EC5D9081D4A41E600116548</string>
 				<string>5EC5D8E91D4A2DDE00116548</string>
 				<string>5EC5D9021D4A3F0B00116548</string>
+				<string>5EC5D9271D4B64B600116548</string>
 				<string>5EC5D8DD1D4A0A6200116548</string>
 				<string>5EC5D90A1D4A426F00116548</string>
 				<string>5EC5D9041D4A3FF800116548</string>
