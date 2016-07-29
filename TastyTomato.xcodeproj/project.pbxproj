@@ -1,882 +1,2293 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		016794C2166A998F5DCD79812840EF65 /* UIView (SizeWidthHeight).swift in Sources */ = {isa = PBXBuildFile; fileRef = A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */; };
-		01903A7870C59E45E2071D68688B64AE /* FilledButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62837076E5C6BBE23DC133DBF28FFFD /* FilledButtons.swift */; };
-		07D9391000BFA486E44C4497A1788C6A /* CGSize (Scaled).swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E0F301A67734A74C63533E21FEEDF /* CGSize (Scaled).swift */; };
-		13BFB81E9AE9A8BC5760E75496D1DFFC /* UIView (Centering).swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB15454677793E311B1E258952332E7 /* UIView (Centering).swift */; };
-		14489FCA5F60780335DF0D27E78786D9 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE34A25023D397DD0B222CD1AD8B8F /* Grid.swift */; };
-		1D182D1BB45EB8B648582A87B8CC2067 /* CGFloat (UInt).swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */; };
-		2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */; };
-		234C2E7FADD37FC3783F9BFF305828A6 /* UIImage (Named_).swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CC1F2A974F883E6BD5039B189DF28 /* UIImage (Named_).swift */; };
-		25879B45F1221FB152C8E2F32B83DCB5 /* UIColor (PredefinedColors).swift in Sources */ = {isa = PBXBuildFile; fileRef = 286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */; };
-		26C9967D3E82CB12CD88A26329600F6E /* NSL_.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06BAB5E34D33E9205557171C73CF6C /* NSL_.swift */; };
-		2CCA94476E3333C634E936EC9EECA2AE /* UIImage (Scaled).swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A908324B2B4B669470F0A3864A426C6 /* UIImage (Scaled).swift */; };
-		2E894736E4858AC80DCD8D499E0FD708 /* CGRect (Area).swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57DBBABA83CFBB3428C32BBB42514E /* CGRect (Area).swift */; };
-		2F3E948D83ABEF456118C56CC1ADA20E /* CGPoint (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */; };
-		3466F939EFAD784C51D7B5EC69F54B42 /* ArrowIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B5813ECAE6108D8A3192D688E9D77 /* ArrowIcon.swift */; };
-		36619180DB22B571E2199B3C6CDD67A4 /* UIColor (WithAlpha).swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */; };
-		3DE684BA7159AEA557CDE0F4F775B5A0 /* CGFloat (Int).swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24467D4568DC50711B01B3FBCD8958 /* CGFloat (Int).swift */; };
-		48D0397391009A24265A5FEE06D16F89 /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */; };
-		4DABED4544C6D370297F11FD117FEDEC /* TastyTomato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */; };
-		5C8AA03C6C4B4DCDAA601D7775D8EA1A /* CGSize (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */; };
-		5FBBB08F482C2EF8829D937D432DB0AA /* UIImage (RenderingModes).swift in Sources */ = {isa = PBXBuildFile; fileRef = F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */; };
-		6845BD2DA1CBDE9DE2EA67D64795A39D /* CGRect (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F913362CD789B7370C90D4A856950CF /* CGRect (ConvenienceInits).swift */; };
-		693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B490047206C221157A2991EFF79E0 /* MetaImage.swift */; };
-		6B57EDA175E804981EC3D12739F147AB /* UIImage (WidthHeight).swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */; };
-		6D1ABF961F75BD37F09D0314331A7E56 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23577F3AF20D9CDF3A8A716553EA8BCC /* Localizable.strings */; };
-		7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */; };
-		800936DF4B2EC8E094396520F049EF4B /* UIView (Area).swift in Sources */ = {isa = PBXBuildFile; fileRef = 15004413C96D0B4A03CF11D63DD6382A /* UIView (Area).swift */; };
-		8264D105E6827ED55184C53860D2BEA6 /* CGFloat (Double).swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F409B87F906C15E71B3E3CC4AF7FD5D /* CGFloat (Double).swift */; };
-		84BB5378D9A297B753E679DBE872A69A /* CGRect (Scaled).swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E438216C6A16D137CD269349331D8F /* CGRect (Scaled).swift */; };
-		935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E3659104848DDD678FE37D39AEAF3 /* FilledButton.swift */; };
-		93EAC8CFEA337415C4B97B90F661E88B /* TastyTomatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF12E5F5D09CC277B307C8A27456151 /* TastyTomatoTests.swift */; };
-		9EDC676FBB4296DB4C630B5E78379EBE /* UIButton (Color_).swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB2A0C35717ED674361E12EF4C5BAA /* UIButton (Color_).swift */; };
-		A3405C8FFF8B8B88A54991EAB7BA9BA7 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3693E6FA924295B369B0DC7E2AE4815 /* Logos.xcassets */; };
-		A3A6206717A979DB2D2801A8B8D6F67A /* CGSize (Area).swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C46794B3EFC67B1746BE7CB81E0F62 /* CGSize (Area).swift */; };
-		A422EDDD7235FA43C5D7D613B05A6E4C /* CALayer (Wireframe).swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EF75E0BF14F8A2EB6C71230FDD3C13 /* CALayer (Wireframe).swift */; };
-		A43281AE7F5ED34889BF39E8FA61D6F5 /* UIView (OriginLeftRightTopBottom).swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */; };
-		AA722217EC3B0D09B4E3E43283C98EA6 /* CGSize (CGRect).swift in Sources */ = {isa = PBXBuildFile; fileRef = C12824249B7328133328FF9AE5640462 /* CGSize (CGRect).swift */; };
-		AC9D9866E065E12DCB2AD07AC6627022 /* TastyTomato.h in Headers */ = {isa = PBXBuildFile; fileRef = 083386230915027A1693F0088C82312B /* TastyTomato.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */; };
-		B11D68E5BDAE86CBFC18CB1AC362CCD0 /* UIView (Grid).swift in Sources */ = {isa = PBXBuildFile; fileRef = 103C75D7FE9B78EEF6839FC015605C8F /* UIView (Grid).swift */; };
-		B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */; };
-		C2E279A4ED34081F1C983150B1F45061 /* CALayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */; };
-		CA9124BD236AE4D0D64EFC021D5BB391 /* UIColor (FromHex_).swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */; };
-		D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */; };
-		DA4FD8E31F32DAE00AFCA3A9CE81C160 /* UIImage (ColoredRect).swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CE20B670A02E13FB4A56517F58E300 /* UIImage (ColoredRect).swift */; };
-		DCC24130D18B2F14E77408A89E3FF34A /* _TastyTomatoBundle_.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237440F520A0D0CFFD99AB1C061B73 /* _TastyTomatoBundle_.swift */; };
-		E07B0B2BF5246EB206433374DEFCE68F /* SizeInGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06FC1CC46E9EB847E4752C4D7264EE /* SizeInGrid.swift */; };
-		E120F90B264A2076BE355CC29E789218 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */; };
-		E34309DF671D7FA2C30AA0A18BB7C355 /* CAShapeLayer (Wireframe).swift in Sources */ = {isa = PBXBuildFile; fileRef = A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */; };
-		E6641196527A7440ED1ED1D85882ECB9 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37196A8F97876C378DF1C78593D1FAB8 /* Icons.xcassets */; };
-		F0ECD62C46A02D8138358FBAB1B38285 /* UIButton (SetTitle).swift in Sources */ = {isa = PBXBuildFile; fileRef = C8889EA70BB1C71DED9F1FB7CFF6B594 /* UIButton (SetTitle).swift */; };
-		F128D132603E4E0CE74EC979474A6F60 /* BookingStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */; };
-		F2E74DE0C5E277FAC2E75CCC8984885B /* UIImage (Named).swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1F525CF3F06186D126ECB7A005615 /* UIImage (Named).swift */; };
-		F7363F8CD1B8E2BF8206ED43F350E8EF /* UIView (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */; };
-		FEDE5B67B4C74086E15CA7BCAA26A666 /* CGRect (LeftRightTopBottomCenter).swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C581522222734865A3403552E044DA /* CGRect (LeftRightTopBottomCenter).swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		06A29463E92A4C636533F9A1C5116865 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5069C7C03228600E179028734BF762CF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 517580651DAB345693709175BEC4073C;
-			remoteInfo = TastyTomato;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		083386230915027A1693F0088C82312B /* TastyTomato.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TastyTomato.h; sourceTree = "<group>"; };
-		0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton (Color).swift"; sourceTree = "<group>"; };
-		0F913362CD789B7370C90D4A856950CF /* CGRect (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (ConvenienceInits).swift"; sourceTree = "<group>"; };
-		103C75D7FE9B78EEF6839FC015605C8F /* UIView (Grid).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (Grid).swift"; sourceTree = "<group>"; };
-		110CB58DB9DDDA2C9F160F9BC574F54D /* TastyTomatoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TastyTomatoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		15004413C96D0B4A03CF11D63DD6382A /* UIView (Area).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (Area).swift"; sourceTree = "<group>"; };
-		162CC1F2A974F883E6BD5039B189DF28 /* UIImage (Named_).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Named_).swift"; sourceTree = "<group>"; };
-		17EF75E0BF14F8A2EB6C71230FDD3C13 /* CALayer (Wireframe).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (Wireframe).swift"; sourceTree = "<group>"; };
-		1A908324B2B4B669470F0A3864A426C6 /* UIImage (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Scaled).swift"; sourceTree = "<group>"; };
-		2079DF7610A25924F27F198F7173BB6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (PredefinedColors).swift"; sourceTree = "<group>"; };
-		30CE34A25023D397DD0B222CD1AD8B8F /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
-		37196A8F97876C378DF1C78593D1FAB8 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
-		38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint (ConvenienceInits).swift"; sourceTree = "<group>"; };
-		3F409B87F906C15E71B3E3CC4AF7FD5D /* CGFloat (Double).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (Double).swift"; sourceTree = "<group>"; };
-		3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
-		41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingStatusIcon.swift; sourceTree = "<group>"; };
-		44C1F525CF3F06186D126ECB7A005615 /* UIImage (Named).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Named).swift"; sourceTree = "<group>"; };
-		484B490047206C221157A2991EFF79E0 /* MetaImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaImage.swift; sourceTree = "<group>"; };
-		502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscIcon.swift; sourceTree = "<group>"; };
-		524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResmioLogo.swift; sourceTree = "<group>"; };
-		580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (ConvenienceInits).swift"; sourceTree = "<group>"; };
-		5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (UInt).swift"; sourceTree = "<group>"; };
-		66A2D9481BEC3DBC1F8608B8301C7223 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscImage.swift; sourceTree = "<group>"; };
-		7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (WidthHeight).swift"; sourceTree = "<group>"; };
-		86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer (ConvenienceInits).swift"; sourceTree = "<group>"; };
-		88C46794B3EFC67B1746BE7CB81E0F62 /* CGSize (Area).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (Area).swift"; sourceTree = "<group>"; };
-		8CB15454677793E311B1E258952332E7 /* UIView (Centering).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (Centering).swift"; sourceTree = "<group>"; };
-		8E24467D4568DC50711B01B3FBCD8958 /* CGFloat (Int).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (Int).swift"; sourceTree = "<group>"; };
-		94154F1BD684F2C672C76A4BFDB379C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96EB2A0C35717ED674361E12EF4C5BAA /* UIButton (Color_).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton (Color_).swift"; sourceTree = "<group>"; };
-		97CE20B670A02E13FB4A56517F58E300 /* UIImage (ColoredRect).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (ColoredRect).swift"; sourceTree = "<group>"; };
-		9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (WithAlpha).swift"; sourceTree = "<group>"; };
-		A0237440F520A0D0CFFD99AB1C061B73 /* _TastyTomatoBundle_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TastyTomatoBundle_.swift; sourceTree = "<group>"; };
-		A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
-		A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer (Wireframe).swift"; sourceTree = "<group>"; };
-		A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (SizeWidthHeight).swift"; sourceTree = "<group>"; };
-		AC280804706B40B958EEE8284ED922F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (ConvenienceInits).swift"; sourceTree = "<group>"; };
-		B3693E6FA924295B369B0DC7E2AE4815 /* Logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logos.xcassets; sourceTree = "<group>"; };
-		BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (FromHex_).swift"; sourceTree = "<group>"; };
-		BF06FC1CC46E9EB847E4752C4D7264EE /* SizeInGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeInGrid.swift; sourceTree = "<group>"; };
-		C08B5813ECAE6108D8A3192D688E9D77 /* ArrowIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowIcon.swift; sourceTree = "<group>"; };
-		C12824249B7328133328FF9AE5640462 /* CGSize (CGRect).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (CGRect).swift"; sourceTree = "<group>"; };
-		C6E438216C6A16D137CD269349331D8F /* CGRect (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (Scaled).swift"; sourceTree = "<group>"; };
-		C8889EA70BB1C71DED9F1FB7CFF6B594 /* UIButton (SetTitle).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton (SetTitle).swift"; sourceTree = "<group>"; };
-		CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (OriginLeftRightTopBottom).swift"; sourceTree = "<group>"; };
-		CE06BAB5E34D33E9205557171C73CF6C /* NSL_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSL_.swift; path = NSLocalizedString/NSL_.swift; sourceTree = "<group>"; };
-		CF57DBBABA83CFBB3428C32BBB42514E /* CGRect (Area).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (Area).swift"; sourceTree = "<group>"; };
-		D43E0F301A67734A74C63533E21FEEDF /* CGSize (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (Scaled).swift"; sourceTree = "<group>"; };
-		D4C581522222734865A3403552E044DA /* CGRect (LeftRightTopBottomCenter).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (LeftRightTopBottomCenter).swift"; sourceTree = "<group>"; };
-		D62837076E5C6BBE23DC133DBF28FFFD /* FilledButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButtons.swift; sourceTree = "<group>"; };
-		DCF12E5F5D09CC277B307C8A27456151 /* TastyTomatoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastyTomatoTests.swift; sourceTree = "<group>"; };
-		E12E3659104848DDD678FE37D39AEAF3 /* FilledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
-		EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (ConvenienceInits).swift"; sourceTree = "<group>"; };
-		F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (RenderingModes).swift"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		1DF08CF9FA90E2D2EC18047F04A5D21C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		630DD274FF90B1048DD886A760489593 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4DABED4544C6D370297F11FD117FEDEC /* TastyTomato.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		0797CADAA242E6EF3AC04B83BE063FFA = {
-			isa = PBXGroup;
-			children = (
-				087D62F85789E9BA2921482544C68BB4 /* Products */,
-				EE22ED39034017661019E659F4958502 /* TastyTomato */,
-				6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */,
-			);
-			sourceTree = "<group>";
-		};
-		087D62F85789E9BA2921482544C68BB4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */,
-				110CB58DB9DDDA2C9F160F9BC574F54D /* TastyTomatoTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		18306EDC2A57EEE4D03157F13936E91A /* Code */ = {
-			isa = PBXGroup;
-			children = (
-				46D48A3DF2B901CAD57244D34D089FF9 /* Classes */,
-				CC8873A5D129E761EEABF10B6C336331 /* Elements */,
-				9999FCCB3A774D4E83A754E53EFE8B64 /* Extensions */,
-				D23210E99B6D5D3E3FEB6708B0CC452F /* Meta */,
-				D7B5FB8B737A9AC146C8A6F988388264 /* OperatorOverloads */,
-			);
-			path = Code;
-			sourceTree = "<group>";
-		};
-		2B5D0A633795C19AE52663F380A3DE7B /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				323024B9C32DBCD16579A5D0E1898452 /* CALayer */,
-				0995E6863C2FACBFB7642BD7F38401CB /* CAShapeLayer */,
-				A2C7788C50EBFA6A19AD6E5D21DDA7F0 /* CGPoint */,
-				2A82240FC7459054B0D58710F81524F0 /* CGRect */,
-				9A89BE72D4671CAB9BB7FFB4B3B4F96D /* CGSize */,
-				0493472B043AE9358E374F400818BC62 /* UIButton */,
-				C61FA760C329029916EAB5DF6196AE44 /* UIColor */,
-				672790F9FBEF1DB75397020CEEDDC422 /* UIImage */,
-				A01C37BAA2EDA30ED682D64F551DB64A /* UIView */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		46E7F64B4FE1F823B9CE5441A548B3C2 /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				CEA9ED81CA9819C760F0522AF4297510 /* NSLocalizedString */,
-				BC2EA83A70843FD6A5BD090CDDB4F4ED /* UIButton */,
-				246C935C9C014C4BD5D47F71877750B3 /* UIColor */,
-				DB5E54BA08F5DE8E909C7868A0EA78F0 /* UIImage */,
-			);
-			path = Internal;
-			sourceTree = "<group>";
-		};
-		81E4DAC46F44F11E680BCD87739D7F33 /* ButtonClasses */ = {
-			isa = PBXGroup;
-			children = (
-				3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */,
-				E12E3659104848DDD678FE37D39AEAF3 /* FilledButton.swift */,
-			);
-			path = ButtonClasses;
-			sourceTree = "<group>";
-		};
-		9A89BE72D4671CAB9BB7FFB4B3B4F96D /* CGSize */ = {
-			isa = PBXGroup;
-			children = (
-				88C46794B3EFC67B1746BE7CB81E0F62 /* CGSize (Area).swift */,
-				C12824249B7328133328FF9AE5640462 /* CGSize (CGRect).swift */,
-				B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */,
-				D43E0F301A67734A74C63533E21FEEDF /* CGSize (Scaled).swift */,
-			);
-			path = CGSize;
-			sourceTree = "<group>";
-		};
-		2A82240FC7459054B0D58710F81524F0 /* CGRect */ = {
-			isa = PBXGroup;
-			children = (
-				CF57DBBABA83CFBB3428C32BBB42514E /* CGRect (Area).swift */,
-				0F913362CD789B7370C90D4A856950CF /* CGRect (ConvenienceInits).swift */,
-				D4C581522222734865A3403552E044DA /* CGRect (LeftRightTopBottomCenter).swift */,
-				C6E438216C6A16D137CD269349331D8F /* CGRect (Scaled).swift */,
-			);
-			path = CGRect;
-			sourceTree = "<group>";
-		};
-		672790F9FBEF1DB75397020CEEDDC422 /* UIImage */ = {
-			isa = PBXGroup;
-			children = (
-				97CE20B670A02E13FB4A56517F58E300 /* UIImage (ColoredRect).swift */,
-				44C1F525CF3F06186D126ECB7A005615 /* UIImage (Named).swift */,
-				F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */,
-				1A908324B2B4B669470F0A3864A426C6 /* UIImage (Scaled).swift */,
-				7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */,
-			);
-			path = UIImage;
-			sourceTree = "<group>";
-		};
-		D23210E99B6D5D3E3FEB6708B0CC452F /* Meta */ = {
-			isa = PBXGroup;
-			children = (
-				A0237440F520A0D0CFFD99AB1C061B73 /* _TastyTomatoBundle_.swift */,
-			);
-			path = Meta;
-			sourceTree = "<group>";
-		};
-		F4F8D17F4741073A408CE828D3E7ACA0 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
-		AAD496374D60FA3D83572E9051E49F30 /* ImageClasses */ = {
-			isa = PBXGroup;
-			children = (
-				9A8CE9444735CD60A5574445C3C34289 /* Icons */,
-				F4F8D17F4741073A408CE828D3E7ACA0 /* Images */,
-				7650E3E33692C33AAC5C9D10FB39AA60 /* Logos */,
-				484B490047206C221157A2991EFF79E0 /* MetaImage.swift */,
-			);
-			path = ImageClasses;
-			sourceTree = "<group>";
-		};
-		7650E3E33692C33AAC5C9D10FB39AA60 /* Logos */ = {
-			isa = PBXGroup;
-			children = (
-				524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */,
-			);
-			path = Logos;
-			sourceTree = "<group>";
-		};
-		C61FA760C329029916EAB5DF6196AE44 /* UIColor */ = {
-			isa = PBXGroup;
-			children = (
-				286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */,
-				9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */,
-			);
-			path = UIColor;
-			sourceTree = "<group>";
-		};
-		246C935C9C014C4BD5D47F71877750B3 /* UIColor */ = {
-			isa = PBXGroup;
-			children = (
-				BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */,
-			);
-			path = UIColor;
-			sourceTree = "<group>";
-		};
-		3182BD41005B7CE55A37737874C6E72F /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				3A2573088F58F3ACAB1DCAE581221306 /* Localizations */,
-				37196A8F97876C378DF1C78593D1FAB8 /* Icons.xcassets */,
-				B3693E6FA924295B369B0DC7E2AE4815 /* Logos.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		46D48A3DF2B901CAD57244D34D089FF9 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				81E4DAC46F44F11E680BCD87739D7F33 /* ButtonClasses */,
-				C6D1E0700C3D6AA99916DFFC5EFB923E /* GridClasses */,
-				AAD496374D60FA3D83572E9051E49F30 /* ImageClasses */,
-				A3AB6252EFF7C31DBE40BB1578EF32AC /* LayerClasses */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		9A8CE9444735CD60A5574445C3C34289 /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				C08B5813ECAE6108D8A3192D688E9D77 /* ArrowIcon.swift */,
-				41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */,
-				502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */,
-			);
-			path = Icons;
-			sourceTree = "<group>";
-		};
-		A2C7788C50EBFA6A19AD6E5D21DDA7F0 /* CGPoint */ = {
-			isa = PBXGroup;
-			children = (
-				38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */,
-			);
-			path = CGPoint;
-			sourceTree = "<group>";
-		};
-		A01C37BAA2EDA30ED682D64F551DB64A /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				15004413C96D0B4A03CF11D63DD6382A /* UIView (Area).swift */,
-				8CB15454677793E311B1E258952332E7 /* UIView (Centering).swift */,
-				EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */,
-				103C75D7FE9B78EEF6839FC015605C8F /* UIView (Grid).swift */,
-				CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */,
-				A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */,
-			);
-			path = UIView;
-			sourceTree = "<group>";
-		};
-		C6D1E0700C3D6AA99916DFFC5EFB923E /* GridClasses */ = {
-			isa = PBXGroup;
-			children = (
-				30CE34A25023D397DD0B222CD1AD8B8F /* Grid.swift */,
-				BF06FC1CC46E9EB847E4752C4D7264EE /* SizeInGrid.swift */,
-			);
-			path = GridClasses;
-			sourceTree = "<group>";
-		};
-		323024B9C32DBCD16579A5D0E1898452 /* CALayer */ = {
-			isa = PBXGroup;
-			children = (
-				580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */,
-				17EF75E0BF14F8A2EB6C71230FDD3C13 /* CALayer (Wireframe).swift */,
-			);
-			path = CALayer;
-			sourceTree = "<group>";
-		};
-		0995E6863C2FACBFB7642BD7F38401CB /* CAShapeLayer */ = {
-			isa = PBXGroup;
-			children = (
-				86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */,
-				A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */,
-			);
-			path = CAShapeLayer;
-			sourceTree = "<group>";
-		};
-		A3AB6252EFF7C31DBE40BB1578EF32AC /* LayerClasses */ = {
-			isa = PBXGroup;
-			children = (
-				A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */,
-			);
-			path = LayerClasses;
-			sourceTree = "<group>";
-		};
-		BC2EA83A70843FD6A5BD090CDDB4F4ED /* UIButton */ = {
-			isa = PBXGroup;
-			children = (
-				96EB2A0C35717ED674361E12EF4C5BAA /* UIButton (Color_).swift */,
-			);
-			path = UIButton;
-			sourceTree = "<group>";
-		};
-		D7B5FB8B737A9AC146C8A6F988388264 /* OperatorOverloads */ = {
-			isa = PBXGroup;
-			children = (
-				9C2EB5437A663A7E7AD05D34C497870E /* CGFloat */,
-			);
-			path = OperatorOverloads;
-			sourceTree = "<group>";
-		};
-		9C2EB5437A663A7E7AD05D34C497870E /* CGFloat */ = {
-			isa = PBXGroup;
-			children = (
-				3F409B87F906C15E71B3E3CC4AF7FD5D /* CGFloat (Double).swift */,
-				8E24467D4568DC50711B01B3FBCD8958 /* CGFloat (Int).swift */,
-				5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */,
-			);
-			path = CGFloat;
-			sourceTree = "<group>";
-		};
-		0493472B043AE9358E374F400818BC62 /* UIButton */ = {
-			isa = PBXGroup;
-			children = (
-				0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */,
-				C8889EA70BB1C71DED9F1FB7CFF6B594 /* UIButton (SetTitle).swift */,
-			);
-			path = UIButton;
-			sourceTree = "<group>";
-		};
-		CC8873A5D129E761EEABF10B6C336331 /* Elements */ = {
-			isa = PBXGroup;
-			children = (
-				8D6B38C23AD55B56C22E0212EAB83656 /* Buttons */,
-			);
-			path = Elements;
-			sourceTree = "<group>";
-		};
-		8D6B38C23AD55B56C22E0212EAB83656 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				D62837076E5C6BBE23DC133DBF28FFFD /* FilledButtons.swift */,
-			);
-			path = Buttons;
-			sourceTree = "<group>";
-		};
-		CEA9ED81CA9819C760F0522AF4297510 /* NSLocalizedString */ = {
-			isa = PBXGroup;
-			children = (
-				CE06BAB5E34D33E9205557171C73CF6C /* NSL_.swift */,
-			);
-			name = NSLocalizedString;
-			sourceTree = "<group>";
-		};
-		DB5E54BA08F5DE8E909C7868A0EA78F0 /* UIImage */ = {
-			isa = PBXGroup;
-			children = (
-				162CC1F2A974F883E6BD5039B189DF28 /* UIImage (Named_).swift */,
-			);
-			path = UIImage;
-			sourceTree = "<group>";
-		};
-		3A2573088F58F3ACAB1DCAE581221306 /* Localizations */ = {
-			isa = PBXGroup;
-			children = (
-				23577F3AF20D9CDF3A8A716553EA8BCC /* Localizable.strings */,
-			);
-			name = Localizations;
-			sourceTree = "<group>";
-		};
-		6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */ = {
-			isa = PBXGroup;
-			children = (
-				94154F1BD684F2C672C76A4BFDB379C2 /* Info.plist */,
-				DCF12E5F5D09CC277B307C8A27456151 /* TastyTomatoTests.swift */,
-			);
-			path = TastyTomatoTests;
-			sourceTree = "<group>";
-		};
-		9999FCCB3A774D4E83A754E53EFE8B64 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				46E7F64B4FE1F823B9CE5441A548B3C2 /* Internal */,
-				2B5D0A633795C19AE52663F380A3DE7B /* Public */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		EE22ED39034017661019E659F4958502 /* TastyTomato */ = {
-			isa = PBXGroup;
-			children = (
-				18306EDC2A57EEE4D03157F13936E91A /* Code */,
-				3182BD41005B7CE55A37737874C6E72F /* Resources */,
-				AC280804706B40B958EEE8284ED922F8 /* Info.plist */,
-				083386230915027A1693F0088C82312B /* TastyTomato.h */,
-			);
-			path = TastyTomato;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		8A261083153DF6C4443C8AF745DFF0EC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AC9D9866E065E12DCB2AD07AC6627022 /* TastyTomato.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		0E7680876764C3020A8CF0627D6E3476 /* TastyTomatoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6421144D3E84191201035A01CAD17A8F /* Build configuration list for PBXNativeTarget "TastyTomatoTests" */;
-			buildPhases = (
-				35B3724FC1ADEC6AA7F2193760DA11CA /* Sources */,
-				630DD274FF90B1048DD886A760489593 /* Frameworks */,
-				94181FE122095712F9F3E596F62187C8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BD855CC05FE312DB1AC20F4A7773015F /* PBXTargetDependency */,
-			);
-			name = TastyTomatoTests;
-			productName = TastyTomatoTests;
-			productReference = 110CB58DB9DDDA2C9F160F9BC574F54D /* TastyTomatoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		517580651DAB345693709175BEC4073C /* TastyTomato */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FE1942CC76C78C04376997A22C1DDE29 /* Build configuration list for PBXNativeTarget "TastyTomato" */;
-			buildPhases = (
-				F7B853C27FD687858316219E49A39D47 /* Sources */,
-				1DF08CF9FA90E2D2EC18047F04A5D21C /* Frameworks */,
-				8A261083153DF6C4443C8AF745DFF0EC /* Headers */,
-				23DFE944A16ECA0311AB2A53C735D6C1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TastyTomato;
-			productName = TastyTomato;
-			productReference = 01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		5069C7C03228600E179028734BF762CF /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = resmio;
-				TargetAttributes = {
-					0E7680876764C3020A8CF0627D6E3476 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-					517580651DAB345693709175BEC4073C = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-				};
-			};
-			buildConfigurationList = 060A183A5F89CDDB0C50EDA6279C87A8 /* Build configuration list for PBXProject "TastyTomato" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				de,
-			);
-			mainGroup = 0797CADAA242E6EF3AC04B83BE063FFA;
-			productRefGroup = 087D62F85789E9BA2921482544C68BB4 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				517580651DAB345693709175BEC4073C /* TastyTomato */,
-				0E7680876764C3020A8CF0627D6E3476 /* TastyTomatoTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		23DFE944A16ECA0311AB2A53C735D6C1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E6641196527A7440ED1ED1D85882ECB9 /* Icons.xcassets in Resources */,
-				6D1ABF961F75BD37F09D0314331A7E56 /* Localizable.strings in Resources */,
-				A3405C8FFF8B8B88A54991EAB7BA9BA7 /* Logos.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		94181FE122095712F9F3E596F62187C8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		35B3724FC1ADEC6AA7F2193760DA11CA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93EAC8CFEA337415C4B97B90F661E88B /* TastyTomatoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7B853C27FD687858316219E49A39D47 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3466F939EFAD784C51D7B5EC69F54B42 /* ArrowIcon.swift in Sources */,
-				E120F90B264A2076BE355CC29E789218 /* BaseButton.swift in Sources */,
-				F128D132603E4E0CE74EC979474A6F60 /* BookingStatusIcon.swift in Sources */,
-				C2E279A4ED34081F1C983150B1F45061 /* CALayer (ConvenienceInits).swift in Sources */,
-				A422EDDD7235FA43C5D7D613B05A6E4C /* CALayer (Wireframe).swift in Sources */,
-				ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */,
-				E34309DF671D7FA2C30AA0A18BB7C355 /* CAShapeLayer (Wireframe).swift in Sources */,
-				8264D105E6827ED55184C53860D2BEA6 /* CGFloat (Double).swift in Sources */,
-				3DE684BA7159AEA557CDE0F4F775B5A0 /* CGFloat (Int).swift in Sources */,
-				1D182D1BB45EB8B648582A87B8CC2067 /* CGFloat (UInt).swift in Sources */,
-				2F3E948D83ABEF456118C56CC1ADA20E /* CGPoint (ConvenienceInits).swift in Sources */,
-				2E894736E4858AC80DCD8D499E0FD708 /* CGRect (Area).swift in Sources */,
-				6845BD2DA1CBDE9DE2EA67D64795A39D /* CGRect (ConvenienceInits).swift in Sources */,
-				FEDE5B67B4C74086E15CA7BCAA26A666 /* CGRect (LeftRightTopBottomCenter).swift in Sources */,
-				84BB5378D9A297B753E679DBE872A69A /* CGRect (Scaled).swift in Sources */,
-				A3A6206717A979DB2D2801A8B8D6F67A /* CGSize (Area).swift in Sources */,
-				AA722217EC3B0D09B4E3E43283C98EA6 /* CGSize (CGRect).swift in Sources */,
-				5C8AA03C6C4B4DCDAA601D7775D8EA1A /* CGSize (ConvenienceInits).swift in Sources */,
-				07D9391000BFA486E44C4497A1788C6A /* CGSize (Scaled).swift in Sources */,
-				935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */,
-				01903A7870C59E45E2071D68688B64AE /* FilledButtons.swift in Sources */,
-				14489FCA5F60780335DF0D27E78786D9 /* Grid.swift in Sources */,
-				693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */,
-				2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */,
-				B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */,
-				26C9967D3E82CB12CD88A26329600F6E /* NSL_.swift in Sources */,
-				D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */,
-				E07B0B2BF5246EB206433374DEFCE68F /* SizeInGrid.swift in Sources */,
-				48D0397391009A24265A5FEE06D16F89 /* TriangleLayer.swift in Sources */,
-				7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */,
-				9EDC676FBB4296DB4C630B5E78379EBE /* UIButton (Color_).swift in Sources */,
-				F0ECD62C46A02D8138358FBAB1B38285 /* UIButton (SetTitle).swift in Sources */,
-				CA9124BD236AE4D0D64EFC021D5BB391 /* UIColor (FromHex_).swift in Sources */,
-				25879B45F1221FB152C8E2F32B83DCB5 /* UIColor (PredefinedColors).swift in Sources */,
-				36619180DB22B571E2199B3C6CDD67A4 /* UIColor (WithAlpha).swift in Sources */,
-				DA4FD8E31F32DAE00AFCA3A9CE81C160 /* UIImage (ColoredRect).swift in Sources */,
-				F2E74DE0C5E277FAC2E75CCC8984885B /* UIImage (Named).swift in Sources */,
-				234C2E7FADD37FC3783F9BFF305828A6 /* UIImage (Named_).swift in Sources */,
-				5FBBB08F482C2EF8829D937D432DB0AA /* UIImage (RenderingModes).swift in Sources */,
-				2CCA94476E3333C634E936EC9EECA2AE /* UIImage (Scaled).swift in Sources */,
-				6B57EDA175E804981EC3D12739F147AB /* UIImage (WidthHeight).swift in Sources */,
-				800936DF4B2EC8E094396520F049EF4B /* UIView (Area).swift in Sources */,
-				13BFB81E9AE9A8BC5760E75496D1DFFC /* UIView (Centering).swift in Sources */,
-				F7363F8CD1B8E2BF8206ED43F350E8EF /* UIView (ConvenienceInits).swift in Sources */,
-				B11D68E5BDAE86CBFC18CB1AC362CCD0 /* UIView (Grid).swift in Sources */,
-				A43281AE7F5ED34889BF39E8FA61D6F5 /* UIView (OriginLeftRightTopBottom).swift in Sources */,
-				016794C2166A998F5DCD79812840EF65 /* UIView (SizeWidthHeight).swift in Sources */,
-				DCC24130D18B2F14E77408A89E3FF34A /* _TastyTomatoBundle_.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BD855CC05FE312DB1AC20F4A7773015F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 517580651DAB345693709175BEC4073C /* TastyTomato */;
-			targetProxy = 06A29463E92A4C636533F9A1C5116865 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		23577F3AF20D9CDF3A8A716553EA8BCC /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				66A2D9481BEC3DBC1F8608B8301C7223 /* de */,
-				2079DF7610A25924F27F198F7173BB6A /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		4BD485ECA32363D712B4CBC719A7D7C9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.2.0;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 0.2.0;
-				DYLIB_CURRENT_VERSION = 0.2.0;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		4E4F561F5D33BDCF3053AACDA94E624E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 0.2.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.2.0;
-				DYLIB_CURRENT_VERSION = 0.2.0;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TastyTomato/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = resmio.TastyTomato;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		66526BFC2FE6BD5389E7979AABD049AB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
-				INFOPLIST_FILE = TastyTomatoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = resmio.TastyTomatoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		70C449598983010F137CCD9AC8CE3BCA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 0.2.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.2.0;
-				DYLIB_CURRENT_VERSION = 0.2.0;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TastyTomato/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = resmio.TastyTomato;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		9BB45C74E94B1E4770E6EB8EC34C7939 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
-				INFOPLIST_FILE = TastyTomatoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = resmio.TastyTomatoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		CAC3A750DCED99E19CE70D64C62D059D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.2.0;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DYLIB_COMPATIBILITY_VERSION = 0.2.0;
-				DYLIB_CURRENT_VERSION = 0.2.0;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		060A183A5F89CDDB0C50EDA6279C87A8 /* Build configuration list for PBXProject "TastyTomato" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CAC3A750DCED99E19CE70D64C62D059D /* Debug */,
-				4BD485ECA32363D712B4CBC719A7D7C9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6421144D3E84191201035A01CAD17A8F /* Build configuration list for PBXNativeTarget "TastyTomatoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9BB45C74E94B1E4770E6EB8EC34C7939 /* Debug */,
-				66526BFC2FE6BD5389E7979AABD049AB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FE1942CC76C78C04376997A22C1DDE29 /* Build configuration list for PBXNativeTarget "TastyTomato" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4E4F561F5D33BDCF3053AACDA94E624E /* Debug */,
-				70C449598983010F137CCD9AC8CE3BCA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 5069C7C03228600E179028734BF762CF /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>016794C2166A998F5DCD79812840EF65</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A962BC1498C30634120C1D0FC724E828</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>01903A7870C59E45E2071D68688B64AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D62837076E5C6BBE23DC133DBF28FFFD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>01F8CFBC214803F0D77371D34103D883</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>TastyTomato.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>0493472B043AE9358E374F400818BC62</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0B14A897E13645806DC0454C9E7D25E8</string>
+				<string>C8889EA70BB1C71DED9F1FB7CFF6B594</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>UIButton</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>060A183A5F89CDDB0C50EDA6279C87A8</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>CAC3A750DCED99E19CE70D64C62D059D</string>
+				<string>4BD485ECA32363D712B4CBC719A7D7C9</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>06A29463E92A4C636533F9A1C5116865</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>5069C7C03228600E179028734BF762CF</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>517580651DAB345693709175BEC4073C</string>
+			<key>remoteInfo</key>
+			<string>TastyTomato</string>
+		</dict>
+		<key>0797CADAA242E6EF3AC04B83BE063FFA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>087D62F85789E9BA2921482544C68BB4</string>
+				<string>EE22ED39034017661019E659F4958502</string>
+				<string>6054D7993EB7ADFFC77F9B34313A406C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>07D9391000BFA486E44C4497A1788C6A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D43E0F301A67734A74C63533E21FEEDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>083386230915027A1693F0088C82312B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TastyTomato.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>087D62F85789E9BA2921482544C68BB4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>01F8CFBC214803F0D77371D34103D883</string>
+				<string>110CB58DB9DDDA2C9F160F9BC574F54D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0995E6863C2FACBFB7642BD7F38401CB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>86ACEC5A50D3C8A05F4477DA6013A23F</string>
+				<string>A9557636019B34DE0DE83581107DE300</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>CAShapeLayer</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0B14A897E13645806DC0454C9E7D25E8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIButton (Color).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0E7680876764C3020A8CF0627D6E3476</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>6421144D3E84191201035A01CAD17A8F</string>
+			<key>buildPhases</key>
+			<array>
+				<string>35B3724FC1ADEC6AA7F2193760DA11CA</string>
+				<string>630DD274FF90B1048DD886A760489593</string>
+				<string>94181FE122095712F9F3E596F62187C8</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>BD855CC05FE312DB1AC20F4A7773015F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>TastyTomatoTests</string>
+			<key>productName</key>
+			<string>TastyTomatoTests</string>
+			<key>productReference</key>
+			<string>110CB58DB9DDDA2C9F160F9BC574F54D</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>0F913362CD789B7370C90D4A856950CF</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGRect (ConvenienceInits).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>103C75D7FE9B78EEF6839FC015605C8F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIView (Grid).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>110CB58DB9DDDA2C9F160F9BC574F54D</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>TastyTomatoTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>13BFB81E9AE9A8BC5760E75496D1DFFC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8CB15454677793E311B1E258952332E7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>14489FCA5F60780335DF0D27E78786D9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30CE34A25023D397DD0B222CD1AD8B8F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>15004413C96D0B4A03CF11D63DD6382A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIView (Area).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>162CC1F2A974F883E6BD5039B189DF28</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIImage (Named_).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>17EF75E0BF14F8A2EB6C71230FDD3C13</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CALayer (Wireframe).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>18306EDC2A57EEE4D03157F13936E91A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>46D48A3DF2B901CAD57244D34D089FF9</string>
+				<string>CC8873A5D129E761EEABF10B6C336331</string>
+				<string>9999FCCB3A774D4E83A754E53EFE8B64</string>
+				<string>D23210E99B6D5D3E3FEB6708B0CC452F</string>
+				<string>D7B5FB8B737A9AC146C8A6F988388264</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Code</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1A908324B2B4B669470F0A3864A426C6</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIImage (Scaled).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1D182D1BB45EB8B648582A87B8CC2067</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5A54FF5C0D3BA210866F5B407D653FBA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1DF08CF9FA90E2D2EC18047F04A5D21C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>2019E88F5EDA689599E01366C30087AD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>502A0EA47A67D9129AB47655130F41D4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2079DF7610A25924F27F198F7173BB6A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/Localizable.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>234C2E7FADD37FC3783F9BFF305828A6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>162CC1F2A974F883E6BD5039B189DF28</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>23577F3AF20D9CDF3A8A716553EA8BCC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>66A2D9481BEC3DBC1F8608B8301C7223</string>
+				<string>2079DF7610A25924F27F198F7173BB6A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Localizable.strings</string>
+			<key>path</key>
+			<string>.</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>23DFE944A16ECA0311AB2A53C735D6C1</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>E6641196527A7440ED1ED1D85882ECB9</string>
+				<string>6D1ABF961F75BD37F09D0314331A7E56</string>
+				<string>A3405C8FFF8B8B88A54991EAB7BA9BA7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>246C935C9C014C4BD5D47F71877750B3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BD526FE5A6DE506D27BB624219ADC4CF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>UIColor</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>25879B45F1221FB152C8E2F32B83DCB5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>286A04009DB4A9D07DDD2C4BBC906120</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>26C9967D3E82CB12CD88A26329600F6E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CE06BAB5E34D33E9205557171C73CF6C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>286A04009DB4A9D07DDD2C4BBC906120</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIColor (PredefinedColors).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2A82240FC7459054B0D58710F81524F0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CF57DBBABA83CFBB3428C32BBB42514E</string>
+				<string>0F913362CD789B7370C90D4A856950CF</string>
+				<string>D4C581522222734865A3403552E044DA</string>
+				<string>C6E438216C6A16D137CD269349331D8F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>CGRect</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2B5D0A633795C19AE52663F380A3DE7B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>323024B9C32DBCD16579A5D0E1898452</string>
+				<string>0995E6863C2FACBFB7642BD7F38401CB</string>
+				<string>A2C7788C50EBFA6A19AD6E5D21DDA7F0</string>
+				<string>2A82240FC7459054B0D58710F81524F0</string>
+				<string>9A89BE72D4671CAB9BB7FFB4B3B4F96D</string>
+				<string>0493472B043AE9358E374F400818BC62</string>
+				<string>C61FA760C329029916EAB5DF6196AE44</string>
+				<string>672790F9FBEF1DB75397020CEEDDC422</string>
+				<string>A01C37BAA2EDA30ED682D64F551DB64A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Public</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2CCA94476E3333C634E936EC9EECA2AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1A908324B2B4B669470F0A3864A426C6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2E894736E4858AC80DCD8D499E0FD708</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CF57DBBABA83CFBB3428C32BBB42514E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2F3E948D83ABEF456118C56CC1ADA20E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>38695237639647DC1871B8DCC1F4B719</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30CE34A25023D397DD0B222CD1AD8B8F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Grid.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3182BD41005B7CE55A37737874C6E72F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3A2573088F58F3ACAB1DCAE581221306</string>
+				<string>37196A8F97876C378DF1C78593D1FAB8</string>
+				<string>B3693E6FA924295B369B0DC7E2AE4815</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>323024B9C32DBCD16579A5D0E1898452</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>580BC6050B611219FDBB90C49361A752</string>
+				<string>17EF75E0BF14F8A2EB6C71230FDD3C13</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>CALayer</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3466F939EFAD784C51D7B5EC69F54B42</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C08B5813ECAE6108D8A3192D688E9D77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>35B3724FC1ADEC6AA7F2193760DA11CA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>93EAC8CFEA337415C4B97B90F661E88B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>36619180DB22B571E2199B3C6CDD67A4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9E44E7E7FD7D953F91AD9935AA1C0709</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>37196A8F97876C378DF1C78593D1FAB8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Icons.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>38695237639647DC1871B8DCC1F4B719</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGPoint (ConvenienceInits).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3A2573088F58F3ACAB1DCAE581221306</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>23577F3AF20D9CDF3A8A716553EA8BCC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Localizations</string>
+			<key>path</key>
+			<string>Localizations</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3DE684BA7159AEA557CDE0F4F775B5A0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8E24467D4568DC50711B01B3FBCD8958</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3F409B87F906C15E71B3E3CC4AF7FD5D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGFloat (Double).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FBC82B6AD23E06DAA22DC3B2FEAC599</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BaseButton.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>41EC6FAC54AA2A974B870699327AD8DE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BookingStatusIcon.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>44C1F525CF3F06186D126ECB7A005615</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIImage (Named).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>46D48A3DF2B901CAD57244D34D089FF9</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>81E4DAC46F44F11E680BCD87739D7F33</string>
+				<string>C6D1E0700C3D6AA99916DFFC5EFB923E</string>
+				<string>AAD496374D60FA3D83572E9051E49F30</string>
+				<string>A3AB6252EFF7C31DBE40BB1578EF32AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Classes</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>46E7F64B4FE1F823B9CE5441A548B3C2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CEA9ED81CA9819C760F0522AF4297510</string>
+				<string>BC2EA83A70843FD6A5BD090CDDB4F4ED</string>
+				<string>246C935C9C014C4BD5D47F71877750B3</string>
+				<string>DB5E54BA08F5DE8E909C7868A0EA78F0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Internal</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>484B490047206C221157A2991EFF79E0</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MetaImage.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>48D0397391009A24265A5FEE06D16F89</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A0C61A532AD392FBEFDFAA4BDA484C9C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4BD485ECA32363D712B4CBC719A7D7C9</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>0.2.0</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>0.2.0</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>0.2.0</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>4DABED4544C6D370297F11FD117FEDEC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>01F8CFBC214803F0D77371D34103D883</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4E4F561F5D33BDCF3053AACDA94E624E</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>0.2.0</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>0.2.0</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>0.2.0</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>INFOPLIST_FILE</key>
+				<string>TastyTomato/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>resmio.TastyTomato</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>502A0EA47A67D9129AB47655130F41D4</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MiscIcon.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5069C7C03228600E179028734BF762CF</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0730</string>
+				<key>LastUpgradeCheck</key>
+				<string>0730</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>resmio</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>0E7680876764C3020A8CF0627D6E3476</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+					</dict>
+					<key>517580651DAB345693709175BEC4073C</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>060A183A5F89CDDB0C50EDA6279C87A8</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>de</string>
+			</array>
+			<key>mainGroup</key>
+			<string>0797CADAA242E6EF3AC04B83BE063FFA</string>
+			<key>productRefGroup</key>
+			<string>087D62F85789E9BA2921482544C68BB4</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>517580651DAB345693709175BEC4073C</string>
+				<string>0E7680876764C3020A8CF0627D6E3476</string>
+			</array>
+		</dict>
+		<key>517580651DAB345693709175BEC4073C</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>FE1942CC76C78C04376997A22C1DDE29</string>
+			<key>buildPhases</key>
+			<array>
+				<string>F7B853C27FD687858316219E49A39D47</string>
+				<string>1DF08CF9FA90E2D2EC18047F04A5D21C</string>
+				<string>8A261083153DF6C4443C8AF745DFF0EC</string>
+				<string>23DFE944A16ECA0311AB2A53C735D6C1</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>TastyTomato</string>
+			<key>productName</key>
+			<string>TastyTomato</string>
+			<key>productReference</key>
+			<string>01F8CFBC214803F0D77371D34103D883</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>524DD60BF858BDA8D4E2F6F0015C302A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ResmioLogo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>580BC6050B611219FDBB90C49361A752</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CALayer (ConvenienceInits).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5A54FF5C0D3BA210866F5B407D653FBA</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGFloat (UInt).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5C8AA03C6C4B4DCDAA601D7775D8EA1A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B070B8399B4B109A28594202D08619CD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5FBBB08F482C2EF8829D937D432DB0AA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F4343B818E71BB8FE07479C990F00752</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6054D7993EB7ADFFC77F9B34313A406C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>94154F1BD684F2C672C76A4BFDB379C2</string>
+				<string>DCF12E5F5D09CC277B307C8A27456151</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>TastyTomatoTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>630DD274FF90B1048DD886A760489593</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>4DABED4544C6D370297F11FD117FEDEC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>6421144D3E84191201035A01CAD17A8F</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>9BB45C74E94B1E4770E6EB8EC34C7939</string>
+				<string>66526BFC2FE6BD5389E7979AABD049AB</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>66526BFC2FE6BD5389E7979AABD049AB</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>GCC_WARN_ABOUT_MISSING_NEWLINE</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>TastyTomatoTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>resmio.TastyTomatoTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>66A2D9481BEC3DBC1F8608B8301C7223</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>de</string>
+			<key>path</key>
+			<string>de.lproj/Localizable.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>672790F9FBEF1DB75397020CEEDDC422</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>97CE20B670A02E13FB4A56517F58E300</string>
+				<string>44C1F525CF3F06186D126ECB7A005615</string>
+				<string>F4343B818E71BB8FE07479C990F00752</string>
+				<string>1A908324B2B4B669470F0A3864A426C6</string>
+				<string>7EC88A94DDF26B9532AD8A6346A250E9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>UIImage</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6845BD2DA1CBDE9DE2EA67D64795A39D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0F913362CD789B7370C90D4A856950CF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>693E5BA8F4FB876E21E39F6E293B7A26</key>
+		<dict>
+			<key>fileRef</key>
+			<string>484B490047206C221157A2991EFF79E0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6B57EDA175E804981EC3D12739F147AB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7EC88A94DDF26B9532AD8A6346A250E9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6D1ABF961F75BD37F09D0314331A7E56</key>
+		<dict>
+			<key>fileRef</key>
+			<string>23577F3AF20D9CDF3A8A716553EA8BCC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>70C449598983010F137CCD9AC8CE3BCA</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>0.2.0</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>0.2.0</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>0.2.0</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>INFOPLIST_FILE</key>
+				<string>TastyTomato/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>resmio.TastyTomato</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>7650E3E33692C33AAC5C9D10FB39AA60</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>524DD60BF858BDA8D4E2F6F0015C302A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Logos</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>77E83DDD4566361CA7AD1928CAA0D8CC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MiscImage.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7C8AA1C87BF89C4D6142967CA426F23E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0B14A897E13645806DC0454C9E7D25E8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7EC88A94DDF26B9532AD8A6346A250E9</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIImage (WidthHeight).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800936DF4B2EC8E094396520F049EF4B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>15004413C96D0B4A03CF11D63DD6382A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81E4DAC46F44F11E680BCD87739D7F33</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3FBC82B6AD23E06DAA22DC3B2FEAC599</string>
+				<string>E12E3659104848DDD678FE37D39AEAF3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>ButtonClasses</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8264D105E6827ED55184C53860D2BEA6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3F409B87F906C15E71B3E3CC4AF7FD5D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>84BB5378D9A297B753E679DBE872A69A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C6E438216C6A16D137CD269349331D8F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>86ACEC5A50D3C8A05F4477DA6013A23F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CAShapeLayer (ConvenienceInits).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>88C46794B3EFC67B1746BE7CB81E0F62</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGSize (Area).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8A261083153DF6C4443C8AF745DFF0EC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AC9D9866E065E12DCB2AD07AC6627022</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8CB15454677793E311B1E258952332E7</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIView (Centering).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8D6B38C23AD55B56C22E0212EAB83656</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D62837076E5C6BBE23DC133DBF28FFFD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Buttons</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8E24467D4568DC50711B01B3FBCD8958</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGFloat (Int).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>935CB353F7CC151C86503DB41E3290C6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E12E3659104848DDD678FE37D39AEAF3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>93EAC8CFEA337415C4B97B90F661E88B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DCF12E5F5D09CC277B307C8A27456151</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>94154F1BD684F2C672C76A4BFDB379C2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>94181FE122095712F9F3E596F62187C8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>96EB2A0C35717ED674361E12EF4C5BAA</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIButton (Color_).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>97CE20B670A02E13FB4A56517F58E300</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIImage (ColoredRect).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9999FCCB3A774D4E83A754E53EFE8B64</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>46E7F64B4FE1F823B9CE5441A548B3C2</string>
+				<string>2B5D0A633795C19AE52663F380A3DE7B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Extensions</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9A89BE72D4671CAB9BB7FFB4B3B4F96D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>88C46794B3EFC67B1746BE7CB81E0F62</string>
+				<string>C12824249B7328133328FF9AE5640462</string>
+				<string>B070B8399B4B109A28594202D08619CD</string>
+				<string>D43E0F301A67734A74C63533E21FEEDF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>CGSize</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9A8CE9444735CD60A5574445C3C34289</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C08B5813ECAE6108D8A3192D688E9D77</string>
+				<string>41EC6FAC54AA2A974B870699327AD8DE</string>
+				<string>502A0EA47A67D9129AB47655130F41D4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Icons</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9BB45C74E94B1E4770E6EB8EC34C7939</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>GCC_WARN_ABOUT_MISSING_NEWLINE</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>TastyTomatoTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>resmio.TastyTomatoTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>9C2EB5437A663A7E7AD05D34C497870E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3F409B87F906C15E71B3E3CC4AF7FD5D</string>
+				<string>8E24467D4568DC50711B01B3FBCD8958</string>
+				<string>5A54FF5C0D3BA210866F5B407D653FBA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>CGFloat</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9E44E7E7FD7D953F91AD9935AA1C0709</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIColor (WithAlpha).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9EDC676FBB4296DB4C630B5E78379EBE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>96EB2A0C35717ED674361E12EF4C5BAA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A01C37BAA2EDA30ED682D64F551DB64A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>15004413C96D0B4A03CF11D63DD6382A</string>
+				<string>8CB15454677793E311B1E258952332E7</string>
+				<string>EE11E8FF7E9AAEC21DBE2CC38CF76534</string>
+				<string>103C75D7FE9B78EEF6839FC015605C8F</string>
+				<string>CC85C32067728778599D735CE9A77864</string>
+				<string>A962BC1498C30634120C1D0FC724E828</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>UIView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A0237440F520A0D0CFFD99AB1C061B73</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>_TastyTomatoBundle_.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A0C61A532AD392FBEFDFAA4BDA484C9C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TriangleLayer.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A2C7788C50EBFA6A19AD6E5D21DDA7F0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>38695237639647DC1871B8DCC1F4B719</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>CGPoint</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A3405C8FFF8B8B88A54991EAB7BA9BA7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B3693E6FA924295B369B0DC7E2AE4815</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A3A6206717A979DB2D2801A8B8D6F67A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>88C46794B3EFC67B1746BE7CB81E0F62</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A3AB6252EFF7C31DBE40BB1578EF32AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A0C61A532AD392FBEFDFAA4BDA484C9C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>LayerClasses</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A422EDDD7235FA43C5D7D613B05A6E4C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>17EF75E0BF14F8A2EB6C71230FDD3C13</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A43281AE7F5ED34889BF39E8FA61D6F5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CC85C32067728778599D735CE9A77864</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A9557636019B34DE0DE83581107DE300</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CAShapeLayer (Wireframe).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A962BC1498C30634120C1D0FC724E828</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIView (SizeWidthHeight).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA722217EC3B0D09B4E3E43283C98EA6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C12824249B7328133328FF9AE5640462</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AAD496374D60FA3D83572E9051E49F30</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9A8CE9444735CD60A5574445C3C34289</string>
+				<string>F4F8D17F4741073A408CE828D3E7ACA0</string>
+				<string>7650E3E33692C33AAC5C9D10FB39AA60</string>
+				<string>484B490047206C221157A2991EFF79E0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>ImageClasses</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AC280804706B40B958EEE8284ED922F8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AC9D9866E065E12DCB2AD07AC6627022</key>
+		<dict>
+			<key>fileRef</key>
+			<string>083386230915027A1693F0088C82312B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>ACCA3B0989D99B356D42394A91C5D95A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>86ACEC5A50D3C8A05F4477DA6013A23F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B070B8399B4B109A28594202D08619CD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGSize (ConvenienceInits).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B11D68E5BDAE86CBFC18CB1AC362CCD0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>103C75D7FE9B78EEF6839FC015605C8F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B3693E6FA924295B369B0DC7E2AE4815</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Logos.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B40D853AD52ACB98F1C2D0D60A988561</key>
+		<dict>
+			<key>fileRef</key>
+			<string>77E83DDD4566361CA7AD1928CAA0D8CC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BC2EA83A70843FD6A5BD090CDDB4F4ED</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>96EB2A0C35717ED674361E12EF4C5BAA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>UIButton</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BD526FE5A6DE506D27BB624219ADC4CF</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIColor (FromHex_).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BD855CC05FE312DB1AC20F4A7773015F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>517580651DAB345693709175BEC4073C</string>
+			<key>targetProxy</key>
+			<string>06A29463E92A4C636533F9A1C5116865</string>
+		</dict>
+		<key>BF06FC1CC46E9EB847E4752C4D7264EE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SizeInGrid.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C08B5813ECAE6108D8A3192D688E9D77</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArrowIcon.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C12824249B7328133328FF9AE5640462</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGSize (CGRect).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C2E279A4ED34081F1C983150B1F45061</key>
+		<dict>
+			<key>fileRef</key>
+			<string>580BC6050B611219FDBB90C49361A752</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C61FA760C329029916EAB5DF6196AE44</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>286A04009DB4A9D07DDD2C4BBC906120</string>
+				<string>9E44E7E7FD7D953F91AD9935AA1C0709</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>UIColor</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C6D1E0700C3D6AA99916DFFC5EFB923E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>30CE34A25023D397DD0B222CD1AD8B8F</string>
+				<string>BF06FC1CC46E9EB847E4752C4D7264EE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>GridClasses</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C6E438216C6A16D137CD269349331D8F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGRect (Scaled).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C8889EA70BB1C71DED9F1FB7CFF6B594</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIButton (SetTitle).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA9124BD236AE4D0D64EFC021D5BB391</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BD526FE5A6DE506D27BB624219ADC4CF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CAC3A750DCED99E19CE70D64C62D059D</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>0.2.0</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>0.2.0</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>0.2.0</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>CC85C32067728778599D735CE9A77864</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIView (OriginLeftRightTopBottom).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CC8873A5D129E761EEABF10B6C336331</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8D6B38C23AD55B56C22E0212EAB83656</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Elements</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CE06BAB5E34D33E9205557171C73CF6C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>NSL_.swift</string>
+			<key>path</key>
+			<string>NSL_.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CEA9ED81CA9819C760F0522AF4297510</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CE06BAB5E34D33E9205557171C73CF6C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>NSLocalizedString</string>
+			<key>path</key>
+			<string>NSLocalizedString</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CF57DBBABA83CFBB3428C32BBB42514E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGRect (Area).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D23210E99B6D5D3E3FEB6708B0CC452F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A0237440F520A0D0CFFD99AB1C061B73</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Meta</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D43E0F301A67734A74C63533E21FEEDF</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGSize (Scaled).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D4C581522222734865A3403552E044DA</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CGRect (LeftRightTopBottomCenter).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D5F5502E31B92D0F0FF7A0D43E8ED8CD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>524DD60BF858BDA8D4E2F6F0015C302A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D62837076E5C6BBE23DC133DBF28FFFD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>FilledButtons.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D7B5FB8B737A9AC146C8A6F988388264</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9C2EB5437A663A7E7AD05D34C497870E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>OperatorOverloads</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DA4FD8E31F32DAE00AFCA3A9CE81C160</key>
+		<dict>
+			<key>fileRef</key>
+			<string>97CE20B670A02E13FB4A56517F58E300</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DB5E54BA08F5DE8E909C7868A0EA78F0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>162CC1F2A974F883E6BD5039B189DF28</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>UIImage</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DCC24130D18B2F14E77408A89E3FF34A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A0237440F520A0D0CFFD99AB1C061B73</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DCF12E5F5D09CC277B307C8A27456151</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TastyTomatoTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E07B0B2BF5246EB206433374DEFCE68F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BF06FC1CC46E9EB847E4752C4D7264EE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E120F90B264A2076BE355CC29E789218</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FBC82B6AD23E06DAA22DC3B2FEAC599</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E12E3659104848DDD678FE37D39AEAF3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>FilledButton.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E34309DF671D7FA2C30AA0A18BB7C355</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A9557636019B34DE0DE83581107DE300</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E6641196527A7440ED1ED1D85882ECB9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>37196A8F97876C378DF1C78593D1FAB8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>EE11E8FF7E9AAEC21DBE2CC38CF76534</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIView (ConvenienceInits).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EE22ED39034017661019E659F4958502</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>18306EDC2A57EEE4D03157F13936E91A</string>
+				<string>3182BD41005B7CE55A37737874C6E72F</string>
+				<string>AC280804706B40B958EEE8284ED922F8</string>
+				<string>083386230915027A1693F0088C82312B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>TastyTomato</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F0ECD62C46A02D8138358FBAB1B38285</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C8889EA70BB1C71DED9F1FB7CFF6B594</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F128D132603E4E0CE74EC979474A6F60</key>
+		<dict>
+			<key>fileRef</key>
+			<string>41EC6FAC54AA2A974B870699327AD8DE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F2E74DE0C5E277FAC2E75CCC8984885B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>44C1F525CF3F06186D126ECB7A005615</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F4343B818E71BB8FE07479C990F00752</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIImage (RenderingModes).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F4F8D17F4741073A408CE828D3E7ACA0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>77E83DDD4566361CA7AD1928CAA0D8CC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Images</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7363F8CD1B8E2BF8206ED43F350E8EF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EE11E8FF7E9AAEC21DBE2CC38CF76534</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7B853C27FD687858316219E49A39D47</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3466F939EFAD784C51D7B5EC69F54B42</string>
+				<string>E120F90B264A2076BE355CC29E789218</string>
+				<string>F128D132603E4E0CE74EC979474A6F60</string>
+				<string>C2E279A4ED34081F1C983150B1F45061</string>
+				<string>A422EDDD7235FA43C5D7D613B05A6E4C</string>
+				<string>ACCA3B0989D99B356D42394A91C5D95A</string>
+				<string>E34309DF671D7FA2C30AA0A18BB7C355</string>
+				<string>8264D105E6827ED55184C53860D2BEA6</string>
+				<string>3DE684BA7159AEA557CDE0F4F775B5A0</string>
+				<string>1D182D1BB45EB8B648582A87B8CC2067</string>
+				<string>2F3E948D83ABEF456118C56CC1ADA20E</string>
+				<string>2E894736E4858AC80DCD8D499E0FD708</string>
+				<string>6845BD2DA1CBDE9DE2EA67D64795A39D</string>
+				<string>FEDE5B67B4C74086E15CA7BCAA26A666</string>
+				<string>84BB5378D9A297B753E679DBE872A69A</string>
+				<string>A3A6206717A979DB2D2801A8B8D6F67A</string>
+				<string>AA722217EC3B0D09B4E3E43283C98EA6</string>
+				<string>5C8AA03C6C4B4DCDAA601D7775D8EA1A</string>
+				<string>07D9391000BFA486E44C4497A1788C6A</string>
+				<string>935CB353F7CC151C86503DB41E3290C6</string>
+				<string>01903A7870C59E45E2071D68688B64AE</string>
+				<string>14489FCA5F60780335DF0D27E78786D9</string>
+				<string>693E5BA8F4FB876E21E39F6E293B7A26</string>
+				<string>2019E88F5EDA689599E01366C30087AD</string>
+				<string>B40D853AD52ACB98F1C2D0D60A988561</string>
+				<string>26C9967D3E82CB12CD88A26329600F6E</string>
+				<string>D5F5502E31B92D0F0FF7A0D43E8ED8CD</string>
+				<string>E07B0B2BF5246EB206433374DEFCE68F</string>
+				<string>48D0397391009A24265A5FEE06D16F89</string>
+				<string>7C8AA1C87BF89C4D6142967CA426F23E</string>
+				<string>9EDC676FBB4296DB4C630B5E78379EBE</string>
+				<string>F0ECD62C46A02D8138358FBAB1B38285</string>
+				<string>CA9124BD236AE4D0D64EFC021D5BB391</string>
+				<string>25879B45F1221FB152C8E2F32B83DCB5</string>
+				<string>36619180DB22B571E2199B3C6CDD67A4</string>
+				<string>DA4FD8E31F32DAE00AFCA3A9CE81C160</string>
+				<string>F2E74DE0C5E277FAC2E75CCC8984885B</string>
+				<string>234C2E7FADD37FC3783F9BFF305828A6</string>
+				<string>5FBBB08F482C2EF8829D937D432DB0AA</string>
+				<string>2CCA94476E3333C634E936EC9EECA2AE</string>
+				<string>6B57EDA175E804981EC3D12739F147AB</string>
+				<string>800936DF4B2EC8E094396520F049EF4B</string>
+				<string>13BFB81E9AE9A8BC5760E75496D1DFFC</string>
+				<string>F7363F8CD1B8E2BF8206ED43F350E8EF</string>
+				<string>B11D68E5BDAE86CBFC18CB1AC362CCD0</string>
+				<string>A43281AE7F5ED34889BF39E8FA61D6F5</string>
+				<string>016794C2166A998F5DCD79812840EF65</string>
+				<string>DCC24130D18B2F14E77408A89E3FF34A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FE1942CC76C78C04376997A22C1DDE29</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>4E4F561F5D33BDCF3053AACDA94E624E</string>
+				<string>70C449598983010F137CCD9AC8CE3BCA</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>FEDE5B67B4C74086E15CA7BCAA26A666</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D4C581522222734865A3403552E044DA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>5069C7C03228600E179028734BF762CF</string>
+</dict>
+</plist>

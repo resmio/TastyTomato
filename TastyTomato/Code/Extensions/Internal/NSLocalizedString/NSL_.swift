@@ -9,12 +9,12 @@
 import Foundation
 
 
-// MARK: // Public
-public func NSL_(key: String) -> String {
+// MARK: // Internal
+func NSL_(key: String) -> String {
     return NSLocalizedString(
         key,
         tableName: nil,
-        bundle: _TastyTomatoBundle_,
+        bundle: BundleHelper_.LocalizationBundle,
         value: "",
         comment: ""
     )

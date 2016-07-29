@@ -38,7 +38,7 @@ private extension FilledButton {
     
     private static func _SignInButton() -> FilledButton {
         let signInButton: FilledButton = self._SignInAndSelectFacilityButton()
-        signInButton.setTitle(NSL_("Sign In"), forState: .Normal)
+        signInButton.setTitle(NSL_("Sign in"), forState: .Normal)
         return signInButton
     }
     
