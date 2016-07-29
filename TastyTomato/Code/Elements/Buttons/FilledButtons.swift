@@ -38,13 +38,13 @@ private extension FilledButton {
     
     private static func _SignInButton() -> FilledButton {
         let signInButton: FilledButton = self._SignInAndSelectFacilityButton()
-        signInButton.setTitle(NSLocalizedString("Sign In", comment: ""), forState: .Normal)
+        signInButton.setTitle(NSL_("Sign In"), forState: .Normal)
         return signInButton
     }
     
     private static func _SelectFacilityButton() -> FilledButton {
         let selectButton: FilledButton = self._SignInAndSelectFacilityButton()
-        selectButton.setTitle(NSLocalizedString("Select", comment: ""), forState: .Normal)
+        selectButton.setTitle(NSL_("Select"), forState: .Normal)
         return selectButton
     }
 }

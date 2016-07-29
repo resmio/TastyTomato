@@ -20,7 +20,6 @@ Pod::Spec.new do |s|
     :tag => "v#{s.version}"
   }
   s.source_files = "TastyTomato/**/*.swift"
-  s.ios.resource_bundle = {'TastyTomato' => ['TastyTomato/Resources/**/*.{png}']}
-  s.resources = 'TastyTomato/Resources/**/*.{xcassets}'
+  s.ios.resource_bundle = {'TastyTomato' => ['**/*.{xcassets}', '**/*.{png}', '**/Localizations/*.lproj']}
   s.public_header_files = []
 end
