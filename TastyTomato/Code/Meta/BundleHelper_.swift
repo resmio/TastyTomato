@@ -16,10 +16,8 @@ class BundleHelper_ {
 
     // MARK: Resource-Bundles
     static let LocalizationBundle: NSBundle = NSBundle(path: _localizationBundlePath)!
-    static let ImageBundle: NSBundle = NSBundle(path: _imageBundlePath)!
     
     // MARK: // Private
     // MARK: Resource-Bundle Paths
     private static let _localizationBundlePath: String = TastyTomatoBundle.pathForResource("TTLocalizations", ofType: "bundle")!
-    private static let _imageBundlePath: String = TastyTomatoBundle.pathForResource("TTImageAssets", ofType: "bundle")!
 }

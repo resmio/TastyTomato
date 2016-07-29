@@ -12,7 +12,7 @@ import UIKit
 // MARK: // Internal
 // MARK: Image With Suffix
 extension UIImage {
-    class func imageNamed_(name: String, inBundle bundle: NSBundle = BundleHelper_.ImageBundle) -> Self {
+    class func imageNamed_(name: String, inBundle bundle: NSBundle = BundleHelper_.TastyTomatoBundle) -> Self {
         return self._imageNamed(name, inBundle: bundle)
     }
     
