@@ -140,6 +140,7 @@
 			<key>children</key>
 			<array>
 				<string>5E5A9D6B1D3D37420023DCAC</string>
+				<string>5EC5D9181D4B4E3A00116548</string>
 				<string>9999FCCB3A774D4E83A754E53EFE8B64</string>
 				<string>5E5459D51D42448100B31DDD</string>
 				<string>5EC5D9051D4A41C000116548</string>
@@ -185,7 +186,7 @@
 				<string>5EC5D8DE1D4A109700116548</string>
 				<string>5E0C7FE11D4A04E40022679A</string>
 				<string>5E0C7FDE1D4A03FF0022679A</string>
-				<string>5EC5D9001D4A3EF700116548</string>
+				<string>5EC5D9171D4A6F2600116548</string>
 				<string>5E5A9D631D3D32470023DCAC</string>
 				<string>5E12DCAC1D4659F7005CF037</string>
 				<string>5EC5D8E31D4A11F000116548</string>
@@ -227,6 +228,7 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>5EC5D9001D4A3EF700116548</string>
 				<string>5E5A9D641D3D32510023DCAC</string>
 				<string>5EE86DA11D3E258100E786EF</string>
 			</array>
@@ -465,6 +467,7 @@
 			<key>children</key>
 			<array>
 				<string>5E0C7FD01D4918340022679A</string>
+				<string>5EC5D9131D4A5D1400116548</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1276,6 +1279,8 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
+			<key>name</key>
+			<string>UIButton</string>
 			<key>path</key>
 			<string>UIButton</string>
 			<key>sourceTree</key>
@@ -1290,7 +1295,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
 			<key>path</key>
-			<string>UIButton (SetColor).swift</string>
+			<string>UIButton (Color_).swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1466,6 +1471,138 @@
 		<dict>
 			<key>fileRef</key>
 			<string>5EC5D9111D4A550B00116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D9131D4A5D1400116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>FilledButton.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9141D4A5D1400116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D9131D4A5D1400116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D9151D4A6DDE00116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>UIButton (Color).swift</string>
+			<key>path</key>
+			<string>UIButton (Color).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9161D4A6DDE00116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D9151D4A6DDE00116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D9171D4A6F2600116548</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5EC5D9151D4A6DDE00116548</string>
+				<string>5EC5D9201D4B555C00116548</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>UIButton</string>
+			<key>path</key>
+			<string>UIButton</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9181D4B4E3A00116548</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5EC5D91C1D4B4F0500116548</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Elements</string>
+			<key>path</key>
+			<string>Elements</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D91A1D4B4E9100116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>FilledButtons.swift</string>
+			<key>path</key>
+			<string>FilledButtons.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D91B1D4B4E9100116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D91A1D4B4E9100116548</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EC5D91C1D4B4F0500116548</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5EC5D91A1D4B4E9100116548</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Buttons</string>
+			<key>path</key>
+			<string>Buttons</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9201D4B555C00116548</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>UIButton (SetTitle).swift</string>
+			<key>path</key>
+			<string>UIButton (SetTitle).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EC5D9211D4B555C00116548</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EC5D9201D4B555C00116548</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1943,14 +2080,17 @@
 				<string>5EC5D8F71D4A365000116548</string>
 				<string>5E12DCA81D46586E005CF037</string>
 				<string>5EE86DA51D3E2A0200E786EF</string>
+				<string>5EC5D9161D4A6DDE00116548</string>
 				<string>5EE86DA31D3E259700E786EF</string>
 				<string>5EC5D8E21D4A10F400116548</string>
 				<string>5EC5D8E51D4A121200116548</string>
 				<string>5E0C7FE01D4A04180022679A</string>
 				<string>59B3496C43BEDE81BF4654D802BF6DB8</string>
+				<string>5EC5D91B1D4B4E9100116548</string>
 				<string>5EE86DA01D3E24C100E786EF</string>
 				<string>5E0C7FDB1D4A02EE0022679A</string>
 				<string>5EC5D8E71D4A125E00116548</string>
+				<string>5EC5D9141D4A5D1400116548</string>
 				<string>5E0C7FD91D49FF320022679A</string>
 				<string>5EC5D8F11D4A310400116548</string>
 				<string>5EC5D8E01D4A10AD00116548</string>
@@ -1965,6 +2105,7 @@
 				<string>5EC5D8DD1D4A0A6200116548</string>
 				<string>5EC5D90A1D4A426F00116548</string>
 				<string>5EC5D9041D4A3FF800116548</string>
+				<string>5EC5D9211D4B555C00116548</string>
 				<string>5EC5D8EC1D4A2F7700116548</string>
 				<string>5E0C7FDD1D4A037B0022679A</string>
 			</array>

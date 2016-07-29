@@ -10,10 +10,14 @@ import Foundation
 
 
 // MARK: // Public
-// MARK: Static Instances
+// MARK: Global
 public extension Grid {
     public static var GlobalGrid: Grid {
         return self._GlobalGrid
+    }
+    
+    public static var globalUnitSideLength: CGFloat {
+        return self.GlobalGrid.unitSideLength
     }
 }
 
@@ -30,22 +34,13 @@ public extension Grid {
         }
     }
     
-    public var unitSideLength: CGFloat {
-        get {
-            return self._unitSideLength
-        }
-        set(newUnitSideLength) {
-            self._unitSideLength = newUnitSideLength
-        }
-    }
-    
     // ReadOnly
-    public var hUnits: CGFloat {
-        return self._hUnits
+    public var columns: Int {
+        return self._columns
     }
     
-    public var vUnits: CGFloat {
-        return self._vUnits
+    public var unitSideLength: CGFloat {
+        return self._unitSideLength
     }
 }
 
@@ -61,7 +56,7 @@ public class Grid: AnyObject {
     
     // Private Variable Stored Properties
     private var _frame: CGRect
-    private var _unitSideLength: CGFloat = 10
+    private var _columns: Int = 16
 }
 
 
@@ -80,11 +75,7 @@ private extension Grid {
 
 // MARK: Computed Variables
 private extension Grid {
-    private var _hUnits: CGFloat {
-        return self.frame.width / self._unitSideLength
-    }
-    
-    private var _vUnits: CGFloat {
-        return self.frame.height / self._unitSideLength
+    private var _unitSideLength: CGFloat {
+        return self._frame.width / self.columns
     }
 }

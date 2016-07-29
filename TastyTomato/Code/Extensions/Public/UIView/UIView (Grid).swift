@@ -19,6 +19,24 @@ public extension UIView {
             self._sizeInGlobalGrid = newSizeInGlobalGrid
         }
     }
+    
+    public var widthInGlobalUnits: CGFloat {
+        get {
+            return self._widthInGlobalUnits
+        }
+        set(newWidthInGlobalUnits) {
+            self._widthInGlobalUnits = newWidthInGlobalUnits
+        }
+    }
+    
+    public var heightInGlobalUnits: CGFloat {
+        get {
+            return self._heightInGlobalUnits
+        }
+        set(newHeightInGlobalUnits) {
+            self._heightInGlobalUnits = newHeightInGlobalUnits
+        }
+    }
 }
 
 
@@ -26,16 +44,34 @@ public extension UIView {
 private extension UIView {
     private var _sizeInGlobalGrid: SizeInGrid {
         get {
-            let unitSideLength: CGFloat = Grid.GlobalGrid.unitSideLength
+            let unitSideLength: CGFloat = Grid.globalUnitSideLength
             let width: CGFloat = self.width / unitSideLength
             let height: CGFloat = self.height / unitSideLength
             return CGSize(width: width, height: height)
         }
         set(newSizeInGlobalGrid) {
-            let unitSideLength: CGFloat = Grid.GlobalGrid.unitSideLength
+            let unitSideLength: CGFloat = Grid.globalUnitSideLength
             let width: CGFloat = newSizeInGlobalGrid.width * unitSideLength
             let height: CGFloat = newSizeInGlobalGrid.height * unitSideLength
             self.size = CGSize(width: width, height: height)
+        }
+    }
+    
+    private var _widthInGlobalUnits: CGFloat {
+        get {
+            return self.width / Grid.globalUnitSideLength
+        }
+        set(newWidthInGlobalUnits) {
+            self.width = newWidthInGlobalUnits * Grid.globalUnitSideLength
+        }
+    }
+    
+    private var _heightInGlobalUnits: CGFloat {
+        get {
+            return self.height / Grid.globalUnitSideLength
+        }
+        set(newHeightInGlobalUnits) {
+            self.height = newHeightInGlobalUnits * Grid.globalUnitSideLength
         }
     }
 }

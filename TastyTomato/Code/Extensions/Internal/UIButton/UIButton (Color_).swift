@@ -1,5 +1,5 @@
 //
-//  UIButton (SetColor).swift
+//  UIButton (Color_).swift
 //  TastyTomato
 //
 //  Created by Jan Nash on 7/28/16.
@@ -9,9 +9,9 @@
 import UIKit
 
 
-// MARK: // Public
-public extension UIButton {
-    public func setColor(color: UIColor, forState state: UIControlState) {
+// MARK: // Internal
+extension UIButton {
+    func setColor_(color: UIColor, forState state: UIControlState) {
         self._setColor(color, forState: state)
     }
 }
@@ -20,7 +20,7 @@ public extension UIButton {
 // MARK: // Private
 private extension UIButton {
     private func _setColor(color: UIColor, forState state: UIControlState) {
-        let image: UIImage = UIImage.coloredRect(size: self.size, color: color)
+        let image: UIImage? = UIImage.coloredRect(size: self.size, color: color)
         self.setBackgroundImage(image, forState: state)
     }
 }

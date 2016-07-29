@@ -9,14 +9,27 @@
 import UIKit
 
 
-//class BaseButton: UIButton {
-//    // Required Init
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("BaseButton does not support NSCoding")
-//    }
-//    
-//    // Init
-//    init() {
-//        
-//    }
-//}
+// MARK: // Public
+// MARK: Class Declaration
+public class BaseButton: UIButton {}
+
+
+// MARK: // Internal
+// MARK: Factory
+extension BaseButton {
+    class func button_<T: BaseButton>() -> T {
+        return self._button()
+    }
+}
+
+
+// MARK: // Private
+// MARK: Factory
+private extension BaseButton {
+    private static func _button<T: BaseButton>() -> T {
+        let button = T.init(type: .System)
+        button.layer.cornerRadius = 5
+        button.clipsToBounds = true
+        return button
+    }
+}
