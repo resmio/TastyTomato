@@ -28,7 +28,7 @@ extension BaseButton {
 private extension BaseButton {
     private static func _button<T: BaseButton>() -> T {
         let button = T.init(type: .System)
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 4
         button.clipsToBounds = true
         return button
     }

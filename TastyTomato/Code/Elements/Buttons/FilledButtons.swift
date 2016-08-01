@@ -30,8 +30,8 @@ private extension FilledButton {
         button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         button.titleLabel!.font = UIFont.systemFontOfSize(16)
         
-        button.heightInGlobalUnits = 0.7
-        button.widthInGlobalUnits = 5.1
+        button.height = 44
+        button.width = 326
         
         return button
     }
