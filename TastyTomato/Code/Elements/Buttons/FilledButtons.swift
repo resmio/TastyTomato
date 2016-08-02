@@ -31,7 +31,7 @@ private extension FilledButton {
         button.titleLabel!.font = UIFont.systemFontOfSize(16)
         
         button.height = 44
-        button.width = 326
+        button.width = 330
         
         return button
     }
