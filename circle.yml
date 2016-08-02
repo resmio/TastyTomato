@@ -7,9 +7,5 @@ machine:
     version: "7.3"
 
 test:
-  override:
-    - xcodebuild
-      -workspace TastyTomato.xcworkspace
-      -scheme "TastyTomato"
-      -destination 'platform=iOS Simulator,name=iPad Air,OS=latest'
-      clean build test
+  pre:
+    - open -b com.apple.iphonesimulator
