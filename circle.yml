@@ -6,6 +6,6 @@ machine:
   xcode:
     version: "7.3"
 
-test:
-  pre:
-    - open -b com.apple.iphonesimulator
+#test:
+#  pre:
+#    - open -b com.apple.iphonesimulator
