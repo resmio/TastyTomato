@@ -54,7 +54,6 @@ private extension TextButton {
         set(newUnderlined) {
             if self.__underlined != newUnderlined {
                 self.__underlined = newUnderlined
-                
                 self._updateTitleUnderlining()
             }
         }
