@@ -606,6 +606,7 @@
 			<key>children</key>
 			<array>
 				<string>81E4DAC46F44F11E680BCD87739D7F33</string>
+				<string>5E789EBC1D748AED000F2F74</string>
 				<string>C6D1E0700C3D6AA99916DFFC5EFB923E</string>
 				<string>AAD496374D60FA3D83572E9051E49F30</string>
 				<string>A3AB6252EFF7C31DBE40BB1578EF32AC</string>
@@ -944,6 +945,41 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>5E789EBC1D748AED000F2F74</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5E789EBD1D748B05000F2F74</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>CustomViews</string>
+			<key>path</key>
+			<string>CustomViews</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E789EBD1D748B05000F2F74</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TagView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E789EBE1D748B05000F2F74</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E789EBD1D748B05000F2F74</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>5E78C5F21D70535400F8C614</key>
 		<dict>
 			<key>children</key>
@@ -1006,8 +1042,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>TextViewClasses</string>
 			<key>path</key>
 			<string>TextViewClasses</string>
 			<key>sourceTree</key>
@@ -1021,8 +1055,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>BaseTextView.swift</string>
 			<key>path</key>
 			<string>BaseTextView.swift</string>
 			<key>sourceTree</key>
@@ -2357,6 +2389,7 @@
 				<string>FEDE5B67B4C74086E15CA7BCAA26A666</string>
 				<string>84BB5378D9A297B753E679DBE872A69A</string>
 				<string>5E78C5F91D74753800F8C614</string>
+				<string>5E789EBE1D748B05000F2F74</string>
 				<string>5E78C5F41D7053B800F8C614</string>
 				<string>A3A6206717A979DB2D2801A8B8D6F67A</string>
 				<string>AA722217EC3B0D09B4E3E43283C98EA6</string>
