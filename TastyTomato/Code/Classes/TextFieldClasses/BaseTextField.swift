@@ -33,7 +33,7 @@ private extension BaseTextField {
         self.layer.borderColor = UIColor.GrayDDDDDD().CGColor
         self.clipsToBounds = true
         
-        let leftPaddingViewSize: CGSize = CGSize(width: 15, height: 1)
+        let leftPaddingViewSize: CGSize = CGSize(width: 10, height: 1)
         self.leftView = UIView(size: leftPaddingViewSize)
         self.leftViewMode = .Always
         

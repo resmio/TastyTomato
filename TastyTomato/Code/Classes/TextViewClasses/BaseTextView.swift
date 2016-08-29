@@ -33,7 +33,7 @@ private extension BaseTextView {
         self.layer.borderColor = UIColor.GrayDDDDDD().CGColor
         self.clipsToBounds = true
         
-        self.contentInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
+        self.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
         self.font = UIFont.systemFontOfSize(17)
         self.textColor = UIColor.Gray555555()
