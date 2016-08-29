@@ -74,7 +74,7 @@ public class DropDownTextField: UIView {
     }
     
     // Init
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self._setupSubviews()
     }
@@ -117,6 +117,7 @@ extension DropDownTextField: UITextFieldDelegate {
     public func textFieldDidBeginEditing(textField: UITextField) {
         if self._shouldShowDropDown() {
             self.showDropDown(true)
+            self._textField.layer.borderColor = UIColor.Blue00A7C4().CGColor
         }
         self.delegate?.dropDownTextFieldDidBeginEditing?(self)
     }
@@ -124,6 +125,7 @@ extension DropDownTextField: UITextFieldDelegate {
     public func textFieldDidEndEditing(textField: UITextField) {
         if self._shouldHideDropDown() {
             self.hideDropDown(true)
+            self._textField.layer.borderColor = UIColor.GrayDDDDDD().CGColor
         }
         self.delegate?.dropDownTextFieldDidEndEditing?(self)
     }
@@ -142,7 +144,8 @@ extension DropDownTextField: UITableViewDataSource {
         let identifier: String = "identifier"
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier) ?? UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: identifier)
         cell.size = self.size
-        cell.textLabel?.text = "\(indexPath)"
+        cell.textLabel?.text = "\(indexPath.row)"
+        cell.backgroundColor = UIColor.whiteColor()
         
         return cell
     }
@@ -175,7 +178,7 @@ private extension DropDownTextField {
     }
     
     private func _setupTextField() {
-        let textField: BaseTextField = BaseTextField.textField_()
+        let textField: BaseTextField = BaseTextField()
         textField.frame = self.bounds
         textField.delegate = self
         
@@ -192,12 +195,15 @@ private extension DropDownTextField {
     private func _setupTableView() {
         let tableView: UITableView = UITableView()
         tableView.width = self.width
-        tableView.top = self.bottom - self._textField.layer.cornerRadius
+        tableView.top = self.height - self._textField.layer.cornerRadius
+        
+        tableView.layer.zPosition = CGFloat.max
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.layer.borderColor = UIColor.Blue00A7C4().CGColor
         tableView.layer.borderWidth = 1
+        tableView.backgroundColor = UIColor.whiteColor()
         
         self._tableView = tableView
         self.addSubview(tableView)
@@ -223,6 +229,7 @@ private extension DropDownTextField {
     private func _showDropDown(show: Bool, animated: Bool) {
         if show {
             self._tableView.reloadData()
+            self.superview?.bringSubviewToFront(self)
         }
         
         UIView.animateWithDuration(animated ? 0.3 : 0) {
