@@ -25,15 +25,6 @@ public extension TagView {
             self._delegate = newDelegate
         }
     }
-    
-    public var name: String? {
-        get {
-            return self._name
-        }
-        set(newName) {
-            self._name = newName
-        }
-    }
 }
 
 
@@ -47,7 +38,7 @@ public class TagView: UIView {
     // Init
     public init(name: String) {
         super.init(frame: CGRectZero)
-        self._name = name
+        self._label.text = name
         
         self._setup()
         self._setupSubviews()
@@ -114,20 +105,6 @@ extension TagView {
 
 
 // MARK: // Private
-// MARK: Computed Properties
-private extension TagView {
-    private var _name: String? {
-        get {
-            return self._label.text
-        }
-        set(newName) {
-            self._label.text = newName
-            self.setNeedsLayout()
-        }
-    }
-}
-
-
 // MARK: Setup Layer
 private extension TagView {
     private func _setup() {
