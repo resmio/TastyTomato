@@ -57,10 +57,11 @@ public class TagView: UIView {
     
     // Private Constant Stored Properties
     private let _color: UIColor = UIColor.YellowF8C150()
-    private let _backgroundAlpha: CGFloat = 0.2
+    private let _backgroundAlpha: CGFloat = 0.1
     private let _label: UILabel = UILabel()
     private let _verticalInset: CGFloat = 8
     private let _horizontalSpacing: CGFloat = 10
+    private let _fontSize: CGFloat = 16
     
     // Private Variable Stored Properties
     private weak var _delegate: TagViewDelegate?
@@ -127,7 +128,7 @@ private extension TagView {
     }
     
     private func _setupLabel() {
-        self._label.font = UIFont.systemFontOfSize(17)
+        self._label.font = UIFont.systemFontOfSize(self._fontSize)
         self._label.textColor = UIColor.Gray555555()
         self._label.sizeToFit()
         
@@ -145,7 +146,7 @@ private extension TagView {
     
     private func _setupDeleteButton() {
         let deleteIcon: UIImage = MiscIcon.X.asTemplate()
-        let sideLength: CGFloat = self._label.height - 2
+        let sideLength: CGFloat = self._label.height * 0.8
         let scaledDeleteIcon: UIImage = deleteIcon.scaledToSize(CGSize(width: sideLength, height: sideLength))
         
         let deleteButtonSideLength: CGFloat = self.height
