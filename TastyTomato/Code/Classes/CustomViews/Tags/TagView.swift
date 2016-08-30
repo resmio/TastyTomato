@@ -57,10 +57,13 @@ public class TagView: UIView {
     
     // Private Constant Stored Properties
     private let _backgroundAlpha: CGFloat = 0.1
-    private let _label: UILabel = UILabel()
-    private let _verticalInset: CGFloat = 8
     private let _horizontalSpacing: CGFloat = 10
+    private let _height: CGFloat = 35.5
+    private let _leftBannerWidth: CGFloat = 8
+    private let _label: UILabel = UILabel()
+    private let _labelHeight: CGFloat = 20
     private let _fontSize: CGFloat = 16
+    private let _deleteIconSideLength: CGFloat = 15
     
     // Private Variable Stored Properties
     private weak var _delegate: TagViewDelegate?
@@ -76,9 +79,10 @@ public class TagView: UIView {
 public extension TagView {
     public override func layoutSubviews() {
         self._label.sizeToFit()
-        self._adjustWidth()
+        self._label.height = self._labelHeight
         self._label.left = self._leftBannerView.right + self._horizontalSpacing
         self._deleteButton.left = self._label.right
+        self._adjustWidth()
     }
 }
 
@@ -118,6 +122,7 @@ private extension TagView {
         }
         set(newName) {
             self._label.text = newName
+            self.setNeedsLayout()
         }
     }
 }
@@ -130,9 +135,10 @@ private extension TagView {
         
         self.layer.cornerRadius = 4
         self.layer.borderWidth = 1
-        self.layer.borderColor = self._color.CGColor
         
-        self.backgroundColor = self._color.withAlpha(self._backgroundAlpha)
+        self._resetColor()
+        
+        self.height = self._height
     }
 }
 
@@ -148,27 +154,33 @@ private extension TagView {
     private func _setupLabel() {
         self._label.font = UIFont.systemFontOfSize(self._fontSize)
         self._label.textColor = UIColor.Gray555555()
-        self._label.sizeToFit()
+        self._label.height = self._labelHeight
         
-        self.height = self._label.height + (2 * self._verticalInset)
         self.addSubview(self._label)
     }
     
     private func _setupLeftBannerView() {
-        let leftBannerView: UIView = UIView(size: CGSize(width: 8, height: self.height))
+        let leftBannerView: UIView = UIView(size:
+            CGSize(width: self._leftBannerWidth, height: self.height)
+        )
+        
         leftBannerView.backgroundColor = self._color
         
         self._leftBannerView = leftBannerView
-        self.addSubview(self._leftBannerView)
+        self.addSubview(leftBannerView)
     }
     
     private func _setupDeleteButton() {
         let deleteIcon: UIImage = MiscIcon.X.asTemplate()
-        let sideLength: CGFloat = self._label.height * 0.8
-        let scaledDeleteIcon: UIImage = deleteIcon.scaledToSize(CGSize(width: sideLength, height: sideLength))
+        let scaledDeleteIcon: UIImage = deleteIcon.scaledToSize(
+            CGSize(width: self._deleteIconSideLength, height: self._deleteIconSideLength)
+        )
         
         let deleteButtonSideLength: CGFloat = self.height
-        let deleteButton: UIButton = UIButton(size: CGSize(width: deleteButtonSideLength, height: deleteButtonSideLength))
+        let deleteButton: UIButton = UIButton(size:
+            CGSize(width: deleteButtonSideLength, height: deleteButtonSideLength)
+        )
+        
         deleteButton.setImage(
             scaledDeleteIcon,
             forState: .Normal
@@ -192,7 +204,17 @@ private extension TagView {
         )
         
         self._deleteButton = deleteButton
-        self.addSubview(self._deleteButton)
+        self.addSubview(deleteButton)
+    }
+}
+
+
+// MARK: Center Views Vertically
+private extension TagView {
+    private func _centerViews() {
+        self._leftBannerView.centerVInSuperview()
+        self._label.centerVInSuperview()
+        self._deleteButton.centerVInSuperview()
     }
 }
 
@@ -200,17 +222,12 @@ private extension TagView {
 // MARK: Adjust Width
 private extension TagView {
     private func _adjustWidth() {
-        self.width = self._leftBannerView.width + self._horizontalSpacing + self._label.width + self._deleteButton.width
-    }
-}
-
-
-// MARK: Center Views
-private extension TagView {
-    private func _centerViews() {
-        self._leftBannerView.centerVInSuperview()
-        self._label.centerVInSuperview()
-        self._deleteButton.centerVInSuperview()
+        self.width = (
+            self._leftBannerView.width +
+            self._horizontalSpacing +
+            self._label.width +
+            self._deleteButton.width
+        )
     }
 }
 
