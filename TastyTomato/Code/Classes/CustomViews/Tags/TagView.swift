@@ -56,7 +56,6 @@ public class TagView: UIView {
     }
     
     // Private Constant Stored Properties
-    private let _color: UIColor = UIColor.YellowF8C150()
     private let _backgroundAlpha: CGFloat = 0.1
     private let _label: UILabel = UILabel()
     private let _verticalInset: CGFloat = 8
@@ -68,6 +67,8 @@ public class TagView: UIView {
     
     private var _leftBannerView: UIView!
     private var _deleteButton: UIButton!
+    
+    private var _color: UIColor = UIColor.YellowF8C150()
 }
 
 
@@ -83,10 +84,27 @@ public extension TagView {
 
 
 // MARK: // Internal
-// MARK: Delete Button Target Selector
+// MARK: Delete Button Target Selectors
 extension TagView {
     func deleteButtonTapped_() {
         self.delegate?.tagViewDeleteButtonTapped(self)
+        self._resetColor()
+    }
+    
+    func deleteButtonTouchDown_() {
+        self._setColor(UIColor.RedE62C4F())
+    }
+}
+
+
+// MARK: Set / Reset Color
+extension TagView {
+    func setColor_(color: UIColor, temporary: Bool) {
+        self._setColor(color, temporary: temporary)
+    }
+    
+    func resetColor_() {
+        self._resetColor()
     }
 }
 
@@ -161,6 +179,16 @@ private extension TagView {
             action: #selector(deleteButtonTapped_),
             forControlEvents: .TouchUpInside
         )
+        deleteButton.addTarget(
+            self,
+            action: #selector(deleteButtonTouchDown_),
+            forControlEvents: .TouchDown
+        )
+        deleteButton.addTarget(
+            self,
+            action: #selector(resetColor_),
+            forControlEvents: .TouchUpOutside
+        )
         
         self._deleteButton = deleteButton
         self.addSubview(self._deleteButton)
@@ -182,5 +210,22 @@ private extension TagView {
         self._leftBannerView.centerVInSuperview()
         self._label.centerVInSuperview()
         self._deleteButton.centerVInSuperview()
+    }
+}
+
+
+// MARK: Set Color
+private extension TagView {
+    private func _setColor(color: UIColor, temporary: Bool = true) {
+        self.backgroundColor = color.withAlpha(self._backgroundAlpha)
+        self.layer.borderColor = color.CGColor
+        self._leftBannerView.backgroundColor = color
+        if !temporary {
+            self._color = color
+        }
+    }
+    
+    private func _resetColor() {
+        self.setColor_(self._color, temporary: false)
     }
 }
