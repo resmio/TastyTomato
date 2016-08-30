@@ -949,15 +949,34 @@
 			<key>children</key>
 			<array>
 				<string>5E789EBD1D748B05000F2F74</string>
+				<string>5E789EC01D757A23000F2F74</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Tags</string>
 			<key>path</key>
 			<string>Tags</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E789EC01D757A23000F2F74</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TagsView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E789EC11D757A23000F2F74</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E789EC01D757A23000F2F74</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>5E78C5F21D70535400F8C614</key>
 		<dict>
@@ -2342,6 +2361,7 @@
 				<string>42BB16D84A350E14BE177DA60F5977A0</string>
 				<string>5E78C5F61D70645500F8C614</string>
 				<string>EA4C422FDA23A2D7DDF931EF8A605544</string>
+				<string>5E789EC11D757A23000F2F74</string>
 				<string>48D0397391009A24265A5FEE06D16F89</string>
 				<string>7C8AA1C87BF89C4D6142967CA426F23E</string>
 				<string>9EDC676FBB4296DB4C630B5E78379EBE</string>
