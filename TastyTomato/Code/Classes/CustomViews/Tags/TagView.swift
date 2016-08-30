@@ -31,7 +31,7 @@ public extension TagView {
 // MARK: Class Declaration
 public class TagView: UIView {
     // Required Init
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("TagView does not support NSCoding")
     }
     
@@ -40,10 +40,11 @@ public class TagView: UIView {
         super.init(frame: CGRectZero)
         self._label.text = name
         
-        self._setup()
+        self._setupLayer()
         self._setupSubviews()
         self._adjustWidth()
         self._centerViews()
+        self._resetColor()
     }
     
     // Private Constant Stored Properties
@@ -107,13 +108,11 @@ extension TagView {
 // MARK: // Private
 // MARK: Setup Layer
 private extension TagView {
-    private func _setup() {
+    private func _setupLayer() {
         self.clipsToBounds = true
         
         self.layer.cornerRadius = 4
         self.layer.borderWidth = 1
-        
-        self._resetColor()
         
         self.height = self._height
     }
