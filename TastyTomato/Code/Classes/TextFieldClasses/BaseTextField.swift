@@ -17,8 +17,8 @@ public class BaseTextField: UITextField {
         self._setup()
     }
     
-    public convenience init() {
-        self.init()
+    public init() {
+        super.init(frame: CGRectZero)
         self._setup()
     }
 }
