@@ -45,7 +45,13 @@ public class TagsView: UIView {
 }
 
 
-// MARK: // Internal
+// MARK: Layout Subviews Override
+extension TagsView {
+    public override func layoutSubviews() {
+        self._scrollView.size = self.size
+        self._rearrangeTagViewsStartingFromIndex(0)
+    }
+}
 
 
 // MARK: // Private
