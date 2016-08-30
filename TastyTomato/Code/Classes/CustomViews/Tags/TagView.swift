@@ -174,6 +174,7 @@ private extension TagView {
             forState: .Normal
         )
         deleteButton.tintColor = UIColor.Gray555555()
+        
         deleteButton.addTarget(
             self,
             action: #selector(deleteButtonTapped_),
@@ -187,7 +188,7 @@ private extension TagView {
         deleteButton.addTarget(
             self,
             action: #selector(resetColor_),
-            forControlEvents: .TouchUpOutside
+            forControlEvents: .TouchDragExit
         )
         
         self._deleteButton = deleteButton
