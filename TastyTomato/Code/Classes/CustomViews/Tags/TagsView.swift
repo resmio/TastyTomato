@@ -46,6 +46,7 @@ public class TagsView: UIView {
     
     // Private Constant Stored Properties
     private let _interItemSpacing: CGFloat = 5
+    private let _interItemSpacing: CGFloat = 8
     
     // Private Variable Stored Properties
     private var _scrollView: UIScrollView!
