@@ -42,14 +42,17 @@ public class TagsView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self._setupScrollView()
+        self._setupGradientLayer()
     }
     
     // Private Constant Stored Properties
-    private let _interItemSpacing: CGFloat = 5
     private let _interItemSpacing: CGFloat = 8
+    private let _gradientHeight: CGFloat = 20
     
     // Private Variable Stored Properties
     private var _scrollView: UIScrollView!
+    private var _gradientLayer: CAGradientLayer!
+    
     private var _tagViews: [TagView] = []
 }
 
@@ -60,6 +63,7 @@ extension TagsView {
         self._scrollView.size = self.size
         self._rearrangeTagViewsStartingFromIndex(0, animated: false)
         self._updateScrollViewContentHeight()
+        self._updateGradientLayerFrame()
     }
 }
 
@@ -72,6 +76,22 @@ private extension TagsView {
         scrollView.contentSize = self.size
         self._scrollView = scrollView
         self.addSubview(scrollView)
+    }
+    
+    private func _setupGradientLayer() {
+        let white: UIColor = UIColor.whiteColor()
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame.size.height = self._gradientHeight
+        gradient.colors = [white.withAlpha(0).CGColor, white.CGColor]
+        self._gradientLayer = gradient
+        self.layer.addSublayer(gradient)
+        
+        self._updateGradientLayerFrame()
+    }
+    
+    private func _updateGradientLayerFrame() {
+        self._gradientLayer.frame.bottom = self.height
+        self._gradientLayer.frame.size.width = self.width
     }
 }
 
@@ -118,7 +138,7 @@ private extension TagsView {
     private func _updateScrollViewContentHeight() {
         if let lastTagView: TagView = self._tagViews.last {
             let height: CGFloat = max(lastTagView.bottom, self.height)
-            self._scrollView.contentSize.height = height
+            self._scrollView.contentSize.height = height + self._gradientHeight
         }
     }
 }
