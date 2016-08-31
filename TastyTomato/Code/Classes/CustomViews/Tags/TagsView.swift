@@ -57,7 +57,7 @@ public class TagsView: UIView {
 extension TagsView {
     public override func layoutSubviews() {
         self._scrollView.size = self.size
-        self._rearrangeTagViewsStartingFromIndex(0)
+        self._rearrangeTagViewsStartingFromIndex(0, animated: false)
         self._updateScrollViewContentHeight()
     }
 }
@@ -99,11 +99,16 @@ private extension TagsView {
         }
     }
     
-    private func _rearrangeTagViewsStartingFromIndex(index: Int) {
+    private func _rearrangeTagViewsStartingFromIndex(index: Int, animated: Bool) {
         let tagViews: [TagView] = Array(self._tagViews.suffixFrom(index))
         for tagView in tagViews {
             let newOrigin: CGPoint = self._originForTagView(tagView)
-            if newOrigin != tagView.origin {
+            if newOrigin == tagView.origin {
+                continue
+            }
+            
+            // TODO: Not sure if I like the animation... Let's see what Fabi says.
+            UIView.animateWithDuration(animated ? 0.3 : 0) {
                 tagView.origin = newOrigin
             }
         }
@@ -140,7 +145,7 @@ private extension TagsView {
         tagView.removeFromSuperview()
         let index: Int = self._tagViews.indexOf(tagView)!
         self._tagViews.removeAtIndex(index)
-        self._rearrangeTagViewsStartingFromIndex(index)
+        self._rearrangeTagViewsStartingFromIndex(index, animated: true)
         
         self._updateScrollViewContentHeight()
     }
