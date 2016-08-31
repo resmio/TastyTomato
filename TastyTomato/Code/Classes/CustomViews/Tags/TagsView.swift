@@ -17,8 +17,16 @@ public extension TagsView {
         self._addTagView(tagView)
     }
     
+    public func addTagViews(tagViews: [TagView]) {
+        self._addTagViews(tagViews)
+    }
+    
     public func removeTagView(tagView: TagView) {
         self._removeTagView(tagView)
+    }
+    
+    public func removeAllTagViews() {
+        self._removeAllTagViews()
     }
 }
 
@@ -50,6 +58,7 @@ extension TagsView {
     public override func layoutSubviews() {
         self._scrollView.size = self.size
         self._rearrangeTagViewsStartingFromIndex(0)
+        self._updateScrollViewContentHeight()
     }
 }
 
@@ -62,9 +71,6 @@ private extension TagsView {
         scrollView.contentSize = self.size
         self._scrollView = scrollView
         self.addSubview(scrollView)
-        
-        //
-        scrollView.backgroundColor = UIColor.Green22CCAA().withAlpha(0.2)
     }
 }
 
@@ -79,14 +85,13 @@ private extension TagsView {
         } else {
             let rightBorder: CGFloat = self.width
             let leftNeighbour: TagView = self._tagViews[index - 1]
-            let rightOfLeftNeighbour: CGFloat = (
+            let supposedLeft: CGFloat = (
                 leftNeighbour.right +
-                self._interItemSpacing +
-                tagView.width
+                self._interItemSpacing
             )
             
-            if rightOfLeftNeighbour < rightBorder {
-                return CGPoint(x: rightOfLeftNeighbour, y: leftNeighbour.top)
+            if supposedLeft + tagView.width <= rightBorder {
+                return CGPoint(x: supposedLeft, y: leftNeighbour.top)
             } else {
                 let y: CGFloat = leftNeighbour.bottom + self._interItemSpacing
                 return CGPoint(x: 0, y: y)
@@ -100,8 +105,6 @@ private extension TagsView {
             let newOrigin: CGPoint = self._originForTagView(tagView)
             if newOrigin != tagView.origin {
                 tagView.origin = newOrigin
-            } else {
-                break
             }
         }
     }
@@ -115,13 +118,20 @@ private extension TagsView {
 }
 
 
-// MARK: Add / Remove TagView
+// MARK: Add / Remove TagViews
 private extension TagsView {
     private func _addTagView(tagView: TagView) {
-        self._tagViews.append(tagView)
-        let origin: CGPoint = self._originForTagView(tagView)
-        tagView.origin = origin
-        self._scrollView.addSubview(tagView)
+        self._addTagViews([tagView])
+    }
+    
+    private func _addTagViews(tagViews: [TagView]) {
+        self._tagViews += tagViews
+        
+        for tagView in tagViews {
+            let origin: CGPoint = self._originForTagView(tagView)
+            tagView.origin = origin
+            self._scrollView.addSubview(tagView)
+        }
         
         self._updateScrollViewContentHeight()
     }
@@ -132,6 +142,14 @@ private extension TagsView {
         self._tagViews.removeAtIndex(index)
         self._rearrangeTagViewsStartingFromIndex(index)
         
+        self._updateScrollViewContentHeight()
+    }
+    
+    private func _removeAllTagViews() {
+        for tagView in self._tagViews {
+            tagView.removeFromSuperview()
+        }
+        self._tagViews = []
         self._updateScrollViewContentHeight()
     }
 }
