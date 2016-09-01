@@ -30,11 +30,14 @@ public class ShortcutBar: UIView {
     // Private Constant Stored Properties
     private let _scrollView: UIScrollView = UIScrollView()
     private let _toolBar: UIToolbar = UIToolbar()
+    private let _gradientLayer: CAGradientLayer = CAGradientLayer()
     
     // Layout
-    // That's just guessed and adjusted by trial and error...
+    // These two are guessed and adjusted by trial and error...
     private let _interItemSpacing: CGFloat = 10
     private let _itemPadding: CGFloat = 30
+    
+    private let _gradientLayerWidth: CGFloat = 20
     
     // Design
     private let _backgroundColor: UIColor = UIColor.LightKeyboardBackground()
@@ -70,7 +73,17 @@ private extension ShortcutBar {
     }
     
     private func _setupGradientLayer() {
+        let color: UIColor = self._backgroundColor
+        let origin: CGPoint = CGPoint(x: self.width - self._gradientLayerWidth)
+        let size: CGSize = CGSize(width: self._gradientLayerWidth, height: self.height)
         
+        let gradientLayer: CAGradientLayer = self._gradientLayer
+        gradientLayer.frame = CGRect(origin: origin, size: size)
+        gradientLayer.startPoint = CGPoint(y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        gradientLayer.colors = [color.withAlpha(0).CGColor, color.CGColor]
+        
+        self.layer.addSublayer(gradientLayer)
     }
 }
 
@@ -90,15 +103,18 @@ private extension ShortcutBar {
         let toolBar: UIToolbar = self._toolBar
         toolBar.setItems(items, animated: animated)
         
+        let isNarrowerOrSameWidth: Bool = cumulativeWidth <= self.width
         UIView.animateWithDuration(animated ? 0.3 : 0) {
             toolBar.width = cumulativeWidth
             self._scrollView.contentSize.width = cumulativeWidth
             
-            if cumulativeWidth < self.width {
+            if isNarrowerOrSameWidth {
                 toolBar.centerHInSuperview()
             } else {
                 toolBar.left = 0
             }
+            
+            self._gradientLayer.hidden = isNarrowerOrSameWidth
         }
     }
 }
