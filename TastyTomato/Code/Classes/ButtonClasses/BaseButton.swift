@@ -19,18 +19,44 @@ public extension BaseButton {
     @objc public static func Button() -> BaseButton {
         return self._button()
     }
+    
+    public var autoAdjustWidthOnTitleSet: Bool {
+        get {
+            return self._autoAdjustWidthOnTitleSet
+        }
+        set(newAutoAdjustWidthOnTitleSet) {
+            self._autoAdjustWidthOnTitleSet = newAutoAdjustWidthOnTitleSet
+        }
+    }
 }
 
 
 // MARK: Class Declaration
-public class BaseButton: UIButton {}
-
-
-// MARK: // Internal
-// MARK: Factory
-extension BaseButton {
+public class BaseButton: UIButton {
+    // // Internal
+    // Factory
     class func button_<T: BaseButton>() -> T {
         return self._button()
+    }
+    
+    // Private Constants Stored Properties
+    private let _horizontalPadding: CGFloat = 10
+    
+    // Private Variable Stored Properties
+    private var _autoAdjustWidthOnTitleSet: Bool = true
+}
+
+
+// MARK: Override
+extension BaseButton {
+    override public func setTitle(title: String) {
+        super.setTitle(title)
+        if self.autoAdjustWidthOnTitleSet {
+            let backupHeight: CGFloat = self.height
+            self.sizeToFit()
+            self.width += 2 * self._horizontalPadding
+            self.height = backupHeight
+        }
     }
 }
 

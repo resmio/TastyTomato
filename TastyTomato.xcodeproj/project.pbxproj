@@ -987,8 +987,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ShortcutBar</string>
 			<key>path</key>
 			<string>ShortcutBar</string>
 			<key>sourceTree</key>
@@ -1002,8 +1000,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>ShortcutBar.swift</string>
 			<key>path</key>
 			<string>ShortcutBar.swift</string>
 			<key>sourceTree</key>
@@ -1100,6 +1096,46 @@
 		<dict>
 			<key>fileRef</key>
 			<string>5E78C5F81D74753800F8C614</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EAD4AB41D788F4400F2AB73</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ShortcutBarButton.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EAD4AB51D788F4400F2AB73</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EAD4AB41D788F4400F2AB73</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EAD4AB61D78939400F2AB73</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIView (BarButtonItem).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EAD4AB71D78939400F2AB73</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EAD4AB61D78939400F2AB73</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1331,6 +1367,7 @@
 			<array>
 				<string>3FBC82B6AD23E06DAA22DC3B2FEAC599</string>
 				<string>E12E3659104848DDD678FE37D39AEAF3</string>
+				<string>5EAD4AB41D788F4400F2AB73</string>
 				<string>AE12E9AC9F91E1C3F23E1C2A25D9E463</string>
 			</array>
 			<key>isa</key>
@@ -1615,6 +1652,7 @@
 			<key>children</key>
 			<array>
 				<string>15004413C96D0B4A03CF11D63DD6382A</string>
+				<string>5EAD4AB61D78939400F2AB73</string>
 				<string>8CB15454677793E311B1E258952332E7</string>
 				<string>EE11E8FF7E9AAEC21DBE2CC38CF76534</string>
 				<string>CC85C32067728778599D735CE9A77864</string>
@@ -2395,6 +2433,8 @@
 				<string>2019E88F5EDA689599E01366C30087AD</string>
 				<string>B40D853AD52ACB98F1C2D0D60A988561</string>
 				<string>26C9967D3E82CB12CD88A26329600F6E</string>
+				<string>5EAD4AB71D78939400F2AB73</string>
+				<string>5EAD4AB51D788F4400F2AB73</string>
 				<string>D5F5502E31B92D0F0FF7A0D43E8ED8CD</string>
 				<string>42BB16D84A350E14BE177DA60F5977A0</string>
 				<string>5E78C5F61D70645500F8C614</string>
