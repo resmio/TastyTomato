@@ -30,7 +30,8 @@ public class ShortcutBar: UIView {
     // Private Constant Stored Properties
     private let _scrollView: UIScrollView = UIScrollView()
     private let _toolBar: UIToolbar = UIToolbar()
-    private let _gradientLayer: CAGradientLayer = CAGradientLayer()
+    private let _leftGradientLayer: CAGradientLayer = CAGradientLayer()
+    private let _rightGradientLayer: CAGradientLayer = CAGradientLayer()
     
     // Layout
     // These two are guessed and adjusted by trial and error...
@@ -77,13 +78,20 @@ private extension ShortcutBar {
         let origin: CGPoint = CGPoint(x: self.width - self._gradientLayerWidth)
         let size: CGSize = CGSize(width: self._gradientLayerWidth, height: self.height)
         
-        let gradientLayer: CAGradientLayer = self._gradientLayer
-        gradientLayer.frame = CGRect(origin: origin, size: size)
-        gradientLayer.startPoint = CGPoint(y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-        gradientLayer.colors = [color.withAlpha(0).CGColor, color.CGColor]
+        let leftGradientLayer: CAGradientLayer = self._leftGradientLayer
+        leftGradientLayer.frame = CGRect(origin: origin, size: size)
+        leftGradientLayer.startPoint = CGPoint(y: 0.5)
+        leftGradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        leftGradientLayer.colors = [color.withAlpha(0).CGColor, color.CGColor]
         
-        self.layer.addSublayer(gradientLayer)
+        let rightGradientLayer: CAGradientLayer = self._rightGradientLayer
+        rightGradientLayer.frame = CGRect(size: size)
+        rightGradientLayer.startPoint = CGPoint(y: 0.5)
+        rightGradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        rightGradientLayer.colors = [color.CGColor, color.withAlpha(0).CGColor]
+        
+        self.layer.addSublayer(leftGradientLayer)
+        self.layer.addSublayer(rightGradientLayer)
     }
 }
 
@@ -114,7 +122,8 @@ private extension ShortcutBar {
                 toolBar.left = 0
             }
             
-            self._gradientLayer.hidden = isNarrowerOrSameWidth
+            self._leftGradientLayer.hidden = isNarrowerOrSameWidth
+            self._rightGradientLayer.hidden = isNarrowerOrSameWidth
         }
     }
 }
