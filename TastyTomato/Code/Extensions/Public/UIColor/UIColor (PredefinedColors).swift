@@ -87,5 +87,5 @@ private extension UIColor {
     private static let _GrayCCCCCC: UIColor =               UIColor(fromHex_: "CCCCCC")
     private static let _GrayDDDDDD: UIColor =               UIColor(fromHex_: "DDDDDD")
     private static let _GrayF7F7F7: UIColor =               UIColor(fromHex_: "F7F7F7")
-    private static let _LightKeyboardBackround: UIColor =   UIColor(fromHex_: "CACFD6")
+    private static let _LightKeyboardBackround: UIColor =   UIColor(fromHex_: "D2D5DA")
 }
