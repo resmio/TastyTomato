@@ -10,6 +10,18 @@ import UIKit
 
 
 // MARK: // Public
+// MARK: Factory
+public extension BaseButton {
+    @nonobjc public static func Button<T: BaseButton>() -> T {
+        return self._button()
+    }
+    
+    @objc public static func Button() -> BaseButton {
+        return self._button()
+    }
+}
+
+
 // MARK: Class Declaration
 public class BaseButton: UIButton {}
 
