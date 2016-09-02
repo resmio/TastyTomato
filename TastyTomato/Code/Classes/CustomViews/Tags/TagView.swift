@@ -43,7 +43,7 @@ public class TagView: UIView {
         self._setupLayer()
         self._setupSubviews()
         self._adjustWidth()
-        self._centerViews()
+        self._centerViewsVertically()
         self._resetColor()
     }
     
@@ -130,6 +130,7 @@ private extension TagView {
     private func _setupLabel() {
         self._label.font = UIFont.systemFontOfSize(self._fontSize)
         self._label.textColor = UIColor.Gray555555()
+        self._label.sizeToFit()
         self._label.height = self._labelHeight
         
         self.addSubview(self._label)
@@ -187,7 +188,7 @@ private extension TagView {
 
 // MARK: Center Views Vertically
 private extension TagView {
-    private func _centerViews() {
+    private func _centerViewsVertically() {
         self._leftBannerView.centerVInSuperview()
         self._label.centerVInSuperview()
         self._deleteButton.centerVInSuperview()

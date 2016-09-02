@@ -137,8 +137,12 @@ private extension TagsView {
     
     private func _updateScrollViewContentHeight() {
         if let lastTagView: TagView = self._tagViews.last {
-            let height: CGFloat = max(lastTagView.bottom, self.height)
-            self._scrollView.contentSize.height = height + self._gradientHeight
+            let lastTagViewBottom: CGFloat = lastTagView.bottom
+            if lastTagViewBottom < self.height {
+                self._scrollView.contentSize.height = self.height
+            } else {
+                self._scrollView.contentSize.height = lastTagViewBottom + self._gradientHeight
+            }
         }
     }
 }
@@ -147,18 +151,22 @@ private extension TagsView {
 // MARK: Add / Remove TagViews
 private extension TagsView {
     private func _addTagView(tagView: TagView) {
-        self._addTagViews([tagView])
+        self._tagViews.append(tagView)
+        let origin: CGPoint = self._originForTagView(tagView)
+        tagView.origin = origin
+        self._scrollView.addSubview(tagView)
+        
+        self._updateScrollViewContentHeight()
     }
     
     private func _addTagViews(tagViews: [TagView]) {
+        let rearrangeIndex: Int = self._tagViews.count
         self._tagViews += tagViews
-        
         for tagView in tagViews {
-            let origin: CGPoint = self._originForTagView(tagView)
-            tagView.origin = origin
             self._scrollView.addSubview(tagView)
         }
         
+        self._rearrangeTagViewsStartingFromIndex(rearrangeIndex, animated: true)
         self._updateScrollViewContentHeight()
     }
     
