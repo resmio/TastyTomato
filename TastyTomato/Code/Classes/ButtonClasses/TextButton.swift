@@ -31,6 +31,12 @@ public extension TextButton {
 
 // MARK: Class Declaration
 public class TextButton: BaseButton {
+    // Setup Override
+    override class func setup_<T: TextButton>(button: T) {
+        super.setup_(button)
+        button.setTitleColor(UIColor.blackColor(), forState: .Normal)
+    }
+    
     // Private Variable Stored Properties
     private var __underlined: Bool = false
 }

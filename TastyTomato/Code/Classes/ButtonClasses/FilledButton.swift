@@ -38,6 +38,12 @@ public extension FilledButton {
 
 // MARK: Class Declaration
 public class FilledButton: BaseButton {
+    // Setup Override
+    override class func setup_<T: FilledButton>(button: T) {
+        super.setup_(button)
+        button.setFillColor(button.fillColor)
+    }
+    
     // Private Stored Variable Properties
     private var _fillColor: UIColor = UIColor.Blue00A7C4()
     private var _highlightedAlpha: CGFloat = 0.6
