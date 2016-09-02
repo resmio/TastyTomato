@@ -10,6 +10,12 @@ import UIKit
 
 
 // MARK: // Public
+// MARK: Fake Initializer
+public func ShortcutBarButton_() -> ShortcutBarButton {
+    return ShortcutBarButton.button_()
+}
+
+
 // MARK: Class Declaration
 public class ShortcutBarButton: BaseButton {
     // MARK: // Internal
@@ -24,7 +30,7 @@ public class ShortcutBarButton: BaseButton {
 
 
 // MARK: // Private
-// MARK: Factory Override
+// MARK: Factory Override Implementation
 private extension ShortcutBarButton {
     private static func _button<T: BaseButton>() -> T {
         let button: T = super.button_()

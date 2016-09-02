@@ -10,6 +10,12 @@ import Foundation
 
 
 // MARK: // Public
+// MARK: Fake Initializer
+public func FilledButton_() -> FilledButton {
+    return FilledButton.button_()
+}
+
+
 // MARK: Interface
 public extension FilledButton {
     public var fillColor: UIColor {

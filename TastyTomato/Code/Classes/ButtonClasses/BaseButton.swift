@@ -10,16 +10,14 @@ import UIKit
 
 
 // MARK: // Public
+// MARK: Fake Initializer
+public func BaseButton_() -> BaseButton {
+    return BaseButton.button_()
+}
+
+
 // MARK: Factory
 public extension BaseButton {
-    @nonobjc public static func Button<T: BaseButton>() -> T {
-        return self._button()
-    }
-    
-    @objc public static func Button() -> BaseButton {
-        return self._button()
-    }
-    
     public var autoAdjustWidthOnTitleSet: Bool {
         get {
             return self._autoAdjustWidthOnTitleSet
@@ -33,6 +31,24 @@ public extension BaseButton {
 
 // MARK: Class Declaration
 public class BaseButton: UIButton {
+    // Init Error Message
+    @noreturn class func initErrorMessage() {
+        fatalError(
+            "Do not initialize \(self.classForCoder) directly. " +
+            "Use \(self.classForCoder)_() function instead."
+        )
+    }
+    
+    // Privatize Init
+    private init() {
+        self.dynamicType.initErrorMessage()
+    }
+    
+    // Required Init
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     // // Internal
     // Factory
     class func button_<T: BaseButton>() -> T {
@@ -64,7 +80,7 @@ extension BaseButton {
 // MARK: // Private
 // MARK: Factory
 private extension BaseButton {
-    private static func _button<T: BaseButton>() -> T {
+    private static func _button<T: UIButton>() -> T {
         let button = T.init(type: .System)
         button.layer.cornerRadius = 4
         button.clipsToBounds = true

@@ -10,6 +10,12 @@ import Foundation
 
 
 // MARK: // Public
+// MARK: Fake Initializer
+public func TextButton_() -> TextButton {
+    return TextButton.button_()
+}
+
+
 // MARK: Interface
 public extension TextButton {
     public var underlined: Bool {
