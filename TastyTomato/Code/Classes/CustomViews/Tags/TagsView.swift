@@ -21,8 +21,8 @@ public extension TagsView {
         self._addTagViews(tagViews)
     }
     
-    public func removeTagView(tagView: TagView) {
-        self._removeTagView(tagView)
+    public func removeTagView(tagView: TagView, animated: Bool = true) {
+        self._removeTagView(tagView, animated: animated)
     }
     
     public func removeAllTagViews() {
@@ -166,15 +166,18 @@ private extension TagsView {
             self._scrollView.addSubview(tagView)
         }
         
-        self._rearrangeTagViewsStartingFromIndex(rearrangeIndex, animated: true)
+        self._rearrangeTagViewsStartingFromIndex(
+            rearrangeIndex,
+            animated: false
+        )
         self._updateScrollViewContentHeight()
     }
     
-    private func _removeTagView(tagView: TagView) {
+    private func _removeTagView(tagView: TagView, animated: Bool) {
         tagView.removeFromSuperview()
         let index: Int = self._tagViews.indexOf(tagView)!
         self._tagViews.removeAtIndex(index)
-        self._rearrangeTagViewsStartingFromIndex(index, animated: true)
+        self._rearrangeTagViewsStartingFromIndex(index, animated: animated)
         
         self._updateScrollViewContentHeight()
     }
