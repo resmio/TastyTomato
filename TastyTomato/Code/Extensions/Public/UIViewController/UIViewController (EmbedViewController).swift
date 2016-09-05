@@ -33,7 +33,7 @@ public extension UIViewController {
 private extension UIViewController {
     private func _embedViewController(viewController: UIViewController, inView view: UIView?, inFrame frame: CGRect?) {
         let containerView: UIView = view ?? self.view
-        let containerFrame: CGRect = frame ?? containerView.frame
+        let containerFrame: CGRect = frame ?? containerView.bounds
         let vcView: UIView = viewController.view
         vcView.frame = containerFrame
         
