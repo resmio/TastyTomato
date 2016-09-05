@@ -419,6 +419,7 @@
 				<string>C61FA760C329029916EAB5DF6196AE44</string>
 				<string>672790F9FBEF1DB75397020CEEDDC422</string>
 				<string>A01C37BAA2EDA30ED682D64F551DB64A</string>
+				<string>5EAD4ABC1D7D537700F2AB73</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1136,6 +1137,43 @@
 		<dict>
 			<key>fileRef</key>
 			<string>5EAD4AB61D78939400F2AB73</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EAD4ABC1D7D537700F2AB73</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5EAD4ABD1D7D53A000F2AB73</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>UIViewController</string>
+			<key>path</key>
+			<string>UIViewController</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EAD4ABD1D7D53A000F2AB73</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>UIViewController (EmbedViewController).swift</string>
+			<key>path</key>
+			<string>UIViewController (EmbedViewController).swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EAD4ABE1D7D53A000F2AB73</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EAD4ABD1D7D53A000F2AB73</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -2437,6 +2475,7 @@
 				<string>5EAD4AB51D788F4400F2AB73</string>
 				<string>D5F5502E31B92D0F0FF7A0D43E8ED8CD</string>
 				<string>42BB16D84A350E14BE177DA60F5977A0</string>
+				<string>5EAD4ABE1D7D53A000F2AB73</string>
 				<string>5E78C5F61D70645500F8C614</string>
 				<string>EA4C422FDA23A2D7DDF931EF8A605544</string>
 				<string>5E789EC11D757A23000F2F74</string>
