@@ -622,7 +622,9 @@
 				TargetAttributes = {
 					0E7680876764C3020A8CF0627D6E3476 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 56W9E3974K;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					517580651DAB345693709175BEC4073C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -837,7 +839,9 @@
 		66526BFC2FE6BD5389E7979AABD049AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56W9E3974K;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				INFOPLIST_FILE = TastyTomatoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -870,7 +874,9 @@
 		9BB45C74E94B1E4770E6EB8EC34C7939 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56W9E3974K;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				INFOPLIST_FILE = TastyTomatoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
