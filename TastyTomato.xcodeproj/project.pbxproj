@@ -169,6 +169,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02821F3BFC5F2DBE0FD2A172B54F594E /* TextFieldClasses */ = {
+			isa = PBXGroup;
+			children = (
+				592F3B1F7E20B40701208459D6453448 /* BaseTextField.swift */,
+				172042EA77DA17224778AA7DB33B6707 /* DropDownTextField.swift */,
+			);
+			path = TextFieldClasses;
+			sourceTree = "<group>";
+		};
 		0493472B043AE9358E374F400818BC62 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +224,14 @@
 				D7B5FB8B737A9AC146C8A6F988388264 /* OperatorOverloads */,
 			);
 			path = Code;
+			sourceTree = "<group>";
+		};
+		1BEDC49C5806846E908D79A81A8DE686 /* ShortcutBar */ = {
+			isa = PBXGroup;
+			children = (
+				B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */,
+			);
+			path = ShortcutBar;
 			sourceTree = "<group>";
 		};
 		246C935C9C014C4BD5D47F71877750B3 /* UIColor */ = {
@@ -294,57 +311,6 @@
 			path = Localizations;
 			sourceTree = "<group>";
 		};
-		88FC8021D486B569057F4800A4ADE98C /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				1BEDC49C5806846E908D79A81A8DE686 /* ShortcutBar */,
-				C61B4C06BBC4EB775183743E5167421C /* Tags */,
-			);
-			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		C61B4C06BBC4EB775183743E5167421C /* Tags */ = {
-			isa = PBXGroup;
-			children = (
-				9905A0D02FB847E86970E50B1768AC71 /* TagView.swift */,
-				8A98E8296B3BD2970706F8D3BE1F63CB /* TagsView.swift */,
-			);
-			path = Tags;
-			sourceTree = "<group>";
-		};
-		1BEDC49C5806846E908D79A81A8DE686 /* ShortcutBar */ = {
-			isa = PBXGroup;
-			children = (
-				B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */,
-			);
-			path = ShortcutBar;
-			sourceTree = "<group>";
-		};
-		02821F3BFC5F2DBE0FD2A172B54F594E /* TextFieldClasses */ = {
-			isa = PBXGroup;
-			children = (
-				592F3B1F7E20B40701208459D6453448 /* BaseTextField.swift */,
-				172042EA77DA17224778AA7DB33B6707 /* DropDownTextField.swift */,
-			);
-			path = TextFieldClasses;
-			sourceTree = "<group>";
-		};
-		A35630EB3C15AE66CC75B9EA1FCFEA0A /* TextViewClasses */ = {
-			isa = PBXGroup;
-			children = (
-				5DCC82CB1A56D60A4DF981960B5A667C /* BaseTextView.swift */,
-			);
-			path = TextViewClasses;
-			sourceTree = "<group>";
-		};
-		DC10D825E2095495087364C672A77DF3 /* UIViewController */ = {
-			isa = PBXGroup;
-			children = (
-				0D26CDFA5525ECDD11F2C82ECCBDE5F9 /* UIViewController (EmbedViewController).swift */,
-			);
-			path = UIViewController;
-			sourceTree = "<group>";
-		};
 		6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +358,15 @@
 				AE12E9AC9F91E1C3F23E1C2A25D9E463 /* TextButton.swift */,
 			);
 			path = ButtonClasses;
+			sourceTree = "<group>";
+		};
+		88FC8021D486B569057F4800A4ADE98C /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				1BEDC49C5806846E908D79A81A8DE686 /* ShortcutBar */,
+				C61B4C06BBC4EB775183743E5167421C /* Tags */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		8D6B38C23AD55B56C22E0212EAB83656 /* Buttons */ = {
@@ -464,6 +439,14 @@
 			path = CGPoint;
 			sourceTree = "<group>";
 		};
+		A35630EB3C15AE66CC75B9EA1FCFEA0A /* TextViewClasses */ = {
+			isa = PBXGroup;
+			children = (
+				5DCC82CB1A56D60A4DF981960B5A667C /* BaseTextView.swift */,
+			);
+			path = TextViewClasses;
+			sourceTree = "<group>";
+		};
 		A3AB6252EFF7C31DBE40BB1578EF32AC /* LayerClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +472,15 @@
 				96EB2A0C35717ED674361E12EF4C5BAA /* UIButton (Color_).swift */,
 			);
 			path = UIButton;
+			sourceTree = "<group>";
+		};
+		C61B4C06BBC4EB775183743E5167421C /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				9905A0D02FB847E86970E50B1768AC71 /* TagView.swift */,
+				8A98E8296B3BD2970706F8D3BE1F63CB /* TagsView.swift */,
+			);
+			path = Tags;
 			sourceTree = "<group>";
 		};
 		C61FA760C329029916EAB5DF6196AE44 /* UIColor */ = {
@@ -538,6 +530,14 @@
 				162CC1F2A974F883E6BD5039B189DF28 /* UIImage (Named_).swift */,
 			);
 			path = UIImage;
+			sourceTree = "<group>";
+		};
+		DC10D825E2095495087364C672A77DF3 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0D26CDFA5525ECDD11F2C82ECCBDE5F9 /* UIViewController (EmbedViewController).swift */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		EE22ED39034017661019E659F4958502 /* TastyTomato */ = {
@@ -790,10 +790,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.4.0;
+				CURRENT_PROJECT_VERSION = 0.5.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 0.4.0;
-				DYLIB_CURRENT_VERSION = 0.4.0;
+				DYLIB_COMPATIBILITY_VERSION = 0.5.0;
+				DYLIB_CURRENT_VERSION = 0.5.0;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -820,10 +820,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 0.3.0;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.3.0;
-				DYLIB_CURRENT_VERSION = 0.3.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TastyTomato/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -840,7 +837,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 56W9E3974K;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				INFOPLIST_FILE = TastyTomatoTests/Info.plist;
@@ -856,10 +852,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 0.3.0;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.3.0;
-				DYLIB_CURRENT_VERSION = 0.3.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TastyTomato/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -875,7 +868,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 56W9E3974K;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				INFOPLIST_FILE = TastyTomatoTests/Info.plist;
@@ -909,10 +901,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.4.0;
+				CURRENT_PROJECT_VERSION = 0.5.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DYLIB_COMPATIBILITY_VERSION = 0.4.0;
-				DYLIB_CURRENT_VERSION = 0.4.0;
+				DYLIB_COMPATIBILITY_VERSION = 0.5.0;
+				DYLIB_CURRENT_VERSION = 0.5.0;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
