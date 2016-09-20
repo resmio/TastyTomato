@@ -26,7 +26,7 @@ extension UIImage {
 // MARK: Image With Suffix Implementation
 private extension UIImage {
     static func _imageNamed(_ name: String, inBundle bundle: Bundle) -> Self {
-        let result = self.`init`(named:`in`:compatibleWith:)(
+        let result = self.init(
             named: name,
             in: bundle,
             compatibleWith: nil
