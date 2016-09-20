@@ -19,7 +19,7 @@ public extension CGSize {
 
 // MARK: // Private
 private extension CGSize {
-    private func _asCGRect() -> CGRect {
+    func _asCGRect() -> CGRect {
         return CGRect(size: self)
     }
 }

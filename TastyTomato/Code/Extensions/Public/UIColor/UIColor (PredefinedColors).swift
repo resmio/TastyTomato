@@ -77,15 +77,15 @@ public extension UIColor {
 
 // MARK: // Private
 private extension UIColor {
-    private static let _RedE62C4F: UIColor =                UIColor(fromHex_: "E62C4F")
-    private static let _YellowF8C150: UIColor =             UIColor(fromHex_: "F8C150")
-    private static let _Green22CCAA: UIColor =              UIColor(fromHex_: "22CCAA")
-    private static let _Blue00A7C4: UIColor =               UIColor(fromHex_: "00A7C4")
-    private static let _Blue018EA6: UIColor =               UIColor(fromHex_: "018EA6")
-    private static let _Gray555555: UIColor =               UIColor(fromHex_: "555555")
-    private static let _Gray999999: UIColor =               UIColor(fromHex_: "999999")
-    private static let _GrayCCCCCC: UIColor =               UIColor(fromHex_: "CCCCCC")
-    private static let _GrayDDDDDD: UIColor =               UIColor(fromHex_: "DDDDDD")
-    private static let _GrayF7F7F7: UIColor =               UIColor(fromHex_: "F7F7F7")
-    private static let _LightKeyboardBackround: UIColor =   UIColor(fromHex_: "D2D5DA")
+    static let _RedE62C4F: UIColor =                UIColor(fromHex_: "E62C4F")
+    static let _YellowF8C150: UIColor =             UIColor(fromHex_: "F8C150")
+    static let _Green22CCAA: UIColor =              UIColor(fromHex_: "22CCAA")
+    static let _Blue00A7C4: UIColor =               UIColor(fromHex_: "00A7C4")
+    static let _Blue018EA6: UIColor =               UIColor(fromHex_: "018EA6")
+    static let _Gray555555: UIColor =               UIColor(fromHex_: "555555")
+    static let _Gray999999: UIColor =               UIColor(fromHex_: "999999")
+    static let _GrayCCCCCC: UIColor =               UIColor(fromHex_: "CCCCCC")
+    static let _GrayDDDDDD: UIColor =               UIColor(fromHex_: "DDDDDD")
+    static let _GrayF7F7F7: UIColor =               UIColor(fromHex_: "F7F7F7")
+    static let _LightKeyboardBackround: UIColor =   UIColor(fromHex_: "D2D5DA")
 }

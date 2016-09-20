@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UIViewController {
-    public func embedViewController(viewController: UIViewController, inView view: UIView? = nil) {
+    public func embedViewController(_ viewController: UIViewController, inView view: UIView? = nil) {
         self._embedViewController(
             viewController,
             inView: view,
@@ -19,7 +19,7 @@ public extension UIViewController {
         )
     }
     
-    public func embedViewController(viewController: UIViewController, inView view: UIView? = nil, inFrame frame: CGRect) {
+    public func embedViewController(_ viewController: UIViewController, inView view: UIView? = nil, inFrame frame: CGRect) {
         self._embedViewController(
             viewController,
             inView: view,
@@ -31,15 +31,15 @@ public extension UIViewController {
 
 // MARK: // Private
 private extension UIViewController {
-    private func _embedViewController(viewController: UIViewController, inView view: UIView?, inFrame frame: CGRect?) {
+    func _embedViewController(_ viewController: UIViewController, inView view: UIView?, inFrame frame: CGRect?) {
         let containerView: UIView = view ?? self.view
         let containerFrame: CGRect = frame ?? containerView.bounds
         let vcView: UIView = viewController.view
         vcView.frame = containerFrame
         
-        viewController.willMoveToParentViewController(self)
+        viewController.willMove(toParentViewController: self)
         self.addChildViewController(viewController)
         containerView.addSubview(vcView)
-        viewController.didMoveToParentViewController(self)
+        viewController.didMove(toParentViewController: self)
     }
 }

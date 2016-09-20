@@ -21,7 +21,7 @@ public extension UIView {
 // MARK: // Private
 // MARK: Factory Implementation
 private extension UIView {
-    private func _asBarButtonItem() -> UIBarButtonItem {
+    func _asBarButtonItem() -> UIBarButtonItem {
         let barButtonItem: UIBarButtonItem = UIBarButtonItem()
         barButtonItem.customView = self
         return barButtonItem

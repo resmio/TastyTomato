@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public 
 // MARK: Class Declaration
-public class TriangleLayer: CAShapeLayer {
+open class TriangleLayer: CAShapeLayer {
     // Required Init
     required public init?(coder aDecoder: NSCoder) {
         fatalError("TriangleLayer does not support NSCoding")
@@ -22,12 +22,12 @@ public class TriangleLayer: CAShapeLayer {
         super.init()
         
         let trianglePath: UIBezierPath = UIBezierPath()
-        trianglePath.moveToPoint(CGPoint(x: 0, y: height))
-        trianglePath.addLineToPoint(CGPoint(x: baseWidth / 2, y: 0))
-        trianglePath.addLineToPoint(CGPoint(x: baseWidth, y: height))
-        trianglePath.closePath()
+        trianglePath.move(to: CGPoint(x: 0, y: height))
+        trianglePath.addLine(to: CGPoint(x: baseWidth / 2, y: 0))
+        trianglePath.addLine(to: CGPoint(x: baseWidth, y: height))
+        trianglePath.close()
         
         self.frame = CGRect(x: 0, y: 0, width: baseWidth, height: height)
-        self.path = trianglePath.CGPath
+        self.path = trianglePath.cgPath
     }
 }

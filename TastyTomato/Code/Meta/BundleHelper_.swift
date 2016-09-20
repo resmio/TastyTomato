@@ -12,12 +12,12 @@ import Foundation
 // MARK: // Internal
 class BundleHelper_ {
     // MARK: Framework-Bundle
-    static let TastyTomatoBundle: NSBundle = NSBundle(forClass: BundleHelper_.self)
+    static let TastyTomatoBundle: Bundle = Bundle(for: BundleHelper_.self)
 
     // MARK: Resource-Bundles
-    static let LocalizationBundle: NSBundle = NSBundle(path: _localizationBundlePath)!
+    static let LocalizationBundle: Bundle = Bundle(path: _localizationBundlePath)!
     
     // MARK: // Private
     // MARK: Resource-Bundle Paths
-    private static let _localizationBundlePath: String = TastyTomatoBundle.pathForResource("TTLocalizations", ofType: "bundle")!
+    fileprivate static let _localizationBundlePath: String = TastyTomatoBundle.path(forResource: "TTLocalizations", ofType: "bundle")!
 }

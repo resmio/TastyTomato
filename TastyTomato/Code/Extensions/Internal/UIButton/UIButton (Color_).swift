@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Internal
 extension UIButton {
-    func setColor_(color: UIColor, forState state: UIControlState) {
+    func setColor_(_ color: UIColor, forState state: UIControlState) {
         self._setColor(color, forState: state)
     }
 }
@@ -19,8 +19,8 @@ extension UIButton {
 
 // MARK: // Private
 private extension UIButton {
-    private func _setColor(color: UIColor, forState state: UIControlState) {
+    func _setColor(_ color: UIColor, forState state: UIControlState) {
         let image: UIImage? = UIImage.coloredRect(size: self.size, color: color)
-        self.setBackgroundImage(image, forState: state)
+        self.setBackgroundImage(image, for: state)
     }
 }

@@ -23,10 +23,10 @@ extension UIColor {
 
 // MARK: // Private
 private extension UIColor {
-    private convenience init(_fromHex hexString: String, withAlpha alpha: CGFloat) {
-        let scanner: NSScanner = NSScanner(string: hexString)
+    convenience init(_fromHex hexString: String, withAlpha alpha: CGFloat) {
+        let scanner: Scanner = Scanner(string: hexString)
         var rgbValue: UInt32 = 0
-        scanner.scanHexInt(&rgbValue)
+        scanner.scanHexInt32(&rgbValue)
         
         let red: CGFloat = CGFloat((rgbValue & 0xFF0000) >> 16) / CGFloat(255)
         let green: CGFloat = CGFloat((rgbValue & 0xFF00) >> 8) / CGFloat(255)

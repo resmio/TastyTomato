@@ -60,7 +60,7 @@ public extension UIView {
 
 // MARK: // Private
 private extension UIView {
-    private var _origin: CGPoint {
+    var _origin: CGPoint {
         get {
             return self.frame.origin
         }
@@ -69,7 +69,7 @@ private extension UIView {
         }
     }
     
-    private var _left: CGFloat {
+    var _left: CGFloat {
         get {
             return self.frame.origin.x
         }
@@ -78,7 +78,7 @@ private extension UIView {
         }
     }
     
-    private var _right: CGFloat {
+    var _right: CGFloat {
         get {
             return self.left + self.width
         }
@@ -87,7 +87,7 @@ private extension UIView {
         }
     }
     
-    private var _top: CGFloat {
+    var _top: CGFloat {
         get {
             return self.frame.origin.y
         }
@@ -96,7 +96,7 @@ private extension UIView {
         }
     }
     
-    private var _bottom: CGFloat {
+    var _bottom: CGFloat {
         get {
             return self.frame.origin.y + self.height
         }

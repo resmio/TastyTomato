@@ -11,11 +11,11 @@ import UIKit
 
 // MARK: // Public
 public extension CGRect {
-    public mutating func scaleByFactor(factor: CGFloat) {
+    public mutating func scaleByFactor(_ factor: CGFloat) {
         self._scaleByFactor(factor)
     }
     
-    public func scaledByFactor(factor: CGFloat) -> CGRect {
+    public func scaledByFactor(_ factor: CGFloat) -> CGRect {
         return self._scaledByFactor(factor)
     }
 }
@@ -23,11 +23,11 @@ public extension CGRect {
 
 // MARK: // Private
 private extension CGRect {
-    private mutating func _scaleByFactor(factor: CGFloat) {
+    mutating func _scaleByFactor(_ factor: CGFloat) {
         self.size.scaleByFactor(factor)
     }
     
-    private func _scaledByFactor(factor: CGFloat) -> CGRect {
+    func _scaledByFactor(_ factor: CGFloat) -> CGRect {
         return CGRect(
             origin: self.origin,
             size: self.size.scaledByFactor(factor)

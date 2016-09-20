@@ -19,7 +19,7 @@ public extension CGRect {
 
 // MARK: // Private
 private extension CGRect {
-    private var _area: CGFloat {
+    var _area: CGFloat {
         return self.size.area
     }
 }

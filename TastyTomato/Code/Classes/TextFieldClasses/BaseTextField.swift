@@ -11,14 +11,14 @@ import UIKit
 
 // MARK: // Public
 // MARK: Class Declaration
-public class BaseTextField: UITextField {
+open class BaseTextField: UITextField {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self._setup()
     }
     
     public init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         self._setup()
     }
 }
@@ -27,22 +27,22 @@ public class BaseTextField: UITextField {
 // MARK: // Private
 // MARK: Setup
 private extension BaseTextField {
-    private func _setup() {
+    func _setup() {
         self.layer.cornerRadius = 4
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.GrayDDDDDD().CGColor
+        self.layer.borderColor = UIColor.GrayDDDDDD().cgColor
         self.clipsToBounds = true
         
         let paddingViewSize: CGSize = CGSize(width: 10, height: 1)
         self.leftView = UIView(size: paddingViewSize)
-        self.leftViewMode = .Always
+        self.leftViewMode = .always
         
         self.rightView = UIView(size: paddingViewSize)
-        self.rightViewMode = .Always
+        self.rightViewMode = .always
         
-        self.font = UIFont.systemFontOfSize(17)
+        self.font = UIFont.systemFont(ofSize: 17)
         self.textColor = UIColor.Gray555555()
-        self.autocapitalizationType = .None
-        self.autocorrectionType = .No
+        self.autocapitalizationType = .none
+        self.autocorrectionType = .no
     }
 }

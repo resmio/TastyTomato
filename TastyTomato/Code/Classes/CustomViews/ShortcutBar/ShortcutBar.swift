@@ -12,49 +12,49 @@ import UIKit
 // MARK: // Public
 // MARK: Interface
 public extension ShortcutBar {
-    public func setItems(items: [UIBarButtonItem], animated: Bool) {
+    public func setItems(_ items: [UIBarButtonItem], animated: Bool) {
         self._setItems(items, animated: animated)
     }
 }
 
 
 // MARK: Class Declaration
-public class ShortcutBar: UIView {
+open class ShortcutBar: UIView {
     // Init
     public convenience init() {
-        let width: CGFloat = UIScreen.mainScreen().bounds.width
+        let width: CGFloat = UIScreen.main.bounds.width
         self.init(frame: CGRect(size: CGSize(width: width, height: 44)))
         self._setup()
     }
     
     // Private Constant Stored Properties
-    private let _scrollView: UIScrollView = UIScrollView()
-    private let _toolBar: UIToolbar = UIToolbar()
-    private let _leftGradientLayer: CAGradientLayer = CAGradientLayer()
-    private let _rightGradientLayer: CAGradientLayer = CAGradientLayer()
+    fileprivate let _scrollView: UIScrollView = UIScrollView()
+    fileprivate let _toolBar: UIToolbar = UIToolbar()
+    fileprivate let _leftGradientLayer: CAGradientLayer = CAGradientLayer()
+    fileprivate let _rightGradientLayer: CAGradientLayer = CAGradientLayer()
     
     // Layout
     // These two are guessed and adjusted by trial and error...
-    private let _interItemSpacing: CGFloat = 10
-    private let _itemPadding: CGFloat = 30
+    fileprivate let _interItemSpacing: CGFloat = 10
+    fileprivate let _itemPadding: CGFloat = 30
     
-    private let _gradientLayerWidth: CGFloat = 20
+    fileprivate let _gradientLayerWidth: CGFloat = 20
     
     // Design
-    private let _backgroundColor: UIColor = UIColor.LightKeyboardBackground()
+    fileprivate let _backgroundColor: UIColor = UIColor.LightKeyboardBackground()
 }
 
 
 // MARK: // Private
 // MARK: Setup
 private extension ShortcutBar {
-    private func _setup() {
+    func _setup() {
         self._setupScrollView()
         self._setupToolbar()
         self._setupGradientLayer()
     }
     
-    private func _setupScrollView() {
+    func _setupScrollView() {
         let size: CGSize = self.size
         
         let scrollView: UIScrollView = self._scrollView
@@ -66,14 +66,14 @@ private extension ShortcutBar {
         self.addSubview(scrollView)
     }
     
-    private func _setupToolbar() {
+    func _setupToolbar() {
         let toolBar: UIToolbar = self._toolBar
         toolBar.barTintColor = self._backgroundColor
         toolBar.size = self.size
         self._scrollView.addSubview(toolBar)
     }
     
-    private func _setupGradientLayer() {
+    func _setupGradientLayer() {
         let color: UIColor = self._backgroundColor
         let origin: CGPoint = CGPoint(x: self.width - self._gradientLayerWidth)
         let size: CGSize = CGSize(width: self._gradientLayerWidth, height: self.height)
@@ -82,13 +82,13 @@ private extension ShortcutBar {
         leftGradientLayer.frame = CGRect(origin: origin, size: size)
         leftGradientLayer.startPoint = CGPoint(y: 0.5)
         leftGradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-        leftGradientLayer.colors = [color.withAlpha(0).CGColor, color.CGColor]
+        leftGradientLayer.colors = [color.withAlpha(0).cgColor, color.cgColor]
         
         let rightGradientLayer: CAGradientLayer = self._rightGradientLayer
         rightGradientLayer.frame = CGRect(size: size)
         rightGradientLayer.startPoint = CGPoint(y: 0.5)
         rightGradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-        rightGradientLayer.colors = [color.CGColor, color.withAlpha(0).CGColor]
+        rightGradientLayer.colors = [color.cgColor, color.withAlpha(0).cgColor]
         
         self.layer.addSublayer(leftGradientLayer)
         self.layer.addSublayer(rightGradientLayer)
@@ -98,7 +98,7 @@ private extension ShortcutBar {
 
 // MARK: Interface Implementation
 private extension ShortcutBar {
-    private func _setItems(items: [UIBarButtonItem], animated: Bool) {
+    func _setItems(_ items: [UIBarButtonItem], animated: Bool) {
         var cumulativeWidth: CGFloat = 0
         for item in items {
             cumulativeWidth += item.customView?.width ?? item.width
@@ -112,7 +112,7 @@ private extension ShortcutBar {
         toolBar.setItems(items, animated: animated)
         
         let isNarrowerOrSameWidth: Bool = cumulativeWidth <= self.width
-        UIView.animateWithDuration(animated ? 0.3 : 0) {
+        UIView.animate(withDuration: animated ? 0.3 : 0, animations: {
             toolBar.width = cumulativeWidth
             self._scrollView.contentSize.width = cumulativeWidth
             
@@ -122,8 +122,8 @@ private extension ShortcutBar {
                 toolBar.left = 0
             }
             
-            self._leftGradientLayer.hidden = isNarrowerOrSameWidth
-            self._rightGradientLayer.hidden = isNarrowerOrSameWidth
-        }
+            self._leftGradientLayer.isHidden = isNarrowerOrSameWidth
+            self._rightGradientLayer.isHidden = isNarrowerOrSameWidth
+        }) 
     }
 }

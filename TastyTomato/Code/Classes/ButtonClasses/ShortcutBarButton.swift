@@ -17,20 +17,20 @@ public func ShortcutBarButton_() -> ShortcutBarButton {
 
 
 // MARK: Class Declaration
-public class ShortcutBarButton: BaseButton {
+open class ShortcutBarButton: BaseButton {
     // Setup Override
-    override class func setup_<T: ShortcutBarButton>(button: T) {
+    override class func setup_<T: ShortcutBarButton>(_ button: T) {
         super.setup_(button)
         
-        button.setColor(UIColor.Gray999999(), forState: .Normal)
-        button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        button.setColor(UIColor.Gray999999(), forState: UIControlState())
+        button.setTitleColor(UIColor.white, for: UIControlState())
         
-        button.setColor(UIColor.whiteColor(), forState: .Highlighted)
-        button.setTitleColor(UIColor.blackColor(), forState: .Highlighted)
+        button.setColor(UIColor.white, forState: .highlighted)
+        button.setTitleColor(UIColor.black, for: .highlighted)
         
-        button.setColor(UIColor.whiteColor(), forState: .Selected)
-        button.setTitleColor(UIColor.blackColor(), forState: .Selected)
+        button.setColor(UIColor.white, forState: .selected)
+        button.setTitleColor(UIColor.black, for: .selected)
         
-        button.titleLabel!.font = UIFont.systemFontOfSize(17)
+        button.titleLabel!.font = UIFont.systemFont(ofSize: 17)
     }
 }
