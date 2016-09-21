@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: // Public
 public extension UIButton {
-    public func setColor(_ color: UIColor, forState state: UIControlState) {
-        self.setColor_(color, forState: state)
+    public func setColor(_ color: UIColor, for state: UIControlState) {
+        self.setColor_(color, for: state)
     }
 }

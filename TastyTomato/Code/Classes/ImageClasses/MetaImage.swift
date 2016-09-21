@@ -51,8 +51,4 @@ open class MetaImage: UIImage {
     internal override init(ciImage: CoreImage.CIImage, scale: CGFloat, orientation: UIImageOrientation) {
         super.init(ciImage: ciImage, scale: scale, orientation: orientation)
     }
-
-    required convenience public init(imageLiteralResourceName name: String) {
-        fatalError("init(imageLiteralResourceName:) has not been implemented")
-    }
 }

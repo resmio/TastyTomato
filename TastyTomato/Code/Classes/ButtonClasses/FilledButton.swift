@@ -75,12 +75,12 @@ private extension FilledButton {
         
         self.setColor_(
             color,
-            forState: UIControlState()
+            for: UIControlState()
         )
         
         self.setColor_(
             color.withAlpha(self.highlightedAlpha),
-            forState: .highlighted
+            for: .highlighted
         )
     }
     
@@ -89,7 +89,7 @@ private extension FilledButton {
         
         self.setColor_(
             self.fillColor.withAlpha(alph),
-            forState: .highlighted
+            for: .highlighted
         )
     }
 }
