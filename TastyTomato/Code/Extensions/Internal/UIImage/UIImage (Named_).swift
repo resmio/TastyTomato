@@ -12,8 +12,8 @@ import UIKit
 // MARK: // Internal
 // MARK: Image With Suffix
 extension UIImage {
-    class func imageNamed_(name: String, inBundle bundle: NSBundle = _TastyTomatoBundle_) -> Self {
-        return self._fromImageNamed(name, inBundle: bundle)
+    class func imageNamed_(name: String, inBundle bundle: NSBundle = BundleHelper_.TastyTomatoBundle) -> Self {
+        return self._imageNamed(name, inBundle: bundle)
     }
     
     class func suffixed_(suffix: String) -> Self {
@@ -25,7 +25,7 @@ extension UIImage {
 // MARK: // Private
 // MARK: Image With Suffix Implementation
 private extension UIImage {
-    static func _fromImageNamed(name: String, inBundle bundle: NSBundle) -> Self {
+    static func _imageNamed(name: String, inBundle bundle: NSBundle) -> Self {
         let result = self.init(
             named: name,
             inBundle: bundle,

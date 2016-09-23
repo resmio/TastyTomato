@@ -16,7 +16,7 @@ public class MetaImage: UIImage {
     // Required Initializer
     required public init?(coder aDecoder: NSCoder) {
         super.init()
-        fatalError("\(self.dynamicType) does not implement NSCoding")
+        fatalError("\(self.dynamicType) does not support NSCoding")
     }
     
     // Internalized Initializers
