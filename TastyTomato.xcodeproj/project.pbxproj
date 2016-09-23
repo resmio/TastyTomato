@@ -104,6 +104,7 @@
 		524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResmioLogo.swift; sourceTree = "<group>"; };
 		580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (UInt).swift"; sourceTree = "<group>"; };
+		5E2FD8151D9541E50090A3E7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E789EBD1D748B05000F2F74 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		5E789EC01D757A23000F2F74 /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		5E789EC91D75DBA2000F2F74 /* ShortcutBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutBar.swift; sourceTree = "<group>"; };
@@ -635,6 +636,7 @@
 			knownRegions = (
 				en,
 				de,
+				fr,
 			);
 			mainGroup = 0797CADAA242E6EF3AC04B83BE063FFA;
 			productRefGroup = 087D62F85789E9BA2921482544C68BB4 /* Products */;
@@ -755,6 +757,7 @@
 			children = (
 				91C532ECB5C7CC6DE8FAAAD3F465DEAE /* de */,
 				617BAD163949C9A08DE92862E903C2A8 /* en */,
+				5E2FD8151D9541E50090A3E7 /* fr */,
 			);
 			name = Localizable.strings;
 			path = .;
