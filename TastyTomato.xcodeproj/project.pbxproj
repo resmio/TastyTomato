@@ -11,7 +11,6 @@
 		01903A7870C59E45E2071D68688B64AE /* FilledButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62837076E5C6BBE23DC133DBF28FFFD /* FilledButtons.swift */; };
 		07D9391000BFA486E44C4497A1788C6A /* CGSize (Scaled).swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E0F301A67734A74C63533E21FEEDF /* CGSize (Scaled).swift */; };
 		13BFB81E9AE9A8BC5760E75496D1DFFC /* UIView (Centering).swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB15454677793E311B1E258952332E7 /* UIView (Centering).swift */; };
-		14489FCA5F60780335DF0D27E78786D9 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE34A25023D397DD0B222CD1AD8B8F /* Grid.swift */; };
 		1D182D1BB45EB8B648582A87B8CC2067 /* CGFloat (UInt).swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */; };
 		2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */; };
 		234C2E7FADD37FC3783F9BFF305828A6 /* UIImage (Named_).swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CC1F2A974F883E6BD5039B189DF28 /* UIImage (Named_).swift */; };
@@ -28,6 +27,15 @@
 		4DABED4544C6D370297F11FD117FEDEC /* TastyTomato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */; };
 		58553661C119FAC95156619850713435 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13A94DD966224A32780B63A66B726658 /* Icons.xcassets */; };
 		5C8AA03C6C4B4DCDAA601D7775D8EA1A /* CGSize (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */; };
+		5E789EBE1D748B05000F2F74 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E789EBD1D748B05000F2F74 /* TagView.swift */; };
+		5E789EC11D757A23000F2F74 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E789EC01D757A23000F2F74 /* TagsView.swift */; };
+		5E789ECA1D75DBA2000F2F74 /* ShortcutBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E789EC91D75DBA2000F2F74 /* ShortcutBar.swift */; };
+		5E78C5F41D7053B800F8C614 /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E78C5F31D7053B800F8C614 /* DropDownTextField.swift */; };
+		5E78C5F61D70645500F8C614 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E78C5F51D70645500F8C614 /* BaseTextField.swift */; };
+		5E78C5F91D74753800F8C614 /* BaseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E78C5F81D74753800F8C614 /* BaseTextView.swift */; };
+		5EAD4AB51D788F4400F2AB73 /* ShortcutBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD4AB41D788F4400F2AB73 /* ShortcutBarButton.swift */; };
+		5EAD4AB71D78939400F2AB73 /* UIView (BarButtonItem).swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD4AB61D78939400F2AB73 /* UIView (BarButtonItem).swift */; };
+		5EAD4ABE1D7D53A000F2AB73 /* UIViewController (EmbedViewController).swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD4ABD1D7D53A000F2AB73 /* UIViewController (EmbedViewController).swift */; };
 		5FBBB08F482C2EF8829D937D432DB0AA /* UIImage (RenderingModes).swift in Sources */ = {isa = PBXBuildFile; fileRef = F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */; };
 		6845BD2DA1CBDE9DE2EA67D64795A39D /* CGRect (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F913362CD789B7370C90D4A856950CF /* CGRect (ConvenienceInits).swift */; };
 		693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B490047206C221157A2991EFF79E0 /* MetaImage.swift */; };
@@ -46,14 +54,12 @@
 		AA8512B64D36C58068B677B56BD11C09 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */; };
 		AC9D9866E065E12DCB2AD07AC6627022 /* TastyTomato.h in Headers */ = {isa = PBXBuildFile; fileRef = 083386230915027A1693F0088C82312B /* TastyTomato.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */; };
-		B11D68E5BDAE86CBFC18CB1AC362CCD0 /* UIView (Grid).swift in Sources */ = {isa = PBXBuildFile; fileRef = 103C75D7FE9B78EEF6839FC015605C8F /* UIView (Grid).swift */; };
 		B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */; };
 		C15C849839C07137AF9228EBCA319B2C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9175C1A832EEF0F37AEE33411A20042 /* Localizable.strings */; };
 		C2E279A4ED34081F1C983150B1F45061 /* CALayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */; };
 		CA9124BD236AE4D0D64EFC021D5BB391 /* UIColor (FromHex_).swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */; };
 		D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */; };
 		DA4FD8E31F32DAE00AFCA3A9CE81C160 /* UIImage (ColoredRect).swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CE20B670A02E13FB4A56517F58E300 /* UIImage (ColoredRect).swift */; };
-		E07B0B2BF5246EB206433374DEFCE68F /* SizeInGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF06FC1CC46E9EB847E4752C4D7264EE /* SizeInGrid.swift */; };
 		E120F90B264A2076BE355CC29E789218 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */; };
 		E34309DF671D7FA2C30AA0A18BB7C355 /* CAShapeLayer (Wireframe).swift in Sources */ = {isa = PBXBuildFile; fileRef = A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */; };
 		EA4C422FDA23A2D7DDF931EF8A605544 /* TextButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628597189125D75D98E36EA8682ADA2 /* TextButtons.swift */; };
@@ -80,7 +86,6 @@
 		083386230915027A1693F0088C82312B /* TastyTomato.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TastyTomato.h; sourceTree = "<group>"; };
 		0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton (Color).swift"; sourceTree = "<group>"; };
 		0F913362CD789B7370C90D4A856950CF /* CGRect (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (ConvenienceInits).swift"; sourceTree = "<group>"; };
-		103C75D7FE9B78EEF6839FC015605C8F /* UIView (Grid).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (Grid).swift"; sourceTree = "<group>"; };
 		110CB58DB9DDDA2C9F160F9BC574F54D /* TastyTomatoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TastyTomatoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13A94DD966224A32780B63A66B726658 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		15004413C96D0B4A03CF11D63DD6382A /* UIView (Area).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (Area).swift"; sourceTree = "<group>"; };
@@ -89,7 +94,6 @@
 		1A908324B2B4B669470F0A3864A426C6 /* UIImage (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Scaled).swift"; sourceTree = "<group>"; };
 		1B1032762F44E9AFAAC244949B1E9E97 /* BundleHelper_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleHelper_.swift; sourceTree = "<group>"; };
 		286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (PredefinedColors).swift"; sourceTree = "<group>"; };
-		30CE34A25023D397DD0B222CD1AD8B8F /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		3F409B87F906C15E71B3E3CC4AF7FD5D /* CGFloat (Double).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (Double).swift"; sourceTree = "<group>"; };
 		3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
@@ -100,6 +104,15 @@
 		524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResmioLogo.swift; sourceTree = "<group>"; };
 		580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (UInt).swift"; sourceTree = "<group>"; };
+		5E789EBD1D748B05000F2F74 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		5E789EC01D757A23000F2F74 /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		5E789EC91D75DBA2000F2F74 /* ShortcutBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutBar.swift; sourceTree = "<group>"; };
+		5E78C5F31D7053B800F8C614 /* DropDownTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownTextField.swift; sourceTree = "<group>"; };
+		5E78C5F51D70645500F8C614 /* BaseTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		5E78C5F81D74753800F8C614 /* BaseTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextView.swift; sourceTree = "<group>"; };
+		5EAD4AB41D788F4400F2AB73 /* ShortcutBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutBarButton.swift; sourceTree = "<group>"; };
+		5EAD4AB61D78939400F2AB73 /* UIView (BarButtonItem).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (BarButtonItem).swift"; sourceTree = "<group>"; };
+		5EAD4ABD1D7D53A000F2AB73 /* UIViewController (EmbedViewController).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController (EmbedViewController).swift"; sourceTree = "<group>"; };
 		617BAD163949C9A08DE92862E903C2A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscImage.swift; sourceTree = "<group>"; };
 		7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (WidthHeight).swift"; sourceTree = "<group>"; };
@@ -119,7 +132,6 @@
 		AE12E9AC9F91E1C3F23E1C2A25D9E463 /* TextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (FromHex_).swift"; sourceTree = "<group>"; };
-		BF06FC1CC46E9EB847E4752C4D7264EE /* SizeInGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeInGrid.swift; sourceTree = "<group>"; };
 		C08B5813ECAE6108D8A3192D688E9D77 /* ArrowIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowIcon.swift; sourceTree = "<group>"; };
 		C12824249B7328133328FF9AE5640462 /* CGSize (CGRect).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (CGRect).swift"; sourceTree = "<group>"; };
 		C6E438216C6A16D137CD269349331D8F /* CGRect (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (Scaled).swift"; sourceTree = "<group>"; };
@@ -236,6 +248,7 @@
 				C61FA760C329029916EAB5DF6196AE44 /* UIColor */,
 				672790F9FBEF1DB75397020CEEDDC422 /* UIImage */,
 				A01C37BAA2EDA30ED682D64F551DB64A /* UIView */,
+				5EAD4ABC1D7D537700F2AB73 /* UIViewController */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -249,21 +262,15 @@
 			path = CALayer;
 			sourceTree = "<group>";
 		};
-		50F1122FD4800C03981DB9BA49DBDEDE /* Localizations */ = {
-			isa = PBXGroup;
-			children = (
-				E9175C1A832EEF0F37AEE33411A20042 /* Localizable.strings */,
-			);
-			path = Localizations;
-			sourceTree = "<group>";
-		};
 		46D48A3DF2B901CAD57244D34D089FF9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				81E4DAC46F44F11E680BCD87739D7F33 /* ButtonClasses */,
-				C6D1E0700C3D6AA99916DFFC5EFB923E /* GridClasses */,
+				5E789EBC1D748AED000F2F74 /* CustomViews */,
 				AAD496374D60FA3D83572E9051E49F30 /* ImageClasses */,
 				A3AB6252EFF7C31DBE40BB1578EF32AC /* LayerClasses */,
+				5E78C5F21D70535400F8C614 /* TextFieldClasses */,
+				5E78C5F71D74751F00F8C614 /* TextViewClasses */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -279,13 +286,63 @@
 			path = Internal;
 			sourceTree = "<group>";
 		};
-		720493D3CFB054FBA7645AE63F1761F0 /* Images */ = {
+		50F1122FD4800C03981DB9BA49DBDEDE /* Localizations */ = {
 			isa = PBXGroup;
 			children = (
-				13A94DD966224A32780B63A66B726658 /* Icons.xcassets */,
-				E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */,
+				E9175C1A832EEF0F37AEE33411A20042 /* Localizable.strings */,
 			);
-			path = Images;
+			path = Localizations;
+			sourceTree = "<group>";
+		};
+		5E789EBC1D748AED000F2F74 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				5E789EC81D75DB85000F2F74 /* ShortcutBar */,
+				5E789EBF1D75724D000F2F74 /* Tags */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		5E789EBF1D75724D000F2F74 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				5E789EBD1D748B05000F2F74 /* TagView.swift */,
+				5E789EC01D757A23000F2F74 /* TagsView.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		5E789EC81D75DB85000F2F74 /* ShortcutBar */ = {
+			isa = PBXGroup;
+			children = (
+				5E789EC91D75DBA2000F2F74 /* ShortcutBar.swift */,
+			);
+			path = ShortcutBar;
+			sourceTree = "<group>";
+		};
+		5E78C5F21D70535400F8C614 /* TextFieldClasses */ = {
+			isa = PBXGroup;
+			children = (
+				5E78C5F51D70645500F8C614 /* BaseTextField.swift */,
+				5E78C5F31D7053B800F8C614 /* DropDownTextField.swift */,
+			);
+			path = TextFieldClasses;
+			sourceTree = "<group>";
+		};
+		5E78C5F71D74751F00F8C614 /* TextViewClasses */ = {
+			isa = PBXGroup;
+			children = (
+				5E78C5F81D74753800F8C614 /* BaseTextView.swift */,
+			);
+			path = TextViewClasses;
+			sourceTree = "<group>";
+		};
+		5EAD4ABC1D7D537700F2AB73 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5EAD4ABD1D7D53A000F2AB73 /* UIViewController (EmbedViewController).swift */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */ = {
@@ -309,6 +366,15 @@
 			path = UIImage;
 			sourceTree = "<group>";
 		};
+		720493D3CFB054FBA7645AE63F1761F0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				13A94DD966224A32780B63A66B726658 /* Icons.xcassets */,
+				E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		7650E3E33692C33AAC5C9D10FB39AA60 /* Logos */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +388,7 @@
 			children = (
 				3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */,
 				E12E3659104848DDD678FE37D39AEAF3 /* FilledButton.swift */,
+				5EAD4AB41D788F4400F2AB73 /* ShortcutBarButton.swift */,
 				AE12E9AC9F91E1C3F23E1C2A25D9E463 /* TextButton.swift */,
 			);
 			path = ButtonClasses;
@@ -380,9 +447,9 @@
 			isa = PBXGroup;
 			children = (
 				15004413C96D0B4A03CF11D63DD6382A /* UIView (Area).swift */,
+				5EAD4AB61D78939400F2AB73 /* UIView (BarButtonItem).swift */,
 				8CB15454677793E311B1E258952332E7 /* UIView (Centering).swift */,
 				EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */,
-				103C75D7FE9B78EEF6839FC015605C8F /* UIView (Grid).swift */,
 				CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */,
 				A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */,
 			);
@@ -431,15 +498,6 @@
 				9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */,
 			);
 			path = UIColor;
-			sourceTree = "<group>";
-		};
-		C6D1E0700C3D6AA99916DFFC5EFB923E /* GridClasses */ = {
-			isa = PBXGroup;
-			children = (
-				30CE34A25023D397DD0B222CD1AD8B8F /* Grid.swift */,
-				BF06FC1CC46E9EB847E4752C4D7264EE /* SizeInGrid.swift */,
-			);
-			path = GridClasses;
 			sourceTree = "<group>";
 		};
 		CC8873A5D129E761EEABF10B6C336331 /* Elements */ = {
@@ -638,21 +696,27 @@
 				6845BD2DA1CBDE9DE2EA67D64795A39D /* CGRect (ConvenienceInits).swift in Sources */,
 				FEDE5B67B4C74086E15CA7BCAA26A666 /* CGRect (LeftRightTopBottomCenter).swift in Sources */,
 				84BB5378D9A297B753E679DBE872A69A /* CGRect (Scaled).swift in Sources */,
+				5E78C5F91D74753800F8C614 /* BaseTextView.swift in Sources */,
+				5E789EBE1D748B05000F2F74 /* TagView.swift in Sources */,
+				5E78C5F41D7053B800F8C614 /* DropDownTextField.swift in Sources */,
 				A3A6206717A979DB2D2801A8B8D6F67A /* CGSize (Area).swift in Sources */,
 				AA722217EC3B0D09B4E3E43283C98EA6 /* CGSize (CGRect).swift in Sources */,
 				5C8AA03C6C4B4DCDAA601D7775D8EA1A /* CGSize (ConvenienceInits).swift in Sources */,
 				07D9391000BFA486E44C4497A1788C6A /* CGSize (Scaled).swift in Sources */,
 				935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */,
 				01903A7870C59E45E2071D68688B64AE /* FilledButtons.swift in Sources */,
-				14489FCA5F60780335DF0D27E78786D9 /* Grid.swift in Sources */,
 				693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */,
 				2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */,
 				B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */,
 				26C9967D3E82CB12CD88A26329600F6E /* NSL_.swift in Sources */,
+				5EAD4AB71D78939400F2AB73 /* UIView (BarButtonItem).swift in Sources */,
+				5EAD4AB51D788F4400F2AB73 /* ShortcutBarButton.swift in Sources */,
 				D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */,
-				E07B0B2BF5246EB206433374DEFCE68F /* SizeInGrid.swift in Sources */,
 				42BB16D84A350E14BE177DA60F5977A0 /* TextButton.swift in Sources */,
+				5EAD4ABE1D7D53A000F2AB73 /* UIViewController (EmbedViewController).swift in Sources */,
+				5E78C5F61D70645500F8C614 /* BaseTextField.swift in Sources */,
 				EA4C422FDA23A2D7DDF931EF8A605544 /* TextButtons.swift in Sources */,
+				5E789EC11D757A23000F2F74 /* TagsView.swift in Sources */,
 				48D0397391009A24265A5FEE06D16F89 /* TriangleLayer.swift in Sources */,
 				7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */,
 				9EDC676FBB4296DB4C630B5E78379EBE /* UIButton (Color_).swift in Sources */,
@@ -664,12 +728,12 @@
 				F2E74DE0C5E277FAC2E75CCC8984885B /* UIImage (Named).swift in Sources */,
 				234C2E7FADD37FC3783F9BFF305828A6 /* UIImage (Named_).swift in Sources */,
 				5FBBB08F482C2EF8829D937D432DB0AA /* UIImage (RenderingModes).swift in Sources */,
+				5E789ECA1D75DBA2000F2F74 /* ShortcutBar.swift in Sources */,
 				2CCA94476E3333C634E936EC9EECA2AE /* UIImage (Scaled).swift in Sources */,
 				6B57EDA175E804981EC3D12739F147AB /* UIImage (WidthHeight).swift in Sources */,
 				800936DF4B2EC8E094396520F049EF4B /* UIView (Area).swift in Sources */,
 				13BFB81E9AE9A8BC5760E75496D1DFFC /* UIView (Centering).swift in Sources */,
 				F7363F8CD1B8E2BF8206ED43F350E8EF /* UIView (ConvenienceInits).swift in Sources */,
-				B11D68E5BDAE86CBFC18CB1AC362CCD0 /* UIView (Grid).swift in Sources */,
 				A43281AE7F5ED34889BF39E8FA61D6F5 /* UIView (OriginLeftRightTopBottom).swift in Sources */,
 				016794C2166A998F5DCD79812840EF65 /* UIView (SizeWidthHeight).swift in Sources */,
 			);
@@ -719,10 +783,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.3.0;
+				CURRENT_PROJECT_VERSION = 0.4.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 0.3.0;
-				DYLIB_CURRENT_VERSION = 0.3.0;
+				DYLIB_COMPATIBILITY_VERSION = 0.4.0;
+				DYLIB_CURRENT_VERSION = 0.4.0;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -824,10 +888,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.3.0;
+				CURRENT_PROJECT_VERSION = 0.4.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DYLIB_COMPATIBILITY_VERSION = 0.3.0;
-				DYLIB_CURRENT_VERSION = 0.3.0;
+				DYLIB_COMPATIBILITY_VERSION = 0.4.0;
+				DYLIB_CURRENT_VERSION = 0.4.0;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

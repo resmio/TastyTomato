@@ -10,6 +10,12 @@ import Foundation
 
 
 // MARK: // Public
+// MARK: Fake Initializer
+public func TextButton_() -> TextButton {
+    return TextButton.button_()
+}
+
+
 // MARK: Interface
 public extension TextButton {
     public var underlined: Bool {
@@ -25,6 +31,12 @@ public extension TextButton {
 
 // MARK: Class Declaration
 public class TextButton: BaseButton {
+    // Setup Override
+    override class func setup_<T: TextButton>(button: T) {
+        super.setup_(button)
+        button.setTitleColor(UIColor.blackColor(), forState: .Normal)
+    }
+    
     // Private Variable Stored Properties
     private var __underlined: Bool = false
 }
@@ -54,7 +66,6 @@ private extension TextButton {
         set(newUnderlined) {
             if self.__underlined != newUnderlined {
                 self.__underlined = newUnderlined
-                
                 self._updateTitleUnderlining()
             }
         }
