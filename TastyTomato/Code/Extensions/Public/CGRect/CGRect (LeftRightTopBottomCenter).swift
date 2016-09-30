@@ -60,7 +60,7 @@ public extension CGRect {
 
 // MARK: // Private 
 private extension CGRect {
-    private var _left: CGFloat {
+    var _left: CGFloat {
         get {
             return self.origin.x
         }
@@ -69,7 +69,7 @@ private extension CGRect {
         }
     }
     
-    private var _right: CGFloat {
+    var _right: CGFloat {
         get {
             return self.left + self.width
         }
@@ -78,7 +78,7 @@ private extension CGRect {
         }
     }
     
-    private var _top: CGFloat {
+    var _top: CGFloat {
         get {
             return self.origin.y
         }
@@ -87,7 +87,7 @@ private extension CGRect {
         }
     }
     
-    private var _bottom: CGFloat {
+    var _bottom: CGFloat {
         get {
             return self.origin.y + self.height
         }
@@ -96,10 +96,10 @@ private extension CGRect {
         }
     }
     
-    private var _center: CGPoint {
+    var _center: CGPoint {
         get {
-            let x: CGFloat = CGRectGetMidX(self)
-            let y: CGFloat = CGRectGetMidY(self)
+            let x: CGFloat = self.midX
+            let y: CGFloat = self.midY
             return CGPoint(x: x, y: y)
         }
         set(newCenter) {

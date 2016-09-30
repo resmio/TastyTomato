@@ -19,7 +19,7 @@ public extension CGSize {
 
 // MARK: // Private
 private extension CGSize {
-    private var _area: CGFloat {
+    var _area: CGFloat {
         return self.width * self.height
     }
 }

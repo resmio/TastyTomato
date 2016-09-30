@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UIImage {
-    public class func imageNamed(name: String, inBundle bundle: NSBundle = NSBundle.mainBundle()) -> Self {
+    public class func imageNamed(_ name: String, inBundle bundle: Bundle = Bundle.main) -> Self {
         return self.imageNamed_(name, inBundle: bundle)
     }
 }

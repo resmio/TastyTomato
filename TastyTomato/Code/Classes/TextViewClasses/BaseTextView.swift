@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 // MARK: Class Declaration
-public class BaseTextView: UITextView {
+open class BaseTextView: UITextView {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self._setup()
@@ -27,17 +27,17 @@ public class BaseTextView: UITextView {
 // MARK: // Private
 // MARK: Setup
 private extension BaseTextView {
-    private func _setup() {
+    func _setup() {
         self.layer.cornerRadius = 4
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.GrayDDDDDD().CGColor
+        self.layer.borderColor = UIColor.GrayDDDDDD().cgColor
         self.clipsToBounds = true
         
         self.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
-        self.font = UIFont.systemFontOfSize(17)
+        self.font = UIFont.systemFont(ofSize: 17)
         self.textColor = UIColor.Gray555555()
-        self.autocapitalizationType = .None
-        self.autocorrectionType = .No
+        self.autocapitalizationType = .none
+        self.autocorrectionType = .no
     }
 }

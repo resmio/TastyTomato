@@ -45,7 +45,7 @@ public extension UIView {
 
 // MARK: // Private
 private extension UIView {
-    private var _hCenter: CGFloat {
+    var _hCenter: CGFloat {
         get {
             return self.center.x
         }
@@ -54,7 +54,7 @@ private extension UIView {
         }
     }
     
-    private var _vCenter: CGFloat {
+    var _vCenter: CGFloat {
         get {
             return self.center.y
         }
@@ -63,7 +63,7 @@ private extension UIView {
         }
     }
     
-    private func _centerHInSuperview() {
+    func _centerHInSuperview() {
         if self.superview != nil {
             self.center.x = self.superview!.bounds.width / 2
         } else {
@@ -71,7 +71,7 @@ private extension UIView {
         }
     }
     
-    private func _centerVInSuperview() {
+    func _centerVInSuperview() {
         if self.superview != nil {
             self.center.y = self.superview!.bounds.height / 2
         } else {
@@ -79,7 +79,7 @@ private extension UIView {
         }
     }
     
-    private func _centerInSuperview() {
+    func _centerInSuperview() {
         self.centerHInSuperview()
         self.centerVInSuperview()
     }

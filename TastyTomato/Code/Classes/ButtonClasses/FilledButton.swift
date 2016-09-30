@@ -26,33 +26,33 @@ public extension FilledButton {
         return self._highlightedAlpha
     }
     
-    public func setFillColor(color: UIColor) {
+    public func setFillColor(_ color: UIColor) {
         self._setFillColor(color)
     }
     
-    public func setHighlightedAlpha(alph: CGFloat) {
+    public func setHighlightedAlpha(_ alph: CGFloat) {
         self._setHighlightedAlpha(alph)
     }
 }
 
 
 // MARK: Class Declaration
-public class FilledButton: BaseButton {
+open class FilledButton: BaseButton {
     // Setup Override
-    override class func setup_<T: FilledButton>(button: T) {
+    override class func setup_<T: FilledButton>(_ button: T) {
         super.setup_(button)
         button.setFillColor(button.fillColor)
     }
     
     // Private Stored Variable Properties
-    private var _fillColor: UIColor = UIColor.Blue00A7C4()
-    private var _highlightedAlpha: CGFloat = 0.6
+    fileprivate var _fillColor: UIColor = UIColor.Blue00A7C4()
+    fileprivate var _highlightedAlpha: CGFloat = 0.6
 }
 
 
 // MARK: Override
 public extension FilledButton {
-    override public var frame: CGRect {
+    override open var frame: CGRect {
         get {
             return super.frame
         }
@@ -70,26 +70,26 @@ public extension FilledButton {
 // MARK: // Private
 // MARK: // Interface
 private extension FilledButton {
-    private func _setFillColor(color: UIColor) {
+    func _setFillColor(_ color: UIColor) {
         self._fillColor = color
         
         self.setColor_(
             color,
-            forState: .Normal
+            for: UIControlState()
         )
         
         self.setColor_(
             color.withAlpha(self.highlightedAlpha),
-            forState: .Highlighted
+            for: .highlighted
         )
     }
     
-    private func _setHighlightedAlpha(alph: CGFloat) {
+    func _setHighlightedAlpha(_ alph: CGFloat) {
         self._highlightedAlpha = alph
         
         self.setColor_(
             self.fillColor.withAlpha(alph),
-            forState: .Highlighted
+            for: .highlighted
         )
     }
 }

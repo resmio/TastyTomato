@@ -10,9 +10,9 @@ import Foundation
 
 
 // MARK: // Public
-public class ResmioLogo: MetaImage {
-    public static let DefaultBlackText: ResmioLogo = ResmioLogo.suffixed_("default-black-text")
-    public static let DefaultWhiteText: ResmioLogo = ResmioLogo.suffixed_("default-white-text")
-    public static let BetaBlackText: ResmioLogo = ResmioLogo.suffixed_("beta-black-text")
-    public static let BetaWhiteText: ResmioLogo = ResmioLogo.suffixed_("beta-white-text")
+open class ResmioLogo: MetaImage {
+    open static let DefaultBlackText: ResmioLogo = ResmioLogo.suffixed_("default-black-text")
+    open static let DefaultWhiteText: ResmioLogo = ResmioLogo.suffixed_("default-white-text")
+    open static let BetaBlackText: ResmioLogo = ResmioLogo.suffixed_("beta-black-text")
+    open static let BetaWhiteText: ResmioLogo = ResmioLogo.suffixed_("beta-white-text")
 }

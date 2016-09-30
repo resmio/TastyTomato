@@ -30,27 +30,27 @@ public extension TextButton {
 
 
 // MARK: Class Declaration
-public class TextButton: BaseButton {
+open class TextButton: BaseButton {
     // Setup Override
-    override class func setup_<T: TextButton>(button: T) {
+    override class func setup_<T: TextButton>(_ button: T) {
         super.setup_(button)
-        button.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        button.setTitleColor(UIColor.black, for: UIControlState())
     }
     
     // Private Variable Stored Properties
-    private var __underlined: Bool = false
+    fileprivate var __underlined: Bool = false
 }
 
 
 // MARK: Overrides
 public extension TextButton {
-    override public func setTitle(title: String) {
+    override public func setTitle(_ title: String) {
         super.setTitle(title)
         self._updateTitleUnderlining()
     }
     
-    override func setTitle(title: String?, forState state: UIControlState) {
-        super.setTitle(title, forState: state)
+    override open func setTitle(_ title: String?, for state: UIControlState) {
+        super.setTitle(title, for: state)
         self._updateTitleUnderlining()
     }
 }
@@ -59,7 +59,7 @@ public extension TextButton {
 // MARK: // Private
 // MARK: Computed Properties
 private extension TextButton {
-    private var _underlined: Bool {
+    var _underlined: Bool {
         get {
             return self.__underlined
         }
@@ -75,16 +75,16 @@ private extension TextButton {
 
 // MARK: Update Underlining
 private extension TextButton {
-    private func _updateTitleUnderlining() {
+    func _updateTitleUnderlining() {
         if let title: String = self.titleLabel?.text {
-            let underlineStyle: NSUnderlineStyle = self.underlined ? .StyleSingle : .StyleNone
+            let underlineStyle: NSUnderlineStyle = self.underlined ? .styleSingle : .styleNone
             let attributedTitle: NSAttributedString = NSAttributedString(
                 string: title,
                 attributes: [NSUnderlineStyleAttributeName: underlineStyle.rawValue]
             )
             self.setAttributedTitle(
                 attributedTitle,
-                forState: .Normal
+                for: UIControlState()
             )
         }
     }

@@ -10,9 +10,9 @@ import UIKit
 
 
 // MARK: // Public
-public class ArrowIcon: MetaImage {
-    public static let Up: ArrowIcon = ArrowIcon.suffixed_("up")
-    public static let Down: ArrowIcon = ArrowIcon.suffixed_("down")
-    public static let Left: ArrowIcon = ArrowIcon.suffixed_("left")
-    public static let Right: ArrowIcon = ArrowIcon.suffixed_("right")
+open class ArrowIcon: MetaImage {
+    open static let Up: ArrowIcon = ArrowIcon.suffixed_("up")
+    open static let Down: ArrowIcon = ArrowIcon.suffixed_("down")
+    open static let Left: ArrowIcon = ArrowIcon.suffixed_("left")
+    open static let Right: ArrowIcon = ArrowIcon.suffixed_("right")
 }

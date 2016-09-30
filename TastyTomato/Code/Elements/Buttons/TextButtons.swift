@@ -19,11 +19,11 @@ public extension TextButton {
 
 // MARK: // Private
 private extension TextButton {
-    private static func _ForgotPasswordButton() -> TextButton {
+    static func _ForgotPasswordButton() -> TextButton {
         let button: TextButton = self.button_()
         
-        button.setTitleColor(UIColor.Gray555555(), forState: .Normal)
-        button.titleLabel!.font = UIFont.systemFontOfSize(14)
+        button.setTitleColor(UIColor.Gray555555(), for: UIControlState())
+        button.titleLabel!.font = UIFont.systemFont(ofSize: 14)
         button.setTitle(NSL_("Forgotten your password?"))
         button.underlined = true
         

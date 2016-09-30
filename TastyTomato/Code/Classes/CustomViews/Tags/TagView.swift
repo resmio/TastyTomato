@@ -10,7 +10,7 @@ import UIKit
 
 
 @objc public protocol TagViewDelegate: class {
-    func tagViewDeleteButtonTapped(tagView: TagView)
+    func tagViewDeleteButtonTapped(_ tagView: TagView)
 }
 
 
@@ -29,7 +29,7 @@ public extension TagView {
 
 
 // MARK: Class Declaration
-public class TagView: UIView {
+open class TagView: UIView {
     // Required Init
     public required init?(coder aDecoder: NSCoder) {
         fatalError("TagView does not support NSCoding")
@@ -37,7 +37,7 @@ public class TagView: UIView {
     
     // Init
     public init(name: String) {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         self._label.text = name
         
         self._setupLayer()
@@ -48,28 +48,28 @@ public class TagView: UIView {
     }
     
     // Private Constant Stored Properties
-    private let _backgroundAlpha: CGFloat = 0.1
-    private let _horizontalSpacing: CGFloat = 10
-    private let _height: CGFloat = 35.5
-    private let _leftBannerWidth: CGFloat = 8
-    private let _label: UILabel = UILabel()
-    private let _labelHeight: CGFloat = 20
-    private let _fontSize: CGFloat = 16
-    private let _deleteIconSideLength: CGFloat = 15
+    fileprivate let _backgroundAlpha: CGFloat = 0.1
+    fileprivate let _horizontalSpacing: CGFloat = 10
+    fileprivate let _height: CGFloat = 35.5
+    fileprivate let _leftBannerWidth: CGFloat = 8
+    fileprivate let _label: UILabel = UILabel()
+    fileprivate let _labelHeight: CGFloat = 20
+    fileprivate let _fontSize: CGFloat = 16
+    fileprivate let _deleteIconSideLength: CGFloat = 15
     
     // Private Variable Stored Properties
-    private weak var _delegate: TagViewDelegate?
+    fileprivate weak var _delegate: TagViewDelegate?
     
-    private var _leftBannerView: UIView!
-    private var _deleteButton: UIButton!
+    fileprivate var _leftBannerView: UIView!
+    fileprivate var _deleteButton: UIButton!
     
-    private var _color: UIColor = UIColor.YellowF8C150()
+    fileprivate var _color: UIColor = UIColor.YellowF8C150()
 }
 
 
 // MARK: Override
 public extension TagView {
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         self._label.sizeToFit()
         self._label.height = self._labelHeight
         self._label.left = self._leftBannerView.right + self._horizontalSpacing
@@ -95,7 +95,7 @@ extension TagView {
 
 // MARK: Set / Reset Color
 extension TagView {
-    func setColor_(color: UIColor, temporary: Bool) {
+    func setColor_(_ color: UIColor, temporary: Bool) {
         self._setColor(color, temporary: temporary)
     }
     
@@ -108,7 +108,7 @@ extension TagView {
 // MARK: // Private
 // MARK: Setup Layer
 private extension TagView {
-    private func _setupLayer() {
+    func _setupLayer() {
         self.clipsToBounds = true
         
         self.layer.cornerRadius = 4
@@ -121,14 +121,14 @@ private extension TagView {
 
 // MARK: Setup Subviews
 private extension TagView {
-    private func _setupSubviews() {
+    func _setupSubviews() {
         self._setupLabel()
         self._setupLeftBannerView()
         self._setupDeleteButton()
     }
     
-    private func _setupLabel() {
-        self._label.font = UIFont.systemFontOfSize(self._fontSize)
+    func _setupLabel() {
+        self._label.font = UIFont.systemFont(ofSize: self._fontSize)
         self._label.textColor = UIColor.Gray555555()
         self._label.sizeToFit()
         self._label.height = self._labelHeight
@@ -136,7 +136,7 @@ private extension TagView {
         self.addSubview(self._label)
     }
     
-    private func _setupLeftBannerView() {
+    func _setupLeftBannerView() {
         let leftBannerView: UIView = UIView(size:
             CGSize(width: self._leftBannerWidth, height: self.height)
         )
@@ -147,7 +147,7 @@ private extension TagView {
         self.addSubview(leftBannerView)
     }
     
-    private func _setupDeleteButton() {
+    func _setupDeleteButton() {
         let deleteIcon: UIImage = MiscIcon.X.asTemplate()
         let scaledDeleteIcon: UIImage = deleteIcon.scaledToSize(
             CGSize(width: self._deleteIconSideLength, height: self._deleteIconSideLength)
@@ -160,24 +160,24 @@ private extension TagView {
         
         deleteButton.setImage(
             scaledDeleteIcon,
-            forState: .Normal
+            for: UIControlState()
         )
         deleteButton.tintColor = UIColor.Gray555555()
         
         deleteButton.addTarget(
             self,
             action: #selector(deleteButtonTapped_),
-            forControlEvents: .TouchUpInside
+            for: .touchUpInside
         )
         deleteButton.addTarget(
             self,
             action: #selector(deleteButtonTouchDown_),
-            forControlEvents: .TouchDown
+            for: .touchDown
         )
         deleteButton.addTarget(
             self,
             action: #selector(resetColor_),
-            forControlEvents: .TouchDragExit
+            for: .touchDragExit
         )
         
         self._deleteButton = deleteButton
@@ -188,7 +188,7 @@ private extension TagView {
 
 // MARK: Center Views Vertically
 private extension TagView {
-    private func _centerViewsVertically() {
+    func _centerViewsVertically() {
         self._leftBannerView.centerVInSuperview()
         self._label.centerVInSuperview()
         self._deleteButton.centerVInSuperview()
@@ -198,7 +198,7 @@ private extension TagView {
 
 // MARK: Adjust Width
 private extension TagView {
-    private func _adjustWidth() {
+    func _adjustWidth() {
         self.width = (
             self._leftBannerView.width +
             self._horizontalSpacing +
@@ -211,16 +211,16 @@ private extension TagView {
 
 // MARK: Set Color
 private extension TagView {
-    private func _setColor(color: UIColor, temporary: Bool = true) {
+    func _setColor(_ color: UIColor, temporary: Bool = true) {
         self.backgroundColor = color.withAlpha(self._backgroundAlpha)
-        self.layer.borderColor = color.CGColor
+        self.layer.borderColor = color.cgColor
         self._leftBannerView.backgroundColor = color
         if !temporary {
             self._color = color
         }
     }
     
-    private func _resetColor() {
+    func _resetColor() {
         self.setColor_(self._color, temporary: false)
     }
 }

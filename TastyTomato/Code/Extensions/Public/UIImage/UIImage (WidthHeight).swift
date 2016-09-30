@@ -23,11 +23,11 @@ public extension UIImage {
 
 // MARK: // Private
 private extension UIImage {
-    private var _width: CGFloat {
+    var _width: CGFloat {
         return self.size.width
     }
     
-    private var _height: CGFloat {
+    var _height: CGFloat {
         return self.size.height
     }
 }

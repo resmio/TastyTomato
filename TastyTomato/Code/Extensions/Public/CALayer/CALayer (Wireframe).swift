@@ -12,7 +12,7 @@ import UIKit
 // MARK: // Public
 extension CALayer {
     func showAsWireframe() {
-        self.showAsWireframe(withColor: UIColor.blackColor())
+        self.showAsWireframe(withColor: UIColor.black)
     }
     
     func showAsWireframe(withColor color: UIColor) {
@@ -36,21 +36,21 @@ private let _associationPolicy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAI
 
 // MARK: Start / Stop Showing As Wireframe
 private extension CALayer {
-    private func _showAsWireframe() {
-        self.showAsWireframe(withColor: UIColor.lightGrayColor())
+    func _showAsWireframe() {
+        self.showAsWireframe(withColor: UIColor.lightGray)
     }
     
-    private func _showAsWireframe(withColor color: UIColor) {
+    func _showAsWireframe(withColor color: UIColor) {
         self._backupBackgroundColor()
         self._backupBorderColor()
         self._backupBorderWidth()
         
-        self.backgroundColor = UIColor.clearColor().CGColor
-        self.borderColor = color.CGColor
+        self.backgroundColor = UIColor.clear.cgColor
+        self.borderColor = color.cgColor
         self.borderWidth = 1.0
     }
     
-    private func _stopShowingAsWireframe() {
+    func _stopShowingAsWireframe() {
         self._resetBackgroundColor()
         self._resetBorderColor()
         self._resetBorderWidth()
@@ -60,7 +60,7 @@ private extension CALayer {
 
 // MARK: Backups / Resets
 private extension CALayer {
-    private func _backupBackgroundColor() {
+    func _backupBackgroundColor() {
         objc_setAssociatedObject(
             self,
             &_backupBackgroundColorAssociationKey,
@@ -69,7 +69,7 @@ private extension CALayer {
         )
     }
     
-    private func _backupBorderColor() {
+    func _backupBorderColor() {
         objc_setAssociatedObject(
             self,
             &_backupBorderColorAssociationKey,
@@ -78,7 +78,7 @@ private extension CALayer {
         )
     }
     
-    private func _backupBorderWidth() {
+    func _backupBorderWidth() {
         objc_setAssociatedObject(
             self,
             &_backupBorderWidthAssociationKey,
@@ -87,21 +87,21 @@ private extension CALayer {
         )
     }
     
-    private func _resetBackgroundColor() {
+    func _resetBackgroundColor() {
         self.backgroundColor = (objc_getAssociatedObject(
             self,
             &_backupBackgroundColorAssociationKey
             ) as! CGColor)
     }
     
-    private func _resetBorderColor() {
+    func _resetBorderColor() {
         self.borderColor = (objc_getAssociatedObject(
             self,
             &_backupBorderColorAssociationKey
             ) as! CGColor)
     }
     
-    private func _resetBorderWidth() {
+    func _resetBorderWidth() {
         self.borderWidth = objc_getAssociatedObject(
             self,
             &_backupBorderWidthAssociationKey

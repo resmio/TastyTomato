@@ -32,17 +32,17 @@ private let _associationPolicy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAI
 
 // MARK: Show As Wireframe / Reset
 private extension CAShapeLayer {
-    private func _showAsWireframe(withColor color: UIColor) {
+    func _showAsWireframe(withColor color: UIColor) {
         self._backupFillColor()
         self._backupLineWidth()
         self._backupStrokeColor()
         
-        self.fillColor = UIColor.clearColor().CGColor
+        self.fillColor = UIColor.clear.cgColor
         self.lineWidth = 1.0
-        self.strokeColor = color.CGColor
+        self.strokeColor = color.cgColor
     }
     
-    private func _stopShowingAsWireframe() {
+    func _stopShowingAsWireframe() {
         self._resetFillColor()
         self._resetLineWidth()
         self._resetStrokeColor()
@@ -52,7 +52,7 @@ private extension CAShapeLayer {
 
 // MARK: Backups / Resets
 private extension CAShapeLayer {
-    private func _backupFillColor() {
+    func _backupFillColor() {
         objc_setAssociatedObject(
             self,
             &_backupFillColorAssociationKey,
@@ -61,7 +61,7 @@ private extension CAShapeLayer {
         )
     }
     
-    private func _backupLineWidth() {
+    func _backupLineWidth() {
         objc_setAssociatedObject(
             self,
             &_backupLineWidthAssociationKey,
@@ -70,7 +70,7 @@ private extension CAShapeLayer {
         )
     }
     
-    private func _backupStrokeColor() {
+    func _backupStrokeColor() {
         objc_setAssociatedObject(
             self,
             &_backupStrokeColorAssociationKey,
@@ -79,21 +79,21 @@ private extension CAShapeLayer {
         )
     }
     
-    private func _resetFillColor() {
+    func _resetFillColor() {
         self.fillColor = (objc_getAssociatedObject(
             self,
             &_backupFillColorAssociationKey
             ) as! CGColor)
     }
     
-    private func _resetLineWidth() {
+    func _resetLineWidth() {
         self.lineWidth = objc_getAssociatedObject(
             self,
             &_backupLineWidthAssociationKey
             ) as! CGFloat
     }
     
-    private func _resetStrokeColor() {
+    func _resetStrokeColor() {
         self.strokeColor = (objc_getAssociatedObject(
             self,
             &_backupStrokeColorAssociationKey

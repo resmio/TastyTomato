@@ -10,7 +10,7 @@ import Foundation
 
 
 // MARK: // Internal
-func NSL_(key: String) -> String {
+func NSL_(_ key: String) -> String {
     return NSLocalizedString(
         key,
         tableName: nil,

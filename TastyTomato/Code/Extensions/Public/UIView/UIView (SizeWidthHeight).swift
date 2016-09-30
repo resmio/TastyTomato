@@ -42,7 +42,7 @@ public extension UIView {
 
 // MARK: // Private
 private extension UIView {
-    private var _size: CGSize {
+    var _size: CGSize {
         get {
             return self.frame.size
         }
@@ -51,7 +51,7 @@ private extension UIView {
         }
     }
     
-    private var _width: CGFloat {
+    var _width: CGFloat {
         get {
             return self.frame.width
         }
@@ -60,7 +60,7 @@ private extension UIView {
         }
     }
     
-    private var _height: CGFloat {
+    var _height: CGFloat {
         get {
             return self.frame.height
         }

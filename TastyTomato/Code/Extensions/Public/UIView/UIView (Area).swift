@@ -19,7 +19,7 @@ public extension UIView {
 
 // MARK: // Private
 private extension UIView {
-    private var _area: CGFloat {
+    var _area: CGFloat {
         return self.frame.area
     }
 }

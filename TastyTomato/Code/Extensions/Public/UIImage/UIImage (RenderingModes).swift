@@ -27,15 +27,15 @@ public extension UIImage {
 
 // MARK: // Private
 private extension UIImage {
-    private func _inAutomaticMode() -> UIImage {
-        return self.imageWithRenderingMode(.Automatic)
+    func _inAutomaticMode() -> UIImage {
+        return self.withRenderingMode(.automatic)
     }
     
-    private func _asOriginal() -> UIImage {
-        return self.imageWithRenderingMode(.AlwaysOriginal)
+    func _asOriginal() -> UIImage {
+        return self.withRenderingMode(.alwaysOriginal)
     }
     
-    private func _asTemplate() -> UIImage {
-        return self.imageWithRenderingMode(.AlwaysTemplate)
+    func _asTemplate() -> UIImage {
+        return self.withRenderingMode(.alwaysTemplate)
     }
 }

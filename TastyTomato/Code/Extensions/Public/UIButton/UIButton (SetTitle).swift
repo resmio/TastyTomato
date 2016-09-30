@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: // Public
 public extension UIButton {
-    public func setTitle(title: String) {
+    public func setTitle(_ title: String) {
         self._setTitle(title)
     }
 }
@@ -19,7 +19,7 @@ public extension UIButton {
 
 // MARK: // Private
 private extension UIButton {
-    private func _setTitle(title: String) {
-        self.setTitle(title, forState: .Normal)
+    func _setTitle(_ title: String) {
+        self.setTitle(title, for: UIControlState())
     }
 }

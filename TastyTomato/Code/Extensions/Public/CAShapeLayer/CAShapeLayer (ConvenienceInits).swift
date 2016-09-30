@@ -13,7 +13,7 @@ import UIKit
 public extension CAShapeLayer {
     public convenience init(path p: UIBezierPath) {
         self.init()
-        self.path = p.CGPath
+        self.path = p.cgPath
     }
     
     public convenience init(rect r: CGRect) {

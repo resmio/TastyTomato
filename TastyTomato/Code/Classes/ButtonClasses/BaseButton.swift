@@ -39,9 +39,9 @@ public extension BaseButton {
 
 
 // MARK: Class Declaration
-public class BaseButton: UIButton {
+open class BaseButton: UIButton {
     // Init Error Message
-    @noreturn class func initErrorMessage() {
+    class func initErrorMessage() -> Never  {
         fatalError(
             "Do not initialize \(self.classForCoder) directly. " +
             "Use \(self.classForCoder)_() function instead."
@@ -57,8 +57,8 @@ public class BaseButton: UIButton {
         super.init(frame: frame)
     }
     
-    private init() {
-        self.dynamicType.initErrorMessage()
+    fileprivate init() {
+        type(of: self).initErrorMessage()
     }
     
     // Factory
@@ -67,25 +67,25 @@ public class BaseButton: UIButton {
     }
     
     // Setup
-    class func setup_<T: BaseButton>(button: T) {
+    class func setup_<T: BaseButton>(_ button: T) {
         self._setup(button)
     }
     
     // Private Static Constant Stored Properties
-    private static let _defaultWidth: CGFloat = 100
-    private static let _defaultHeight: CGFloat = 35
+    fileprivate static let _defaultWidth: CGFloat = 100
+    fileprivate static let _defaultHeight: CGFloat = 35
     
     // Private Constants Stored Properties
-    private let _horizontalPadding: CGFloat = 10
+    fileprivate let _horizontalPadding: CGFloat = 10
     
     // Private Variable Stored Properties
-    private var _autoAdjustWidthOnTitleSet: Bool = true
+    fileprivate var _autoAdjustWidthOnTitleSet: Bool = true
 }
 
 
 // MARK: Override
 extension BaseButton {
-    override public func setTitle(title: String) {
+    override public func setTitle(_ title: String) {
         super.setTitle(title)
         if self.autoAdjustWidthOnTitleSet {
             let backupHeight: CGFloat = self.height
@@ -100,9 +100,9 @@ extension BaseButton {
 // MARK: // Private
 // MARK: Factory
 private extension BaseButton {
-    private static func _button() -> Self {
-        let button = self.init(type: .System)
-        button.dynamicType.setup_(button)
+    static func _button() -> Self {
+        let button = self.init(type: .system)
+        type(of: button).setup_(button)
         return button
     }
 }
@@ -110,7 +110,7 @@ private extension BaseButton {
 
 // MARK: Setup
 private extension BaseButton {
-    private static func _setup<T: BaseButton>(button: T) {
+    static func _setup<T: BaseButton>(_ button: T) {
         button.height = self.defaultHeight
         button.width = self.defaultWidth
         button.layer.cornerRadius = 4

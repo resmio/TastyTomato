@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UIImage {
-    public static func coloredRect(size size: CGSize, color: UIColor) -> UIImage? {
+    public static func coloredRect(size: CGSize, color: UIColor) -> UIImage? {
         return self._coloredRect(
             size: size,
             color: color
@@ -22,15 +22,15 @@ public extension UIImage {
 
 // MARK: // Private
 private extension UIImage {
-    private static func _coloredRect(size size: CGSize, color: UIColor) -> UIImage? {
+    static func _coloredRect(size: CGSize, color: UIColor) -> UIImage? {
         if size.area != 0 {
             let rect: CGRect = CGRect(size: size)
             
             UIGraphicsBeginImageContextWithOptions(size, false, 0)
-            let context: CGContextRef? = UIGraphicsGetCurrentContext()
+            let context: CGContext? = UIGraphicsGetCurrentContext()
             
-            CGContextSetFillColorWithColor(context, color.CGColor)
-            CGContextFillRect(context, rect)
+            context?.setFillColor(color.cgColor)
+            context?.fill(rect)
             
             let image: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
