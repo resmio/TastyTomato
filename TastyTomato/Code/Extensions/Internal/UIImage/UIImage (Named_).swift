@@ -12,11 +12,11 @@ import UIKit
 // MARK: // Internal
 // MARK: Image With Suffix
 extension UIImage {
-    class func fromImageNamed_(name: String) -> Self {
-        return self._fromImageNamed(name)
+    class func imageNamed_(_ name: String, inBundle bundle: Bundle = BundleHelper_.TastyTomatoBundle) -> Self {
+        return self._imageNamed(name, inBundle: bundle)
     }
     
-    class func suffixed_(suffix: String) -> Self {
+    class func suffixed_(_ suffix: String) -> Self {
         return self._suffixed(suffix)
     }
 }
@@ -25,24 +25,24 @@ extension UIImage {
 // MARK: // Private
 // MARK: Image With Suffix Implementation
 private extension UIImage {
-    static func _fromImageNamed(name: String) -> Self {
+    static func _imageNamed(_ name: String, inBundle bundle: Bundle) -> Self {
         let result = self.init(
             named: name,
-            inBundle: _TastyTomatoBundle_,
-            compatibleWithTraitCollection: nil
+            in: bundle,
+            compatibleWith: nil
         )
         
         if result == nil {
-            fatalError("\(self.classForCoder()) named \(name) could not be found!")
+            fatalError("\(self.classForCoder()) named \(name) could not be found in bundle \(bundle)!")
         }
         
         return result!
     }
     
-    static func _suffixed(suffix: String) -> Self {
+    static func _suffixed(_ suffix: String) -> Self {
         let className: String = "\(self.classForCoder())"
         let combinedString: String = "\(className)-\(suffix)"
         
-        return self.fromImageNamed_(combinedString)
+        return self.imageNamed_(combinedString)
     }
 }

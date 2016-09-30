@@ -12,11 +12,11 @@ import CoreGraphics
 
 // MARK: // Public
 // MARK: Class Declaration
-public class MetaImage: UIImage {
+open class MetaImage: UIImage {
     // Required Initializer
     required public init?(coder aDecoder: NSCoder) {
         super.init()
-        fatalError("\(self.dynamicType) does not implement NSCoding")
+        fatalError("\(type(of: self)) does not support NSCoding")
     }
     
     // Internalized Initializers
@@ -24,11 +24,11 @@ public class MetaImage: UIImage {
         super.init()
     }
     
-    internal override init?(data: NSData) {
+    internal override init?(data: Data) {
         super.init(data: data)
     }
     
-    internal override init?(data: NSData, scale: CGFloat) {
+    internal override init?(data: Data, scale: CGFloat) {
         super.init(data: data, scale: scale)
     }
     
@@ -36,19 +36,19 @@ public class MetaImage: UIImage {
         super.init(contentsOfFile: path)
     }
     
-    internal override init(CGImage cgImage: CGImageRef) {
-        super.init(CGImage: cgImage)
+    internal override init(cgImage: CGImage) {
+        super.init(cgImage: cgImage)
     }
     
-    internal override init(CGImage cgImage: CGImageRef, scale: CGFloat, orientation: UIImageOrientation) {
-        super.init(CGImage: cgImage, scale: scale, orientation: orientation)
+    internal override init(cgImage: CGImage, scale: CGFloat, orientation: UIImageOrientation) {
+        super.init(cgImage: cgImage, scale: scale, orientation: orientation)
     }
     
-    internal override init(CIImage ciImage: CoreImage.CIImage) {
-        super.init(CIImage: ciImage)
+    internal override init(ciImage: CoreImage.CIImage) {
+        super.init(ciImage: ciImage)
     }
     
-    internal override init(CIImage ciImage: CoreImage.CIImage, scale: CGFloat, orientation: UIImageOrientation) {
-        super.init(CIImage: ciImage, scale: scale, orientation: orientation)
+    internal override init(ciImage: CoreImage.CIImage, scale: CGFloat, orientation: UIImageOrientation) {
+        super.init(ciImage: ciImage, scale: scale, orientation: orientation)
     }
 }

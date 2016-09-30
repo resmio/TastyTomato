@@ -4,8 +4,10 @@ machine:
     # your terminal to be using UTF-8 encoding.
     LANG: en_US.UTF-8
   xcode:
-    version: "7.3"
+    version: "8.0"
 
 test:
   pre:
-    - open -b com.apple.iphonesimulator
+    # https://discuss.circleci.com/t/xcode-exit-code-65/4284/13
+    - xcrun instruments -w 'A141F49D-F20A-49B3-ACBF-A97F9FFB9B89' || true
+    - sleep 15
