@@ -37,7 +37,7 @@ public extension FilledButton {
 
 
 // MARK: Class Declaration
-open class FilledButton: BaseButton {
+public class FilledButton: BaseButton {
     // Setup Override
     override class func setup_<T: FilledButton>(_ button: T) {
         super.setup_(button)
@@ -52,7 +52,7 @@ open class FilledButton: BaseButton {
 
 // MARK: Override
 public extension FilledButton {
-    override open var frame: CGRect {
+    override public var frame: CGRect {
         get {
             return super.frame
         }

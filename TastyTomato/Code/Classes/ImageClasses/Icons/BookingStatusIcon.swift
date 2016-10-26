@@ -10,11 +10,28 @@ import UIKit
 
 
 // MARK: // Public
-open class BookingStatusIcon: MetaImage {
-    open static let Confirmed: BookingStatusIcon = BookingStatusIcon.suffixed_("confirmed")
-    open static let Arrived: BookingStatusIcon = BookingStatusIcon.suffixed_("arrived")
-    open static let Seated: BookingStatusIcon = BookingStatusIcon.suffixed_("seated")
-    open static let Finished: BookingStatusIcon = BookingStatusIcon.suffixed_("finished")
-    open static let NoShow: BookingStatusIcon = BookingStatusIcon.suffixed_("noshow")
-    open static let Cancelled: BookingStatusIcon = BookingStatusIcon.imageNamed_("MiscIcon-x")
+public class BookingStatusIcon: MetaImage {
+    public static var Confirmed: BookingStatusIcon {
+        return BookingStatusIcon.suffixed_("confirmed")
+    }
+    
+    public static var Arrived: BookingStatusIcon {
+        return BookingStatusIcon.suffixed_("arrived")
+    }
+    
+    public static var Seated: BookingStatusIcon {
+        return BookingStatusIcon.suffixed_("seated")
+    }
+    
+    public static var Finished: BookingStatusIcon {
+        return BookingStatusIcon.suffixed_("finished")
+    }
+    
+    public static var NoShow: BookingStatusIcon {
+        return BookingStatusIcon.suffixed_("noshow")
+    }
+    
+    public static var Cancelled: BookingStatusIcon {
+        return BookingStatusIcon.imageNamed_("MiscIcon-x")
+    }
 }

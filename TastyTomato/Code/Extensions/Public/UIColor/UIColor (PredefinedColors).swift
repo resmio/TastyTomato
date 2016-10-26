@@ -77,15 +77,47 @@ public extension UIColor {
 
 // MARK: // Private
 private extension UIColor {
-    static let _RedE62C4F: UIColor =                UIColor(fromHex_: "E62C4F")
-    static let _YellowF8C150: UIColor =             UIColor(fromHex_: "F8C150")
-    static let _Green22CCAA: UIColor =              UIColor(fromHex_: "22CCAA")
-    static let _Blue00A7C4: UIColor =               UIColor(fromHex_: "00A7C4")
-    static let _Blue018EA6: UIColor =               UIColor(fromHex_: "018EA6")
-    static let _Gray555555: UIColor =               UIColor(fromHex_: "555555")
-    static let _Gray999999: UIColor =               UIColor(fromHex_: "999999")
-    static let _GrayCCCCCC: UIColor =               UIColor(fromHex_: "CCCCCC")
-    static let _GrayDDDDDD: UIColor =               UIColor(fromHex_: "DDDDDD")
-    static let _GrayF7F7F7: UIColor =               UIColor(fromHex_: "F7F7F7")
-    static let _LightKeyboardBackround: UIColor =   UIColor(fromHex_: "D2D5DA")
+    static var _RedE62C4F: UIColor {
+        return UIColor(fromHex_: "E62C4F")
+    }
+    
+    static var _YellowF8C150: UIColor {
+        return UIColor(fromHex_: "F8C150")
+    }
+    
+    static var _Green22CCAA: UIColor {
+        return UIColor(fromHex_: "22CCAA")
+    }
+    
+    static var _Blue00A7C4: UIColor {
+        return UIColor(fromHex_: "00A7C4")
+    }
+    
+    static var _Blue018EA6: UIColor {
+        return UIColor(fromHex_: "018EA6")
+    }
+    
+    static var _Gray555555: UIColor {
+        return UIColor(fromHex_: "555555")
+    }
+    
+    static var _Gray999999: UIColor {
+        return UIColor(fromHex_: "999999")
+    }
+    
+    static var _GrayCCCCCC: UIColor {
+        return UIColor(fromHex_: "CCCCCC")
+    }
+    
+    static var _GrayDDDDDD: UIColor {
+        return UIColor(fromHex_: "DDDDDD")
+    }
+    
+    static var _GrayF7F7F7: UIColor {
+        return UIColor(fromHex_: "F7F7F7")
+    }
+    
+    static var _LightKeyboardBackround: UIColor {
+        return UIColor(fromHex_: "D2D5DA")
+    }
 }

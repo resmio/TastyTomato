@@ -12,7 +12,7 @@ import CoreGraphics
 
 // MARK: // Public
 // MARK: Class Declaration
-open class MetaImage: UIImage {
+public class MetaImage: UIImage {
     // Required Initializer
     required public init?(coder aDecoder: NSCoder) {
         super.init()
