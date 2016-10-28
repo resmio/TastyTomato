@@ -11,31 +11,27 @@ import UIKit
 
 // MARK: // Public
 extension UIImage {
-    convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
-        self.init(_color: color, _size: size)
+    convenience init?(color: UIColor) {
+        self.init(_color: color)
     }
 }
 
 
 // MARK: // Private
 private extension UIImage {
-    convenience init?(_color: UIColor, _size: CGSize) {
-        guard _size.area != 0 else {
-            return nil
-        }
-        
+    convenience init?(_color: UIColor) {
+        let size: CGSize = CGSize(width: 1, height: 1)
         let cgColor: CGColor = _color.cgColor
         let colorIsOpaque: Bool = cgColor.alpha == 1;
-        UIGraphicsBeginImageContextWithOptions(_size, colorIsOpaque, 0)
+        UIGraphicsBeginImageContextWithOptions(size, colorIsOpaque, 1)
         
         guard let context = UIGraphicsGetCurrentContext() else {
             UIGraphicsEndImageContext()
             return nil
         }
         
-        let rect: CGRect = _size.asCGRect()
         context.setFillColor(cgColor)
-        context.fill(rect)
+        context.fill(size.asCGRect())
         
         guard let cgImage = UIGraphicsGetImageFromCurrentImageContext()?.cgImage else {
             UIGraphicsEndImageContext()
