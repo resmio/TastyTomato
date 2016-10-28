@@ -11,11 +11,11 @@ import UIKit
 
 // MARK: // Public
 public extension UIImage {
-    public func scaledByFactor(_ factor: CGFloat) -> UIImage? {
+    public func scaledByFactor(_ factor: CGFloat) -> UIImage {
         return self._scaledByFactor(factor)
     }
     
-    public func scaledToSize(_ size: CGSize) -> UIImage? {
+    public func scaledToSize(_ size: CGSize) -> UIImage {
         return self._scaledToSize(size)
     }
 }
@@ -23,24 +23,20 @@ public extension UIImage {
 
 // MARK: // Private
 private extension UIImage {
-    func _scaledByFactor(_ factor: CGFloat) -> UIImage? {
+    func _scaledByFactor(_ factor: CGFloat) -> UIImage {
         return self._scaledToSize(self.size.scaledByFactor(factor))
     }
     
-    func _scaledToSize(_ size: CGSize) -> UIImage? {
-        guard let cgImage: CGImage = self.cgImage else {
-            return nil
-        }
-        
+    func _scaledToSize(_ size: CGSize) -> UIImage {
         if size == self.size {
             return self
         }
         
-        let isOpaque: Bool = cgImage.alphaInfo == .none
+        let isOpaque: Bool = self.cgImage!.alphaInfo == .none
         let renderingMode: UIImageRenderingMode = self.renderingMode
         UIGraphicsBeginImageContextWithOptions(size, isOpaque, 0)
         self.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        let result: UIImage? = UIGraphicsGetImageFromCurrentImageContext()?.withRenderingMode(renderingMode)
+        let result: UIImage = UIGraphicsGetImageFromCurrentImageContext()!.withRenderingMode(renderingMode)
         UIGraphicsEndImageContext()
         return result
     }
