@@ -11,4 +11,4 @@ import Foundation
 
 // MARK: // Public
 // MARK: Class Declaration
-open class MiscImage: MetaImage {}
+public class MiscImage: MetaImage {}

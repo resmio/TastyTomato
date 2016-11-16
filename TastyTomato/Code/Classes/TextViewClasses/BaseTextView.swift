@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 // MARK: Class Declaration
-open class BaseTextView: UITextView {
+public class BaseTextView: UITextView {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self._setup()

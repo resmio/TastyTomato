@@ -28,16 +28,16 @@ private extension UIImage {
     }
     
     func _scaledToSize(_ size: CGSize) -> UIImage {
-        // In the next line, pass 0.0 to use 
-        // the current device's pixel scaling factor
-        // (and thus account for Retina resolution).
-        // Pass 1.0 to force exact pixel size.
+        if size == self.size {
+            return self
+        }
+        
+        let isOpaque: Bool = self.cgImage!.alphaInfo == .none
         let renderingMode: UIImageRenderingMode = self.renderingMode
-        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        UIGraphicsBeginImageContextWithOptions(size, isOpaque, 0)
         self.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let result: UIImage = UIGraphicsGetImageFromCurrentImageContext()!.withRenderingMode(renderingMode)
         UIGraphicsEndImageContext()
-        let newImageWithRenderingMode: UIImage = newImage.withRenderingMode(renderingMode)
-        return newImageWithRenderingMode
+        return result
     }
 }

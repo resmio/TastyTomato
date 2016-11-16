@@ -20,7 +20,6 @@ extension UIButton {
 // MARK: // Private
 private extension UIButton {
     func _setColor(_ color: UIColor, for state: UIControlState) {
-        let image: UIImage? = UIImage.coloredRect(size: self.size, color: color)
-        self.setBackgroundImage(image, for: state)
+        self.setBackgroundImage(UIImage(color: color), for: state)
     }
 }

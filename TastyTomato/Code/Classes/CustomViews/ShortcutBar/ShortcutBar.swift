@@ -19,7 +19,7 @@ public extension ShortcutBar {
 
 
 // MARK: Class Declaration
-open class ShortcutBar: UIView {
+public class ShortcutBar: UIView {
     // Init
     public convenience init() {
         let width: CGFloat = UIScreen.main.bounds.width

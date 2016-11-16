@@ -10,34 +10,36 @@ import UIKit
 
 
 // MARK: // Public
-public extension UIImage {
-    public static func coloredRect(size: CGSize, color: UIColor) -> UIImage? {
-        return self._coloredRect(
-            size: size,
-            color: color
-        )
+extension UIImage {
+    convenience init?(color: UIColor) {
+        self.init(_color: color)
     }
 }
 
 
 // MARK: // Private
 private extension UIImage {
-    static func _coloredRect(size: CGSize, color: UIColor) -> UIImage? {
-        if size.area != 0 {
-            let rect: CGRect = CGRect(size: size)
-            
-            UIGraphicsBeginImageContextWithOptions(size, false, 0)
-            let context: CGContext? = UIGraphicsGetCurrentContext()
-            
-            context?.setFillColor(color.cgColor)
-            context?.fill(rect)
-            
-            let image: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
+    convenience init?(_color: UIColor) {
+        let size: CGSize = CGSize(width: 1, height: 1)
+        let cgColor: CGColor = _color.cgColor
+        let colorIsOpaque: Bool = cgColor.alpha == 1;
+        UIGraphicsBeginImageContextWithOptions(size, colorIsOpaque, 1)
+        
+        guard let context = UIGraphicsGetCurrentContext() else {
             UIGraphicsEndImageContext()
-            
-            return image
-        } else {
             return nil
         }
+        
+        context.setFillColor(cgColor)
+        context.fill(size.asCGRect())
+        
+        guard let cgImage = UIGraphicsGetImageFromCurrentImageContext()?.cgImage else {
+            UIGraphicsEndImageContext()
+            return nil
+        }
+        
+        UIGraphicsEndImageContext()
+        
+        self.init(cgImage: cgImage)
     }
 }

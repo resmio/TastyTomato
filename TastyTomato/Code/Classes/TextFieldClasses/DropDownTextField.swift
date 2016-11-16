@@ -67,7 +67,7 @@ public extension DropDownTextField {
 
 
 // MARK: Class Declaration
-open class DropDownTextField: UIView {
+public class DropDownTextField: UIView {
     // Required Init
     required public init?(coder aDecoder: NSCoder) {
         fatalError("DropDownTextField does not support NSCoding")
@@ -131,10 +131,7 @@ extension DropDownTextField: UITextFieldDelegate {
     }
 }
 
-extension DropDownTextField: UITableViewDelegate {
-    
-}
-
+extension DropDownTextField: UITableViewDelegate {}
 extension DropDownTextField: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
