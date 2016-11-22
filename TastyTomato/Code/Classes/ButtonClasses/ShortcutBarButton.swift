@@ -17,7 +17,7 @@ public func ShortcutBarButton_() -> ShortcutBarButton {
 
 
 // MARK: Class Declaration
-open class ShortcutBarButton: BaseButton {
+public class ShortcutBarButton: BaseButton {
     // Setup Override
     override class func setup_<T: ShortcutBarButton>(_ button: T) {
         super.setup_(button)

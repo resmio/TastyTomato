@@ -39,7 +39,7 @@ public extension BaseButton {
 
 
 // MARK: Class Declaration
-open class BaseButton: UIButton {
+public class BaseButton: UIButton {
     // Init Error Message
     class func initErrorMessage() -> Never  {
         fatalError(

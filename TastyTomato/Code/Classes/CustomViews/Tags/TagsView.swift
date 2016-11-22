@@ -32,7 +32,7 @@ public extension TagsView {
 
 
 // MARK: Class Declaration
-open class TagsView: UIView {
+public class TagsView: UIView {
     // Required Init
     public required init?(coder aDecoder: NSCoder) {
         fatalError("TagsView does not support NSCoding")
@@ -59,7 +59,7 @@ open class TagsView: UIView {
 
 // MARK: Layout Subviews Override
 extension TagsView {
-    open override func layoutSubviews() {
+    public override func layoutSubviews() {
         self._scrollView.size = self.size
         self._rearrangeTagViewsStartingFromIndex(0, animated: false)
         self._updateScrollViewContentHeight()

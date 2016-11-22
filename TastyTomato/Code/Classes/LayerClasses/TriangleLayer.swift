@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public 
 // MARK: Class Declaration
-open class TriangleLayer: CAShapeLayer {
+public class TriangleLayer: CAShapeLayer {
     // Required Init
     required public init?(coder aDecoder: NSCoder) {
         fatalError("TriangleLayer does not support NSCoding")

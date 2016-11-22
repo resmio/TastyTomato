@@ -30,7 +30,7 @@ public extension TextButton {
 
 
 // MARK: Class Declaration
-open class TextButton: BaseButton {
+public class TextButton: BaseButton {
     // Setup Override
     override class func setup_<T: TextButton>(_ button: T) {
         super.setup_(button)
@@ -49,7 +49,7 @@ public extension TextButton {
         self._updateTitleUnderlining()
     }
     
-    override open func setTitle(_ title: String?, for state: UIControlState) {
+    override public func setTitle(_ title: String?, for state: UIControlState) {
         super.setTitle(title, for: state)
         self._updateTitleUnderlining()
     }

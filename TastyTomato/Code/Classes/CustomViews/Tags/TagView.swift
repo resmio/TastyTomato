@@ -29,7 +29,7 @@ public extension TagView {
 
 
 // MARK: Class Declaration
-open class TagView: UIView {
+public class TagView: UIView {
     // Required Init
     public required init?(coder aDecoder: NSCoder) {
         fatalError("TagView does not support NSCoding")
@@ -69,7 +69,7 @@ open class TagView: UIView {
 
 // MARK: Override
 public extension TagView {
-    open override func layoutSubviews() {
+    public override func layoutSubviews() {
         self._label.sizeToFit()
         self._label.height = self._labelHeight
         self._label.left = self._leftBannerView.right + self._horizontalSpacing

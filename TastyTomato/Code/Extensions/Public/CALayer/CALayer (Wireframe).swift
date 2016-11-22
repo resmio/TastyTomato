@@ -10,16 +10,16 @@ import UIKit
 
 
 // MARK: // Public
-extension CALayer {
-    func showAsWireframe() {
+public extension CALayer {
+    public func showAsWireframe() {
         self.showAsWireframe(withColor: UIColor.black)
     }
     
-    func showAsWireframe(withColor color: UIColor) {
+    public func showAsWireframe(withColor color: UIColor) {
         self._showAsWireframe(withColor: color)
     }
     
-    func stopShowingAsWireframe() {
+    public func stopShowingAsWireframe() {
         self._stopShowingAsWireframe()
     }
 }
