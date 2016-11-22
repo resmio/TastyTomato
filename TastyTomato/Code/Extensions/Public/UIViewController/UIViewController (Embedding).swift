@@ -1,5 +1,5 @@
 //
-//  UIViewController (EmbedViewController).swift
+//  UIViewController (Embedding).swift
 //  TastyTomato
 //
 //  Created by Jan Nash on 9/5/16.
@@ -11,19 +11,19 @@ import UIKit
 
 // MARK: // Public
 public extension UIViewController {
-    public func embedViewController(_ viewController: UIViewController, inView view: UIView? = nil) {
-        self._embedViewController(
+    public func embed(_ viewController: UIViewController, into view: UIView? = nil) {
+        self._embed(
             viewController,
-            inView: view,
-            inFrame: nil
+            into: view,
+            in: nil
         )
     }
     
-    public func embedViewController(_ viewController: UIViewController, inView view: UIView? = nil, inFrame frame: CGRect) {
-        self._embedViewController(
+    public func embed(_ viewController: UIViewController, into view: UIView? = nil, in frame: CGRect) {
+        self._embed(
             viewController,
-            inView: view,
-            inFrame: frame
+            into: view,
+            in: frame
         )
     }
 }
@@ -31,14 +31,13 @@ public extension UIViewController {
 
 // MARK: // Private
 private extension UIViewController {
-    func _embedViewController(_ viewController: UIViewController, inView view: UIView?, inFrame frame: CGRect?) {
+    func _embed(_ viewController: UIViewController, into view: UIView?, in frame: CGRect?) {
         let containerView: UIView = view ?? self.view
         let containerFrame: CGRect = frame ?? containerView.bounds
         let vcView: UIView = viewController.view
-        vcView.frame = containerFrame
         
-        viewController.willMove(toParentViewController: self)
         self.addChildViewController(viewController)
+        vcView.frame = containerFrame
         containerView.addSubview(vcView)
         viewController.didMove(toParentViewController: self)
     }

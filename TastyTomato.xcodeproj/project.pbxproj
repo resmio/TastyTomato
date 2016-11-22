@@ -23,7 +23,7 @@
 		33D7CBF4CDA305FAE290B028790A338E /* ShortcutBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC87E38A8D37FC92DD3A64DEC8AC1796 /* ShortcutBarButton.swift */; };
 		3466F939EFAD784C51D7B5EC69F54B42 /* ArrowIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B5813ECAE6108D8A3192D688E9D77 /* ArrowIcon.swift */; };
 		36619180DB22B571E2199B3C6CDD67A4 /* UIColor (WithAlpha).swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */; };
-		3A6B5375ADF656957532FA7CADBB394B /* UIViewController (EmbedViewController).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26CDFA5525ECDD11F2C82ECCBDE5F9 /* UIViewController (EmbedViewController).swift */; };
+		3A6B5375ADF656957532FA7CADBB394B /* UIViewController (Embedding).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26CDFA5525ECDD11F2C82ECCBDE5F9 /* UIViewController (Embedding).swift */; };
 		3DE684BA7159AEA557CDE0F4F775B5A0 /* CGFloat (Int).swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24467D4568DC50711B01B3FBCD8958 /* CGFloat (Int).swift */; };
 		42BB16D84A350E14BE177DA60F5977A0 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12E9AC9F91E1C3F23E1C2A25D9E463 /* TextButton.swift */; };
 		48D0397391009A24265A5FEE06D16F89 /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */; };
@@ -87,7 +87,7 @@
 		01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		083386230915027A1693F0088C82312B /* TastyTomato.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TastyTomato.h; sourceTree = "<group>"; };
 		0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton (Color).swift"; sourceTree = "<group>"; };
-		0D26CDFA5525ECDD11F2C82ECCBDE5F9 /* UIViewController (EmbedViewController).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController (EmbedViewController).swift"; sourceTree = "<group>"; };
+		0D26CDFA5525ECDD11F2C82ECCBDE5F9 /* UIViewController (Embedding).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController (Embedding).swift"; sourceTree = "<group>"; };
 		0F913362CD789B7370C90D4A856950CF /* CGRect (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		110CB58DB9DDDA2C9F160F9BC574F54D /* TastyTomatoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TastyTomatoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13A94DD966224A32780B63A66B726658 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -539,7 +539,7 @@
 		DC10D825E2095495087364C672A77DF3 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0D26CDFA5525ECDD11F2C82ECCBDE5F9 /* UIViewController (EmbedViewController).swift */,
+				0D26CDFA5525ECDD11F2C82ECCBDE5F9 /* UIViewController (Embedding).swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -743,7 +743,7 @@
 				A43281AE7F5ED34889BF39E8FA61D6F5 /* UIView (OriginLeftRightTopBottom).swift in Sources */,
 				5A17A3E7FF74BF8938A74A135969B1CE /* UIView (ScaleByFactor).swift in Sources */,
 				016794C2166A998F5DCD79812840EF65 /* UIView (SizeWidthHeight).swift in Sources */,
-				3A6B5375ADF656957532FA7CADBB394B /* UIViewController (EmbedViewController).swift in Sources */,
+				3A6B5375ADF656957532FA7CADBB394B /* UIViewController (Embedding).swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,10 +792,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.6.0;
+				CURRENT_PROJECT_VERSION = 0.7.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 0.6.0;
-				DYLIB_CURRENT_VERSION = 0.6.0;
+				DYLIB_COMPATIBILITY_VERSION = 0.7.0;
+				DYLIB_CURRENT_VERSION = 0.7.0;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -893,10 +893,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.6.0;
+				CURRENT_PROJECT_VERSION = 0.7.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DYLIB_COMPATIBILITY_VERSION = 0.6.0;
-				DYLIB_CURRENT_VERSION = 0.6.0;
+				DYLIB_COMPATIBILITY_VERSION = 0.7.0;
+				DYLIB_CURRENT_VERSION = 0.7.0;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
