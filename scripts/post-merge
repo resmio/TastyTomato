@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT_NAME="ResmioApp"
+PROJECT_NAME="TastyTomato"
 STASH_MESSAGE="<post-merge-hook> Temporary stash, do not pop or delete"
 
 function stash_all_changes
