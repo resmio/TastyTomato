@@ -152,17 +152,15 @@ public class ZoomView: UIView {
     fileprivate weak var _delegate: ZoomViewDelegate?
     
     // Private Lazy Variable Properties
-    // Non-nillable
     fileprivate lazy var _scrollView: UIScrollView = self._createScrollView()
-    // Nillable
-    fileprivate lazy var _doubleTapRecognizer: UITapGestureRecognizer! = self._createDoubleTapRecognizer()
-    fileprivate lazy var _zoomOutTapRecognizer: UITapGestureRecognizer! = self._createZoomOutRecognizer()
     
     // Private Variable Properties
     fileprivate var _contentView: UIView
     fileprivate var _zoomThreshold: CGFloat = 1
     fileprivate var __doubleTapEnabled: Bool = true
     fileprivate var __zoomOutTapEnabled: Bool = true
+    fileprivate var _doubleTapRecognizer: UITapGestureRecognizer?
+    fileprivate var _zoomOutTapRecognizer: UITapGestureRecognizer?
 }
 
 
@@ -234,29 +232,6 @@ private extension ZoomView {
         scrollView.addSubview(self._contentView)
         return scrollView
     }
-    
-    func _createDoubleTapRecognizer() -> UITapGestureRecognizer {
-        let doubleTapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
-        doubleTapRecognizer.numberOfTapsRequired = 2
-        doubleTapRecognizer.addTarget(
-            self,
-            action: #selector(_handleDoubleTap(_:))
-        )
-        
-        return doubleTapRecognizer
-    }
-    
-    func _createZoomOutRecognizer() -> UITapGestureRecognizer {
-        let zoomOutRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
-        zoomOutRecognizer.numberOfTapsRequired = 2
-        zoomOutRecognizer.numberOfTouchesRequired = 2
-        zoomOutRecognizer.addTarget(
-            self,
-            action: #selector(_handleZoomOutTap)
-        )
-        
-        return zoomOutRecognizer
-    }
 }
 
 
@@ -267,9 +242,6 @@ private extension ZoomView {
             return self.__doubleTapEnabled
         }
         set(newDoubleTapEnabled) {
-            guard newDoubleTapEnabled != self.__doubleTapEnabled else {
-                return
-            }
             self.__doubleTapEnabled = newDoubleTapEnabled
             self._updateDoubleTapRecognizer()
         }
@@ -280,9 +252,6 @@ private extension ZoomView {
             return self.__zoomOutTapEnabled
         }
         set(newZoomOutTapEnabled) {
-            guard newZoomOutTapEnabled != self._zoomOutTapEnabled else {
-                return
-            }
             self.__zoomOutTapEnabled = newZoomOutTapEnabled
             self._updateZoomOutTapRecognizer()
         }
@@ -306,21 +275,55 @@ private extension ZoomView {
     }
     
     func _updateDoubleTapRecognizer() {
+        guard (self.doubleTapEnabled == (self._doubleTapRecognizer == nil)) else {
+            return
+        }
+        
         if self.doubleTapEnabled {
-            self._scrollView.addGestureRecognizer(self._doubleTapRecognizer)
+            self._doubleTapRecognizer = self._createDoubleTapRecognizer()
+            self._scrollView.addGestureRecognizer(self._doubleTapRecognizer!)
         } else {
-            self._scrollView.removeGestureRecognizer(self._doubleTapRecognizer)
+            self._scrollView.removeGestureRecognizer(self._doubleTapRecognizer!)
             self._doubleTapRecognizer = nil
         }
     }
     
     func _updateZoomOutTapRecognizer() {
+        guard (self.zoomOutTapEnabled == (self._zoomOutTapRecognizer == nil)) else {
+            return
+        }
+        
         if self.zoomOutTapEnabled {
-            self._scrollView.addGestureRecognizer(self._zoomOutTapRecognizer)
+            self._zoomOutTapRecognizer = self._createZoomOutRecognizer()
+            self._scrollView.addGestureRecognizer(self._zoomOutTapRecognizer!)
         } else {
-            self._scrollView.removeGestureRecognizer(self._zoomOutTapRecognizer)
+            self._scrollView.removeGestureRecognizer(self._zoomOutTapRecognizer!)
             self._zoomOutTapRecognizer = nil
         }
+    }
+    
+    // Helpers
+    private func _createDoubleTapRecognizer() -> UITapGestureRecognizer {
+        let doubleTapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
+        doubleTapRecognizer.numberOfTapsRequired = 2
+        doubleTapRecognizer.addTarget(
+            self,
+            action: #selector(_handleDoubleTap(_:))
+        )
+        
+        return doubleTapRecognizer
+    }
+    
+    private func _createZoomOutRecognizer() -> UITapGestureRecognizer {
+        let zoomOutRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
+        zoomOutRecognizer.numberOfTapsRequired = 2
+        zoomOutRecognizer.numberOfTouchesRequired = 2
+        zoomOutRecognizer.addTarget(
+            self,
+            action: #selector(_handleZoomOutTap)
+        )
+        
+        return zoomOutRecognizer
     }
 }
 
