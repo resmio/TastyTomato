@@ -106,6 +106,24 @@ extension ZoomView {
         }
     }
     
+    public var centerHorizontally: Bool {
+        get {
+            return self._centerHorizontally
+        }
+        set(newCenterHorizontally) {
+            self._centerHorizontally = newCenterHorizontally
+        }
+    }
+    
+    public var centerVertically: Bool {
+        get {
+            return self._centerVertically
+        }
+        set(newCenterVertically) {
+            self._centerVertically = newCenterVertically
+        }
+    }
+    
     // Functions
     public func zoomOut(animated: Bool = true) {
         self._zoomOut(animated: animated)
@@ -161,6 +179,8 @@ public class ZoomView: UIView {
     fileprivate var __zoomOutTapEnabled: Bool = true
     fileprivate var _doubleTapRecognizer: UITapGestureRecognizer?
     fileprivate var _zoomOutTapRecognizer: UITapGestureRecognizer?
+    fileprivate var _centerHorizontally: Bool = true
+    fileprivate var _centerVertically: Bool = true
 }
 
 
@@ -386,18 +406,28 @@ private extension ZoomView {
 // MARK: Update Content Position
 private extension ZoomView {
     func _updateContentPosition(animated: Bool) {
+        guard self.centerHorizontally || self.centerVertically else {
+            return
+        }
+        
         let scrollView: UIScrollView = self._scrollView
         let contentView: UIView = self._contentView
         
-        let horizontalAnimation: () -> Void =
+        var horizontalAnimation: () -> Void = {}
+        if self.centerHorizontally {
+            horizontalAnimation =
             (contentView.width < scrollView.width) ?
                 contentView.centerHInSuperview :
                 { contentView.left = 0 }
+        }
         
-        let verticalAnimation: () -> Void =
+        var verticalAnimation: () -> Void = {}
+        if self.centerVertically {
+            verticalAnimation =
             (contentView.height < scrollView.height) ?
                 contentView.centerVInSuperview :
                 { contentView.top = 0 }
+        }
         
         let animationDuration: TimeInterval = animated ? 0.2 : 0
         
