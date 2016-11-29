@@ -108,7 +108,7 @@ extension ZoomView {
     
     // Functions
     public func zoomOut(animated: Bool = true) {
-        self._scrollView.zoomOut(animated: animated)
+        self._zoomOut(animated: animated)
     }
     
     // Call these when you changed the size of the
@@ -367,7 +367,18 @@ private extension ZoomView {
     }
     
     @objc func _handleZoomOutTap() {
-        self._scrollView.zoomOut()
+        self._zoomOut(animated: true)
+    }
+}
+
+
+// MARK: Zoom Out And Update Content Position
+private extension ZoomView {
+    func _zoomOut(animated: Bool) {
+        let zoomed: Bool = self._scrollView.zoomOut_(animated: animated)
+        if !zoomed {
+            self._updateContentPosition(animated: animated)
+        }
     }
 }
 
