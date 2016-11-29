@@ -108,7 +108,7 @@ extension ZoomView {
     
     // Functions
     func zoomOut(animated: Bool) {
-        self._scrollView.zoomToMinimum(animated: animated)
+        self._scrollView.zoomOut(animated: animated)
     }
     
     // Call when changing the size of the contentView internally
@@ -354,11 +354,11 @@ private extension ZoomView {
         }
         
         let point: CGPoint = recognizer.location(ofTouch: 0, in: scrollView)
-        scrollView.zoomToPoint(point, withScale: newScale, animated: true)
+        scrollView.zoom(to: point, with: newScale)
     }
     
     @objc func _handleZoomOutTap() {
-        self._scrollView.zoomToMinimum(animated: true)
+        self._scrollView.zoomOut()
     }
 }
 

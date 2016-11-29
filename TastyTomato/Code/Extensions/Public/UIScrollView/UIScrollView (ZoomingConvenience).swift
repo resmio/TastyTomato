@@ -11,12 +11,12 @@ import Foundation
 
 // MARK: // Public
 extension UIScrollView {
-    public func zoomToMinimum(animated: Bool = true) {
-        self._zoomToMinimum(animated: animated)
+    public func zoomOut(animated: Bool = true) {
+        self._zoomOut(animated: animated)
     }
     
-    public func zoomToMaximum(animated: Bool = true) {
-        self._zoomToMaximum(animated: animated)
+    public func zoomIn(animated: Bool = true) {
+        self._zoomIn(animated: animated)
     }
     
     public func zoom(to zoomScale: CGFloat, animated: Bool = true) {
@@ -31,11 +31,11 @@ extension UIScrollView {
 
 // MARK: // Private
 private extension UIScrollView {
-    func _zoomToMinimum(animated: Bool) {
+    func _zoomOut(animated: Bool) {
         self.setZoomScale(self.minimumZoomScale, animated: animated)
     }
     
-    func _zoomToMaximum(animated: Bool) {
+    func _zoomIn(animated: Bool) {
         self.setZoomScale(self.maximumZoomScale, animated: animated)
     }
     
