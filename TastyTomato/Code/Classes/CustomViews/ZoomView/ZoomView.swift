@@ -174,11 +174,13 @@ public class ZoomView: UIView {
     
     // Private Variable Properties
     fileprivate var _contentView: UIView
+    
+    fileprivate var _doubleTapRecognizer: UITapGestureRecognizer?
+    fileprivate var _zoomOutTapRecognizer: UITapGestureRecognizer?
+    
     fileprivate var _zoomThreshold: CGFloat = 1
     fileprivate var __doubleTapEnabled: Bool = true
     fileprivate var __zoomOutTapEnabled: Bool = true
-    fileprivate var _doubleTapRecognizer: UITapGestureRecognizer?
-    fileprivate var _zoomOutTapRecognizer: UITapGestureRecognizer?
     fileprivate var _centerHorizontally: Bool = true
     fileprivate var _centerVertically: Bool = true
 }
