@@ -9,9 +9,9 @@
 import Foundation
 
 
-// MARK: // Internal
+// MARK: // Public
 // MARK: - ZoomViewDelegate
-protocol ZoomViewDelegate: class {
+public protocol ZoomViewDelegate: class {
     func zoomed(to scale: CGFloat, in zoomView: ZoomView)
 }
 
@@ -20,12 +20,12 @@ protocol ZoomViewDelegate: class {
 // MARK: Interface
 extension ZoomView {
     // ReadOnly
-    var contentView: UIView? {
+    public var contentView: UIView? {
         return self._contentView
     }
     
     // ReadWrite
-    var delegate: ZoomViewDelegate? {
+    public var delegate: ZoomViewDelegate? {
         get {
             return self._delegate
         }
@@ -34,7 +34,7 @@ extension ZoomView {
         }
     }
     
-    var zoomThreshold: CGFloat {
+    public var zoomThreshold: CGFloat {
         get {
             return self._zoomThreshold
         }
@@ -43,7 +43,7 @@ extension ZoomView {
         }
     }
     
-    var showsHorizontalScrollIndicator: Bool {
+    public var showsHorizontalScrollIndicator: Bool {
         get {
             return self._scrollView.showsHorizontalScrollIndicator
         }
@@ -52,7 +52,7 @@ extension ZoomView {
         }
     }
     
-    var showsVerticalScrollIndicator: Bool {
+    public var showsVerticalScrollIndicator: Bool {
         get {
             return self._scrollView.showsVerticalScrollIndicator
         }
@@ -61,7 +61,7 @@ extension ZoomView {
         }
     }
     
-    var decelerationRate: CGFloat {
+    public var decelerationRate: CGFloat {
         get {
             return self._scrollView.decelerationRate
         }
@@ -70,7 +70,7 @@ extension ZoomView {
         }
     }
     
-    var bounces: Bool {
+    public var bounces: Bool {
         get {
             return self._scrollView.bounces
         }
@@ -79,7 +79,7 @@ extension ZoomView {
         }
     }
     
-    var bouncesZoom: Bool {
+    public var bouncesZoom: Bool {
         get {
             return self._scrollView.bouncesZoom
         }
@@ -88,7 +88,7 @@ extension ZoomView {
         }
     }
     
-    var doubleTapEnabled: Bool {
+    public var doubleTapEnabled: Bool {
         get {
             return self._doubleTapEnabled
         }
@@ -97,7 +97,7 @@ extension ZoomView {
         }
     }
     
-    var zoomOutTapEnabled: Bool {
+    public var zoomOutTapEnabled: Bool {
         get {
             return self._zoomOutTapEnabled
         }
@@ -107,21 +107,23 @@ extension ZoomView {
     }
     
     // Functions
-    func zoomOut(animated: Bool) {
+    public func zoomOut(animated: Bool) {
         self._scrollView.zoomOut(animated: animated)
     }
     
-    // Call when changing the size of the contentView internally
-    func updateZoomScales() {
+    // Call this when you changed the size of the 
+    // contentView to ensure that the minimum and 
+    // maximum zoomScale are updated accordingly
+    public func updateZoomScales() {
         self._updateZoomScales()
     }
 }
 
 
 // MARK: Class Declaration
-class ZoomView: UIView {
+public class ZoomView: UIView {
     // Required Init
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("ZoomView does not support NSCoding")
     }
     
@@ -130,12 +132,12 @@ class ZoomView: UIView {
     private override init(frame: CGRect) { fatalError() }
     
     // Convenience Init
-    convenience init(contentView: UIView) {
+    public convenience init(contentView: UIView) {
         self.init(frame: .zero, contentView: contentView)
     }
     
     // Designated Init
-    init(frame: CGRect, contentView: UIView) {
+    public init(frame: CGRect, contentView: UIView) {
         self._contentView = contentView
         super.init(frame: frame)
         self._addSubviews()
@@ -162,7 +164,7 @@ class ZoomView: UIView {
 
 // MARK: Layout Overrides
 extension ZoomView {
-    override var frame: CGRect {
+    override public var frame: CGRect {
         get {
             return super.frame
         }
@@ -172,7 +174,7 @@ extension ZoomView {
         }
     }
     
-    override var size: CGSize {
+    override public var size: CGSize {
         get {
             return super.size
         }
@@ -182,7 +184,7 @@ extension ZoomView {
         }
     }
     
-    override var width: CGFloat {
+    override public var width: CGFloat {
         get {
             return super.width
         }
@@ -192,7 +194,7 @@ extension ZoomView {
         }
     }
     
-    override var height: CGFloat {
+    override public var height: CGFloat {
         get {
             return super.height
         }
@@ -207,11 +209,11 @@ extension ZoomView {
 // MARK: Delegate / DataSource
 // MARK: UIScrollViewDelegate
 extension ZoomView: UIScrollViewDelegate {
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+    public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self._contentView
     }
     
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+    public func scrollViewDidZoom(_ scrollView: UIScrollView) {
         self._updateContentPosition(animated: true)
         self.delegate?.zoomed(to: scrollView.zoomScale, in: self)
     }
