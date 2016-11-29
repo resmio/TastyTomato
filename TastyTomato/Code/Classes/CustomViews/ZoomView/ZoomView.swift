@@ -107,15 +107,19 @@ extension ZoomView {
     }
     
     // Functions
-    public func zoomOut(animated: Bool) {
+    public func zoomOut(animated: Bool = true) {
         self._scrollView.zoomOut(animated: animated)
     }
     
-    // Call this when you changed the size of the 
+    // Call these when you changed the size of the
     // contentView to ensure that the minimum and 
     // maximum zoomScale are updated accordingly
     public func updateZoomScales() {
         self._updateZoomScales()
+    }
+    
+    public func updateContentPosition(animated: Bool = true) {
+        self._updateContentPosition(animated: animated)
     }
 }
 
@@ -367,7 +371,7 @@ private extension ZoomView {
 
 // MARK: Update Content Position
 private extension ZoomView {
-    func _updateContentPosition(animated: Bool = true) {
+    func _updateContentPosition(animated: Bool) {
         let scrollView: UIScrollView = self._scrollView
         let contentView: UIView = self._contentView
         
