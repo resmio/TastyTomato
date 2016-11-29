@@ -3,4 +3,4 @@ This repository contains custom iOS UI elements used and created by resmio GmbH.
 
 
 Thanks to:
-- Xiao Wang <wangxiao8611@gmail.com, http://fclef.wordpress.com/about> for xUnique.py, which is used in the pre-commit hook
+- Xiao Wang <wangxiao8611@gmail.com, http://fclef.wordpress.com/about> for xUnique.py, which is used in the git hooks
