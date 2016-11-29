@@ -236,7 +236,7 @@ extension ZoomView: UIScrollViewDelegate {
     }
     
     public func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        self._updateContentPosition(animated: true)
+        self._updateContentPosition(animated: false)
         self.delegate?.zoomed(to: scrollView.zoomScale, in: self)
     }
 }
