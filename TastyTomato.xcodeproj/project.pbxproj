@@ -70,6 +70,11 @@
 		F3F0485D7B95F9B516AEC11BC8F5FB46 /* BundleHelper_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1032762F44E9AFAAC244949B1E9E97 /* BundleHelper_.swift */; };
 		F7363F8CD1B8E2BF8206ED43F350E8EF /* UIView (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */; };
 		FEDE5B67B4C74086E15CA7BCAA26A666 /* CGRect (LeftRightTopBottomCenter).swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C581522222734865A3403552E044DA /* CGRect (LeftRightTopBottomCenter).swift */; };
+		A43281AE7F5ED34889BF39E8FA61D6F5 /* UIView (OriginLeftRightTopBottom).swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */; };
+		5A17A3E7FF74BF8938A74A135969B1CE /* UIView (ScaleByFactor).swift in Sources */ = {isa = PBXBuildFile; fileRef = 978EA7B188BA3CCA15536BA105B324A5 /* UIView (ScaleByFactor).swift */; };
+		016794C2166A998F5DCD79812840EF65 /* UIView (SizeWidthHeight).swift in Sources */ = {isa = PBXBuildFile; fileRef = A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */; };
+		C80A75D4A90ACE4BA90325467515CA79 /* UIViewController (Embedding).swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA86B00BB8C1AE6C781872E597AF28 /* UIViewController (Embedding).swift */; };
+		2D482E84B878E94A2EBC56EF45330674 /* ZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +157,14 @@
 		E628597189125D75D98E36EA8682ADA2 /* TextButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButtons.swift; sourceTree = "<group>"; };
 		EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (RenderingModes).swift"; sourceTree = "<group>"; };
+		CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (OriginLeftRightTopBottom).swift"; sourceTree = "<group>"; };
+		978EA7B188BA3CCA15536BA105B324A5 /* UIView (ScaleByFactor).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (ScaleByFactor).swift"; sourceTree = "<group>"; };
+		A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (SizeWidthHeight).swift"; sourceTree = "<group>"; };
+		CDDA86B00BB8C1AE6C781872E597AF28 /* UIViewController (Embedding).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController (Embedding).swift"; sourceTree = "<group>"; };
+		31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomView.swift; path = ZoomView.swift; sourceTree = "<group>"; };
+		91C532ECB5C7CC6DE8FAAAD3F465DEAE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		617BAD163949C9A08DE92862E903C2A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		019B1845FE1BCB19271320DCDCAE1B32 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +329,15 @@
 			path = Localizations;
 			sourceTree = "<group>";
 		};
+		23F46E8BFE01453CA2299EB51CEC1DBC /* ZoomView */ = {
+			isa = PBXGroup;
+			children = (
+				31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */,
+			);
+			name = ZoomView;
+			path = ZoomView;
+			sourceTree = "<group>";
+		};
 		6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +392,7 @@
 			children = (
 				1BEDC49C5806846E908D79A81A8DE686 /* ShortcutBar */,
 				C61B4C06BBC4EB775183743E5167421C /* Tags */,
+				23F46E8BFE01453CA2299EB51CEC1DBC /* ZoomView */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -746,6 +769,7 @@
 				5A17A3E7FF74BF8938A74A135969B1CE /* UIView (ScaleByFactor).swift in Sources */,
 				016794C2166A998F5DCD79812840EF65 /* UIView (SizeWidthHeight).swift in Sources */,
 				C80A75D4A90ACE4BA90325467515CA79 /* UIViewController (Embedding).swift in Sources */,
+				2D482E84B878E94A2EBC56EF45330674 /* ZoomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
