@@ -43,6 +43,15 @@ extension ZoomView {
         }
     }
     
+    public var maximumScale: CGFloat {
+        get {
+            return self._scrollView.maximumZoomScale
+        }
+        set(newMaximumZoomScale) {
+            self._scrollView.maximumZoomScale = newMaximumZoomScale
+        }
+    }
+    
     public var showsHorizontalScrollIndicator: Bool {
         get {
             return self._scrollView.showsHorizontalScrollIndicator
@@ -455,11 +464,9 @@ private extension ZoomView {
         
         let threshold: CGFloat = self._zoomThreshold
         let belowThreshold: Bool = exactMinScale < threshold
-        
-        let minScale: CGFloat = belowThreshold ? exactMinScale : threshold
-        let maxScale: CGFloat = belowThreshold ? 1 : threshold
+        let minScale: CGFloat = belowThreshold ? exactMinScale : 1
         
         scrollView.minimumZoomScale = minScale
-        scrollView.maximumZoomScale = maxScale
+        scrollView.maximumZoomScale = 1
     }
 }
