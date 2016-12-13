@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UIView {
-    public var origin: CGPoint {
+    open var origin: CGPoint {
         get {
             return self._origin
         }
@@ -20,7 +20,7 @@ public extension UIView {
         }
     }
     
-    public var left: CGFloat {
+    open var left: CGFloat {
         get {
             return self._left
         }
@@ -29,7 +29,7 @@ public extension UIView {
         }
     }
     
-    public var right: CGFloat {
+    open var right: CGFloat {
         get {
             return self._right
         }
@@ -38,7 +38,7 @@ public extension UIView {
         }
     }
     
-    public var top: CGFloat {
+    open var top: CGFloat {
         get {
             return self._top
         }
@@ -47,7 +47,7 @@ public extension UIView {
         }
     }
     
-    public var bottom: CGFloat {
+    open var bottom: CGFloat {
         get {
             return self._bottom
         }

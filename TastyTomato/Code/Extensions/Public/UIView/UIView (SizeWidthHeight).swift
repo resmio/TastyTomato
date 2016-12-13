@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UIView {
-    public var size: CGSize {
+    open var size: CGSize {
         get {
             return self._size
         }
@@ -20,7 +20,7 @@ public extension UIView {
         }
     }
     
-    public var width: CGFloat {
+    open var width: CGFloat {
         get {
             return self._width
         }
@@ -29,7 +29,7 @@ public extension UIView {
         }
     }
     
-    public var height: CGFloat {
+    open var height: CGFloat {
         get {
             return self._height
         }
