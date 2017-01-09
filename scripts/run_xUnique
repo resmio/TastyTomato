@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if [ -z "$1" ]
 then
     echo "Error: Need to provide project name as argument"
@@ -9,4 +10,4 @@ fi
 PROJECT_NAME=$1
 
 echo "Running xUnique..."
-bash -l -c "python ./scripts/xUnique.py -p $PROJECT_NAME.xcodeproj/ > /dev/null"
+bash -l -c "python ./scripts/xUnique.py $PROJECT_NAME.xcodeproj/ > /dev/null"

@@ -1,6 +1,13 @@
 #!/bin/bash
 
-PROJECT_NAME="TastyTomato"
+
+# # # # # # # # # # # # # # # # # # # # #
+# Load projectname from .projectname file
+PROJECTNAME=$(head -n 1 .projectname)
+#
+# # # # # # # # # # # # # # # # # # # # #
+
+
 STASH_MESSAGE="<post-merge-hook> Temporary stash, do not pop or delete"
 
 function stash_all_changes
@@ -38,9 +45,9 @@ function main
     echo "# # # # #"
     stash_all_changes
     echo "# # #"
-    ./scripts/run_synx $PROJECT_NAME
+    ./scripts/run_synx $PROJECTNAME
     echo "# # #"
-    ./scripts/run_xUnique $PROJECT_NAME
+    ./scripts/run_xUnique $PROJECTNAME
     echo "# # #"
     commit_changes_from_hook
     NOCHANGESMADE=$?

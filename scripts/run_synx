@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if [ -z "$1" ]
 then
     echo "Error: Need to provide project name as argument"
