@@ -20,7 +20,7 @@ test:
   pre:
     - mkdir "$CIRCLE_ARTIFACTS/xcodebuild-logs"
   override:
-    - xcodebuild
+    - set -o pipefail && xcodebuild
       -workspace TastyTomato.xcworkspace
       -scheme "TastyTomato"
       -destination 'platform=iOS Simulator,name=iPad Air,OS=latest'
