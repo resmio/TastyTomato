@@ -2,30 +2,33 @@ machine:
   environment:
     LANG: en_US.UTF-8
   xcode:
-    version: "8.1"
+    version: "8.2"
 
 dependencies:
-  pre:
-    #
-    # Workaround for a regressed issue with Circle
-    # this deletes all simulators, so there are no multiple devices
-    # See https://discuss.circleci.com/t/multiple-ios-simulators-available-for-single-os-device-configurations/7854/16
-    - SNAPSHOT_FORCE_DELETE=1 snapshot reset_simulators
   override:
-    #
-    # Workaround for an issue with Circle
-    # the version that is seemingly (rebuild without cache didn't help...)
-    # pre-installed on the containers (1.4.0)
-    # throws an error while parsing the project-file
-    # See https://discuss.circleci.com/t/failing-xcode-build/8050/2
-    # and https://github.com/CocoaPods/CocoaPods/issues/6100
-    - gem install xcodeproj -v 1.4.1
-    - pod install --verbose
+    # We need this override, since circle inferably (and unnecessarily) fetches
+    # the complete Cocoapods specs repo from S3 (which takes around 1 minute),
+    # even though we're using our own, tiny Specs repo...
+    - pod install
+
+    # Also installing xcpretty from here, since Circle doesn't
+    # infer a gem install due to the override, thus just adding
+    # it to the Gemfile won't help
+    - gem install xcpretty
 
 test:
+  pre:
+    - mkdir "$CIRCLE_ARTIFACTS/xcodebuild-logs"
   override:
+    - set -o pipefail
     - xcodebuild
       -workspace TastyTomato.xcworkspace
       -scheme "TastyTomato"
       -destination 'platform=iOS Simulator,name=iPad Air,OS=latest'
-      clean build test
+      clean
+      build
+      test
+      | tee "$CIRCLE_ARTIFACTS/xcodebuild-logs/xcodebuild-verbose.log"
+      | xcpretty
+      | tee "$CIRCLE_ARTIFACTS/xcodebuild-logs/xcodebuild-xcpretty.log"
+

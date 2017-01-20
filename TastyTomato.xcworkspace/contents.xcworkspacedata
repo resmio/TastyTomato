@@ -2,13 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:README.md">
-   </FileRef>
-   <FileRef
       location = "group:LICENSE">
    </FileRef>
    <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
       location = "group:TastyTomato.podspec">
+   </FileRef>
+   <FileRef
+      location = "group:circle.yml">
    </FileRef>
    <Group
       location = "container:"
@@ -45,9 +48,6 @@
          location = "group:setup">
       </FileRef>
    </Group>
-   <FileRef
-      location = "group:circle.yml">
-   </FileRef>
    <FileRef
       location = "group:TastyTomato.xcodeproj">
    </FileRef>
