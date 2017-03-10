@@ -382,13 +382,13 @@ private extension ZoomView {
         case let scale where scale < midScale:
             newScale = midScale
             Helper.nextScale = maxScale
-        case let scale where scale == maxScale:
-            newScale = midScale
-            Helper.nextScale = minScale
-        case let scale where scale == midScale:
+        case let scale where abs(scale - midScale) < 0.01:
             newScale = Helper.nextScale ?? minScale
         case let scale where scale < maxScale:
             newScale = maxScale
+        case let scale where abs(scale - maxScale) < 0.01:
+            newScale = midScale
+            Helper.nextScale = minScale
         default:
             newScale = minScale
         }
