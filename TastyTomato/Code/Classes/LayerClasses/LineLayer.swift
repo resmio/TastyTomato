@@ -86,12 +86,9 @@ public class LineLayer: CALayer {
     }
     
     // Init
-    public init(configuration: LineLayerConfiguration) {
-        super.init()
-        // Intentionally using self.__orientation here, so the
-        // length and the lineWidth are not unnecessarily swapped.
-        // This is also the reason for setting the orientation first.
+    public init(configuration: LineLayerConfiguration = LineLayerConfiguration()) {
         self.__orientation = configuration.orientation
+        super.init()
         self.length = configuration.length
         self.lineWidth = configuration.lineWidth
         self.parallelPosition = configuration.parallelPosition
@@ -99,7 +96,7 @@ public class LineLayer: CALayer {
     }
     
     // Private Variables
-    fileprivate var __orientation: LineLayer.Orientation = .horizontal
+    fileprivate var __orientation: LineLayer.Orientation
 }
 
 
