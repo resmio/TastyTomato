@@ -10,7 +10,7 @@ import UIKit
 
 
 // MARK: // Public
-public extension UIView {
+extension UIView {
     open var size: CGSize {
         get {
             return self._size
