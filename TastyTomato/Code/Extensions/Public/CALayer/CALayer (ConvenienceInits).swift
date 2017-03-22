@@ -11,12 +11,12 @@ import UIKit
 
 // MARK: // Public
 public extension CALayer {
-    public convenience init(withFrame frame: CGRect) {
+    public convenience init(frame: CGRect) {
         self.init()
         self.frame = frame
     }
     
-    public convenience init(withSize size: CGSize) {
-        self.init(withFrame: size.asCGRect())
+    public convenience init(size: CGSize) {
+        self.init(frame: size.asCGRect())
     }
 }
