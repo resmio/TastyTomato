@@ -9,12 +9,44 @@
 import UIKit
 
 
-// MARK: // Public
+// MARK: - // Public
+// MARK: - LineLayerConfiguration
+// MARK: Struct Declaration
+public struct LineLayerConfiguration {
+    let parallelPosition: CGFloat = 0
+    let orthogonalPosition: CGFloat = 0
+    let orientation: LineLayer.Orientation = .horizontal
+    let lineWidth: CGFloat = 1
+    let length: CGFloat = 0
+}
+
+
+// MARK: - LineLayer
 // MARK: Interface
 public extension LineLayer {
-    public enum Orientation: Int {
+    // Enum Orientation
+    public enum Orientation {
         case horizontal
         case vertical
+    }
+    
+    // ReadWrite
+    public var parallelPosition: CGFloat {
+        get {
+            return self._parallelPosition
+        }
+        set(newParallelPosition) {
+            self._parallelPosition = newParallelPosition
+        }
+    }
+    
+    public var orthogonalPosition: CGFloat {
+        get {
+            return self._orthogonalPosition
+        }
+        set(newOrthogonalPosition) {
+            self._orthogonalPosition = newOrthogonalPosition
+        }
     }
     
     public var orientation: LineLayer.Orientation {
@@ -42,30 +74,62 @@ public extension LineLayer {
         set(newLineWidth) {
             self._lineWidth = newLineWidth
         }
-            
     }
 }
 
+
 // MARK: Class Declaration
 public class LineLayer: CALayer {
+    // Required Init
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("LineLayer does not support NSCoding")
+    }
+    
+    // Init
+    public init(configuration: LineLayerConfiguration) {
+        super.init()
+        // Intentionally using self.__orientation here, so the
+        // length and the lineWidth are not unnecessarily swapped.
+        // This is also the reason for setting the orientation first.
+        self.__orientation = configuration.orientation
+        self.length = configuration.length
+        self.lineWidth = configuration.lineWidth
+        self.parallelPosition = configuration.parallelPosition
+        self.orthogonalPosition = configuration.orthogonalPosition
+    }
+    
+    // Private Variables
     fileprivate var __orientation: LineLayer.Orientation = .horizontal
 }
 
 
-// MARK: Overrides
+// MARK: Unavailability Overrides
 public extension LineLayer {
-    public override var frame: CGRect {
-        get {
-            return self._frame
-        }
-        set(newFrame) {
-            self._frame = newFrame
-        }
+    @available(*, unavailable)
+    public final override var frame: CGRect {
+        get { return .null }
+        set {}
+    }
+    
+    @available(*, unavailable)
+    public final override var bounds: CGRect {
+        get { return .null }
+        set {}
+    }
+    
+    @available(*, unavailable)
+    public convenience init(frame: CGRect) {
+        fatalError()
+    }
+    
+    @available(*, unavailable)
+    public convenience init(size: CGSize) {
+        fatalError()
     }
 }
 
 
-// MARK: // Private
+// MARK: - // Private
 // MARK: Computed Properties
 private extension LineLayer {
     var _orientation: LineLayer.Orientation {
@@ -81,21 +145,59 @@ private extension LineLayer {
         }
     }
     
+    var _parallelPosition: CGFloat {
+        get {
+            switch self.orientation {
+            case .horizontal:
+                return super.frame.origin.x
+            case .vertical:
+                return super.frame.origin.y
+            }
+        }
+        set(newParallelPosition) {
+            switch self.orientation {
+            case .horizontal:
+                return super.frame.origin.x = newParallelPosition
+            case .vertical:
+                return super.frame.origin.y = newParallelPosition
+            }
+        }
+    }
+    
+    var _orthogonalPosition: CGFloat {
+        get {
+            switch self.orientation {
+            case .horizontal:
+                return super.frame.origin.y
+            case .vertical:
+                return super.frame.origin.x
+            }
+        }
+        set(newOrthogonalPosition) {
+            switch self.orientation {
+            case .horizontal:
+                return super.frame.origin.y = newOrthogonalPosition
+            case .vertical:
+                return super.frame.origin.x = newOrthogonalPosition
+            }
+        }
+    }
+    
     var _length: CGFloat {
         get {
             switch self.orientation {
             case .horizontal:
-                return self.frame.width
+                return super.frame.width
             case .vertical:
-                return self.frame.height
+                return super.frame.height
             }
         }
         set(newLength) {
             switch self.orientation {
             case .horizontal:
-                self.frame.size.width = newLength
+                super.frame.size.width = newLength
             case .vertical:
-                self.frame.size.height = newLength
+                super.frame.size.height = newLength
             }
         }
     }
@@ -104,39 +206,18 @@ private extension LineLayer {
         get {
             switch self.orientation {
             case .horizontal:
-                return self.frame.height
+                return super.frame.height
             case .vertical:
-                return self.frame.width
+                return super.frame.width
             }
         }
         set(newLineWidth) {
             switch self.orientation {
             case .horizontal:
-                self.frame.size.height = newLineWidth
+                super.frame.size.height = newLineWidth
             case .vertical:
-                self.frame.size.width = newLineWidth
+                super.frame.size.width = newLineWidth
             }
-        }
-    }
-}
-
-
-// MARK: Override Implementations
-private extension LineLayer {
-    var _frame: CGRect {
-        get {
-            return super.frame
-        }
-        set(newFrame) {
-            // Fixing the lineWidth
-            var fixedFrame: CGRect = newFrame
-            switch self.orientation {
-            case .horizontal:
-                fixedFrame.size.height = self.lineWidth
-            case .vertical:
-                fixedFrame.size.width = self.lineWidth
-            }
-            super.frame = fixedFrame
         }
     }
 }
