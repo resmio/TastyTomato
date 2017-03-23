@@ -65,11 +65,15 @@ public class LineLayer: CAShapeLayer {
         fatalError("LineLayer does not support NSCoding")
     }
     
-    // Init
+    // Override Inits
     public override init() {
         super.init()
         self.lineWidth = 1
         self.strokeColor = UIColor.black.cgColor
+    }
+    
+    override init(layer: Any) {
+        super.init(layer: layer)
     }
     
     // Private Variables
