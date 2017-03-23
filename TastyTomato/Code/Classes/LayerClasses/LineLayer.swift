@@ -7,21 +7,10 @@
 //
 
 import UIKit
+import ObjectiveC
 
 
 // MARK: - // Public
-// MARK: - LineLayerConfiguration
-// MARK: Struct Declaration
-public struct LineLayerConfiguration {
-    let parallelPosition: CGFloat = 0
-    let orthogonalPosition: CGFloat = 0
-    let orientation: LineLayer.Orientation = .horizontal
-    let lineWidth: CGFloat = 1
-    let length: CGFloat = 0
-}
-
-
-// MARK: - LineLayer
 // MARK: Interface
 public extension LineLayer {
     // Enum Orientation
@@ -86,43 +75,12 @@ public class LineLayer: CALayer {
     }
     
     // Init
-    public init(configuration: LineLayerConfiguration = LineLayerConfiguration()) {
-        self.__orientation = configuration.orientation
+    public override init() {
         super.init()
-        self.length = configuration.length
-        self.lineWidth = configuration.lineWidth
-        self.parallelPosition = configuration.parallelPosition
-        self.orthogonalPosition = configuration.orthogonalPosition
     }
     
     // Private Variables
-    fileprivate var __orientation: LineLayer.Orientation
-}
-
-
-// MARK: Unavailability Overrides
-public extension LineLayer {
-    @available(*, unavailable)
-    public final override var frame: CGRect {
-        get { return .null }
-        set {}
-    }
-    
-    @available(*, unavailable)
-    public final override var bounds: CGRect {
-        get { return .null }
-        set {}
-    }
-    
-    @available(*, unavailable)
-    public convenience init(frame: CGRect) {
-        fatalError()
-    }
-    
-    @available(*, unavailable)
-    public convenience init(size: CGSize) {
-        fatalError()
-    }
+    fileprivate var __orientation: LineLayer.Orientation = .horizontal
 }
 
 
@@ -134,11 +92,8 @@ private extension LineLayer {
             return self.__orientation
         }
         set(newOrientation) {
-            if newOrientation != self.__orientation {
-                // Order is important here
-                swap(&self.length, &self.lineWidth)
-                self.__orientation = newOrientation
-            }
+            self.__orientation = newOrientation
+            swap(&self.frame.size.width, &self.frame.size.height)
         }
     }
     
@@ -146,17 +101,17 @@ private extension LineLayer {
         get {
             switch self.orientation {
             case .horizontal:
-                return super.frame.origin.x
+                return self.frame.origin.x
             case .vertical:
-                return super.frame.origin.y
+                return self.frame.origin.y
             }
         }
         set(newParallelPosition) {
             switch self.orientation {
             case .horizontal:
-                return super.frame.origin.x = newParallelPosition
+                self.frame.origin.x = newParallelPosition
             case .vertical:
-                return super.frame.origin.y = newParallelPosition
+                self.frame.origin.y = newParallelPosition
             }
         }
     }
@@ -165,17 +120,17 @@ private extension LineLayer {
         get {
             switch self.orientation {
             case .horizontal:
-                return super.frame.origin.y
+                return self.frame.origin.y
             case .vertical:
-                return super.frame.origin.x
+                return self.frame.origin.x
             }
         }
         set(newOrthogonalPosition) {
             switch self.orientation {
             case .horizontal:
-                return super.frame.origin.y = newOrthogonalPosition
+                self.frame.origin.y = newOrthogonalPosition
             case .vertical:
-                return super.frame.origin.x = newOrthogonalPosition
+                self.frame.origin.x = newOrthogonalPosition
             }
         }
     }
@@ -184,17 +139,17 @@ private extension LineLayer {
         get {
             switch self.orientation {
             case .horizontal:
-                return super.frame.width
+                return self.frame.width
             case .vertical:
-                return super.frame.height
+                return self.frame.height
             }
         }
         set(newLength) {
             switch self.orientation {
             case .horizontal:
-                super.frame.size.width = newLength
+                self.frame.size.width = newLength
             case .vertical:
-                super.frame.size.height = newLength
+                self.frame.size.height = newLength
             }
         }
     }
@@ -203,17 +158,17 @@ private extension LineLayer {
         get {
             switch self.orientation {
             case .horizontal:
-                return super.frame.height
+                return self.frame.height
             case .vertical:
-                return super.frame.width
+                return self.frame.width
             }
         }
         set(newLineWidth) {
             switch self.orientation {
             case .horizontal:
-                super.frame.size.height = newLineWidth
+                self.frame.size.height = newLineWidth
             case .vertical:
-                super.frame.size.width = newLineWidth
+                self.frame.size.width = newLineWidth
             }
         }
     }
