@@ -55,8 +55,31 @@ public extension LineLayer {
             self._length = newLength
         }
     }
+}
+
+
+// MARK: Class Declaration
+public class LineLayer: CAShapeLayer {
+    // Required Init
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("LineLayer does not support NSCoding")
+    }
     
-    public var lineWidth: CGFloat {
+    // Init
+    public override init() {
+        super.init()
+        self.lineWidth = 1
+        self.strokeColor = UIColor.black.cgColor
+    }
+    
+    // Private Variables
+    fileprivate var __orientation: LineLayer.Orientation = .horizontal
+}
+
+
+// MARK: Overrides
+extension LineLayer {
+    public override var lineWidth: CGFloat {
         get {
             return self._lineWidth
         }
@@ -67,20 +90,42 @@ public extension LineLayer {
 }
 
 
-// MARK: Class Declaration
-public class LineLayer: CALayer {
-    // Required Init
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("LineLayer does not support NSCoding")
+// MARK: Unavailability Overrides
+extension LineLayer {
+    @available(*, unavailable)
+    public override var frame: CGRect {
+        get { fatalError() }
+        set { fatalError() }
     }
     
-    // Init
-    public override init() {
-        super.init()
+    public override var backgroundColor: CGColor? {
+        get { return nil }
+        set { fatalError() }
     }
     
-    // Private Variables
-    fileprivate var __orientation: LineLayer.Orientation = .horizontal
+    @available(*, unavailable)
+    public override var borderColor: CGColor? {
+        get { return nil }
+        set { fatalError() }
+    }
+    
+    @available(*, unavailable)
+    public override var fillColor: CGColor? {
+        get { return nil }
+        set { fatalError() }
+    }
+    
+    @available(*, unavailable)
+    public convenience init(frame: CGRect) { fatalError() }
+    
+    @available(*, unavailable)
+    public convenience init(size: CGSize) { fatalError() }
+    
+    @available(*, unavailable)
+    public convenience init(path p: UIBezierPath) { fatalError() }
+    
+    @available(*, unavailable)
+    public convenience init(rect r: CGRect) { fatalError() }
 }
 
 
@@ -92,8 +137,14 @@ private extension LineLayer {
             return self.__orientation
         }
         set(newOrientation) {
-            self.__orientation = newOrientation
-            swap(&self.frame.size.width, &self.frame.size.height)
+            if newOrientation != self.__orientation {
+                self.__orientation = newOrientation
+                swap(&super.frame.size.width, &super.frame.size.height)
+                self.path = self._createPath(
+                    length: self.length,
+                    orientation: newOrientation
+                )
+            }
         }
     }
     
@@ -101,17 +152,17 @@ private extension LineLayer {
         get {
             switch self.orientation {
             case .horizontal:
-                return self.frame.origin.x
+                return super.frame.origin.x
             case .vertical:
-                return self.frame.origin.y
+                return super.frame.origin.y
             }
         }
         set(newParallelPosition) {
             switch self.orientation {
             case .horizontal:
-                self.frame.origin.x = newParallelPosition
+                super.frame.origin.x = newParallelPosition
             case .vertical:
-                self.frame.origin.y = newParallelPosition
+                super.frame.origin.y = newParallelPosition
             }
         }
     }
@@ -120,17 +171,17 @@ private extension LineLayer {
         get {
             switch self.orientation {
             case .horizontal:
-                return self.frame.origin.y
+                return super.frame.origin.y
             case .vertical:
-                return self.frame.origin.x
+                return super.frame.origin.x
             }
         }
         set(newOrthogonalPosition) {
             switch self.orientation {
             case .horizontal:
-                self.frame.origin.y = newOrthogonalPosition
+                super.frame.origin.y = newOrthogonalPosition
             case .vertical:
-                self.frame.origin.x = newOrthogonalPosition
+                super.frame.origin.x = newOrthogonalPosition
             }
         }
     }
@@ -139,37 +190,56 @@ private extension LineLayer {
         get {
             switch self.orientation {
             case .horizontal:
-                return self.frame.width
+                return super.frame.width
             case .vertical:
-                return self.frame.height
+                return super.frame.height
             }
         }
         set(newLength) {
-            switch self.orientation {
+            let orientation: LineLayer.Orientation = self.orientation
+            switch orientation {
             case .horizontal:
-                self.frame.size.width = newLength
+                super.frame.size.width = newLength
             case .vertical:
-                self.frame.size.height = newLength
+                super.frame.size.height = newLength
             }
+            
+            self.path = self._createPath(
+                length: newLength,
+                orientation: orientation
+            )
         }
     }
     
     var _lineWidth: CGFloat {
         get {
-            switch self.orientation {
-            case .horizontal:
-                return self.frame.height
-            case .vertical:
-                return self.frame.width
-            }
+            return super.lineWidth
         }
         set(newLineWidth) {
             switch self.orientation {
             case .horizontal:
-                self.frame.size.height = newLineWidth
+                super.frame.size.height = newLineWidth
             case .vertical:
-                self.frame.size.width = newLineWidth
+                super.frame.size.width = newLineWidth
             }
+            super.lineWidth = newLineWidth
         }
+    }
+    
+    // Private Helper
+    private func _createPath(length: CGFloat, orientation: LineLayer.Orientation) -> CGPath? {
+        guard length > 0 else {
+            return nil
+        }
+        
+        let path: CGMutablePath = CGMutablePath()
+        switch orientation {
+        case .horizontal:
+            path.addLines(between: [.zero, CGPoint(x: length, y: 0)])
+        case .vertical:
+            path.addLines(between: [.zero, CGPoint(x: 0, y: length)])
+        }
+        
+        return path
     }
 }
