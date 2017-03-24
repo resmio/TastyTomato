@@ -85,6 +85,7 @@
 /* Begin PBXFileReference section */
 		019B1845FE1BCB19271320DCDCAE1B32 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0538E4586B05FE6B1C4EC4E6CD98C6C1 /* TastyTomato.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TastyTomato.playground; sourceTree = "<group>"; };
 		083386230915027A1693F0088C82312B /* TastyTomato.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TastyTomato.h; sourceTree = "<group>"; };
 		0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton (Color).swift"; sourceTree = "<group>"; };
 		0F913362CD789B7370C90D4A856950CF /* CGRect (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (ConvenienceInits).swift"; sourceTree = "<group>"; };
@@ -196,6 +197,7 @@
 				087D62F85789E9BA2921482544C68BB4 /* Products */,
 				EE22ED39034017661019E659F4958502 /* TastyTomato */,
 				6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */,
+				0538E4586B05FE6B1C4EC4E6CD98C6C1 /* TastyTomato.playground */,
 			);
 			sourceTree = "<group>";
 		};
