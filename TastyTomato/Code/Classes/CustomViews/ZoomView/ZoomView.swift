@@ -464,9 +464,9 @@ private extension ZoomView {
         
         let threshold: CGFloat = self._zoomThreshold
         let belowThreshold: Bool = exactMinScale < threshold
-        let minScale: CGFloat = belowThreshold ? exactMinScale : 1
+        let maxScale: CGFloat = belowThreshold ? 1 : exactMinScale
         
-        scrollView.minimumZoomScale = minScale
-        scrollView.maximumZoomScale = 1
+        scrollView.minimumZoomScale = exactMinScale
+        scrollView.maximumZoomScale = maxScale
     }
 }
