@@ -144,10 +144,6 @@ extension ZoomView {
     public func updateZoomScales() {
         self._updateZoomScales()
     }
-    
-    public func updateContentPosition(animated: Bool = true) {
-        self._updateContentPosition(animated: animated)
-    }
 }
 
 
@@ -247,7 +243,7 @@ extension ZoomView: UIScrollViewDelegate {
     }
     
     public func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        self._updateContentPosition(animated: false)
+        self._adjustContentPosition()
         self.delegate?.zoomed(to: scrollView.zoomScale, in: self)
     }
 }
@@ -406,9 +402,11 @@ private extension ZoomView {
 // MARK: Zoom Out And Update Content Position
 private extension ZoomView {
     func _zoomOut(animated: Bool) {
-        let zoomed: Bool = self._scrollView.zoomOut_(animated: animated)
-        if !zoomed {
-            self._updateContentPosition(animated: animated)
+        let animationDuration: TimeInterval = animated ? 0.2 : 0
+        
+        UIView.animate(withDuration: animationDuration) {
+            self._scrollView.zoomScale = self._scrollView.minimumZoomScale
+            self._adjustContentPosition()
         }
     }
 }
@@ -416,7 +414,7 @@ private extension ZoomView {
 
 // MARK: Update Content Position
 private extension ZoomView {
-    func _updateContentPosition(animated: Bool) {
+    func _adjustContentPosition() {
         guard self.centerHorizontally || self.centerVertically else {
             return
         }
@@ -424,28 +422,24 @@ private extension ZoomView {
         let scrollView: UIScrollView = self._scrollView
         let contentView: UIView = self._contentView
         
-        var horizontalAnimation: () -> Void = {}
+        var adjustHorizontalPosition: () -> Void = {}
         if self.centerHorizontally {
-            horizontalAnimation =
+            adjustHorizontalPosition =
             (contentView.width < scrollView.width) ?
                 contentView.centerHInSuperview :
                 { contentView.left = 0 }
         }
         
-        var verticalAnimation: () -> Void = {}
+        var adjustVerticalPosition: () -> Void = {}
         if self.centerVertically {
-            verticalAnimation =
+            adjustVerticalPosition =
             (contentView.height < scrollView.height) ?
                 contentView.centerVInSuperview :
                 { contentView.top = 0 }
         }
         
-        let animationDuration: TimeInterval = animated ? 0.2 : 0
-        
-        UIView.animate(withDuration: animationDuration) {
-            horizontalAnimation()
-            verticalAnimation()
-        }
+        adjustHorizontalPosition()
+        adjustVerticalPosition()
     }
 }
 
