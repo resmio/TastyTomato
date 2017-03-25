@@ -45,6 +45,22 @@ viewsToDisplay.append(textButton)
 
 
 // CustomViews
+let shortcutBar: ShortcutBar = ShortcutBar()
+shortcutBar.width = 300
+var barButtons: [UIBarButtonItem] = []
+for i in 0...20 {
+    let shortcutBarButton2: ShortcutBarButton = ShortcutBarButton_()
+    shortcutBarButton2.setTitle("\(i)")
+    barButtons.append(shortcutBarButton2.asBarButtonItem())
+}
+shortcutBar.setItems(barButtons, animated: false)
+viewsToDisplay.append(shortcutBar)
+
+
+let tagView: TagView = TagView(name: "TagView")
+
+
+let tagsView: TagsView = TagsView()
 
 
 
