@@ -66,12 +66,6 @@ extension BorderLayer {
     }
     
     @available(*, unavailable)
-    public convenience init(frame: CGRect) { fatalError() }
-    
-    @available(*, unavailable)
-    public convenience init(size: CGSize) { fatalError() }
-    
-    @available(*, unavailable)
     public convenience init(path p: UIBezierPath) { fatalError() }
     
     @available(*, unavailable)
