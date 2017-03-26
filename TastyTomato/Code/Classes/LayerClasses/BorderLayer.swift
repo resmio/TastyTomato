@@ -31,3 +31,36 @@ class BorderLayer: CAShapeLayer {
         super.init(layer: layer)
     }
 }
+
+
+// MARK: Unavailability Overrides
+extension BorderLayer {
+    public override var backgroundColor: CGColor? {
+        get { return nil }
+        set { fatalError() }
+    }
+    
+    @available(*, unavailable)
+    public override var borderColor: CGColor? {
+        get { return nil }
+        set { fatalError() }
+    }
+    
+    @available(*, unavailable)
+    public override var fillColor: CGColor? {
+        get { return nil }
+        set { fatalError() }
+    }
+    
+    @available(*, unavailable)
+    public convenience init(frame: CGRect) { fatalError() }
+    
+    @available(*, unavailable)
+    public convenience init(size: CGSize) { fatalError() }
+    
+    @available(*, unavailable)
+    public convenience init(path p: UIBezierPath) { fatalError() }
+    
+    @available(*, unavailable)
+    public convenience init(rect r: CGRect) { fatalError() }
+}
