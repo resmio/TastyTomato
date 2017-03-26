@@ -5,7 +5,7 @@ import PlaygroundSupport
 import TastyTomato
 
 
-// // Setup playground execution and liveView // //
+// // Setup-boilerplate // //
 PlaygroundPage.current.needsIndefiniteExecution = true
 let liveView: UIView = UIView(
     frame: CGRect(x: 0, y: 0, width: 300, height: 2000)
@@ -57,11 +57,10 @@ shortcutBar.setItems(barButtons, animated: false)
 viewsToDisplay.append(shortcutBar)
 
 
-let tagView: TagView = TagView(name: "TagView")
-
-
-let tagsView: TagsView = TagsView()
-
+// Doesn't work in playground yet because 
+// the MiscIcon-x image cannot be found
+//let tagView: TagView = TagView(name: "TagView")
+//let tagsView: TagsView = TagsView()
 
 
 
