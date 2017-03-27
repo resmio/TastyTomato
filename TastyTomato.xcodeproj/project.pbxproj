@@ -25,6 +25,7 @@
 		33D7CBF4CDA305FAE290B028790A338E /* ShortcutBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC87E38A8D37FC92DD3A64DEC8AC1796 /* ShortcutBarButton.swift */; };
 		3466F939EFAD784C51D7B5EC69F54B42 /* ArrowIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B5813ECAE6108D8A3192D688E9D77 /* ArrowIcon.swift */; };
 		36619180DB22B571E2199B3C6CDD67A4 /* UIColor (WithAlpha).swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */; };
+		3AF2EA70D028F7D2BF46C1A19BDAEEE8 /* RangeReplacableCollection (remove).swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88E0D2BD3C41ED8118CF3C1631D5A /* RangeReplacableCollection (remove).swift */; };
 		3DE684BA7159AEA557CDE0F4F775B5A0 /* CGFloat (Int).swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24467D4568DC50711B01B3FBCD8958 /* CGFloat (Int).swift */; };
 		42BB16D84A350E14BE177DA60F5977A0 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12E9AC9F91E1C3F23E1C2A25D9E463 /* TextButton.swift */; };
 		48D0397391009A24265A5FEE06D16F89 /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */; };
@@ -114,7 +115,7 @@
 		484B490047206C221157A2991EFF79E0 /* MetaImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaImage.swift; sourceTree = "<group>"; };
 		49F2EE287EFE2E608FE430542E60BF82 /* LineLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
 		4E9BC583DBAE7511BCDDF7E97D2E6F30 /* BorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
-		4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSObject (Associations).swift"; path = "NSObject (Associations).swift"; sourceTree = "<group>"; };
+		4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject (Associations).swift"; sourceTree = "<group>"; };
 		502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscIcon.swift; sourceTree = "<group>"; };
 		524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResmioLogo.swift; sourceTree = "<group>"; };
 		580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (ConvenienceInits).swift"; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 		5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (UInt).swift"; sourceTree = "<group>"; };
 		5DCC82CB1A56D60A4DF981960B5A667C /* BaseTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextView.swift; sourceTree = "<group>"; };
 		617BAD163949C9A08DE92862E903C2A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		67E88E0D2BD3C41ED8118CF3C1631D5A /* RangeReplacableCollection (remove).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RangeReplacableCollection (remove).swift"; path = "RangeReplacableCollection (remove).swift"; sourceTree = "<group>"; };
 		77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscImage.swift; sourceTree = "<group>"; };
 		7DAB831517E3851F87B951BE6881C71B /* UIView (BarButtonItem).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (BarButtonItem).swift"; sourceTree = "<group>"; };
 		7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (WidthHeight).swift"; sourceTree = "<group>"; };
@@ -296,6 +298,14 @@
 			path = Public;
 			sourceTree = "<group>";
 		};
+		2D68824CDAB38D447CAFCD441B653B74 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
 		323024B9C32DBCD16579A5D0E1898452 /* CALayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +341,7 @@
 			children = (
 				CEA9ED81CA9819C760F0522AF4297510 /* NSLocalizedString */,
 				2D68824CDAB38D447CAFCD441B653B74 /* NSObject */,
+				691A0CBFA184FAE1D42A19C0CA835752 /* RangeReplacableCollection */,
 				BC2EA83A70843FD6A5BD090CDDB4F4ED /* UIButton */,
 				246C935C9C014C4BD5D47F71877750B3 /* UIColor */,
 				DB5E54BA08F5DE8E909C7868A0EA78F0 /* UIImage */,
@@ -346,13 +357,13 @@
 			path = Localizations;
 			sourceTree = "<group>";
 		};
-		2D68824CDAB38D447CAFCD441B653B74 /* NSObject */ = {
+		691A0CBFA184FAE1D42A19C0CA835752 /* RangeReplacableCollection */ = {
 			isa = PBXGroup;
 			children = (
-				4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */,
+				67E88E0D2BD3C41ED8118CF3C1631D5A /* RangeReplacableCollection (remove).swift */,
 			);
-			name = NSObject;
-			path = NSObject;
+			name = RangeReplacableCollection;
+			path = RangeReplacableCollection;
 			sourceTree = "<group>";
 		};
 		6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */ = {
@@ -765,6 +776,7 @@
 				B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */,
 				26C9967D3E82CB12CD88A26329600F6E /* NSL_.swift in Sources */,
 				AE20A1758B460EF322D1D4FFBCFE0923 /* NSObject (Associations).swift in Sources */,
+				3AF2EA70D028F7D2BF46C1A19BDAEEE8 /* RangeReplacableCollection (remove).swift in Sources */,
 				D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */,
 				AF53E089D7041EDFD9F90E22C958AD7E /* ShortcutBar.swift in Sources */,
 				33D7CBF4CDA305FAE290B028790A338E /* ShortcutBarButton.swift in Sources */,
