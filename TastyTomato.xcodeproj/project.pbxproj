@@ -54,6 +54,7 @@
 		AA8512B64D36C58068B677B56BD11C09 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */; };
 		AC9D9866E065E12DCB2AD07AC6627022 /* TastyTomato.h in Headers */ = {isa = PBXBuildFile; fileRef = 083386230915027A1693F0088C82312B /* TastyTomato.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */; };
+		AE20A1758B460EF322D1D4FFBCFE0923 /* NSObject (Associations).swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */; };
 		AF53E089D7041EDFD9F90E22C958AD7E /* ShortcutBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */; };
 		B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */; };
 		C15C849839C07137AF9228EBCA319B2C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9175C1A832EEF0F37AEE33411A20042 /* Localizable.strings */; };
@@ -113,6 +114,7 @@
 		484B490047206C221157A2991EFF79E0 /* MetaImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaImage.swift; sourceTree = "<group>"; };
 		49F2EE287EFE2E608FE430542E60BF82 /* LineLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
 		4E9BC583DBAE7511BCDDF7E97D2E6F30 /* BorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
+		4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSObject (Associations).swift"; path = "NSObject (Associations).swift"; sourceTree = "<group>"; };
 		502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscIcon.swift; sourceTree = "<group>"; };
 		524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResmioLogo.swift; sourceTree = "<group>"; };
 		580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (ConvenienceInits).swift"; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA9ED81CA9819C760F0522AF4297510 /* NSLocalizedString */,
+				2D68824CDAB38D447CAFCD441B653B74 /* NSObject */,
 				BC2EA83A70843FD6A5BD090CDDB4F4ED /* UIButton */,
 				246C935C9C014C4BD5D47F71877750B3 /* UIColor */,
 				DB5E54BA08F5DE8E909C7868A0EA78F0 /* UIImage */,
@@ -341,6 +344,15 @@
 				E9175C1A832EEF0F37AEE33411A20042 /* Localizable.strings */,
 			);
 			path = Localizations;
+			sourceTree = "<group>";
+		};
+		2D68824CDAB38D447CAFCD441B653B74 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */,
+			);
+			name = NSObject;
+			path = NSObject;
 			sourceTree = "<group>";
 		};
 		6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */ = {
@@ -752,6 +764,7 @@
 				2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */,
 				B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */,
 				26C9967D3E82CB12CD88A26329600F6E /* NSL_.swift in Sources */,
+				AE20A1758B460EF322D1D4FFBCFE0923 /* NSObject (Associations).swift in Sources */,
 				D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */,
 				AF53E089D7041EDFD9F90E22C958AD7E /* ShortcutBar.swift in Sources */,
 				33D7CBF4CDA305FAE290B028790A338E /* ShortcutBarButton.swift in Sources */,
