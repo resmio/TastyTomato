@@ -108,21 +108,21 @@ public extension GridLayer {
         }
     }
     
-    public var borderDashPattern: [Double] {
+    public var borderDashPattern: [CGFloat] {
         get {
-            return self._borderDashPattern
+            return self._borderDashPattern as [CGFloat]
         }
         set(newBorderDashPattern) {
-            self._borderDashPattern = newBorderDashPattern
+            self._borderDashPattern = newBorderDashPattern as [NSNumber]
         }
     }
     
-    public var gridDashPattern: [Double] {
+    public var gridDashPattern: [CGFloat] {
         get {
-            return self._gridDashPattern
+            return self._gridDashPattern as [CGFloat]
         }
         set(newGridDashPattern) {
-            self._gridDashPattern = newGridDashPattern
+            self._gridDashPattern = newGridDashPattern as [NSNumber]
         }
     }
     
@@ -156,6 +156,18 @@ public extension GridLayer {
 
 // MARK: Class Declaration
 public class GridLayer: CALayer {
+    // Required Init
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("GridLayer does not support NSCoding")
+    }
+    
+    // Override Init
+    public override init() {
+        super.init()
+        self._updateBorderLayer()
+        self._updateLineLayers()
+    }
+    
     // Private Constants
     fileprivate let _mainGridLineColor: CGColor = UIColor.Gray999999().withAlpha(0.8).cgColor
     fileprivate let _subGridLineColor: CGColor = UIColor.Gray999999().withAlpha(0.4).cgColor
@@ -171,14 +183,22 @@ public class GridLayer: CALayer {
     fileprivate var __columnWidth: CGFloat = 150
     fileprivate var __borderLineWidth: CGFloat = 1
     fileprivate var __gridLineWidth: CGFloat = 1
-    fileprivate var __borderDashPattern: [Double] = []
-    fileprivate var __gridDashPattern: [Double] = []
+    fileprivate var __borderDashPattern: [NSNumber] = []
+    fileprivate var __gridDashPattern: [NSNumber] = []
     fileprivate var __gridInsetFactor: CGFloat = 0.6
     fileprivate var __gridLineOverlapFactor: CGFloat = 0.4
     
     fileprivate var __numOfRows: UInt = 8
     fileprivate var __numOfColumns: UInt = 8
 }
+
+
+// MARK: Layout Overrides
+//extension GridLayer {
+//    public override func layoutSublayers() {
+//        
+//    }
+//}
 
 
 // MARK: // Private
@@ -240,7 +260,7 @@ private extension GridLayer {
         set(newGridIsShown) {
             guard newGridIsShown != self.__gridIsShown else { return }
             self.__gridIsShown = newGridIsShown
-            newGridIsShown ? self._addLineLayers() : self._removeLineLayers()
+            self._updateLineLayers()
         }
     }
     
@@ -299,26 +319,25 @@ private extension GridLayer {
         }
     }
     
-    var _borderDashPattern: [Double] {
+    var _borderDashPattern: [NSNumber] {
         get {
             return self.__borderDashPattern
         }
         set(newBorderDashPattern) {
             guard newBorderDashPattern != self.__borderDashPattern else { return }
             self.__borderDashPattern = newBorderDashPattern
-            self._borderLayer?.lineDashPattern = newBorderDashPattern.map({ NSNumber(value: $0) })
+            self._borderLayer?.lineDashPattern = newBorderDashPattern
         }
     }
     
-    var _gridDashPattern: [Double] {
+    var _gridDashPattern: [NSNumber] {
         get {
             return self.__gridDashPattern
         }
         set(newGridDashPattern) {
             guard newGridDashPattern != self.__gridDashPattern else { return }
             self.__gridDashPattern = newGridDashPattern
-            let _newGridDashPattern: [NSNumber] = newGridDashPattern.map({ NSNumber(value: $0) })
-            self._updateLineLayers({ $0.lineDashPattern = _newGridDashPattern })
+            self._updateLineLayers({ $0.lineDashPattern = newGridDashPattern })
         }
     }
     
@@ -329,6 +348,7 @@ private extension GridLayer {
         set(newGridInsetFactor) {
             guard newGridInsetFactor != self.__gridInsetFactor else { return }
             self.__gridInsetFactor = newGridInsetFactor
+            self._updateLineLayers(self._updatePositionAndLength)
             self.setNeedsLayout()
         }
     }
@@ -340,6 +360,7 @@ private extension GridLayer {
         set(newGridLineOverlapFactor) {
             guard newGridLineOverlapFactor != self.__gridLineOverlapFactor else { return }
             self.__gridLineOverlapFactor = newGridLineOverlapFactor
+            self._updateLineLayers(self._updatePositionAndLength)
             self.setNeedsLayout()
         }
     }
@@ -373,6 +394,8 @@ private extension GridLayer {
     // Private Helpers
     private func _addBorderLayer() {
         let borderLayer: BorderLayer = BorderLayer()
+        borderLayer.lineWidth = self.borderLineWidth
+        borderLayer.lineDashPattern = self.borderDashPattern as [NSNumber]
         self._borderLayer = borderLayer
         self.addSublayer(borderLayer)
     }
@@ -448,17 +471,14 @@ private typealias _PositionIndexSets = (
 
 
 // MARK: - GridLayer
-// MARK: GridLines
+// MARK: LineLayers
 private extension GridLayer {
-    func _addLineLayers() {
-        self._addLines(through: self.subdivision)
-    }
-    
-    func _removeLineLayers() {
-        for lineLayer in self._lineLayers {
-            lineLayer.removeFromSuperlayer()
+    func _updateLineLayers() {
+        if self.gridIsShown {
+            self._addLineLayers()
+        } else {
+            self._removeLineLayers()
         }
-        self._lineLayers = []
     }
     
     func _updateRowLineLayers(oldNumOfRows: UInt, newNumOfRows: UInt) {
@@ -492,6 +512,17 @@ private extension GridLayer {
     }
     
     // Private Helper Functions
+    private func _addLineLayers() {
+        self._addLines(through: self.subdivision)
+    }
+    
+    private func _removeLineLayers() {
+        for lineLayer in self._lineLayers {
+            lineLayer.removeFromSuperlayer()
+        }
+        self._lineLayers = []
+    }
+    
     private func _addLines(withOrientation orientation: LineLayer.Orientation, after oldNum: UInt, through newNum: UInt) {
         let positionIndexSet: _PositionIndexSet = Set(
             self._positionIndices(
@@ -566,6 +597,8 @@ private extension GridLayer {
             lineLayer._positionIndex = positionIndex
             lineLayer.orientation = orientation
             lineLayer.strokeColor = self._lineColor(for: lineLayer)
+            lineLayer.lineWidth = self.gridLineWidth
+            lineLayer.lineDashPattern = self.gridDashPattern as [NSNumber]
             
             self._lineLayers.append(lineLayer)
             self.addSublayer(lineLayer)

@@ -60,7 +60,7 @@ public extension LineLayer {
 // MARK: Class Declaration
 public class LineLayer: CAShapeLayer {
     // Required Init
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("LineLayer does not support NSCoding")
     }
     
