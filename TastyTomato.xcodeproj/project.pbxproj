@@ -123,7 +123,7 @@
 		5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (UInt).swift"; sourceTree = "<group>"; };
 		5DCC82CB1A56D60A4DF981960B5A667C /* BaseTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextView.swift; sourceTree = "<group>"; };
 		617BAD163949C9A08DE92862E903C2A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		67E88E0D2BD3C41ED8118CF3C1631D5A /* RangeReplacableCollection (remove).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RangeReplacableCollection (remove).swift"; path = "RangeReplacableCollection (remove).swift"; sourceTree = "<group>"; };
+		67E88E0D2BD3C41ED8118CF3C1631D5A /* RangeReplacableCollection (remove).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeReplacableCollection (remove).swift"; sourceTree = "<group>"; };
 		77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscImage.swift; sourceTree = "<group>"; };
 		7DAB831517E3851F87B951BE6881C71B /* UIView (BarButtonItem).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (BarButtonItem).swift"; sourceTree = "<group>"; };
 		7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (WidthHeight).swift"; sourceTree = "<group>"; };
@@ -357,15 +357,6 @@
 			path = Localizations;
 			sourceTree = "<group>";
 		};
-		691A0CBFA184FAE1D42A19C0CA835752 /* RangeReplacableCollection */ = {
-			isa = PBXGroup;
-			children = (
-				67E88E0D2BD3C41ED8118CF3C1631D5A /* RangeReplacableCollection (remove).swift */,
-			);
-			name = RangeReplacableCollection;
-			path = RangeReplacableCollection;
-			sourceTree = "<group>";
-		};
 		6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +376,14 @@
 				7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */,
 			);
 			path = UIImage;
+			sourceTree = "<group>";
+		};
+		691A0CBFA184FAE1D42A19C0CA835752 /* RangeReplacableCollection */ = {
+			isa = PBXGroup;
+			children = (
+				67E88E0D2BD3C41ED8118CF3C1631D5A /* RangeReplacableCollection (remove).swift */,
+			);
+			path = RangeReplacableCollection;
 			sourceTree = "<group>";
 		};
 		720493D3CFB054FBA7645AE63F1761F0 /* Images */ = {
