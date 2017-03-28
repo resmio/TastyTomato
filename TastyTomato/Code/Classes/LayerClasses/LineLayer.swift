@@ -71,7 +71,7 @@ public class LineLayer: CAShapeLayer {
         self.strokeColor = UIColor.black.cgColor
     }
     
-    override init(layer: Any) {
+    public override init(layer: Any) {
         super.init(layer: layer)
     }
     
@@ -101,6 +101,7 @@ extension LineLayer {
         set { fatalError() }
     }
     
+    @available(*, unavailable)
     public override var backgroundColor: CGColor? {
         get { return nil }
         set { fatalError() }
