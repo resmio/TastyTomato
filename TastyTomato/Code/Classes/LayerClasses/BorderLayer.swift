@@ -37,7 +37,7 @@ public class BorderLayer: CAShapeLayer {
         self.strokeColor = UIColor.black.cgColor
     }
     
-    override init(layer: Any) {
+    public override init(layer: Any) {
         super.init(layer: layer)
     }
     
