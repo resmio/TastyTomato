@@ -36,9 +36,6 @@
          </FileRef>
       </Group>
       <FileRef
-         location = "group:Podfile">
-      </FileRef>
-      <FileRef
          location = "group:Gemfile">
       </FileRef>
       <FileRef
