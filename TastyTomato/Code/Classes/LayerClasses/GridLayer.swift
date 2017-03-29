@@ -63,12 +63,12 @@ public extension GridLayer {
         }
     }
     
-    public var borderIsShownWhenGridIsInset: Bool {
+    public var borderIsShown: Bool {
         get {
-            return self._borderIsShownWhenGridIsInset
+            return self._borderIsShown
         }
-        set(newBorderIsShownWhenGridIsInset) {
-            self._borderIsShownWhenGridIsInset = newBorderIsShownWhenGridIsInset
+        set(newBorderIsShown) {
+            self._borderIsShown = newBorderIsShown
         }
     }
     
@@ -178,7 +178,7 @@ public class GridLayer: CALayer {
     
     fileprivate var __subdivision: GridLayer.Subdivision = .none
     fileprivate var __gridIsShown: Bool = false
-    fileprivate var __borderIsShownWhenGridIsInset: Bool = true
+    fileprivate var __borderIsShown: Bool = true
     fileprivate var __rowHeight: CGFloat = 150
     fileprivate var __columnWidth: CGFloat = 150
     fileprivate var __borderLineWidth: CGFloat = 1
@@ -264,13 +264,13 @@ private extension GridLayer {
         }
     }
     
-    var _borderIsShownWhenGridIsInset: Bool {
+    var _borderIsShown: Bool {
         get {
-            return self._borderIsShownWhenGridIsInset
+            return self.__borderIsShown
         }
-        set(newBorderIsShownWhenGridIsInset) {
-            guard newBorderIsShownWhenGridIsInset != self.__borderIsShownWhenGridIsInset else { return }
-            self._borderIsShownWhenGridIsInset = newBorderIsShownWhenGridIsInset
+        set(newBorderIsShown) {
+            guard newBorderIsShown != self.__borderIsShown else { return }
+            self.__borderIsShown = newBorderIsShown
             self._updateBorderLayer()
         }
     }
@@ -384,7 +384,7 @@ private extension GridLayer {
 // MARK: Border
 private extension GridLayer {
     func _updateBorderLayer() {
-        if self.borderIsShownWhenGridIsInset && self.gridInsetFactor != 0 {
+        if self.borderIsShown && self.gridInsetFactor != 0 {
             self._addBorderLayer()
         } else {
             self._removeBorderLayer()
