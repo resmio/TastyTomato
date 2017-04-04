@@ -254,6 +254,7 @@ extension ZoomView: UIScrollViewDelegate {
 private extension ZoomView {
     func _createScrollView() -> UIScrollView {
         let scrollView: UIScrollView = UIScrollView(frame: self.bounds)
+        scrollView.contentSize = self.bounds.size
         scrollView.clipsToBounds = false
         scrollView.delegate = self
         scrollView.addSubview(self._contentView)
