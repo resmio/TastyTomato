@@ -138,11 +138,12 @@ extension ZoomView {
         self._zoomOut(animated: animated)
     }
     
-    // Call these when you changed the size of the
+    // Call this when you changed the size of the
     // contentView to ensure that the minimum and 
-    // maximum zoomScale are updated accordingly
-    public func updateZoomScales() {
-        self._updateZoomScales()
+    // maximum zoomScale as well as the scrollView-
+    // contentSize are updated accordingly
+    public func contentViewSizeChanged() {
+        self._contentViewSizeChanged()
     }
 }
 
@@ -164,7 +165,7 @@ public class ZoomView: UIView {
     }
     
     // Designated Init
-    public init(frame: CGRect, contentView: UIView) {
+    fileprivate init(frame: CGRect, contentView: UIView) {
         self._contentView = contentView
         super.init(frame: frame)
         self._addSubviews()
@@ -253,11 +254,12 @@ extension ZoomView: UIScrollViewDelegate {
 // MARK: Lazy Property Creation
 private extension ZoomView {
     func _createScrollView() -> UIScrollView {
+        let contentView: UIView = self._contentView
         let scrollView: UIScrollView = UIScrollView(frame: self.bounds)
-        scrollView.contentSize = self.bounds.size
         scrollView.clipsToBounds = false
         scrollView.delegate = self
-        scrollView.addSubview(self._contentView)
+        scrollView.addSubview(contentView)
+        scrollView.contentSize = contentView.size
         return scrollView
     }
 }
@@ -413,6 +415,23 @@ private extension ZoomView {
 }
 
 
+// MARK: ContentView Size Change Handling
+private extension ZoomView {
+    func _contentViewSizeChanged() {
+        let scrollView: UIScrollView = self._scrollView
+        let contentViewSize: CGSize = self._contentView.size
+        
+        guard scrollView.contentSize != contentViewSize else {
+            return
+        }
+        
+        scrollView.contentSize = contentViewSize
+        self._updateZoomScales()
+        self._adjustContentPosition()
+    }
+}
+
+
 // MARK: Update Content Position
 private extension ZoomView {
     func _adjustContentPosition() {
@@ -448,8 +467,8 @@ private extension ZoomView {
 // MARK: Update Zoom Scales
 private extension ZoomView {
     func _updateZoomScales() {
-        let contentView: UIView = self._contentView
         let scrollView: UIScrollView = self._scrollView
+        let contentView: UIView = self._contentView
         
         let widthRatio: CGFloat = scrollView.width / contentView.width
         let heightRatio: CGFloat = scrollView.height / contentView.height
