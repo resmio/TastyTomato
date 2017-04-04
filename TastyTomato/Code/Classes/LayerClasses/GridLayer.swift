@@ -110,7 +110,7 @@ public extension GridLayer {
     
     public var borderDashPattern: [CGFloat] {
         get {
-            return self._borderDashPattern as [CGFloat]
+            return self._borderDashPattern as! [CGFloat]
         }
         set(newBorderDashPattern) {
             self._borderDashPattern = newBorderDashPattern as [NSNumber]
@@ -119,7 +119,7 @@ public extension GridLayer {
     
     public var gridDashPattern: [CGFloat] {
         get {
-            return self._gridDashPattern as [CGFloat]
+            return self._gridDashPattern as! [CGFloat]
         }
         set(newGridDashPattern) {
             self._gridDashPattern = newGridDashPattern as [NSNumber]
