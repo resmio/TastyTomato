@@ -48,6 +48,7 @@ public class BorderLayer: CAShapeLayer {
 
 // MARK: Unavailability Overrides
 extension BorderLayer {
+    @available(*, unavailable)
     public override var backgroundColor: CGColor? {
         get { return nil }
         set { fatalError() }
