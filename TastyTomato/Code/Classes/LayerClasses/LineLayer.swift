@@ -77,11 +77,9 @@ public class LineLayer: CAShapeLayer {
     
     // Private Variables
     fileprivate var __orientation: LineLayer.Orientation = .horizontal
-}
 
-
-// MARK: Overrides
-extension LineLayer {
+    
+    // MARK: Overrides
     public override var lineWidth: CGFloat {
         get {
             return self._lineWidth
@@ -90,11 +88,8 @@ extension LineLayer {
             self._lineWidth = newLineWidth
         }
     }
-}
-
-
-// MARK: Unavailability Overrides
-extension LineLayer {
+    
+    // MARK: Unavailability Overrides
     @available(*, unavailable)
     public override var frame: CGRect {
         get { fatalError() }
@@ -118,7 +113,11 @@ extension LineLayer {
         get { return nil }
         set { fatalError() }
     }
-    
+}
+
+
+// MARK: Convenience Init Unavailability Overrides
+extension LineLayer {
     @available(*, unavailable)
     public convenience init(frame: CGRect) { fatalError() }
     
