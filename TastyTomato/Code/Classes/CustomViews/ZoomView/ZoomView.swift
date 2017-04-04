@@ -189,48 +189,42 @@ public class ZoomView: UIView {
     fileprivate var __zoomOutTapEnabled: Bool = true
     fileprivate var _centerHorizontally: Bool = true
     fileprivate var _centerVertically: Bool = true
-}
 
-
-// MARK: Layout Overrides
-extension ZoomView {
+    
+    // MARK: Frame / Size Overrides
     override public var frame: CGRect {
         get {
-            return super.frame
+            return self._frame
         }
         set(newFrame) {
-            super.frame = newFrame
-            self._scrollView.size = newFrame.size
+            self._frame = newFrame
         }
     }
     
     override public var size: CGSize {
         get {
-            return super.size
+            return self._size
         }
         set(newSize) {
-            super.size = newSize
-            self._scrollView.size = newSize
+            self._size = newSize
         }
     }
     
     override public var width: CGFloat {
         get {
-            return super.width
+            return self._width
         }
         set(newWidth) {
-            super.width = newWidth
-            self._scrollView.width = newWidth
+            self._width = newWidth
         }
     }
     
     override public var height: CGFloat {
         get {
-            return super.height
+            return self._height
         }
         set(newHeight) {
-            super.height = newHeight
-            self._scrollView.height = newHeight
+            self._height = newHeight
         }
     }
 }
@@ -284,6 +278,51 @@ private extension ZoomView {
         set(newZoomOutTapEnabled) {
             self.__zoomOutTapEnabled = newZoomOutTapEnabled
             self._updateZoomOutTapRecognizer()
+        }
+    }
+}
+
+
+// MARK: Override Implementations
+private extension ZoomView {
+    // MARK: Frame / Size Overrides
+    var _frame: CGRect {
+        get {
+            return super.frame
+        }
+        set(newFrame) {
+            super.frame = newFrame
+            self._scrollView.size = newFrame.size
+        }
+    }
+    
+    var _size: CGSize {
+        get {
+            return super.size
+        }
+        set(newSize) {
+            super.size = newSize
+            self._scrollView.size = newSize
+        }
+    }
+    
+    var _width: CGFloat {
+        get {
+            return super.width
+        }
+        set(newWidth) {
+            super.width = newWidth
+            self._scrollView.width = newWidth
+        }
+    }
+    
+    var _height: CGFloat {
+        get {
+            return super.height
+        }
+        set(newHeight) {
+            super.height = newHeight
+            self._scrollView.height = newHeight
         }
     }
 }
