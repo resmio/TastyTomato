@@ -195,11 +195,9 @@ public class GridLayer: CALayer {
     
     fileprivate var __numOfRows: UInt = 8
     fileprivate var __numOfColumns: UInt = 8
-}
-
-
-// MARK: Layout Overrides
-extension GridLayer {
+    
+    
+    // MARK: Overrides
     public override func preferredFrameSize() -> CGSize {
         return self._preferredFrameSize()
     }
@@ -213,7 +211,6 @@ extension GridLayer {
 // MARK: // Private
 // MARK: Computed Properties
 private extension GridLayer {
-    // Interface Backing
     var _numOfRows: UInt {
         get {
             return self.__numOfRows
@@ -392,7 +389,7 @@ private extension GridLayer {
 }
 
 
-// MARK: Layout
+// MARK: Override Implementations
 private extension GridLayer {
     func _preferredFrameSize() -> CGSize {
         return CGSize(width: self._width(), height: self._height())
