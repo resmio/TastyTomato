@@ -161,11 +161,16 @@ public class GridLayer: CALayer {
         fatalError("GridLayer does not support NSCoding")
     }
     
-    // Override Init
+    // Override Inits
     public override init() {
         super.init()
         self._updateBorderLayer()
         self._updateLineLayers()
+        self._sizeFrame()
+    }
+    
+    public override init(layer: Any) {
+        super.init(layer: layer)
     }
     
     // Private Constants
@@ -194,11 +199,15 @@ public class GridLayer: CALayer {
 
 
 // MARK: Layout Overrides
-//extension GridLayer {
-//    public override func layoutSublayers() {
-//        
-//    }
-//}
+extension GridLayer {
+    public override func preferredFrameSize() -> CGSize {
+        return self._preferredFrameSize()
+    }
+    
+    public override func layoutSublayers() {
+        self._layoutSublayers()
+    }
+}
 
 
 // MARK: // Private
@@ -218,6 +227,7 @@ private extension GridLayer {
                 )
             }
             self.__numOfRows = newNumOfRows
+            self._sizeFrame()
         }
     }
     
@@ -234,6 +244,7 @@ private extension GridLayer {
                 )
             }
             self.__numOfColumns = newNumOfColumns
+            self._sizeFrame()
         }
     }
     
@@ -282,6 +293,8 @@ private extension GridLayer {
         set(newRowHeight) {
             guard newRowHeight != self.__rowHeight else { return }
             self.__rowHeight = newRowHeight
+            self._updateColumnLineLengths()
+            self._sizeFrame()
             self.setNeedsLayout()
         }
     }
@@ -293,6 +306,8 @@ private extension GridLayer {
         set(newColumnWidth) {
             guard newColumnWidth != self.__columnWidth else { return }
             self.__columnWidth = newColumnWidth
+            self._updateRowLineLengths()
+            self._sizeFrame()
             self.setNeedsLayout()
         }
     }
@@ -348,8 +363,6 @@ private extension GridLayer {
         set(newGridInsetFactor) {
             guard newGridInsetFactor != self.__gridInsetFactor else { return }
             self.__gridInsetFactor = newGridInsetFactor
-            self._updateLineLayers(self._updatePositionAndLength)
-            self.setNeedsLayout()
         }
     }
     
@@ -360,8 +373,6 @@ private extension GridLayer {
         set(newGridLineOverlapFactor) {
             guard newGridLineOverlapFactor != self.__gridLineOverlapFactor else { return }
             self.__gridLineOverlapFactor = newGridLineOverlapFactor
-            self._updateLineLayers(self._updatePositionAndLength)
-            self.setNeedsLayout()
         }
     }
     
@@ -377,6 +388,33 @@ private extension GridLayer {
     // Private Helpers
     private func _updateLineLayers(_ block: ((LineLayer) -> Void)) {
         self._lineLayers.forEach(block)
+    }
+}
+
+
+// MARK: Layout
+private extension GridLayer {
+    func _preferredFrameSize() -> CGSize {
+        return CGSize(width: self._width(), height: self._height())
+    }
+    
+    func _layoutSublayers() {
+        self._lineLayers.forEach(self._updatePosition)
+    }
+    
+    // Helpers
+    func _sizeFrame() {
+        let frameSize: CGSize = self.preferredFrameSize()
+        self.frame.size = frameSize
+        self._borderLayer?.frame.size = frameSize
+    }
+    
+    func _width() -> CGFloat {
+        return ((2 * self.gridInsetFactor) + self._zeroedNumOfColumns) * self.columnWidth
+    }
+    
+    func _height() -> CGFloat {
+        return ((2 * self.gridInsetFactor) + self._zeroedNumOfRows) * self.rowHeight
     }
 }
 
@@ -505,10 +543,25 @@ private extension GridLayer {
         }
     }
     
-    func _updatePositionAndLength(for line: LineLayer) {
+    func _updatePosition(for line: LineLayer) {
         line.parallelPosition = self._parallelInset(for: line)
         line.orthogonalPosition = self._orthogonalOffset(for: line)
-        line.length = self._length(for: line)
+    }
+    
+    func _updateRowLineLengths() {
+        self._lineLayers.forEach({
+            if $0.orientation == .horizontal {
+                $0.length = self._lengthForRow($0)
+            }
+        })
+    }
+    
+    func _updateColumnLineLengths() {
+        self._lineLayers.forEach({
+            if $0.orientation == .vertical {
+                $0.length = self._lengthForColumn($0)
+            }
+        })
     }
     
     // Private Helper Functions
@@ -573,14 +626,14 @@ private extension GridLayer {
     private func _purgeRows(downTo numOfRows: UInt) {
         self._purgeLines(where: {
             $0.orientation == .horizontal &&
-                $0._positionIndex.value > (numOfRows - 1)
+            $0._positionIndex.value > (numOfRows - 1)
         })
     }
     
     private func _purgeColumns(downTo numOfRows: UInt) {
         self._purgeLines(where: {
             $0.orientation == .vertical &&
-                $0._positionIndex.value > (numOfRows - 1)
+            $0._positionIndex.value > (numOfRows - 1)
         })
     }
     
@@ -599,6 +652,7 @@ private extension GridLayer {
             lineLayer.strokeColor = self._lineColor(for: lineLayer)
             lineLayer.lineWidth = self.gridLineWidth
             lineLayer.lineDashPattern = self.gridDashPattern as [NSNumber]
+            lineLayer.length = self._length(for: lineLayer)
             
             self._lineLayers.append(lineLayer)
             self.addSublayer(lineLayer)
@@ -683,9 +737,9 @@ private extension GridLayer {
     
     private func _parallelInset(for line: LineLayer) -> CGFloat {
         if line.orientation == .horizontal {
-            return (self.bounds.width - self._lengthForRow(line)) / 2
+            return (self._width() - self._lengthForRow(line)) / 2
         } else /*if line.orientation == .vertical*/ {
-            return (self.bounds.height - self._lengthForColumn(line)) / 2
+            return (self._height() - self._lengthForColumn(line)) / 2
         }
     }
     
