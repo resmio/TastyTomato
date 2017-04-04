@@ -160,7 +160,7 @@ public class ZoomView: UIView {
     
     // Convenience Init
     public convenience init(contentView: UIView) {
-        self.init(frame: .zero, contentView: contentView)
+        self.init(frame: contentView.bounds, contentView: contentView)
     }
     
     // Designated Init
@@ -253,7 +253,7 @@ extension ZoomView: UIScrollViewDelegate {
 // MARK: Lazy Property Creation
 private extension ZoomView {
     func _createScrollView() -> UIScrollView {
-        let scrollView: UIScrollView = UIScrollView()
+        let scrollView: UIScrollView = UIScrollView(frame: self.bounds)
         scrollView.clipsToBounds = false
         scrollView.delegate = self
         scrollView.addSubview(self._contentView)
