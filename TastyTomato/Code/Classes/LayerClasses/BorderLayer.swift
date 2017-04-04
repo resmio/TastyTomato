@@ -43,11 +43,19 @@ public class BorderLayer: CAShapeLayer {
     
     // Private Variables
     fileprivate var __borderEdgeInsets: UIEdgeInsets = .zero
-}
-
-
-// MARK: Unavailability Overrides
-extension BorderLayer {
+    
+    
+    // MARK: Overrides
+    public override var frame: CGRect {
+        get {
+            return self._frame
+        }
+        set(newFrame) {
+            self._frame = newFrame
+        }
+    }
+    
+    // MARK: Unavailability Overrides
     @available(*, unavailable)
     public override var backgroundColor: CGColor? {
         get { return nil }
@@ -65,27 +73,16 @@ extension BorderLayer {
         get { return nil }
         set { fatalError() }
     }
-    
+}
+
+
+// MARK: Convenience Init Unavailability Overrides
+extension BorderLayer {
     @available(*, unavailable)
     public convenience init(path p: UIBezierPath) { fatalError() }
     
     @available(*, unavailable)
     public convenience init(rect r: CGRect) { fatalError() }
-}
-
-
-// MARK: Frame Override
-extension BorderLayer {
-    public override var frame: CGRect {
-        get {
-            return super.frame
-        }
-        set(newFrame) {
-            guard newFrame != super.frame else { return }
-            super.frame = newFrame
-            self.path = self._createPath()
-        }
-    }
 }
 
 
@@ -99,6 +96,21 @@ private extension BorderLayer {
         set(newBorderEdgeInsets) {
             guard newBorderEdgeInsets != self.__borderEdgeInsets else { return }
             self.__borderEdgeInsets = newBorderEdgeInsets
+            self.path = self._createPath()
+        }
+    }
+}
+
+
+// MARK: Override Implementations
+private extension BorderLayer {
+    var _frame: CGRect {
+        get {
+            return super.frame
+        }
+        set(newFrame) {
+            guard newFrame != super.frame else { return }
+            super.frame = newFrame
             self.path = self._createPath()
         }
     }
