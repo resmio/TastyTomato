@@ -13,7 +13,7 @@ import Foundation
 // MARK: Interface
 public extension GridLayer {
     // MARK: Location
-    public typealias Location = (row: UInt, column: UInt)
+    public typealias Location = (row: CGFloat, column: CGFloat)
     
     public enum Subdivision: CGFloat {
         case none = 1.0
@@ -180,16 +180,17 @@ public extension GridLayer {
         }
     }
 
+    // Functions
     public func point(for location: GridLayer.Location) -> CGPoint {
         return self._point(for: location)
+    }
+    
+    public func point(forSlotIndex slotIndex: UInt) -> CGPoint {
+        return self._point(for: slotIndex)
     }
 
     public func location(nearestTo point: CGPoint) -> GridLayer.Location {
         return self._location(nearestTo: point)
-    }
-    
-    public func point(for slotIndex: UInt) -> CGPoint {
-        return self._point(for: slotIndex)
     }
 }
 
@@ -871,15 +872,32 @@ private extension GridLayer {
 // MARK: Point <-> Location <-> SlotIndex Calculation
 private extension GridLayer {
     func _point(for location: GridLayer.Location) -> CGPoint {
-        return .zero
-    }
-    
-    func _location(nearestTo point: CGPoint) -> GridLayer.Location {
-        return (0, 0)
+        let x: CGFloat = self._horizontalOffset(forGridPosition: CGFloat(location.column))
+        let y: CGFloat = self._verticalOffset(forGridPosition: CGFloat(location.row))
+        return CGPoint(x: x, y: y)
     }
     
     func _point(for slotIndex: UInt) -> CGPoint {
-        return .zero
+        let xLocation: CGFloat = CGFloat(slotIndex % self.numOfColumns)
+        let yLocation: CGFloat = CGFloat(slotIndex / self.numOfColumns)
+        return self._point(for: (xLocation, yLocation))
+    }
+    
+    func _location(nearestTo point: CGPoint) -> GridLayer.Location {
+        return (
+            self._locationOffset(
+                nearestToOffset: point.y,
+                minLocation: self._verticalOffset(forGridPosition: 0),
+                maxLocation: self._verticalOffset(forGridPosition: CGFloat(self._zeroedNumOfRows)),
+                stepUnit: self.rowHeight
+            ),
+            self._locationOffset(
+                nearestToOffset: point.x,
+                minLocation: self._horizontalOffset(forGridPosition: 0),
+                maxLocation: self._horizontalOffset(forGridPosition: CGFloat(self._zeroedNumOfColumns)),
+                stepUnit: self.columnWidth
+            )
+        )
     }
     
     // Helpers
@@ -889,5 +907,17 @@ private extension GridLayer {
     
     func _verticalOffset(forGridPosition gridPosition: CGFloat) -> CGFloat {
         return (self.gridInsetFactor + gridPosition) * self.rowHeight
+    }
+    
+    // Private Helpers
+    func _locationOffset(nearestToOffset offset: CGFloat, minLocation: CGFloat, maxLocation: CGFloat, stepUnit: CGFloat) -> CGFloat {
+        if offset <= minLocation {
+            return minLocation
+        } else if offset >= maxLocation {
+            return maxLocation
+        } else {
+            let stepSize: CGFloat = self.subdivision.rawValue * stepUnit
+            return (round((offset - minLocation) / stepSize) * stepSize) + minLocation
+        }
     }
 }
