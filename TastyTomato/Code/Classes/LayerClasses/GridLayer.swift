@@ -180,13 +180,17 @@ public extension GridLayer {
         }
     }
 
-//    public func point(for location: GridLayer.Location) -> CGPoint {
-//        return self._point(for: location)
-//    }
-//
-//    public func location(nearestTo point: CGPoint) -> GridLayer.Location {
-//        return self._location(nearestTo: point)
-//    }
+    public func point(for location: GridLayer.Location) -> CGPoint {
+        return self._point(for: location)
+    }
+
+    public func location(nearestTo point: CGPoint) -> GridLayer.Location {
+        return self._location(nearestTo: point)
+    }
+    
+    public func point(for slotIndex: UInt) -> CGPoint {
+        return self._point(for: slotIndex)
+    }
 }
 
 
@@ -825,9 +829,9 @@ private extension GridLayer {
     
     private func _orthogonalOffset(for line: LineLayer) -> CGFloat {
         if line.orientation == .horizontal {
-            return (self.gridInsetFactor + line._positionIndex.value) * self.rowHeight
+            return self._verticalOffset(forGridPosition: line._positionIndex.value)
         } else /*if line.orientation == .vertical*/ {
-            return (self.gridInsetFactor + line._positionIndex.value) * self.columnWidth
+            return self._horizontalOffset(forGridPosition: line._positionIndex.value)
         }
     }
     
@@ -860,5 +864,30 @@ private extension GridLayer {
     private func _overlapFactor(for line: LineLayer) -> CGFloat {
         let subdivisionFactor: CGFloat = line._positionIndex.subdivision.rawValue
         return subdivisionFactor * self.gridLineOverlapFactor
+    }
+}
+
+
+// MARK: Point <-> Location <-> SlotIndex Calculation
+private extension GridLayer {
+    func _point(for location: GridLayer.Location) -> CGPoint {
+        return .zero
+    }
+    
+    func _location(nearestTo point: CGPoint) -> GridLayer.Location {
+        return (0, 0)
+    }
+    
+    func _point(for slotIndex: UInt) -> CGPoint {
+        return .zero
+    }
+    
+    // Helpers
+    func _horizontalOffset(forGridPosition gridPosition: CGFloat) -> CGFloat {
+        return (self.gridInsetFactor + gridPosition) * self.columnWidth
+    }
+    
+    func _verticalOffset(forGridPosition gridPosition: CGFloat) -> CGFloat {
+        return (self.gridInsetFactor + gridPosition) * self.rowHeight
     }
 }
