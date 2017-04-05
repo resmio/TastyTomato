@@ -213,7 +213,7 @@ public class GridLayer: CALayer {
     fileprivate var _borderLayer: BorderLayer?
     fileprivate var _lineLayers: [LineLayer] = []
     
-    fileprivate var __subdivision: GridLayer.Subdivision = .eighth
+    fileprivate var __subdivision: GridLayer.Subdivision = .none
     fileprivate var __gridIsShown: Bool = false
     fileprivate var __borderIsShown: Bool = true
     fileprivate var __rowHeight: CGFloat = 150
