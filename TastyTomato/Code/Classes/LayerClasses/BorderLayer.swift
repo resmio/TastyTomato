@@ -55,6 +55,10 @@ public class BorderLayer: CAShapeLayer {
         }
     }
     
+    public override func action(forKey event: String) -> CAAction? {
+        return nil
+    }
+    
     // MARK: Unavailability Overrides
     @available(*, unavailable)
     public override var backgroundColor: CGColor? {
