@@ -639,19 +639,17 @@ private extension GridLayer {
     }
     
     func _updateRowLineLengths() {
-        self._lineLayers.forEach({
-            if $0.orientation == .horizontal {
-                $0.length = self._lengthForRow($0)
-            }
-        })
+        self._forEachLine(
+            where: { $0.orientation == .horizontal },
+            execute: { $0.length = self._lengthForRow($0) }
+        )
     }
     
     func _updateColumnLineLengths() {
-        self._lineLayers.forEach({
-            if $0.orientation == .vertical {
-                $0.length = self._lengthForColumn($0)
-            }
-        })
+        self._forEachLine(
+            where: { $0.orientation == .vertical },
+            execute: { $0.length = self._lengthForColumn($0) }
+        )
     }
     
     func _forEachLine(where condition: ((LineLayer) -> Bool), execute: (LineLayer) -> Void) {
