@@ -293,6 +293,7 @@ private extension ZoomView {
         set(newFrame) {
             super.frame = newFrame
             self._scrollView.size = newFrame.size
+            self._updateZoomScalesAndAdjustContentPosition()
         }
     }
     
@@ -303,6 +304,7 @@ private extension ZoomView {
         set(newSize) {
             super.size = newSize
             self._scrollView.size = newSize
+            self._updateZoomScalesAndAdjustContentPosition()
         }
     }
     
@@ -313,6 +315,7 @@ private extension ZoomView {
         set(newWidth) {
             super.width = newWidth
             self._scrollView.width = newWidth
+            self._updateZoomScalesAndAdjustContentPosition()
         }
     }
     
@@ -323,6 +326,7 @@ private extension ZoomView {
         set(newHeight) {
             super.height = newHeight
             self._scrollView.height = newHeight
+            self._updateZoomScalesAndAdjustContentPosition()
         }
     }
 }
@@ -465,14 +469,18 @@ private extension ZoomView {
         }
         
         scrollView.contentSize = contentViewSize
-        self._updateZoomScales()
-        self._adjustContentPosition()
+        self._updateZoomScalesAndAdjustContentPosition()
     }
 }
 
 
-// MARK: Update Content Position
+// MARK: Adjust Content Position / Update Zoom Scales
 private extension ZoomView {
+    func _updateZoomScalesAndAdjustContentPosition() {
+        self._updateZoomScales()
+        self._adjustContentPosition()
+    }
+    
     func _adjustContentPosition() {
         guard self.centerHorizontally || self.centerVertically else {
             return
@@ -500,11 +508,7 @@ private extension ZoomView {
         adjustHorizontalPosition()
         adjustVerticalPosition()
     }
-}
 
-
-// MARK: Update Zoom Scales
-private extension ZoomView {
     func _updateZoomScales() {
         let scrollView: UIScrollView = self._scrollView
         let contentView: UIView = self._contentView
