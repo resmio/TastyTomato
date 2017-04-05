@@ -224,6 +224,7 @@ private extension GridLayer {
                 )
             }
             self.__numOfRows = newNumOfRows
+            self._updateColumnLineLengths()
             self._sizeFrame()
         }
     }
@@ -241,6 +242,7 @@ private extension GridLayer {
                 )
             }
             self.__numOfColumns = newNumOfColumns
+            self._updateRowLineLengths()
             self._sizeFrame()
         }
     }
