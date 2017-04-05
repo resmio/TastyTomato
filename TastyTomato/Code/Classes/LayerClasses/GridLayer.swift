@@ -205,6 +205,10 @@ public class GridLayer: CALayer {
     public override func layoutSublayers() {
         self._layoutSublayers()
     }
+    
+    public override func action(forKey event: String) -> CAAction? {
+        return nil
+    }
 }
 
 
