@@ -184,10 +184,6 @@ public extension GridLayer {
     public func point(for location: GridLayer.Location) -> CGPoint {
         return self._point(for: location)
     }
-    
-    public func point(forSlotIndex slotIndex: UInt) -> CGPoint {
-        return self._point(for: slotIndex)
-    }
 
     public func location(nearestTo point: CGPoint) -> GridLayer.Location {
         return self._location(nearestTo: point)
@@ -875,12 +871,6 @@ private extension GridLayer {
         let x: CGFloat = self._horizontalOffset(forGridPosition: CGFloat(location.column))
         let y: CGFloat = self._verticalOffset(forGridPosition: CGFloat(location.row))
         return CGPoint(x: x, y: y)
-    }
-    
-    func _point(for slotIndex: UInt) -> CGPoint {
-        let xLocation: CGFloat = CGFloat(slotIndex % self.numOfColumns)
-        let yLocation: CGFloat = CGFloat(slotIndex / self.numOfColumns)
-        return self._point(for: (xLocation, yLocation))
     }
     
     func _location(nearestTo point: CGPoint) -> GridLayer.Location {
