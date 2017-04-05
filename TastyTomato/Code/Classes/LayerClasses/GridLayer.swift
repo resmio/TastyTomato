@@ -90,6 +90,33 @@ public extension GridLayer {
         }
     }
     
+    public var borderLineColor: CGColor {
+        get {
+            return self._borderLineColor
+        }
+        set(newBorderLineColor) {
+            self._borderLineColor = newBorderLineColor
+        }
+    }
+    
+    public var mainGridLineColor: CGColor {
+        get {
+            return self._mainGridLineColor
+        }
+        set(newMainGridLineColor) {
+            self._mainGridLineColor = newMainGridLineColor
+        }
+    }
+    
+    public var subGridLineColor: CGColor {
+        get {
+            return self._subGridLineColor
+        }
+        set(newSubGridLineColor) {
+            self._subGridLineColor = newSubGridLineColor
+        }
+    }
+    
     public var borderLineWidth: CGFloat {
         get {
             return self._borderLineWidth
@@ -182,19 +209,18 @@ public class GridLayer: CALayer {
         super.init(layer: layer)
     }
     
-    // Private Constants
-    fileprivate let _mainGridLineColor: CGColor = UIColor.Gray999999().withAlpha(0.8).cgColor
-    fileprivate let _subGridLineColor: CGColor = UIColor.Gray999999().withAlpha(0.4).cgColor
-    
     // Private Variables
     fileprivate var _borderLayer: BorderLayer?
     fileprivate var _lineLayers: [LineLayer] = []
     
-    fileprivate var __subdivision: GridLayer.Subdivision = .none
+    fileprivate var __subdivision: GridLayer.Subdivision = .eighth
     fileprivate var __gridIsShown: Bool = false
     fileprivate var __borderIsShown: Bool = true
     fileprivate var __rowHeight: CGFloat = 150
     fileprivate var __columnWidth: CGFloat = 150
+    fileprivate var __borderLineColor: CGColor = UIColor.Gray999999().withAlpha(0.8).cgColor
+    fileprivate var __mainGridLineColor: CGColor = UIColor.Gray999999().withAlpha(0.8).cgColor
+    fileprivate var __subGridLineColor: CGColor = UIColor.Gray999999().withAlpha(0.4).cgColor
     fileprivate var __borderLineWidth: CGFloat = 1
     fileprivate var __gridLineWidth: CGFloat = 1
     fileprivate var __borderDashPattern: [NSNumber] = []
@@ -322,6 +348,45 @@ private extension GridLayer {
             self._updateRowLineLengths()
             self._sizeFrame()
             self.setNeedsLayout()
+        }
+    }
+    
+    var _borderLineColor: CGColor {
+        get {
+            return self.__borderLineColor
+        }
+        set(newBorderLineColor) {
+            guard newBorderLineColor != self.__borderLineColor else { return }
+            self.__borderLineColor = newBorderLineColor
+            self._borderLayer?.strokeColor = newBorderLineColor
+        }
+    }
+    
+    var _mainGridLineColor: CGColor {
+        get {
+            return self.__mainGridLineColor
+        }
+        set(newMainGridLineColor) {
+            guard newMainGridLineColor != self.__mainGridLineColor else { return }
+            self.__mainGridLineColor = newMainGridLineColor
+            self._forEachLine(
+                where: { $0._positionIndex.subdivision == .none },
+                execute: { $0.strokeColor = newMainGridLineColor }
+            )
+        }
+    }
+    
+    var _subGridLineColor: CGColor {
+        get {
+            return self.__subGridLineColor
+        }
+        set(newSubGridLineColor) {
+            guard newSubGridLineColor != self.__subGridLineColor else { return }
+            self.__subGridLineColor = newSubGridLineColor
+            self._forEachLine(
+                where: { $0._positionIndex.subdivision != .none },
+                execute: { $0.strokeColor = newSubGridLineColor }
+            )
         }
     }
     
@@ -589,6 +654,14 @@ private extension GridLayer {
         })
     }
     
+    func _forEachLine(where condition: ((LineLayer) -> Bool), execute: (LineLayer) -> Void) {
+        self._lineLayers.forEach({
+            if condition($0) {
+                execute($0)
+            }
+        })
+    }
+    
     // Private Helper Functions
     private func _addLineLayers() {
         self._addLines(through: self.subdivision)
@@ -746,9 +819,9 @@ private extension GridLayer {
     
     private func _lineColor(for line: LineLayer) -> CGColor {
         if line._positionIndex.subdivision == .none {
-            return _mainGridLineColor
+            return self.mainGridLineColor
         } else {
-            return _subGridLineColor
+            return self.subGridLineColor
         }
     }
     
