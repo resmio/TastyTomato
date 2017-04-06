@@ -468,11 +468,11 @@ private extension GridLayer {
     
     // Helpers
     var _zeroedNumOfColumns: Int {
-        return Int(self.__numOfColumns - 1)
+        return Int(self.numOfColumns - 1)
     }
     
     var _zeroedNumOfRows: Int {
-        return Int(self.__numOfRows - 1)
+        return Int(self.numOfRows - 1)
     }
     
     // Private Helpers
@@ -826,9 +826,9 @@ private extension GridLayer {
     
     private func _orthogonalOffset(for line: LineLayer) -> CGFloat {
         if line.orientation == .horizontal {
-            return self._verticalOffset(forGridPosition: line._positionIndex.value)
+            return self._verticalAbsOffset(forGridPosition: line._positionIndex.value)
         } else /*if line.orientation == .vertical*/ {
-            return self._horizontalOffset(forGridPosition: line._positionIndex.value)
+            return self._horizontalAbsOffset(forGridPosition: line._positionIndex.value)
         }
     }
     
@@ -868,46 +868,55 @@ private extension GridLayer {
 // MARK: Point <-> Location <-> SlotIndex Calculation
 private extension GridLayer {
     func _point(for location: GridLayer.Location) -> CGPoint {
-        let x: CGFloat = self._horizontalOffset(forGridPosition: CGFloat(location.column))
-        let y: CGFloat = self._verticalOffset(forGridPosition: CGFloat(location.row))
+        let x: CGFloat = self._horizontalAbsOffset(forGridPosition: CGFloat(location.column))
+        let y: CGFloat = self._verticalAbsOffset(forGridPosition: CGFloat(location.row))
         return CGPoint(x: x, y: y)
     }
     
     func _location(nearestTo point: CGPoint) -> GridLayer.Location {
-        return (
-            self._locationOffset(
-                nearestToOffset: point.y,
-                minLocation: self._verticalOffset(forGridPosition: 0),
-                maxLocation: self._verticalOffset(forGridPosition: CGFloat(self._zeroedNumOfRows)),
-                stepUnit: self.rowHeight
-            ),
-            self._locationOffset(
-                nearestToOffset: point.x,
-                minLocation: self._horizontalOffset(forGridPosition: 0),
-                maxLocation: self._horizontalOffset(forGridPosition: CGFloat(self._zeroedNumOfColumns)),
-                stepUnit: self.columnWidth
-            )
+        let nearestRowAbsOffset: CGFloat = self._absOffset(
+            nearestToAbsOffset: point.y,
+            minAbsOffset: self._verticalAbsOffset(forGridPosition: 0),
+            maxAbsOffset: self._verticalAbsOffset(forGridPosition: CGFloat(self._zeroedNumOfRows)),
+            absStepUnit: self.rowHeight
         )
+        let nearestColumnAbsOffset: CGFloat = self._absOffset(
+            nearestToAbsOffset: point.x,
+            minAbsOffset: self._horizontalAbsOffset(forGridPosition: 0),
+            maxAbsOffset: self._horizontalAbsOffset(forGridPosition: CGFloat(self._zeroedNumOfColumns)),
+            absStepUnit: self.columnWidth
+        )
+        let nearestRowGridPosition: CGFloat = self._verticalGridPosition(for: nearestRowAbsOffset)
+        let nearestColumnGridPosition: CGFloat = self._horizontalGridPosition(for: nearestColumnAbsOffset)
+        return (nearestRowGridPosition, nearestColumnGridPosition)
     }
     
     // Helpers
-    func _horizontalOffset(forGridPosition gridPosition: CGFloat) -> CGFloat {
+    func _horizontalAbsOffset(forGridPosition gridPosition: CGFloat) -> CGFloat {
         return (self.gridInsetFactor + gridPosition) * self.columnWidth
     }
     
-    func _verticalOffset(forGridPosition gridPosition: CGFloat) -> CGFloat {
+    func _verticalAbsOffset(forGridPosition gridPosition: CGFloat) -> CGFloat {
         return (self.gridInsetFactor + gridPosition) * self.rowHeight
     }
     
     // Private Helpers
-    func _locationOffset(nearestToOffset offset: CGFloat, minLocation: CGFloat, maxLocation: CGFloat, stepUnit: CGFloat) -> CGFloat {
-        if offset <= minLocation {
-            return minLocation
-        } else if offset >= maxLocation {
-            return maxLocation
+    private func _horizontalGridPosition(for absOffset: CGFloat) -> CGFloat {
+        return (absOffset / self.columnWidth) - self.gridInsetFactor
+    }
+    
+    private func _verticalGridPosition(for absOffset: CGFloat) -> CGFloat {
+        return (absOffset / self.rowHeight) - self.gridInsetFactor
+    }
+    
+    private func _absOffset(nearestToAbsOffset absOffset: CGFloat, minAbsOffset: CGFloat, maxAbsOffset: CGFloat, absStepUnit: CGFloat) -> CGFloat {
+        if absOffset <= minAbsOffset {
+            return minAbsOffset
+        } else if absOffset >= maxAbsOffset {
+            return maxAbsOffset
         } else {
-            let stepSize: CGFloat = self.subdivision.rawValue * stepUnit
-            return (round((offset - minLocation) / stepSize) * stepSize) + minLocation
+            let absStepSize: CGFloat = self.subdivision.rawValue * absStepUnit
+            return (round((absOffset - minAbsOffset) / absStepSize) * absStepSize) + minAbsOffset
         }
     }
 }
