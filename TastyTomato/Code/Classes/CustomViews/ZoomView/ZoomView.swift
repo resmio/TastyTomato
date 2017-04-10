@@ -525,5 +525,11 @@ private extension ZoomView {
         
         scrollView.minimumZoomScale = exactMinScale
         scrollView.maximumZoomScale = maxScale
+        
+        if currentZoomScale < exactMinScale {
+            self._scrollView.zoomOut(animated: false)
+        } else if currentZoomScale > maxScale {
+            self._scrollView.zoomIn(animated: false)
+        }
     }
 }
