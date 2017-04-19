@@ -416,21 +416,21 @@ private extension ZoomView {
         let currentScale: CGFloat = scrollView.zoomScale
         
         struct Helper {
-            static var nextScale: CGFloat!
+            static var nextScale: CGFloat?
         }
         
         var newScale: CGFloat = minScale
         switch currentScale {
-        case let scale where scale < midScale:
-            newScale = midScale
-            Helper.nextScale = maxScale
         case let scale where abs(scale - midScale) < 0.01:
             newScale = Helper.nextScale ?? minScale
-        case let scale where scale < maxScale:
-            newScale = maxScale
         case let scale where abs(scale - maxScale) < 0.01:
             newScale = midScale
             Helper.nextScale = minScale
+        case let scale where scale < midScale - 0.01:
+            newScale = midScale
+            Helper.nextScale = maxScale
+        case let scale where scale < maxScale - 0.01:
+            newScale = maxScale
         default:
             newScale = minScale
         }
