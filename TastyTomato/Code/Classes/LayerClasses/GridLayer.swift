@@ -902,11 +902,11 @@ private extension GridLayer {
     
     // Private Helpers
     private func _horizontalGridPosition(for absOffset: CGFloat) -> CGFloat {
-        return (absOffset / self.columnWidth) - self.gridInsetFactor
+        return self._roundToSubdivision((absOffset / self.columnWidth) - self.gridInsetFactor)
     }
     
     private func _verticalGridPosition(for absOffset: CGFloat) -> CGFloat {
-        return (absOffset / self.rowHeight) - self.gridInsetFactor
+        return self._roundToSubdivision((absOffset / self.rowHeight) - self.gridInsetFactor)
     }
     
     private func _absOffset(nearestToAbsOffset absOffset: CGFloat, minAbsOffset: CGFloat, maxAbsOffset: CGFloat, absStepUnit: CGFloat) -> CGFloat {
@@ -918,5 +918,10 @@ private extension GridLayer {
             let absStepSize: CGFloat = self.subdivision.rawValue * absStepUnit
             return (round((absOffset - minAbsOffset) / absStepSize) * absStepSize) + minAbsOffset
         }
+    }
+    
+    private func _roundToSubdivision(_ gridPosition: CGFloat) -> CGFloat {
+        let invertedSubdivision: CGFloat = 1 / self.subdivision.rawValue
+        return round(gridPosition * invertedSubdivision) / invertedSubdivision
     }
 }
