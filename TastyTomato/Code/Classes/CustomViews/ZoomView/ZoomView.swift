@@ -172,13 +172,13 @@ public class ZoomView: UIView {
         self._updateTapRecognizers()
     }
     
-    // Private Weak Variable Properties
+    // Private Weak Variables
     fileprivate weak var _delegate: ZoomViewDelegate?
     
-    // Private Lazy Variable Properties
+    // Private Lazy Variables
     fileprivate lazy var _scrollView: UIScrollView = self._createScrollView()
     
-    // Private Variable Properties
+    // Private Variables
     fileprivate var _contentView: UIView
     
     fileprivate var _doubleTapRecognizer: UITapGestureRecognizer?
@@ -189,6 +189,7 @@ public class ZoomView: UIView {
     fileprivate var __zoomOutTapEnabled: Bool = true
     fileprivate var _centerHorizontally: Bool = true
     fileprivate var _centerVertically: Bool = true
+    fileprivate var _doubleTapNextScale: CGFloat?
 
     
     // MARK: Frame / Size Overrides
@@ -415,22 +416,18 @@ private extension ZoomView {
         let midScale: CGFloat = (maxScale + minScale) / 2
         let currentScale: CGFloat = scrollView.zoomScale
         
-        struct Helper {
-            static var nextScale: CGFloat!
-        }
-        
         var newScale: CGFloat = minScale
         switch currentScale {
-        case let scale where scale < midScale:
-            newScale = midScale
-            Helper.nextScale = maxScale
         case let scale where abs(scale - midScale) < 0.01:
-            newScale = Helper.nextScale ?? minScale
-        case let scale where scale < maxScale:
-            newScale = maxScale
+            newScale = self._doubleTapNextScale ?? minScale
         case let scale where abs(scale - maxScale) < 0.01:
             newScale = midScale
-            Helper.nextScale = minScale
+            self._doubleTapNextScale = minScale
+        case let scale where scale < midScale - 0.01:
+            newScale = midScale
+            self._doubleTapNextScale = maxScale
+        case let scale where scale < maxScale - 0.01:
+            newScale = maxScale
         default:
             newScale = minScale
         }
