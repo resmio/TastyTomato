@@ -9,32 +9,32 @@
 import UIKit
 
 
-// MARK: // Internal
+// MARK: // Public
 // MARK: Factories
-extension UIBarButtonItem {
-    typealias TargetAction = (target: AnyObject, action: Selector)
+public extension UIBarButtonItem {
+    public typealias TargetAction = (target: AnyObject, action: Selector)
     
-    static func makeCancelItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
+    public static func makeCancelItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
         return ._makeCancelItem(targetAction: targetAction)
     }
     
-    static func makeDeleteItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
+    public static func makeDeleteItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
         return ._makeDeleteItem(targetAction: targetAction)
     }
     
-    static func makeOfflineItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
+    public static func makeOfflineItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
         return ._makeOfflineItem(targetAction: targetAction)
     }
     
-    static func makeEditItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
+    public static func makeEditItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
         return ._makeEditItem(targetAction: targetAction)
     }
     
-    static func makeNewItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
+    public static func makeNewItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
         return ._makeNewItem(targetAction: targetAction)
     }
     
-    static func makeSaveItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
+    public static func makeSaveItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
         return ._makeSaveItem(targetAction: targetAction)
     }
 }
