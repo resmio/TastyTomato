@@ -1,4 +1,14 @@
 
+/* 1 word */
+"Cancel" = "Cancel";
+"Delete" = "Delete";
+"Edit" = "Edit";
+"New" = "New";
+"Save" = "Save";
 "Select" = "Select";
+
+/* 2 words */
 "Sign in" = "Sign in";
+
+/* 3 words */
 "Forgotten your password?" = "Forgotten your password?";
