@@ -13,6 +13,7 @@
 		0A9100AA8AD8E4B0E7367732D970B17A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905A0D02FB847E86970E50B1768AC71 /* TagView.swift */; };
 		13BFB81E9AE9A8BC5760E75496D1DFFC /* UIView (Centering).swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB15454677793E311B1E258952332E7 /* UIView (Centering).swift */; };
 		1D182D1BB45EB8B648582A87B8CC2067 /* CGFloat (UInt).swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */; };
+		1DF819E384E2A4584269F107EB070EFF /* UIBarButtonItem (Factories).swift in Sources */ = {isa = PBXBuildFile; fileRef = 90413FC4A30D88E21DEBA1DD362A605C /* UIBarButtonItem (Factories).swift */; };
 		1EB50168F0EB699E438CBBA6F754ABC7 /* LineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2EE287EFE2E608FE430542E60BF82 /* LineLayer.swift */; };
 		2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */; };
 		234C2E7FADD37FC3783F9BFF305828A6 /* UIImage (Named_).swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CC1F2A974F883E6BD5039B189DF28 /* UIImage (Named_).swift */; };
@@ -132,6 +133,7 @@
 		8A98E8296B3BD2970706F8D3BE1F63CB /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		8CB15454677793E311B1E258952332E7 /* UIView (Centering).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (Centering).swift"; sourceTree = "<group>"; };
 		8E24467D4568DC50711B01B3FBCD8958 /* CGFloat (Int).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (Int).swift"; sourceTree = "<group>"; };
+		90413FC4A30D88E21DEBA1DD362A605C /* UIBarButtonItem (Factories).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem (Factories).swift"; path = "UIBarButtonItem (Factories).swift"; sourceTree = "<group>"; };
 		91C532ECB5C7CC6DE8FAAAD3F465DEAE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		94154F1BD684F2C672C76A4BFDB379C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96EB2A0C35717ED674361E12EF4C5BAA /* UIButton (Color_).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton (Color_).swift"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				A2C7788C50EBFA6A19AD6E5D21DDA7F0 /* CGPoint */,
 				2A82240FC7459054B0D58710F81524F0 /* CGRect */,
 				9A89BE72D4671CAB9BB7FFB4B3B4F96D /* CGSize */,
+				E1C18622C6D4C7E75ECFF8C0B3DB8D35 /* UIBarButtonItem */,
 				0493472B043AE9358E374F400818BC62 /* UIButton */,
 				C61FA760C329029916EAB5DF6196AE44 /* UIColor */,
 				672790F9FBEF1DB75397020CEEDDC422 /* UIImage */,
@@ -599,6 +602,15 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
+		E1C18622C6D4C7E75ECFF8C0B3DB8D35 /* UIBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				90413FC4A30D88E21DEBA1DD362A605C /* UIBarButtonItem (Factories).swift */,
+			);
+			name = UIBarButtonItem;
+			path = UIBarButtonItem;
+			sourceTree = "<group>";
+		};
 		EE22ED39034017661019E659F4958502 /* TastyTomato */ = {
 			isa = PBXGroup;
 			children = (
@@ -784,6 +796,7 @@
 				42BB16D84A350E14BE177DA60F5977A0 /* TextButton.swift in Sources */,
 				EA4C422FDA23A2D7DDF931EF8A605544 /* TextButtons.swift in Sources */,
 				48D0397391009A24265A5FEE06D16F89 /* TriangleLayer.swift in Sources */,
+				1DF819E384E2A4584269F107EB070EFF /* UIBarButtonItem (Factories).swift in Sources */,
 				7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */,
 				9EDC676FBB4296DB4C630B5E78379EBE /* UIButton (Color_).swift in Sources */,
 				F0ECD62C46A02D8138358FBAB1B38285 /* UIButton (SetTitle).swift in Sources */,
