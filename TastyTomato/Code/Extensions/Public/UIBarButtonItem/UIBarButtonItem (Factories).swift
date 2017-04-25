@@ -6,7 +6,7 @@
 //  Copyright © 2017 resmio. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 // MARK: // Internal
