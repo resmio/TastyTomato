@@ -45,10 +45,10 @@ extension ZoomView {
     
     public var maximumScale: CGFloat {
         get {
-            return self._scrollView.maximumZoomScale
+            return self._maximumZoomScale
         }
         set(newMaximumZoomScale) {
-            self._scrollView.maximumZoomScale = newMaximumZoomScale
+            self._maximumZoomScale = newMaximumZoomScale
         }
     }
     
@@ -189,6 +189,7 @@ public class ZoomView: UIView {
     fileprivate var __zoomOutTapEnabled: Bool = true
     fileprivate var _centerHorizontally: Bool = true
     fileprivate var _centerVertically: Bool = true
+    fileprivate var _maximumZoomScale: CGFloat = 1
     fileprivate var _doubleTapNextScale: CGFloat?
 
     
@@ -518,7 +519,7 @@ private extension ZoomView {
         
         let threshold: CGFloat = self._zoomThreshold
         let belowThreshold: Bool = exactMinScale < threshold
-        let maxScale: CGFloat = belowThreshold ? 1 : exactMinScale
+        let maxScale: CGFloat = belowThreshold ? 1 : min(exactMinScale, self._maximumZoomScale)
         
         scrollView.minimumZoomScale = exactMinScale
         scrollView.maximumZoomScale = maxScale
@@ -527,6 +528,8 @@ private extension ZoomView {
             self._scrollView.zoomOut(animated: false)
         } else if currentZoomScale > maxScale {
             self._scrollView.zoomIn(animated: false)
+        } else {
+            self.delegate?.zoomed(to: currentZoomScale, in: self)
         }
     }
 }
