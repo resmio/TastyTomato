@@ -34,6 +34,7 @@
 		5B2E2C7933A2CB02419E3D9D200663F6 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E8296B3BD2970706F8D3BE1F63CB /* TagsView.swift */; };
 		5C8AA03C6C4B4DCDAA601D7775D8EA1A /* CGSize (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */; };
 		5FBBB08F482C2EF8829D937D432DB0AA /* UIImage (RenderingModes).swift in Sources */ = {isa = PBXBuildFile; fileRef = F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */; };
+		6470F7DF00947E0FBE1900DC3E0DD50B /* BorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BC583DBAE7511BCDDF7E97D2E6F30 /* BorderLayer.swift */; };
 		6845BD2DA1CBDE9DE2EA67D64795A39D /* CGRect (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F913362CD789B7370C90D4A856950CF /* CGRect (ConvenienceInits).swift */; };
 		693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B490047206C221157A2991EFF79E0 /* MetaImage.swift */; };
 		6B57EDA175E804981EC3D12739F147AB /* UIImage (WidthHeight).swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */; };
@@ -89,7 +90,6 @@
 		019B1845FE1BCB19271320DCDCAE1B32 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0538E4586B05FE6B1C4EC4E6CD98C6C1 /* TastyTomato.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TastyTomato.playground; sourceTree = "<group>"; };
-		05BA18CC2F9A526F518B9C154D07DDC7 /* UIScrollView (ZoomingConvenience).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIScrollView (ZoomingConvenience).swift"; path = "UIScrollView (ZoomingConvenience).swift"; sourceTree = "<group>"; };
 		05BA18CC2F9A526F518B9C154D07DDC7 /* UIScrollView (ZoomingConvenience).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView (ZoomingConvenience).swift"; sourceTree = "<group>"; };
 		083386230915027A1693F0088C82312B /* TastyTomato.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TastyTomato.h; sourceTree = "<group>"; };
 		0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton (Color).swift"; sourceTree = "<group>"; };
@@ -111,6 +111,7 @@
 		44C1F525CF3F06186D126ECB7A005615 /* UIImage (Named).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Named).swift"; sourceTree = "<group>"; };
 		484B490047206C221157A2991EFF79E0 /* MetaImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaImage.swift; sourceTree = "<group>"; };
 		49F2EE287EFE2E608FE430542E60BF82 /* LineLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
+		4E9BC583DBAE7511BCDDF7E97D2E6F30 /* BorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
 		502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscIcon.swift; sourceTree = "<group>"; };
 		524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResmioLogo.swift; sourceTree = "<group>"; };
 		580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (ConvenienceInits).swift"; sourceTree = "<group>"; };
@@ -481,6 +482,7 @@
 		A3AB6252EFF7C31DBE40BB1578EF32AC /* LayerClasses */ = {
 			isa = PBXGroup;
 			children = (
+				4E9BC583DBAE7511BCDDF7E97D2E6F30 /* BorderLayer.swift */,
 				49F2EE287EFE2E608FE430542E60BF82 /* LineLayer.swift */,
 				A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */,
 			);
@@ -720,6 +722,7 @@
 				71FE9A541DB44EEAAE834FFADE502F36 /* BaseTextField.swift in Sources */,
 				CF8FDF1DFA8603E44D63E041A668BEC5 /* BaseTextView.swift in Sources */,
 				F128D132603E4E0CE74EC979474A6F60 /* BookingStatusIcon.swift in Sources */,
+				6470F7DF00947E0FBE1900DC3E0DD50B /* BorderLayer.swift in Sources */,
 				F3F0485D7B95F9B516AEC11BC8F5FB46 /* BundleHelper_.swift in Sources */,
 				C2E279A4ED34081F1C983150B1F45061 /* CALayer (ConvenienceInits).swift in Sources */,
 				A422EDDD7235FA43C5D7D613B05A6E4C /* CALayer (Wireframe).swift in Sources */,
