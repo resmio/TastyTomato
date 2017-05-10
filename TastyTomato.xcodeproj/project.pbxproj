@@ -25,6 +25,7 @@
 		33D7CBF4CDA305FAE290B028790A338E /* ShortcutBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC87E38A8D37FC92DD3A64DEC8AC1796 /* ShortcutBarButton.swift */; };
 		3466F939EFAD784C51D7B5EC69F54B42 /* ArrowIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B5813ECAE6108D8A3192D688E9D77 /* ArrowIcon.swift */; };
 		36619180DB22B571E2199B3C6CDD67A4 /* UIColor (WithAlpha).swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */; };
+		3AF2EA70D028F7D2BF46C1A19BDAEEE8 /* RangeReplacableCollection (remove).swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88E0D2BD3C41ED8118CF3C1631D5A /* RangeReplacableCollection (remove).swift */; };
 		3DE684BA7159AEA557CDE0F4F775B5A0 /* CGFloat (Int).swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24467D4568DC50711B01B3FBCD8958 /* CGFloat (Int).swift */; };
 		42BB16D84A350E14BE177DA60F5977A0 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12E9AC9F91E1C3F23E1C2A25D9E463 /* TextButton.swift */; };
 		48D0397391009A24265A5FEE06D16F89 /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */; };
@@ -54,6 +55,7 @@
 		AA8512B64D36C58068B677B56BD11C09 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */; };
 		AC9D9866E065E12DCB2AD07AC6627022 /* TastyTomato.h in Headers */ = {isa = PBXBuildFile; fileRef = 083386230915027A1693F0088C82312B /* TastyTomato.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */; };
+		AE20A1758B460EF322D1D4FFBCFE0923 /* NSObject (Associations).swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */; };
 		AF53E089D7041EDFD9F90E22C958AD7E /* ShortcutBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */; };
 		B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */; };
 		C15C849839C07137AF9228EBCA319B2C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9175C1A832EEF0F37AEE33411A20042 /* Localizable.strings */; };
@@ -61,6 +63,7 @@
 		C80A75D4A90ACE4BA90325467515CA79 /* UIViewController (Embedding).swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA86B00BB8C1AE6C781872E597AF28 /* UIViewController (Embedding).swift */; };
 		CA9124BD236AE4D0D64EFC021D5BB391 /* UIColor (FromHex_).swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */; };
 		CF8FDF1DFA8603E44D63E041A668BEC5 /* BaseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC82CB1A56D60A4DF981960B5A667C /* BaseTextView.swift */; };
+		D2696B92DC2F081F73F0EEB14B91BE9F /* GridLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB79C0D23FF876BF39D0237EBB0E33 /* GridLayer.swift */; };
 		D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */; };
 		D8294936BE4CF32441B0D854D1F9DDEE /* UIScrollView (ZoomingConvenience).swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA18CC2F9A526F518B9C154D07DDC7 /* UIScrollView (ZoomingConvenience).swift */; };
 		D9D8EA86DD5DE5CE144ED010353425A3 /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172042EA77DA17224778AA7DB33B6707 /* DropDownTextField.swift */; };
@@ -112,6 +115,7 @@
 		484B490047206C221157A2991EFF79E0 /* MetaImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaImage.swift; sourceTree = "<group>"; };
 		49F2EE287EFE2E608FE430542E60BF82 /* LineLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
 		4E9BC583DBAE7511BCDDF7E97D2E6F30 /* BorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
+		4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject (Associations).swift"; sourceTree = "<group>"; };
 		502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscIcon.swift; sourceTree = "<group>"; };
 		524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResmioLogo.swift; sourceTree = "<group>"; };
 		580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (ConvenienceInits).swift"; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 		5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (UInt).swift"; sourceTree = "<group>"; };
 		5DCC82CB1A56D60A4DF981960B5A667C /* BaseTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextView.swift; sourceTree = "<group>"; };
 		617BAD163949C9A08DE92862E903C2A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		67E88E0D2BD3C41ED8118CF3C1631D5A /* RangeReplacableCollection (remove).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeReplacableCollection (remove).swift"; sourceTree = "<group>"; };
 		77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscImage.swift; sourceTree = "<group>"; };
 		7DAB831517E3851F87B951BE6881C71B /* UIView (BarButtonItem).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (BarButtonItem).swift"; sourceTree = "<group>"; };
 		7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (WidthHeight).swift"; sourceTree = "<group>"; };
@@ -134,6 +139,7 @@
 		97CE20B670A02E13FB4A56517F58E300 /* UIImage (ColoredRect).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (ColoredRect).swift"; sourceTree = "<group>"; };
 		9905A0D02FB847E86970E50B1768AC71 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (WithAlpha).swift"; sourceTree = "<group>"; };
+		9FFB79C0D23FF876BF39D0237EBB0E33 /* GridLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayer.swift; sourceTree = "<group>"; };
 		A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
 		A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer (Wireframe).swift"; sourceTree = "<group>"; };
 		A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (SizeWidthHeight).swift"; sourceTree = "<group>"; };
@@ -292,6 +298,14 @@
 			path = Public;
 			sourceTree = "<group>";
 		};
+		2D68824CDAB38D447CAFCD441B653B74 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
 		323024B9C32DBCD16579A5D0E1898452 /* CALayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +340,8 @@
 			isa = PBXGroup;
 			children = (
 				CEA9ED81CA9819C760F0522AF4297510 /* NSLocalizedString */,
+				2D68824CDAB38D447CAFCD441B653B74 /* NSObject */,
+				691A0CBFA184FAE1D42A19C0CA835752 /* RangeReplacableCollection */,
 				BC2EA83A70843FD6A5BD090CDDB4F4ED /* UIButton */,
 				246C935C9C014C4BD5D47F71877750B3 /* UIColor */,
 				DB5E54BA08F5DE8E909C7868A0EA78F0 /* UIImage */,
@@ -360,6 +376,14 @@
 				7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */,
 			);
 			path = UIImage;
+			sourceTree = "<group>";
+		};
+		691A0CBFA184FAE1D42A19C0CA835752 /* RangeReplacableCollection */ = {
+			isa = PBXGroup;
+			children = (
+				67E88E0D2BD3C41ED8118CF3C1631D5A /* RangeReplacableCollection (remove).swift */,
+			);
+			path = RangeReplacableCollection;
 			sourceTree = "<group>";
 		};
 		720493D3CFB054FBA7645AE63F1761F0 /* Images */ = {
@@ -483,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				4E9BC583DBAE7511BCDDF7E97D2E6F30 /* BorderLayer.swift */,
+				9FFB79C0D23FF876BF39D0237EBB0E33 /* GridLayer.swift */,
 				49F2EE287EFE2E608FE430542E60BF82 /* LineLayer.swift */,
 				A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */,
 			);
@@ -743,11 +768,14 @@
 				D9D8EA86DD5DE5CE144ED010353425A3 /* DropDownTextField.swift in Sources */,
 				935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */,
 				01903A7870C59E45E2071D68688B64AE /* FilledButtons.swift in Sources */,
+				D2696B92DC2F081F73F0EEB14B91BE9F /* GridLayer.swift in Sources */,
 				1EB50168F0EB699E438CBBA6F754ABC7 /* LineLayer.swift in Sources */,
 				693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */,
 				2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */,
 				B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */,
 				26C9967D3E82CB12CD88A26329600F6E /* NSL_.swift in Sources */,
+				AE20A1758B460EF322D1D4FFBCFE0923 /* NSObject (Associations).swift in Sources */,
+				3AF2EA70D028F7D2BF46C1A19BDAEEE8 /* RangeReplacableCollection (remove).swift in Sources */,
 				D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */,
 				AF53E089D7041EDFD9F90E22C958AD7E /* ShortcutBar.swift in Sources */,
 				33D7CBF4CDA305FAE290B028790A338E /* ShortcutBarButton.swift in Sources */,
