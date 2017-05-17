@@ -34,58 +34,84 @@ public class TextButton: BaseButton {
     // Setup Override
     override class func setup_<T: TextButton>(_ button: T) {
         super.setup_(button)
-        button.setTitleColor(UIColor.black, for: UIControlState())
+        button.setTitleColor(.black, for: .normal)
     }
     
     // Private Variable Stored Properties
     fileprivate var __underlined: Bool = false
-}
-
-
-// MARK: Overrides
-public extension TextButton {
+    
+    
+    // Overrides
     override public func setTitle(_ title: String) {
-        super.setTitle(title)
-        self._updateTitleUnderlining()
+        self._setTitle(title)
     }
     
     override public func setTitle(_ title: String?, for state: UIControlState) {
-        super.setTitle(title, for: state)
-        self._updateTitleUnderlining()
+        self._setTitle(title, for: state)
+    }
+    
+    public override func setTitleColor(_ color: UIColor?, for state: UIControlState) {
+        self._setTitleColor(color, for: state)
     }
 }
 
 
 // MARK: // Private
-// MARK: Computed Properties
+// MARK: Computed Variables
 private extension TextButton {
     var _underlined: Bool {
         get {
             return self.__underlined
         }
         set(newUnderlined) {
-            if self.__underlined != newUnderlined {
-                self.__underlined = newUnderlined
-                self._updateTitleUnderlining()
-            }
+            guard newUnderlined != self.__underlined else { return }
+            self.__underlined = newUnderlined
+            self._updateTitle()
         }
     }
 }
 
 
-// MARK: Update Underlining
+// MARK: Set Title Color
 private extension TextButton {
-    func _updateTitleUnderlining() {
-        if let title: String = self.titleLabel?.text {
-            let underlineStyle: NSUnderlineStyle = self.underlined ? .styleSingle : .styleNone
-            let attributedTitle: NSAttributedString = NSAttributedString(
-                string: title,
-                attributes: [NSUnderlineStyleAttributeName: underlineStyle.rawValue]
-            )
-            self.setAttributedTitle(
-                attributedTitle,
-                for: UIControlState()
-            )
+    func _setTitleColor(_ color: UIColor?, for state: UIControlState) {
+        self.setTitleColor(color, for: state)
+        self._updateTitle()
+    }
+}
+
+
+// MARK: Update Title
+private extension TextButton {
+    func _updateTitle() {
+        let state: UIControlState = self.state
+        let title: String? = self.title(for: state)
+        self._setTitle(title, for: state)
+    }
+}
+
+
+// MARK: Set Title
+private extension TextButton {
+    func _setTitle(_ title: String?, for state: UIControlState = .normal) {
+        if title?.isEmpty ?? true {
+            self.setAttributedTitle(nil, for: state)
+            return
         }
+        
+        let underlineStyle: NSUnderlineStyle = self.underlined ? .styleSingle : .styleNone
+        let titleColor: UIColor = self.titleColor(for: state) ?? .black
+        let attributes: [String : Any] = [
+            NSForegroundColorAttributeName: titleColor,
+            NSUnderlineStyleAttributeName: underlineStyle.rawValue
+        ]
+        
+        let attributedTitle: NSAttributedString = NSAttributedString(
+            string: title!,
+            attributes: attributes
+        )
+        
+        super.setTitle(title, for: state)
+        self.setAttributedTitle(attributedTitle, for: state)
     }
 }
