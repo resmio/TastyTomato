@@ -73,6 +73,7 @@
 		E120F90B264A2076BE355CC29E789218 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */; };
 		E34309DF671D7FA2C30AA0A18BB7C355 /* CAShapeLayer (Wireframe).swift in Sources */ = {isa = PBXBuildFile; fileRef = A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */; };
 		EA4C422FDA23A2D7DDF931EF8A605544 /* TextButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628597189125D75D98E36EA8682ADA2 /* TextButtons.swift */; };
+		EE32ADFFEBCC74C2EA342C807988D3A1 /* UIWindow (SetRootViewController).swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */; };
 		F0ECD62C46A02D8138358FBAB1B38285 /* UIButton (SetTitle).swift in Sources */ = {isa = PBXBuildFile; fileRef = C8889EA70BB1C71DED9F1FB7CFF6B594 /* UIButton (SetTitle).swift */; };
 		F128D132603E4E0CE74EC979474A6F60 /* BookingStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */; };
 		F2E74DE0C5E277FAC2E75CCC8984885B /* UIImage (Named).swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1F525CF3F06186D126ECB7A005615 /* UIImage (Named).swift */; };
@@ -117,6 +118,7 @@
 		44C1F525CF3F06186D126ECB7A005615 /* UIImage (Named).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Named).swift"; sourceTree = "<group>"; };
 		484B490047206C221157A2991EFF79E0 /* MetaImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaImage.swift; sourceTree = "<group>"; };
 		49F2EE287EFE2E608FE430542E60BF82 /* LineLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
+		4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIWindow (SetRootViewController).swift"; path = "UIWindow (SetRootViewController).swift"; sourceTree = "<group>"; };
 		4E9BC583DBAE7511BCDDF7E97D2E6F30 /* BorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
 		4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject (Associations).swift"; sourceTree = "<group>"; };
 		502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscIcon.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				458400216ECA6027907392A9F92C1A50 /* UIScrollView */,
 				A01C37BAA2EDA30ED682D64F551DB64A /* UIView */,
 				DC10D825E2095495087364C672A77DF3 /* UIViewController */,
+				DFE967201D0969726A8588440FD28587 /* UIWindow */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -614,6 +617,15 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
+		DFE967201D0969726A8588440FD28587 /* UIWindow */ = {
+			isa = PBXGroup;
+			children = (
+				4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */,
+			);
+			name = UIWindow;
+			path = UIWindow;
+			sourceTree = "<group>";
+		};
 		E1C18622C6D4C7E75ECFF8C0B3DB8D35 /* UIBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -830,6 +842,7 @@
 				5A17A3E7FF74BF8938A74A135969B1CE /* UIView (ScaleByFactor).swift in Sources */,
 				016794C2166A998F5DCD79812840EF65 /* UIView (SizeWidthHeight).swift in Sources */,
 				C80A75D4A90ACE4BA90325467515CA79 /* UIViewController (Embedding).swift in Sources */,
+				EE32ADFFEBCC74C2EA342C807988D3A1 /* UIWindow (SetRootViewController).swift in Sources */,
 				2D482E84B878E94A2EBC56EF45330674 /* ZoomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
