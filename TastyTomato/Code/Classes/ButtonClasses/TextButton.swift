@@ -75,7 +75,7 @@ private extension TextButton {
 // MARK: Set Title Color
 private extension TextButton {
     func _setTitleColor(_ color: UIColor?, for state: UIControlState) {
-        self.setTitleColor(color, for: state)
+        super.setTitleColor(color, for: state)
         self._updateTitle()
     }
 }
