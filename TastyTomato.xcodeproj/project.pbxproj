@@ -40,6 +40,7 @@
 		6845BD2DA1CBDE9DE2EA67D64795A39D /* CGRect (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F913362CD789B7370C90D4A856950CF /* CGRect (ConvenienceInits).swift */; };
 		693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B490047206C221157A2991EFF79E0 /* MetaImage.swift */; };
 		6B57EDA175E804981EC3D12739F147AB /* UIImage (WidthHeight).swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */; };
+		70BE5C6357A3D70B89A63BD4EF3125FA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E3224E8288CDDF70618B7A04C8C986 /* RootViewController.swift */; };
 		71FE9A541DB44EEAAE834FFADE502F36 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F3B1F7E20B40701208459D6453448 /* BaseTextField.swift */; };
 		7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */; };
 		800936DF4B2EC8E094396520F049EF4B /* UIView (Area).swift in Sources */ = {isa = PBXBuildFile; fileRef = 15004413C96D0B4A03CF11D63DD6382A /* UIView (Area).swift */; };
@@ -106,6 +107,7 @@
 		17EF75E0BF14F8A2EB6C71230FDD3C13 /* CALayer (Wireframe).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (Wireframe).swift"; sourceTree = "<group>"; };
 		1A908324B2B4B669470F0A3864A426C6 /* UIImage (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Scaled).swift"; sourceTree = "<group>"; };
 		1B1032762F44E9AFAAC244949B1E9E97 /* BundleHelper_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleHelper_.swift; sourceTree = "<group>"; };
+		20E3224E8288CDDF70618B7A04C8C986 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (PredefinedColors).swift"; sourceTree = "<group>"; };
 		31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
 		38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint (ConvenienceInits).swift"; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				A3AB6252EFF7C31DBE40BB1578EF32AC /* LayerClasses */,
 				02821F3BFC5F2DBE0FD2A172B54F594E /* TextFieldClasses */,
 				A35630EB3C15AE66CC75B9EA1FCFEA0A /* TextViewClasses */,
+				7AEA2B322FEE44C005AC3706654DCAC4 /* ViewControllerClasses */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -404,6 +407,15 @@
 				524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */,
 			);
 			path = Logos;
+			sourceTree = "<group>";
+		};
+		7AEA2B322FEE44C005AC3706654DCAC4 /* ViewControllerClasses */ = {
+			isa = PBXGroup;
+			children = (
+				20E3224E8288CDDF70618B7A04C8C986 /* RootViewController.swift */,
+			);
+			name = ViewControllerClasses;
+			path = ViewControllerClasses;
 			sourceTree = "<group>";
 		};
 		81E4DAC46F44F11E680BCD87739D7F33 /* ButtonClasses */ = {
@@ -788,6 +800,7 @@
 				AE20A1758B460EF322D1D4FFBCFE0923 /* NSObject (Associations).swift in Sources */,
 				3AF2EA70D028F7D2BF46C1A19BDAEEE8 /* RangeReplacableCollection (remove).swift in Sources */,
 				D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */,
+				70BE5C6357A3D70B89A63BD4EF3125FA /* RootViewController.swift in Sources */,
 				AF53E089D7041EDFD9F90E22C958AD7E /* ShortcutBar.swift in Sources */,
 				33D7CBF4CDA305FAE290B028790A338E /* ShortcutBarButton.swift in Sources */,
 				0A9100AA8AD8E4B0E7367732D970B17A /* TagView.swift in Sources */,
