@@ -11,6 +11,10 @@ import UIKit
 
 // MARK: // Public
 public extension UIWindow {
+    public var rootVC: UIViewController? {
+        return self._rootVC
+    }
+    
     public func setRootVC(_ newRootVC: UIViewController, transition: UIViewAnimationTransition = .none, completion: (() -> Void)? = nil) {
         self._setRootVC(newRootVC, transition: transition, completion: completion)
     }
@@ -18,6 +22,15 @@ public extension UIWindow {
 
 
 // MARK: // Private
+// MARK: Computed Variables
+private extension UIWindow {
+    var _rootVC: UIViewController? {
+        return (self.rootViewController as? RootViewController)?.child
+    }
+}
+
+
+// MARK: Function Implementation
 private extension UIWindow {
     func _setRootVC(_ newRootVC: UIViewController, transition: UIViewAnimationTransition, completion: (() -> Void)?) {
         let setNewChildAndCallCompletion: ((RootViewController) -> Void) = {
