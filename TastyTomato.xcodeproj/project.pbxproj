@@ -108,7 +108,7 @@
 		17EF75E0BF14F8A2EB6C71230FDD3C13 /* CALayer (Wireframe).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (Wireframe).swift"; sourceTree = "<group>"; };
 		1A908324B2B4B669470F0A3864A426C6 /* UIImage (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Scaled).swift"; sourceTree = "<group>"; };
 		1B1032762F44E9AFAAC244949B1E9E97 /* BundleHelper_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleHelper_.swift; sourceTree = "<group>"; };
-		20E3224E8288CDDF70618B7A04C8C986 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		20E3224E8288CDDF70618B7A04C8C986 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (PredefinedColors).swift"; sourceTree = "<group>"; };
 		31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
 		38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint (ConvenienceInits).swift"; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		44C1F525CF3F06186D126ECB7A005615 /* UIImage (Named).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Named).swift"; sourceTree = "<group>"; };
 		484B490047206C221157A2991EFF79E0 /* MetaImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaImage.swift; sourceTree = "<group>"; };
 		49F2EE287EFE2E608FE430542E60BF82 /* LineLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
-		4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIWindow (SetRootViewController).swift"; path = "UIWindow (SetRootViewController).swift"; sourceTree = "<group>"; };
+		4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow (SetRootViewController).swift"; sourceTree = "<group>"; };
 		4E9BC583DBAE7511BCDDF7E97D2E6F30 /* BorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
 		4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject (Associations).swift"; sourceTree = "<group>"; };
 		502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscIcon.swift; sourceTree = "<group>"; };
@@ -417,7 +417,6 @@
 			children = (
 				20E3224E8288CDDF70618B7A04C8C986 /* RootViewController.swift */,
 			);
-			name = ViewControllerClasses;
 			path = ViewControllerClasses;
 			sourceTree = "<group>";
 		};
@@ -622,7 +621,6 @@
 			children = (
 				4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */,
 			);
-			name = UIWindow;
 			path = UIWindow;
 			sourceTree = "<group>";
 		};
@@ -895,10 +893,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.9.0;
+				CURRENT_PROJECT_VERSION = 0.10.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 0.9.0;
-				DYLIB_CURRENT_VERSION = 0.9.0;
+				DYLIB_COMPATIBILITY_VERSION = 0.10.0;
+				DYLIB_CURRENT_VERSION = 0.10.0;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1002,10 +1000,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.9.0;
+				CURRENT_PROJECT_VERSION = 0.10.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DYLIB_COMPATIBILITY_VERSION = 0.9.0;
-				DYLIB_CURRENT_VERSION = 0.9.0;
+				DYLIB_COMPATIBILITY_VERSION = 0.10.0;
+				DYLIB_CURRENT_VERSION = 0.10.0;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
