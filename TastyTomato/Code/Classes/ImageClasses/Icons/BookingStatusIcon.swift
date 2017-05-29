@@ -11,6 +11,10 @@ import UIKit
 
 // MARK: // Public
 public class BookingStatusIcon: MetaImage {
+    public static var Unconfirmed: BookingStatusIcon {
+        return BookingStatusIcon.imageNamed_("MiscIcon-warning")
+    }
+    
     public static var Confirmed: BookingStatusIcon {
         return BookingStatusIcon.suffixed_("confirmed")
     }
