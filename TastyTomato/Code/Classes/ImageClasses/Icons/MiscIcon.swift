@@ -35,6 +35,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("persons")
     }
     
+    public static var Settings: MiscIcon {
+        return MiscIcon.suffixed_("settings")
+    }
+    
     public static var WalkIn: MiscIcon {
         return MiscIcon.suffixed_("walk-in")
     }
