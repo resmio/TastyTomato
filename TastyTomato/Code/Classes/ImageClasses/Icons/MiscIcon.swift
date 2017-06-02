@@ -19,6 +19,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("block-note")
     }
     
+    public static var Booking: MiscIcon {
+        return MiscIcon.suffixed_("booking")
+    }
+    
     public static var Checkmark: MiscIcon {
         return MiscIcon.suffixed_("checkmark")
     }
