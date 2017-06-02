@@ -11,6 +11,10 @@ import UIKit
 
 // MARK: // Public
 public class MiscIcon: MetaImage {
+    public static var Account: MiscIcon {
+        return MiscIcon.suffixed_("account")
+    }
+    
     public static var Add: MiscIcon {
         return MiscIcon.suffixed_("add")
     }
