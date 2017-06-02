@@ -39,6 +39,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("persons")
     }
     
+    public static var Phone: MiscIcon {
+        return MiscIcon.suffixed_("phone")
+    }
+    
     public static var Settings: MiscIcon {
         return MiscIcon.suffixed_("settings")
     }
