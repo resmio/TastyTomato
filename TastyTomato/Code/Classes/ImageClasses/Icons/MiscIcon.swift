@@ -31,6 +31,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("checkmark")
     }
     
+    public static var Direction: MiscIcon {
+        return MiscIcon.suffixed_("direction")
+    }
+    
     public static var Email: MiscIcon {
         return MiscIcon.suffixed_("email")
     }
