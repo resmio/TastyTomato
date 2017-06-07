@@ -39,6 +39,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("feedback")
     }
     
+    public static var Hamburger: MiscIcon {
+        return MiscIcon.suffixed_("hamburger")
+    }
+    
     public static var Location: MiscIcon {
         return MiscIcon.suffixed_("location")
     }
