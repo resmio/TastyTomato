@@ -67,6 +67,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("settings")
     }
     
+    public static var Statistics: MiscIcon {
+        return MiscIcon.suffixed_("statistics")
+    }
+    
     public static var WalkIn: MiscIcon {
         return MiscIcon.suffixed_("walk-in")
     }
