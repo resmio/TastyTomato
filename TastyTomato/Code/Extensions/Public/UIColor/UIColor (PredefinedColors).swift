@@ -49,6 +49,10 @@ public extension UIColor {
         return self._Blue018EA6
     }
     
+    public static func Blue333B4E() -> UIColor {
+        return self._Blue333B4E
+    }
+    
     public static func Gray555555() -> UIColor {
         return self._Gray555555
     }
@@ -95,6 +99,10 @@ private extension UIColor {
     
     static var _Blue018EA6: UIColor {
         return UIColor(fromHex_: "018EA6")
+    }
+    
+    static var _Blue333B4E: UIColor {
+        return UIColor(fromHex_: "333B4E")
     }
     
     static var _Gray555555: UIColor {
