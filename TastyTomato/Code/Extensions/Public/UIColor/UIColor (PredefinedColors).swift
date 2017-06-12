@@ -29,8 +29,24 @@ public extension UIColor {
 
 // MARK: // Public
 public extension UIColor {
+    public static var redBC213F: UIColor {
+        return UIColor(fromHex_: "BC213F")
+    }
+    
     public static var redE62C4F: UIColor {
         return UIColor(fromHex_: "E62C4F")
+    }
+    
+    public static var orangeD97B08: UIColor {
+        return UIColor(fromHex_: "D97B08")
+    }
+    
+    public static var orangeFF910A: UIColor {
+        return UIColor(fromHex_: "FF910A")
+    }
+    
+    public static var yellowD7A43B: UIColor {
+        return UIColor(fromHex_: "D7A43B")
     }
     
     public static var yellowF8C150: UIColor {
@@ -41,6 +57,10 @@ public extension UIColor {
         return UIColor(fromHex_: "22CCAA")
     }
     
+    public static var green21B498: UIColor {
+        return UIColor(fromHex_: "21B498")
+    }
+    
     public static var blue00A7C4: UIColor {
         return UIColor(fromHex_: "00A7C4")
     }
@@ -49,8 +69,24 @@ public extension UIColor {
         return UIColor(fromHex_: "018EA6")
     }
     
+    public static var blue1E2532: UIColor {
+        return UIColor(fromHex_: "1E2532")
+    }
+    
+    public static var blue293140: UIColor {
+        return UIColor(fromHex_: "293140")
+    }
+    
     public static var blue333B4F: UIColor {
         return UIColor(fromHex_: "333B4F")
+    }
+    
+    public static var blue3E4862: UIColor {
+        return UIColor(fromHex_: "3E4862")
+    }
+    
+    public static var gray222222: UIColor {
+        return UIColor(fromHex_: "222222")
     }
     
     public static var gray555555: UIColor {
@@ -69,8 +105,28 @@ public extension UIColor {
         return UIColor(fromHex_: "DDDDDD")
     }
     
+    public static var grayEEEEEE: UIColor {
+        return UIColor(fromHex_: "EEEEEE")
+    }
+    
     public static var whiteF7F7F7: UIColor {
         return UIColor(fromHex_: "F7F7F7")
+    }
+    
+    public static var whiteFFFFFF: UIColor {
+        return UIColor(fromHex_: "FFFFFF")
+    }
+    
+    public static var black000000: UIColor {
+        return UIColor(fromHex_: "000000")
+    }
+    
+    public static var purple543EAC: UIColor {
+        return UIColor(fromHex_: "543EAC")
+    }
+    
+    public static var pinkFCE9ED: UIColor {
+        return UIColor(fromHex_: "FCE9ED")
     }
     
     public static var lightKeyboardBackground: UIColor {
