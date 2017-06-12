@@ -41,7 +41,7 @@ public class ShortcutBar: UIView {
     fileprivate let _gradientLayerWidth: CGFloat = 20
     
     // Design
-    fileprivate let _backgroundColor: UIColor = UIColor.LightKeyboardBackground()
+    fileprivate let _backgroundColor: UIColor = .lightKeyboardBackground
 }
 
 

@@ -30,7 +30,7 @@ private extension BaseTextField {
     func _setup() {
         self.layer.cornerRadius = 4
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.GrayDDDDDD().cgColor
+        self.layer.borderColor = UIColor.grayDDDDDD.cgColor
         self.clipsToBounds = true
         
         let paddingViewSize: CGSize = CGSize(width: 10, height: 1)
@@ -41,7 +41,7 @@ private extension BaseTextField {
         self.rightViewMode = .always
         
         self.font = UIFont.systemFont(ofSize: 17)
-        self.textColor = UIColor.Gray555555()
+        self.textColor = .gray555555
         self.autocapitalizationType = .none
         self.autocorrectionType = .no
     }

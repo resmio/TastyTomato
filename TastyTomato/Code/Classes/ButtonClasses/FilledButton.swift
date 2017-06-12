@@ -45,7 +45,7 @@ public class FilledButton: BaseButton {
     }
     
     // Private Stored Variable Properties
-    fileprivate var _fillColor: UIColor = UIColor.Blue00A7C4()
+    fileprivate var _fillColor: UIColor = .blue00A7C4
     fileprivate var _highlightedAlpha: CGFloat = 0.6
 }
 

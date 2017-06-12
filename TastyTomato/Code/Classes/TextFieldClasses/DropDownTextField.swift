@@ -117,7 +117,7 @@ extension DropDownTextField: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         if self._shouldShowDropDown() {
             self.showDropDown(true)
-            self._textField.layer.borderColor = UIColor.Blue00A7C4().cgColor
+            self._textField.layer.borderColor = UIColor.blue00A7C4.cgColor
         }
         self.delegate?.dropDownTextFieldDidBeginEditing?(self)
     }
@@ -125,7 +125,7 @@ extension DropDownTextField: UITextFieldDelegate {
     public func textFieldDidEndEditing(_ textField: UITextField) {
         if self._shouldHideDropDown() {
             self.hideDropDown(true)
-            self._textField.layer.borderColor = UIColor.GrayDDDDDD().cgColor
+            self._textField.layer.borderColor = UIColor.grayDDDDDD.cgColor
         }
         self.delegate?.dropDownTextFieldDidEndEditing?(self)
     }
@@ -198,7 +198,7 @@ private extension DropDownTextField {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.layer.borderColor = UIColor.Blue00A7C4().cgColor
+        tableView.layer.borderColor = UIColor.blue00A7C4.cgColor
         tableView.layer.borderWidth = 1
         tableView.backgroundColor = UIColor.white
         

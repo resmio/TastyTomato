@@ -63,7 +63,7 @@ public class TagView: UIView {
     fileprivate var _leftBannerView: UIView!
     fileprivate var _deleteButton: UIButton!
     
-    fileprivate var _color: UIColor = UIColor.YellowF8C150()
+    fileprivate var _color: UIColor = .yellowF8C150
 }
 
 
@@ -88,7 +88,7 @@ extension TagView {
     }
     
     func deleteButtonTouchDown_() {
-        self._setColor(UIColor.RedE62C4F())
+        self._setColor(.redE62C4F)
     }
 }
 
@@ -129,7 +129,7 @@ private extension TagView {
     
     func _setupLabel() {
         self._label.font = UIFont.systemFont(ofSize: self._fontSize)
-        self._label.textColor = UIColor.Gray555555()
+        self._label.textColor = .gray555555
         self._label.sizeToFit()
         self._label.height = self._labelHeight
         
@@ -162,7 +162,7 @@ private extension TagView {
             scaledDeleteIcon,
             for: UIControlState()
         )
-        deleteButton.tintColor = UIColor.Gray555555()
+        deleteButton.tintColor = .gray555555
         
         deleteButton.addTarget(
             self,

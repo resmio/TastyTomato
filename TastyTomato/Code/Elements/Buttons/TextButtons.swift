@@ -22,7 +22,7 @@ private extension TextButton {
     static func _ForgotPasswordButton() -> TextButton {
         let button: TextButton = self.button_()
         
-        button.setTitleColor(UIColor.Gray555555(), for: UIControlState())
+        button.setTitleColor(.gray555555, for: UIControlState())
         button.titleLabel!.font = UIFont.systemFont(ofSize: 14)
         button.setTitle(NSL_("Forgotten your password?"))
         button.underlined = true

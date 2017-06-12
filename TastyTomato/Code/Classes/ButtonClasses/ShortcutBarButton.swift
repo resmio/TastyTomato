@@ -22,14 +22,14 @@ public class ShortcutBarButton: BaseButton {
     override class func setup_<T: ShortcutBarButton>(_ button: T) {
         super.setup_(button)
         
-        button.setColor(UIColor.Gray999999(), for: UIControlState())
-        button.setTitleColor(UIColor.white, for: UIControlState())
+        button.setColor(.gray999999, for: UIControlState())
+        button.setTitleColor(.white, for: UIControlState())
         
-        button.setColor(UIColor.white, for: .highlighted)
-        button.setTitleColor(UIColor.black, for: .highlighted)
+        button.setColor(.white, for: .highlighted)
+        button.setTitleColor(.black, for: .highlighted)
         
-        button.setColor(UIColor.white, for: .selected)
-        button.setTitleColor(UIColor.black, for: .selected)
+        button.setColor(.white, for: .selected)
+        button.setTitleColor(.black, for: .selected)
         
         button.titleLabel!.font = UIFont.systemFont(ofSize: 17)
     }

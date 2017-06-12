@@ -46,7 +46,7 @@ private extension UIBarButtonItem {
         let button: UIButton = self._getButton(targetAction)
         button.setTitle(NSL_("Cancel"))
         button.sizeToFit()
-        button.tintColor = .RedE62C4F()
+        button.tintColor = .redE62C4F
         return UIBarButtonItem(customView: button)
     }
     
@@ -54,8 +54,8 @@ private extension UIBarButtonItem {
         let button: UIButton = self._getButton(targetAction)
         button.setTitle(NSL_("Delete"))
         button.sizeToFit()
-        button.tintColor = .RedE62C4F()
-        button.setTitleColor(.Gray999999(), for: .disabled)
+        button.tintColor = .redE62C4F
+        button.setTitleColor(.gray999999, for: .disabled)
         return UIBarButtonItem(customView: button)
     }
     
@@ -64,7 +64,7 @@ private extension UIBarButtonItem {
         let button: UIButton = self._getButton(targetAction)
         button.setBackgroundImage(offlineImage, for: .normal)
         button.sizeToFit()
-        button.tintColor = .RedE62C4F()
+        button.tintColor = .redE62C4F
         return UIBarButtonItem(customView: button)
     }
     
@@ -72,8 +72,8 @@ private extension UIBarButtonItem {
         let button: UIButton = self._getButton(targetAction)
         button.setTitle(NSL_("Edit"))
         button.sizeToFit()
-        button.tintColor = .Blue00A7C4()
-        button.setTitleColor(.Gray999999(), for: .disabled)
+        button.tintColor = .blue00A7C4
+        button.setTitleColor(.gray999999, for: .disabled)
         return UIBarButtonItem(customView: button)
     }
     
@@ -81,8 +81,8 @@ private extension UIBarButtonItem {
         let button: UIButton = self._getButton(targetAction)
         button.setTitle(NSL_("New"))
         button.sizeToFit()
-        button.tintColor = .Blue00A7C4()
-        button.setTitleColor(.Gray999999(), for: .disabled)
+        button.tintColor = .blue00A7C4
+        button.setTitleColor(.gray999999, for: .disabled)
         return UIBarButtonItem(customView: button)
     }
     
@@ -90,8 +90,8 @@ private extension UIBarButtonItem {
         let button: UIButton = self._getButton(targetAction)
         button.setTitle(NSL_("Save"))
         button.sizeToFit()
-        button.tintColor = .Blue00A7C4()
-        button.setTitleColor(.Gray999999(), for: .disabled)
+        button.tintColor = .blue00A7C4
+        button.setTitleColor(.gray999999, for: .disabled)
         return UIBarButtonItem(customView: button)
     }
     
