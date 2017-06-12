@@ -69,8 +69,8 @@ public extension UIColor {
         return self._GrayDDDDDD
     }
     
-    public static func GrayF7F7F7() -> UIColor {
-        return self._GrayF7F7F7
+    public static func WhiteF7F7F7() -> UIColor {
+        return self._WhiteF7F7F7
     }
     
     public static func LightKeyboardBackground() -> UIColor {
@@ -121,7 +121,7 @@ private extension UIColor {
         return UIColor(fromHex_: "DDDDDD")
     }
     
-    static var _GrayF7F7F7: UIColor {
+    static var _WhiteF7F7F7: UIColor {
         return UIColor(fromHex_: "F7F7F7")
     }
     
