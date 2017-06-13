@@ -30,13 +30,13 @@ private extension BaseTextView {
     func _setup() {
         self.layer.cornerRadius = 4
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.GrayDDDDDD().cgColor
+        self.layer.borderColor = UIColor.grayDDDDDD.cgColor
         self.clipsToBounds = true
         
         self.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
         self.font = UIFont.systemFont(ofSize: 17)
-        self.textColor = UIColor.Gray555555()
+        self.textColor = .gray555555
         self.autocapitalizationType = .none
         self.autocorrectionType = .no
     }

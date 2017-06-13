@@ -13,119 +13,123 @@ import UIKit
 // Maybe we can generalize how a color should change when it's highlighted, 
 // then we could implement is as a method .highlighted() -> TTColor
 public extension UIColor {
-    public static func RAColorHighlightedBlue() -> UIColor {
-        return self._Blue00A7C4.withAlpha(0.3)
+    public static var highlightedBlue: UIColor {
+        return self.blue00A7C4.withAlpha(0.3)
     }
     
-    public static func RAColorHighlightedRed() -> UIColor {
-        return self._RedE62C4F.withAlpha(0.3)
+    public static var highlightedRed: UIColor {
+        return self.redE62C4F.withAlpha(0.3)
     }
     
-    public static func RAColorSeparator() -> UIColor {
-        return self._GrayDDDDDD
+    public static var separatorColor: UIColor {
+        return self.grayDDDDDD
     }
 }
 
 
 // MARK: // Public
 public extension UIColor {
-    public static func RedE62C4F() -> UIColor {
-        return self._RedE62C4F
+    public static var redBC213F: UIColor {
+        return UIColor(fromHex_: "BC213F")
     }
     
-    public static func YellowF8C150() -> UIColor {
-        return self._YellowF8C150
-    }
-    
-    public static func Green22CCAA() -> UIColor {
-        return self._Green22CCAA
-    }
-    
-    public static func Blue00A7C4() -> UIColor {
-        return self._Blue00A7C4
-    }
-    
-    public static func Blue018EA6() -> UIColor {
-        return self._Blue018EA6
-    }
-    
-    public static func Blue333B4E() -> UIColor {
-        return self._Blue333B4E
-    }
-    
-    public static func Gray555555() -> UIColor {
-        return self._Gray555555
-    }
-    
-    public static func Gray999999() -> UIColor {
-        return self._Gray999999
-    }
-    
-    public static func GrayCCCCCC() -> UIColor {
-        return self._GrayCCCCCC
-    }
-    
-    public static func GrayDDDDDD() -> UIColor {
-        return self._GrayDDDDDD
-    }
-    
-    public static func GrayF7F7F7() -> UIColor {
-        return self._GrayF7F7F7
-    }
-    
-    public static func LightKeyboardBackground() -> UIColor {
-        return self._LightKeyboardBackround
-    }
-}
-
-
-// MARK: // Private
-private extension UIColor {
-    static var _RedE62C4F: UIColor {
+    public static var redE62C4F: UIColor {
         return UIColor(fromHex_: "E62C4F")
     }
     
-    static var _YellowF8C150: UIColor {
+    public static var orangeD97B08: UIColor {
+        return UIColor(fromHex_: "D97B08")
+    }
+    
+    public static var orangeFF910A: UIColor {
+        return UIColor(fromHex_: "FF910A")
+    }
+    
+    public static var yellowD7A43B: UIColor {
+        return UIColor(fromHex_: "D7A43B")
+    }
+    
+    public static var yellowF8C150: UIColor {
         return UIColor(fromHex_: "F8C150")
     }
     
-    static var _Green22CCAA: UIColor {
+    public static var green22CCAA: UIColor {
         return UIColor(fromHex_: "22CCAA")
     }
     
-    static var _Blue00A7C4: UIColor {
+    public static var green21B498: UIColor {
+        return UIColor(fromHex_: "21B498")
+    }
+    
+    public static var blue00A7C4: UIColor {
         return UIColor(fromHex_: "00A7C4")
     }
     
-    static var _Blue018EA6: UIColor {
+    public static var blue018EA6: UIColor {
         return UIColor(fromHex_: "018EA6")
     }
     
-    static var _Blue333B4E: UIColor {
-        return UIColor(fromHex_: "333B4E")
+    public static var blue1E2532: UIColor {
+        return UIColor(fromHex_: "1E2532")
     }
     
-    static var _Gray555555: UIColor {
+    public static var blue293140: UIColor {
+        return UIColor(fromHex_: "293140")
+    }
+    
+    public static var blue333B4F: UIColor {
+        return UIColor(fromHex_: "333B4F")
+    }
+    
+    public static var blue3E4862: UIColor {
+        return UIColor(fromHex_: "3E4862")
+    }
+    
+    public static var gray222222: UIColor {
+        return UIColor(fromHex_: "222222")
+    }
+    
+    public static var gray555555: UIColor {
         return UIColor(fromHex_: "555555")
     }
     
-    static var _Gray999999: UIColor {
+    public static var gray999999: UIColor {
         return UIColor(fromHex_: "999999")
     }
     
-    static var _GrayCCCCCC: UIColor {
+    public static var grayCCCCCC: UIColor {
         return UIColor(fromHex_: "CCCCCC")
     }
     
-    static var _GrayDDDDDD: UIColor {
+    public static var grayDDDDDD: UIColor {
         return UIColor(fromHex_: "DDDDDD")
     }
     
-    static var _GrayF7F7F7: UIColor {
+    public static var grayEEEEEE: UIColor {
+        return UIColor(fromHex_: "EEEEEE")
+    }
+    
+    public static var whiteF7F7F7: UIColor {
         return UIColor(fromHex_: "F7F7F7")
     }
     
-    static var _LightKeyboardBackround: UIColor {
+    public static var whiteFFFFFF: UIColor {
+        return UIColor(fromHex_: "FFFFFF")
+    }
+    
+    public static var black000000: UIColor {
+        return UIColor(fromHex_: "000000")
+    }
+    
+    public static var purple543EAC: UIColor {
+        return UIColor(fromHex_: "543EAC")
+    }
+    
+    public static var pinkFCE9ED: UIColor {
+        return UIColor(fromHex_: "FCE9ED")
+    }
+    
+    public static var lightKeyboardBackground: UIColor {
         return UIColor(fromHex_: "D2D5DA")
     }
 }

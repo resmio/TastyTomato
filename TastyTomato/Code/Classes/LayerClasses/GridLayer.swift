@@ -219,9 +219,9 @@ public class GridLayer: CALayer {
     fileprivate var __borderIsShown: Bool = true
     fileprivate var __rowHeight: CGFloat = 150
     fileprivate var __columnWidth: CGFloat = 150
-    fileprivate var __borderLineColor: CGColor = UIColor.Gray999999().withAlpha(0.8).cgColor
-    fileprivate var __mainGridLineColor: CGColor = UIColor.Gray999999().withAlpha(0.8).cgColor
-    fileprivate var __subGridLineColor: CGColor = UIColor.Gray999999().withAlpha(0.4).cgColor
+    fileprivate var __borderLineColor: CGColor = UIColor.gray999999.withAlpha(0.8).cgColor
+    fileprivate var __mainGridLineColor: CGColor = UIColor.gray999999.withAlpha(0.8).cgColor
+    fileprivate var __subGridLineColor: CGColor = UIColor.gray999999.withAlpha(0.4).cgColor
     fileprivate var __borderLineWidth: CGFloat = 1
     fileprivate var __gridLineWidth: CGFloat = 1
     fileprivate var __borderDashPattern: [NSNumber] = []
