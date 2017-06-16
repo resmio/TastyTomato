@@ -12,13 +12,13 @@ import UIKit
 // MARK: // Public
 // MARK: Class Declaration
 public class BaseTextView: UITextView {
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self._setup()
     }
     
-    public convenience init() {
-        self.init()
+    public override init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
         self._setup()
     }
 }

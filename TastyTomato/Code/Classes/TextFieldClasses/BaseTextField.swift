@@ -12,13 +12,13 @@ import UIKit
 // MARK: // Public
 // MARK: Class Declaration
 public class BaseTextField: UITextField {
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self._setup()
     }
     
-    public init() {
-        super.init(frame: CGRect.zero)
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
         self._setup()
     }
 }
