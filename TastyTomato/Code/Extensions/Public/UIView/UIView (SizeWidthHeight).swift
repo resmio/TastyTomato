@@ -25,7 +25,7 @@ extension UIView {
             return self._width
         }
         set(newWidth) {
-            return self._width = newWidth
+            self._width = newWidth
         }
     }
     
@@ -34,7 +34,7 @@ extension UIView {
             return self._height
         }
         set(newHeight) {
-            return self._height = newHeight
+            self._height = newHeight
         }
     }
 }
@@ -56,7 +56,7 @@ private extension UIView {
             return self.frame.width
         }
         set(newWidth) {
-            return self.frame.size.width = newWidth
+            self.frame.size.width = newWidth
         }
     }
     
@@ -65,7 +65,7 @@ private extension UIView {
             return self.frame.height
         }
         set(newHeight) {
-            return self.frame.size.height = newHeight
+            self.frame.size.height = newHeight
         }
     }
 }
