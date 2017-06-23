@@ -73,6 +73,7 @@
 		E120F90B264A2076BE355CC29E789218 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */; };
 		E34309DF671D7FA2C30AA0A18BB7C355 /* CAShapeLayer (Wireframe).swift in Sources */ = {isa = PBXBuildFile; fileRef = A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */; };
 		EA4C422FDA23A2D7DDF931EF8A605544 /* TextButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628597189125D75D98E36EA8682ADA2 /* TextButtons.swift */; };
+		ED28737A7ABD6436D7CF7EFA33AF9FA9 /* Collection (SafeSubscript).swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D0AF4C33DE58E6D97FD9C73B85AA7 /* Collection (SafeSubscript).swift */; };
 		EE32ADFFEBCC74C2EA342C807988D3A1 /* UIWindow (SetRootViewController).swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */; };
 		F0ECD62C46A02D8138358FBAB1B38285 /* UIButton (SetTitle).swift in Sources */ = {isa = PBXBuildFile; fileRef = C8889EA70BB1C71DED9F1FB7CFF6B594 /* UIButton (SetTitle).swift */; };
 		F128D132603E4E0CE74EC979474A6F60 /* BookingStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */; };
@@ -171,6 +172,7 @@
 		E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logos.xcassets; sourceTree = "<group>"; };
 		E628597189125D75D98E36EA8682ADA2 /* TextButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButtons.swift; sourceTree = "<group>"; };
 		EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (ConvenienceInits).swift"; sourceTree = "<group>"; };
+		F05D0AF4C33DE58E6D97FD9C73B85AA7 /* Collection (SafeSubscript).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Collection (SafeSubscript).swift"; path = "Collection (SafeSubscript).swift"; sourceTree = "<group>"; };
 		F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (RenderingModes).swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +251,15 @@
 				D7B5FB8B737A9AC146C8A6F988388264 /* OperatorOverloads */,
 			);
 			path = Code;
+			sourceTree = "<group>";
+		};
+		18FC56924273BFEDC254FC039646C643 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				F05D0AF4C33DE58E6D97FD9C73B85AA7 /* Collection (SafeSubscript).swift */,
+			);
+			name = Collection;
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		1BEDC49C5806846E908D79A81A8DE686 /* ShortcutBar */ = {
@@ -348,6 +359,7 @@
 		46E7F64B4FE1F823B9CE5441A548B3C2 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				18FC56924273BFEDC254FC039646C643 /* Collection */,
 				CEA9ED81CA9819C760F0522AF4297510 /* NSLocalizedString */,
 				2D68824CDAB38D447CAFCD441B653B74 /* NSObject */,
 				691A0CBFA184FAE1D42A19C0CA835752 /* RangeReplacableCollection */,
@@ -798,6 +810,7 @@
 				AA722217EC3B0D09B4E3E43283C98EA6 /* CGSize (CGRect).swift in Sources */,
 				5C8AA03C6C4B4DCDAA601D7775D8EA1A /* CGSize (ConvenienceInits).swift in Sources */,
 				07D9391000BFA486E44C4497A1788C6A /* CGSize (Scaled).swift in Sources */,
+				ED28737A7ABD6436D7CF7EFA33AF9FA9 /* Collection (SafeSubscript).swift in Sources */,
 				D9D8EA86DD5DE5CE144ED010353425A3 /* DropDownTextField.swift in Sources */,
 				935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */,
 				01903A7870C59E45E2071D68688B64AE /* FilledButtons.swift in Sources */,
