@@ -9,10 +9,39 @@
 import UIKit
 
 
-
 // MARK: // Public
+// MARK: - TagsViewDelegate
+public protocol TagsViewDelegate: class {
+    func changedContentHeight(to height: CGFloat, in tagsView: TagsView)
+}
+
+
+// MARK: - TagsView
 // MARK: Interface
 public extension TagsView {
+    var delegate: TagsViewDelegate? {
+        get {
+            return self._delegate
+        }
+        set(newDelegate) {
+            self._delegate = newDelegate
+        }
+    }
+    
+    var showsGradient: Bool {
+        get {
+            return self._showsGradient
+        }
+        set(newShowsGradient) {
+            self._showsGradient = newShowsGradient
+        }
+    }
+    
+    // Functions
+    public func rearrangeTagViews() {
+        self._rearrangeTagViews(startIndex: 0, width: self.width, animated: false)
+    }
+    
     public func addTagView(_ tagView: TagView) {
         self._addTagView(tagView)
     }
@@ -41,108 +70,143 @@ public class TagsView: UIView {
     // Override Init
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self._setupScrollView()
-        self._setupGradientLayer()
+        self.clipsToBounds = true
+        self._addSubviews()
     }
     
-    // Private Constant Stored Properties
-    fileprivate let _interItemSpacing: CGFloat = 8
-    fileprivate let _gradientHeight: CGFloat = 20
+    // Private Static Constants
+    fileprivate static let _interItemSpacing: CGFloat = 8
+    fileprivate static let _gradientHeight: CGFloat = 20
+    fileprivate static let _rowHeightWithSpacing: CGFloat = TagView.defaultHeight + TagsView._interItemSpacing
     
-    // Private Variable Stored Properties
-    fileprivate var _scrollView: UIScrollView!
-    fileprivate var _gradientLayer: CAGradientLayer!
+    // Private Weak Variables
+    fileprivate weak var _delegate: TagsViewDelegate?
     
+    // Private Lazy Variables
+    fileprivate lazy var _scrollView: UIScrollView = UIScrollView()
+    
+    // Private Variables
     fileprivate var _tagViews: [TagView] = []
-}
-
-
-// MARK: Layout Subviews Override
-extension TagsView {
+    fileprivate var __gradientLayer: CAGradientLayer?
+    fileprivate var __showsGradient: Bool = false
+    
+    
+    // Layout Overrides
     public override func layoutSubviews() {
-        self._scrollView.size = self.size
-        self._rearrangeTagViewsStartingFromIndex(0, animated: false)
-        self._updateScrollViewContentHeight()
-        self._updateGradientLayerFrame()
+        self._layoutSubviews()
     }
 }
 
 
 // MARK: // Private
-// MARK: Setup ScrollView
+// MARK: Computed Variables
 private extension TagsView {
-    func _setupScrollView() {
-        let scrollView: UIScrollView = UIScrollView(size: self.size)
-        scrollView.contentSize = self.size
-        self._scrollView = scrollView
-        self.addSubview(scrollView)
+    // Readonly
+    var _gradientLayer: CAGradientLayer {
+        return self.__gradientLayer ?? {
+            let white: UIColor = .white
+            let gradient: CAGradientLayer = CAGradientLayer()
+            gradient.frame.size.height = TagsView._gradientHeight
+            gradient.colors = [white.withAlpha(0).cgColor, white.cgColor]
+            return gradient
+        }()
     }
     
-    func _setupGradientLayer() {
-        let white: UIColor = UIColor.white
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.frame.size.height = self._gradientHeight
-        gradient.colors = [white.withAlpha(0).cgColor, white.cgColor]
-        self._gradientLayer = gradient
-        self.layer.addSublayer(gradient)
-        
-        self._updateGradientLayerFrame()
+    // ReadWrite
+    var _showsGradient: Bool {
+        get {
+            return self.__showsGradient
+        }
+        set(newShowsGradient) {
+            guard newShowsGradient != self.__showsGradient else { return }
+            self.__showsGradient = newShowsGradient
+            self._showGradientLayer(newShowsGradient)
+        }
     }
     
-    func _updateGradientLayerFrame() {
-        self._gradientLayer.frame.bottom = self.height
-        self._gradientLayer.frame.size.width = self.width
+    // Private Helpers
+    private func _showGradientLayer(_ show: Bool) {
+        if show {
+            self.layer.addSublayer(self._gradientLayer)
+        } else {
+            self.__gradientLayer?.removeFromSuperlayer()
+        }
     }
 }
 
 
-// MARK: Layout Helpers
+// MARK: Layout Override Implementations
 private extension TagsView {
-    func _originForTagView(_ tagView: TagView) -> CGPoint {
-        let index: Int = self._tagViews.index(of: tagView)!
+    func _layoutSubviews() {
+        let size: CGSize = self.size
+        let width: CGFloat = size.width
         
-        if index == 0 {
-            return CGPoint.zero
-        } else {
-            let rightBorder: CGFloat = self.width
-            let leftNeighbour: TagView = self._tagViews[index - 1]
-            let supposedLeft: CGFloat = (
-                leftNeighbour.right +
-                self._interItemSpacing
-            )
-            
-            if supposedLeft + tagView.width <= rightBorder {
-                return CGPoint(x: supposedLeft, y: leftNeighbour.top)
-            } else {
-                let y: CGFloat = leftNeighbour.bottom + self._interItemSpacing
-                return CGPoint(x: 0, y: y)
-            }
+        let scrollView: UIScrollView = self._scrollView
+        scrollView.size = size
+        
+        if width != scrollView.contentSize.width {
+            self._rearrangeTagViews(startIndex: 1, width: width, animated: true)
+            scrollView.contentSize.width = width
+        }
+    
+        if let gradientLayer: CAGradientLayer = self.__gradientLayer {
+            gradientLayer.frame.bottom = self.height
+            gradientLayer.frame.size.width = width
         }
     }
     
-    func _rearrangeTagViewsStartingFromIndex(_ index: Int, animated: Bool) {
-        let tagViews: [TagView] = Array(self._tagViews.suffix(from: index))
-        for tagView in tagViews {
-            let newOrigin: CGPoint = self._originForTagView(tagView)
-            if newOrigin == tagView.origin {
-                continue
+    // Private Helper
+    func _rearrangeTagViews(startIndex: Int, width: CGFloat, animated: Bool) {
+        let tagViews: [TagView] = self._tagViews
+        
+        if tagViews.isEmpty {
+            self._scrollView.contentSize.height = 0
+            self.delegate?.changedContentHeight(to: 0, in: self)
+            return
+        }
+        
+        var x: CGFloat = 0
+        var y: CGFloat = 0
+        
+        let spacing: CGFloat = TagsView._interItemSpacing
+        let rowHeight: CGFloat = TagsView._rowHeightWithSpacing
+        
+        if let leftNeighbour: TagView = tagViews[safe: startIndex - 1] {
+            x = leftNeighbour.right + spacing
+            y = leftNeighbour.top
+        }
+        
+        let getOrigin: ((TagView) -> CGPoint) = {
+            let tagViewWidth: CGFloat = $0.width
+            if (x > 0) && (x + tagViewWidth > width) {
+                x = 0
+                y += rowHeight
             }
-            
-            // TODO: Not sure if I like the animation... Let's see what Fabi says.
-            UIView.animate(withDuration: animated ? 0.3 : 0, animations: {
-                tagView.origin = newOrigin
-            }) 
+            let origin: CGPoint = CGPoint(x: x, y: y)
+            x += tagViewWidth + spacing
+            return origin
+        }
+        
+        let tagViewsToUpdate = tagViews.suffix(from: startIndex)
+        let origins: [CGPoint] = tagViewsToUpdate.map(getOrigin)
+        
+        let newContentHeight: CGFloat = (origins.last?.y ?? 0) + TagView.defaultHeight
+        self._scrollView.contentSize.height = newContentHeight
+        self.delegate?.changedContentHeight(to: newContentHeight, in: self)
+        
+        UIView.animate(withDuration: animated ? 0.3 : 0) {
+            zip(tagViewsToUpdate, origins).forEach({ $0.0.origin = $0.1 })
         }
     }
-    
-    func _updateScrollViewContentHeight() {
-        if let lastTagView: TagView = self._tagViews.last {
-            let lastTagViewBottom: CGFloat = lastTagView.bottom
-            if lastTagViewBottom < self.height {
-                self._scrollView.contentSize.height = self.height
-            } else {
-                self._scrollView.contentSize.height = lastTagViewBottom + self._gradientHeight
-            }
+}
+
+
+// MARK: Add Subviews
+private extension TagsView {
+    func _addSubviews() {
+        self.addSubview(self._scrollView)
+        if self.showsGradient {
+            self.layer.addSublayer(self._gradientLayer)
         }
     }
 }
@@ -151,42 +215,30 @@ private extension TagsView {
 // MARK: Add / Remove TagViews
 private extension TagsView {
     func _addTagView(_ tagView: TagView) {
+        let index: Int = self._tagViews.count
         self._tagViews.append(tagView)
-        let origin: CGPoint = self._originForTagView(tagView)
-        tagView.origin = origin
+        self._rearrangeTagViews(startIndex: index, width: self.width, animated: false)
         self._scrollView.addSubview(tagView)
-        
-        self._updateScrollViewContentHeight()
     }
     
     func _addTagViews(_ tagViews: [TagView]) {
-        let rearrangeIndex: Int = self._tagViews.count
+        let scrollView: UIScrollView = self._scrollView
+        tagViews.forEach(scrollView.addSubview)
+        let index: Int = self._tagViews.count
         self._tagViews += tagViews
-        for tagView in tagViews {
-            self._scrollView.addSubview(tagView)
-        }
-        
-        self._rearrangeTagViewsStartingFromIndex(
-            rearrangeIndex,
-            animated: false
-        )
-        self._updateScrollViewContentHeight()
+        self._rearrangeTagViews(startIndex: index, width: self.width, animated: false)
     }
     
     func _removeTagView(_ tagView: TagView, animated: Bool) {
+        guard let index: Int = self._tagViews.index(of: tagView) else { return }
         tagView.removeFromSuperview()
-        let index: Int = self._tagViews.index(of: tagView)!
         self._tagViews.remove(at: index)
-        self._rearrangeTagViewsStartingFromIndex(index, animated: animated)
-        
-        self._updateScrollViewContentHeight()
+        self._rearrangeTagViews(startIndex: index, width: self.width, animated: animated)
     }
     
     func _removeAllTagViews() {
-        for tagView in self._tagViews {
-            tagView.removeFromSuperview()
-        }
+        self._tagViews.forEach({ $0.removeFromSuperview() })
         self._tagViews = []
-        self._updateScrollViewContentHeight()
+        self._scrollView.contentSize = CGSize(width: self.width, height: 0)
     }
 }
