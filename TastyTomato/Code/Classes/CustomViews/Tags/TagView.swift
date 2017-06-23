@@ -9,12 +9,14 @@
 import UIKit
 
 
+// MARK: // Public
+// MARK: - TagViewDelegate
 @objc public protocol TagViewDelegate: class {
-    func tagViewDeleteButtonTapped(_ tagView: TagView)
+    func deleteButtonTapped(on tagView: TagView)
 }
 
 
-// MARK: // Public
+// MARK: - TagView
 // MARK: Interface
 public extension TagView {
     public var delegate: TagViewDelegate? {
@@ -23,6 +25,15 @@ public extension TagView {
         }
         set(newDelegate) {
             self._delegate = newDelegate
+        }
+    }
+    
+    public var showsDeleteButton: Bool {
+        get {
+            return self._showsDeleteButton
+        }
+        set(newShowsDeleteButton) {
+            self._showsDeleteButton = newShowsDeleteButton
         }
     }
 }
@@ -37,190 +48,189 @@ public class TagView: UIView {
     
     // Init
     public init(name: String) {
-        super.init(frame: CGRect.zero)
-        self._label.text = name
+        super.init(frame: CGRect(size: CGSize(height: TagView.defaultHeight)))
         
-        self._setupLayer()
-        self._setupSubviews()
-        self._adjustWidth()
-        self._centerViewsVertically()
-        self._resetColor()
+        let label: UILabel = self._label
+        label.text = name
+        label.size.width = label.sizeThatFits(.zero).width
+        
+        let layer: CALayer = self.layer
+        layer.cornerRadius = 4
+        layer.borderWidth = 1
+        self.clipsToBounds = true
+        
+        self._addSubviews()
+        self.sizeToFit()
+        
+        self._setColor(self._defaultColor, temporary: false)
     }
     
-    // Private Constant Stored Properties
-    fileprivate let _backgroundAlpha: CGFloat = 0.1
-    fileprivate let _horizontalSpacing: CGFloat = 10
-    fileprivate let _height: CGFloat = 35.5
-    fileprivate let _leftBannerWidth: CGFloat = 8
-    fileprivate let _label: UILabel = UILabel()
-    fileprivate let _labelHeight: CGFloat = 20
-    fileprivate let _fontSize: CGFloat = 16
-    fileprivate let _deleteIconSideLength: CGFloat = 15
+    // Internal Static Constants
+    internal static let defaultHeight: CGFloat = 35.5
     
-    // Private Variable Stored Properties
+    // Private Static Constants
+    fileprivate static let _labelHeight: CGFloat = 20
+    fileprivate static let _leftBannerWidth: CGFloat = 8
+    fileprivate static let _backgroundAlpha: CGFloat = 0.1
+    fileprivate static let _horizontalSpacing: CGFloat = 10
+    fileprivate static let _fontSize: CGFloat = 16
+    fileprivate static let _deleteIconSideLength: CGFloat = 15
+    
+    // Private Weak Variables
     fileprivate weak var _delegate: TagViewDelegate?
     
-    fileprivate var _leftBannerView: UIView!
-    fileprivate var _deleteButton: UIButton!
+    // Private Lazy Variables
+    fileprivate lazy var _leftBannerView: UIView = self._createLeftBannerView()
+    fileprivate lazy var _label: UILabel = self._createLabel()
     
-    fileprivate var _color: UIColor = .yellowF8C150
-}
-
-
-// MARK: Override
-public extension TagView {
-    public override func layoutSubviews() {
-        self._label.sizeToFit()
-        self._label.height = self._labelHeight
-        self._label.left = self._leftBannerView.right + self._horizontalSpacing
-        self._deleteButton.left = self._label.right
-        self._adjustWidth()
-    }
-}
-
-
-// MARK: // Internal
-// MARK: Delete Button Target Selectors
-extension TagView {
-    func deleteButtonTapped_() {
-        self.delegate?.tagViewDeleteButtonTapped(self)
-        self._resetColor()
-    }
+    // Private Variables
+    fileprivate var _defaultColor: UIColor = .yellowF8C150
+    fileprivate var __deleteButton: UIButton?
+    fileprivate var __showsDeleteButton: Bool = false
     
-    func deleteButtonTouchDown_() {
-        self._setColor(.redE62C4F)
-    }
-}
-
-
-// MARK: Set / Reset Color
-extension TagView {
-    func setColor_(_ color: UIColor, temporary: Bool) {
-        self._setColor(color, temporary: temporary)
-    }
     
-    func resetColor_() {
-        self._resetColor()
+    // Layout Overrides
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return self._sizeThatFits(size)
     }
 }
 
 
 // MARK: // Private
-// MARK: Setup Layer
+// MARK: Lazy Variable Creation
 private extension TagView {
-    func _setupLayer() {
-        self.clipsToBounds = true
-        
-        self.layer.cornerRadius = 4
-        self.layer.borderWidth = 1
-        
-        self.height = self._height
-    }
-}
-
-
-// MARK: Setup Subviews
-private extension TagView {
-    func _setupSubviews() {
-        self._setupLabel()
-        self._setupLeftBannerView()
-        self._setupDeleteButton()
-    }
-    
-    func _setupLabel() {
-        self._label.font = UIFont.systemFont(ofSize: self._fontSize)
-        self._label.textColor = .gray555555
-        self._label.sizeToFit()
-        self._label.height = self._labelHeight
-        
-        self.addSubview(self._label)
-    }
-    
-    func _setupLeftBannerView() {
+    func _createLeftBannerView() -> UIView {
         let leftBannerView: UIView = UIView(size:
-            CGSize(width: self._leftBannerWidth, height: self.height)
+            CGSize(width: TagView._leftBannerWidth, height: TagView.defaultHeight)
         )
-        
-        leftBannerView.backgroundColor = self._color
-        
-        self._leftBannerView = leftBannerView
-        self.addSubview(leftBannerView)
+        leftBannerView.backgroundColor = self._defaultColor
+        leftBannerView.vCenter = TagView.defaultHeight / 2
+        return leftBannerView
     }
     
-    func _setupDeleteButton() {
-        let deleteIcon: UIImage = MiscIcon.X.asTemplate()
-        let scaledDeleteIcon: UIImage = deleteIcon.scaledToSize(
-            CGSize(width: self._deleteIconSideLength, height: self._deleteIconSideLength)
-        )
-        
-        let deleteButtonSideLength: CGFloat = self.height
-        let deleteButton: UIButton = UIButton(size:
-            CGSize(width: deleteButtonSideLength, height: deleteButtonSideLength)
-        )
-        
-        deleteButton.setImage(
-            scaledDeleteIcon,
-            for: UIControlState()
-        )
-        deleteButton.tintColor = .gray555555
-        
-        deleteButton.addTarget(
-            self,
-            action: #selector(deleteButtonTapped_),
-            for: .touchUpInside
-        )
-        deleteButton.addTarget(
-            self,
-            action: #selector(deleteButtonTouchDown_),
-            for: .touchDown
-        )
-        deleteButton.addTarget(
-            self,
-            action: #selector(resetColor_),
-            for: .touchDragExit
-        )
-        
-        self._deleteButton = deleteButton
-        self.addSubview(deleteButton)
+    func _createLabel() -> UILabel {
+        let label: UILabel = UILabel(size: CGSize(height: TagView._labelHeight))
+        label.font = .systemFont(ofSize: TagView._fontSize)
+        label.textColor = .gray555555
+        label.vCenter = TagView.defaultHeight / 2
+        label.left = self._leftBannerView.right + TagView._horizontalSpacing
+        return label
     }
 }
 
 
-// MARK: Center Views Vertically
+// MARK: Computed Variables
 private extension TagView {
-    func _centerViewsVertically() {
-        self._leftBannerView.centerVInSuperview()
-        self._label.centerVInSuperview()
-        self._deleteButton.centerVInSuperview()
+    var _deleteButton: UIButton {
+        return self.__deleteButton ?? {
+            let deleteButtonSideLength: CGFloat = self.height
+            let deleteButton: UIButton = UIButton(size:
+                CGSize(width: deleteButtonSideLength, height: deleteButtonSideLength)
+            )
+            
+            let scaledDeleteIcon: UIImage = MiscIcon.X.asTemplate().scaledToSize(
+                CGSize(width: TagView._deleteIconSideLength, height: TagView._deleteIconSideLength)
+            )
+            deleteButton.setImage(scaledDeleteIcon, for: .normal)
+            deleteButton.tintColor = .gray555555
+            
+            deleteButton.addTarget(
+                self,
+                action: #selector(_tappedDeleteButton),
+                for: .touchUpInside
+            )
+            deleteButton.addTarget(
+                self,
+                action: #selector(_touchedDownOnDeleteButton),
+                for: .touchDown
+            )
+            deleteButton.addTarget(
+                self,
+                action: #selector(_touchDragExitedDeleteButton),
+                for: .touchDragExit
+            )
+            
+            deleteButton.vCenter = TagView.defaultHeight / 2
+            deleteButton.left = self._label.right
+            self.__deleteButton = deleteButton
+            return deleteButton
+        }()
+    }
+    
+    var _showsDeleteButton: Bool {
+        get {
+            return self.__showsDeleteButton
+        }
+        set(newShowsDeleteButton) {
+            guard newShowsDeleteButton != self.__showsDeleteButton else { return }
+            self.__showsDeleteButton = newShowsDeleteButton
+            let deleteButton: UIButton = self._deleteButton
+            newShowsDeleteButton ? self.addSubview(deleteButton) : deleteButton.removeFromSuperview()
+            self.sizeToFit()
+        }
     }
 }
 
 
-// MARK: Adjust Width
+// MARK: Layout Override Implementations
 private extension TagView {
-    func _adjustWidth() {
-        self.width = (
+    func _sizeThatFits(_ size: CGSize) -> CGSize {
+        var deleteButtonWidth: CGFloat = TagView._horizontalSpacing + (self.__deleteButton?.width ?? 0)
+        
+        let width: CGFloat = (
             self._leftBannerView.width +
-            self._horizontalSpacing +
+            TagView._horizontalSpacing +
             self._label.width +
-            self._deleteButton.width
+            deleteButtonWidth
         )
+        
+        return CGSize(width: width, height: TagView.defaultHeight)
+    }
+}
+
+
+// MARK: Add Subviews
+private extension TagView {
+    func _addSubviews() {
+        self.addSubview(self._leftBannerView)
+        self.addSubview(self._label)
+        
+        if self.showsDeleteButton {
+            self.addSubview(self._deleteButton)
+        }
     }
 }
 
 
 // MARK: Set Color
 private extension TagView {
-    func _setColor(_ color: UIColor, temporary: Bool = true) {
-        self.backgroundColor = color.withAlpha(self._backgroundAlpha)
+    func _setColor(_ color: UIColor, temporary: Bool) {
+        self.backgroundColor = color.withAlpha(TagView._backgroundAlpha)
         self.layer.borderColor = color.cgColor
         self._leftBannerView.backgroundColor = color
         if !temporary {
-            self._color = color
+            self._defaultColor = color
         }
     }
     
     func _resetColor() {
-        self.setColor_(self._color, temporary: false)
+        self._setColor(self._defaultColor, temporary: false)
+    }
+}
+
+
+// MARK: Delete Button Target Selectors
+private extension TagView {
+    @objc func _tappedDeleteButton() {
+        self.delegate?.deleteButtonTapped(on: self)
+        self._resetColor()
+    }
+    
+    @objc func _touchedDownOnDeleteButton() {
+        self._setColor(.redE62C4F, temporary: true)
+    }
+    
+    @objc func _touchDragExitedDeleteButton() {
+        self._setColor(.redE62C4F, temporary: true)
     }
 }
