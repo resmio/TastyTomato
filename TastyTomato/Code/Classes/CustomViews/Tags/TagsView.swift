@@ -28,15 +28,6 @@ public extension TagsView {
         }
     }
     
-    var showsGradient: Bool {
-        get {
-            return self._showsGradient
-        }
-        set(newShowsGradient) {
-            self._showsGradient = newShowsGradient
-        }
-    }
-    
     // Functions
     public func rearrangeTagViews() {
         self._rearrangeTagViews(startIndex: 0, width: self.width, animated: false)
@@ -83,12 +74,12 @@ public class TagsView: UIView {
     fileprivate weak var _delegate: TagsViewDelegate?
     
     // Private Lazy Variables
-    fileprivate lazy var _scrollView: UIScrollView = UIScrollView()
+    fileprivate lazy var _scrollView: UIScrollView = self._createScrollView()
+    fileprivate lazy var _topGradientLayer: CAGradientLayer = self._createTopGradientLayer()
+    fileprivate lazy var _bottomGradientLayer: CAGradientLayer = self._createBottomGradientLayer()
     
     // Private Variables
     fileprivate var _tagViews: [TagView] = []
-    fileprivate var __gradientLayer: CAGradientLayer?
-    fileprivate var __showsGradient: Bool = false
     
     
     // Layout Overrides
@@ -98,41 +89,43 @@ public class TagsView: UIView {
 }
 
 
+// MARK: Delegates / DataSources
+// MARK: UIScrollViewDelegate
+extension TagsView: UIScrollViewDelegate {
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        self._scrollViewWillEndDragging(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
+    }
+}
+
+
 // MARK: // Private
-// MARK: Computed Variables
+// MARK: Lazy Variable Creation
 private extension TagsView {
-    // Readonly
-    var _gradientLayer: CAGradientLayer {
-        return self.__gradientLayer ?? {
-            let white: UIColor = .white
-            let gradient: CAGradientLayer = CAGradientLayer()
-            gradient.frame.size.height = TagsView._gradientHeight
-            gradient.colors = [white.withAlpha(0).cgColor, white.cgColor]
-            self.__gradientLayer = gradient
-            return gradient
-        }()
+    func _createScrollView() -> UIScrollView {
+        let scrollView: UIScrollView = UIScrollView()
+        scrollView.delegate = self
+        return scrollView
     }
     
-    // ReadWrite
-    var _showsGradient: Bool {
-        get {
-            return self.__showsGradient
-        }
-        set(newShowsGradient) {
-            guard newShowsGradient != self.__showsGradient else { return }
-            self.__showsGradient = newShowsGradient
-            self._showGradientLayer(newShowsGradient)
-        }
+    func _createTopGradientLayer() -> CAGradientLayer {
+        let gradient: CAGradientLayer = self._createGradientLayer()
+        let white: UIColor = .white
+        gradient.colors = [white.cgColor, white.withAlpha(0).cgColor]
+        return gradient
+    }
+    
+    func _createBottomGradientLayer() -> CAGradientLayer {
+        let gradient: CAGradientLayer = self._createGradientLayer()
+        let white: UIColor = .white
+        gradient.colors = [white.withAlpha(0).cgColor, white.cgColor]
+        return gradient
     }
     
     // Private Helpers
-    private func _showGradientLayer(_ show: Bool) {
-        if show {
-            self.layer.addSublayer(self._gradientLayer)
-        } else {
-            self.__gradientLayer?.removeFromSuperlayer()
-            self.__gradientLayer = nil
-        }
+    private func _createGradientLayer() -> CAGradientLayer {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame.size.height = TagsView._gradientHeight
+        return gradient
     }
 }
 
@@ -150,11 +143,12 @@ private extension TagsView {
             self._rearrangeTagViews(startIndex: 1, width: width, animated: true)
             scrollView.contentSize.width = width
         }
+        
+        self._topGradientLayer.frame.size.width = width
     
-        if let gradientLayer: CAGradientLayer = self.__gradientLayer {
-            gradientLayer.frame.bottom = self.height
-            gradientLayer.frame.size.width = width
-        }
+        let bottomGradient: CAGradientLayer = self._bottomGradientLayer
+        bottomGradient.frame.bottom = self.height
+        bottomGradient.frame.size.width = width
     }
     
     // Private Helper
@@ -162,8 +156,7 @@ private extension TagsView {
         let tagViews: [TagView] = self._tagViews
         
         if tagViews.isEmpty {
-            self._scrollView.contentSize.height = 0
-            self.delegate?.changedContentHeight(to: 0, in: self)
+            self._setScrollViewContentHeight(to: 0)
             return
         }
         
@@ -193,12 +186,28 @@ private extension TagsView {
         let origins: [CGPoint] = tagViewsToUpdate.map(getOrigin)
         
         let newContentHeight: CGFloat = (origins.last?.y ?? 0) + TagView.defaultHeight
-        self._scrollView.contentSize.height = newContentHeight
-        self.delegate?.changedContentHeight(to: newContentHeight, in: self)
+        self._setScrollViewContentHeight(to: newContentHeight)
         
         UIView.animate(withDuration: animated ? 0.3 : 0) {
             zip(tagViewsToUpdate, origins).forEach({ $0.0.origin = $0.1 })
         }
+    }
+    
+    // Helpers
+    func _setScrollViewContentHeight(to height: CGFloat) {
+        let scrollView: UIScrollView = self._scrollView
+        scrollView.contentSize.height = height
+        self._updateGradientLayerHiddenStates(withContentOffset: scrollView.contentOffset.y)
+        self.delegate?.changedContentHeight(to: height, in: self)
+    }
+}
+
+
+// MARK: Delegate / DataSource Implementations
+// MARK: UIScrollViewDelegate
+private extension TagsView/*: UIScrollViewDelegate*/ {
+    func _scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        self._updateGradientLayerHiddenStates(withContentOffset: targetContentOffset.pointee.y)
     }
 }
 
@@ -207,8 +216,23 @@ private extension TagsView {
 private extension TagsView {
     func _addSubviews() {
         self.addSubview(self._scrollView)
-        if self.showsGradient {
-            self.layer.addSublayer(self._gradientLayer)
+        let layer: CALayer = self.layer
+        layer.addSublayer(self._topGradientLayer)
+        layer.addSublayer(self._bottomGradientLayer)
+    }
+}
+
+
+// MARK: Update Hidden States of GradientLayers
+private extension TagsView {
+    func _updateGradientLayerHiddenStates(withContentOffset contentOffset: CGFloat) {
+        let scrollView: UIScrollView = self._scrollView
+        if scrollView.contentSize.height <= self.height {
+            self._topGradientLayer.isHidden = true
+            self._bottomGradientLayer.isHidden = true
+        } else {
+            self._topGradientLayer.isHidden = scrollView.willBeScrolledToTop(withVerticalContentOffset: contentOffset)
+            self._bottomGradientLayer.isHidden = scrollView.willBeScrolledToBottom(withVerticalContentOffset: contentOffset)
         }
     }
 }
