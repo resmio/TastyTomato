@@ -175,13 +175,11 @@ private extension TagView {
 // MARK: Layout Override Implementations
 private extension TagView {
     func _sizeThatFits(_ size: CGSize) -> CGSize {
-        var deleteButtonWidth: CGFloat = TagView._horizontalSpacing + (self.__deleteButton?.width ?? 0)
-        
         let width: CGFloat = (
             self._leftBannerView.width +
             TagView._horizontalSpacing +
             self._label.width +
-            deleteButtonWidth
+            (self.__deleteButton?.width ?? 0)
         )
         
         return CGSize(width: width, height: TagView.defaultHeight)
