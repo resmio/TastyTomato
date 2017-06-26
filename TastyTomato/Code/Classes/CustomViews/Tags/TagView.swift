@@ -164,9 +164,17 @@ private extension TagView {
         set(newShowsDeleteButton) {
             guard newShowsDeleteButton != self.__showsDeleteButton else { return }
             self.__showsDeleteButton = newShowsDeleteButton
-            let deleteButton: UIButton = self._deleteButton
-            newShowsDeleteButton ? self.addSubview(deleteButton) : deleteButton.removeFromSuperview()
-            self.sizeToFit()
+            self._showDeleteButton(newShowsDeleteButton)
+        }
+    }
+    
+    // Private Helper
+    private func _showDeleteButton(_ show: Bool) {
+        if show {
+            self.addSubview(self._deleteButton)
+        } else {
+            self.__deleteButton?.removeFromSuperview()
+            self.__deleteButton = nil
         }
     }
 }
