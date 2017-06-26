@@ -12,11 +12,19 @@ import UIKit
 // MARK: // Public
 public extension UIScrollView {
     public var isScrolledToTop: Bool {
-        return self._isScrolledToTop
+        return self.willBeScrolledToTop(withVerticalContentOffset: self.contentOffset.y)
     }
     
     public var isScrolledToBottom: Bool {
-        return self._isScrolledToBottom
+        return self.willBeScrolledToBottom(withVerticalContentOffset: self.contentOffset.y)
+    }
+    
+    public func willBeScrolledToTop(withVerticalContentOffset verticalContentOffset: CGFloat) -> Bool {
+        return self._willBeScrolledToTop(withVerticalContentOffset: verticalContentOffset)
+    }
+    
+    public func willBeScrolledToBottom(withVerticalContentOffset verticalContentOffset: CGFloat) -> Bool {
+        return self._willBeScrolledToBottom(withVerticalContentOffset: verticalContentOffset)
     }
 }
 
@@ -24,14 +32,12 @@ public extension UIScrollView {
 // MARK: // Private
 // MARK: Implementation
 private extension UIScrollView {
-    var _isScrolledToTop: Bool {
-        let verticalContentOffset: CGFloat = self.contentOffset.y
+    func _willBeScrolledToTop(withVerticalContentOffset verticalContentOffset: CGFloat) -> Bool {
         let offsetForTop: CGFloat = -self.contentInset.top
         return verticalContentOffset <= offsetForTop
     }
     
-    var _isScrolledToBottom: Bool {
-        let verticalContentOffset: CGFloat = self.contentOffset.y
+    func _willBeScrolledToBottom(withVerticalContentOffset verticalContentOffset: CGFloat) -> Bool {
         let scrollContentHeight: CGFloat = self.contentSize.height
         let bottomInset: CGFloat = self.contentInset.bottom
         let scrollViewHeight: CGFloat = self.bounds.height
