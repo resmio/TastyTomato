@@ -193,7 +193,7 @@ private extension TagView {
             self._leftBannerView.width +
             TagView._horizontalSpacing +
             self._label.width +
-            (self.__deleteButton?.width ?? 0)
+            (self.__deleteButton?.width ?? TagView._horizontalSpacing)
         )
         
         return CGSize(width: width, height: TagView.defaultHeight)
