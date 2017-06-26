@@ -176,6 +176,7 @@ private extension TagView {
             self.__deleteButton?.removeFromSuperview()
             self.__deleteButton = nil
         }
+        self.sizeToFit()
     }
 }
 
