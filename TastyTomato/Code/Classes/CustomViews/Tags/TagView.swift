@@ -146,8 +146,13 @@ private extension TagView {
             )
             deleteButton.addTarget(
                 self,
-                action: #selector(_touchDragExitedDeleteButton),
+                action: #selector(_resetColor),
                 for: .touchDragExit
+            )
+            deleteButton.addTarget(
+                self,
+                action: #selector(_resetColor),
+                for: .touchCancel
             )
             
             deleteButton.vCenter = TagView.defaultHeight / 2
@@ -220,7 +225,7 @@ private extension TagView {
         }
     }
     
-    func _resetColor() {
+    @objc func _resetColor() {
         self._setColor(self._defaultColor, temporary: false)
     }
 }
@@ -234,10 +239,6 @@ private extension TagView {
     }
     
     @objc func _touchedDownOnDeleteButton() {
-        self._setColor(.redE62C4F, temporary: true)
-    }
-    
-    @objc func _touchDragExitedDeleteButton() {
         self._setColor(.redE62C4F, temporary: true)
     }
 }
