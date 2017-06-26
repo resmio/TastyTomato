@@ -86,6 +86,19 @@ public class TagsView: UIView {
     public override func layoutSubviews() {
         self._layoutSubviews()
     }
+    
+    // Frame Override
+    public override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set(newFrame) {
+            super.frame = newFrame
+            self._updateGradientLayerHiddenStates(
+                withContentOffset: self._scrollView.contentOffset.y
+            )
+        }
+    }
 }
 
 
