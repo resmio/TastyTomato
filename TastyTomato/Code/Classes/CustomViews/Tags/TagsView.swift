@@ -108,6 +108,7 @@ private extension TagsView {
             let gradient: CAGradientLayer = CAGradientLayer()
             gradient.frame.size.height = TagsView._gradientHeight
             gradient.colors = [white.withAlpha(0).cgColor, white.cgColor]
+            self.__gradientLayer = gradient
             return gradient
         }()
     }
@@ -130,6 +131,7 @@ private extension TagsView {
             self.layer.addSublayer(self._gradientLayer)
         } else {
             self.__gradientLayer?.removeFromSuperlayer()
+            self.__gradientLayer = nil
         }
     }
 }
