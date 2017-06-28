@@ -67,7 +67,9 @@ public class TagsView: UIView {
     
     // Private Static Constants
     fileprivate static let _interItemSpacing: CGFloat = 8
-    fileprivate static let _gradientHeight: CGFloat = 20
+    fileprivate static let _gradientHeight: CGFloat = 4
+    fileprivate static let _gradientInnerColor: CGColor = UIColor.clear.cgColor
+    fileprivate static let _gradientOuterColor: CGColor = UIColor.gray555555.withAlpha(0.1).cgColor
     fileprivate static let _rowHeightWithSpacing: CGFloat = TagView.defaultHeight + TagsView._interItemSpacing
     
     // Private Weak Variables
@@ -105,8 +107,8 @@ public class TagsView: UIView {
 // MARK: Delegates / DataSources
 // MARK: UIScrollViewDelegate
 extension TagsView: UIScrollViewDelegate {
-    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        self._scrollViewWillEndDragging(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self._updateGradientLayerHiddenStates(withContentOffset: scrollView.contentOffset.y)
     }
 }
 
@@ -121,23 +123,22 @@ private extension TagsView {
     }
     
     func _createTopGradientLayer() -> CAGradientLayer {
-        let gradient: CAGradientLayer = self._createGradientLayer()
-        let white: UIColor = .white
-        gradient.colors = [white.cgColor, white.withAlpha(0).cgColor]
-        return gradient
+        return self._createGradientLayer(
+            [TagsView._gradientOuterColor, TagsView._gradientInnerColor]
+        )
     }
     
     func _createBottomGradientLayer() -> CAGradientLayer {
-        let gradient: CAGradientLayer = self._createGradientLayer()
-        let white: UIColor = .white
-        gradient.colors = [white.withAlpha(0).cgColor, white.cgColor]
-        return gradient
+        return self._createGradientLayer(
+            [TagsView._gradientInnerColor, TagsView._gradientOuterColor]
+        )
     }
     
     // Private Helpers
-    private func _createGradientLayer() -> CAGradientLayer {
+    private func _createGradientLayer(_ colors: [CGColor]) -> CAGradientLayer {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame.size.height = TagsView._gradientHeight
+        gradient.colors = colors
         return gradient
     }
 }
@@ -217,14 +218,6 @@ private extension TagsView {
 
 
 // MARK: Delegate / DataSource Implementations
-// MARK: UIScrollViewDelegate
-private extension TagsView/*: UIScrollViewDelegate*/ {
-    func _scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        self._updateGradientLayerHiddenStates(withContentOffset: targetContentOffset.pointee.y)
-    }
-}
-
-
 // MARK: Add Subviews
 private extension TagsView {
     func _addSubviews() {
