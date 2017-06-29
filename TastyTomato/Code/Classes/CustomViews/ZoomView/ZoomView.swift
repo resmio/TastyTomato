@@ -184,12 +184,12 @@ public class ZoomView: UIView {
     fileprivate var __doubleTapRecognizer: UITapGestureRecognizer?
     fileprivate var __zoomOutTapRecognizer: UITapGestureRecognizer?
     
-    fileprivate var _zoomThreshold: CGFloat = 1
+    fileprivate var _zoomThreshold: CGFloat = 0.2
     fileprivate var __doubleTapEnabled: Bool = true
     fileprivate var __zoomOutTapEnabled: Bool = true
     fileprivate var _centerHorizontally: Bool = true
     fileprivate var _centerVertically: Bool = true
-    fileprivate var _maximumZoomScale: CGFloat = 1
+    fileprivate var __maximumZoomScale: CGFloat = 1
     fileprivate var _doubleTapNextScale: CGFloat?
 
     
@@ -263,6 +263,19 @@ private extension ZoomView {
 
 // MARK: Computed Variables
 private extension ZoomView {
+    var _maximumZoomScale: CGFloat {
+        get {
+            return self._scrollView.maximumZoomScale
+        }
+        set(newMaximumZoomScale) {
+            let scrollView: UIScrollView = self._scrollView
+            scrollView.maximumZoomScale = newMaximumZoomScale
+            if scrollView.zoomScale > newMaximumZoomScale {
+                scrollView.zoomIn(animated: false)
+            }
+        }
+    }
+    
     var _doubleTapEnabled: Bool {
         get {
             return self.__doubleTapEnabled
@@ -404,7 +417,7 @@ private extension ZoomView {
         
         let minScale: CGFloat = scrollView.minimumZoomScale
         let maxScale: CGFloat = scrollView.maximumZoomScale
-        guard minScale != maxScale else {
+        guard abs(minScale - maxScale) > self.zoomThreshold else {
             return
         }
         
@@ -497,8 +510,18 @@ private extension ZoomView {
                 { contentView.top = 0 }
         }
         
-        adjustHorizontalPosition()
-        adjustVerticalPosition()
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0,
+            usingSpringWithDamping: 1,
+            initialSpringVelocity: 0.6,
+            options: [.allowUserInteraction],
+            animations: {
+                adjustHorizontalPosition()
+                adjustVerticalPosition()
+            },
+            completion: { _ in }
+        )
     }
 
     func _updateZoomScales() {
@@ -509,19 +532,12 @@ private extension ZoomView {
         let heightRatio: CGFloat = scrollView.height / contentView.height
         
         let currentZoomScale: CGFloat = scrollView.zoomScale
-        let exactMinScale: CGFloat = min(widthRatio, heightRatio) * currentZoomScale
+        let minScale: CGFloat = min(widthRatio, heightRatio) * currentZoomScale
         
-        let threshold: CGFloat = self._zoomThreshold
-        let belowThreshold: Bool = exactMinScale < threshold
-        let maxScale: CGFloat = belowThreshold ? 1 : min(exactMinScale, self._maximumZoomScale)
+        scrollView.minimumZoomScale = minScale
         
-        scrollView.minimumZoomScale = exactMinScale
-        scrollView.maximumZoomScale = maxScale
-        
-        if currentZoomScale < exactMinScale {
+        if currentZoomScale < minScale {
             self._scrollView.zoomOut(animated: false)
-        } else if currentZoomScale > maxScale {
-            self._scrollView.zoomIn(animated: false)
         } else {
             self.delegate?.zoomed(to: currentZoomScale, in: self)
         }
