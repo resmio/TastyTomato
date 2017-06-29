@@ -75,22 +75,31 @@ private extension UIScrollView {
     }
     
     func _zoom(to zoomPoint: CGPoint, with scale: CGFloat, animated: Bool) {
+        let clampedScale: CGFloat = min(self.maximumZoomScale, max(self.minimumZoomScale, scale))
         let normalizationFactor: CGFloat = (1 / self.zoomScale)
-        let contentSize: CGSize = self.contentSize
         
-        let normalizedContentSize: CGSize = contentSize.scaledByFactor(normalizationFactor)
+        let contentOffset: CGPoint = self.contentOffset
+        let normalizedZoomPoint: CGPoint = CGPoint(
+            x: (zoomPoint.x + contentOffset.x) * normalizationFactor,
+            y: (zoomPoint.y + contentOffset.y) * normalizationFactor
+        )
         
-        let boundsSize: CGSize = self.bounds.size
+        let bounds: CGRect = self.bounds
+        let zoomRectSize: CGSize = CGSize(
+            width: bounds.width / scale,
+            height: bounds.height / scale
+        )
         
-        let translatedZoomPointX: CGFloat = zoomPoint.x / (boundsSize.width * normalizedContentSize.width)
-        let translatedZoomPointY: CGFloat = zoomPoint.y / (boundsSize.height * normalizedContentSize.height)
         
-        let scaleFactor: CGFloat = 1 / scale
-        let zoomRectSize: CGSize = boundsSize.scaledByFactor(scaleFactor)
+        let zoomRectMaxX: CGFloat = bounds.width - zoomRectSize.width
+        let zoomRectMaxY: CGFloat = bounds.height - zoomRectSize.height
+        let zoomRectPreferredX: CGFloat = normalizedZoomPoint.x - (zoomRectSize.width / 2)
+        let zoomRectPreferredY: CGFloat = normalizedZoomPoint.y - (zoomRectSize.height / 2)
+        
         
         let zoomRectOrigin: CGPoint = CGPoint(
-            x: translatedZoomPointX - (zoomRectSize.width / 2),
-            y: translatedZoomPointY - (zoomRectSize.height / 2)
+            x: min(zoomRectMaxX, max(0, zoomRectPreferredX)),
+            y: min(zoomRectMaxY, max(0, zoomRectPreferredY))
         )
         
         let zoomRect: CGRect = CGRect(
@@ -98,6 +107,25 @@ private extension UIScrollView {
             size: zoomRectSize
         )
         
-        self.zoom(to: zoomRect, animated: animated)
+        guard animated else {
+            self.zoom(to: zoomRect, animated: false)
+            return
+        }
+        
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0,
+            usingSpringWithDamping: 1,
+            initialSpringVelocity: 0.6,
+            options: [.allowUserInteraction],
+            animations: {
+                self.zoom(to: zoomRect, animated: false)
+            },
+            completion: { _ in
+                guard let delegate: UIScrollViewDelegate = self.delegate else { return }
+                guard let viewForZooming: UIView = delegate.viewForZooming?(in: self) else { return }
+                delegate.scrollViewDidEndZooming?(self, with: viewForZooming, atScale: clampedScale)
+            }
+        )
     }
 }
