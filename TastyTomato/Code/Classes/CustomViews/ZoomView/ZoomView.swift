@@ -240,8 +240,11 @@ extension ZoomView: UIScrollViewDelegate {
     }
     
     public func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        self._adjustContentPosition()
-        self.delegate?.zoomed(to: scrollView.zoomScale, in: self)
+        self._didZoom(in: scrollView)
+    }
+    
+    public func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        self._didZoom(in: scrollView)
     }
 }
 
@@ -336,7 +339,7 @@ private extension ZoomView {
         set(newFrame) {
             super.frame = newFrame
             self._scrollView.size = newFrame.size
-            self._updateZoomScalesAndAdjustContentPosition()
+            self._updateZoomScalesAndAdjustScrollViewContentInsets()
         }
     }
     
@@ -347,7 +350,7 @@ private extension ZoomView {
         set(newSize) {
             super.size = newSize
             self._scrollView.size = newSize
-            self._updateZoomScalesAndAdjustContentPosition()
+            self._updateZoomScalesAndAdjustScrollViewContentInsets()
         }
     }
     
@@ -358,7 +361,7 @@ private extension ZoomView {
         set(newWidth) {
             super.width = newWidth
             self._scrollView.width = newWidth
-            self._updateZoomScalesAndAdjustContentPosition()
+            self._updateZoomScalesAndAdjustScrollViewContentInsets()
         }
     }
     
@@ -369,8 +372,17 @@ private extension ZoomView {
         set(newHeight) {
             super.height = newHeight
             self._scrollView.height = newHeight
-            self._updateZoomScalesAndAdjustContentPosition()
+            self._updateZoomScalesAndAdjustScrollViewContentInsets()
         }
+    }
+}
+
+
+// MARK: Did Zoom in ScrollView
+private extension ZoomView {
+    func _didZoom(in scrollView: UIScrollView) {
+        self._adjustScrollViewContentInsets()
+        self.delegate?.zoomed(to: scrollView.zoomScale, in: self)
     }
 }
 
@@ -457,7 +469,7 @@ private extension ZoomView {
         
         UIView.animate(withDuration: animationDuration) {
             self._scrollView.zoomScale = self._scrollView.minimumZoomScale
-            self._adjustContentPosition()
+            self._adjustScrollViewContentInsets()
         }
     }
 }
@@ -481,47 +493,32 @@ private extension ZoomView {
 
 // MARK: Adjust Content Position / Update Zoom Scales
 private extension ZoomView {
-    func _updateZoomScalesAndAdjustContentPosition() {
+    func _updateZoomScalesAndAdjustScrollViewContentInsets() {
         self._updateZoomScales()
-        self._adjustContentPosition()
+        self._adjustScrollViewContentInsets()
     }
     
-    func _adjustContentPosition() {
-        guard self.centerHorizontally || self.centerVertically else {
+    func _adjustScrollViewContentInsets() {
+        let centerH: Bool = self.centerHorizontally
+        let centerV: Bool = self.centerVertically
+        
+        guard centerH || centerV else {
             return
         }
         
         let scrollView: UIScrollView = self._scrollView
-        let contentView: UIView = self._contentView
+        let boundsSize: CGSize = scrollView.bounds.size
+        let contentSize: CGSize = scrollView.contentSize
         
-        var adjustHorizontalPosition: () -> Void = {}
-        if self.centerHorizontally {
-            adjustHorizontalPosition =
-            (contentView.width < scrollView.width) ?
-                contentView.centerHInSuperview :
-                { contentView.left = 0 }
+        if centerH {
+            let leftInset: CGFloat = (boundsSize.width - contentSize.width) / 2
+            scrollView.contentInset.left = max(0, leftInset)
         }
         
-        var adjustVerticalPosition: () -> Void = {}
-        if self.centerVertically {
-            adjustVerticalPosition =
-            (contentView.height < scrollView.height) ?
-                contentView.centerVInSuperview :
-                { contentView.top = 0 }
+        if centerV {
+            let topInset: CGFloat = (boundsSize.height - contentSize.height) / 2
+            scrollView.contentInset.top = max(0, topInset)
         }
-        
-        UIView.animate(
-            withDuration: 0.3,
-            delay: 0,
-            usingSpringWithDamping: 1,
-            initialSpringVelocity: 0.6,
-            options: [.allowUserInteraction],
-            animations: {
-                adjustHorizontalPosition()
-                adjustVerticalPosition()
-            },
-            completion: { _ in }
-        )
     }
 
     func _updateZoomScales() {
