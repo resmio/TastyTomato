@@ -90,16 +90,9 @@ private extension UIScrollView {
             height: bounds.height / scale
         )
         
-        
-        let zoomRectMaxX: CGFloat = bounds.width - zoomRectSize.width
-        let zoomRectMaxY: CGFloat = bounds.height - zoomRectSize.height
-        let zoomRectPreferredX: CGFloat = normalizedZoomPoint.x - (zoomRectSize.width / 2)
-        let zoomRectPreferredY: CGFloat = normalizedZoomPoint.y - (zoomRectSize.height / 2)
-        
-        
         let zoomRectOrigin: CGPoint = CGPoint(
-            x: min(zoomRectMaxX, max(0, zoomRectPreferredX)),
-            y: min(zoomRectMaxY, max(0, zoomRectPreferredY))
+            x: normalizedZoomPoint.x - (zoomRectSize.width / 2),
+            y: normalizedZoomPoint.y - (zoomRectSize.height / 2)
         )
         
         let zoomRect: CGRect = CGRect(
