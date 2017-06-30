@@ -176,7 +176,7 @@ public class ZoomView: UIView {
     fileprivate weak var _delegate: ZoomViewDelegate?
     
     // Private Lazy Variables
-    fileprivate lazy var _scrollView: UIScrollView = self._createScrollView()
+    fileprivate lazy var _scrollView: ZoomToPointScrollView = self._createScrollView()
     
     // Private Variables
     fileprivate var _contentView: UIView
@@ -252,9 +252,9 @@ extension ZoomView: UIScrollViewDelegate {
 // MARK: // Private
 // MARK: Lazy Variable Creation
 private extension ZoomView {
-    func _createScrollView() -> UIScrollView {
+    func _createScrollView() -> ZoomToPointScrollView {
         let contentView: UIView = self._contentView
-        let scrollView: UIScrollView = UIScrollView(frame: self.bounds)
+        let scrollView: ZoomToPointScrollView = ZoomToPointScrollView(frame: self.bounds)
         scrollView.clipsToBounds = false
         scrollView.delegate = self
         scrollView.addSubview(contentView)
@@ -425,7 +425,7 @@ private extension ZoomView {
 // MARK: Tap Handling
 private extension ZoomView {
     @objc func _handleDoubleTap(_ recognizer: UITapGestureRecognizer) {
-        let scrollView: UIScrollView = self._scrollView
+        let scrollView: ZoomToPointScrollView = self._scrollView
         
         let minScale: CGFloat = scrollView.minimumZoomScale
         let maxScale: CGFloat = scrollView.maximumZoomScale

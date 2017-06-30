@@ -23,9 +23,6 @@ extension UIScrollView {
         self._zoom(to: zoomScale, animated: animated)
     }
     
-    public func zoom(to zoomPoint: CGPoint, with scale: CGFloat, animated: Bool = true) {
-        self._zoom(to: zoomPoint, with: scale, animated: animated)
-    }
 }
 
 
@@ -72,53 +69,5 @@ private extension UIScrollView {
         } else {
             return false
         }
-    }
-    
-    func _zoom(to zoomPoint: CGPoint, with scale: CGFloat, animated: Bool) {
-        let clampedScale: CGFloat = min(self.maximumZoomScale, max(self.minimumZoomScale, scale))
-        let normalizationFactor: CGFloat = (1 / self.zoomScale)
-        
-        let contentOffset: CGPoint = self.contentOffset
-        let normalizedZoomPoint: CGPoint = CGPoint(
-            x: (zoomPoint.x + contentOffset.x) * normalizationFactor,
-            y: (zoomPoint.y + contentOffset.y) * normalizationFactor
-        )
-        
-        let bounds: CGRect = self.bounds
-        let zoomRectSize: CGSize = CGSize(
-            width: bounds.width / scale,
-            height: bounds.height / scale
-        )
-        
-        let zoomRectOrigin: CGPoint = CGPoint(
-            x: normalizedZoomPoint.x - (zoomRectSize.width / 2),
-            y: normalizedZoomPoint.y - (zoomRectSize.height / 2)
-        )
-        
-        let zoomRect: CGRect = CGRect(
-            origin: zoomRectOrigin,
-            size: zoomRectSize
-        )
-        
-        guard animated else {
-            self.zoom(to: zoomRect, animated: false)
-            return
-        }
-        
-        UIView.animate(
-            withDuration: 0.3,
-            delay: 0,
-            usingSpringWithDamping: 1,
-            initialSpringVelocity: 0.6,
-            options: [.allowUserInteraction],
-            animations: {
-                self.zoom(to: zoomRect, animated: false)
-            },
-            completion: { _ in
-                guard let delegate: UIScrollViewDelegate = self.delegate else { return }
-                guard let viewForZooming: UIView = delegate.viewForZooming?(in: self) else { return }
-                delegate.scrollViewDidEndZooming?(self, with: viewForZooming, atScale: clampedScale)
-            }
-        )
     }
 }
