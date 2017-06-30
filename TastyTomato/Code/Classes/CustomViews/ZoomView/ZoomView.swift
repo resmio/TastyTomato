@@ -486,7 +486,7 @@ private extension ZoomView {
         }
         
         scrollView.contentSize = contentViewSize
-        self._updateZoomScalesAndAdjustContentPosition()
+        self._updateZoomScalesAndAdjustScrollViewContentInsets()
     }
 }
 
@@ -523,10 +523,10 @@ private extension ZoomView {
 
     func _updateZoomScales() {
         let scrollView: UIScrollView = self._scrollView
-        let contentView: UIView = self._contentView
+        let contentSize: CGSize = self._scrollView.contentSize
         
-        let widthRatio: CGFloat = scrollView.width / contentView.width
-        let heightRatio: CGFloat = scrollView.height / contentView.height
+        let widthRatio: CGFloat = scrollView.width / contentSize.width
+        let heightRatio: CGFloat = scrollView.height / contentSize.height
         
         let currentZoomScale: CGFloat = scrollView.zoomScale
         let minScale: CGFloat = min(widthRatio, heightRatio) * currentZoomScale
