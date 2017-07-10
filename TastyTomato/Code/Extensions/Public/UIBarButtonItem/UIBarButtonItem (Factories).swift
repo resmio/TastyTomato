@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: // Public
 // MARK: Factories
+// MARK: Buttons
 public extension UIBarButtonItem {
     public typealias TargetAction = (target: AnyObject, action: Selector)
     
@@ -40,7 +41,16 @@ public extension UIBarButtonItem {
 }
 
 
+// MARK: Misc
+public extension UIBarButtonItem {
+    public static func makeNoTagsItem() -> UIBarButtonItem {
+        return self._makeNoTagsItem()
+    }
+}
+
+
 // MARK: // Private
+// MARK: Buttons
 private extension UIBarButtonItem {
     static func _makeCancelItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getButton(targetAction)
@@ -107,5 +117,17 @@ private extension UIBarButtonItem {
         }
         
         return button
+    }
+}
+
+
+// MARK: Misc
+private extension UIBarButtonItem {
+    static func _makeNoTagsItem() -> UIBarButtonItem {
+        let noTagsLabel: UILabel = UILabel()
+        noTagsLabel.textColor = .gray555555
+        noTagsLabel.text = NSL_("No tags found")
+        noTagsLabel.sizeToFit()
+        return UIBarButtonItem(customView: noTagsLabel)
     }
 }
