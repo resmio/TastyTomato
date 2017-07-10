@@ -23,9 +23,6 @@ extension UIScrollView {
         self._zoom(to: zoomScale, animated: animated)
     }
     
-    public func zoom(to zoomPoint: CGPoint, with scale: CGFloat, animated: Bool = true) {
-        self._zoom(to: zoomPoint, with: scale, animated: animated)
-    }
 }
 
 
@@ -72,32 +69,5 @@ private extension UIScrollView {
         } else {
             return false
         }
-    }
-    
-    func _zoom(to zoomPoint: CGPoint, with scale: CGFloat, animated: Bool) {
-        let normalizationFactor: CGFloat = (1 / self.zoomScale)
-        let contentSize: CGSize = self.contentSize
-        
-        let normalizedContentSize: CGSize = contentSize.scaledByFactor(normalizationFactor)
-        
-        let boundsSize: CGSize = self.bounds.size
-        
-        let translatedZoomPointX: CGFloat = zoomPoint.x / (boundsSize.width * normalizedContentSize.width)
-        let translatedZoomPointY: CGFloat = zoomPoint.y / (boundsSize.height * normalizedContentSize.height)
-        
-        let scaleFactor: CGFloat = 1 / scale
-        let zoomRectSize: CGSize = boundsSize.scaledByFactor(scaleFactor)
-        
-        let zoomRectOrigin: CGPoint = CGPoint(
-            x: translatedZoomPointX - (zoomRectSize.width / 2),
-            y: translatedZoomPointY - (zoomRectSize.height / 2)
-        )
-        
-        let zoomRect: CGRect = CGRect(
-            origin: zoomRectOrigin,
-            size: zoomRectSize
-        )
-        
-        self.zoom(to: zoomRect, animated: animated)
     }
 }
