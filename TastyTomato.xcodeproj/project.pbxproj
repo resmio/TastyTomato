@@ -61,6 +61,7 @@
 		ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */; };
 		AE20A1758B460EF322D1D4FFBCFE0923 /* NSObject (Associations).swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */; };
 		AF53E089D7041EDFD9F90E22C958AD7E /* ShortcutBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */; };
+		B29BDBA0023131D713E51F8D95B96ADA /* UITableView (reloadSoftly).swift in Sources */ = {isa = PBXBuildFile; fileRef = B242DBFE7AC263A838F81DB66F8D7280 /* UITableView (reloadSoftly).swift */; };
 		B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */; };
 		C15C849839C07137AF9228EBCA319B2C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9175C1A832EEF0F37AEE33411A20042 /* Localizable.strings */; };
 		C2E279A4ED34081F1C983150B1F45061 /* CALayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */; };
@@ -157,6 +158,7 @@
 		AC280804706B40B958EEE8284ED922F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE12E9AC9F91E1C3F23E1C2A25D9E463 /* TextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (ConvenienceInits).swift"; sourceTree = "<group>"; };
+		B242DBFE7AC263A838F81DB66F8D7280 /* UITableView (reloadSoftly).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView (reloadSoftly).swift"; path = "UITableView (reloadSoftly).swift"; sourceTree = "<group>"; };
 		B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutBar.swift; sourceTree = "<group>"; };
 		BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (FromHex_).swift"; sourceTree = "<group>"; };
 		C08B5813ECAE6108D8A3192D688E9D77 /* ArrowIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowIcon.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				C61FA760C329029916EAB5DF6196AE44 /* UIColor */,
 				672790F9FBEF1DB75397020CEEDDC422 /* UIImage */,
 				458400216ECA6027907392A9F92C1A50 /* UIScrollView */,
+				5D5BF88A47261D2A7AF534030385A3CC /* UITableView */,
 				A01C37BAA2EDA30ED682D64F551DB64A /* UIView */,
 				DC10D825E2095495087364C672A77DF3 /* UIViewController */,
 				DFE967201D0969726A8588440FD28587 /* UIWindow */,
@@ -381,6 +384,15 @@
 				E9175C1A832EEF0F37AEE33411A20042 /* Localizable.strings */,
 			);
 			path = Localizations;
+			sourceTree = "<group>";
+		};
+		5D5BF88A47261D2A7AF534030385A3CC /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				B242DBFE7AC263A838F81DB66F8D7280 /* UITableView (reloadSoftly).swift */,
+			);
+			name = UITableView;
+			path = UITableView;
 			sourceTree = "<group>";
 		};
 		6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */ = {
@@ -851,6 +863,7 @@
 				6B57EDA175E804981EC3D12739F147AB /* UIImage (WidthHeight).swift in Sources */,
 				9A8C438EC913820E7B32A6C0D41EE5C9 /* UIScrollView (ScrollingConvenience).swift in Sources */,
 				D8294936BE4CF32441B0D854D1F9DDEE /* UIScrollView (ZoomingConvenience).swift in Sources */,
+				B29BDBA0023131D713E51F8D95B96ADA /* UITableView (reloadSoftly).swift in Sources */,
 				800936DF4B2EC8E094396520F049EF4B /* UIView (Area).swift in Sources */,
 				9438FFB35B2B7340B87AD601C75C77D4 /* UIView (BarButtonItem).swift in Sources */,
 				13BFB81E9AE9A8BC5760E75496D1DFFC /* UIView (Centering).swift in Sources */,
