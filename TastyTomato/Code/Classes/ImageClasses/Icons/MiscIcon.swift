@@ -43,6 +43,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("feedback")
     }
     
+    public static var Guests: MiscIcon {
+        return MiscIcon.suffixed_("guests")
+    }
+    
     public static var Hamburger: MiscIcon {
         return MiscIcon.suffixed_("hamburger")
     }
@@ -65,6 +69,10 @@ public class MiscIcon: MetaImage {
     
     public static var Phone: MiscIcon {
         return MiscIcon.suffixed_("phone")
+    }
+    
+    public static var Search: MiscIcon {
+        return MiscIcon.suffixed_("search")
     }
     
     public static var Settings: MiscIcon {
