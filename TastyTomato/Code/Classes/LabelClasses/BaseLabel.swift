@@ -34,6 +34,26 @@ public extension BaseLabel {
 
 // MARK: Class Declaration
 public class BaseLabel: UILabel {
+    // Required Init
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self._setup()
+    }
+    
+    // Override Init
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        self._setup()
+    }
+    
+    // Private Setup Implementation
+    private func _setup() {
+        if self._isShowingPlaceholder {
+            super.text = self.placeholder
+            super.textColor = self.placeholderTextColor
+        }
+    }
+    
     // Private Constants
     /**This color was retrieved inside an iOS-playground by doing this:
      
