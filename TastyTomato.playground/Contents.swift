@@ -68,7 +68,8 @@ viewsToDisplay.append(shortcutBar)
 let borderLayerViewSize: CGSize = CGSize(width: 200, height: 200)
 let borderLayerView: UIView = UIView(size: borderLayerViewSize)
 borderLayerView.backgroundColor = UIColor.red.withAlpha(0.2)
-let borderLayer: BorderLayer = BorderLayer(size: borderLayerViewSize)
+let borderLayer: BorderLayer = BorderLayer()
+borderLayer.frame = borderLayerViewSize.asCGRect()
 borderLayer.borderEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 5, right: 20)
 borderLayer.lineWidth = 1
 borderLayer.lineDashPattern = [6, 6]
