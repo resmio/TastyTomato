@@ -8,7 +8,7 @@ import TastyTomato
 // // Setup-boilerplate // //
 PlaygroundPage.current.needsIndefiniteExecution = true
 let liveView: UIView = UIView(
-    frame: CGRect(x: 0, y: 0, width: 300, height: 2000)
+    frame: CGRect(x: 0, y: 0, width: 500, height: 1000)
 )
 PlaygroundPage.current.liveView = liveView
 liveView.backgroundColor = .white
@@ -42,6 +42,15 @@ let textButton: TextButton = TextButton_()
 textButton.setTitle("TextButton")
 textButton.underlined = true
 viewsToDisplay.append(textButton)
+
+
+// LabelClasses
+let baseLabel: BaseLabel = BaseLabel()
+baseLabel.text = "Test Text For Resizing"
+baseLabel.sizeToFit()
+//baseLabel.text = nil
+baseLabel.placeholder = "Placeholder"
+viewsToDisplay.append(baseLabel)
 
 
 // CustomViews
