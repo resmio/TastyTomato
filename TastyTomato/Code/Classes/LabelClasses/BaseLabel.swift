@@ -130,7 +130,7 @@ private extension BaseLabel {
             return self._isShowingPlaceholder ? "" : super.text
         }
         set(newText) {
-            guard newText != super.text else { return }
+            guard newText != self._text else { return }
             if newText.isNilOrEmpty {
                 self._isShowingPlaceholder = true
                 super.text = self.placeholder
