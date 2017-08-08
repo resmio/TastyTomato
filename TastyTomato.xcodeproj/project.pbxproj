@@ -183,7 +183,7 @@
 		EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		F05D0AF4C33DE58E6D97FD9C73B85AA7 /* Collection (SafeSubscript).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection (SafeSubscript).swift"; sourceTree = "<group>"; };
 		F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (RenderingModes).swift"; sourceTree = "<group>"; };
-		F72BDFB542488F883802AF67C33ED7C4 /* Optional (IsNilOrEmpty).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Optional (IsNilOrEmpty).swift"; path = "Optional (IsNilOrEmpty).swift"; sourceTree = "<group>"; };
+		F72BDFB542488F883802AF67C33ED7C4 /* Optional (IsNilOrEmpty).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional (IsNilOrEmpty).swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -699,7 +699,6 @@
 			children = (
 				F72BDFB542488F883802AF67C33ED7C4 /* Optional (IsNilOrEmpty).swift */,
 			);
-			name = Optional;
 			path = Optional;
 			sourceTree = "<group>";
 		};
@@ -950,10 +949,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.15.1;
+				CURRENT_PROJECT_VERSION = 0.16.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 0.15.1;
-				DYLIB_CURRENT_VERSION = 0.15.1;
+				DYLIB_COMPATIBILITY_VERSION = 0.16.0;
+				DYLIB_CURRENT_VERSION = 0.16.0;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1057,10 +1056,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.15.1;
+				CURRENT_PROJECT_VERSION = 0.16.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DYLIB_COMPATIBILITY_VERSION = 0.15.1;
-				DYLIB_CURRENT_VERSION = 0.15.1;
+				DYLIB_COMPATIBILITY_VERSION = 0.16.0;
+				DYLIB_CURRENT_VERSION = 0.16.0;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
