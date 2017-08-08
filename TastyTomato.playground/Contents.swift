@@ -8,7 +8,7 @@ import TastyTomato
 // // Setup-boilerplate // //
 PlaygroundPage.current.needsIndefiniteExecution = true
 let liveView: UIView = UIView(
-    frame: CGRect(x: 0, y: 0, width: 300, height: 2000)
+    frame: CGRect(x: 0, y: 0, width: 500, height: 1000)
 )
 PlaygroundPage.current.liveView = liveView
 liveView.backgroundColor = .white
@@ -44,6 +44,15 @@ textButton.underlined = true
 viewsToDisplay.append(textButton)
 
 
+// LabelClasses
+let baseLabel: BaseLabel = BaseLabel()
+baseLabel.text = "Test Text For Resizing"
+baseLabel.sizeToFit()
+//baseLabel.text = nil
+baseLabel.placeholder = "Placeholder"
+viewsToDisplay.append(baseLabel)
+
+
 // CustomViews
 let shortcutBar: ShortcutBar = ShortcutBar()
 shortcutBar.width = 300
@@ -68,7 +77,8 @@ viewsToDisplay.append(shortcutBar)
 let borderLayerViewSize: CGSize = CGSize(width: 200, height: 200)
 let borderLayerView: UIView = UIView(size: borderLayerViewSize)
 borderLayerView.backgroundColor = UIColor.red.withAlpha(0.2)
-let borderLayer: BorderLayer = BorderLayer(size: borderLayerViewSize)
+let borderLayer: BorderLayer = BorderLayer()
+borderLayer.frame = borderLayerViewSize.asCGRect()
 borderLayer.borderEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 5, right: 20)
 borderLayer.lineWidth = 1
 borderLayer.lineDashPattern = [6, 6]
