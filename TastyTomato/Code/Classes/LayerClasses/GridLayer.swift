@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SignificantSpices
 
 
 // MARK: // Public
@@ -760,7 +761,7 @@ private extension GridLayer {
         let lineLayersToPurge: [LineLayer] = self._lineLayers.filter(predicate)
         for lineLayer in lineLayersToPurge {
             lineLayer.removeFromSuperlayer()
-            self._lineLayers.remove_(lineLayer)
+            self._lineLayers.remove(lineLayer)
         }
     }
     

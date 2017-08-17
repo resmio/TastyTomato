@@ -1,3 +1,14 @@
-PODFILE CHECKSUM: c12fea98901bbbdeae93e1d354ff7bc67e46b92f
+PODS:
+  - SignificantSpices (0.1.0):
+    - SignificantSpices/SwiftExtensions (= 0.1.0)
+  - SignificantSpices/SwiftExtensions (0.1.0)
+
+DEPENDENCIES:
+  - SignificantSpices (~> 0.1.0)
+
+SPEC CHECKSUMS:
+  SignificantSpices: 20d7bacdef2c0723d9240a21c4f020cf7ea85263
+
+PODFILE CHECKSUM: 994243251afee1f4ec6c61c39403c705ba2a8fe3
 
 COCOAPODS: 1.2.0
