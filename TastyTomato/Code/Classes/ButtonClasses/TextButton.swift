@@ -99,11 +99,11 @@ private extension TextButton {
             return
         }
         
-        let underlineStyle: NSUnderlineStyle = self.underlined ? .styleSingle : .styleNone
         let titleColor: UIColor = self.titleColor(for: state) ?? .black
-        let attributes: [String : Any] = [
-            NSAttributedStringKey.foregroundColor.rawValue: titleColor,
-            NSAttributedStringKey.underlineStyle.rawValue: underlineStyle.rawValue
+        let underlineStyle: NSUnderlineStyle = self.underlined ? .styleSingle : .styleNone
+        let attributes: [NSAttributedStringKey : Any] = [
+            .foregroundColor: titleColor,
+            .underlineStyle: underlineStyle
         ]
         
         let attributedTitle: NSAttributedString = NSAttributedString(
