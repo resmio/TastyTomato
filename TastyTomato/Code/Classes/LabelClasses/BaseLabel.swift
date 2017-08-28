@@ -64,7 +64,7 @@ public class BaseLabel: UILabel {
      let label = textField.value(forKey: key) as! UILabel
      label.textColor
      */
-    fileprivate let _defaultPlaceholderTextColor: UIColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0.098, alpha: 0.22)
+    fileprivate let _defaultPlaceholderTextColor: UIColor = UIColor(red: 0, green: 0, blue: 0.098, alpha: 0.22)
     
     // Private Lazy Variables
     fileprivate lazy var __placeholderTextColor: UIColor = self._defaultPlaceholderTextColor
