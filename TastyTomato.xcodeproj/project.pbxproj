@@ -54,7 +54,6 @@
 		9A8C438EC913820E7B32A6C0D41EE5C9 /* UIScrollView (ScrollingConvenience).swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F15D92B31E10526F4B2EB07123B63B /* UIScrollView (ScrollingConvenience).swift */; };
 		9EDC676FBB4296DB4C630B5E78379EBE /* UIButton (Color_).swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB2A0C35717ED674361E12EF4C5BAA /* UIButton (Color_).swift */; };
 		A3A6206717A979DB2D2801A8B8D6F67A /* CGSize (Area).swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C46794B3EFC67B1746BE7CB81E0F62 /* CGSize (Area).swift */; };
-		A422EDDD7235FA43C5D7D613B05A6E4C /* CALayer (Wireframe).swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EF75E0BF14F8A2EB6C71230FDD3C13 /* CALayer (Wireframe).swift */; };
 		A43281AE7F5ED34889BF39E8FA61D6F5 /* UIView (OriginLeftRightTopBottom).swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */; };
 		AA722217EC3B0D09B4E3E43283C98EA6 /* CGSize (CGRect).swift in Sources */ = {isa = PBXBuildFile; fileRef = C12824249B7328133328FF9AE5640462 /* CGSize (CGRect).swift */; };
 		AA8512B64D36C58068B677B56BD11C09 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */; };
@@ -76,7 +75,6 @@
 		D9D8EA86DD5DE5CE144ED010353425A3 /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172042EA77DA17224778AA7DB33B6707 /* DropDownTextField.swift */; };
 		DA4FD8E31F32DAE00AFCA3A9CE81C160 /* UIImage (ColoredRect).swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CE20B670A02E13FB4A56517F58E300 /* UIImage (ColoredRect).swift */; };
 		E120F90B264A2076BE355CC29E789218 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */; };
-		E34309DF671D7FA2C30AA0A18BB7C355 /* CAShapeLayer (Wireframe).swift in Sources */ = {isa = PBXBuildFile; fileRef = A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */; };
 		EA4C422FDA23A2D7DDF931EF8A605544 /* TextButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628597189125D75D98E36EA8682ADA2 /* TextButtons.swift */; };
 		EE32ADFFEBCC74C2EA342C807988D3A1 /* UIWindow (SetRootViewController).swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */; };
 		F0ECD62C46A02D8138358FBAB1B38285 /* UIButton (SetTitle).swift in Sources */ = {isa = PBXBuildFile; fileRef = C8889EA70BB1C71DED9F1FB7CFF6B594 /* UIButton (SetTitle).swift */; };
@@ -110,7 +108,6 @@
 		15004413C96D0B4A03CF11D63DD6382A /* UIView (Area).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (Area).swift"; sourceTree = "<group>"; };
 		162CC1F2A974F883E6BD5039B189DF28 /* UIImage (Named_).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Named_).swift"; sourceTree = "<group>"; };
 		172042EA77DA17224778AA7DB33B6707 /* DropDownTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownTextField.swift; sourceTree = "<group>"; };
-		17EF75E0BF14F8A2EB6C71230FDD3C13 /* CALayer (Wireframe).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (Wireframe).swift"; sourceTree = "<group>"; };
 		1A908324B2B4B669470F0A3864A426C6 /* UIImage (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Scaled).swift"; sourceTree = "<group>"; };
 		1B1032762F44E9AFAAC244949B1E9E97 /* BundleHelper_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleHelper_.swift; sourceTree = "<group>"; };
 		1D1A60CE3AFFC68209D50DF5CC789F23 /* Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,7 +151,6 @@
 		9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (WithAlpha).swift"; sourceTree = "<group>"; };
 		9FFB79C0D23FF876BF39D0237EBB0E33 /* GridLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayer.swift; sourceTree = "<group>"; };
 		A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
-		A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer (Wireframe).swift"; sourceTree = "<group>"; };
 		A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (SizeWidthHeight).swift"; sourceTree = "<group>"; };
 		AB90DABCB03ADFB08A162B10C5A52C43 /* Pods-TastyTomatoAbstract-TastyTomatoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomatoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomatoTests/Pods-TastyTomatoAbstract-TastyTomatoTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC280804706B40B958EEE8284ED922F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -252,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */,
-				A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */,
 			);
 			path = CAShapeLayer;
 			sourceTree = "<group>";
@@ -346,7 +341,6 @@
 			isa = PBXGroup;
 			children = (
 				580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */,
-				17EF75E0BF14F8A2EB6C71230FDD3C13 /* CALayer (Wireframe).swift */,
 			);
 			path = CALayer;
 			sourceTree = "<group>";
@@ -916,9 +910,7 @@
 				6470F7DF00947E0FBE1900DC3E0DD50B /* BorderLayer.swift in Sources */,
 				F3F0485D7B95F9B516AEC11BC8F5FB46 /* BundleHelper_.swift in Sources */,
 				C2E279A4ED34081F1C983150B1F45061 /* CALayer (ConvenienceInits).swift in Sources */,
-				A422EDDD7235FA43C5D7D613B05A6E4C /* CALayer (Wireframe).swift in Sources */,
 				ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */,
-				E34309DF671D7FA2C30AA0A18BB7C355 /* CAShapeLayer (Wireframe).swift in Sources */,
 				8264D105E6827ED55184C53860D2BEA6 /* CGFloat (Double).swift in Sources */,
 				3DE684BA7159AEA557CDE0F4F775B5A0 /* CGFloat (Int).swift in Sources */,
 				1D182D1BB45EB8B648582A87B8CC2067 /* CGFloat (UInt).swift in Sources */,
