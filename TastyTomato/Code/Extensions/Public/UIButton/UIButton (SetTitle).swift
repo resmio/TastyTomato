@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: // Public
 public extension UIButton {
-    public func setTitle(_ title: String) {
+    @objc public func setTitle(_ title: String) {
         self._setTitle(title)
     }
 }
