@@ -19,11 +19,11 @@ public class ArrowIcon: MetaImage {
         return ArrowIcon.suffixed_("down")
     }
     
-    public static var Left: ArrowIcon {
+    @objc public static var Left: ArrowIcon {
         return ArrowIcon.suffixed_("left")
     }
     
-    public static var Right: ArrowIcon {
+    @objc public static var Right: ArrowIcon {
         return ArrowIcon.suffixed_("right")
     }
 }

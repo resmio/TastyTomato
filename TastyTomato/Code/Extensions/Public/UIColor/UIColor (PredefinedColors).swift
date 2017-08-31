@@ -12,7 +12,7 @@ import UIKit
 // TODO: Define these colors!
 // Maybe we can generalize how a color should change when it's highlighted, 
 // then we could implement is as a method .highlighted() -> TTColor
-public extension UIColor {
+@objc public extension UIColor {
     public static var highlightedBlue: UIColor {
         return self.blue00A7C4.withAlpha(0.3)
     }
@@ -33,7 +33,7 @@ public extension UIColor {
         return UIColor(fromHex_: "BC213F")
     }
     
-    public static var redE62C4F: UIColor {
+    @objc public static var redE62C4F: UIColor {
         return UIColor(fromHex_: "E62C4F")
     }
     
@@ -53,7 +53,7 @@ public extension UIColor {
         return UIColor(fromHex_: "F8C150")
     }
     
-    public static var green22CCAA: UIColor {
+    @objc public static var green22CCAA: UIColor {
         return UIColor(fromHex_: "22CCAA")
     }
     
@@ -61,7 +61,7 @@ public extension UIColor {
         return UIColor(fromHex_: "21B498")
     }
     
-    public static var blue00A7C4: UIColor {
+    @objc public static var blue00A7C4: UIColor {
         return UIColor(fromHex_: "00A7C4")
     }
     
@@ -89,7 +89,7 @@ public extension UIColor {
         return UIColor(fromHex_: "222222")
     }
     
-    public static var gray555555: UIColor {
+    @objc public static var gray555555: UIColor {
         return UIColor(fromHex_: "555555")
     }
     
@@ -101,7 +101,7 @@ public extension UIColor {
         return UIColor(fromHex_: "CCCCCC")
     }
     
-    public static var grayDDDDDD: UIColor {
+    @objc public static var grayDDDDDD: UIColor {
         return UIColor(fromHex_: "DDDDDD")
     }
     
