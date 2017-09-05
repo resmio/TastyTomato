@@ -103,7 +103,7 @@ private extension TextButton {
         let underlineStyle: NSUnderlineStyle = self.underlined ? .styleSingle : .styleNone
         let attributes: [NSAttributedStringKey : Any] = [
             .foregroundColor: titleColor,
-            .underlineStyle: underlineStyle
+            .underlineStyle: underlineStyle.rawValue
         ]
         
         let attributedTitle: NSAttributedString = NSAttributedString(
