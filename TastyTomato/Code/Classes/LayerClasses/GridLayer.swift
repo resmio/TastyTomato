@@ -501,11 +501,11 @@ private extension GridLayer {
     }
     
     func _width() -> CGFloat {
-        return ((2 * self.gridInsetFactor) + self._zeroedNumOfColumns) * self.columnWidth
+        return ((2 * self.gridInsetFactor) + CGFloat(self._zeroedNumOfColumns)) * self.columnWidth
     }
     
     func _height() -> CGFloat {
-        return ((2 * self.gridInsetFactor) + self._zeroedNumOfRows) * self.rowHeight
+        return ((2 * self.gridInsetFactor) + CGFloat(self._zeroedNumOfRows)) * self.rowHeight
     }
 }
 
@@ -724,14 +724,14 @@ private extension GridLayer {
     private func _purgeRows(downTo numOfRows: UInt) {
         self._purgeLines(where: {
             $0.orientation == .horizontal &&
-            $0._positionIndex.value > (numOfRows - 1)
+            $0._positionIndex.value > (CGFloat(numOfRows) - 1)
         })
     }
     
     private func _purgeColumns(downTo numOfRows: UInt) {
         self._purgeLines(where: {
             $0.orientation == .vertical &&
-            $0._positionIndex.value > (numOfRows - 1)
+            $0._positionIndex.value > (CGFloat(numOfRows) - 1)
         })
     }
     
@@ -851,12 +851,12 @@ private extension GridLayer {
     
     private func _lengthForRow(_ row: LineLayer) -> CGFloat {
         // The layer is a row so its length is linear to the number of columns
-        return (self._zeroedNumOfColumns + self._overlapFactor(for: row)) * self.columnWidth
+        return (CGFloat(self._zeroedNumOfColumns) + self._overlapFactor(for: row)) * self.columnWidth
     }
     
     private func _lengthForColumn(_ column: LineLayer) -> CGFloat {
         // The layer is a column so its length is linear to the number of rows
-        return (self._zeroedNumOfRows + self._overlapFactor(for: column)) * self.rowHeight
+        return (CGFloat(self._zeroedNumOfRows) + self._overlapFactor(for: column)) * self.rowHeight
     }
     
     private func _overlapFactor(for line: LineLayer) -> CGFloat {

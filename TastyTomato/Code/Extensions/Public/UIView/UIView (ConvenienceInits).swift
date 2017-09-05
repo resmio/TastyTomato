@@ -15,7 +15,7 @@ public extension UIView {
         self.init(frame: CGRect(origin: origin))
     }
     
-    public convenience init(size: CGSize) {
+    @objc public convenience init(size: CGSize) {
         self.init(frame: CGRect(size: size))
     }
 }

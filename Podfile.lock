@@ -1,14 +1,14 @@
 PODS:
-  - SignificantSpices (0.1.0):
-    - SignificantSpices/SwiftExtensions (= 0.1.0)
-  - SignificantSpices/SwiftExtensions (0.1.0)
+  - SignificantSpices (0.2.0):
+    - SignificantSpices/SwiftExtensions (= 0.2.0)
+  - SignificantSpices/SwiftExtensions (0.2.0)
 
 DEPENDENCIES:
-  - SignificantSpices (~> 0.1.0)
+  - SignificantSpices (~> 0.2.0)
 
 SPEC CHECKSUMS:
-  SignificantSpices: 20d7bacdef2c0723d9240a21c4f020cf7ea85263
+  SignificantSpices: 27f7764acd6aeade02a433ca3fb159ab11e9d7a3
 
-PODFILE CHECKSUM: 994243251afee1f4ec6c61c39403c705ba2a8fe3
+PODFILE CHECKSUM: bc9e5926516f03ad42e150d2424add06180645fd
 
 COCOAPODS: 1.2.0

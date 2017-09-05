@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UIView {
-    var hCenter: CGFloat {
+    @objc var hCenter: CGFloat {
         get {
             return self._hCenter
         }

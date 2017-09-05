@@ -60,7 +60,7 @@ public extension DropDownTextField {
         self._showDropDown(false, animated: animated)
     }
     
-    func refreshDropDown() {
+    @objc func refreshDropDown() {
         self._refreshDropDown()
     }
 }

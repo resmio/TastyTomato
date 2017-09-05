@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UIViewController {
-    public func embed(_ viewController: UIViewController, into view: UIView? = nil) {
+    @objc public func embed(_ viewController: UIViewController, into view: UIView? = nil) {
         self._embed(
             viewController,
             into: view,

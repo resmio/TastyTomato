@@ -19,7 +19,7 @@ public extension UIImage {
         return self._asOriginal()
     }
     
-    public func asTemplate() -> UIImage {
+    @objc public func asTemplate() -> UIImage {
         return self._asTemplate()
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 
 // MARK: // Public
-public extension UIImage {
+@objc public extension UIImage {
     public var width: CGFloat {
         return self._width
     }

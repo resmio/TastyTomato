@@ -59,7 +59,7 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("logout")
     }
     
-    public static var Offline: MiscIcon {
+    @objc public static var Offline: MiscIcon {
         return MiscIcon.suffixed_("offline")
     }
     

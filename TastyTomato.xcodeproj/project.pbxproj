@@ -45,7 +45,6 @@
 		71FE9A541DB44EEAAE834FFADE502F36 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F3B1F7E20B40701208459D6453448 /* BaseTextField.swift */; };
 		7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */; };
 		800936DF4B2EC8E094396520F049EF4B /* UIView (Area).swift in Sources */ = {isa = PBXBuildFile; fileRef = 15004413C96D0B4A03CF11D63DD6382A /* UIView (Area).swift */; };
-		8264D105E6827ED55184C53860D2BEA6 /* CGFloat (Double).swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F409B87F906C15E71B3E3CC4AF7FD5D /* CGFloat (Double).swift */; };
 		84BB5378D9A297B753E679DBE872A69A /* CGRect (Scaled).swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E438216C6A16D137CD269349331D8F /* CGRect (Scaled).swift */; };
 		8AFD503F0DAAD95A1409CA097774D52E /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA80D821A6A11686B3549A015E50472E /* BaseLabel.swift */; };
 		935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E3659104848DDD678FE37D39AEAF3 /* FilledButton.swift */; };
@@ -54,7 +53,6 @@
 		9A8C438EC913820E7B32A6C0D41EE5C9 /* UIScrollView (ScrollingConvenience).swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F15D92B31E10526F4B2EB07123B63B /* UIScrollView (ScrollingConvenience).swift */; };
 		9EDC676FBB4296DB4C630B5E78379EBE /* UIButton (Color_).swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB2A0C35717ED674361E12EF4C5BAA /* UIButton (Color_).swift */; };
 		A3A6206717A979DB2D2801A8B8D6F67A /* CGSize (Area).swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C46794B3EFC67B1746BE7CB81E0F62 /* CGSize (Area).swift */; };
-		A422EDDD7235FA43C5D7D613B05A6E4C /* CALayer (Wireframe).swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EF75E0BF14F8A2EB6C71230FDD3C13 /* CALayer (Wireframe).swift */; };
 		A43281AE7F5ED34889BF39E8FA61D6F5 /* UIView (OriginLeftRightTopBottom).swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */; };
 		AA722217EC3B0D09B4E3E43283C98EA6 /* CGSize (CGRect).swift in Sources */ = {isa = PBXBuildFile; fileRef = C12824249B7328133328FF9AE5640462 /* CGSize (CGRect).swift */; };
 		AA8512B64D36C58068B677B56BD11C09 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */; };
@@ -76,7 +74,6 @@
 		D9D8EA86DD5DE5CE144ED010353425A3 /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172042EA77DA17224778AA7DB33B6707 /* DropDownTextField.swift */; };
 		DA4FD8E31F32DAE00AFCA3A9CE81C160 /* UIImage (ColoredRect).swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CE20B670A02E13FB4A56517F58E300 /* UIImage (ColoredRect).swift */; };
 		E120F90B264A2076BE355CC29E789218 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */; };
-		E34309DF671D7FA2C30AA0A18BB7C355 /* CAShapeLayer (Wireframe).swift in Sources */ = {isa = PBXBuildFile; fileRef = A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */; };
 		EA4C422FDA23A2D7DDF931EF8A605544 /* TextButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628597189125D75D98E36EA8682ADA2 /* TextButtons.swift */; };
 		EE32ADFFEBCC74C2EA342C807988D3A1 /* UIWindow (SetRootViewController).swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */; };
 		F0ECD62C46A02D8138358FBAB1B38285 /* UIButton (SetTitle).swift in Sources */ = {isa = PBXBuildFile; fileRef = C8889EA70BB1C71DED9F1FB7CFF6B594 /* UIButton (SetTitle).swift */; };
@@ -110,7 +107,6 @@
 		15004413C96D0B4A03CF11D63DD6382A /* UIView (Area).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (Area).swift"; sourceTree = "<group>"; };
 		162CC1F2A974F883E6BD5039B189DF28 /* UIImage (Named_).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Named_).swift"; sourceTree = "<group>"; };
 		172042EA77DA17224778AA7DB33B6707 /* DropDownTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownTextField.swift; sourceTree = "<group>"; };
-		17EF75E0BF14F8A2EB6C71230FDD3C13 /* CALayer (Wireframe).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (Wireframe).swift"; sourceTree = "<group>"; };
 		1A908324B2B4B669470F0A3864A426C6 /* UIImage (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (Scaled).swift"; sourceTree = "<group>"; };
 		1B1032762F44E9AFAAC244949B1E9E97 /* BundleHelper_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleHelper_.swift; sourceTree = "<group>"; };
 		1D1A60CE3AFFC68209D50DF5CC789F23 /* Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,7 +114,6 @@
 		286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (PredefinedColors).swift"; sourceTree = "<group>"; };
 		31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
 		38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint (ConvenienceInits).swift"; sourceTree = "<group>"; };
-		3F409B87F906C15E71B3E3CC4AF7FD5D /* CGFloat (Double).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (Double).swift"; sourceTree = "<group>"; };
 		3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingStatusIcon.swift; sourceTree = "<group>"; };
 		43F15D92B31E10526F4B2EB07123B63B /* UIScrollView (ScrollingConvenience).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView (ScrollingConvenience).swift"; sourceTree = "<group>"; };
@@ -154,7 +149,6 @@
 		9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (WithAlpha).swift"; sourceTree = "<group>"; };
 		9FFB79C0D23FF876BF39D0237EBB0E33 /* GridLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayer.swift; sourceTree = "<group>"; };
 		A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
-		A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer (Wireframe).swift"; sourceTree = "<group>"; };
 		A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (SizeWidthHeight).swift"; sourceTree = "<group>"; };
 		AB90DABCB03ADFB08A162B10C5A52C43 /* Pods-TastyTomatoAbstract-TastyTomatoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomatoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomatoTests/Pods-TastyTomatoAbstract-TastyTomatoTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC280804706B40B958EEE8284ED922F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -252,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */,
-				A9557636019B34DE0DE83581107DE300 /* CAShapeLayer (Wireframe).swift */,
 			);
 			path = CAShapeLayer;
 			sourceTree = "<group>";
@@ -346,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */,
-				17EF75E0BF14F8A2EB6C71230FDD3C13 /* CALayer (Wireframe).swift */,
 			);
 			path = CALayer;
 			sourceTree = "<group>";
@@ -521,7 +513,6 @@
 		9C2EB5437A663A7E7AD05D34C497870E /* CGFloat */ = {
 			isa = PBXGroup;
 			children = (
-				3F409B87F906C15E71B3E3CC4AF7FD5D /* CGFloat (Double).swift */,
 				8E24467D4568DC50711B01B3FBCD8958 /* CGFloat (Int).swift */,
 				5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */,
 			);
@@ -763,16 +754,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = resmio;
 				TargetAttributes = {
 					0E7680876764C3020A8CF0627D6E3476 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					517580651DAB345693709175BEC4073C = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -916,10 +907,7 @@
 				6470F7DF00947E0FBE1900DC3E0DD50B /* BorderLayer.swift in Sources */,
 				F3F0485D7B95F9B516AEC11BC8F5FB46 /* BundleHelper_.swift in Sources */,
 				C2E279A4ED34081F1C983150B1F45061 /* CALayer (ConvenienceInits).swift in Sources */,
-				A422EDDD7235FA43C5D7D613B05A6E4C /* CALayer (Wireframe).swift in Sources */,
 				ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */,
-				E34309DF671D7FA2C30AA0A18BB7C355 /* CAShapeLayer (Wireframe).swift in Sources */,
-				8264D105E6827ED55184C53860D2BEA6 /* CGFloat (Double).swift in Sources */,
 				3DE684BA7159AEA557CDE0F4F775B5A0 /* CGFloat (Int).swift in Sources */,
 				1D182D1BB45EB8B648582A87B8CC2067 /* CGFloat (UInt).swift in Sources */,
 				2F3E948D83ABEF456118C56CC1ADA20E /* CGPoint (ConvenienceInits).swift in Sources */,
@@ -1015,14 +1003,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1046,6 +1040,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1068,7 +1063,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1081,7 +1075,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = resmio.TastyTomatoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1099,7 +1092,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = resmio.TastyTomato;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1112,7 +1104,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = resmio.TastyTomatoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1126,14 +1117,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1164,6 +1161,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
