@@ -7,81 +7,78 @@
 //
 
 import UIKit
+import SignificantSpices
 
 
-// MARK: // Internal
-extension UIView {
+// MARK: // Public
+public extension UIView {
     // Readonly
-    var tempX: CGFloat? {
+    public var tempX: CGFloat? {
         return self._tempX
     }
     
-    var tempY: CGFloat? {
+    public var tempY: CGFloat? {
         return self._tempY
     }
     
-    var tempWidth: CGFloat? {
+    public var tempWidth: CGFloat? {
         return self._tempWidth
     }
     
-    var tempHeight: CGFloat? {
+    public var tempHeight: CGFloat? {
         return self._tempHeight
     }
     
     // Functions
-    func setTempX(_ tempX: CGFloat) {
+    public func setTempX(_ tempX: CGFloat) {
         self._setTempX(tempX)
     }
     
-    func setTempY(_ tempY: CGFloat) {
+    public func setTempY(_ tempY: CGFloat) {
         self._setTempY(tempY)
     }
     
-    func setTempWidth(_ tempWidth: CGFloat) {
+    public func setTempWidth(_ tempWidth: CGFloat) {
         self._setTempWidth(tempWidth)
     }
     
-    func setTempHeight(_ tempHeight: CGFloat) {
+    public func setTempHeight(_ tempHeight: CGFloat) {
         self._setTempHeight(tempHeight)
     }
     
-    func resetX() {
+    public func resetX() {
         self._resetX()
     }
     
-    func resetY() {
+    public func resetY() {
         self._resetY()
     }
     
-    func resetWidth() {
+    public func resetWidth() {
         self._resetWidth()
     }
     
-    func resetHeight() {
+    public func resetHeight() {
         self._resetHeight()
     }
 }
 
+// MARK: // Internal
+// MARK: AssociationOwner
+extension UIView: AssociationOwner {}
+
 
 // MARK: // Private
 // MARK: AssociationKeys
-private struct _AssociationKeys {
-    struct X {
-        static var backupKey: Void?
-        static var tempKey: Void?
-    }
-    struct Y {
-        static var backupKey: Void?
-        static var tempKey: Void?
-    }
-    struct Width {
-        static var backupKey: Void?
-        static var tempKey: Void?
-    }
-    struct Height {
-        static var backupKey: Void?
-        static var tempKey: Void?
-    }
+private extension ValueAssociationKey {
+    static var _XBackup: ValueAssociationKey = ValueAssociationKey()
+    static var _XTemp: ValueAssociationKey = ValueAssociationKey()
+    static var _YBackup: ValueAssociationKey = ValueAssociationKey()
+    static var _YTemp: ValueAssociationKey = ValueAssociationKey()
+    static var _WidthBackup: ValueAssociationKey = ValueAssociationKey()
+    static var _WidthTemp: ValueAssociationKey = ValueAssociationKey()
+    static var _HeightBackup: ValueAssociationKey = ValueAssociationKey()
+    static var _HeightTemp: ValueAssociationKey = ValueAssociationKey()
 }
 
 
@@ -89,73 +86,73 @@ private struct _AssociationKeys {
 private extension UIView {
     var _tempX: CGFloat? {
         get {
-            return self.associatedValue(for: &_AssociationKeys.X.tempKey)
+            return self.associatedValue(for: &._XTemp)
         }
         set(newTempX) {
-            self.associate(newTempX, .strongly, by: &_AssociationKeys.X.tempKey)
+            self.associate(newTempX, by: &._XTemp)
         }
     }
     
     var _originalXBackup: CGFloat? {
         get {
-            return self.associatedValue(for: &_AssociationKeys.X.backupKey)
+            return self.associatedValue(for: &._XBackup)
         }
         set(newOriginalX) {
-            self.associate(newOriginalX, .strongly, by: &_AssociationKeys.X.backupKey)
+            self.associate(newOriginalX, by: &._XBackup)
         }
     }
     
     var _tempY: CGFloat? {
         get {
-            return self.associatedValue(for: &_AssociationKeys.Y.tempKey)
+            return self.associatedValue(for: &._YTemp)
         }
         set(newTempY) {
-            self.associate(newTempY, .strongly, by: &_AssociationKeys.Y.tempKey)
+            self.associate(newTempY, by: &._YTemp)
         }
     }
     
     var _originalYBackup: CGFloat? {
         get {
-            return self.associatedValue(for: &_AssociationKeys.Y.backupKey)
+            return self.associatedValue(for: &._YBackup)
         }
         set(newOriginalY) {
-            self.associate(newOriginalY, .strongly, by: &_AssociationKeys.Y.backupKey)
+            self.associate(newOriginalY, by: &._YBackup)
         }
     }
     
     var _tempWidth: CGFloat? {
         get {
-            return self.associatedValue(for: &_AssociationKeys.Width.tempKey)
+            return self.associatedValue(for: &._WidthTemp)
         }
         set(newTempWidth) {
-            self.associate(newTempWidth, .strongly, by: &_AssociationKeys.Width.tempKey)
+            self.associate(newTempWidth, by: &._WidthTemp)
         }
     }
     
     var _originalWidthBackup: CGFloat? {
         get {
-            return self.associatedValue(for: &_AssociationKeys.Width.backupKey)
+            return self.associatedValue(for: &._WidthBackup)
         }
         set(newOriginalWidth) {
-            self.associate(newOriginalWidth, .strongly, by: &_AssociationKeys.Width.backupKey)
+            self.associate(newOriginalWidth, by: &._WidthBackup)
         }
     }
     
     var _tempHeight: CGFloat? {
         get {
-            return self.associatedValue(for: &_AssociationKeys.Height.tempKey)
+            return self.associatedValue(for: &._HeightTemp)
         }
         set(newTempHeight) {
-            self.associate(newTempHeight, .strongly, by: &_AssociationKeys.Height.tempKey)
+            self.associate(newTempHeight, by: &._HeightTemp)
         }
     }
     
     var _originalHeightBackup: CGFloat? {
         get {
-            return self.associatedValue(for: &_AssociationKeys.Height.backupKey)
+            return self.associatedValue(for: &._HeightBackup)
         }
         set(newOriginalHeight) {
-            self.associate(newOriginalHeight, .strongly, by: &_AssociationKeys.Height.backupKey)
+            self.associate(newOriginalHeight, by: &._HeightBackup)
         }
     }
 }
