@@ -710,7 +710,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6421144D3E84191201035A01CAD17A8F /* Build configuration list for PBXNativeTarget "TastyTomatoTests" */;
 			buildPhases = (
-				2ACFE987931A07C4BF34B248AA5568EC /* [CP] Check Pods Manifest.lock */,
+				94F67F012D3977A3749ACBCD08185BC7 /* [CP] Check Pods Manifest.lock */,
 				35B3724FC1ADEC6AA7F2193760DA11CA /* Sources */,
 				630DD274FF90B1048DD886A760489593 /* Frameworks */,
 				94181FE122095712F9F3E596F62187C8 /* Resources */,
@@ -731,7 +731,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE1942CC76C78C04376997A22C1DDE29 /* Build configuration list for PBXNativeTarget "TastyTomato" */;
 			buildPhases = (
-				A8258784A80F81575BE6D970D747E16D /* [CP] Check Pods Manifest.lock */,
+				049CE6918E297D0A10964AD1AD5BD406 /* [CP] Check Pods Manifest.lock */,
 				F7B853C27FD687858316219E49A39D47 /* Sources */,
 				1DF08CF9FA90E2D2EC18047F04A5D21C /* Frameworks */,
 				8A261083153DF6C4443C8AF745DFF0EC /* Headers */,
@@ -808,6 +808,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		049CE6918E297D0A10964AD1AD5BD406 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TastyTomatoAbstract-TastyTomato-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		26891839DE5DE45F984B06E80F5F0076 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -838,49 +856,40 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2ACFE987931A07C4BF34B248AA5568EC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		8867512E05BFE2DA8FAB2FA321A4D9EE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomatoTests/Pods-TastyTomatoAbstract-TastyTomatoTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SignificantSpices/SignificantSpices.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SignificantSpices.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomatoTests/Pods-TastyTomatoAbstract-TastyTomatoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A8258784A80F81575BE6D970D747E16D /* [CP] Check Pods Manifest.lock */ = {
+		94F67F012D3977A3749ACBCD08185BC7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TastyTomatoAbstract-TastyTomatoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
