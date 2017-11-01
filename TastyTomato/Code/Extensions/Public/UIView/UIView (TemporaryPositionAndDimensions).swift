@@ -10,54 +10,99 @@ import UIKit
 import SignificantSpices
 
 
+/**
+ This extension provides functionality to temporarily change the position and dimensions
+ of Views.  You might for example use it to reduce the height of a UITextView, so it is
+ not hidden beneath the keyboard, or to move the complete window upwards, so a focussed
+ UITextField is not hidden beneath the keyboard.  The main advantage of using this
+ extension is the fact that you don't have to backup the original position/dimensions
+ in your viewcontroller.  Instead, it is completely encapsulated in the View.
+ */
+
 // MARK: // Public
 public extension UIView {
     // Readonly
+    /**
+     The temporary x-position of the view.  nil, if no temporary x is set.
+     */
     public var tempX: CGFloat? {
         return self._tempX
     }
     
+    /**
+     The temporary y-position of the view.  nil, if no temporary y is set.
+     */
     public var tempY: CGFloat? {
         return self._tempY
     }
     
+    /**
+     The temporary width of the view.  nil, if no temporary width is set.
+     */
     public var tempWidth: CGFloat? {
         return self._tempWidth
     }
     
+    /**
+     The temporary height of the view.  nil, if no temporary height is set.
+     */
     public var tempHeight: CGFloat? {
         return self._tempHeight
     }
     
     // Functions
+    /**
+     Sets the temporary x position of the view.
+     */
     public func setTempX(_ tempX: CGFloat) {
         self._setTempX(tempX)
     }
     
+    /**
+     Sets the temporary y position of the view.
+     */
     public func setTempY(_ tempY: CGFloat) {
         self._setTempY(tempY)
     }
     
+    /**
+     Sets the temporary width of the view.
+     */
     public func setTempWidth(_ tempWidth: CGFloat) {
         self._setTempWidth(tempWidth)
     }
     
+    /**
+     Sets the temporary height of the view.
+     */
     public func setTempHeight(_ tempHeight: CGFloat) {
         self._setTempHeight(tempHeight)
     }
     
+    /**
+     Resets the x-position of the view to its original value.
+     */
     public func resetX() {
         self._resetX()
     }
     
+    /**
+     Resets the y-position of the view to its original value.
+     */
     public func resetY() {
         self._resetY()
     }
     
+    /**
+     Resets the width of the view to its original value.
+     */
     public func resetWidth() {
         self._resetWidth()
     }
     
+    /**
+     Resets the height of the view to its original value.
+     */
     public func resetHeight() {
         self._resetHeight()
     }
