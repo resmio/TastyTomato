@@ -537,22 +537,28 @@ private extension GridLayer {
 }
 
 
-// MARK: - LineLayer Extension
-// MARK: Virtual Properties
-private var _positionIndexKey: Void?
+// MARK: - LineLayer
+// MARK: AssociationKeys
+private extension ValueAssociationKey {
+    static var _positionIndex: ValueAssociationKey = ValueAssociationKey()
+}
+
+
+// MARK: Virtual Property
+extension LineLayer: AssociationOwner {}
 private extension LineLayer {
     var _positionIndex: _PositionIndex {
         get {
-            return self.associatedValue_(for: &_positionIndexKey)!
+            return self.associatedValue(for: &._positionIndex)!
         }
         set(newPositionIndex) {
-            self.associate_(newPositionIndex, .strongly, by: &_positionIndexKey)
+            self.associate(newPositionIndex, by: &._positionIndex)
         }
     }
 }
 
 
-// MARK: - _PositionIndex Struct
+// MARK: - _PositionIndex
 // MARK: Struct Declaration
 private struct _PositionIndex {
     var value: CGFloat

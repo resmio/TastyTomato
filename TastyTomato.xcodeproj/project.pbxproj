@@ -43,6 +43,7 @@
 		6B57EDA175E804981EC3D12739F147AB /* UIImage (WidthHeight).swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */; };
 		70BE5C6357A3D70B89A63BD4EF3125FA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E3224E8288CDDF70618B7A04C8C986 /* RootViewController.swift */; };
 		71FE9A541DB44EEAAE834FFADE502F36 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F3B1F7E20B40701208459D6453448 /* BaseTextField.swift */; };
+		7B88BA2CAAD9CE534ACC63C4E654901C /* UIView (TemporaryPositionAndDimensions).swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281FC9CC0B750319F7F7A568E1BE01F /* UIView (TemporaryPositionAndDimensions).swift */; };
 		7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */; };
 		800936DF4B2EC8E094396520F049EF4B /* UIView (Area).swift in Sources */ = {isa = PBXBuildFile; fileRef = 15004413C96D0B4A03CF11D63DD6382A /* UIView (Area).swift */; };
 		84BB5378D9A297B753E679DBE872A69A /* CGRect (Scaled).swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E438216C6A16D137CD269349331D8F /* CGRect (Scaled).swift */; };
@@ -58,7 +59,6 @@
 		AA8512B64D36C58068B677B56BD11C09 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */; };
 		AC9D9866E065E12DCB2AD07AC6627022 /* TastyTomato.h in Headers */ = {isa = PBXBuildFile; fileRef = 083386230915027A1693F0088C82312B /* TastyTomato.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */; };
-		AE20A1758B460EF322D1D4FFBCFE0923 /* NSObject (Associations).swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */; };
 		AF53E089D7041EDFD9F90E22C958AD7E /* ShortcutBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */; };
 		B29BDBA0023131D713E51F8D95B96ADA /* UITableView (reloadSoftly).swift in Sources */ = {isa = PBXBuildFile; fileRef = B242DBFE7AC263A838F81DB66F8D7280 /* UITableView (reloadSoftly).swift */; };
 		B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */; };
@@ -122,7 +122,6 @@
 		49F2EE287EFE2E608FE430542E60BF82 /* LineLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
 		4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow (SetRootViewController).swift"; sourceTree = "<group>"; };
 		4E9BC583DBAE7511BCDDF7E97D2E6F30 /* BorderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
-		4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject (Associations).swift"; sourceTree = "<group>"; };
 		502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscIcon.swift; sourceTree = "<group>"; };
 		524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResmioLogo.swift; sourceTree = "<group>"; };
 		580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (ConvenienceInits).swift"; sourceTree = "<group>"; };
@@ -130,6 +129,7 @@
 		5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (UInt).swift"; sourceTree = "<group>"; };
 		5DCC82CB1A56D60A4DF981960B5A667C /* BaseTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextView.swift; sourceTree = "<group>"; };
 		617BAD163949C9A08DE92862E903C2A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6281FC9CC0B750319F7F7A568E1BE01F /* UIView (TemporaryPositionAndDimensions).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView (TemporaryPositionAndDimensions).swift"; sourceTree = "<group>"; };
 		64B9F08EDDB7CC443D1D2806BB6F6C5E /* ZoomToPointScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomToPointScrollView.swift; sourceTree = "<group>"; };
 		77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscImage.swift; sourceTree = "<group>"; };
 		7DAB831517E3851F87B951BE6881C71B /* UIView (BarButtonItem).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (BarButtonItem).swift"; sourceTree = "<group>"; };
@@ -327,14 +327,6 @@
 			path = Public;
 			sourceTree = "<group>";
 		};
-		2D68824CDAB38D447CAFCD441B653B74 /* NSObject */ = {
-			isa = PBXGroup;
-			children = (
-				4EAD31BE57E82E0D0DBC6AAD10771C14 /* NSObject (Associations).swift */,
-			);
-			path = NSObject;
-			sourceTree = "<group>";
-		};
 		323024B9C32DBCD16579A5D0E1898452 /* CALayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,7 +363,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA9ED81CA9819C760F0522AF4297510 /* NSLocalizedString */,
-				2D68824CDAB38D447CAFCD441B653B74 /* NSObject */,
 				BC2EA83A70843FD6A5BD090CDDB4F4ED /* UIButton */,
 				246C935C9C014C4BD5D47F71877750B3 /* UIColor */,
 				DB5E54BA08F5DE8E909C7868A0EA78F0 /* UIImage */,
@@ -529,6 +520,7 @@
 				CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */,
 				978EA7B188BA3CCA15536BA105B324A5 /* UIView (ScaleByFactor).swift */,
 				A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */,
+				6281FC9CC0B750319F7F7A568E1BE01F /* UIView (TemporaryPositionAndDimensions).swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -937,7 +929,6 @@
 				2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */,
 				B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */,
 				26C9967D3E82CB12CD88A26329600F6E /* NSL_.swift in Sources */,
-				AE20A1758B460EF322D1D4FFBCFE0923 /* NSObject (Associations).swift in Sources */,
 				D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */,
 				70BE5C6357A3D70B89A63BD4EF3125FA /* RootViewController.swift in Sources */,
 				AF53E089D7041EDFD9F90E22C958AD7E /* ShortcutBar.swift in Sources */,
@@ -970,6 +961,7 @@
 				A43281AE7F5ED34889BF39E8FA61D6F5 /* UIView (OriginLeftRightTopBottom).swift in Sources */,
 				5A17A3E7FF74BF8938A74A135969B1CE /* UIView (ScaleByFactor).swift in Sources */,
 				016794C2166A998F5DCD79812840EF65 /* UIView (SizeWidthHeight).swift in Sources */,
+				7B88BA2CAAD9CE534ACC63C4E654901C /* UIView (TemporaryPositionAndDimensions).swift in Sources */,
 				C80A75D4A90ACE4BA90325467515CA79 /* UIViewController (Embedding).swift in Sources */,
 				EE32ADFFEBCC74C2EA342C807988D3A1 /* UIWindow (SetRootViewController).swift in Sources */,
 				5E57C795BBC2571CF69566AAED10332A /* ZoomToPointScrollView.swift in Sources */,

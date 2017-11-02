@@ -1,14 +1,20 @@
 PODS:
-  - SignificantSpices (0.2.0):
-    - SignificantSpices/SwiftExtensions (= 0.2.0)
-  - SignificantSpices/SwiftExtensions (0.2.0)
+  - SignificantSpices (0.3.0):
+    - SignificantSpices/ObjectiveCExtensions (= 0.3.0)
+    - SignificantSpices/SwiftExtensions (= 0.3.0)
+  - SignificantSpices/ObjectiveCExtensions (0.3.0)
+  - SignificantSpices/SwiftExtensions (0.3.0)
 
 DEPENDENCIES:
-  - SignificantSpices (~> 0.2.0)
+  - SignificantSpices (from `../SignificantSpices`)
+
+EXTERNAL SOURCES:
+  SignificantSpices:
+    :path: ../SignificantSpices
 
 SPEC CHECKSUMS:
-  SignificantSpices: 27f7764acd6aeade02a433ca3fb159ab11e9d7a3
+  SignificantSpices: 73219d9652c76d7f4117470407973e48f4b14482
 
-PODFILE CHECKSUM: bc9e5926516f03ad42e150d2424add06180645fd
+PODFILE CHECKSUM: c313d191bb71811acd4d1a4ca597ec43b7a4b6d7
 
 COCOAPODS: 1.3.1
