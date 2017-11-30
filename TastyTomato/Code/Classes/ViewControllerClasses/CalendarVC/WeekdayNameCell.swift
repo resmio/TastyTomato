@@ -37,12 +37,15 @@ class WeekdayNameCell: UICollectionViewCell {
         self._addSubviews()
     }
     
+    // Static Variables
+    static let reuseIdentifier: String = "WeekdayNameCellReuseIdentifier"
+    
     // Private Lazy Variables
     fileprivate lazy var _titleLabel: UILabel = self._createTitleLabel()
     
     // Layout Overrides
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return self._sizeThatFits(size)
+    override func layoutSubviews() {
+        self._layoutSubviews()
     }
 }
 
@@ -52,7 +55,8 @@ class WeekdayNameCell: UICollectionViewCell {
 private extension WeekdayNameCell {
     func _createTitleLabel() -> UILabel {
         let titleLabel: UILabel = UILabel()
-        titleLabel.text = "Mon"
+        titleLabel.text = "Mon" // FIXME: Remove
+        titleLabel.textAlignment = .center
         return titleLabel
     }
 }
@@ -60,12 +64,9 @@ private extension WeekdayNameCell {
 
 // MARK: Layout Override Implementations
 private extension WeekdayNameCell {
-    func _sizeThatFits(_ size: CGSize) -> CGSize {
-        let titleLabel: UILabel = self._titleLabel
-        titleLabel.sizeToFit()
-        let width: CGFloat = max(size.width, titleLabel.width)
-        let height: CGFloat = max(size.height, titleLabel.height)
-        return CGSize(width: width, height: height)
+    func _layoutSubviews() {
+        super.layoutSubviews()
+        self._titleLabel.frame = self.bounds
     }
 }
 
@@ -74,5 +75,9 @@ private extension WeekdayNameCell {
 private extension WeekdayNameCell {
     func _addSubviews() {
         self.contentView.addSubview(self._titleLabel)
+        
+        self.contentView.layer.cornerRadius = 5 // FIXME: Remove
+        self.contentView.layer.borderColor = UIColor.black.cgColor // FIXME: Remove
+        self.contentView.layer.borderWidth = 1 // FIXME: Remove
     }
 }

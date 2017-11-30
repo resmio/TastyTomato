@@ -55,7 +55,6 @@ class CalendarView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         self._collectionView.frame = self.bounds
-        
     }
 }
 
@@ -74,7 +73,12 @@ extension CalendarView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell: WeekdayNameCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: WeekdayNameCell.reuseIdentifier,
+            for: indexPath
+        ) as! WeekdayNameCell
+        cell.title = "Mon"
+        return cell
     }
 }
 
@@ -87,8 +91,14 @@ private extension CalendarView {
             frame: .zero,
             collectionViewLayout: self._collectionViewLayout
         )
+        collectionView.backgroundColor = .white
+        
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(
+            WeekdayNameCell.self,
+            forCellWithReuseIdentifier: WeekdayNameCell.reuseIdentifier
+        )
         return collectionView
     }
 }
