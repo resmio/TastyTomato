@@ -60,6 +60,7 @@
 		AC9D9866E065E12DCB2AD07AC6627022 /* TastyTomato.h in Headers */ = {isa = PBXBuildFile; fileRef = 083386230915027A1693F0088C82312B /* TastyTomato.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */; };
 		AF53E089D7041EDFD9F90E22C958AD7E /* ShortcutBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */; };
+		AFEF9052555EB3B937D78D66688A860E /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8098C615D10591C19A27B276D4785DFB /* CalendarVC.swift */; };
 		B29BDBA0023131D713E51F8D95B96ADA /* UITableView (reloadSoftly).swift in Sources */ = {isa = PBXBuildFile; fileRef = B242DBFE7AC263A838F81DB66F8D7280 /* UITableView (reloadSoftly).swift */; };
 		B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */; };
 		BC76266AA1CF72ADF61A38D4EDB8C2A7 /* Pods_TastyTomatoAbstract_TastyTomato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7FFA17FC0A5D6DF5FAF4475A4BE503 /* Pods_TastyTomatoAbstract_TastyTomato.framework */; };
@@ -134,6 +135,7 @@
 		77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscImage.swift; sourceTree = "<group>"; };
 		7DAB831517E3851F87B951BE6881C71B /* UIView (BarButtonItem).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (BarButtonItem).swift"; sourceTree = "<group>"; };
 		7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (WidthHeight).swift"; sourceTree = "<group>"; };
+		8098C615D10591C19A27B276D4785DFB /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		88C46794B3EFC67B1746BE7CB81E0F62 /* CGSize (Area).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (Area).swift"; sourceTree = "<group>"; };
 		8A98E8296B3BD2970706F8D3BE1F63CB /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
@@ -260,6 +262,14 @@
 				D7B5FB8B737A9AC146C8A6F988388264 /* OperatorOverloads */,
 			);
 			path = Code;
+			sourceTree = "<group>";
+		};
+		18C74A3382403F43E141517ABB23D673 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				05AB4A6B3512A21991AB80642E750A3A /* RootViewController.swift */,
+			);
+			path = RootViewController;
 			sourceTree = "<group>";
 		};
 		1A2AF345D99AE2F606C662E97012958A /* LabelClasses */ = {
@@ -502,21 +512,6 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
-		18C74A3382403F43E141517ABB23D673 /* RootViewController */ = {
-			isa = PBXGroup;
-			children = (
-				05AB4A6B3512A21991AB80642E750A3A /* RootViewController.swift */,
-			);
-			path = RootViewController;
-			sourceTree = "<group>";
-		};
-		D6F531DA408846DA32C79A2C5C4A7CB1 /* CalendarVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CalendarVC;
-			sourceTree = "<group>";
-		};
 		9C2EB5437A663A7E7AD05D34C497870E /* CGFloat */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +633,14 @@
 				1B1032762F44E9AFAAC244949B1E9E97 /* BundleHelper_.swift */,
 			);
 			path = Meta;
+			sourceTree = "<group>";
+		};
+		D6F531DA408846DA32C79A2C5C4A7CB1 /* CalendarVC */ = {
+			isa = PBXGroup;
+			children = (
+				8098C615D10591C19A27B276D4785DFB /* CalendarVC.swift */,
+			);
+			path = CalendarVC;
 			sourceTree = "<group>";
 		};
 		D7B5FB8B737A9AC146C8A6F988388264 /* OperatorOverloads */ = {
@@ -953,6 +956,7 @@
 				AA722217EC3B0D09B4E3E43283C98EA6 /* CGSize (CGRect).swift in Sources */,
 				5C8AA03C6C4B4DCDAA601D7775D8EA1A /* CGSize (ConvenienceInits).swift in Sources */,
 				07D9391000BFA486E44C4497A1788C6A /* CGSize (Scaled).swift in Sources */,
+				AFEF9052555EB3B937D78D66688A860E /* CalendarVC.swift in Sources */,
 				D9D8EA86DD5DE5CE144ED010353425A3 /* DropDownTextField.swift in Sources */,
 				935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */,
 				01903A7870C59E45E2071D68688B64AE /* FilledButtons.swift in Sources */,
