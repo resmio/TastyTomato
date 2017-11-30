@@ -724,6 +724,7 @@
 			buildConfigurationList = FE1942CC76C78C04376997A22C1DDE29 /* Build configuration list for PBXNativeTarget "TastyTomato" */;
 			buildPhases = (
 				049CE6918E297D0A10964AD1AD5BD406 /* [CP] Check Pods Manifest.lock */,
+				3F7513ACB1FE72698EB7D4EEBD82911D /* [Custom] Generate Warnings from TODOs/FIXMEs/etc */,
 				F7B853C27FD687858316219E49A39D47 /* Sources */,
 				1DF08CF9FA90E2D2EC18047F04A5D21C /* Frameworks */,
 				8A261083153DF6C4443C8AF745DFF0EC /* Headers */,
@@ -847,6 +848,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3F7513ACB1FE72698EB7D4EEBD82911D /* [Custom] Generate Warnings from TODOs/FIXMEs/etc */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[Custom] Generate Warnings from TODOs/FIXMEs/etc";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"\\/\\/ ERROR:|\\/\\/ WARNING:|\\/\\/ TODO:|\\/\\/ FIXME:|\\/\\/ \\?\\?\\?:|\\/\\/ \\!\\!\\!:\"\nfind \"${SRCROOT}/TastyTomato/\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
 		};
 		8867512E05BFE2DA8FAB2FA321A4D9EE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
