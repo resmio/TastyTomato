@@ -10,5 +10,28 @@ import UIKit
 
 
 // MARK: // Public
+// MARK: - CalendarVCDelegate
+public protocol CalendarVCDelegate: class {
+    func didSelectDate(_ date: Date, on calendarVC: CalendarVC)
+}
+
+
+// MARK: - CalendarVC
+// MARK: Interface
+public extension CalendarVC {
+    var delegate: CalendarVCDelegate? {
+        get {
+            return self._delegate
+        }
+        set(newDelegate) {
+            self._delegate = newDelegate
+        }
+    }
+}
+
+
 // MARK: Class Declaration
-public class CalendarVC: UIViewController {}
+public class CalendarVC: UIViewController {
+    // Private Weak Variables
+    fileprivate weak var _delegate: CalendarVCDelegate?
+}
