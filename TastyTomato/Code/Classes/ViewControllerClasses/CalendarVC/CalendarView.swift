@@ -47,14 +47,11 @@ class CalendarView: UIView {
     
     // Private Lazy Variables
     fileprivate lazy var _collectionView: UICollectionView = self._createCollectionView()
-    
-    // Private Variables
-    fileprivate var _collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+    fileprivate lazy var _collectionViewLayout: UICollectionViewFlowLayout = self._createCollectionViewLayout()
     
     // Layout Overrides
     override func layoutSubviews() {
-        super.layoutSubviews()
-        self._collectionView.frame = self.bounds
+        self._layoutSubviews()
     }
 }
 
@@ -93,6 +90,7 @@ private extension CalendarView {
         )
         collectionView.backgroundColor = .white
         
+        collectionView.isScrollEnabled = false
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(
@@ -100,6 +98,39 @@ private extension CalendarView {
             forCellWithReuseIdentifier: WeekdayNameCell.reuseIdentifier
         )
         return collectionView
+    }
+    
+    func _createCollectionViewLayout() -> UICollectionViewFlowLayout {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        return layout
+    }
+}
+
+
+// MARK: Layout Override Implementations
+private extension CalendarView {
+    func _layoutSubviews() {
+        super.layoutSubviews()
+        
+        let maxPossibleItemWidth: CGFloat = self.width / 7
+        let maxPossibleItemHeight: CGFloat = self.height / 6
+        let itemSideLength: CGFloat = min(maxPossibleItemWidth, maxPossibleItemHeight)
+        
+        let layout: UICollectionViewFlowLayout = self._collectionViewLayout
+        let oldItemSize: CGSize = layout.itemSize
+        let newItemSize: CGSize = CGSize(width: itemSideLength, height: itemSideLength)
+        layout.itemSize = newItemSize
+        if oldItemSize != newItemSize {
+            layout.invalidateLayout()
+        }
+        
+        let collectionView: UICollectionView = self._collectionView
+        let collectionViewWidth: CGFloat = itemSideLength * 7
+        let collectionViewHeight: CGFloat = itemSideLength * 6
+        collectionView.size = CGSize(width: collectionViewWidth, height: collectionViewHeight)
+        collectionView.centerInSuperview()
     }
 }
 
