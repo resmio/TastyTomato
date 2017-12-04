@@ -38,6 +38,7 @@
 		5E57C795BBC2571CF69566AAED10332A /* ZoomToPointScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9F08EDDB7CC443D1D2806BB6F6C5E /* ZoomToPointScrollView.swift */; };
 		5FBBB08F482C2EF8829D937D432DB0AA /* UIImage (RenderingModes).swift in Sources */ = {isa = PBXBuildFile; fileRef = F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */; };
 		6470F7DF00947E0FBE1900DC3E0DD50B /* BorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BC583DBAE7511BCDDF7E97D2E6F30 /* BorderLayer.swift */; };
+		65F0CED14F5601098CE2CC8796241477 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD814FC55DAC00A9D6B71B510D55E49 /* CalendarHeaderView.swift */; };
 		6845BD2DA1CBDE9DE2EA67D64795A39D /* CGRect (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F913362CD789B7370C90D4A856950CF /* CGRect (ConvenienceInits).swift */; };
 		693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B490047206C221157A2991EFF79E0 /* MetaImage.swift */; };
 		6B57EDA175E804981EC3D12739F147AB /* UIImage (WidthHeight).swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */; };
@@ -183,6 +184,7 @@
 		E628597189125D75D98E36EA8682ADA2 /* TextButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButtons.swift; sourceTree = "<group>"; };
 		EA7FFA17FC0A5D6DF5FAF4475A4BE503 /* Pods_TastyTomatoAbstract_TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomatoAbstract_TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EABA286658F68C0C07202547FFEF1BC7 /* Pods_TastyTomatoAbstract_TastyTomatoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomatoAbstract_TastyTomatoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDD814FC55DAC00A9D6B71B510D55E49 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		F10CB374E45CF24A4F503F48FD457BD8 /* Pods-TastyTomatoAbstract-TastyTomato.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomato.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato.debug.xcconfig"; sourceTree = "<group>"; };
 		F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (RenderingModes).swift"; sourceTree = "<group>"; };
@@ -643,6 +645,7 @@
 			isa = PBXGroup;
 			children = (
 				930AD36178D8D1DE2BBCFC79532B52C2 /* CalendarDaysView.swift */,
+				EDD814FC55DAC00A9D6B71B510D55E49 /* CalendarHeaderView.swift */,
 				8098C615D10591C19A27B276D4785DFB /* CalendarVC.swift */,
 				20C7406CAE56905E1010E99013960C06 /* WeekdayNameCell.swift */,
 			);
@@ -963,6 +966,7 @@
 				5C8AA03C6C4B4DCDAA601D7775D8EA1A /* CGSize (ConvenienceInits).swift in Sources */,
 				07D9391000BFA486E44C4497A1788C6A /* CGSize (Scaled).swift in Sources */,
 				A31B237A1B09363250352EDA89688036 /* CalendarDaysView.swift in Sources */,
+				65F0CED14F5601098CE2CC8796241477 /* CalendarHeaderView.swift in Sources */,
 				AFEF9052555EB3B937D78D66688A860E /* CalendarVC.swift in Sources */,
 				D9D8EA86DD5DE5CE144ED010353425A3 /* DropDownTextField.swift in Sources */,
 				935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */,
