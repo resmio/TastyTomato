@@ -87,8 +87,7 @@ private extension CalendarDaysView {
             frame: .zero,
             collectionViewLayout: self._collectionViewLayout
         )
-        collectionView.backgroundColor = .white
-        
+        collectionView.backgroundColor = .clear
         collectionView.isScrollEnabled = false
         collectionView.delegate = self
         collectionView.dataSource = self

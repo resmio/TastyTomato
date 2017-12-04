@@ -83,6 +83,7 @@ extension CalendarVC: UIPageViewControllerDataSource {
 private extension CalendarVC {
     func _createCalendarVCView() -> CalendarVCView {
         let calendarVCView: CalendarVCView = CalendarVCView()
+        calendarVCView.backgroundColor = .white
         calendarVCView.headerView.delegate = self
         return calendarVCView
     }
@@ -93,6 +94,15 @@ private extension CalendarVC {
             navigationOrientation: .horizontal,
             options: nil
         )
+        
+        let initialVC: CalendarDaysVC = CalendarDaysVC()
+        pageVC.setViewControllers(
+            [initialVC],
+            direction: .forward,
+            animated: false,
+            completion: nil
+        )
+        
         pageVC.delegate = self
         pageVC.dataSource = self
         return pageVC

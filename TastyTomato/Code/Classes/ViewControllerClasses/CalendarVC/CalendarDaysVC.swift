@@ -20,6 +20,11 @@ protocol CalendarDaysVCDelegate: class {}
 class CalendarDaysVC: UIViewController {
     // Private Lazy Variables
     fileprivate lazy var _calendarDaysView: CalendarDaysView = self._createCalendarDaysView()
+    
+    // Layout Overrides
+    override func loadView() {
+        self.view = self._calendarDaysView
+    }
 }
 
 

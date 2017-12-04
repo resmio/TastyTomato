@@ -36,14 +36,12 @@ class CalendarHeaderView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self._addSubviews()
-        self.backgroundColor = .white
     }
     
     // Override Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         self._addSubviews()
-        self.backgroundColor = .white
     }
     
     // Private Weak Variables
@@ -103,7 +101,6 @@ private extension CalendarHeaderView {
     func _createDayNamesView() -> UIView {
         let dayNamesView: UIView = UIView()
         self._dayNameLabels.forEach(dayNamesView.addSubview)
-        dayNamesView.backgroundColor = .white
         return dayNamesView
     }
     
