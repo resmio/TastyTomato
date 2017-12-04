@@ -55,8 +55,8 @@ class DateCell: UICollectionViewCell {
 private extension DateCell {
     func _createLabel() -> UILabel {
         let label: UILabel = UILabel()
+        label.textAlignment = .center
         label.text = "31"
-        label.sizeToFit()
         return label
     }
 }
