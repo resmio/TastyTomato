@@ -17,12 +17,14 @@ class CalendarHeaderView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self._addSubviews()
+        self.backgroundColor = .white
     }
     
     // Override Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         self._addSubviews()
+        self.backgroundColor = .white
     }
     
     // Private Lazy Variables
@@ -44,7 +46,8 @@ class CalendarHeaderView: UIView {
 private extension CalendarHeaderView {
     func _createLeftArrowButton() -> UIButton {
         let leftArrowButton: UIButton = UIButton(type: .system)
-        leftArrowButton.setImage(ArrowIcon.Left.asTemplate(), for: .normal)
+        leftArrowButton.tintColor = .black
+        leftArrowButton.setImage(ArrowIcon.Left.asTemplate().scaledByFactor(0.8), for: .normal)
         leftArrowButton.contentMode = .scaleAspectFit
         return leftArrowButton
     }
@@ -52,13 +55,15 @@ private extension CalendarHeaderView {
     func _createMonthNameYearLabel() -> UILabel {
         let monthNameYearLabel: UILabel = UILabel()
         monthNameYearLabel.text = "Monthname Year"
+        monthNameYearLabel.textAlignment = .center
         monthNameYearLabel.adjustsFontSizeToFitWidth = true
         return monthNameYearLabel
     }
     
     func _createRightArrowButton() -> UIButton {
         let rightArrowButton: UIButton = UIButton(type: .system)
-        rightArrowButton.setImage(ArrowIcon.Right.asTemplate(), for: .normal)
+        rightArrowButton.tintColor = .black
+        rightArrowButton.setImage(ArrowIcon.Right.asTemplate().scaledByFactor(0.8), for: .normal)
         rightArrowButton.contentMode = .scaleAspectFit
         return rightArrowButton
     }
@@ -66,12 +71,14 @@ private extension CalendarHeaderView {
     func _createDayNamesView() -> UIView {
         let dayNamesView: UIView = UIView()
         self._dayNameLabels.forEach(dayNamesView.addSubview)
+        dayNamesView.backgroundColor = .white
         return dayNamesView
     }
     
     func _createDayNameLabels() -> [UILabel] {
         return Calendar.current.veryShortWeekdaySymbols.map({
             let dayNameLabel: UILabel = UILabel()
+            dayNameLabel.textAlignment = .center
             dayNameLabel.text = $0
             return dayNameLabel
         })

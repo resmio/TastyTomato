@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Internal
 extension CalendarVCView {
-    var headerView: UIView? {
+    var headerView: CalendarHeaderView? {
         get {
             return self._headerView
         }
@@ -20,7 +20,7 @@ extension CalendarVCView {
         }
     }
     
-    var pageVCView: UIView? {
+    var pageVCView: CalendarDaysView? {
         get {
             return self._pageVCView
         }
@@ -34,8 +34,8 @@ extension CalendarVCView {
 // MARK: Class Declaration
 class CalendarVCView: UIView {
     // Private Variables
-    fileprivate var __headerView: UIView?
-    fileprivate var __pageVCView: UIView?
+    fileprivate var __headerView: CalendarHeaderView?
+    fileprivate var __pageVCView: CalendarDaysView?
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -51,30 +51,30 @@ class CalendarVCView: UIView {
 // MARK: // Private
 // MARK: Computed Variables
 private extension CalendarVCView {
-    var _headerView: UIView? {
+    var _headerView: CalendarHeaderView? {
         get {
             return self.__headerView
         }
         set(newHeaderView) {
-            let oldHeaderView: UIView? = self.__headerView
+            let oldHeaderView: CalendarHeaderView? = self.__headerView
             guard newHeaderView != oldHeaderView else { return }
             oldHeaderView?.removeFromSuperview()
-            if let newHeaderView: UIView = newHeaderView {
+            if let newHeaderView: CalendarHeaderView = newHeaderView {
                 self.addSubview(newHeaderView)
             }
             self.__headerView = newHeaderView
         }
     }
     
-    var _pageVCView: UIView? {
+    var _pageVCView: CalendarDaysView? {
         get {
             return self.__pageVCView
         }
         set(newPageVCView) {
-            let oldPageVCView: UIView? = self.__pageVCView
+            let oldPageVCView: CalendarDaysView? = self.__pageVCView
             guard newPageVCView != oldPageVCView else { return }
             oldPageVCView?.removeFromSuperview()
-            if let newPageVCView: UIView = newPageVCView {
+            if let newPageVCView: CalendarDaysView = newPageVCView {
                 self.addSubview(newPageVCView)
             }
             self.__pageVCView = newPageVCView
@@ -88,9 +88,12 @@ private extension CalendarVCView {
     func _layoutSubviews() {
         super.layoutSubviews()
         
-        let width: CGFloat = self.width
-        let heightUnit: CGFloat = self.height / 8
-        let headerViewHeight: CGFloat = 2 * heightUnit
+        let size: CGSize = self.sizeThatFits(self.size)
+        let width: CGFloat = size.width
+        let height: CGFloat = size.height
+        
+        let headerViewHeight: CGFloat = height * self._headerViewHeightRatio
+        let pageVCViewHeight: CGFloat = height - headerViewHeight
         
         self.headerView?.size = CGSize(
             width: width,
@@ -101,14 +104,30 @@ private extension CalendarVCView {
             x: 0,
             y: headerViewHeight,
             width: width,
-            height: 6 * heightUnit
+            height: pageVCViewHeight
         )
     }
     
     func _sizeThatFits(_ size: CGSize) -> CGSize {
-        let widthUnit: CGFloat = size.width / 7
-        let heightUnit: CGFloat = size.height / 8
+        let numOfHeightUnits: CGFloat = 6
+        let numOfWidthUnits: CGFloat = 7
+        
+        let widthToHeightRatio: CGFloat = self._widthToHeightRatio
+        let widthUnit: CGFloat = size.width / numOfWidthUnits
+        let heightUnit: CGFloat = (size.height / numOfHeightUnits) / widthToHeightRatio
         let smallerUnit: CGFloat = min(widthUnit, heightUnit)
-        return CGSize(width: 7 * smallerUnit, height: 8 * smallerUnit)
+        let width: CGFloat = numOfWidthUnits * smallerUnit
+        let height: CGFloat = numOfHeightUnits * smallerUnit
+        
+        return CGSize(width: width, height: height)
+    }
+    
+    // Private Helpers
+    private var _widthToHeightRatio: CGFloat {
+        return 1.2
+    }
+    
+    private var _headerViewHeightRatio: CGFloat {
+        return 0.3
     }
 }

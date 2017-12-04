@@ -33,14 +33,17 @@ class CalendarDaysView: UIView {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self._addSubviews()
+        self.addSubview(self._collectionView)
     }
     
     // Override Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self._addSubviews()
+        self.addSubview(self._collectionView)
     }
+    
+    // Private Constants
+    fileprivate let _cellHeightToWidthRatio: CGFloat = 0.8
     
     // Private Weak Variables
     fileprivate weak var _delegate: CalendarDaysViewDelegate?
@@ -74,7 +77,6 @@ extension CalendarDaysView: UICollectionViewDataSource {
             withReuseIdentifier: DateCell.reuseIdentifier,
             for: indexPath
         ) as! DateCell
-        cell.title = "Mon"
         return cell
     }
 }
@@ -114,30 +116,17 @@ private extension CalendarDaysView {
     func _layoutSubviews() {
         super.layoutSubviews()
         
-        let maxPossibleItemWidth: CGFloat = self.width / 7
-        let maxPossibleItemHeight: CGFloat = self.height / 6
-        let itemSideLength: CGFloat = min(maxPossibleItemWidth, maxPossibleItemHeight)
+        let itemWidth: CGFloat = self.width / 7
+        let itemHeight: CGFloat = self.height / 6
         
         let layout: UICollectionViewFlowLayout = self._collectionViewLayout
         let oldItemSize: CGSize = layout.itemSize
-        let newItemSize: CGSize = CGSize(width: itemSideLength, height: itemSideLength)
-        layout.itemSize = newItemSize
+        let newItemSize: CGSize = CGSize(width: itemWidth, height: itemHeight)
         if oldItemSize != newItemSize {
+            layout.itemSize = newItemSize
             layout.invalidateLayout()
         }
         
-        let collectionView: UICollectionView = self._collectionView
-        let collectionViewWidth: CGFloat = itemSideLength * 7
-        let collectionViewHeight: CGFloat = itemSideLength * 6
-        collectionView.size = CGSize(width: collectionViewWidth, height: collectionViewHeight)
-        collectionView.centerInSuperview()
-    }
-}
-
-
-// MARK: Add Subviews
-private extension CalendarDaysView {
-    func _addSubviews() {
-        self.addSubview(self._collectionView)
+        self._collectionView.size = self.size
     }
 }
