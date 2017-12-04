@@ -10,7 +10,26 @@ import UIKit
 
 
 // MARK: // Internal
+// MARK: - CalendarHeaderViewDelegate
+protocol CalendarHeaderViewDelegate: class {
+    func tappedLeftArrowButton(on calendarHeaderView: CalendarHeaderView)
+    func tappedRightArrowButton(on calendarHeaderView: CalendarHeaderView)
+}
+
+
+// MARK: - CalendarHeaderView
 // MARK: Interface
+extension CalendarHeaderView {
+    var delegate: CalendarHeaderViewDelegate? {
+        get {
+            return self._delegate
+        }
+        set(newDelegate) {
+            self._delegate = newDelegate
+        }
+    }
+}
+
 // MARK: Class Declaration
 class CalendarHeaderView: UIView {
     // Required Init
@@ -26,6 +45,9 @@ class CalendarHeaderView: UIView {
         self._addSubviews()
         self.backgroundColor = .white
     }
+    
+    // Private Weak Variables
+    fileprivate weak var _delegate: CalendarHeaderViewDelegate?
     
     // Private Lazy Variables
     fileprivate lazy var _leftArrowButton: UIButton = self._createLeftArrowButton()
@@ -49,6 +71,11 @@ private extension CalendarHeaderView {
         leftArrowButton.tintColor = .black
         leftArrowButton.setImage(ArrowIcon.Left.asTemplate().scaledByFactor(0.8), for: .normal)
         leftArrowButton.contentMode = .scaleAspectFit
+        leftArrowButton.addTarget(
+            self,
+            action: #selector(_leftArrowButtonTapped),
+            for: .touchUpInside
+        )
         return leftArrowButton
     }
     
@@ -65,6 +92,11 @@ private extension CalendarHeaderView {
         rightArrowButton.tintColor = .black
         rightArrowButton.setImage(ArrowIcon.Right.asTemplate().scaledByFactor(0.8), for: .normal)
         rightArrowButton.contentMode = .scaleAspectFit
+        rightArrowButton.addTarget(
+            self,
+            action: #selector(_rightArrowButtonTapped),
+            for: .touchUpInside
+        )
         return rightArrowButton
     }
     
@@ -133,5 +165,17 @@ private extension CalendarHeaderView {
         self.addSubview(self._monthNameYearLabel)
         self.addSubview(self._rightArrowButton)
         self.addSubview(self._dayNamesView)
+    }
+}
+
+
+// MARK: Button Target Selectors
+@objc private extension CalendarHeaderView {
+    func _leftArrowButtonTapped() {
+        self.delegate?.tappedLeftArrowButton(on: self)
+    }
+    
+    func _rightArrowButtonTapped() {
+        self.delegate?.tappedRightArrowButton(on: self)
     }
 }
