@@ -67,12 +67,12 @@ extension CalendarVC: UIPageViewControllerDelegate {
 // MARK: UIPageViewControllerDataSource
 extension CalendarVC: UIPageViewControllerDataSource {
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let vc: UIViewController = UIViewController()
+        let vc: CalendarDaysVC = CalendarDaysVC()
         return vc
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let vc: UIViewController = UIViewController()
+        let vc: CalendarDaysVC = CalendarDaysVC()
         return vc
     }
 }
