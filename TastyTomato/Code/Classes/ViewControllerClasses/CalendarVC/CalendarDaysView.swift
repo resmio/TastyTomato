@@ -42,9 +42,6 @@ class CalendarDaysView: UIView {
         self.addSubview(self._collectionView)
     }
     
-    // Private Constants
-    fileprivate let _cellHeightToWidthRatio: CGFloat = 0.8
-    
     // Private Weak Variables
     fileprivate weak var _delegate: CalendarDaysViewDelegate?
     
