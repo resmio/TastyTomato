@@ -11,31 +11,33 @@ import UIKit
 
 // MARK: // Internal
 extension CalendarVCView {
-    var headerView: CalendarHeaderView? {
-        get {
-            return self._headerView
-        }
-        set(newHeaderView) {
-            self._headerView = newHeaderView
-        }
+    var headerView: CalendarHeaderView {
+        return self._headerView
     }
     
-    var pageVCView: CalendarDaysView? {
-        get {
-            return self._pageVCView
-        }
-        set(newPageVCView) {
-            self._pageVCView = newPageVCView
-        }
+    var pageVCViewContainer: UIView {
+        return self._pageVCViewContainer
     }
 }
 
 
 // MARK: Class Declaration
 class CalendarVCView: UIView {
+    // Required Init
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self._addSubviews()
+    }
+    
+    // Override Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self._addSubviews()
+    }
+    
     // Private Variables
-    fileprivate var __headerView: CalendarHeaderView?
-    fileprivate var __pageVCView: CalendarDaysView?
+    fileprivate var _headerView: CalendarHeaderView = CalendarHeaderView()
+    fileprivate var _pageVCViewContainer: UIView = UIView()
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -49,40 +51,6 @@ class CalendarVCView: UIView {
 
 
 // MARK: // Private
-// MARK: Computed Variables
-private extension CalendarVCView {
-    var _headerView: CalendarHeaderView? {
-        get {
-            return self.__headerView
-        }
-        set(newHeaderView) {
-            let oldHeaderView: CalendarHeaderView? = self.__headerView
-            guard newHeaderView != oldHeaderView else { return }
-            oldHeaderView?.removeFromSuperview()
-            if let newHeaderView: CalendarHeaderView = newHeaderView {
-                self.addSubview(newHeaderView)
-            }
-            self.__headerView = newHeaderView
-        }
-    }
-    
-    var _pageVCView: CalendarDaysView? {
-        get {
-            return self.__pageVCView
-        }
-        set(newPageVCView) {
-            let oldPageVCView: CalendarDaysView? = self.__pageVCView
-            guard newPageVCView != oldPageVCView else { return }
-            oldPageVCView?.removeFromSuperview()
-            if let newPageVCView: CalendarDaysView = newPageVCView {
-                self.addSubview(newPageVCView)
-            }
-            self.__pageVCView = newPageVCView
-        }
-    }
-}
-
-
 // MARK: Layout Override Implementations
 private extension CalendarVCView {
     func _layoutSubviews() {
@@ -95,12 +63,12 @@ private extension CalendarVCView {
         let headerViewHeight: CGFloat = height * self._headerViewHeightRatio
         let pageVCViewHeight: CGFloat = height - headerViewHeight
         
-        self.headerView?.size = CGSize(
+        self.headerView.size = CGSize(
             width: width,
             height: headerViewHeight
         )
         
-        self.pageVCView?.frame = CGRect(
+        self.pageVCViewContainer.frame = CGRect(
             x: 0,
             y: headerViewHeight,
             width: width,
@@ -129,5 +97,14 @@ private extension CalendarVCView {
     
     private var _headerViewHeightRatio: CGFloat {
         return 0.3
+    }
+}
+
+
+// MARK: Add Subviews
+private extension CalendarVCView {
+    func _addSubviews() {
+        self.addSubview(self._headerView)
+        self.addSubview(self._pageVCViewContainer)
     }
 }

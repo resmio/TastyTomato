@@ -37,12 +37,15 @@ public class CalendarVC: UIViewController {
     
     // Private Lazy Variables
     fileprivate lazy var _calendarVCView: CalendarVCView = self._createCalendarVCView()
-    fileprivate lazy var _calendarHeaderView: CalendarHeaderView = self._createCalendarHeaderView()
-    fileprivate lazy var _calendarDaysView: CalendarDaysView = self._createCalendarDaysView()
+    fileprivate lazy var _pageVC: UIPageViewController = self._createPageVC()
     
     // Lifecycle Overrides
     public override func loadView() {
         self.view = self._calendarVCView
+    }
+    
+    public override func viewDidLoad() {
+        self._viewDidLoad()
     }
 }
 
@@ -55,9 +58,23 @@ extension CalendarVC: CalendarHeaderViewDelegate {
 }
 
 
-// MARK: CalendarDaysViewDelegate
-extension CalendarVC: CalendarDaysViewDelegate {
+// MARK: UIPageViewControllerDelegate
+extension CalendarVC: UIPageViewControllerDelegate {
     
+}
+
+
+// MARK: UIPageViewControllerDataSource
+extension CalendarVC: UIPageViewControllerDataSource {
+    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        let vc: UIViewController = UIViewController()
+        return vc
+    }
+    
+    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let vc: UIViewController = UIViewController()
+        return vc
+    }
 }
 
 
@@ -66,20 +83,30 @@ extension CalendarVC: CalendarDaysViewDelegate {
 private extension CalendarVC {
     func _createCalendarVCView() -> CalendarVCView {
         let calendarVCView: CalendarVCView = CalendarVCView()
-        calendarVCView.headerView = self._calendarHeaderView
-        calendarVCView.pageVCView = self._calendarDaysView
+        calendarVCView.headerView.delegate = self
         return calendarVCView
     }
     
-    func _createCalendarHeaderView() -> CalendarHeaderView {
-        let calendarHeaderView: CalendarHeaderView = CalendarHeaderView()
-        calendarHeaderView.delegate = self
-        return calendarHeaderView
+    func _createPageVC() -> UIPageViewController {
+        let pageVC: UIPageViewController = UIPageViewController(
+            transitionStyle: .scroll,
+            navigationOrientation: .horizontal,
+            options: nil
+        )
+        pageVC.delegate = self
+        pageVC.dataSource = self
+        return pageVC
     }
-    
-    func _createCalendarDaysView() -> CalendarDaysView {
-        let calendarDaysView: CalendarDaysView = CalendarDaysView()
-        calendarDaysView.delegate = self
-        return calendarDaysView
+}
+
+
+// MARK: Lifecycle Override Implementations
+private extension CalendarVC {
+    func _viewDidLoad() {
+        super.viewDidLoad()
+        
+        let pageVC: UIPageViewController = self._pageVC
+        self.embed(pageVC, into: self._calendarVCView.pageVCViewContainer)
+        pageVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 }
