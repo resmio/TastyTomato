@@ -29,7 +29,8 @@ class CalendarHeaderView: UIView {
     fileprivate lazy var _leftArrowButton: UIButton = self._createLeftArrowButton()
     fileprivate lazy var _monthNameYearLabel: UILabel = self._createMonthNameYearLabel()
     fileprivate lazy var _rightArrowButton: UIButton = self._createRightArrowButton()
-    fileprivate lazy var _dayNamesView: UIStackView = self._createDayNamesView()
+    fileprivate lazy var _dayNamesView: UIView = self._createDayNamesView()
+    fileprivate lazy var _dayNameLabels: [UILabel] = self._createDayNameLabels()
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -62,22 +63,18 @@ private extension CalendarHeaderView {
         return rightArrowButton
     }
     
-    func _createDayNamesView() -> UIStackView {
-        let dayNamesView: UIStackView = UIStackView(arrangedSubviews:
-            Calendar.current.veryShortWeekdaySymbols.map(self._createDayNameLabel)
-        )
-        dayNamesView.distribution = .fillEqually
-        dayNamesView.axis = .horizontal
+    func _createDayNamesView() -> UIView {
+        let dayNamesView: UIView = UIView()
+        self._dayNameLabels.forEach(dayNamesView.addSubview)
         return dayNamesView
     }
     
-    // Private Helpers
-    private func _createDayNameLabel(name: String) -> (() -> UILabel) {
-        return {
+    func _createDayNameLabels() -> [UILabel] {
+        return Calendar.current.veryShortWeekdaySymbols.map({
             let dayNameLabel: UILabel = UILabel()
-            dayNameLabel.text = name
+            dayNameLabel.text = $0
             return dayNameLabel
-        }
+        })
     }
 }
 
@@ -107,6 +104,17 @@ private extension CalendarHeaderView {
         rightArrowButton.right = width
         
         self._dayNamesView.frame = dayNamesViewFrame
+        
+        let dayNameLabelWidth: CGFloat = width / 7
+        let dayNameLabelHeight: CGFloat = halfHeight
+        self._dayNameLabels.enumerated().forEach({
+            $0.element.frame = CGRect(
+                x: $0.offset * dayNameLabelWidth,
+                y: 0,
+                width: dayNameLabelWidth,
+                height: dayNameLabelHeight
+            )
+        })
     }
 }
 
