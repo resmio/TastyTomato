@@ -10,14 +10,14 @@ import UIKit
 
 
 // MARK: // Internal
-// MARK: - CalendarViewDelegate
-protocol CalendarViewDelegate: class {}
+// MARK: - CalendarDaysViewDelegate
+protocol CalendarDaysViewDelegate: class {}
 
 
 // MARK: - CalendarView
 // MARK: Interface
-extension CalendarView {
-    var delegate: CalendarViewDelegate? {
+extension CalendarDaysView {
+    var delegate: CalendarDaysViewDelegate? {
         get {
             return self._delegate
         }
@@ -29,7 +29,7 @@ extension CalendarView {
 
 
 // MARK: Class Declaration
-class CalendarView: UIView {
+class CalendarDaysView: UIView {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -43,7 +43,7 @@ class CalendarView: UIView {
     }
     
     // Private Weak Variables
-    fileprivate weak var _delegate: CalendarViewDelegate?
+    fileprivate weak var _delegate: CalendarDaysViewDelegate?
     
     // Private Lazy Variables
     fileprivate lazy var _collectionView: UICollectionView = self._createCollectionView()
@@ -58,13 +58,13 @@ class CalendarView: UIView {
 
 // MARK: Delegates / DataSources
 // MARK: UICollectionViewDelegate
-extension CalendarView: UICollectionViewDelegate {
+extension CalendarDaysView: UICollectionViewDelegate {
     
 }
 
 
 // MARK: UICollectionViewDataSource
-extension CalendarView: UICollectionViewDataSource {
+extension CalendarDaysView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 42
     }
@@ -82,7 +82,7 @@ extension CalendarView: UICollectionViewDataSource {
 
 // MARK: // Private
 // MARK: Lazy Variable Creation
-private extension CalendarView {
+private extension CalendarDaysView {
     func _createCollectionView() -> UICollectionView {
         let collectionView: UICollectionView = UICollectionView(
             frame: .zero,
@@ -110,7 +110,7 @@ private extension CalendarView {
 
 
 // MARK: Layout Override Implementations
-private extension CalendarView {
+private extension CalendarDaysView {
     func _layoutSubviews() {
         super.layoutSubviews()
         
@@ -136,7 +136,7 @@ private extension CalendarView {
 
 
 // MARK: Add Subviews
-private extension CalendarView {
+private extension CalendarDaysView {
     func _addSubviews() {
         self.addSubview(self._collectionView)
     }

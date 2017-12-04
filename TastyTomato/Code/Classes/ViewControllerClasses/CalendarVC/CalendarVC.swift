@@ -36,18 +36,18 @@ public class CalendarVC: UIViewController {
     fileprivate weak var _delegate: CalendarVCDelegate?
     
     // Private Lazy Variables
-    fileprivate lazy var _calendarView: CalendarView = self._createCalendarView()
+    fileprivate lazy var _calendarDaysView: CalendarDaysView = self._createCalendarDaysView()
     
     // Lifecycle Overrides
     public override func loadView() {
-        self.view = self._calendarView
+        self.view = self._calendarDaysView
     }
 }
 
 
 // MARK: Delegates / DataSources
-// MARK: CalendarViewDelegate
-extension CalendarVC: CalendarViewDelegate {
+// MARK: CalendarDaysViewDelegate
+extension CalendarVC: CalendarDaysViewDelegate {
     
 }
 
@@ -55,9 +55,9 @@ extension CalendarVC: CalendarViewDelegate {
 // MARK: // Private
 // MARK: Lazy Variable Creation
 private extension CalendarVC {
-    func _createCalendarView() -> CalendarView {
-        let calendarView: CalendarView = CalendarView()
-        calendarView.delegate = self
-        return calendarView
+    func _createCalendarDaysView() -> CalendarDaysView {
+        let calendarDaysView: CalendarDaysView = CalendarDaysView()
+        calendarDaysView.delegate = self
+        return calendarDaysView
     }
 }
