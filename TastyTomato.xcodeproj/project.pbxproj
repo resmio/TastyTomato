@@ -65,6 +65,7 @@
 		AFEF9052555EB3B937D78D66688A860E /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8098C615D10591C19A27B276D4785DFB /* CalendarVC.swift */; };
 		B29BDBA0023131D713E51F8D95B96ADA /* UITableView (reloadSoftly).swift in Sources */ = {isa = PBXBuildFile; fileRef = B242DBFE7AC263A838F81DB66F8D7280 /* UITableView (reloadSoftly).swift */; };
 		B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E83DDD4566361CA7AD1928CAA0D8CC /* MiscImage.swift */; };
+		BA9D4604EF78A1E1CFCED56D05950748 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA541EFBE3319317C372C2703205D1 /* DateCell.swift */; };
 		BC76266AA1CF72ADF61A38D4EDB8C2A7 /* Pods_TastyTomatoAbstract_TastyTomato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7FFA17FC0A5D6DF5FAF4475A4BE503 /* Pods_TastyTomatoAbstract_TastyTomato.framework */; };
 		C15C849839C07137AF9228EBCA319B2C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9175C1A832EEF0F37AEE33411A20042 /* Localizable.strings */; };
 		C2E279A4ED34081F1C983150B1F45061 /* CALayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */; };
@@ -186,6 +187,7 @@
 		EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		F10CB374E45CF24A4F503F48FD457BD8 /* Pods-TastyTomatoAbstract-TastyTomato.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomato.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato.debug.xcconfig"; sourceTree = "<group>"; };
 		F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (RenderingModes).swift"; sourceTree = "<group>"; };
+		FCEA541EFBE3319317C372C2703205D1 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -645,6 +647,7 @@
 				930AD36178D8D1DE2BBCFC79532B52C2 /* CalendarDaysView.swift */,
 				EDD814FC55DAC00A9D6B71B510D55E49 /* CalendarHeaderView.swift */,
 				8098C615D10591C19A27B276D4785DFB /* CalendarVC.swift */,
+				FCEA541EFBE3319317C372C2703205D1 /* DateCell.swift */,
 			);
 			path = CalendarVC;
 			sourceTree = "<group>";
@@ -965,6 +968,7 @@
 				A31B237A1B09363250352EDA89688036 /* CalendarDaysView.swift in Sources */,
 				65F0CED14F5601098CE2CC8796241477 /* CalendarHeaderView.swift in Sources */,
 				AFEF9052555EB3B937D78D66688A860E /* CalendarVC.swift in Sources */,
+				BA9D4604EF78A1E1CFCED56D05950748 /* DateCell.swift in Sources */,
 				D9D8EA86DD5DE5CE144ED010353425A3 /* DropDownTextField.swift in Sources */,
 				935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */,
 				01903A7870C59E45E2071D68688B64AE /* FilledButtons.swift in Sources */,

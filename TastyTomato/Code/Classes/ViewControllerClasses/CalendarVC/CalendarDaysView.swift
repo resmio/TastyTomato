@@ -70,10 +70,10 @@ extension CalendarDaysView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: WeekdayNameCell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: WeekdayNameCell.reuseIdentifier,
+        let cell: DateCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: DateCell.reuseIdentifier,
             for: indexPath
-        ) as! WeekdayNameCell
+        ) as! DateCell
         cell.title = "Mon"
         return cell
     }
@@ -94,8 +94,8 @@ private extension CalendarDaysView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(
-            WeekdayNameCell.self,
-            forCellWithReuseIdentifier: WeekdayNameCell.reuseIdentifier
+            DateCell.self,
+            forCellWithReuseIdentifier: DateCell.reuseIdentifier
         )
         return collectionView
     }
