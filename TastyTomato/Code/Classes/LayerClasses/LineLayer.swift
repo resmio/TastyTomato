@@ -96,7 +96,7 @@ public class LineLayer: CAShapeLayer {
     // MARK: Unavailability Overrides
     @available(*, unavailable)
     public override var frame: CGRect {
-        get { fatalError() }
+        get { return super.frame }
         set { fatalError() }
     }
     
