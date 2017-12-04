@@ -47,6 +47,25 @@ class DateCell: UICollectionViewCell {
     override func layoutSubviews() {
         self._label.size = self.size
     }
+    
+    // isHighlighted / isSelected Overrides
+    override var isHighlighted: Bool {
+        get {
+            return self._isHighlighted
+        }
+        set(newIsHighlighted) {
+            self._isHighlighted = newIsHighlighted
+        }
+    }
+    
+    override var isSelected: Bool {
+        get {
+            return self._isSelected
+        }
+        set(newIsSelected) {
+            self._isSelected = newIsSelected
+        }
+    }
 }
 
 
@@ -58,5 +77,31 @@ private extension DateCell {
         label.textAlignment = .center
         label.text = "31"
         return label
+    }
+}
+
+
+// MARK: Computed Variables
+private extension DateCell {
+    var _isHighlighted: Bool {
+        get {
+            return super.isHighlighted
+        }
+        set(newIsHighlighted) {
+            guard newIsHighlighted != super.isHighlighted else { return }
+            super.isHighlighted = newIsHighlighted
+            self.backgroundColor = newIsHighlighted ? .green : .white
+        }
+    }
+    
+    var _isSelected: Bool {
+        get {
+            return super.isSelected
+        }
+        set(newIsSelected) {
+            guard newIsSelected != super.isSelected else { return }
+            super.isSelected = newIsSelected
+            self.backgroundColor = newIsSelected ? .green : .white
+        }
     }
 }
