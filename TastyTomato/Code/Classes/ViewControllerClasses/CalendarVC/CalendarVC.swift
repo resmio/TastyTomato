@@ -48,6 +48,13 @@ public class CalendarVC: UIViewController {
 
 
 // MARK: Delegates / DataSources
+// MARK: CalendarHeaderViewDelegate
+extension CalendarVC: CalendarHeaderViewDelegate {
+    func tappedLeftArrowButton(on calendarHeaderView: CalendarHeaderView) {}
+    func tappedRightArrowButton(on calendarHeaderView: CalendarHeaderView) {}
+}
+
+
 // MARK: CalendarDaysViewDelegate
 extension CalendarVC: CalendarDaysViewDelegate {
     
@@ -66,6 +73,7 @@ private extension CalendarVC {
     
     func _createCalendarHeaderView() -> CalendarHeaderView {
         let calendarHeaderView: CalendarHeaderView = CalendarHeaderView()
+        calendarHeaderView.delegate = self
         return calendarHeaderView
     }
     
