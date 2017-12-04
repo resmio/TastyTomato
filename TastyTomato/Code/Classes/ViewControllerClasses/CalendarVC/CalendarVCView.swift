@@ -43,7 +43,7 @@ class CalendarVCView: UIView {
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return self._sizeThatFits(size: size)
+        return self._sizeThatFits(size)
     }
 }
 
