@@ -44,24 +44,40 @@ private extension CalendarHeaderView {
     func _createLeftArrowButton() -> UIButton {
         let leftArrowButton: UIButton = UIButton(type: .system)
         leftArrowButton.setImage(ArrowIcon.Left.asTemplate(), for: .normal)
+        leftArrowButton.contentMode = .scaleAspectFit
         return leftArrowButton
     }
     
     func _createMonthNameYearLabel() -> UILabel {
         let monthNameYearLabel: UILabel = UILabel()
-        monthNameYearLabel.text = "Month Year"
+        monthNameYearLabel.text = "Monthname Year"
+        monthNameYearLabel.adjustsFontSizeToFitWidth = true
         return monthNameYearLabel
     }
     
     func _createRightArrowButton() -> UIButton {
         let rightArrowButton: UIButton = UIButton(type: .system)
         rightArrowButton.setImage(ArrowIcon.Right.asTemplate(), for: .normal)
+        rightArrowButton.contentMode = .scaleAspectFit
         return rightArrowButton
     }
     
     func _createDayNamesView() -> UIStackView {
-        let dayNamesView: UIStackView = UIStackView()
+        let dayNamesView: UIStackView = UIStackView(arrangedSubviews:
+            Calendar.current.veryShortWeekdaySymbols.map(self._createDayNameLabel)
+        )
+        dayNamesView.distribution = .fillEqually
+        dayNamesView.axis = .horizontal
         return dayNamesView
+    }
+    
+    // Private Helpers
+    private func _createDayNameLabel(name: String) -> (() -> UILabel) {
+        return {
+            let dayNameLabel: UILabel = UILabel()
+            dayNameLabel.text = name
+            return dayNameLabel
+        }
     }
 }
 
@@ -71,7 +87,26 @@ private extension CalendarHeaderView {
     func _layoutSubviews() {
         super.layoutSubviews()
         
+        let width: CGFloat = self.width
+        let height: CGFloat = self.height
         
+        let halfHeight: CGFloat = 0.5 * height
+        
+        let buttonSize: CGSize = CGSize(width: halfHeight, height: halfHeight)
+        let monthNameYearLabelSize: CGSize = CGSize(width: width - height, height: halfHeight)
+        let dayNamesViewFrame: CGRect = CGRect(x: 0, y: halfHeight, width: width, height: halfHeight)
+        
+        self._leftArrowButton.size = buttonSize
+        
+        let monthNameYearLabel: UILabel = self._monthNameYearLabel
+        monthNameYearLabel.size = monthNameYearLabelSize
+        monthNameYearLabel.centerHInSuperview()
+        
+        let rightArrowButton: UIButton = self._rightArrowButton
+        rightArrowButton.size = buttonSize
+        rightArrowButton.right = width
+        
+        self._dayNamesView.frame = dayNamesViewFrame
     }
 }
 
