@@ -70,7 +70,7 @@ extension CalendarVC: CalendarHeaderViewDelegate {
 // MARK: UIPageViewControllerDelegate
 extension CalendarVC: UIPageViewControllerDelegate {
     public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        self._isPaging = true
+        self._pageViewController(pageViewController, willTransitionTo: pendingViewControllers)
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -132,6 +132,16 @@ private extension CalendarVC {
         let pageVC: UIPageViewController = self._pageVC
         self.embed(pageVC, into: self._calendarVCView.pageVCViewContainer)
         pageVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+}
+
+
+// MARK: Delegates / DataSources
+// MARK: UIPageViewControllerDelegate
+private extension CalendarVC/*: UIPageViewControllerDelegate*/ {
+    func _pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        self._isPaging = true
+        self._currentDaysVC = (pendingViewControllers[0] as! CalendarDaysVC)
     }
 }
 

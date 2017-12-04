@@ -11,7 +11,11 @@ import UIKit
 
 // MARK: // Internal
 // MARK: - CalendarDaysViewDelegate
-protocol CalendarDaysViewDelegate: class {}
+protocol CalendarDaysViewDelegate: class {
+    func configure(_ dateCell: DateCell, for indexPath: IndexPath)
+    func shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath) -> Bool
+    func didSelect(_ dateCell: DateCell, at indexPath: IndexPath)
+}
 
 
 // MARK: - CalendarView
@@ -59,7 +63,13 @@ class CalendarDaysView: UIView {
 // MARK: Delegates / DataSources
 // MARK: UICollectionViewDelegate
 extension CalendarDaysView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        return self._collectionView(collectionView, shouldHighlightItemAt: indexPath)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self._collectionView(collectionView, didSelectItemAt: indexPath)
+    }
 }
 
 
@@ -74,6 +84,7 @@ extension CalendarDaysView: UICollectionViewDataSource {
             withReuseIdentifier: DateCell.reuseIdentifier,
             for: indexPath
         ) as! DateCell
+        self.delegate?.configure(cell, for: indexPath)
         return cell
     }
 }
@@ -124,5 +135,20 @@ private extension CalendarDaysView {
         }
         
         self._collectionView.size = self.size
+    }
+}
+
+
+// MARK: Delegates / DataSources
+// MARK: UICollectionViewDelegate
+private extension CalendarDaysView/*: UICollectionViewDelegate*/ {
+    func _collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        let cell: DateCell = collectionView.cellForItem(at: indexPath) as! DateCell
+        return self.delegate?.shouldSelect(cell, at: indexPath) ?? true
+    }
+    
+    func _collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell: DateCell = collectionView.cellForItem(at: indexPath) as! DateCell
+        self.delegate?.didSelect(cell, at: indexPath)
     }
 }
