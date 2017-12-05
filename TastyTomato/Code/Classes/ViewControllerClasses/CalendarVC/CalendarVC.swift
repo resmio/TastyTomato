@@ -198,3 +198,25 @@ private class _CalendarDaysVC: UIViewController {
         self.view = self.calendarDaysView
     }
 }
+
+
+// MARK: AssociationKeys
+private extension ValueAssociationKey {
+    static var _date: ValueAssociationKey = ValueAssociationKey()
+}
+
+
+// MARK: - DateCell
+// MARK: Date Association
+private extension DateCell {
+    var _date: Date {
+        get {
+            return self.associatedValue(for: &._date)!
+        }
+        set(newDate) {
+            guard newDate != self._date else { return }
+            self.associate(newDate, by: &._date)
+            // ???:
+        }
+    }
+}
