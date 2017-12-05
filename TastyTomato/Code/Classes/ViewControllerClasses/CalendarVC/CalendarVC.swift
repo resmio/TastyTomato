@@ -92,6 +92,22 @@ extension CalendarVC: UIPageViewControllerDataSource {
 }
 
 
+// MARK: CalendarDaysViewDelegate
+extension CalendarVC: CalendarDaysViewDelegate {
+    func configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
+        
+    }
+    
+    func shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool {
+        return true
+    }
+    
+    func didSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
+        
+    }
+}
+
+
 // MARK: // Private
 // MARK: Lazy Variable Creation
 private extension CalendarVC {
@@ -110,6 +126,7 @@ private extension CalendarVC {
         )
         
         let initialVC: _CalendarDaysVC = _CalendarDaysVC()
+        initialVC.calendarDaysView.delegate = self
         pageVC.setViewControllers(
             [initialVC],
             direction: .forward,
@@ -154,7 +171,9 @@ private extension CalendarVC {
     }
     
     func _daysVC(_ direction: _Direction, _ vc: _CalendarDaysVC) -> _CalendarDaysVC {
-        return _CalendarDaysVC()
+        let daysVC: _CalendarDaysVC = _CalendarDaysVC()
+        daysVC.calendarDaysView.delegate = self
+        return daysVC
     }
     
     func _showPreviousMonth() {
