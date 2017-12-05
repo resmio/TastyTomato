@@ -80,12 +80,7 @@ extension CalendarDaysView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: DateCell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: DateCell.reuseIdentifier,
-            for: indexPath
-        ) as! DateCell
-        self.delegate?.configure(cell, for: indexPath)
-        return cell
+        return self._collectionView(collectionView, cellForItemAt: indexPath)
     }
 }
 
@@ -144,11 +139,24 @@ private extension CalendarDaysView {
 private extension CalendarDaysView/*: UICollectionViewDelegate*/ {
     func _collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         let cell: DateCell = collectionView.cellForItem(at: indexPath) as! DateCell
-        return self.delegate?.shouldSelect(cell, at: indexPath) ?? true
+        return self.delegate?.shouldSelect(cell, at: indexPath, on: self) ?? true
     }
     
     func _collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell: DateCell = collectionView.cellForItem(at: indexPath) as! DateCell
-        self.delegate?.didSelect(cell, at: indexPath)
+        self.delegate?.didSelect(cell, at: indexPath, on: self)
+    }
+}
+
+
+// MARK: UICollectionViewDataSource
+private extension CalendarDaysView/*: UICollectionViewDataSource*/ {
+    func _collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: DateCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: DateCell.reuseIdentifier,
+            for: indexPath
+        ) as! DateCell
+        self.delegate?.configure(cell, for: indexPath, on: self)
+        return cell
     }
 }
