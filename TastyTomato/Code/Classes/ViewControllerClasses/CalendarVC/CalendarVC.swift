@@ -186,3 +186,15 @@ private extension CalendarVC {
         )
     }
 }
+
+
+// MARK: - _CalendarDaysVC
+private class _CalendarDaysVC: UIViewController {
+    // Constants
+    let calendarDaysView: CalendarDaysView = CalendarDaysView()
+    
+    // Lifecycle Override
+    override func loadView() {
+        self.view = self.calendarDaysView
+    }
+}
