@@ -12,9 +12,9 @@ import UIKit
 // MARK: // Internal
 // MARK: - CalendarDaysViewDelegate
 protocol CalendarDaysViewDelegate: class {
-    func configure(_ dateCell: DateCell, for indexPath: IndexPath)
-    func shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath) -> Bool
-    func didSelect(_ dateCell: DateCell, at indexPath: IndexPath)
+    func configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView)
+    func shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool
+    func didSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView)
 }
 
 
