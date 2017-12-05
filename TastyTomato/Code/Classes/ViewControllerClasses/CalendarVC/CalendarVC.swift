@@ -41,7 +41,7 @@ public class CalendarVC: UIViewController {
     fileprivate lazy var _pageVC: UIPageViewController = self._createPageVC()
     
     // Private Variables
-    fileprivate var _currentDaysVC: CalendarDaysVC?
+    fileprivate var _currentDaysVC: _CalendarDaysVC?
     fileprivate var _isPaging: Bool = false
     
     // Lifecycle Overrides
@@ -83,11 +83,11 @@ extension CalendarVC: UIPageViewControllerDelegate {
 // MARK: UIPageViewControllerDataSource
 extension CalendarVC: UIPageViewControllerDataSource {
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return self._daysVC(.before, (viewController as! CalendarDaysVC))
+        return self._daysVC(.before, (viewController as! _CalendarDaysVC))
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return self._daysVC(.after, (viewController as! CalendarDaysVC))
+        return self._daysVC(.after, (viewController as! _CalendarDaysVC))
     }
 }
 
@@ -109,7 +109,7 @@ private extension CalendarVC {
             options: nil
         )
         
-        let initialVC: CalendarDaysVC = CalendarDaysVC()
+        let initialVC: _CalendarDaysVC = _CalendarDaysVC()
         pageVC.setViewControllers(
             [initialVC],
             direction: .forward,
@@ -142,7 +142,7 @@ private extension CalendarVC {
 private extension CalendarVC/*: UIPageViewControllerDelegate*/ {
     func _pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         self._isPaging = true
-        self._currentDaysVC = (pendingViewControllers[0] as! CalendarDaysVC)
+        self._currentDaysVC = (pendingViewControllers[0] as! _CalendarDaysVC)
     }
 }
 
@@ -153,13 +153,13 @@ private extension CalendarVC {
         case before, after
     }
     
-    func _daysVC(_ direction: _Direction, _ vc: CalendarDaysVC) -> CalendarDaysVC {
-        return CalendarDaysVC()
+    func _daysVC(_ direction: _Direction, _ vc: _CalendarDaysVC) -> _CalendarDaysVC {
+        return _CalendarDaysVC()
     }
     
     func _showPreviousMonth() {
         guard !self._isPaging else { return }
-        guard let currentVC: CalendarDaysVC = self._currentDaysVC else { return }
+        guard let currentVC: _CalendarDaysVC = self._currentDaysVC else { return }
         
         self._isPaging = true
         self._pageVC.setViewControllers(
@@ -174,7 +174,7 @@ private extension CalendarVC {
     
     func _showNextMonth() {
         guard !self._isPaging else { return }
-        guard let currentVC: CalendarDaysVC = self._currentDaysVC else { return }
+        guard let currentVC: _CalendarDaysVC = self._currentDaysVC else { return }
         
         self._isPaging = true
         self._pageVC.setViewControllers(
