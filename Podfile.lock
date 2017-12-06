@@ -4,13 +4,16 @@ PODS:
     - SignificantSpices/SwiftExtensions (= 0.4.0)
   - SignificantSpices/ObjectiveCExtensions (0.4.0)
   - SignificantSpices/SwiftExtensions (0.4.0)
+  - SwiftDate (4.5.0)
 
 DEPENDENCIES:
   - SignificantSpices (~> 0.4.0)
+  - SwiftDate (~> 4.5.0)
 
 SPEC CHECKSUMS:
   SignificantSpices: 01f72b5879428e52ddda08bc0d28af1d9a09082a
+  SwiftDate: 17dd829c004a2d60432ef63ffcdb26ca2eb97a60
 
-PODFILE CHECKSUM: 6ca3ccc68dc0f78d3dbe13d3bcd10a1780f31443
+PODFILE CHECKSUM: 44396d1a68c9b64786046785bc388f968f4aa009
 
 COCOAPODS: 1.3.1

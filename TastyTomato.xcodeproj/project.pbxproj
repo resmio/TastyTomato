@@ -871,10 +871,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomatoTests/Pods-TastyTomatoAbstract-TastyTomatoTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SignificantSpices/SignificantSpices.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SignificantSpices.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

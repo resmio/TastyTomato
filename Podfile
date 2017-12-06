@@ -8,6 +8,7 @@ inhibit_all_warnings!
 
 abstract_target 'TastyTomatoAbstract' do
     pod 'SignificantSpices', '~> 0.4.0'
+    pod 'SwiftDate', '~> 4.5.0'
 
     target 'TastyTomato'
     target 'TastyTomatoTests'
