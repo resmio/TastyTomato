@@ -8,6 +8,7 @@
 
 import UIKit
 import SignificantSpices
+import SwiftDate
 
 
 // MARK: // Public
@@ -20,6 +21,14 @@ public protocol CalendarVCDelegate: class {
 // MARK: - CalendarVC
 // MARK: Interface
 public extension CalendarVC {
+    // Readonly
+    /**
+     */
+    var displayedMonthAndYear: Date {
+        return self._displayedMonthAndYear
+    }
+    
+    // ReadWrite
     var delegate: CalendarVCDelegate? {
         get {
             return self._delegate
@@ -27,6 +36,22 @@ public extension CalendarVC {
         set(newDelegate) {
             self._delegate = newDelegate
         }
+    }
+    
+    /**
+     */
+    var selectedDate: Date? {
+        get {
+            return self._selectedDate
+        }
+        set(newSelectedDate) {
+            self._selectedDate = newSelectedDate
+        }
+    }
+    
+    // Functions
+    func setDisplayedMonthAndYear(from date: Date, animated: Bool = true) {
+        self._setDisplayedMonthAndYear(from: date, animated: animated)
     }
 }
 
@@ -43,6 +68,8 @@ public class CalendarVC: UIViewController {
     // Private Variables
     fileprivate var _currentDaysVC: _CalendarDaysVC?
     fileprivate var _isPaging: Bool = false
+    fileprivate var _displayedMonthAndYear: Date = Date()
+    fileprivate var __selectedDate: Date?
     
     // Lifecycle Overrides
     public override func loadView() {
@@ -83,11 +110,11 @@ extension CalendarVC: UIPageViewControllerDelegate {
 // MARK: UIPageViewControllerDataSource
 extension CalendarVC: UIPageViewControllerDataSource {
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return self._daysVC(.before, (viewController as! _CalendarDaysVC))
+        return self._daysVC(for: (viewController as! _CalendarDaysVC).month - 1.month)
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return self._daysVC(.after, (viewController as! _CalendarDaysVC))
+        return self._daysVC(for: (viewController as! _CalendarDaysVC).month + 1.month)
     }
 }
 
@@ -125,7 +152,7 @@ private extension CalendarVC {
             options: nil
         )
         
-        let initialVC: _CalendarDaysVC = _CalendarDaysVC()
+        let initialVC: _CalendarDaysVC = _CalendarDaysVC(month: self._displayedMonthAndYear)
         initialVC.calendarDaysView.delegate = self
         pageVC.setViewControllers(
             [initialVC],
@@ -138,6 +165,19 @@ private extension CalendarVC {
         pageVC.delegate = self
         pageVC.dataSource = self
         return pageVC
+    }
+}
+
+
+// MARK: Computed Variables
+private extension CalendarVC {
+    var _selectedDate: Date? {
+        get {
+            return self.__selectedDate
+        }
+        set(newSelectedDate) {
+            
+        }
     }
 }
 
@@ -166,52 +206,77 @@ private extension CalendarVC/*: UIPageViewControllerDelegate*/ {
 
 // MARK: PageViewController Helpers
 private extension CalendarVC {
-    enum _Direction {
-        case before, after
-    }
-    
-    func _daysVC(_ direction: _Direction, _ vc: _CalendarDaysVC) -> _CalendarDaysVC {
-        let daysVC: _CalendarDaysVC = _CalendarDaysVC()
-        daysVC.calendarDaysView.delegate = self
-        return daysVC
-    }
-    
     func _showPreviousMonth() {
         guard !self._isPaging else { return }
         guard let currentVC: _CalendarDaysVC = self._currentDaysVC else { return }
-        
-        self._isPaging = true
-        self._pageVC.setViewControllers(
-            [self._daysVC(.before, currentVC)],
-            direction: .reverse,
-            animated: true,
-            completion: { _ in
-                self._isPaging = false
-            }
-        )
+        let previousMonth: Date = currentVC.month - 1.month
+        let vc: _CalendarDaysVC = self._daysVC(for: previousMonth)
+        self._switchTo(daysVC: vc, direction: .reverse)
     }
     
     func _showNextMonth() {
         guard !self._isPaging else { return }
         guard let currentVC: _CalendarDaysVC = self._currentDaysVC else { return }
-        
+        let nextMonth: Date = currentVC.month - 1.month
+        let vc: _CalendarDaysVC = self._daysVC(for: nextMonth)
+        self._switchTo(daysVC: vc, direction: .forward)
+    }
+    
+    func _switchTo(daysVC: _CalendarDaysVC, direction: UIPageViewControllerNavigationDirection, animated: Bool = true) {
         self._isPaging = true
         self._pageVC.setViewControllers(
-            [self._daysVC(.after, currentVC)],
-            direction: .forward,
-            animated: true,
+            [daysVC],
+            direction: direction,
+            animated: animated,
             completion: { _ in
                 self._isPaging = false
             }
         )
+    }
+    
+    func _daysVC(for month: Date) -> _CalendarDaysVC {
+        let daysVC: _CalendarDaysVC = _CalendarDaysVC(month: month)
+        daysVC.calendarDaysView.delegate = self
+        return daysVC
+    }
+}
+
+
+// MARK: Set Displayed Month
+private extension CalendarVC {
+    func _setDisplayedMonthAndYear(from date: Date, animated: Bool = true) {
+        guard !date.isIn(date: self._displayedMonthAndYear, granularity: .month) else { return }
+        let roundedDate: Date = date.startOf(component: .month)
+        let vc: _CalendarDaysVC = self._daysVC(for: roundedDate)
+        
+        let isLaterMonth: Bool = date.isAfter(date: date, granularity: .month)
+        let direction: UIPageViewControllerNavigationDirection = isLaterMonth ? .forward : .reverse
+        
+        self._displayedMonthAndYear = roundedDate
+        self._switchTo(daysVC: vc, direction: direction, animated: animated)
     }
 }
 
 
 // MARK: - _CalendarDaysVC
 private class _CalendarDaysVC: UIViewController {
+    // Required Init
+    required init?(coder aDecoder: NSCoder) {
+        self.month = Date()
+        super.init(coder: aDecoder)
+    }
+    
+    // Init
+    init(month: Date) {
+        self.month = month
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     // Constants
     let calendarDaysView: CalendarDaysView = CalendarDaysView()
+    
+    // Variables
+    private(set) var month: Date
     
     // Lifecycle Override
     override func loadView() {
@@ -236,7 +301,6 @@ private extension DateCell {
         set(newDate) {
             guard newDate != self._date else { return }
             self.associate(newDate, by: &._date)
-            // ???:
         }
     }
 }
