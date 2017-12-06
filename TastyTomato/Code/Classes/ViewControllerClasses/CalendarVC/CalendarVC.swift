@@ -69,6 +69,7 @@ public class CalendarVC: UIViewController {
     fileprivate var _currentDaysVC: _CalendarDaysVC?
     fileprivate var _isPaging: Bool = false
     fileprivate var _displayedMonthAndYear: Date = Date()
+    fileprivate var _firstDisplayedDay: Date = Date()
     fileprivate var __selectedDate: Date?
     
     // Lifecycle Overrides
@@ -122,7 +123,7 @@ extension CalendarVC: UIPageViewControllerDataSource {
 // MARK: CalendarDaysViewDelegate
 extension CalendarVC: CalendarDaysViewDelegate {
     func configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
-        
+        self._configure(dateCell, for: indexPath, on: calendarDaysView)
     }
     
     func shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool {
@@ -176,7 +177,18 @@ private extension CalendarVC {
             return self.__selectedDate
         }
         set(newSelectedDate) {
+            let roundedNewSelectedDate: Date? = newSelectedDate?.startOf(component: .day)
+            guard roundedNewSelectedDate != self.__selectedDate else { return }
             
+            let firstDisplayedDay: Date = self._displayedMonthAndYear.startOf(component: .weekOfYear)
+            let lastDisplayedDay: Date = firstDisplayedDay + 41.days
+            
+            if let newDate: Date = roundedNewSelectedDate {
+                
+            }
+            
+            
+            self.__selectedDate = roundedNewSelectedDate
         }
     }
 }
@@ -204,25 +216,31 @@ private extension CalendarVC/*: UIPageViewControllerDelegate*/ {
 }
 
 
+// MARK: CalendarDaysViewDelegate
+private extension CalendarVC/*: CalendarDaysViewDelegate*/ {
+    func _configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
+        let date: Date = self._firstDisplayedDay + indexPath.row.days
+        dateCell.title = "\(date.day)"
+    }
+}
+
+
 // MARK: PageViewController Helpers
 private extension CalendarVC {
     func _showPreviousMonth() {
-        guard !self._isPaging else { return }
         guard let currentVC: _CalendarDaysVC = self._currentDaysVC else { return }
-        let previousMonth: Date = currentVC.month - 1.month
-        let vc: _CalendarDaysVC = self._daysVC(for: previousMonth)
+        let vc: _CalendarDaysVC = self._daysVC(for: currentVC.month - 1.month)
         self._switchTo(daysVC: vc, direction: .reverse)
     }
     
     func _showNextMonth() {
-        guard !self._isPaging else { return }
         guard let currentVC: _CalendarDaysVC = self._currentDaysVC else { return }
-        let nextMonth: Date = currentVC.month - 1.month
-        let vc: _CalendarDaysVC = self._daysVC(for: nextMonth)
+        let vc: _CalendarDaysVC = self._daysVC(for: currentVC.month + 1.month)
         self._switchTo(daysVC: vc, direction: .forward)
     }
     
     func _switchTo(daysVC: _CalendarDaysVC, direction: UIPageViewControllerNavigationDirection, animated: Bool = true) {
+        guard !self._isPaging else { return }
         self._isPaging = true
         self._pageVC.setViewControllers(
             [daysVC],
@@ -253,6 +271,7 @@ private extension CalendarVC {
         let direction: UIPageViewControllerNavigationDirection = isLaterMonth ? .forward : .reverse
         
         self._displayedMonthAndYear = roundedDate
+        self._firstDisplayedDay = roundedDate.startOf(component: .weekOfYear)
         self._switchTo(daysVC: vc, direction: direction, animated: animated)
     }
 }
@@ -281,26 +300,5 @@ private class _CalendarDaysVC: UIViewController {
     // Lifecycle Override
     override func loadView() {
         self.view = self.calendarDaysView
-    }
-}
-
-
-// MARK: AssociationKeys
-private extension ValueAssociationKey {
-    static var _date: ValueAssociationKey = ValueAssociationKey()
-}
-
-
-// MARK: - DateCell
-// MARK: Date Association
-private extension DateCell {
-    var _date: Date {
-        get {
-            return self.associatedValue(for: &._date)!
-        }
-        set(newDate) {
-            guard newDate != self._date else { return }
-            self.associate(newDate, by: &._date)
-        }
     }
 }
