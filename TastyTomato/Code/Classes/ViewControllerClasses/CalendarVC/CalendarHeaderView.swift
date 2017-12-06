@@ -28,6 +28,15 @@ extension CalendarHeaderView {
             self._delegate = newDelegate
         }
     }
+    
+    var title: String {
+        get {
+            return self._monthNameYearLabel.text ?? ""
+        }
+        set(newTitle) {
+            self._monthNameYearLabel.text = newTitle
+        }
+    }
 }
 
 // MARK: Class Declaration
