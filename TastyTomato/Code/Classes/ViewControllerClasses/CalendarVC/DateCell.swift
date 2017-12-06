@@ -20,6 +20,15 @@ extension DateCell {
             self._label.text = newTitle
         }
     }
+    
+    var titleColor: UIColor {
+        get {
+            return self._label.textColor
+        }
+        set(newTitleColor) {
+            self._label.textColor = newTitleColor
+        }
+    }
 }
 
 
