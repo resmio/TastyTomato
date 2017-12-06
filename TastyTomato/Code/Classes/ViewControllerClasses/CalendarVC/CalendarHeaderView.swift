@@ -105,7 +105,18 @@ private extension CalendarHeaderView {
     }
     
     func _createDayNameLabels() -> [UILabel] {
-        return Calendar.current.veryShortWeekdaySymbols.map({
+        // Unfortunately, .firstWeekday returns Ints in a range from 1 to 7,
+        // which is utterly illogical and not documented at all.
+        // This is why we subtract 1 here, so we can use it to subscript the
+        // weekdaySymbols array.
+        let calendar: Calendar = Calendar.autoupdatingCurrent
+        let firstDayOfWeek: Int = calendar.firstWeekday - 1
+        let shortWeekdaySymbols: [String] = calendar.veryShortWeekdaySymbols
+        let shiftedShortWeekdaySymbols: ArraySlice<String> =
+            shortWeekdaySymbols[firstDayOfWeek..<shortWeekdaySymbols.count] +
+            shortWeekdaySymbols[0..<firstDayOfWeek]
+        
+        return shiftedShortWeekdaySymbols.map({
             let dayNameLabel: UILabel = UILabel()
             dayNameLabel.textAlignment = .center
             dayNameLabel.text = $0
