@@ -214,9 +214,7 @@ private extension CalendarVC/*: UIPageViewControllerDelegate*/ {
     func _pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         self._isPaging = true
         let daysVC: _CalendarDaysVC = (pendingViewControllers[0] as! _CalendarDaysVC)
-        self._currentDaysVC = daysVC
-        self._displayedMonthAndYear = daysVC.month
-        self._firstDisplayedDay = self._getFirstDisplayedDay()
+        self._setCurrentDaysVC(daysVC)
     }
 }
 
@@ -234,7 +232,9 @@ private extension CalendarVC/*: CalendarDaysViewDelegate*/ {
         }
         
         let dateIsInCurrentMonth: Bool = date.isIn(date: self._displayedMonthAndYear, granularity: .month)
-        if dateIsInCurrentMonth {
+        if date.isToday {
+            dateCell.titleColor = .blue018EA6
+        } else if dateIsInCurrentMonth {
             dateCell.titleColor = .black
         } else {
             dateCell.titleColor = .gray
@@ -265,9 +265,7 @@ private extension CalendarVC {
             direction: direction,
             animated: animated,
             completion: { _ in
-                self._currentDaysVC = daysVC
-                self._displayedMonthAndYear = daysVC.month
-                self._firstDisplayedDay = self._getFirstDisplayedDay()
+                self._setCurrentDaysVC(daysVC)
                 self._isPaging = false
             }
         )
@@ -277,6 +275,14 @@ private extension CalendarVC {
         let daysVC: _CalendarDaysVC = _CalendarDaysVC(month: month)
         daysVC.calendarDaysView.delegate = self
         return daysVC
+    }
+    
+    func _setCurrentDaysVC(_ daysVC: _CalendarDaysVC) {
+        self._currentDaysVC = daysVC
+        let month: Date = daysVC.month
+        self._displayedMonthAndYear = month
+        self._firstDisplayedDay = self._getFirstDisplayedDay()
+        self._calendarVCView.headerView.title = month.string(custom: "MMMM yyyy")
     }
 }
 
