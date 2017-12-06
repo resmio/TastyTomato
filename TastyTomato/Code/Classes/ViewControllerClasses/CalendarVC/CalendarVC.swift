@@ -70,7 +70,7 @@ public class CalendarVC: UIViewController {
     fileprivate var _currentDaysVC: _CalendarDaysVC?
     fileprivate var _isPaging: Bool = false
     fileprivate var _displayedMonthAndYear: Date = Date().startOf(component: .month)
-    fileprivate var __selectedDate: Date?
+    fileprivate var __selectedDate: Date? = Date().startOfDay
     
     // Lifecycle Overrides
     public override func loadView() {
@@ -174,13 +174,14 @@ private extension CalendarVC {
             let roundedNewSelectedDate: Date? = newSelectedDate?.startOf(component: .day)
             guard roundedNewSelectedDate != self.__selectedDate else { return }
             
-            let firstDisplayedDay: Date = self._displayedMonthAndYear.startOf(component: .weekOfYear)
+            let firstDisplayedDay: Date = self._firstDisplayedDay
             let lastDisplayedDay: Date = firstDisplayedDay + 41.days
             
             if let newDate: Date = roundedNewSelectedDate {
-                
+                if newDate.isBetween(date: firstDisplayedDay, and: lastDisplayedDay) {
+//                    self._currentDaysVC.deselectDateCell()
+                }
             }
-            
             
             self.__selectedDate = roundedNewSelectedDate
         }
@@ -212,7 +213,10 @@ private extension CalendarVC {
 private extension CalendarVC/*: UIPageViewControllerDelegate*/ {
     func _pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         self._isPaging = true
-        self._currentDaysVC = (pendingViewControllers[0] as! _CalendarDaysVC)
+        let daysVC: _CalendarDaysVC = (pendingViewControllers[0] as! _CalendarDaysVC)
+        self._currentDaysVC = daysVC
+        self._displayedMonthAndYear = daysVC.month
+        self._firstDisplayedDay = self._getFirstDisplayedDay()
     }
 }
 
@@ -221,7 +225,14 @@ private extension CalendarVC/*: UIPageViewControllerDelegate*/ {
 private extension CalendarVC/*: CalendarDaysViewDelegate*/ {
     func _configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
         let date: Date = self._firstDisplayedDay + indexPath.row.days
-        dateCell.title = "\(date.day)"
+        dateCell.title = date.string(custom: "d")
+        
+        if let selectedDate: Date = self._selectedDate {
+            if date == selectedDate {
+                dateCell.isSelected = true
+            }
+        }
+        
         if !date.isIn(date: self._displayedMonthAndYear, granularity: .month) {
             dateCell.titleColor = .gray
         } else {
@@ -279,8 +290,6 @@ private extension CalendarVC {
         let isLaterMonth: Bool = date.isAfter(date: date, granularity: .month)
         let direction: UIPageViewControllerNavigationDirection = isLaterMonth ? .forward : .reverse
         
-        self._displayedMonthAndYear = roundedDate
-        self._firstDisplayedDay = self._getFirstDisplayedDay()
         self._switchTo(daysVC: vc, direction: direction, animated: animated)
     }
 }
@@ -289,7 +298,7 @@ private extension CalendarVC {
 // MARK: Helpers
 private extension CalendarVC {
     func _getFirstDisplayedDay() -> Date {
-        return self._displayedMonthAndYear.startOf(component: .weekOfMonth)
+        return self._displayedMonthAndYear.startWeek
     }
 }
 
@@ -298,7 +307,7 @@ private extension CalendarVC {
 private class _CalendarDaysVC: UIViewController {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
-        self.month = Date()
+        self.month = Date().startOf(component: .month)
         super.init(coder: aDecoder)
     }
     
