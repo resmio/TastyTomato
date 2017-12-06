@@ -22,8 +22,6 @@ public protocol CalendarVCDelegate: class {
 // MARK: Interface
 public extension CalendarVC {
     // Readonly
-    /**
-     */
     var displayedMonthAndYear: Date {
         return self._displayedMonthAndYear
     }
@@ -38,8 +36,6 @@ public extension CalendarVC {
         }
     }
     
-    /**
-     */
     var selectedDate: Date? {
         get {
             return self._selectedDate
@@ -70,7 +66,7 @@ public class CalendarVC: UIViewController {
     fileprivate var _currentDaysVC: _CalendarDaysVC?
     fileprivate var _isPaging: Bool = false
     fileprivate var _displayedMonthAndYear: Date = Date().startOf(component: .month)
-    fileprivate var __selectedDate: Date? = Date().startOfDay
+    fileprivate var __selectedDate: Date?
     
     // Lifecycle Overrides
     public override func loadView() {
@@ -135,7 +131,7 @@ extension CalendarVC: CalendarDaysViewDelegate {
     }
     
     func didSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
-        
+        self.delegate?.didSelectDate(self._firstDisplayedDay + indexPath.row.days, on: self)
     }
 }
 
@@ -171,7 +167,7 @@ private extension CalendarVC {
             return self.__selectedDate
         }
         set(newSelectedDate) {
-            let roundedNewSelectedDate: Date? = newSelectedDate?.startOf(component: .day)
+            let roundedNewSelectedDate: Date? = newSelectedDate?.startOfDay
             guard roundedNewSelectedDate != self.__selectedDate else { return }
             
             let firstDisplayedDay: Date = self._firstDisplayedDay
@@ -179,8 +175,12 @@ private extension CalendarVC {
             
             if let newDate: Date = roundedNewSelectedDate {
                 if newDate.isBetween(date: firstDisplayedDay, and: lastDisplayedDay) {
-//                    self._currentDaysVC.deselectDateCell()
+//                    self._currentDaysVC.deselectSelectedDateCell()
+                } else {
+//                    self._currentDaysVC.selectDateCell(for: newDate)
                 }
+            } else {
+//                self._currentDaysVC.deselectSelectedDateCell()
             }
             
             self.__selectedDate = roundedNewSelectedDate
@@ -228,15 +228,16 @@ private extension CalendarVC/*: CalendarDaysViewDelegate*/ {
         dateCell.title = date.string(custom: "d")
         
         if let selectedDate: Date = self._selectedDate {
-            if date == selectedDate {
-                dateCell.isSelected = true
-            }
+            dateCell.isSelected = (date == selectedDate)
+        } else {
+            dateCell.isSelected = false
         }
         
-        if !date.isIn(date: self._displayedMonthAndYear, granularity: .month) {
-            dateCell.titleColor = .gray
-        } else {
+        let dateIsInCurrentMonth: Bool = date.isIn(date: self._displayedMonthAndYear, granularity: .month)
+        if dateIsInCurrentMonth {
             dateCell.titleColor = .black
+        } else {
+            dateCell.titleColor = .gray
         }
     }
 }
