@@ -64,12 +64,12 @@ public class CalendarVC: UIViewController {
     // Private Lazy Variables
     fileprivate lazy var _calendarVCView: CalendarVCView = self._createCalendarVCView()
     fileprivate lazy var _pageVC: UIPageViewController = self._createPageVC()
+    fileprivate lazy var _firstDisplayedDay: Date = self._getFirstDisplayedDay()
     
     // Private Variables
     fileprivate var _currentDaysVC: _CalendarDaysVC?
     fileprivate var _isPaging: Bool = false
-    fileprivate var _displayedMonthAndYear: Date = Date()
-    fileprivate var _firstDisplayedDay: Date = Date()
+    fileprivate var _displayedMonthAndYear: Date = Date().startOf(component: .month)
     fileprivate var __selectedDate: Date?
     
     // Lifecycle Overrides
@@ -79,6 +79,10 @@ public class CalendarVC: UIViewController {
     
     public override func viewDidLoad() {
         self._viewDidLoad()
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        self._viewWillAppear(animated)
     }
 }
 
@@ -153,16 +157,6 @@ private extension CalendarVC {
             options: nil
         )
         
-        let initialVC: _CalendarDaysVC = _CalendarDaysVC(month: self._displayedMonthAndYear)
-        initialVC.calendarDaysView.delegate = self
-        pageVC.setViewControllers(
-            [initialVC],
-            direction: .forward,
-            animated: false,
-            completion: nil
-        )
-        self._currentDaysVC = initialVC
-        
         pageVC.delegate = self
         pageVC.dataSource = self
         return pageVC
@@ -203,6 +197,13 @@ private extension CalendarVC {
         self.embed(pageVC, into: self._calendarVCView.pageVCViewContainer)
         pageVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
+    
+    func _viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let initialVC: _CalendarDaysVC = self._daysVC(for: self._displayedMonthAndYear)
+        self._switchTo(daysVC: initialVC, direction: .forward, animated: false)
+    }
 }
 
 
@@ -221,6 +222,11 @@ private extension CalendarVC/*: CalendarDaysViewDelegate*/ {
     func _configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
         let date: Date = self._firstDisplayedDay + indexPath.row.days
         dateCell.title = "\(date.day)"
+        if !date.isIn(date: self._displayedMonthAndYear, granularity: .month) {
+            dateCell.titleColor = .gray
+        } else {
+            dateCell.titleColor = .black
+        }
     }
 }
 
@@ -247,6 +253,9 @@ private extension CalendarVC {
             direction: direction,
             animated: animated,
             completion: { _ in
+                self._currentDaysVC = daysVC
+                self._displayedMonthAndYear = daysVC.month
+                self._firstDisplayedDay = self._getFirstDisplayedDay()
                 self._isPaging = false
             }
         )
@@ -271,8 +280,16 @@ private extension CalendarVC {
         let direction: UIPageViewControllerNavigationDirection = isLaterMonth ? .forward : .reverse
         
         self._displayedMonthAndYear = roundedDate
-        self._firstDisplayedDay = roundedDate.startOf(component: .weekOfYear)
+        self._firstDisplayedDay = self._getFirstDisplayedDay()
         self._switchTo(daysVC: vc, direction: direction, animated: animated)
+    }
+}
+
+
+// MARK: Helpers
+private extension CalendarVC {
+    func _getFirstDisplayedDay() -> Date {
+        return self._displayedMonthAndYear.startOf(component: .weekOfMonth)
     }
 }
 
