@@ -154,9 +154,7 @@ private extension CalendarVC {
                 UIPageViewControllerOptionInterPageSpacingKey: 20
             ]
         )
-        
-        
-        
+
         pageVC.delegate = self
         pageVC.dataSource = self
         return pageVC
@@ -252,13 +250,13 @@ private extension CalendarVC {
     func _showPreviousMonth() {
         guard let currentVC: _CalendarDaysVC = self._currentDaysVC else { return }
         let vc: _CalendarDaysVC = self._daysVC(for: currentVC.month - 1.month)
-        self._switchTo(daysVC: vc, direction: .reverse)
+        self._switchTo(daysVC: vc, direction: .reverse, animated: false)
     }
     
     func _showNextMonth() {
         guard let currentVC: _CalendarDaysVC = self._currentDaysVC else { return }
         let vc: _CalendarDaysVC = self._daysVC(for: currentVC.month + 1.month)
-        self._switchTo(daysVC: vc, direction: .forward)
+        self._switchTo(daysVC: vc, direction: .forward, animated: false)
     }
     
     func _switchTo(daysVC: _CalendarDaysVC, direction: UIPageViewControllerNavigationDirection, animated: Bool = true) {
@@ -293,7 +291,7 @@ private extension CalendarVC {
 
 // MARK: Set Displayed Month
 private extension CalendarVC {
-    func _setDisplayedMonthAndYear(from date: Date, animated: Bool = true) {
+    func _setDisplayedMonthAndYear(from date: Date, animated: Bool) {
         guard !date.isIn(date: self._displayedMonthAndYear, granularity: .month) else { return }
         let roundedDate: Date = date.startOf(component: .month)
         let vc: _CalendarDaysVC = self._daysVC(for: roundedDate)
