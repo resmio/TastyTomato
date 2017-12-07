@@ -35,9 +35,9 @@ class CalendarVCView: UIView {
         self._addSubviews()
     }
     
-    // Private Variables
-    fileprivate var _headerView: CalendarHeaderView = CalendarHeaderView()
-    fileprivate var _pageVCViewContainer: UIView = UIView()
+    // Private Lazy Variables
+    fileprivate lazy var _headerView: CalendarHeaderView = self._createHeaderView()
+    fileprivate lazy var _pageVCViewContainer: UIView = self._createPageVCViewContainer()
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -51,6 +51,21 @@ class CalendarVCView: UIView {
 
 
 // MARK: // Private
+// MARK: Lazy Variable Creation
+private extension CalendarVCView {
+    func _createHeaderView() -> CalendarHeaderView {
+        let headerView: CalendarHeaderView = CalendarHeaderView()
+        headerView.isExclusiveTouch = true
+        return headerView
+    }
+    
+    func _createPageVCViewContainer() -> UIView {
+        let pageVCViewContainer: UIView = UIView()
+        pageVCViewContainer.isExclusiveTouch = true
+        return pageVCViewContainer
+    }
+}
+
 // MARK: Layout Override Implementations
 private extension CalendarVCView {
     func _layoutSubviews() {
