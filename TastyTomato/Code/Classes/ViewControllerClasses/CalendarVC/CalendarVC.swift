@@ -150,8 +150,12 @@ private extension CalendarVC {
         let pageVC: UIPageViewController = UIPageViewController(
             transitionStyle: .scroll,
             navigationOrientation: .horizontal,
-            options: nil
+            options: [
+                UIPageViewControllerOptionInterPageSpacingKey: 20
+            ]
         )
+        
+        
         
         pageVC.delegate = self
         pageVC.dataSource = self
