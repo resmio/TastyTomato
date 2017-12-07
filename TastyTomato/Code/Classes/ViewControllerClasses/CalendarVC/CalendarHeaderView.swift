@@ -120,13 +120,15 @@ private extension CalendarHeaderView {
         // weekdaySymbols array.
         let calendar: Calendar = Calendar.autoupdatingCurrent
         let firstDayOfWeek: Int = calendar.firstWeekday - 1
-        let shortWeekdaySymbols: [String] = calendar.veryShortWeekdaySymbols
+        let shortWeekdaySymbols: [String] = calendar.shortWeekdaySymbols
         let shiftedShortWeekdaySymbols: ArraySlice<String> =
             shortWeekdaySymbols[firstDayOfWeek..<shortWeekdaySymbols.count] +
             shortWeekdaySymbols[0..<firstDayOfWeek]
         
         return shiftedShortWeekdaySymbols.map({
             let dayNameLabel: UILabel = UILabel()
+            dayNameLabel.font = .systemFont(ofSize: 12)
+            dayNameLabel.textColor = .gray555555
             dayNameLabel.textAlignment = .center
             dayNameLabel.text = $0
             return dayNameLabel
@@ -143,11 +145,12 @@ private extension CalendarHeaderView {
         let width: CGFloat = self.width
         let height: CGFloat = self.height
         
-        let halfHeight: CGFloat = 0.5 * height
+        let monthNameYearLabelHeight: CGFloat = 0.6 * height
+        let dayNamesHeight: CGFloat = height - monthNameYearLabelHeight
         
-        let buttonSize: CGSize = CGSize(width: halfHeight, height: halfHeight)
-        let monthNameYearLabelSize: CGSize = CGSize(width: width - height, height: halfHeight)
-        let dayNamesViewFrame: CGRect = CGRect(x: 0, y: halfHeight, width: width, height: halfHeight)
+        let monthNameYearLabelSize: CGSize = CGSize(width: width - height, height: monthNameYearLabelHeight)
+        let buttonSize: CGSize = CGSize(width: monthNameYearLabelHeight, height: monthNameYearLabelHeight)
+        let dayNamesViewFrame: CGRect = CGRect(x: 0, y: monthNameYearLabelHeight, width: width, height: dayNamesHeight)
         
         self._leftArrowButton.size = buttonSize
         
@@ -162,13 +165,12 @@ private extension CalendarHeaderView {
         self._dayNamesView.frame = dayNamesViewFrame
         
         let dayNameLabelWidth: CGFloat = width / 7
-        let dayNameLabelHeight: CGFloat = halfHeight
         self._dayNameLabels.enumerated().forEach({
             $0.element.frame = CGRect(
                 x: $0.offset * dayNameLabelWidth,
                 y: 0,
                 width: dayNameLabelWidth,
-                height: dayNameLabelHeight
+                height: dayNamesHeight
             )
         })
     }

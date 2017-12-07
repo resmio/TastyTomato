@@ -96,7 +96,7 @@ private extension CalendarVCView {
     }
     
     private var _headerViewHeightRatio: CGFloat {
-        return 0.3
+        return 0.25
     }
 }
 
