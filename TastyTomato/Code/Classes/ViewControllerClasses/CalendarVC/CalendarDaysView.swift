@@ -29,6 +29,15 @@ extension CalendarDaysView {
             self._delegate = newDelegate
         }
     }
+    
+    var topInset: CGFloat {
+        get {
+            return self._topInset
+        }
+        set(newTopInset) {
+            self._topInset = newTopInset
+        }
+    }
 }
 
 
@@ -52,6 +61,9 @@ class CalendarDaysView: UIView {
     // Private Lazy Variables
     fileprivate lazy var _collectionView: UICollectionView = self._createCollectionView()
     fileprivate lazy var _collectionViewLayout: UICollectionViewFlowLayout = self._createCollectionViewLayout()
+    
+    // Private Variables
+    fileprivate var __topInset: CGFloat = 0
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -113,13 +125,31 @@ private extension CalendarDaysView {
 }
 
 
+// MARK: Computed Variables
+private extension CalendarDaysView {
+    var _topInset: CGFloat {
+        get {
+            return self.__topInset
+        }
+        set(newTopInset) {
+            guard newTopInset != self.__topInset else { return }
+            self.__topInset = newTopInset
+            self.setNeedsLayout()
+        }
+    }
+}
+
+
 // MARK: Layout Override Implementations
 private extension CalendarDaysView {
     func _layoutSubviews() {
         super.layoutSubviews()
         
-        let itemWidth: CGFloat = self.width / 7
-        let itemHeight: CGFloat = self.height / 6
+        let width: CGFloat = self.width
+        let topInset: CGFloat = self.topInset
+        let collectionViewHeight: CGFloat = self.height - topInset
+        let itemWidth: CGFloat = width / 7
+        let itemHeight: CGFloat = collectionViewHeight / 6
         
         let layout: UICollectionViewFlowLayout = self._collectionViewLayout
         let oldItemSize: CGSize = layout.itemSize
@@ -129,7 +159,7 @@ private extension CalendarDaysView {
             layout.invalidateLayout()
         }
         
-        self._collectionView.size = self.size
+        self._collectionView.frame = CGRect(x: 0, y: topInset, width: width, height: collectionViewHeight)
     }
 }
 
