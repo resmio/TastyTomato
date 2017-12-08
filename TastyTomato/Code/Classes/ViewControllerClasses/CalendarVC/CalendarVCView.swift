@@ -65,8 +65,7 @@ private extension CalendarVCView {
     func _layoutSubviews() {
         super.layoutSubviews()
         
-        let size: CGSize = self.sizeThatFits(self.size)
-        
+        let size: CGSize = self.size
         self.headerView.size = CGSize(
             width: size.width,
             height: size.height * self._headerViewHeightRatio
@@ -82,9 +81,12 @@ private extension CalendarVCView {
         let widthToHeightRatio: CGFloat = self._widthToHeightRatio
         let widthUnit: CGFloat = size.width / numOfWidthUnits
         let heightUnit: CGFloat = (size.height / numOfHeightUnits) / widthToHeightRatio
-        let smallerUnit: CGFloat = min(widthUnit, heightUnit)
-        let width: CGFloat = numOfWidthUnits * smallerUnit
-        let height: CGFloat = numOfHeightUnits * smallerUnit
+        var unit: CGFloat = min(widthUnit, heightUnit)
+        if unit == 0 {
+            unit = max(widthUnit, heightUnit)
+        }
+        let width: CGFloat = numOfWidthUnits * unit
+        let height: CGFloat = numOfHeightUnits * unit
         
         return CGSize(width: width, height: height)
     }
