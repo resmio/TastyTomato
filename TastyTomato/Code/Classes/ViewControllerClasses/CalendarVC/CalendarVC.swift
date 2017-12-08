@@ -284,7 +284,6 @@ private extension CalendarVC {
         let month: Date = daysVC.month
         self._displayedMonthAndYear = month
         self._firstDisplayedDay = self._getFirstDisplayedDay()
-        self._calendarVCView.headerView.title = month.string(custom: "MMMM yyyy")
     }
 }
 

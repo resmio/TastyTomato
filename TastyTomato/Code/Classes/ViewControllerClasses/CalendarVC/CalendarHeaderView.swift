@@ -28,15 +28,6 @@ extension CalendarHeaderView {
             self._delegate = newDelegate
         }
     }
-    
-    var title: String {
-        get {
-            return self._monthNameYearLabel.text ?? ""
-        }
-        set(newTitle) {
-            self._monthNameYearLabel.text = newTitle
-        }
-    }
 }
 
 // MARK: Class Declaration
@@ -57,8 +48,8 @@ class CalendarHeaderView: UIView {
     fileprivate weak var _delegate: CalendarHeaderViewDelegate?
     
     // Private Lazy Variables
+    fileprivate lazy var _backgroundLayer: CAGradientLayer = self._createBackgroundLayer()
     fileprivate lazy var _leftArrowButton: UIButton = self._createLeftArrowButton()
-    fileprivate lazy var _monthNameYearLabel: UILabel = self._createMonthNameYearLabel()
     fileprivate lazy var _rightArrowButton: UIButton = self._createRightArrowButton()
     fileprivate lazy var _dayNamesView: UIView = self._createDayNamesView()
     fileprivate lazy var _dayNameLabels: [UILabel] = self._createDayNameLabels()
@@ -73,6 +64,15 @@ class CalendarHeaderView: UIView {
 // MARK: // Private
 // MARK: Lazy Variable Creation
 private extension CalendarHeaderView {
+    func _createBackgroundLayer() -> CAGradientLayer {
+        let backgroundLayer: CAGradientLayer = CAGradientLayer()
+        backgroundLayer.colors = [UIColor.white, UIColor.white, UIColor.clear, UIColor.clear, UIColor.white, UIColor.white]
+        backgroundLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        backgroundLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        backgroundLayer.locations = [0, 0.1, 0.15, 0.85, 0.9, 1]
+        return backgroundLayer
+    }
+    
     func _createLeftArrowButton() -> UIButton {
         let leftArrowButton: UIButton = UIButton(type: .system)
         leftArrowButton.tintColor = .black
@@ -84,14 +84,6 @@ private extension CalendarHeaderView {
             for: .touchUpInside
         )
         return leftArrowButton
-    }
-    
-    func _createMonthNameYearLabel() -> UILabel {
-        let monthNameYearLabel: UILabel = UILabel()
-        monthNameYearLabel.text = "Monthname Year"
-        monthNameYearLabel.textAlignment = .center
-        monthNameYearLabel.adjustsFontSizeToFitWidth = true
-        return monthNameYearLabel
     }
     
     func _createRightArrowButton() -> UIButton {
@@ -145,18 +137,26 @@ private extension CalendarHeaderView {
         let width: CGFloat = self.width
         let height: CGFloat = self.height
         
-        let monthNameYearLabelHeight: CGFloat = 0.6 * height
-        let dayNamesHeight: CGFloat = height - monthNameYearLabelHeight
+        let buttonSideLength: CGFloat = 0.6 * height
+        let dayNamesHeight: CGFloat = height - buttonSideLength
         
-        let monthNameYearLabelSize: CGSize = CGSize(width: width - height, height: monthNameYearLabelHeight)
-        let buttonSize: CGSize = CGSize(width: monthNameYearLabelHeight, height: monthNameYearLabelHeight)
-        let dayNamesViewFrame: CGRect = CGRect(x: 0, y: monthNameYearLabelHeight, width: width, height: dayNamesHeight)
+        let buttonSize: CGSize = CGSize(width: buttonSideLength, height: buttonSideLength)
+        let dayNamesViewFrame: CGRect = CGRect(x: 0, y: buttonSideLength, width: width, height: dayNamesHeight)
+        
+        let buttonSideLengthRatio: CGFloat = buttonSideLength / width
+        let gradientRatio: CGFloat = 0.05 // ???: Should this be moved into the class declaration?
+        let buttonSideLengthPlusGradientRatio: CGFloat = buttonSideLengthRatio + gradientRatio
+        let backgroundLayer: CAGradientLayer = self._backgroundLayer
+        backgroundLayer.locations = [
+            0,
+            buttonSideLengthRatio,
+            buttonSideLengthPlusGradientRatio,
+            1 - buttonSideLengthPlusGradientRatio,
+            1 - buttonSideLengthRatio,
+            1
+        ] as [NSNumber]
         
         self._leftArrowButton.size = buttonSize
-        
-        let monthNameYearLabel: UILabel = self._monthNameYearLabel
-        monthNameYearLabel.size = monthNameYearLabelSize
-        monthNameYearLabel.centerHInSuperview()
         
         let rightArrowButton: UIButton = self._rightArrowButton
         rightArrowButton.size = buttonSize
@@ -180,8 +180,8 @@ private extension CalendarHeaderView {
 // MARK: Add Subviews
 private extension CalendarHeaderView {
     func _addSubviews() {
+        self.layer.addSublayer(self._backgroundLayer)
         self.addSubview(self._leftArrowButton)
-        self.addSubview(self._monthNameYearLabel)
         self.addSubview(self._rightArrowButton)
         self.addSubview(self._dayNamesView)
     }
