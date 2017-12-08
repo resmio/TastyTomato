@@ -74,10 +74,6 @@ public class CalendarVC: UIViewController {
         self._viewDidLoad()
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
-        self._viewWillAppear(animated)
-    }
-    
     public override func viewDidLayoutSubviews() {
         self._viewDidLayoutSubviews()
     }
@@ -155,6 +151,14 @@ private extension CalendarVC {
                 UIPageViewControllerOptionInterPageSpacingKey: 20
             ]
         )
+        
+        let initialVC: _CalendarDaysVC = self._daysVC(for: Date().startOf(component: .month))
+        pageVC.setViewControllers(
+            [initialVC],
+            direction: .forward,
+            animated: false,
+            completion: nil
+        )
 
         pageVC.delegate = self
         pageVC.dataSource = self
@@ -211,14 +215,7 @@ private extension CalendarVC {
     func _viewDidLoad() {
         super.viewDidLoad()
         
-        self.embed(self._pageVC)
-    }
-    
-    func _viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let initialVC: _CalendarDaysVC = self._daysVC(for: self._displayedMonthAndYear)
-        self._switchTo(daysVC: initialVC, direction: .forward, animated: false)
+        self.embed(self._pageVC, into: self._calendarVCView.pageVCContainerView)
     }
     
     func _viewDidLayoutSubviews() {
