@@ -20,6 +20,12 @@ protocol CalendarHeaderViewDelegate: class {
 // MARK: - CalendarHeaderView
 // MARK: Interface
 extension CalendarHeaderView {
+    // Readonly
+    var titleFrame: CGRect {
+        return self._titleFrame
+    }
+    
+    // ReadWrite
     var delegate: CalendarHeaderViewDelegate? {
         get {
             return self._delegate
@@ -43,6 +49,10 @@ class CalendarHeaderView: UIView {
         super.init(frame: frame)
         self._addSubviews()
     }
+    
+    // Private Constants
+    fileprivate let _buttonHeightRatio: CGFloat = 0.6
+    fileprivate let _gradientWidthRatio: CGFloat = 0.05
     
     // Private Weak Variables
     fileprivate weak var _delegate: CalendarHeaderViewDelegate?
@@ -129,6 +139,17 @@ private extension CalendarHeaderView {
 }
 
 
+// MARK: Computed Variables
+private extension CalendarHeaderView {
+    var _titleFrame: CGRect {
+        let buttonSideLength: CGFloat = self.height * self._buttonHeightRatio
+        let gradientWidth: CGFloat = buttonSideLength * (1 + self._gradientWidthRatio)
+        let width: CGFloat = self.width - (2 * gradientWidth)
+        return CGRect(x: gradientWidth, y: 0, width: width, height: buttonSideLength)
+    }
+}
+
+
 // MARK: Layout Override Implementations
 private extension CalendarHeaderView {
     func _layoutSubviews() {
@@ -137,14 +158,14 @@ private extension CalendarHeaderView {
         let width: CGFloat = self.width
         let height: CGFloat = self.height
         
-        let buttonSideLength: CGFloat = 0.6 * height
+        let buttonSideLength: CGFloat = self._buttonHeightRatio * height
         let dayNamesHeight: CGFloat = height - buttonSideLength
         
         let buttonSize: CGSize = CGSize(width: buttonSideLength, height: buttonSideLength)
         let dayNamesViewFrame: CGRect = CGRect(x: 0, y: buttonSideLength, width: width, height: dayNamesHeight)
         
         let buttonSideLengthRatio: CGFloat = buttonSideLength / width
-        let gradientRatio: CGFloat = 0.05 // ???: Should this be moved into the class declaration?
+        let gradientRatio: CGFloat = self._gradientWidthRatio
         let buttonSideLengthPlusGradientRatio: CGFloat = buttonSideLengthRatio + gradientRatio
         let backgroundLayer: CAGradientLayer = self._backgroundLayer
         backgroundLayer.locations = [
