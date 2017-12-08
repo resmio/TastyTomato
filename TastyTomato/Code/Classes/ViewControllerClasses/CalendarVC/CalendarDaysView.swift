@@ -38,6 +38,24 @@ extension CalendarDaysView {
             self._topInset = newTopInset
         }
     }
+    
+    var titleLabelFrame: CGRect {
+        get {
+            return self._titleLabel.frame
+        }
+        set(newTitleLabelFrame) {
+            self._titleLabel.frame = newTitleLabelFrame
+        }
+    }
+    
+    var title: String {
+        get {
+            return self._titleLabel.text ?? ""
+        }
+        set(newTitle) {
+            self._titleLabel.text = newTitle
+        }
+    }
 }
 
 
@@ -46,19 +64,20 @@ class CalendarDaysView: UIView {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.addSubview(self._collectionView)
+        self._addSubviews()
     }
     
     // Override Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubview(self._collectionView)
+        self._addSubviews()
     }
     
     // Private Weak Variables
     fileprivate weak var _delegate: CalendarDaysViewDelegate?
     
     // Private Lazy Variables
+    fileprivate lazy var _titleLabel: UILabel = self._createTitleLabel()
     fileprivate lazy var _collectionView: UICollectionView = self._createCollectionView()
     fileprivate lazy var _collectionViewLayout: UICollectionViewFlowLayout = self._createCollectionViewLayout()
     
@@ -100,6 +119,14 @@ extension CalendarDaysView: UICollectionViewDataSource {
 // MARK: // Private
 // MARK: Lazy Variable Creation
 private extension CalendarDaysView {
+    func _createTitleLabel() -> UILabel {
+        let titleLabel: UILabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.text = "Monthname Year"
+        return titleLabel
+    }
+    
     func _createCollectionView() -> UICollectionView {
         let collectionView: UICollectionView = UICollectionView(
             frame: .zero,
@@ -160,6 +187,15 @@ private extension CalendarDaysView {
         }
         
         self._collectionView.frame = CGRect(x: 0, y: topInset, width: width, height: collectionViewHeight)
+    }
+}
+
+
+// MARK: Add Subviews
+private extension CalendarDaysView {
+    func _addSubviews() {
+        self.addSubview(self._titleLabel)
+        self.addSubview(self._collectionView)
     }
 }
 
