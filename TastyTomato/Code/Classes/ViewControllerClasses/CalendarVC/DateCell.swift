@@ -23,10 +23,10 @@ extension DateCell {
     
     var titleColor: UIColor {
         get {
-            return self._label.textColor
+            return self._titleColor
         }
         set(newTitleColor) {
-            self._label.textColor = newTitleColor
+            self._titleColor = newTitleColor
         }
     }
     
@@ -55,6 +55,9 @@ class DateCell: UICollectionViewCell {
     
     // Private Lazy Variables
     fileprivate lazy var _label: UILabel = self._createLabel()
+    
+    // Private Variables
+    fileprivate var _backupTitleColor: UIColor = .black
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -88,6 +91,7 @@ private extension DateCell {
     func _createLabel() -> UILabel {
         let label: UILabel = UILabel()
         label.textAlignment = .center
+        label.textColor = self._backupTitleColor
         label.text = "31"
         return label
     }
@@ -104,7 +108,7 @@ private extension DateCell {
             guard newIsHighlighted != super.isHighlighted else { return }
             super.isHighlighted = newIsHighlighted
             self.backgroundColor = newIsHighlighted ? UIColor.blue00A7C4.withAlpha(0.5) : .white
-            self.titleColor = newIsHighlighted ? .white : .black
+            self._label.textColor = newIsHighlighted ? .white : self._backupTitleColor
         }
     }
     
@@ -116,7 +120,17 @@ private extension DateCell {
             guard newIsSelected != super.isSelected else { return }
             super.isSelected = newIsSelected
             self.backgroundColor = newIsSelected ? .blue00A7C4 : .white
-            self.titleColor = newIsSelected ? .white : .black
+            self._label.textColor = newIsSelected ? .white : self._backupTitleColor
+        }
+    }
+    
+    var _titleColor: UIColor {
+        get {
+            return self._label.textColor
+        }
+        set(newTitleColor) {
+            self._backupTitleColor = newTitleColor
+            self._label.textColor = self.isSelected ? .white : newTitleColor
         }
     }
 }
