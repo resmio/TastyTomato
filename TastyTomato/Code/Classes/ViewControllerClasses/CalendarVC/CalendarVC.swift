@@ -200,9 +200,7 @@ private extension CalendarVC {
     func _viewDidLoad() {
         super.viewDidLoad()
         
-        let pageVC: UIPageViewController = self._pageVC
-        self.embed(pageVC, into: self._calendarVCView.pageVCViewContainer)
-        pageVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.embed(self._pageVC)
     }
     
     func _viewWillAppear(_ animated: Bool) {

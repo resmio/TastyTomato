@@ -14,10 +14,6 @@ extension CalendarVCView {
     var headerView: CalendarHeaderView {
         return self._headerView
     }
-    
-    var pageVCViewContainer: UIView {
-        return self._pageVCViewContainer
-    }
 }
 
 
@@ -26,18 +22,17 @@ class CalendarVCView: UIView {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self._addSubviews()
+        self.addSubview(self._headerView)
     }
     
     // Override Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self._addSubviews()
+        self.addSubview(self._headerView)
     }
     
     // Private Lazy Variables
     fileprivate lazy var _headerView: CalendarHeaderView = self._createHeaderView()
-    fileprivate lazy var _pageVCViewContainer: UIView = self._createPageVCViewContainer()
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -58,12 +53,6 @@ private extension CalendarVCView {
         headerView.isExclusiveTouch = true
         return headerView
     }
-    
-    func _createPageVCViewContainer() -> UIView {
-        let pageVCViewContainer: UIView = UIView()
-        pageVCViewContainer.isExclusiveTouch = true
-        return pageVCViewContainer
-    }
 }
 
 // MARK: Layout Override Implementations
@@ -72,22 +61,10 @@ private extension CalendarVCView {
         super.layoutSubviews()
         
         let size: CGSize = self.sizeThatFits(self.size)
-        let width: CGFloat = size.width
-        let height: CGFloat = size.height
-        
-        let headerViewHeight: CGFloat = height * self._headerViewHeightRatio
-        let pageVCViewHeight: CGFloat = height - headerViewHeight
         
         self.headerView.size = CGSize(
-            width: width,
-            height: headerViewHeight
-        )
-        
-        self.pageVCViewContainer.frame = CGRect(
-            x: 0,
-            y: headerViewHeight,
-            width: width,
-            height: pageVCViewHeight
+            width: size.width,
+            height: size.height * self._headerViewHeightRatio
         )
     }
     
@@ -112,14 +89,5 @@ private extension CalendarVCView {
     
     private var _headerViewHeightRatio: CGFloat {
         return 0.25
-    }
-}
-
-
-// MARK: Add Subviews
-private extension CalendarVCView {
-    func _addSubviews() {
-        self.addSubview(self._headerView)
-        self.addSubview(self._pageVCViewContainer)
     }
 }
