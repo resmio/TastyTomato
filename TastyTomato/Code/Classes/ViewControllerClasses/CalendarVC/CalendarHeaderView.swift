@@ -167,7 +167,9 @@ private extension CalendarHeaderView {
         let buttonSideLengthRatio: CGFloat = buttonSideLength / width
         let gradientRatio: CGFloat = self._gradientWidthRatio
         let buttonSideLengthPlusGradientRatio: CGFloat = buttonSideLengthRatio + gradientRatio
+        
         let backgroundLayer: CAGradientLayer = self._backgroundLayer
+        backgroundLayer.frame.size = CGSize(width: width, height: buttonSize.height)
         backgroundLayer.locations = [
             0,
             buttonSideLengthRatio,
