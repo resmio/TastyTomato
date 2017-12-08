@@ -14,6 +14,10 @@ extension CalendarVCView {
     var headerView: CalendarHeaderView {
         return self._headerView
     }
+    
+    var pageVCContainerView: UIView {
+        return self._pageVCContainerView
+    }
 }
 
 
@@ -22,17 +26,18 @@ class CalendarVCView: UIView {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.addSubview(self._headerView)
+        self._addSubviews()
     }
     
     // Override Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubview(self._headerView)
+        self._addSubviews()
     }
     
     // Private Lazy Variables
     fileprivate lazy var _headerView: CalendarHeaderView = self._createHeaderView()
+    fileprivate lazy var _pageVCContainerView: UIView = UIView()
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -66,6 +71,8 @@ private extension CalendarVCView {
             width: size.width,
             height: size.height * self._headerViewHeightRatio
         )
+        
+        self._pageVCContainerView.size = size
     }
     
     func _sizeThatFits(_ size: CGSize) -> CGSize {
@@ -89,5 +96,16 @@ private extension CalendarVCView {
     
     private var _headerViewHeightRatio: CGFloat {
         return 0.25
+    }
+}
+
+
+// MARK: Add Subviews
+private extension CalendarVCView {
+    func _addSubviews() {
+        // Order matters here, since we want the gradientLayer of
+        // the headerView to be above the pageVCContainerView
+        self.addSubview(self._pageVCContainerView)
+        self.addSubview(self._headerView)
     }
 }
