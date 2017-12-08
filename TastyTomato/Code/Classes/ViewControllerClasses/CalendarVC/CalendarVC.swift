@@ -108,27 +108,27 @@ extension CalendarVC: UIPageViewControllerDelegate {
 // MARK: UIPageViewControllerDataSource
 extension CalendarVC: UIPageViewControllerDataSource {
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return self._daysVC(for: (viewController as! CalendarDaysVC)._month - 1.month)
+        return self._daysVC(for: (viewController as! CalendarDaysVC).month - 1.month)
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return self._daysVC(for: (viewController as! CalendarDaysVC)._month + 1.month)
+        return self._daysVC(for: (viewController as! CalendarDaysVC).month + 1.month)
     }
 }
 
 
-// MARK: CalendarDaysViewDelegate
-extension CalendarVC: CalendarDaysViewDelegate {
-    func configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
-        self._configure(dateCell, for: indexPath, on: calendarDaysView)
+// MARK: CalendarDaysVCDelegate
+extension CalendarVC: CalendarDaysVCDelegate {
+    func selectedDate(for calendarDaysVC: CalendarDaysVC) -> Date? {
+        return self._selectedDate
     }
     
-    func shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool {
+    func shouldSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC) -> Bool {
         return true
     }
     
-    func didSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
-        self.delegate?.didSelectDate(self._firstDisplayedDay + indexPath.row.days, on: self)
+    func didSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC) {
+        self.delegate?.didSelectDate(date, on: self)
     }
 }
 
@@ -175,7 +175,7 @@ private extension CalendarVC {
     }
     
     var _displayedMonthAndYear: Date {
-        return self._currentDaysVC._month
+        return self._currentDaysVC.month
     }
     
     var _firstDisplayedDay: Date {
@@ -226,40 +226,15 @@ private extension CalendarVC {
 }
 
 
-// MARK: Delegates / DataSources
-// MARK: CalendarDaysViewDelegate
-private extension CalendarVC/*: CalendarDaysViewDelegate*/ {
-    func _configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
-        let date: Date = self._firstDisplayedDay + indexPath.row.days
-        dateCell.title = date.string(custom: "d")
-        
-        if let selectedDate: Date = self._selectedDate {
-            dateCell.isSelected = (date == selectedDate)
-        } else {
-            dateCell.isSelected = false
-        }
-        
-        let dateIsInCurrentMonth: Bool = date.isIn(date: self._displayedMonthAndYear, granularity: .month)
-        if date.isToday {
-            dateCell.titleColor = .blue018EA6
-        } else if dateIsInCurrentMonth {
-            dateCell.titleColor = .black
-        } else {
-            dateCell.titleColor = .gray
-        }
-    }
-}
-
-
 // MARK: PageViewController Helpers
 private extension CalendarVC {
     func _showPreviousMonth() {
-        let vc: CalendarDaysVC = self._daysVC(for: self._currentDaysVC._month - 1.month)
+        let vc: CalendarDaysVC = self._daysVC(for: self._currentDaysVC.month - 1.month)
         self._switchTo(daysVC: vc, direction: .reverse, animated: false)
     }
     
     func _showNextMonth() {
-        let vc: CalendarDaysVC = self._daysVC(for: self._currentDaysVC._month + 1.month)
+        let vc: CalendarDaysVC = self._daysVC(for: self._currentDaysVC.month + 1.month)
         self._switchTo(daysVC: vc, direction: .forward, animated: false)
     }
     
@@ -278,7 +253,7 @@ private extension CalendarVC {
     
     func _daysVC(for month: Date) -> CalendarDaysVC {
         let daysVC: CalendarDaysVC = CalendarDaysVC(month: month)
-        daysVC.calendarDaysView.delegate = self
+        daysVC.delegate = self
         self._adjustDaysVCLayout(daysVC)
         return daysVC
     }
@@ -286,8 +261,8 @@ private extension CalendarVC {
     func _adjustDaysVCLayout(_ daysVC: CalendarDaysVC? = nil) {
         let daysVC: CalendarDaysVC = daysVC ?? self._currentDaysVC
         let headerView: CalendarHeaderView = self._calendarVCView.headerView
-        daysVC.calendarDaysView.topInset = headerView.height
-        daysVC.calendarDaysView.titleLabelFrame = headerView.titleFrame
+        daysVC.topInset = headerView.height
+        daysVC.titleLabelFrame = headerView.titleFrame
     }
 }
 

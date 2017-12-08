@@ -7,26 +7,51 @@
 //
 
 import UIKit
+import SwiftDate
 
 
 // MARK: // Internal
 // MARK: - CalendarDaysVCDelegate
 protocol CalendarDaysVCDelegate: class {
-    func configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysVC: CalendarDaysVC)
-    func shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysVC: CalendarDaysVC) -> Bool
-    func didSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysVC: CalendarDaysVC)
+    func selectedDate(for calendarDaysVC: CalendarDaysVC) -> Date?
+    func shouldSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC) -> Bool
+    func didSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC)
 }
 
 
 // MARK: - CalendarDaysVC
 // MARK: Interface
 extension CalendarDaysVC {
+    // Readonly
+    var month: Date {
+        return self._month
+    }
+    
+    // ReadWrite
     var delegate: CalendarDaysVCDelegate? {
         get {
             return self._delegate
         }
         set(newDelegate) {
             self._delegate = newDelegate
+        }
+    }
+    
+    var topInset: CGFloat {
+        get {
+            return self._calendarDaysView.topInset
+        }
+        set(newTopInset) {
+            self._calendarDaysView.topInset = newTopInset
+        }
+    }
+    
+    var titleLabelFrame: CGRect {
+        get {
+            return self._calendarDaysView.titleLabelFrame
+        }
+        set(newTitleLabelFrame) {
+            self._calendarDaysView.titleLabelFrame = newTitleLabelFrame
         }
     }
 }
@@ -38,29 +63,29 @@ class CalendarDaysVC: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         let month: Date = Date().startOf(component: .month)
         self._month = month
-        self.calendarDaysView.title = month.string(custom: "MMMM YYYY")
         super.init(coder: aDecoder)
+        self._calendarDaysView.title = month.string(custom: "MMMM YYYY")
     }
     
     // Init
     init(month: Date) {
         self._month = month
-        self.calendarDaysView.title = month.string(custom: "MMMM YYYY")
         super.init(nibName: nil, bundle: nil)
+        self._calendarDaysView.title = month.string(custom: "MMMM YYYY")
     }
-    
-    // Private Constants
-    fileprivate let calendarDaysView: CalendarDaysView = CalendarDaysView()
     
     // Private Weak Variables
     fileprivate weak var _delegate: CalendarDaysVCDelegate?
+    
+    // Private Lazy Variables
+    fileprivate lazy var _calendarDaysView: CalendarDaysView = self._createCalendarDaysView()
     
     // Private Variables
     fileprivate var _month: Date
     
     // Lifecycle Override
     override func loadView() {
-        self.view = self.calendarDaysView
+        self.view = self._calendarDaysView
     }
 }
 
@@ -69,14 +94,62 @@ class CalendarDaysVC: UIViewController {
 // MARK: CalendarDaysViewDelegate
 extension CalendarDaysVC: CalendarDaysViewDelegate {
     func configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
-        self.delegate?.configure(dateCell, for: indexPath, on: self)
+        self._configure(dateCell, for: indexPath, on: calendarDaysView)
     }
     
     func shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool {
-        self.delegate?.shouldSelect(dateCell, at: indexPath, on: self)
+        return self._shouldSelect(dateCell, at: indexPath, on: calendarDaysView)
     }
     
     func didSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
-        self.delegate?.didSelect(dateCell, at: indexPath, on: self)
+        self._didSelect(dateCell, at: indexPath, on: calendarDaysView)
+    }
+}
+
+
+// MARK: // Private
+// MARK: Lazy Variable Creation
+private extension CalendarDaysVC {
+    func _createCalendarDaysView() -> CalendarDaysView {
+        let calendarDaysView: CalendarDaysView = CalendarDaysView()
+        calendarDaysView.delegate = self
+        return calendarDaysView
+    }
+}
+
+
+// MARK: Delegate / DataSource Implementations
+// MARK: CalendarDaysViewDelegate
+private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
+    func _configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
+        let date: Date = self.month.startWeek + indexPath.row.days
+        dateCell.title = date.string(custom: "d")
+        
+        if let selectedDate: Date = self.delegate?.selectedDate(for: self) {
+            dateCell.isSelected = (date == selectedDate)
+        } else {
+            dateCell.isSelected = false
+        }
+        
+        let dateIsInCurrentMonth: Bool = date.isIn(date: self.month, granularity: .month)
+        if date.isToday {
+            dateCell.titleColor = .blue018EA6
+        } else if dateIsInCurrentMonth {
+            dateCell.titleColor = .black
+        } else {
+            dateCell.titleColor = .gray
+        }
+    }
+    
+    func _shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool {
+        guard let delegate: CalendarDaysVCDelegate = self.delegate else { return true }
+        let date: Date = self.month.startWeek + indexPath.row.days
+        return delegate.shouldSelect(date, on: self)
+    }
+    
+    func _didSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
+        guard let delegate: CalendarDaysVCDelegate = self.delegate else { return }
+        let date: Date = self.month.startWeek + indexPath.row.days
+        delegate.didSelect(date, on: self)
     }
 }
