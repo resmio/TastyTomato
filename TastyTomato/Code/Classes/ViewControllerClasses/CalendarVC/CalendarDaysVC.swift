@@ -131,13 +131,22 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
             dateCell.isSelected = false
         }
         
+        let dateIsToday: Bool = date.isToday
         let dateIsInCurrentMonth: Bool = date.isIn(date: self.month, granularity: .month)
-        if date.isToday {
+        dateCell.displayTitleInBold(dateIsToday)
+        
+        if dateIsToday {
             dateCell.titleColor = .blue018EA6
+        } else if date.isBefore(date: Date(), granularity: .day) {
+            if dateIsInCurrentMonth {
+                dateCell.titleColor = .gray999999
+            } else {
+                dateCell.titleColor = .grayCCCCCC
+            }
         } else if dateIsInCurrentMonth {
             dateCell.titleColor = .black
         } else {
-            dateCell.titleColor = .gray
+            dateCell.titleColor = .grayCCCCCC
         }
     }
     

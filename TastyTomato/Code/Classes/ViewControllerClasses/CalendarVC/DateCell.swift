@@ -29,6 +29,10 @@ extension DateCell {
             self._label.textColor = newTitleColor
         }
     }
+    
+    func displayTitleInBold(_ bold: Bool) {
+        self._displayTitleInBold(bold)
+    }
 }
 
 
@@ -99,7 +103,8 @@ private extension DateCell {
         set(newIsHighlighted) {
             guard newIsHighlighted != super.isHighlighted else { return }
             super.isHighlighted = newIsHighlighted
-            self.backgroundColor = newIsHighlighted ? .green : .white
+            self.backgroundColor = newIsHighlighted ? UIColor.blue00A7C4.withAlpha(0.5) : .white
+            self.titleColor = newIsHighlighted ? .white : .black
         }
     }
     
@@ -111,6 +116,17 @@ private extension DateCell {
             guard newIsSelected != super.isSelected else { return }
             super.isSelected = newIsSelected
             self.backgroundColor = newIsSelected ? .blue00A7C4 : .white
+            self.titleColor = newIsSelected ? .white : .black
         }
+    }
+}
+
+
+// MARK: Display Title in bold
+private extension DateCell {
+    func _displayTitleInBold(_ bold: Bool) {
+        let label: UILabel = self._label
+        let pointSize: CGFloat = label.font.pointSize
+        label.font = bold ? .boldSystemFont(ofSize: pointSize) : .systemFont(ofSize: pointSize)
     }
 }
