@@ -128,7 +128,7 @@ extension CalendarVC: CalendarDaysVCDelegate {
     }
     
     func didSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC) {
-        self.delegate?.didSelectDate(date, on: self)
+        self._didSelect(date, on: calendarDaysVC)
     }
 }
 
@@ -214,14 +214,22 @@ private extension CalendarVC {
 private extension CalendarVC {
     func _viewDidLoad() {
         super.viewDidLoad()
-        
         self.embed(self._pageVC, into: self._calendarVCView.pageVCContainerView)
     }
     
     func _viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         self._adjustDaysVCLayout()
+    }
+}
+
+
+// MARK: Delegate / DataSource Implementations
+// MARK: CalendarDaysVCDelegate
+private extension CalendarVC/*: CalendarDaysVCDelegate*/ {
+    func _didSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC) {
+        self.__selectedDate = date
+        self.delegate?.didSelectDate(date, on: self)
     }
 }
 
