@@ -329,7 +329,11 @@ private class _CalendarDaysVC: UIViewController {
     let calendarDaysView: CalendarDaysView = CalendarDaysView()
     
     // Variables
-    private(set) var month: Date
+    private(set) var month: Date {
+        didSet {
+            self.calendarDaysView.title = self.month.string(custom: "mmmm YYYY")
+        }
+    }
     
     // Lifecycle Override
     override func loadView() {
