@@ -80,6 +80,10 @@ public class CalendarVC: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         self._viewWillAppear(animated)
     }
+    
+    public override func viewDidLayoutSubviews() {
+        self._viewDidLayoutSubviews()
+    }
 }
 
 
@@ -206,6 +210,15 @@ private extension CalendarVC {
         
         let initialVC: _CalendarDaysVC = self._daysVC(for: self._displayedMonthAndYear)
         self._switchTo(daysVC: initialVC, direction: .forward, animated: false)
+    }
+    
+    func _viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let daysVC: _CalendarDaysVC = self._pageVC.viewControllers![0] as! _CalendarDaysVC
+        let headerView: CalendarHeaderView = self._calendarVCView.headerView
+        daysVC.calendarDaysView.topInset = headerView.height
+        daysVC.calendarDaysView.titleLabelFrame = headerView.titleFrame
     }
 }
 
