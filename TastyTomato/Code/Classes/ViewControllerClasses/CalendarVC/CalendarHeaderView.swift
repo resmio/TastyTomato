@@ -58,7 +58,7 @@ class CalendarHeaderView: UIView {
     fileprivate weak var _delegate: CalendarHeaderViewDelegate?
     
     // Private Lazy Variables
-    fileprivate lazy var _backgroundLayer: CAGradientLayer = self._createBackgroundLayer()
+    fileprivate lazy var _gradientLayer: CAGradientLayer = self._createGradientLayer()
     fileprivate lazy var _leftArrowButton: UIButton = self._createLeftArrowButton()
     fileprivate lazy var _rightArrowButton: UIButton = self._createRightArrowButton()
     fileprivate lazy var _dayNamesView: UIView = self._createDayNamesView()
@@ -74,13 +74,15 @@ class CalendarHeaderView: UIView {
 // MARK: // Private
 // MARK: Lazy Variable Creation
 private extension CalendarHeaderView {
-    func _createBackgroundLayer() -> CAGradientLayer {
-        let backgroundLayer: CAGradientLayer = CAGradientLayer()
-        backgroundLayer.colors = [UIColor.white, UIColor.white, UIColor.clear, UIColor.clear, UIColor.white, UIColor.white]
-        backgroundLayer.startPoint = CGPoint(x: 0, y: 0.5)
-        backgroundLayer.endPoint = CGPoint(x: 1, y: 0.5)
-        backgroundLayer.locations = [0, 0.1, 0.15, 0.85, 0.9, 1]
-        return backgroundLayer
+    func _createGradientLayer() -> CAGradientLayer {
+        let whiteClear: CGColor = UIColor.white.withAlpha(0).cgColor
+        let white: CGColor = UIColor.white.cgColor
+        
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.colors = [white, white, whiteClear, whiteClear, white, white]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        return gradientLayer
     }
     
     func _createLeftArrowButton() -> UIButton {
@@ -168,9 +170,9 @@ private extension CalendarHeaderView {
         let gradientRatio: CGFloat = self._gradientWidthRatio
         let buttonSideLengthPlusGradientRatio: CGFloat = buttonSideLengthRatio + gradientRatio
         
-        let backgroundLayer: CAGradientLayer = self._backgroundLayer
-        backgroundLayer.frame.size = CGSize(width: width, height: buttonSize.height)
-        backgroundLayer.locations = [
+        let gradientLayer: CAGradientLayer = self._gradientLayer
+        gradientLayer.frame.size = CGSize(width: width, height: buttonSize.height)
+        gradientLayer.locations = [
             0,
             buttonSideLengthRatio,
             buttonSideLengthPlusGradientRatio,
@@ -203,7 +205,7 @@ private extension CalendarHeaderView {
 // MARK: Add Subviews
 private extension CalendarHeaderView {
     func _addSubviews() {
-        self.layer.addSublayer(self._backgroundLayer)
+        self.layer.addSublayer(self._gradientLayer)
         self.addSubview(self._leftArrowButton)
         self.addSubview(self._rightArrowButton)
         self.addSubview(self._dayNamesView)
