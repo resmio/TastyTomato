@@ -60,12 +60,9 @@ public class CalendarVC: UIViewController {
     // Private Lazy Variables
     fileprivate lazy var _calendarVCView: CalendarVCView = self._createCalendarVCView()
     fileprivate lazy var _pageVC: UIPageViewController = self._createPageVC()
-    fileprivate lazy var _firstDisplayedDay: Date = self._getFirstDisplayedDay()
     
     // Private Variables
-    fileprivate var _currentDaysVC: _CalendarDaysVC?
     fileprivate var _isPaging: Bool = false
-    fileprivate var _displayedMonthAndYear: Date = Date().startOf(component: .month)
     fileprivate var __selectedDate: Date?
     
     // Lifecycle Overrides
@@ -103,7 +100,7 @@ extension CalendarVC: CalendarHeaderViewDelegate {
 // MARK: UIPageViewControllerDelegate
 extension CalendarVC: UIPageViewControllerDelegate {
     public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        self._pageViewController(pageViewController, willTransitionTo: pendingViewControllers)
+        self._isPaging = true
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -168,6 +165,20 @@ private extension CalendarVC {
 
 // MARK: Computed Variables
 private extension CalendarVC {
+    // Readonly
+    var _currentDaysVC: _CalendarDaysVC {
+        return self._pageVC.viewControllers![0] as! _CalendarDaysVC
+    }
+    
+    var _displayedMonthAndYear: Date {
+        return self._currentDaysVC.month
+    }
+    
+    var _firstDisplayedDay: Date {
+        return self._displayedMonthAndYear.startWeek
+    }
+    
+    // ReadWrite
     var _selectedDate: Date? {
         get {
             return self.__selectedDate
@@ -222,16 +233,6 @@ private extension CalendarVC {
 
 
 // MARK: Delegates / DataSources
-// MARK: UIPageViewControllerDelegate
-private extension CalendarVC/*: UIPageViewControllerDelegate*/ {
-    func _pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        self._isPaging = true
-        let daysVC: _CalendarDaysVC = (pendingViewControllers[0] as! _CalendarDaysVC)
-        self._setCurrentDaysVC(daysVC)
-    }
-}
-
-
 // MARK: CalendarDaysViewDelegate
 private extension CalendarVC/*: CalendarDaysViewDelegate*/ {
     func _configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
@@ -259,14 +260,12 @@ private extension CalendarVC/*: CalendarDaysViewDelegate*/ {
 // MARK: PageViewController Helpers
 private extension CalendarVC {
     func _showPreviousMonth() {
-        guard let currentVC: _CalendarDaysVC = self._currentDaysVC else { return }
-        let vc: _CalendarDaysVC = self._daysVC(for: currentVC.month - 1.month)
+        let vc: _CalendarDaysVC = self._daysVC(for: self._currentDaysVC.month - 1.month)
         self._switchTo(daysVC: vc, direction: .reverse, animated: false)
     }
     
     func _showNextMonth() {
-        guard let currentVC: _CalendarDaysVC = self._currentDaysVC else { return }
-        let vc: _CalendarDaysVC = self._daysVC(for: currentVC.month + 1.month)
+        let vc: _CalendarDaysVC = self._daysVC(for: self._currentDaysVC.month + 1.month)
         self._switchTo(daysVC: vc, direction: .forward, animated: false)
     }
     
@@ -278,7 +277,6 @@ private extension CalendarVC {
             direction: direction,
             animated: animated,
             completion: { _ in
-                self._setCurrentDaysVC(daysVC)
                 self._isPaging = false
             }
         )
@@ -288,13 +286,6 @@ private extension CalendarVC {
         let daysVC: _CalendarDaysVC = _CalendarDaysVC(month: month)
         daysVC.calendarDaysView.delegate = self
         return daysVC
-    }
-    
-    func _setCurrentDaysVC(_ daysVC: _CalendarDaysVC) {
-        self._currentDaysVC = daysVC
-        let month: Date = daysVC.month
-        self._displayedMonthAndYear = month
-        self._firstDisplayedDay = self._getFirstDisplayedDay()
     }
 }
 
@@ -310,14 +301,6 @@ private extension CalendarVC {
         let direction: UIPageViewControllerNavigationDirection = isLaterMonth ? .forward : .reverse
         
         self._switchTo(daysVC: vc, direction: direction, animated: animated)
-    }
-}
-
-
-// MARK: Helpers
-private extension CalendarVC {
-    func _getFirstDisplayedDay() -> Date {
-        return self._displayedMonthAndYear.startWeek
     }
 }
 
