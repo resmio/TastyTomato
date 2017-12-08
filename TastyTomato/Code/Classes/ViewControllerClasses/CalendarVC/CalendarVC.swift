@@ -224,7 +224,12 @@ private extension CalendarVC {
     func _viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let daysVC: _CalendarDaysVC = self._pageVC.viewControllers![0] as! _CalendarDaysVC
+        self._adjustCalendarDaysVC()
+    }
+    
+    // Helpers
+    func _adjustCalendarDaysVC(_ daysVC: _CalendarDaysVC? = nil) {
+        let daysVC: _CalendarDaysVC = daysVC ?? self._currentDaysVC
         let headerView: CalendarHeaderView = self._calendarVCView.headerView
         daysVC.calendarDaysView.topInset = headerView.height
         daysVC.calendarDaysView.titleLabelFrame = headerView.titleFrame
@@ -285,6 +290,7 @@ private extension CalendarVC {
     func _daysVC(for month: Date) -> _CalendarDaysVC {
         let daysVC: _CalendarDaysVC = _CalendarDaysVC(month: month)
         daysVC.calendarDaysView.delegate = self
+        self._adjustCalendarDaysVC(daysVC)
         return daysVC
     }
 }
@@ -309,13 +315,16 @@ private extension CalendarVC {
 private class _CalendarDaysVC: UIViewController {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
-        self.month = Date().startOf(component: .month)
+        let month: Date = Date().startOf(component: .month)
+        self.month = month
+        self.calendarDaysView.title = month.string(custom: "MMMM YYYY")
         super.init(coder: aDecoder)
     }
     
     // Init
     init(month: Date) {
         self.month = month
+        self.calendarDaysView.title = month.string(custom: "MMMM YYYY")
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -323,11 +332,7 @@ private class _CalendarDaysVC: UIViewController {
     let calendarDaysView: CalendarDaysView = CalendarDaysView()
     
     // Variables
-    private(set) var month: Date {
-        didSet {
-            self.calendarDaysView.title = self.month.string(custom: "mmmm YYYY")
-        }
-    }
+    private(set) var month: Date
     
     // Lifecycle Override
     override func loadView() {
