@@ -110,7 +110,7 @@ private extension DateCell {
         set(newIsSelected) {
             guard newIsSelected != super.isSelected else { return }
             super.isSelected = newIsSelected
-            self.backgroundColor = newIsSelected ? .green : .white
+            self.backgroundColor = newIsSelected ? .blue00A7C4 : .white
         }
     }
 }
