@@ -54,6 +54,10 @@ extension CalendarDaysVC {
             self._calendarDaysView.titleLabelFrame = newTitleLabelFrame
         }
     }
+    
+    func reload() {
+        self._calendarDaysView.reload()
+    }
 }
 
 

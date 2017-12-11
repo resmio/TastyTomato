@@ -56,6 +56,11 @@ extension CalendarDaysView {
             self._titleLabel.text = newTitle
         }
     }
+    
+    // Functions
+    func reload() {
+        self._collectionView.reloadData()
+    }
 }
 
 
