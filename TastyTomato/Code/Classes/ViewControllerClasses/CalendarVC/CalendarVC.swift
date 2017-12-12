@@ -273,11 +273,12 @@ private extension CalendarVC {
 // MARK: Set Displayed Month
 private extension CalendarVC {
     func _setDisplayedMonthAndYear(from date: Date, animated: Bool) {
-        guard !date.isIn(date: self._displayedMonthAndYear, granularity: .month) else { return }
+        let month: Date = self._displayedMonthAndYear
+        guard !date.isIn(date: month, granularity: .month) else { return }
         let roundedDate: Date = date.startOf(component: .month)
         let vc: CalendarDaysVC = self._daysVC(for: roundedDate)
         
-        let isLaterMonth: Bool = date.isAfter(date: date, granularity: .month)
+        let isLaterMonth: Bool = roundedDate.isAfter(date: month, granularity: .month)
         let direction: UIPageViewControllerNavigationDirection = isLaterMonth ? .forward : .reverse
         
         self._switchTo(daysVC: vc, direction: direction, animated: animated)
