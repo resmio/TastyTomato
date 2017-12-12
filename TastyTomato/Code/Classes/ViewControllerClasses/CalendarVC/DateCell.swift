@@ -106,9 +106,9 @@ private extension DateCell {
         }
         set(newIsHighlighted) {
             guard newIsHighlighted != super.isHighlighted else { return }
+            self.backgroundColor = self._backgroundColorForState(highlighted: newIsHighlighted)
+            self._label.textColor = self._textColorForState(highlighted: newIsHighlighted)
             super.isHighlighted = newIsHighlighted
-            self.backgroundColor = newIsHighlighted ? UIColor.blue00A7C4.withAlpha(0.5) : .white
-            self._label.textColor = newIsHighlighted ? .white : self._backupTitleColor
         }
     }
     
@@ -118,9 +118,9 @@ private extension DateCell {
         }
         set(newIsSelected) {
             guard newIsSelected != super.isSelected else { return }
+            self.backgroundColor = self._backgroundColorForState(selected: newIsSelected)
+            self._label.textColor = self._textColorForState(selected: newIsSelected)
             super.isSelected = newIsSelected
-            self.backgroundColor = newIsSelected ? .blue00A7C4 : .white
-            self._label.textColor = newIsSelected ? .white : self._backupTitleColor
         }
     }
     
@@ -130,7 +130,33 @@ private extension DateCell {
         }
         set(newTitleColor) {
             self._backupTitleColor = newTitleColor
-            self._label.textColor = self.isSelected ? .white : newTitleColor
+            self._label.textColor = self._textColorForState()
+        }
+    }
+}
+
+
+// MARK: Color Helpers
+private extension DateCell {
+    func _backgroundColorForState(highlighted: Bool? = nil, selected: Bool? = nil) -> UIColor {
+        let highlighted: Bool = highlighted ?? self.isHighlighted
+        let selected: Bool = selected ?? self.isSelected
+        if highlighted {
+            return UIColor.blue00A7C4.withAlpha(0.5)
+        } else if selected {
+            return .blue00A7C4
+        } else {
+            return .white
+        }
+    }
+    
+    func _textColorForState(highlighted: Bool? = nil, selected: Bool? = nil) -> UIColor {
+        let highlighted: Bool = highlighted ?? self.isHighlighted
+        let selected: Bool = selected ?? self.isSelected
+        if highlighted || selected {
+            return .white
+        } else {
+            return self._backupTitleColor
         }
     }
 }
