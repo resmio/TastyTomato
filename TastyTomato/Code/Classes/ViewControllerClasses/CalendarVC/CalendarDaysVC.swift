@@ -13,7 +13,6 @@ import SwiftDate
 // MARK: // Internal
 // MARK: - CalendarDaysVCDelegate
 protocol CalendarDaysVCDelegate: class {
-    func selectedDate(for calendarDaysVC: CalendarDaysVC) -> Date?
     func shouldSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC) -> Bool
     func didSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC)
 }
@@ -55,8 +54,9 @@ extension CalendarDaysVC {
         }
     }
     
-    func reload() {
-        self._calendarDaysView.reload()
+    // Functions
+    func selectDate(_ date: Date?) {
+        self._selectDate(date)
     }
 }
 
@@ -129,12 +129,6 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
         let date: Date = self.month.startWeek + indexPath.row.days
         dateCell.title = date.string(custom: "d")
         
-        if let selectedDate: Date = self.delegate?.selectedDate(for: self) {
-            dateCell.isSelected = (date == selectedDate)
-        } else {
-            dateCell.isSelected = false
-        }
-        
         let dateIsToday: Bool = date.isToday
         let dateIsInCurrentMonth: Bool = date.isIn(date: self.month, granularity: .month)
         dateCell.displayTitleInBold(dateIsToday)
@@ -164,5 +158,21 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
         guard let delegate: CalendarDaysVCDelegate = self.delegate else { return }
         let date: Date = self.month.startWeek + indexPath.row.days
         delegate.didSelect(date, on: self)
+    }
+}
+
+
+// MARK: Select Date
+private extension CalendarDaysVC {
+    func _selectDate(_ date: Date?) {
+        var indexPath: IndexPath? = nil
+        hasDate: if let date: Date = date {
+            let firstDisplayedDay: Date = self.month.startWeek
+            let lastDisplayedDay: Date = firstDisplayedDay + 41.days
+            guard date.isBetween(date: firstDisplayedDay, and: lastDisplayedDay) else { break hasDate }
+            guard let row: Int = self.month.startWeek.component(.day, to: date) else { break hasDate }
+            indexPath = IndexPath(row: row, section: 0)
+        }
+        self._calendarDaysView.selectDateCell(at: indexPath)
     }
 }

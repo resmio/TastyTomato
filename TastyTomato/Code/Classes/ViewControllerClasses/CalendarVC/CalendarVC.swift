@@ -191,18 +191,14 @@ private extension CalendarVC {
             let roundedNewSelectedDate: Date? = newSelectedDate?.startOfDay
             guard roundedNewSelectedDate != self.__selectedDate else { return }
             
-            let firstDisplayedDay: Date = self._firstDisplayedDay
+            let currentDaysVC: CalendarDaysVC = self._currentDaysVC
+            let firstDisplayedDay: Date = currentDaysVC.month.startWeek
             let lastDisplayedDay: Date = firstDisplayedDay + 41.days
-            
-            // This must be set *before* the refresh-call, since it will
-            // be accessed from within the configure(dateCell...) function
-            self.__selectedDate = roundedNewSelectedDate
-            
-            if let newDate: Date = roundedNewSelectedDate {
-                if newDate.isBetween(date: firstDisplayedDay, and: lastDisplayedDay) {
-                    self._currentDaysVC.reload()
-                }
+            if roundedNewSelectedDate?.isBetween(date: firstDisplayedDay, and: lastDisplayedDay) ?? true {
+                currentDaysVC.selectDate(roundedNewSelectedDate)
             }
+            
+            self.__selectedDate = roundedNewSelectedDate
         }
     }
 }
@@ -260,6 +256,7 @@ private extension CalendarVC {
     func _daysVC(for month: Date) -> CalendarDaysVC {
         let daysVC: CalendarDaysVC = CalendarDaysVC(month: month)
         daysVC.delegate = self
+        daysVC.selectDate(self.selectedDate)
         self._adjustDaysVCLayout(daysVC)
         return daysVC
     }

@@ -58,8 +58,8 @@ extension CalendarDaysView {
     }
     
     // Functions
-    func reload() {
-        self._collectionView.reloadData()
+    func selectDateCell(at indexPath: IndexPath?) {
+        self._collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
     }
 }
 
