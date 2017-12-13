@@ -20,19 +20,21 @@ public protocol CalendarVCDelegate: class {
 
 // MARK: - CalendarVCDesign
 public struct CalendarVCDesign {
-    static let defaultDesign: CalendarVCDesign = CalendarVCDesign()
+    public init() {}
     
-    var monthNameAndYearFont: UIFont = .systemFont(ofSize: 17)
-    var dayNamesFont: UIFont = .systemFont(ofSize: 12)
-    var dayNumberFont: UIFont = .systemFont(ofSize: 17)
-    var todayDayNumberFont: UIFont = .boldSystemFont(ofSize: 17)
+    public static let defaultDesign: CalendarVCDesign = CalendarVCDesign()
     
-    var monthNameAndYearTextColor: UIColor = .black
-    var dayNamesTextColor: UIColor = .gray555555
-    var normalDayNumberTextColor: UIColor = .black
-    var todayDayNumberTextColor: UIColor = .blue018EA6
-    var differentMonthDayNumberTextColor: UIColor = .grayCCCCCC
-    var pastDayNumberTextColor: UIColor = .gray999999
+    public var monthNameAndYearFont: UIFont = .systemFont(ofSize: 17)
+    public var dayNamesFont: UIFont = .systemFont(ofSize: 12)
+    public var dayNumberFont: UIFont = .systemFont(ofSize: 17)
+    public var todayDayNumberFont: UIFont = .boldSystemFont(ofSize: 17)
+    
+    public var monthNameAndYearTextColor: UIColor = .black
+    public var dayNamesTextColor: UIColor = .gray555555
+    public var normalDayNumberTextColor: UIColor = .black
+    public var todayDayNumberTextColor: UIColor = .blue018EA6
+    public var differentMonthDayNumberTextColor: UIColor = .grayCCCCCC
+    public var pastDayNumberTextColor: UIColor = .gray999999
 }
 
 
