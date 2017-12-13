@@ -57,9 +57,31 @@ extension CalendarDaysView {
         }
     }
     
+    var titleFont: UIFont {
+        get {
+            return self._titleLabel.font
+        }
+        set(newFont) {
+            self._titleLabel.font = newFont
+        }
+    }
+    
+    var titleColor: UIColor {
+        get {
+            return self._titleLabel.textColor
+        }
+        set(newTitleColor) {
+            self._titleLabel.textColor = newTitleColor
+        }
+    }
+    
     // Functions
     func selectDateCell(at indexPath: IndexPath?) {
         self._collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
+    }
+    
+    func reloadCells() {
+        self._collectionView.reloadData()
     }
 }
 

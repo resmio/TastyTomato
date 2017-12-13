@@ -18,6 +18,20 @@ protocol CalendarDaysVCDelegate: class {
 }
 
 
+// MARK: - CalendarDaysVCDesign
+struct CalendarDaysVCDesign {
+    var monthNameAndYearFont: UIFont                = CalendarVCDesign.defaultDesign.monthNameAndYearFont
+    var dayNumberFont: UIFont                       = CalendarVCDesign.defaultDesign.dayNumberFont
+    var todayDayNumberFont: UIFont                  = CalendarVCDesign.defaultDesign.todayDayNumberFont
+    
+    var monthNameAndYearTextColor: UIColor          = CalendarVCDesign.defaultDesign.monthNameAndYearTextColor
+    var normalDayNumberTextColor: UIColor           = CalendarVCDesign.defaultDesign.normalDayNumberTextColor
+    var todayDayNumberTextColor: UIColor            = CalendarVCDesign.defaultDesign.todayDayNumberTextColor
+    var differentMonthDayNumberTextColor: UIColor   = CalendarVCDesign.defaultDesign.differentMonthDayNumberTextColor
+    var pastDayNumberTextColor: UIColor             = CalendarVCDesign.defaultDesign.pastDayNumberTextColor
+}
+
+
 // MARK: - CalendarDaysVC
 // MARK: Interface
 extension CalendarDaysVC {
@@ -58,6 +72,10 @@ extension CalendarDaysVC {
     func selectDate(_ date: Date?) {
         self._selectDate(date)
     }
+    
+    func setDesign(_ design: CalendarDaysVCDesign) {
+        self._setDesign(design)
+    }
 }
 
 
@@ -86,6 +104,7 @@ class CalendarDaysVC: UIViewController {
     
     // Private Variables
     fileprivate var _month: Date
+    fileprivate var _design: CalendarDaysVCDesign = CalendarDaysVCDesign()
     
     // Lifecycle Override
     override func loadView() {
@@ -115,8 +134,12 @@ extension CalendarDaysVC: CalendarDaysViewDelegate {
 // MARK: Lazy Variable Creation
 private extension CalendarDaysVC {
     func _createCalendarDaysView() -> CalendarDaysView {
+        let design: CalendarDaysVCDesign = self._design
+        
         let calendarDaysView: CalendarDaysView = CalendarDaysView()
         calendarDaysView.delegate = self
+        calendarDaysView.titleFont = design.monthNameAndYearFont
+        calendarDaysView.titleColor = design.monthNameAndYearTextColor
         return calendarDaysView
     }
 }
@@ -129,23 +152,25 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
         let date: Date = self.month.startWeek + indexPath.row.days
         dateCell.title = date.string(custom: "d")
         
+        let design: CalendarDaysVCDesign = self._design
+        
         let dateIsToday: Bool = date.isToday
         let dateIsInCurrentMonth: Bool = date.isIn(date: self.month, granularity: .month)
-        dateCell.displayTitleInBold(dateIsToday)
+        
+        var titleColor: UIColor = design.normalDayNumberTextColor
+        var titleFont: UIFont = design.dayNumberFont
         
         if dateIsToday {
-            dateCell.titleColor = .blue018EA6
+            titleColor = design.todayDayNumberTextColor
+            titleFont = design.todayDayNumberFont
+        } else if !dateIsInCurrentMonth {
+            titleColor = design.differentMonthDayNumberTextColor
         } else if date.isBefore(date: Date(), granularity: .day) {
-            if dateIsInCurrentMonth {
-                dateCell.titleColor = .gray999999
-            } else {
-                dateCell.titleColor = .grayCCCCCC
-            }
-        } else if dateIsInCurrentMonth {
-            dateCell.titleColor = .black
-        } else {
-            dateCell.titleColor = .grayCCCCCC
+            titleColor = design.pastDayNumberTextColor
         }
+        
+        dateCell.titleColor = titleColor
+        dateCell.titleFont = titleFont
     }
     
     func _shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool {
@@ -174,5 +199,18 @@ private extension CalendarDaysVC {
             indexPath = IndexPath(row: row, section: 0)
         }
         self._calendarDaysView.selectDateCell(at: indexPath)
+    }
+}
+
+
+// MARK: Set Design
+private extension CalendarDaysVC {
+    func _setDesign(_ design: CalendarDaysVCDesign) {
+        self._design = design
+        
+        let calendarDaysView: CalendarDaysView = self._calendarDaysView
+        calendarDaysView.reloadCells()
+        calendarDaysView.titleFont = design.monthNameAndYearFont
+        calendarDaysView.titleColor = design.monthNameAndYearTextColor
     }
 }

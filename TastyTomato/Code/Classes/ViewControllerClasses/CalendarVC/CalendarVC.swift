@@ -18,6 +18,24 @@ public protocol CalendarVCDelegate: class {
 }
 
 
+// MARK: - CalendarVCDesign
+public struct CalendarVCDesign {
+    static let defaultDesign: CalendarVCDesign = CalendarVCDesign()
+    
+    var monthNameAndYearFont: UIFont = .systemFont(ofSize: 17)
+    var dayNamesFont: UIFont = .systemFont(ofSize: 12)
+    var dayNumberFont: UIFont = .systemFont(ofSize: 17)
+    var todayDayNumberFont: UIFont = .boldSystemFont(ofSize: 17)
+    
+    var monthNameAndYearTextColor: UIColor = .black
+    var dayNamesTextColor: UIColor = .gray555555
+    var normalDayNumberTextColor: UIColor = .black
+    var todayDayNumberTextColor: UIColor = .blue018EA6
+    var differentMonthDayNumberTextColor: UIColor = .grayCCCCCC
+    var pastDayNumberTextColor: UIColor = .gray999999
+}
+
+
 // MARK: - CalendarVC
 // MARK: Interface
 public extension CalendarVC {
@@ -49,6 +67,10 @@ public extension CalendarVC {
     func setDisplayedMonthAndYear(from date: Date, animated: Bool = true) {
         self._setDisplayedMonthAndYear(from: date, animated: animated)
     }
+    
+    func setDesign(_ design: CalendarVCDesign) {
+        self._setDesign(design)
+    }
 }
 
 
@@ -64,6 +86,7 @@ public class CalendarVC: UIViewController {
     // Private Variables
     fileprivate var _isPaging: Bool = false
     fileprivate var __selectedDate: Date?
+    fileprivate var _design: CalendarVCDesign = CalendarVCDesign()
     
     // Lifecycle Overrides
     public override func loadView() {
@@ -213,7 +236,7 @@ private extension CalendarVC {
     
     func _viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self._adjustDaysVCLayout()
+        self._adjustDaysVCLayoutAndDesign()
     }
 }
 
@@ -257,15 +280,16 @@ private extension CalendarVC {
         let daysVC: CalendarDaysVC = CalendarDaysVC(month: month)
         daysVC.delegate = self
         daysVC.selectDate(self.selectedDate)
-        self._adjustDaysVCLayout(daysVC)
+        self._adjustDaysVCLayoutAndDesign(daysVC)
         return daysVC
     }
     
-    func _adjustDaysVCLayout(_ daysVC: CalendarDaysVC? = nil) {
+    func _adjustDaysVCLayoutAndDesign(_ daysVC: CalendarDaysVC? = nil) {
         let daysVC: CalendarDaysVC = daysVC ?? self._currentDaysVC
         let headerView: CalendarHeaderView = self._calendarVCView.headerView
         daysVC.topInset = headerView.height
         daysVC.titleLabelFrame = headerView.titleFrame
+        self._applyDesign(design: self._design, to: daysVC)
     }
 }
 
@@ -282,5 +306,32 @@ private extension CalendarVC {
         let direction: UIPageViewControllerNavigationDirection = isLaterMonth ? .forward : .reverse
         
         self._switchTo(daysVC: vc, direction: direction, animated: animated)
+    }
+}
+
+
+// MARK: Set Design
+private extension CalendarVC {
+    func _setDesign(_ design: CalendarVCDesign) {
+        self._design = design
+        self._applyDesign(design: design, to: self._currentDaysVC)
+        self._calendarVCView.headerView.setDesign(CalendarHeaderViewDesign(
+            dayNamesFont: design.dayNamesFont,
+            dayNamesTextColor: design.dayNamesTextColor
+        ))
+    }
+    
+    // Helper
+    func _applyDesign(design: CalendarVCDesign, to daysVC: CalendarDaysVC) {
+        daysVC.setDesign(CalendarDaysVCDesign(
+            monthNameAndYearFont: design.monthNameAndYearFont,
+            dayNumberFont: design.dayNumberFont,
+            todayDayNumberFont: design.todayDayNumberFont,
+            monthNameAndYearTextColor: design.monthNameAndYearTextColor,
+            normalDayNumberTextColor: design.normalDayNumberTextColor,
+            todayDayNumberTextColor: design.todayDayNumberTextColor,
+            differentMonthDayNumberTextColor: design.differentMonthDayNumberTextColor,
+            pastDayNumberTextColor: design.pastDayNumberTextColor
+        ))
     }
 }

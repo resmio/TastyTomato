@@ -17,6 +17,13 @@ protocol CalendarHeaderViewDelegate: class {
 }
 
 
+// MARK: - CalendarHeaderViewDesign
+struct CalendarHeaderViewDesign {
+    var dayNamesFont: UIFont        = CalendarVCDesign.defaultDesign.dayNamesFont
+    var dayNamesTextColor: UIColor  = CalendarVCDesign.defaultDesign.dayNamesTextColor
+}
+
+
 // MARK: - CalendarHeaderView
 // MARK: Interface
 extension CalendarHeaderView {
@@ -33,6 +40,11 @@ extension CalendarHeaderView {
         set(newDelegate) {
             self._delegate = newDelegate
         }
+    }
+    
+    // Functions
+    func setDesign(_ design: CalendarHeaderViewDesign) {
+        self._setDesign(design)
     }
 }
 
@@ -221,5 +233,16 @@ private extension CalendarHeaderView {
     
     func _rightArrowButtonTapped() {
         self.delegate?.tappedRightArrowButton(on: self)
+    }
+}
+
+
+// MARK: Set Design
+private extension CalendarHeaderView {
+    func _setDesign(_ design: CalendarHeaderViewDesign) {
+        self._dayNameLabels.forEach({
+            $0.font = design.dayNamesFont
+            $0.textColor = design.dayNamesTextColor
+        })
     }
 }
