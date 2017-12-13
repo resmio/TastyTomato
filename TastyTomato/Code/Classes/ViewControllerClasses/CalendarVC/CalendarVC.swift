@@ -236,7 +236,7 @@ private extension CalendarVC {
     
     func _viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self._adjustDaysVCLayoutAndDesign()
+        self._adjustDaysVCLayout()
     }
 }
 
@@ -280,16 +280,16 @@ private extension CalendarVC {
         let daysVC: CalendarDaysVC = CalendarDaysVC(month: month)
         daysVC.delegate = self
         daysVC.selectDate(self.selectedDate)
-        self._adjustDaysVCLayoutAndDesign(daysVC)
+        self._adjustDaysVCLayout(daysVC)
+        self._applyDesign(design: self._design, to: daysVC)
         return daysVC
     }
     
-    func _adjustDaysVCLayoutAndDesign(_ daysVC: CalendarDaysVC? = nil) {
+    func _adjustDaysVCLayout(_ daysVC: CalendarDaysVC? = nil) {
         let daysVC: CalendarDaysVC = daysVC ?? self._currentDaysVC
         let headerView: CalendarHeaderView = self._calendarVCView.headerView
         daysVC.topInset = headerView.height
         daysVC.titleLabelFrame = headerView.titleFrame
-        self._applyDesign(design: self._design, to: daysVC)
     }
 }
 
