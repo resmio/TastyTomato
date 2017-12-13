@@ -30,8 +30,13 @@ extension DateCell {
         }
     }
     
-    func displayTitleInBold(_ bold: Bool) {
-        self._displayTitleInBold(bold)
+    var titleFont: UIFont {
+        get {
+            return self._label.font
+        }
+        set(newTitleFont) {
+            self._label.font = newTitleFont
+        }
     }
 }
 
