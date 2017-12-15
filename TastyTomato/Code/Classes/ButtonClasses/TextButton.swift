@@ -10,12 +10,6 @@ import Foundation
 
 
 // MARK: // Public
-// MARK: Fake Initializer
-public func TextButton_() -> TextButton {
-    return TextButton.button_()
-}
-
-
 // MARK: Interface
 public extension TextButton {
     public var underlined: Bool {
@@ -31,25 +25,20 @@ public extension TextButton {
 
 // MARK: Class Declaration
 public class TextButton: BaseButton {
+    // Private Variables
+    private var __underlined: Bool = false
+    
     // Setup Override
-    override class func setup_<T: TextButton>(_ button: T) {
-        super.setup_(button)
-        button.setTitleColor(.black, for: .normal)
+    public override func setup() {
+        self._setup()
     }
     
-    // Private Variable Stored Properties
-    fileprivate var __underlined: Bool = false
-    
-    
-    // Overrides
-    override public func setTitle(_ title: String) {
-        self._setTitle(title)
-    }
-    
-    override public func setTitle(_ title: String?, for state: UIControlState) {
+    // setTitle Override
+    public override func setTitle(_ title: String?, for state: UIControlState) {
         self._setTitle(title, for: state)
     }
     
+    // setTitleColor Override
     public override func setTitleColor(_ color: UIColor?, for state: UIControlState) {
         self._setTitleColor(color, for: state)
     }
@@ -72,28 +61,18 @@ private extension TextButton {
 }
 
 
-// MARK: Set Title Color
+// MARK: Setup Override Implementation
 private extension TextButton {
-    func _setTitleColor(_ color: UIColor?, for state: UIControlState) {
-        super.setTitleColor(color, for: state)
-        self._updateTitle()
+    func _setup() {
+        super.setup()
+        self.setTitleColor(.black, for: .normal)
     }
 }
 
 
-// MARK: Update Title
+// MARK: setTitle Override Implementation
 private extension TextButton {
-    func _updateTitle() {
-        let state: UIControlState = self.state
-        let title: String? = self.title(for: state)
-        self._setTitle(title, for: state)
-    }
-}
-
-
-// MARK: Set Title
-private extension TextButton {
-    func _setTitle(_ title: String?, for state: UIControlState = .normal) {
+    func _setTitle(_ title: String?, for state: UIControlState) {
         if title?.isEmpty ?? true {
             self.setAttributedTitle(nil, for: state)
             return
@@ -113,5 +92,24 @@ private extension TextButton {
         
         super.setTitle(title, for: state)
         self.setAttributedTitle(attributedTitle, for: state)
+    }
+}
+
+
+// MARK: setTitleColor Override Implementation
+private extension TextButton {
+    func _setTitleColor(_ color: UIColor?, for state: UIControlState) {
+        super.setTitleColor(color, for: state)
+        self._updateTitle()
+    }
+}
+
+
+// MARK: Update Title
+private extension TextButton {
+    func _updateTitle() {
+        let state: UIControlState = self.state
+        let title: String? = self.title(for: state)
+        self._setTitle(title, for: state)
     }
 }
