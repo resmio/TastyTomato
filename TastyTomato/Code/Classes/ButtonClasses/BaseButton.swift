@@ -71,7 +71,11 @@ public class BaseButton: UIButton {
         return self._sizeThatFits(size)
     }
     
-    // setTitle Override
+    // setTitle Overrides
+    public func setTitle(_ title: String) {
+        self.setTitle(title, for: .normal)
+    }
+    
     public override func setTitle(_ title: String?, for state: UIControlState) {
         self._setTitle(title, for: state)
     }
