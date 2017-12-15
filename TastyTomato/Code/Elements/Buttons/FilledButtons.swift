@@ -25,12 +25,11 @@ public extension FilledButton {
 // MARK: Predefined Instances
 private extension FilledButton {
     static func _SignInAndSelectFacilityButton() -> FilledButton {
-        let button: FilledButton = self.button_()
+        let button: FilledButton = FilledButton()
         
-        button.setTitleColor(UIColor.white, for: UIControlState())
-        button.titleLabel!.font = UIFont.systemFont(ofSize: 16)
-        
-        button.autoAdjustWidthOnTitleSet = false
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel!.font = .systemFont(ofSize: 16)
+        button.adjustsWidthOnTitleSet = false
         
         button.height = 44
         button.width = 330
