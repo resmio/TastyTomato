@@ -65,6 +65,8 @@ private extension TextButton {
 private extension TextButton {
     func _setup() {
         super.setup()
+        self.xPadding = 0
+        self.yPadding = 0
         self.setTitleColor(.black, for: .normal)
     }
 }
