@@ -10,27 +10,30 @@ import UIKit
 
 
 // MARK: // Public
-// MARK: Fake Initializer
-public func ShortcutBarButton_() -> ShortcutBarButton {
-    return ShortcutBarButton.button_()
-}
-
-
 // MARK: Class Declaration
 public class ShortcutBarButton: BaseButton {
     // Setup Override
-    override class func setup_<T: ShortcutBarButton>(_ button: T) {
-        super.setup_(button)
+    public override func setup() {
+        self._setup()
+    }
+}
+
+
+// MARK: // Private
+// MARK: Setup Override Implementation
+private extension ShortcutBarButton {
+    func _setup() {
+        super.setup()
         
-        button.setColor(.gray999999, for: UIControlState())
-        button.setTitleColor(.white, for: UIControlState())
+        self.setColor(.gray999999, for: .normal)
+        self.setTitleColor(.white, for: .normal)
         
-        button.setColor(.white, for: .highlighted)
-        button.setTitleColor(.black, for: .highlighted)
+        self.setColor(.white, for: .highlighted)
+        self.setTitleColor(.black, for: .highlighted)
         
-        button.setColor(.white, for: .selected)
-        button.setTitleColor(.black, for: .selected)
+        self.setColor(.white, for: .selected)
+        self.setTitleColor(.black, for: .selected)
         
-        button.titleLabel!.font = UIFont.systemFont(ofSize: 17)
+        self.titleLabel!.font = UIFont.systemFont(ofSize: 17)
     }
 }
