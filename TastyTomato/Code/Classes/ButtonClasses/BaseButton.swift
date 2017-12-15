@@ -95,7 +95,9 @@ private extension BaseButton {
             return self.__XPadding
         }
         set(newXPadding) {
+            guard newXPadding != self.__XPadding else { return }
             self.__XPadding = newXPadding
+            self.sizeToFit()
         }
     }
     
@@ -104,7 +106,9 @@ private extension BaseButton {
             return self.__YPadding
         }
         set(newYPadding) {
+            guard newYPadding != self.__YPadding else { return }
             self.__YPadding = newYPadding
+            self.sizeToFit()
         }
     }
 }
