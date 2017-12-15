@@ -26,7 +26,9 @@ public extension TextButton {
 // MARK: Class Declaration
 public class TextButton: BaseButton {
     // Private Variables
-    private var __underlined: Bool = false
+    private var _underlined: Bool = false {
+        didSet { self._updateTitle() }
+    }
     
     // Setup Override
     public override func setup() {
@@ -46,21 +48,6 @@ public class TextButton: BaseButton {
 
 
 // MARK: // Private
-// MARK: Computed Variables
-private extension TextButton {
-    var _underlined: Bool {
-        get {
-            return self.__underlined
-        }
-        set(newUnderlined) {
-            guard newUnderlined != self.__underlined else { return }
-            self.__underlined = newUnderlined
-            self._updateTitle()
-        }
-    }
-}
-
-
 // MARK: Setup Override Implementation
 private extension TextButton {
     func _setup() {
