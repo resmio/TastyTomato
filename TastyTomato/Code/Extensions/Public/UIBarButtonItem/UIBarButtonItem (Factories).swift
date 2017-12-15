@@ -54,7 +54,7 @@ public extension UIBarButtonItem {
 private extension UIBarButtonItem {
     static func _makeCancelItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getButton(targetAction)
-        button.setTitle(NSL_("Cancel"))
+        button.setTitle(NSL_("Cancel"), for: .normal)
         button.sizeToFit()
         button.tintColor = .redE62C4F
         return UIBarButtonItem(customView: button)
@@ -62,7 +62,7 @@ private extension UIBarButtonItem {
     
     static func _makeDeleteItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getButton(targetAction)
-        button.setTitle(NSL_("Delete"))
+        button.setTitle(NSL_("Delete"), for: .normal)
         button.sizeToFit()
         button.tintColor = .redE62C4F
         button.setTitleColor(.gray999999, for: .disabled)
@@ -80,7 +80,7 @@ private extension UIBarButtonItem {
     
     static func _makeEditItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getButton(targetAction)
-        button.setTitle(NSL_("Edit"))
+        button.setTitle(NSL_("Edit"), for: .normal)
         button.sizeToFit()
         button.tintColor = .blue00A7C4
         button.setTitleColor(.gray999999, for: .disabled)
@@ -89,7 +89,7 @@ private extension UIBarButtonItem {
     
     static func _makeNewItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getButton(targetAction)
-        button.setTitle(NSL_("New"))
+        button.setTitle(NSL_("New"), for: .normal)
         button.sizeToFit()
         button.tintColor = .blue00A7C4
         button.setTitleColor(.gray999999, for: .disabled)
@@ -98,7 +98,7 @@ private extension UIBarButtonItem {
     
     static func _makeSaveItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getButton(targetAction)
-        button.setTitle(NSL_("Save"))
+        button.setTitle(NSL_("Save"), for: .normal)
         button.sizeToFit()
         button.tintColor = .blue00A7C4
         button.setTitleColor(.gray999999, for: .disabled)
