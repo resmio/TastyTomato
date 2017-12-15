@@ -62,12 +62,12 @@ public class BaseButton: UIButton {
     }
     
     // Private Constants
-    private let _minimumSideLength: CGFloat = 44
+    private let _minimumSideLength: CGFloat = 40
     
     // Private Variables
     private var _adjustsWidthOnTitleSet: Bool = true
-    private var __XPadding: CGFloat = 10
-    private var __YPadding: CGFloat = 10
+    private var _xPadding: CGFloat = 5
+    private var _yPadding: CGFloat = 5
     
     // Layout Overrides
     public override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -91,32 +91,6 @@ public class BaseButton: UIButton {
 
 
 // MARK: // Private
-// MARK: Computed Variables
-private extension BaseButton {
-    var _xPadding: CGFloat {
-        get {
-            return self.__XPadding
-        }
-        set(newXPadding) {
-            guard newXPadding != self.__XPadding else { return }
-            self.__XPadding = newXPadding
-            self.sizeToFit()
-        }
-    }
-    
-    var _yPadding: CGFloat {
-        get {
-            return self.__YPadding
-        }
-        set(newYPadding) {
-            guard newYPadding != self.__YPadding else { return }
-            self.__YPadding = newYPadding
-            self.sizeToFit()
-        }
-    }
-}
-
-
 // MARK: Setup Implementation
 private extension BaseButton {
     func _setup() {
