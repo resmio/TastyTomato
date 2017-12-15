@@ -82,7 +82,6 @@
 		EA4C422FDA23A2D7DDF931EF8A605544 /* TextButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628597189125D75D98E36EA8682ADA2 /* TextButtons.swift */; };
 		EC506565538E2DB12D3DC6A51D3BE3D8 /* CalendarVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91691515EBC3E7218FB4AB8592A22B /* CalendarVCView.swift */; };
 		EE32ADFFEBCC74C2EA342C807988D3A1 /* UIWindow (SetRootViewController).swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */; };
-		F0ECD62C46A02D8138358FBAB1B38285 /* UIButton (SetTitle).swift in Sources */ = {isa = PBXBuildFile; fileRef = C8889EA70BB1C71DED9F1FB7CFF6B594 /* UIButton (SetTitle).swift */; };
 		F128D132603E4E0CE74EC979474A6F60 /* BookingStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */; };
 		F2E74DE0C5E277FAC2E75CCC8984885B /* UIImage (Named).swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1F525CF3F06186D126ECB7A005615 /* UIImage (Named).swift */; };
 		F3F0485D7B95F9B516AEC11BC8F5FB46 /* BundleHelper_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1032762F44E9AFAAC244949B1E9E97 /* BundleHelper_.swift */; };
@@ -172,7 +171,6 @@
 		C11648945ADE6B76183DB64326F38A93 /* CalendarDaysVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDaysVC.swift; sourceTree = "<group>"; };
 		C12824249B7328133328FF9AE5640462 /* CGSize (CGRect).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (CGRect).swift"; sourceTree = "<group>"; };
 		C6E438216C6A16D137CD269349331D8F /* CGRect (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (Scaled).swift"; sourceTree = "<group>"; };
-		C8889EA70BB1C71DED9F1FB7CFF6B594 /* UIButton (SetTitle).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton (SetTitle).swift"; sourceTree = "<group>"; };
 		CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (OriginLeftRightTopBottom).swift"; sourceTree = "<group>"; };
 		CDDA86B00BB8C1AE6C781872E597AF28 /* UIViewController (Embedding).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController (Embedding).swift"; sourceTree = "<group>"; };
 		CE06BAB5E34D33E9205557171C73CF6C /* NSL_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSL_.swift; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */,
-				C8889EA70BB1C71DED9F1FB7CFF6B594 /* UIButton (SetTitle).swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -998,7 +995,6 @@
 				1DF819E384E2A4584269F107EB070EFF /* UIBarButtonItem (Factories).swift in Sources */,
 				7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */,
 				9EDC676FBB4296DB4C630B5E78379EBE /* UIButton (Color_).swift in Sources */,
-				F0ECD62C46A02D8138358FBAB1B38285 /* UIButton (SetTitle).swift in Sources */,
 				CA9124BD236AE4D0D64EFC021D5BB391 /* UIColor (FromHex_).swift in Sources */,
 				25879B45F1221FB152C8E2F32B83DCB5 /* UIColor (PredefinedColors).swift in Sources */,
 				36619180DB22B571E2199B3C6CDD67A4 /* UIColor (WithAlpha).swift in Sources */,
