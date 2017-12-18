@@ -268,6 +268,7 @@ private extension CalendarVC {
     func _switchTo(daysVC: CalendarDaysVC, direction: UIPageViewControllerNavigationDirection, animated: Bool = true) {
         guard !self._isPaging else { return }
         self._isPaging = true
+        
         self._pageVC.setViewControllers(
             [daysVC],
             direction: direction,
@@ -308,6 +309,17 @@ private extension CalendarVC {
         let direction: UIPageViewControllerNavigationDirection = isLaterMonth ? .forward : .reverse
         
         self._switchTo(daysVC: vc, direction: direction, animated: animated)
+        
+        // If the new month is not adjacent to the old one,
+        // we need to flush the vc-cash of the pageVC,
+        // so the correct month will be shown on the next
+        // button tap or swipe.  Unfortunately, it seems
+        // as though there's no better way to do this...
+        if month >< [roundedDate.prevMonth, roundedDate.nextMonth] {
+            let pageVC: UIPageViewController = self._pageVC
+            pageVC.dataSource = nil
+            pageVC.dataSource = self
+        }
     }
 }
 
