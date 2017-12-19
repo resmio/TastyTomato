@@ -11,15 +11,15 @@ import Foundation
 
 // MARK: // Public
 public extension TextButton {
-    public static func ForgotPasswordButton() -> TextButton {
-        return self._ForgotPasswordButton()
+    public static func makeForgotPasswordButton() -> TextButton {
+        return self._makeForgotPasswordButton()
     }
 }
 
 
 // MARK: // Private
 private extension TextButton {
-    static func _ForgotPasswordButton() -> TextButton {
+    static func _makeForgotPasswordButton() -> TextButton {
         let button: TextButton = TextButton()
         
         button.adjustsWidthOnTitleSet = false

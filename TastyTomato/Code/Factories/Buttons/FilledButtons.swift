@@ -11,20 +11,32 @@ import Foundation
 
 // MARK: // Public
 public extension FilledButton {
-    public static func SignInButton() -> FilledButton {
-        return self._SignInButton()
+    public static func makeSignInButton() -> FilledButton {
+        return self._makeSignInButton()
     }
     
-    public static func SelectFacilityButton() -> FilledButton {
-        return self._SelectFacilityButton()
+    public static func makeSelectFacilityButton() -> FilledButton {
+        return self._makeSelectFacilityButton()
     }
 }
 
 
 // MARK: // Private
-// MARK: Predefined Instances
 private extension FilledButton {
-    static func _SignInAndSelectFacilityButton() -> FilledButton {
+    static func _makeSignInButton() -> FilledButton {
+        let signInButton: FilledButton = self._makeSignInAndSelectFacilityButton()
+        signInButton.setTitle(NSL_("Sign in"))
+        return signInButton
+    }
+    
+    static func _makeSelectFacilityButton() -> FilledButton {
+        let selectButton: FilledButton = self._makeSignInAndSelectFacilityButton()
+        selectButton.setTitle(NSL_("Select"))
+        return selectButton
+    }
+    
+    // Helper
+    static func _makeSignInAndSelectFacilityButton() -> FilledButton {
         let button: FilledButton = FilledButton()
         
         button.setTitleColor(.white, for: .normal)
@@ -35,17 +47,5 @@ private extension FilledButton {
         button.width = 330
         
         return button
-    }
-    
-    static func _SignInButton() -> FilledButton {
-        let signInButton: FilledButton = self._SignInAndSelectFacilityButton()
-        signInButton.setTitle(NSL_("Sign in"))
-        return signInButton
-    }
-    
-    static func _SelectFacilityButton() -> FilledButton {
-        let selectButton: FilledButton = self._SignInAndSelectFacilityButton()
-        selectButton.setTitle(NSL_("Select"))
-        return selectButton
     }
 }
