@@ -73,6 +73,7 @@
 		C2E279A4ED34081F1C983150B1F45061 /* CALayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */; };
 		C80A75D4A90ACE4BA90325467515CA79 /* UIViewController (Embedding).swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA86B00BB8C1AE6C781872E597AF28 /* UIViewController (Embedding).swift */; };
 		CA9124BD236AE4D0D64EFC021D5BB391 /* UIColor (FromHex_).swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */; };
+		CE914A1221694D4AE9F400582C49B62F /* ImageTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD12FA602A05FA8F90A14D2DD8FA7A2 /* ImageTextButton.swift */; };
 		CF8FDF1DFA8603E44D63E041A668BEC5 /* BaseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC82CB1A56D60A4DF981960B5A667C /* BaseTextView.swift */; };
 		D2696B92DC2F081F73F0EEB14B91BE9F /* GridLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB79C0D23FF876BF39D0237EBB0E33 /* GridLayer.swift */; };
 		D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */; };
@@ -118,6 +119,7 @@
 		1B1032762F44E9AFAAC244949B1E9E97 /* BundleHelper_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleHelper_.swift; sourceTree = "<group>"; };
 		1D1A60CE3AFFC68209D50DF5CC789F23 /* Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; sourceTree = "<group>"; };
 		286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (PredefinedColors).swift"; sourceTree = "<group>"; };
+		2FD12FA602A05FA8F90A14D2DD8FA7A2 /* ImageTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextButton.swift; sourceTree = "<group>"; };
 		31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
 		3548C6B4D617159868EBE227290AFC0C /* FilledButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButtons.swift; sourceTree = "<group>"; };
 		38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint (ConvenienceInits).swift"; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 			children = (
 				3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */,
 				E12E3659104848DDD678FE37D39AEAF3 /* FilledButton.swift */,
+				2FD12FA602A05FA8F90A14D2DD8FA7A2 /* ImageTextButton.swift */,
 				DC87E38A8D37FC92DD3A64DEC8AC1796 /* ShortcutBarButton.swift */,
 				AE12E9AC9F91E1C3F23E1C2A25D9E463 /* TextButton.swift */,
 			);
@@ -978,6 +981,7 @@
 				935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */,
 				729A9210630A3CCEA0E2CEB2550EB233 /* FilledButtons.swift in Sources */,
 				D2696B92DC2F081F73F0EEB14B91BE9F /* GridLayer.swift in Sources */,
+				CE914A1221694D4AE9F400582C49B62F /* ImageTextButton.swift in Sources */,
 				1EB50168F0EB699E438CBBA6F754ABC7 /* LineLayer.swift in Sources */,
 				693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */,
 				2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */,
