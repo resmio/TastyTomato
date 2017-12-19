@@ -98,10 +98,12 @@ private extension UIBarButtonItem {
     static func _makeNextItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: ImageTextButton = ImageTextButton()
         self._configure(button: button, with: targetAction)
+        button.imageAnchoring = .right
         button.image = ArrowIcon.Right.asTemplate()
         button.text = NSL_("Next")
-        button.sizeToFit()
         button.tintColor = .blue00A7C4
+        button.setTitleColor(.blue00A7C4, for: .normal)
+        button.sizeToFit()
         return UIBarButtonItem(customView: button)
     }
     
