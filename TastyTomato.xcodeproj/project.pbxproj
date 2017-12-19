@@ -14,7 +14,6 @@
 		13BFB81E9AE9A8BC5760E75496D1DFFC /* UIView (Centering).swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB15454677793E311B1E258952332E7 /* UIView (Centering).swift */; };
 		19C92CD4A59B6B157BF3C003069DDC68 /* Pods_TastyTomatoAbstract_TastyTomatoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABA286658F68C0C07202547FFEF1BC7 /* Pods_TastyTomatoAbstract_TastyTomatoTests.framework */; };
 		1D182D1BB45EB8B648582A87B8CC2067 /* CGFloat (UInt).swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */; };
-		1DF819E384E2A4584269F107EB070EFF /* UIBarButtonItem (Factories).swift in Sources */ = {isa = PBXBuildFile; fileRef = 90413FC4A30D88E21DEBA1DD362A605C /* UIBarButtonItem (Factories).swift */; };
 		1EB50168F0EB699E438CBBA6F754ABC7 /* LineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2EE287EFE2E608FE430542E60BF82 /* LineLayer.swift */; };
 		2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A0EA47A67D9129AB47655130F41D4 /* MiscIcon.swift */; };
 		234C2E7FADD37FC3783F9BFF305828A6 /* UIImage (Named_).swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CC1F2A974F883E6BD5039B189DF28 /* UIImage (Named_).swift */; };
@@ -35,6 +34,7 @@
 		5A17A3E7FF74BF8938A74A135969B1CE /* UIView (ScaleByFactor).swift in Sources */ = {isa = PBXBuildFile; fileRef = 978EA7B188BA3CCA15536BA105B324A5 /* UIView (ScaleByFactor).swift */; };
 		5B2E2C7933A2CB02419E3D9D200663F6 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A98E8296B3BD2970706F8D3BE1F63CB /* TagsView.swift */; };
 		5C8AA03C6C4B4DCDAA601D7775D8EA1A /* CGSize (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */; };
+		5E455E4E43365F23CC167998F2559D7C /* UIBarButtonItem (Factories).swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8EED43E773C4DCAFFB7E4271AFCD6F /* UIBarButtonItem (Factories).swift */; };
 		5E57C795BBC2571CF69566AAED10332A /* ZoomToPointScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9F08EDDB7CC443D1D2806BB6F6C5E /* ZoomToPointScrollView.swift */; };
 		5FBBB08F482C2EF8829D937D432DB0AA /* UIImage (RenderingModes).swift in Sources */ = {isa = PBXBuildFile; fileRef = F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */; };
 		6470F7DF00947E0FBE1900DC3E0DD50B /* BorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BC583DBAE7511BCDDF7E97D2E6F30 /* BorderLayer.swift */; };
@@ -147,7 +147,6 @@
 		8A98E8296B3BD2970706F8D3BE1F63CB /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		8CB15454677793E311B1E258952332E7 /* UIView (Centering).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (Centering).swift"; sourceTree = "<group>"; };
 		8E24467D4568DC50711B01B3FBCD8958 /* CGFloat (Int).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (Int).swift"; sourceTree = "<group>"; };
-		90413FC4A30D88E21DEBA1DD362A605C /* UIBarButtonItem (Factories).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem (Factories).swift"; sourceTree = "<group>"; };
 		91C532ECB5C7CC6DE8FAAAD3F465DEAE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		930AD36178D8D1DE2BBCFC79532B52C2 /* CalendarDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDaysView.swift; sourceTree = "<group>"; };
 		94154F1BD684F2C672C76A4BFDB379C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -185,6 +184,7 @@
 		E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logos.xcassets; sourceTree = "<group>"; };
 		EA7FFA17FC0A5D6DF5FAF4475A4BE503 /* Pods_TastyTomatoAbstract_TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomatoAbstract_TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EABA286658F68C0C07202547FFEF1BC7 /* Pods_TastyTomatoAbstract_TastyTomatoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomatoAbstract_TastyTomatoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8EED43E773C4DCAFFB7E4271AFCD6F /* UIBarButtonItem (Factories).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem (Factories).swift"; sourceTree = "<group>"; };
 		EDD814FC55DAC00A9D6B71B510D55E49 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		F10CB374E45CF24A4F503F48FD457BD8 /* Pods-TastyTomatoAbstract-TastyTomato.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomato.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato.debug.xcconfig"; sourceTree = "<group>"; };
@@ -331,7 +331,6 @@
 				A2C7788C50EBFA6A19AD6E5D21DDA7F0 /* CGPoint */,
 				2A82240FC7459054B0D58710F81524F0 /* CGRect */,
 				9A89BE72D4671CAB9BB7FFB4B3B4F96D /* CGSize */,
-				E1C18622C6D4C7E75ECFF8C0B3DB8D35 /* UIBarButtonItem */,
 				0493472B043AE9358E374F400818BC62 /* UIButton */,
 				C61FA760C329029916EAB5DF6196AE44 /* UIColor */,
 				672790F9FBEF1DB75397020CEEDDC422 /* UIImage */,
@@ -412,6 +411,15 @@
 			path = UITableView;
 			sourceTree = "<group>";
 		};
+		5DB428B95C6E6A7A04AF988224358816 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				81D93C7E96B1E3CF19B02D0337DE570A /* Buttons */,
+				060D0C68B8B47A5B028244D892C1E751 /* UIBarButtonItem */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		6054D7993EB7ADFFC77F9B34313A406C /* TastyTomatoTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +467,15 @@
 			path = ViewControllerClasses;
 			sourceTree = "<group>";
 		};
+		81D93C7E96B1E3CF19B02D0337DE570A /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				3548C6B4D617159868EBE227290AFC0C /* FilledButtons.swift */,
+				0512BAA02F0FBD019D3EE56A361BFE1C /* TextButtons.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		81E4DAC46F44F11E680BCD87739D7F33 /* ButtonClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,15 +495,6 @@
 				23F46E8BFE01453CA2299EB51CEC1DBC /* ZoomView */,
 			);
 			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		81D93C7E96B1E3CF19B02D0337DE570A /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				3548C6B4D617159868EBE227290AFC0C /* FilledButtons.swift */,
-				0512BAA02F0FBD019D3EE56A361BFE1C /* TextButtons.swift */,
-			);
-			path = Buttons;
 			sourceTree = "<group>";
 		};
 		9999FCCB3A774D4E83A754E53EFE8B64 /* Extensions */ = {
@@ -618,14 +626,6 @@
 			path = UIColor;
 			sourceTree = "<group>";
 		};
-		5DB428B95C6E6A7A04AF988224358816 /* Factories */ = {
-			isa = PBXGroup;
-			children = (
-				81D93C7E96B1E3CF19B02D0337DE570A /* Buttons */,
-			);
-			path = Factories;
-			sourceTree = "<group>";
-		};
 		CEA9ED81CA9819C760F0522AF4297510 /* NSLocalizedString */ = {
 			isa = PBXGroup;
 			children = (
@@ -687,10 +687,10 @@
 			path = UIWindow;
 			sourceTree = "<group>";
 		};
-		E1C18622C6D4C7E75ECFF8C0B3DB8D35 /* UIBarButtonItem */ = {
+		060D0C68B8B47A5B028244D892C1E751 /* UIBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
-				90413FC4A30D88E21DEBA1DD362A605C /* UIBarButtonItem (Factories).swift */,
+				ED8EED43E773C4DCAFFB7E4271AFCD6F /* UIBarButtonItem (Factories).swift */,
 			);
 			path = UIBarButtonItem;
 			sourceTree = "<group>";
@@ -992,7 +992,7 @@
 				42BB16D84A350E14BE177DA60F5977A0 /* TextButton.swift in Sources */,
 				05BC178930A735A7A30733F1D5B3E045 /* TextButtons.swift in Sources */,
 				48D0397391009A24265A5FEE06D16F89 /* TriangleLayer.swift in Sources */,
-				1DF819E384E2A4584269F107EB070EFF /* UIBarButtonItem (Factories).swift in Sources */,
+				5E455E4E43365F23CC167998F2559D7C /* UIBarButtonItem (Factories).swift in Sources */,
 				7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */,
 				9EDC676FBB4296DB4C630B5E78379EBE /* UIButton (Color_).swift in Sources */,
 				CA9124BD236AE4D0D64EFC021D5BB391 /* UIColor (FromHex_).swift in Sources */,
