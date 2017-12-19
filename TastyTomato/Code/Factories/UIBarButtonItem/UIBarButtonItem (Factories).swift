@@ -31,6 +31,10 @@ public extension UIBarButtonItem {
         return ._makeBackItem(targetAction: targetAction)
     }
     
+    public static func makeNextItem(targetAction: TargetAction?) -> UIBarButtonItem {
+        return ._makeNextItem(targetAction: targetAction)
+    }
+    
     public static func makeEditItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
         return ._makeEditItem(targetAction: targetAction)
     }
@@ -86,6 +90,16 @@ private extension UIBarButtonItem {
         self._configure(button: button, with: targetAction)
         button.image = ArrowIcon.Left.asTemplate()
         button.text = NSL_("Back")
+        button.sizeToFit()
+        button.tintColor = .blue00A7C4
+        return UIBarButtonItem(customView: button)
+    }
+    
+    static func _makeNextItem(targetAction: TargetAction?) -> UIBarButtonItem {
+        let button: ImageTextButton = ImageTextButton()
+        self._configure(button: button, with: targetAction)
+        button.image = ArrowIcon.Right.asTemplate()
+        button.text = NSL_("Next")
         button.sizeToFit()
         button.tintColor = .blue00A7C4
         return UIBarButtonItem(customView: button)
