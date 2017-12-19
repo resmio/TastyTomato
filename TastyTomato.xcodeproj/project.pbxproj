@@ -230,6 +230,14 @@
 			path = UIButton;
 			sourceTree = "<group>";
 		};
+		060D0C68B8B47A5B028244D892C1E751 /* UIBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				ED8EED43E773C4DCAFFB7E4271AFCD6F /* UIBarButtonItem (Factories).swift */,
+			);
+			path = UIBarButtonItem;
+			sourceTree = "<group>";
+		};
 		0797CADAA242E6EF3AC04B83BE063FFA = {
 			isa = PBXGroup;
 			children = (
@@ -685,14 +693,6 @@
 				4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */,
 			);
 			path = UIWindow;
-			sourceTree = "<group>";
-		};
-		060D0C68B8B47A5B028244D892C1E751 /* UIBarButtonItem */ = {
-			isa = PBXGroup;
-			children = (
-				ED8EED43E773C4DCAFFB7E4271AFCD6F /* UIBarButtonItem (Factories).swift */,
-			);
-			path = UIBarButtonItem;
 			sourceTree = "<group>";
 		};
 		EE22ED39034017661019E659F4958502 /* TastyTomato */ = {
