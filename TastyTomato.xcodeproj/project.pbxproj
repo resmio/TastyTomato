@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		016794C2166A998F5DCD79812840EF65 /* UIView (SizeWidthHeight).swift in Sources */ = {isa = PBXBuildFile; fileRef = A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */; };
-		01903A7870C59E45E2071D68688B64AE /* FilledButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62837076E5C6BBE23DC133DBF28FFFD /* FilledButtons.swift */; };
+		05BC178930A735A7A30733F1D5B3E045 /* TextButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0512BAA02F0FBD019D3EE56A361BFE1C /* TextButtons.swift */; };
 		07D9391000BFA486E44C4497A1788C6A /* CGSize (Scaled).swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E0F301A67734A74C63533E21FEEDF /* CGSize (Scaled).swift */; };
 		0A9100AA8AD8E4B0E7367732D970B17A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905A0D02FB847E86970E50B1768AC71 /* TagView.swift */; };
 		13BFB81E9AE9A8BC5760E75496D1DFFC /* UIView (Centering).swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB15454677793E311B1E258952332E7 /* UIView (Centering).swift */; };
@@ -43,6 +43,7 @@
 		693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B490047206C221157A2991EFF79E0 /* MetaImage.swift */; };
 		6B57EDA175E804981EC3D12739F147AB /* UIImage (WidthHeight).swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */; };
 		71FE9A541DB44EEAAE834FFADE502F36 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F3B1F7E20B40701208459D6453448 /* BaseTextField.swift */; };
+		729A9210630A3CCEA0E2CEB2550EB233 /* FilledButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548C6B4D617159868EBE227290AFC0C /* FilledButtons.swift */; };
 		7B88BA2CAAD9CE534ACC63C4E654901C /* UIView (TemporaryPositionAndDimensions).swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281FC9CC0B750319F7F7A568E1BE01F /* UIView (TemporaryPositionAndDimensions).swift */; };
 		7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */; };
 		800936DF4B2EC8E094396520F049EF4B /* UIView (Area).swift in Sources */ = {isa = PBXBuildFile; fileRef = 15004413C96D0B4A03CF11D63DD6382A /* UIView (Area).swift */; };
@@ -79,7 +80,6 @@
 		D9D8EA86DD5DE5CE144ED010353425A3 /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172042EA77DA17224778AA7DB33B6707 /* DropDownTextField.swift */; };
 		DA4FD8E31F32DAE00AFCA3A9CE81C160 /* UIImage (ColoredRect).swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CE20B670A02E13FB4A56517F58E300 /* UIImage (ColoredRect).swift */; };
 		E120F90B264A2076BE355CC29E789218 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */; };
-		EA4C422FDA23A2D7DDF931EF8A605544 /* TextButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628597189125D75D98E36EA8682ADA2 /* TextButtons.swift */; };
 		EC506565538E2DB12D3DC6A51D3BE3D8 /* CalendarVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91691515EBC3E7218FB4AB8592A22B /* CalendarVCView.swift */; };
 		EE32ADFFEBCC74C2EA342C807988D3A1 /* UIWindow (SetRootViewController).swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */; };
 		F128D132603E4E0CE74EC979474A6F60 /* BookingStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */; };
@@ -102,6 +102,7 @@
 /* Begin PBXFileReference section */
 		019B1845FE1BCB19271320DCDCAE1B32 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0512BAA02F0FBD019D3EE56A361BFE1C /* TextButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButtons.swift; sourceTree = "<group>"; };
 		0538E4586B05FE6B1C4EC4E6CD98C6C1 /* TastyTomato.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TastyTomato.playground; sourceTree = "<group>"; };
 		05AB4A6B3512A21991AB80642E750A3A /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		05BA18CC2F9A526F518B9C154D07DDC7 /* UIScrollView (ZoomingConvenience).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView (ZoomingConvenience).swift"; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		1D1A60CE3AFFC68209D50DF5CC789F23 /* Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; sourceTree = "<group>"; };
 		286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (PredefinedColors).swift"; sourceTree = "<group>"; };
 		31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
+		3548C6B4D617159868EBE227290AFC0C /* FilledButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButtons.swift; sourceTree = "<group>"; };
 		38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingStatusIcon.swift; sourceTree = "<group>"; };
@@ -177,12 +179,10 @@
 		CF57DBBABA83CFBB3428C32BBB42514E /* CGRect (Area).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (Area).swift"; sourceTree = "<group>"; };
 		D43E0F301A67734A74C63533E21FEEDF /* CGSize (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (Scaled).swift"; sourceTree = "<group>"; };
 		D4C581522222734865A3403552E044DA /* CGRect (LeftRightTopBottomCenter).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (LeftRightTopBottomCenter).swift"; sourceTree = "<group>"; };
-		D62837076E5C6BBE23DC133DBF28FFFD /* FilledButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButtons.swift; sourceTree = "<group>"; };
 		DC87E38A8D37FC92DD3A64DEC8AC1796 /* ShortcutBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutBarButton.swift; sourceTree = "<group>"; };
 		DCF12E5F5D09CC277B307C8A27456151 /* TastyTomatoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastyTomatoTests.swift; sourceTree = "<group>"; };
 		E12E3659104848DDD678FE37D39AEAF3 /* FilledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
 		E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logos.xcassets; sourceTree = "<group>"; };
-		E628597189125D75D98E36EA8682ADA2 /* TextButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButtons.swift; sourceTree = "<group>"; };
 		EA7FFA17FC0A5D6DF5FAF4475A4BE503 /* Pods_TastyTomatoAbstract_TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomatoAbstract_TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EABA286658F68C0C07202547FFEF1BC7 /* Pods_TastyTomatoAbstract_TastyTomatoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomatoAbstract_TastyTomatoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD814FC55DAC00A9D6B71B510D55E49 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
@@ -263,8 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				46D48A3DF2B901CAD57244D34D089FF9 /* Classes */,
-				CC8873A5D129E761EEABF10B6C336331 /* Elements */,
 				9999FCCB3A774D4E83A754E53EFE8B64 /* Extensions */,
+				5DB428B95C6E6A7A04AF988224358816 /* Factories */,
 				D23210E99B6D5D3E3FEB6708B0CC452F /* Meta */,
 				D7B5FB8B737A9AC146C8A6F988388264 /* OperatorOverloads */,
 			);
@@ -480,11 +480,11 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		8D6B38C23AD55B56C22E0212EAB83656 /* Buttons */ = {
+		81D93C7E96B1E3CF19B02D0337DE570A /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				D62837076E5C6BBE23DC133DBF28FFFD /* FilledButtons.swift */,
-				E628597189125D75D98E36EA8682ADA2 /* TextButtons.swift */,
+				3548C6B4D617159868EBE227290AFC0C /* FilledButtons.swift */,
+				0512BAA02F0FBD019D3EE56A361BFE1C /* TextButtons.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -618,12 +618,12 @@
 			path = UIColor;
 			sourceTree = "<group>";
 		};
-		CC8873A5D129E761EEABF10B6C336331 /* Elements */ = {
+		5DB428B95C6E6A7A04AF988224358816 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				8D6B38C23AD55B56C22E0212EAB83656 /* Buttons */,
+				81D93C7E96B1E3CF19B02D0337DE570A /* Buttons */,
 			);
-			path = Elements;
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		CEA9ED81CA9819C760F0522AF4297510 /* NSLocalizedString */ = {
@@ -976,7 +976,7 @@
 				BA9D4604EF78A1E1CFCED56D05950748 /* DateCell.swift in Sources */,
 				D9D8EA86DD5DE5CE144ED010353425A3 /* DropDownTextField.swift in Sources */,
 				935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */,
-				01903A7870C59E45E2071D68688B64AE /* FilledButtons.swift in Sources */,
+				729A9210630A3CCEA0E2CEB2550EB233 /* FilledButtons.swift in Sources */,
 				D2696B92DC2F081F73F0EEB14B91BE9F /* GridLayer.swift in Sources */,
 				1EB50168F0EB699E438CBBA6F754ABC7 /* LineLayer.swift in Sources */,
 				693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */,
@@ -990,7 +990,7 @@
 				0A9100AA8AD8E4B0E7367732D970B17A /* TagView.swift in Sources */,
 				5B2E2C7933A2CB02419E3D9D200663F6 /* TagsView.swift in Sources */,
 				42BB16D84A350E14BE177DA60F5977A0 /* TextButton.swift in Sources */,
-				EA4C422FDA23A2D7DDF931EF8A605544 /* TextButtons.swift in Sources */,
+				05BC178930A735A7A30733F1D5B3E045 /* TextButtons.swift in Sources */,
 				48D0397391009A24265A5FEE06D16F89 /* TriangleLayer.swift in Sources */,
 				1DF819E384E2A4584269F107EB070EFF /* UIBarButtonItem (Factories).swift in Sources */,
 				7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */,
