@@ -39,7 +39,7 @@ public extension ImageTextButton {
 // MARK: Class Declaration
 public class ImageTextButton: BaseButton {
     // Private Variables
-    private var _spacing: CGFloat = 5
+    private var _spacing: CGFloat = 0
     private var _imageAnchoring: ImageAnchoring = .left {
         didSet { self.setNeedsLayout() }
     }
