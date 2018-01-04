@@ -48,6 +48,10 @@ public class ImageTextButton: BaseButton {
     public override func layoutSubviews() {
         self._layoutSubviews()
     }
+    
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return self._sizeThatFits(size)
+    }
 }
 
 
@@ -62,26 +66,34 @@ private extension ImageTextButton {
         
         let _titleLabel: UILabel? = self.titleLabel
         let _imageView: UIImageView? = self.imageView
-        let imageIsLeft: Bool = self.imageAnchoring == .left
+        let imageShouldBeLeftAnchored: Bool = self.imageAnchoring == .left
         let (leftView, rightView): (UIView?, UIView?) =
-            imageIsLeft ? (_imageView, _titleLabel) : (_titleLabel, _imageView)
+            imageShouldBeLeftAnchored ? (_imageView, _titleLabel) : (_titleLabel, _imageView)
+        
+        leftView?.sizeToFit()
+        rightView?.sizeToFit()
         
         leftView?.centerVInSuperview()
         rightView?.centerVInSuperview()
         
-        var titleLabelWidth: CGFloat = width - (2 * inset)
+        leftView?.left = 0
+        rightView?.right = width
+    }
+    
+    func _sizeThatFits(_ size: CGSize) -> CGSize {
+        let titleLabel: UILabel = self.titleLabel!
+        let imageView: UIImageView = self.imageView!
         
-        ifLetImageView: if let imageView: UIImageView = _imageView {
-            guard imageView.width != 0 else {
-                break ifLetImageView
-            }
-            
-            titleLabelWidth -= imageView.width + self._spacing
-        }
+        titleLabel.sizeToFit()
+        imageView.sizeToFit()
+        
+        let height: CGFloat = max(titleLabel.height, imageView.height, size.height)
+        let width: CGFloat = titleLabel.width + imageView.width + self._spacing
+        
+        return CGSize(width: width, height: height)
+    }
+}
 
-        _titleLabel?.width = titleLabelWidth
 
-        leftView?.left = inset
-        rightView?.right = width - inset
     }
 }
