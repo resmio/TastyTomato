@@ -52,6 +52,11 @@ public class ImageTextButton: BaseButton {
     public override func sizeThatFits(_ size: CGSize) -> CGSize {
         return self._sizeThatFits(size)
     }
+    
+    // Setup override
+    public override func setup() {
+        self._setup()
+    }
 }
 
 
@@ -95,5 +100,10 @@ private extension ImageTextButton {
 }
 
 
+// MARK: Setup Override Implementation
+private extension ImageTextButton {
+    func _setup() {
+        super.setup()
+        self.imageView?.contentMode = .scaleAspectFit
     }
 }
