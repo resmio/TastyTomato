@@ -33,15 +33,6 @@ public extension ImageTextButton {
             self.setTitle(newText)
         }
     }
-    
-    var image: UIImage? {
-        get {
-            return self.imageView?.image
-        }
-        set(newImage) {
-            self.setImage(newImage, for: .normal)
-        }
-    }
 }
 
 
