@@ -88,10 +88,16 @@ private extension UIBarButtonItem {
     static func _makeBackItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: ImageTextButton = ImageTextButton()
         self._configure(button: button, with: targetAction)
-        button.image = ArrowIcon.Left.asTemplate()
+        let arrowIcon: UIImage = ArrowIcon.Left.asTemplate()
+        let blueColor: UIColor = .blue00A7C4
+        let highlightedBlueColor: UIColor = blueColor.withAlpha(0.5)
+        
+        button.setImage(arrowIcon.withTint(color: blueColor), for: .normal)
+        button.setImage(arrowIcon.withTint(color: blueColor.withAlpha(0.5)), for: .highlighted)
         button.text = NSL_("Back")
+        button.setTitleColor(blueColor, for: .normal)
+        button.setTitleColor(highlightedBlueColor, for: .highlighted)
         button.sizeToFit()
-        button.tintColor = .blue00A7C4
         return UIBarButtonItem(customView: button)
     }
     
@@ -99,10 +105,14 @@ private extension UIBarButtonItem {
         let button: ImageTextButton = ImageTextButton()
         self._configure(button: button, with: targetAction)
         button.imageAnchoring = .right
-        button.image = ArrowIcon.Right.asTemplate()
+        let arrowIcon: UIImage = ArrowIcon.Right.asTemplate()
+        let blueColor: UIColor = .blue00A7C4
+        let highlightedBlueColor: UIColor = blueColor.withAlpha(0.5)
+        button.setImage(arrowIcon.withTint(color: blueColor), for: .normal)
+        button.setImage(arrowIcon.withTint(color: highlightedBlueColor), for: .highlighted)
         button.text = NSL_("Next")
-        button.tintColor = .blue00A7C4
-        button.setTitleColor(.blue00A7C4, for: .normal)
+        button.setTitleColor(blueColor, for: .normal)
+        button.setTitleColor(highlightedBlueColor, for: .highlighted)
         button.sizeToFit()
         return UIBarButtonItem(customView: button)
     }
