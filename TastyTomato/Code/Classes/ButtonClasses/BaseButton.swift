@@ -10,29 +10,33 @@ import UIKit
 
 
 // MARK: // Public
-// MARK: Fake Initializer
-public func BaseButton_() -> BaseButton {
-    return BaseButton.button_()
-}
-
-
 // MARK: Interface
 public extension BaseButton {
-    // Readonly
-    public static var defaultWidth: CGFloat {
-        return self._defaultWidth
-    }
-    
-    public static var defaultHeight: CGFloat {
-        return self._defaultHeight
-    }
-    
-    public var autoAdjustWidthOnTitleSet: Bool {
+    // ReadWrite
+    public var adjustsWidthOnTitleSet: Bool {
         get {
-            return self._autoAdjustWidthOnTitleSet
+            return self._adjustsWidthOnTitleSet
         }
-        set(newAutoAdjustWidthOnTitleSet) {
-            self._autoAdjustWidthOnTitleSet = newAutoAdjustWidthOnTitleSet
+        set(newAdjustsWidthOnTitleSet) {
+            self._adjustsWidthOnTitleSet = newAdjustsWidthOnTitleSet
+        }
+    }
+    
+    public var xPadding: CGFloat {
+        get {
+            return self._xPadding
+        }
+        set(newXPadding) {
+            self._xPadding = newXPadding
+        }
+    }
+    
+    public var yPadding: CGFloat {
+        get {
+            return self._yPadding
+        }
+        set(newYPadding) {
+            self._yPadding = newYPadding
         }
     }
 }
@@ -40,80 +44,81 @@ public extension BaseButton {
 
 // MARK: Class Declaration
 public class BaseButton: UIButton {
-    // Init Error Message
-    class func initErrorMessage() -> Never  {
-        fatalError(
-            "Do not initialize \(self.classForCoder) directly. " +
-            "Use \(self.classForCoder)_() function instead."
-        )
-    }
-    
-    // Initialization
+    // Required Init
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.setup()
     }
     
-    override internal init(frame: CGRect) {
+    // Override Init
+    public override init(frame: CGRect) {
         super.init(frame: frame)
+        self.setup()
     }
     
-    fileprivate init() {
-        type(of: self).initErrorMessage()
+    public convenience init() {
+        self.init(frame: .zero)
+        self.setup()
     }
     
-    // Factory
-    static func button_() -> Self {
-        return self._button()
+    // Private Constants
+    private let _minimumSideLength: CGFloat = 40
+    
+    // Private Variables
+    private var _adjustsWidthOnTitleSet: Bool = true
+    private var _xPadding: CGFloat = 5
+    private var _yPadding: CGFloat = 5
+    
+    // Layout Overrides
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return self._sizeThatFits(size)
+    }
+    
+    // setTitle Overrides
+    public func setTitle(_ title: String) {
+        self.setTitle(title, for: .normal)
+    }
+    
+    public override func setTitle(_ title: String?, for state: UIControlState) {
+        self._setTitle(title, for: state)
     }
     
     // Setup
-    class func setup_<T: BaseButton>(_ button: T) {
-        self._setup(button)
-    }
-    
-    // Private Static Constant Stored Properties
-    fileprivate static let _defaultWidth: CGFloat = 100
-    fileprivate static let _defaultHeight: CGFloat = 35
-    
-    // Private Constants Stored Properties
-    fileprivate let _horizontalPadding: CGFloat = 10
-    
-    // Private Variable Stored Properties
-    fileprivate var _autoAdjustWidthOnTitleSet: Bool = true
-}
-
-
-// MARK: Override
-extension BaseButton {
-    override public func setTitle(_ title: String) {
-        super.setTitle(title)
-        if self.autoAdjustWidthOnTitleSet {
-            let backupHeight: CGFloat = self.height
-            self.sizeToFit()
-            self.width += 2 * self._horizontalPadding
-            self.height = backupHeight
-        }
+    public func setup() {
+        self._setup()
     }
 }
 
 
 // MARK: // Private
-// MARK: Factory
+// MARK: Setup Implementation
 private extension BaseButton {
-    static func _button() -> Self {
-        let button = self.init(type: .system)
-        type(of: button).setup_(button)
-        return button
+    func _setup() {
+        self.layer.cornerRadius = 4
+        self.clipsToBounds = true
     }
 }
 
 
-// MARK: Setup
+// MARK: Layout Override Implementations
 private extension BaseButton {
-    static func _setup<T: BaseButton>(_ button: T) {
-        button.height = self.defaultHeight
-        button.width = self.defaultWidth
-        button.layer.cornerRadius = 4
-        button.clipsToBounds = true
+    func _sizeThatFits(_ size: CGSize) -> CGSize {
+        var size: CGSize = super.sizeThatFits(size)
+        let widthWithPadding: CGFloat = size.width + (2 * self.xPadding)
+        let heightWithPadding: CGFloat = size.height + (2 * self.yPadding)
+        size.width = max(widthWithPadding, self._minimumSideLength)
+        size.height = max(heightWithPadding, self._minimumSideLength)
+        return size
+    }
+}
+
+
+// MARK: setTitle Override Implementation
+private extension BaseButton {
+    func _setTitle(_ title: String?, for state: UIControlState) {
+        super.setTitle(title, for: state)
+        if self.adjustsWidthOnTitleSet {
+            self.width = self.sizeThatFits(.zero).width
+        }
     }
 }

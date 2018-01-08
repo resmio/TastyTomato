@@ -10,85 +10,72 @@ import Foundation
 
 
 // MARK: // Public
-// MARK: Fake Initializer
-public func FilledButton_() -> FilledButton {
-    return FilledButton.button_()
-}
-
-
 // MARK: Interface
 public extension FilledButton {
     public var fillColor: UIColor {
-        return self._fillColor
+        get {
+            return self._fillColor
+        }
+        set(newFillColor) {
+            self._fillColor = newFillColor
+        }
     }
     
     public var highlightedAlpha: CGFloat {
-        return self._highlightedAlpha
-    }
-    
-    public func setFillColor(_ color: UIColor) {
-        self._setFillColor(color)
-    }
-    
-    public func setHighlightedAlpha(_ alph: CGFloat) {
-        self._setHighlightedAlpha(alph)
+        get {
+            return self._highlightedAlpha
+        }
+        set(newHighlightedAlpha) {
+            self._highlightedAlpha = newHighlightedAlpha
+        }
     }
 }
 
 
 // MARK: Class Declaration
 public class FilledButton: BaseButton {
-    // Setup Override
-    override class func setup_<T: FilledButton>(_ button: T) {
-        super.setup_(button)
-        button.setFillColor(button.fillColor)
+    // Private Variables
+    private var _fillColor: UIColor = .blue00A7C4 {
+        didSet {
+            self._updateNormalColor()
+            self._updateHighlightedColor()
+        }
     }
     
-    // Private Stored Variable Properties
-    fileprivate var _fillColor: UIColor = .blue00A7C4
-    fileprivate var _highlightedAlpha: CGFloat = 0.6
-}
-
-
-// MARK: Override
-public extension FilledButton {
-    override public var frame: CGRect {
-        get {
-            return super.frame
-        }
-        set(newFrame) {
-            super.frame = newFrame
-            
-            // If the old frame was of size zero, we need to set 
-            // the color again because it no-ps if the size is zero.
-            self.setFillColor(self.fillColor)
-        }
+    private var _highlightedAlpha: CGFloat = 0.6 {
+        didSet { self._updateHighlightedColor() }
+    }
+    
+    // Setup Override
+    public override func setup() {
+        self._setup()
     }
 }
 
 
 // MARK: // Private
-// MARK: // Interface
+// MARK: Setup Override Implementation
 private extension FilledButton {
-    func _setFillColor(_ color: UIColor) {
-        self._fillColor = color
-        
-        self.setColor_(
-            color,
-            for: UIControlState()
-        )
-        
-        self.setColor_(
-            color.withAlpha(self.highlightedAlpha),
-            for: .highlighted
+    func _setup() {
+        super.setup()
+        self._updateNormalColor()
+        self._updateHighlightedColor()
+    }
+}
+
+
+// MARK: Update Color Helpers
+private extension FilledButton {
+    func _updateNormalColor() {
+        self.setColor(
+            self.fillColor,
+            for: .normal
         )
     }
     
-    func _setHighlightedAlpha(_ alph: CGFloat) {
-        self._highlightedAlpha = alph
-        
-        self.setColor_(
-            self.fillColor.withAlpha(alph),
+    func _updateHighlightedColor() {
+        self.setColor(
+            self.fillColor.withAlpha(self.highlightedAlpha),
             for: .highlighted
         )
     }

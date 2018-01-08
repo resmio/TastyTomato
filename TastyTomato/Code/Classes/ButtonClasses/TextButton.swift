@@ -10,14 +10,17 @@ import Foundation
 
 
 // MARK: // Public
-// MARK: Fake Initializer
-public func TextButton_() -> TextButton {
-    return TextButton.button_()
-}
-
-
 // MARK: Interface
 public extension TextButton {
+    public var highlightedAlpha: CGFloat {
+        get {
+            return self._highlightedAlpha
+        }
+        set(newHighlightedAlpha) {
+            self._highlightedAlpha = newHighlightedAlpha
+        }
+    }
+    
     public var underlined: Bool {
         get {
             return self._underlined
@@ -31,25 +34,21 @@ public extension TextButton {
 
 // MARK: Class Declaration
 public class TextButton: BaseButton {
+    // Private Variables
+    private var __highlightedAlpha: CGFloat = 0.5
+    private var __underlined: Bool = false
+    
     // Setup Override
-    override class func setup_<T: TextButton>(_ button: T) {
-        super.setup_(button)
-        button.setTitleColor(.black, for: .normal)
+    public override func setup() {
+        self._setup()
     }
     
-    // Private Variable Stored Properties
-    fileprivate var __underlined: Bool = false
-    
-    
-    // Overrides
-    override public func setTitle(_ title: String) {
-        self._setTitle(title)
-    }
-    
-    override public func setTitle(_ title: String?, for state: UIControlState) {
+    // setTitle Override
+    public override func setTitle(_ title: String?, for state: UIControlState) {
         self._setTitle(title, for: state)
     }
     
+    // setTitleColor Override
     public override func setTitleColor(_ color: UIColor?, for state: UIControlState) {
         self._setTitleColor(color, for: state)
     }
@@ -59,6 +58,19 @@ public class TextButton: BaseButton {
 // MARK: // Private
 // MARK: Computed Variables
 private extension TextButton {
+    var _highlightedAlpha: CGFloat {
+        get {
+            return self.__highlightedAlpha
+        }
+        set(newHighlightedAlpha) {
+            guard newHighlightedAlpha != self.__highlightedAlpha else { return }
+            self.__highlightedAlpha = newHighlightedAlpha
+            let titleColor: UIColor = self.titleColor(for: .highlighted) ?? .black
+            let highlightedTitleColor: UIColor = titleColor.withAlpha(self.highlightedAlpha)
+            self.setTitleColor(highlightedTitleColor, for: .highlighted)
+        }
+    }
+    
     var _underlined: Bool {
         get {
             return self.__underlined
@@ -66,52 +78,93 @@ private extension TextButton {
         set(newUnderlined) {
             guard newUnderlined != self.__underlined else { return }
             self.__underlined = newUnderlined
-            self._updateTitle()
+            self._updateAttributedTitle(for: state)
         }
     }
 }
 
 
-// MARK: Set Title Color
+// MARK: Setup Override Implementation
+private extension TextButton {
+    func _setup() {
+        super.setup()
+        self.xPadding = 0
+        self.yPadding = 0
+    }
+}
+
+
+// MARK: setTitle Override Implementation
+private extension TextButton {
+    func _setTitle(_ title: String?, for state: UIControlState) {
+        super.setTitle(title, for: state)
+        self._setAttributedTitle(title, for: state)
+    }
+}
+
+
+// MARK: setTitleColor Override Implementation
 private extension TextButton {
     func _setTitleColor(_ color: UIColor?, for state: UIControlState) {
         super.setTitleColor(color, for: state)
-        self._updateTitle()
+        if state == .normal {
+            super.setTitleColor(color?.withAlpha(self.highlightedAlpha), for: .highlighted)
+        }
+        self._updateAttributedTitle(for: state)
     }
 }
 
 
 // MARK: Update Title
 private extension TextButton {
-    func _updateTitle() {
-        let state: UIControlState = self.state
-        let title: String? = self.title(for: state)
-        self._setTitle(title, for: state)
+    func _updateAttributedTitle(for state: UIControlState) {
+        let title: String? = super.title(for: state)
+        self._setAttributedTitle(title, for: state)
     }
 }
 
 
-// MARK: Set Title
+// MARK: Set Attributed Title
 private extension TextButton {
-    func _setTitle(_ title: String?, for state: UIControlState = .normal) {
-        if title?.isEmpty ?? true {
+    func _setAttributedTitle(_ title: String?, for state: UIControlState) {
+        guard let title: String = title else {
             self.setAttributedTitle(nil, for: state)
             return
         }
         
-        let titleColor: UIColor = self.titleColor(for: state) ?? .black
-        let underlineStyle: NSUnderlineStyle = self.underlined ? .styleSingle : .styleNone
-        let attributes: [NSAttributedStringKey : Any] = [
-            .foregroundColor: titleColor,
-            .underlineStyle: underlineStyle.rawValue
-        ]
-        
-        let attributedTitle: NSAttributedString = NSAttributedString(
-            string: title!,
-            attributes: attributes
+        self.setAttributedTitle(
+            self._createAttributedTitle(from: title, for: state),
+            for: state
         )
         
-        super.setTitle(title, for: state)
-        self.setAttributedTitle(attributedTitle, for: state)
+        for otherState in UIControlState._states {
+            guard otherState != state else { continue }
+            self.setAttributedTitle(
+                self._createAttributedTitle(for: otherState),
+                for: otherState
+            )
+        }
     }
+    
+    // Helper
+    func _createAttributedTitle(from title: String? = nil, for state: UIControlState) -> NSAttributedString? {
+        guard let color: UIColor = super.titleColor(for: state) else { return nil }
+        guard let title: String = title ?? super.title(for: state) else { return nil }
+        
+        let underlineStyle: NSUnderlineStyle = self.underlined ? .styleSingle : .styleNone
+        let attributes: [NSAttributedStringKey : Any] = [
+            .foregroundColor: color,
+            .underlineStyle: underlineStyle.rawValue,
+            .underlineColor: color
+        ]
+        
+        return NSAttributedString(string: title, attributes: attributes)
+    }
+}
+
+
+// MARK: - UIControlState
+// MARK: _states extension
+private extension UIControlState {
+    static var _states: [UIControlState] = [.normal, .highlighted, .disabled, .selected]
 }

@@ -11,19 +11,20 @@ import Foundation
 
 // MARK: // Public
 public extension TextButton {
-    public static func ForgotPasswordButton() -> TextButton {
-        return self._ForgotPasswordButton()
+    public static func makeForgotPasswordButton() -> TextButton {
+        return self._makeForgotPasswordButton()
     }
 }
 
 
 // MARK: // Private
 private extension TextButton {
-    static func _ForgotPasswordButton() -> TextButton {
-        let button: TextButton = self.button_()
+    static func _makeForgotPasswordButton() -> TextButton {
+        let button: TextButton = TextButton()
         
-        button.setTitleColor(.gray555555, for: UIControlState())
-        button.titleLabel!.font = UIFont.systemFont(ofSize: 14)
+        button.adjustsWidthOnTitleSet = false
+        button.setTitleColor(.gray555555, for: .normal)
+        button.titleLabel!.font = .systemFont(ofSize: 14)
         button.setTitle(NSL_("Forgotten your password?"))
         button.underlined = true
         
