@@ -67,7 +67,6 @@ private extension ImageTextButton {
         super.layoutSubviews()
         
         let width: CGFloat = self.width
-        let inset: CGFloat = self.xPadding
         
         let _titleLabel: UILabel? = self.titleLabel
         let _imageView: UIImageView? = self.imageView
