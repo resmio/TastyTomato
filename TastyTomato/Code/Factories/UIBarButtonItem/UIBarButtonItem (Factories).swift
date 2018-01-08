@@ -46,6 +46,10 @@ public extension UIBarButtonItem {
     public static func makeSaveItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
         return ._makeSaveItem(targetAction: targetAction)
     }
+    
+    public static func makeDoneItem(targetAction: TargetAction? = nil) -> UIBarButtonItem {
+        return ._makeDoneItem(targetAction: targetAction)
+    }
 }
 
 
@@ -136,6 +140,15 @@ private extension UIBarButtonItem {
     static func _makeSaveItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getNormalButton(targetAction)
         button.setTitle(NSL_("Save"), for: .normal)
+        button.sizeToFit()
+        button.tintColor = .blue00A7C4
+        
+        return UIBarButtonItem(customView: button)
+    }
+    
+    static func _makeDoneItem(targetAction: TargetAction?) -> UIBarButtonItem {
+        let button: UIButton = self._getNormalButton(targetAction)
+        button.setTitle(NSL_("Done"), for: .normal)
         button.sizeToFit()
         button.tintColor = .blue00A7C4
         
