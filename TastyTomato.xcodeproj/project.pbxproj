@@ -73,10 +73,12 @@
 		C2E279A4ED34081F1C983150B1F45061 /* CALayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */; };
 		C80A75D4A90ACE4BA90325467515CA79 /* UIViewController (Embedding).swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDA86B00BB8C1AE6C781872E597AF28 /* UIViewController (Embedding).swift */; };
 		CA9124BD236AE4D0D64EFC021D5BB391 /* UIColor (FromHex_).swift in Sources */ = {isa = PBXBuildFile; fileRef = BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */; };
+		CE914A1221694D4AE9F400582C49B62F /* ImageTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD12FA602A05FA8F90A14D2DD8FA7A2 /* ImageTextButton.swift */; };
 		CF8FDF1DFA8603E44D63E041A668BEC5 /* BaseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC82CB1A56D60A4DF981960B5A667C /* BaseTextView.swift */; };
 		D2696B92DC2F081F73F0EEB14B91BE9F /* GridLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB79C0D23FF876BF39D0237EBB0E33 /* GridLayer.swift */; };
 		D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */; };
 		D8294936BE4CF32441B0D854D1F9DDEE /* UIScrollView (ZoomingConvenience).swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA18CC2F9A526F518B9C154D07DDC7 /* UIScrollView (ZoomingConvenience).swift */; };
+		D89860B8B7094EF83C1DE152E1AAEDD6 /* UIImage (withTint).swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3880C48EE007201237477752C5E8F /* UIImage (withTint).swift */; };
 		D9D8EA86DD5DE5CE144ED010353425A3 /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172042EA77DA17224778AA7DB33B6707 /* DropDownTextField.swift */; };
 		DA4FD8E31F32DAE00AFCA3A9CE81C160 /* UIImage (ColoredRect).swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CE20B670A02E13FB4A56517F58E300 /* UIImage (ColoredRect).swift */; };
 		E120F90B264A2076BE355CC29E789218 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */; };
@@ -118,6 +120,7 @@
 		1B1032762F44E9AFAAC244949B1E9E97 /* BundleHelper_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleHelper_.swift; sourceTree = "<group>"; };
 		1D1A60CE3AFFC68209D50DF5CC789F23 /* Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; sourceTree = "<group>"; };
 		286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (PredefinedColors).swift"; sourceTree = "<group>"; };
+		2FD12FA602A05FA8F90A14D2DD8FA7A2 /* ImageTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextButton.swift; sourceTree = "<group>"; };
 		31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
 		3548C6B4D617159868EBE227290AFC0C /* FilledButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButtons.swift; sourceTree = "<group>"; };
 		38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint (ConvenienceInits).swift"; sourceTree = "<group>"; };
@@ -182,6 +185,7 @@
 		DCF12E5F5D09CC277B307C8A27456151 /* TastyTomatoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastyTomatoTests.swift; sourceTree = "<group>"; };
 		E12E3659104848DDD678FE37D39AEAF3 /* FilledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
 		E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logos.xcassets; sourceTree = "<group>"; };
+		E4A3880C48EE007201237477752C5E8F /* UIImage (withTint).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage (withTint).swift"; sourceTree = "<group>"; };
 		EA7FFA17FC0A5D6DF5FAF4475A4BE503 /* Pods_TastyTomatoAbstract_TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomatoAbstract_TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EABA286658F68C0C07202547FFEF1BC7 /* Pods_TastyTomatoAbstract_TastyTomatoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomatoAbstract_TastyTomatoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8EED43E773C4DCAFFB7E4271AFCD6F /* UIBarButtonItem (Factories).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem (Factories).swift"; sourceTree = "<group>"; };
@@ -445,6 +449,7 @@
 				F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */,
 				1A908324B2B4B669470F0A3864A426C6 /* UIImage (Scaled).swift */,
 				7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */,
+				E4A3880C48EE007201237477752C5E8F /* UIImage (withTint).swift */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 			children = (
 				3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */,
 				E12E3659104848DDD678FE37D39AEAF3 /* FilledButton.swift */,
+				2FD12FA602A05FA8F90A14D2DD8FA7A2 /* ImageTextButton.swift */,
 				DC87E38A8D37FC92DD3A64DEC8AC1796 /* ShortcutBarButton.swift */,
 				AE12E9AC9F91E1C3F23E1C2A25D9E463 /* TextButton.swift */,
 			);
@@ -978,6 +984,7 @@
 				935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */,
 				729A9210630A3CCEA0E2CEB2550EB233 /* FilledButtons.swift in Sources */,
 				D2696B92DC2F081F73F0EEB14B91BE9F /* GridLayer.swift in Sources */,
+				CE914A1221694D4AE9F400582C49B62F /* ImageTextButton.swift in Sources */,
 				1EB50168F0EB699E438CBBA6F754ABC7 /* LineLayer.swift in Sources */,
 				693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */,
 				2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */,
@@ -1004,6 +1011,7 @@
 				5FBBB08F482C2EF8829D937D432DB0AA /* UIImage (RenderingModes).swift in Sources */,
 				2CCA94476E3333C634E936EC9EECA2AE /* UIImage (Scaled).swift in Sources */,
 				6B57EDA175E804981EC3D12739F147AB /* UIImage (WidthHeight).swift in Sources */,
+				D89860B8B7094EF83C1DE152E1AAEDD6 /* UIImage (withTint).swift in Sources */,
 				9A8C438EC913820E7B32A6C0D41EE5C9 /* UIScrollView (ScrollingConvenience).swift in Sources */,
 				D8294936BE4CF32441B0D854D1F9DDEE /* UIScrollView (ZoomingConvenience).swift in Sources */,
 				B29BDBA0023131D713E51F8D95B96ADA /* UITableView (reloadSoftly).swift in Sources */,

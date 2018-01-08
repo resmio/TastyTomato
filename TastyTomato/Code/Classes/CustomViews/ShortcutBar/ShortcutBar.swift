@@ -99,17 +99,23 @@ private extension ShortcutBar {
 // MARK: Interface Implementation
 private extension ShortcutBar {
     func _setItems(_ items: [UIBarButtonItem], animated: Bool) {
+        let toolBar: UIToolbar = self._toolBar
+        
+        let spacer: () -> UIBarButtonItem = {
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        }
+        var itemsWithSpacers: [UIBarButtonItem] = [spacer()]
         var cumulativeWidth: CGFloat = 0
         for item in items {
             cumulativeWidth += item.customView?.width ?? item.width
             cumulativeWidth += self._interItemSpacing
+            itemsWithSpacers.append(contentsOf: [item, spacer()])
         }
         
         // Fixed padding
         cumulativeWidth += self._itemPadding
         
-        let toolBar: UIToolbar = self._toolBar
-        toolBar.setItems(items, animated: animated)
+        toolBar.setItems(itemsWithSpacers, animated: animated)
         
         let isNarrowerOrSameWidth: Bool = cumulativeWidth <= self.width
         UIView.animate(withDuration: animated ? 0.3 : 0, animations: {
