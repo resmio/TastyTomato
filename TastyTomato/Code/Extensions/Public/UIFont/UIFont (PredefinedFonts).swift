@@ -46,4 +46,25 @@ public extension UIFont {
     public static var xxxl: UIFont {
         return .systemFont(ofSize: 24)
     }
+    
+    // Bold
+    public static var xxsBold: UIFont {
+        return .boldSystemFont(ofSize: 14)
+    }
+    
+    public static var xsBold: UIFont {
+        return .boldSystemFont(ofSize: 15)
+    }
+    
+    public static var sBold: UIFont {
+        return .boldSystemFont(ofSize: 16)
+    }
+    
+    public static var mBold: UIFont {
+        return .boldSystemFont(ofSize: 17)
+    }
+    
+    public static var xxlBold: UIFont {
+        return .boldSystemFont(ofSize: 22)
+    }
 }
