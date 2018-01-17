@@ -24,10 +24,10 @@ public struct CalendarVCDesign {
     
     public static let defaultDesign: CalendarVCDesign = CalendarVCDesign()
     
-    public var monthNameAndYearFont: UIFont = .systemFont(ofSize: 17)
-    public var dayNamesFont: UIFont = .systemFont(ofSize: 12)
-    public var dayNumberFont: UIFont = .systemFont(ofSize: 17)
-    public var todayDayNumberFont: UIFont = .boldSystemFont(ofSize: 17)
+    public var monthNameAndYearFont: UIFont = .m
+    public var dayNamesFont: UIFont = .xxxs
+    public var dayNumberFont: UIFont = .m
+    public var todayDayNumberFont: UIFont = .m
     
     public var monthNameAndYearTextColor: UIColor = .black
     public var dayNamesTextColor: UIColor = .gray555555

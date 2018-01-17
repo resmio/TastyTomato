@@ -143,7 +143,7 @@ private extension CalendarHeaderView {
         
         return shiftedShortWeekdaySymbols.map({
             let dayNameLabel: UILabel = UILabel()
-            dayNameLabel.font = .systemFont(ofSize: 12)
+            dayNameLabel.font = .xxxs
             dayNameLabel.textColor = .gray555555
             dayNameLabel.textAlignment = .center
             dayNameLabel.text = $0

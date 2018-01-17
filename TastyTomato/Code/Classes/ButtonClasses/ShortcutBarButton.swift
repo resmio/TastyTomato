@@ -34,6 +34,6 @@ private extension ShortcutBarButton {
         self.setColor(.white, for: .selected)
         self.setTitleColor(.black, for: .selected)
         
-        self.titleLabel!.font = UIFont.systemFont(ofSize: 17)
+        self.titleLabel!.font = .m
     }
 }
