@@ -10,7 +10,7 @@ import UIKit
 
 
 // MARK: // Public
-public extension UIFont {
+@objc public extension UIFont {
     public static var xxxs: UIFont {
         return .systemFont(ofSize: 12)
     }
