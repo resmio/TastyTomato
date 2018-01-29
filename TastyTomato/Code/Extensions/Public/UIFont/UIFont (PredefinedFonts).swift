@@ -28,7 +28,7 @@ import UIKit
     }
     
     public static var m: UIFont {
-        return .systemFont(ofSize: 17)
+        return .systemFont(ofSize: 18)
     }
     
     public static var l: UIFont {
