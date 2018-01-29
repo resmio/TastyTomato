@@ -51,4 +51,8 @@ import UIKit
     public func bold() -> UIFont {
         return .boldSystemFont(ofSize: self.pointSize)
     }
+    
+    public func normal() -> UIFont {
+        return .systemFont(ofSize: self.pointSize)
+    }
 }
