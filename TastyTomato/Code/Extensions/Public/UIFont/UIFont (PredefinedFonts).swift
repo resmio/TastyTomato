@@ -32,18 +32,14 @@ import UIKit
     }
     
     public static var l: UIFont {
-        return .systemFont(ofSize: 18)
-    }
-    
-    public static var xl: UIFont {
         return .systemFont(ofSize: 20)
     }
     
-    public static var xxl: UIFont {
+    public static var xl: UIFont {
         return .systemFont(ofSize: 22)
     }
     
-    public static var xxxl: UIFont {
+    public static var xxl: UIFont {
         return .systemFont(ofSize: 24)
     }
     
