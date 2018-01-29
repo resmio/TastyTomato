@@ -25,7 +25,7 @@ public struct CalendarVCDesign {
     public static let defaultDesign: CalendarVCDesign = CalendarVCDesign()
     
     public var monthNameAndYearFont: UIFont = .m
-    public var dayNamesFont: UIFont = .xxxs
+    public var dayNamesFont: UIFont = .xxs
     public var dayNumberFont: UIFont = .m
     public var todayDayNumberFont: UIFont = .m
     

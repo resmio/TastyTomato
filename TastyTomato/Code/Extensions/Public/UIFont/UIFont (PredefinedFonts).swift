@@ -11,16 +11,12 @@ import UIKit
 
 // MARK: // Public
 @objc public extension UIFont {
-    public static var xxxs: UIFont {
+    public static var xxs: UIFont {
         return .systemFont(ofSize: 12)
     }
     
-    public static var xxs: UIFont {
-        return .systemFont(ofSize: 14)
-    }
-    
     public static var xs: UIFont {
-        return .systemFont(ofSize: 15)
+        return .systemFont(ofSize: 14)
     }
     
     public static var s: UIFont {
