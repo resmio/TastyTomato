@@ -19,6 +19,7 @@
 		234C2E7FADD37FC3783F9BFF305828A6 /* UIImage (Named_).swift in Sources */ = {isa = PBXBuildFile; fileRef = 162CC1F2A974F883E6BD5039B189DF28 /* UIImage (Named_).swift */; };
 		25879B45F1221FB152C8E2F32B83DCB5 /* UIColor (PredefinedColors).swift in Sources */ = {isa = PBXBuildFile; fileRef = 286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */; };
 		26C9967D3E82CB12CD88A26329600F6E /* NSL_.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06BAB5E34D33E9205557171C73CF6C /* NSL_.swift */; };
+		26EC6657182DD1C1402AD2C3A89486BB /* UIFont (PredefinedFonts).swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2B1E373A0B5FEF4430946F8B244B4 /* UIFont (PredefinedFonts).swift */; };
 		2CCA94476E3333C634E936EC9EECA2AE /* UIImage (Scaled).swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A908324B2B4B669470F0A3864A426C6 /* UIImage (Scaled).swift */; };
 		2D482E84B878E94A2EBC56EF45330674 /* ZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */; };
 		2E894736E4858AC80DCD8D499E0FD708 /* CGRect (Area).swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57DBBABA83CFBB3428C32BBB42514E /* CGRect (Area).swift */; };
@@ -170,6 +171,7 @@
 		B242DBFE7AC263A838F81DB66F8D7280 /* UITableView (reloadSoftly).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView (reloadSoftly).swift"; sourceTree = "<group>"; };
 		B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutBar.swift; sourceTree = "<group>"; };
 		BA80D821A6A11686B3549A015E50472E /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
+		BAC2B1E373A0B5FEF4430946F8B244B4 /* UIFont (PredefinedFonts).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont (PredefinedFonts).swift"; sourceTree = "<group>"; };
 		BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (FromHex_).swift"; sourceTree = "<group>"; };
 		C08B5813ECAE6108D8A3192D688E9D77 /* ArrowIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowIcon.swift; sourceTree = "<group>"; };
 		C11648945ADE6B76183DB64326F38A93 /* CalendarDaysVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDaysVC.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				9A89BE72D4671CAB9BB7FFB4B3B4F96D /* CGSize */,
 				0493472B043AE9358E374F400818BC62 /* UIButton */,
 				C61FA760C329029916EAB5DF6196AE44 /* UIColor */,
+				686FBE8909EF898FE19D8E7FCAFF5604 /* UIFont */,
 				672790F9FBEF1DB75397020CEEDDC422 /* UIImage */,
 				458400216ECA6027907392A9F92C1A50 /* UIScrollView */,
 				5D5BF88A47261D2A7AF534030385A3CC /* UITableView */,
@@ -452,6 +455,14 @@
 				E4A3880C48EE007201237477752C5E8F /* UIImage (withTint).swift */,
 			);
 			path = UIImage;
+			sourceTree = "<group>";
+		};
+		686FBE8909EF898FE19D8E7FCAFF5604 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				BAC2B1E373A0B5FEF4430946F8B244B4 /* UIFont (PredefinedFonts).swift */,
+			);
+			path = UIFont;
 			sourceTree = "<group>";
 		};
 		720493D3CFB054FBA7645AE63F1761F0 /* Images */ = {
@@ -1005,6 +1016,7 @@
 				CA9124BD236AE4D0D64EFC021D5BB391 /* UIColor (FromHex_).swift in Sources */,
 				25879B45F1221FB152C8E2F32B83DCB5 /* UIColor (PredefinedColors).swift in Sources */,
 				36619180DB22B571E2199B3C6CDD67A4 /* UIColor (WithAlpha).swift in Sources */,
+				26EC6657182DD1C1402AD2C3A89486BB /* UIFont (PredefinedFonts).swift in Sources */,
 				DA4FD8E31F32DAE00AFCA3A9CE81C160 /* UIImage (ColoredRect).swift in Sources */,
 				F2E74DE0C5E277FAC2E75CCC8984885B /* UIImage (Named).swift in Sources */,
 				234C2E7FADD37FC3783F9BFF305828A6 /* UIImage (Named_).swift in Sources */,

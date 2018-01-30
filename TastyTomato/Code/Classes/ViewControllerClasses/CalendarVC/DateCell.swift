@@ -171,7 +171,7 @@ private extension DateCell {
 private extension DateCell {
     func _displayTitleInBold(_ bold: Bool) {
         let label: UILabel = self._label
-        let pointSize: CGFloat = label.font.pointSize
-        label.font = bold ? .boldSystemFont(ofSize: pointSize) : .systemFont(ofSize: pointSize)
+        let currentFont: UIFont = label.font
+        label.font = bold ? currentFont.bold() : currentFont.normal()
     }
 }

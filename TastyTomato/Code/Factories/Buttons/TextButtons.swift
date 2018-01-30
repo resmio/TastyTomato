@@ -24,7 +24,7 @@ private extension TextButton {
         
         button.adjustsWidthOnTitleSet = false
         button.setTitleColor(.gray555555, for: .normal)
-        button.titleLabel!.font = .systemFont(ofSize: 14)
+        button.titleLabel!.font = .xs
         button.setTitle(NSL_("Forgotten your password?"))
         button.underlined = true
         

@@ -40,7 +40,7 @@ private extension BaseTextField {
         self.rightView = UIView(size: paddingViewSize)
         self.rightViewMode = .always
         
-        self.font = UIFont.systemFont(ofSize: 17)
+        self.font = .m
         self.textColor = .gray555555
         self.autocapitalizationType = .none
         self.autocorrectionType = .no

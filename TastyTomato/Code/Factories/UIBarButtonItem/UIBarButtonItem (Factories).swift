@@ -164,7 +164,7 @@ private extension UIBarButtonItem {
     
     private static func _configure(button: UIButton, with targetAction: TargetAction?) {
         button.backgroundColor = .clear
-        button.titleLabel?.font = .systemFont(ofSize: 17)
+        button.titleLabel?.font = .m
         button.isExclusiveTouch = true
         button.setTitleColor(.gray999999, for: .disabled)
         

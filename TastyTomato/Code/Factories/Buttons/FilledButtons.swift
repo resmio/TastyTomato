@@ -40,7 +40,7 @@ private extension FilledButton {
         let button: FilledButton = FilledButton()
         
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel!.font = .systemFont(ofSize: 16)
+        button.titleLabel!.font = .s
         button.adjustsWidthOnTitleSet = false
         
         button.height = 44

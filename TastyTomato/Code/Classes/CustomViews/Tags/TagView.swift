@@ -73,7 +73,6 @@ public class TagView: UIView {
     fileprivate static let _leftBannerWidth: CGFloat = 8
     fileprivate static let _backgroundAlpha: CGFloat = 0.1
     fileprivate static let _horizontalSpacing: CGFloat = 10
-    fileprivate static let _fontSize: CGFloat = 16
     fileprivate static let _deleteIconSideLength: CGFloat = 15
     
     // Private Weak Variables
@@ -110,7 +109,7 @@ private extension TagView {
     
     func _createLabel() -> UILabel {
         let label: UILabel = UILabel(size: CGSize(height: TagView._labelHeight))
-        label.font = .systemFont(ofSize: TagView._fontSize)
+        label.font = .s
         label.textColor = .gray555555
         label.vCenter = TagView.defaultHeight / 2
         label.left = self._leftBannerView.right + TagView._horizontalSpacing
