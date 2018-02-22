@@ -22,6 +22,7 @@ import SignificantSpices
 // MARK: // Public
 public extension UIView {
     // Readonly
+    // Temporary position and dimensions
     /**
      The temporary x-position of the view.  nil, if no temporary x is set.
      */
@@ -48,6 +49,64 @@ public extension UIView {
      */
     public var tempHeight: CGFloat? {
         return self._tempHeight
+    }
+    
+    // Original dimensions
+    /**
+     The original x-position of the view.  frame.origin.x, if no temporary x is set.
+     */
+    public var originalX: CGFloat {
+        return self._originalX ?? self.frame.origin.x
+    }
+    
+    /**
+     The original y-position of the view.  frame.origin.y, if no temporary y is set.
+     */
+    public var originalY: CGFloat {
+        return self._originalY ?? self.frame.origin.y
+    }
+    
+    /**
+     The original width of the view.  frame.size.width, if no temporary width is set.
+     */
+    public var originalWidth: CGFloat {
+        return self._originalWidth ?? self.frame.size.width
+    }
+    
+    /**
+     The original height of the view.  frame.size.height, if no temporary height is set.
+     */
+    public var originalHeight: CGFloat {
+        return self._originalHeight ?? self.frame.size.height
+    }
+    
+    // Offsets
+    /**
+     The current x-offset of the view.  0, if no temporary x is set.
+     */
+    public var xOffset: CGFloat {
+        return (self.tempX ?? self.originalX) - self.originalX
+    }
+    
+    /**
+     The current y-offset of the view.  0, if no temporary y is set.
+     */
+    public var yOffset: CGFloat {
+        return (self.tempY ?? self.originalY) - self.originalY
+    }
+    
+    /**
+     The current width-offset of the view.  0, if no temporary width is set.
+     */
+    public var widthOffset: CGFloat {
+        return (self.tempWidth ?? self.originalWidth) - self.originalWidth
+    }
+    
+    /**
+     The current height-offset of the view.  0, if no temporary height is set.
+     */
+    public var heightOffset: CGFloat {
+        return (self.tempHeight ?? self.originalHeight) - self.originalHeight
     }
     
     // Functions
@@ -138,7 +197,7 @@ private extension UIView {
         }
     }
     
-    var _originalXBackup: CGFloat? {
+    var _originalX: CGFloat? {
         get {
             return self.associatedValue(for: &._XBackup)
         }
@@ -156,7 +215,7 @@ private extension UIView {
         }
     }
     
-    var _originalYBackup: CGFloat? {
+    var _originalY: CGFloat? {
         get {
             return self.associatedValue(for: &._YBackup)
         }
@@ -174,7 +233,7 @@ private extension UIView {
         }
     }
     
-    var _originalWidthBackup: CGFloat? {
+    var _originalWidth: CGFloat? {
         get {
             return self.associatedValue(for: &._WidthBackup)
         }
@@ -192,7 +251,7 @@ private extension UIView {
         }
     }
     
-    var _originalHeightBackup: CGFloat? {
+    var _originalHeight: CGFloat? {
         get {
             return self.associatedValue(for: &._HeightBackup)
         }
@@ -210,7 +269,7 @@ private extension UIView {
             setter: &self.left,
             tempValue: tempX,
             tempSave: &self._tempX,
-            originalBackup: &self._originalXBackup
+            originalBackup: &self._originalX
         )
     }
     
@@ -219,7 +278,7 @@ private extension UIView {
             setter: &self.top,
             tempValue: tempY,
             tempSave: &self._tempY,
-            originalBackup: &self._originalYBackup
+            originalBackup: &self._originalY
         )
     }
     
@@ -228,7 +287,7 @@ private extension UIView {
             setter: &self.width,
             tempValue: tempWidth,
             tempSave: &self._tempWidth,
-            originalBackup: &self._originalWidthBackup
+            originalBackup: &self._originalWidth
         )
     }
     
@@ -237,7 +296,7 @@ private extension UIView {
             setter: &self.height,
             tempValue: tempHeight,
             tempSave: &self._tempHeight,
-            originalBackup: &self._originalHeightBackup
+            originalBackup: &self._originalHeight
         )
     }
     
@@ -257,7 +316,7 @@ private extension UIView {
     func _resetX() {
         self._reset(
             setter: &self.left,
-            originalBackup: &self._originalXBackup,
+            originalBackup: &self._originalX,
             tempSave: &self._tempX
         )
     }
@@ -265,7 +324,7 @@ private extension UIView {
     func _resetY() {
         self._reset(
             setter: &self.top,
-            originalBackup: &self._originalYBackup,
+            originalBackup: &self._originalY,
             tempSave: &self._tempY
         )
     }
@@ -273,7 +332,7 @@ private extension UIView {
     func _resetWidth() {
         self._reset(
             setter: &self.width,
-            originalBackup: &self._originalWidthBackup,
+            originalBackup: &self._originalWidth,
             tempSave: &self._tempWidth
         )
     }
@@ -281,7 +340,7 @@ private extension UIView {
     func _resetHeight() {
         self._reset(
             setter: &self.height,
-            originalBackup: &self._originalHeightBackup,
+            originalBackup: &self._originalHeight,
             tempSave: &self._tempHeight
         )
     }
