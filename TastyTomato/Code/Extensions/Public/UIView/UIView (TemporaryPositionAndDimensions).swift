@@ -80,25 +80,33 @@ public extension UIView {
         return self._originalHeight ?? self.frame.size.height
     }
     
+    // Offsets
     /**
-     The original y-position of the view.  frame.origin.y, if no temporary y is set.
+     The current x-offset of the view.  0, if no temporary x is set.
      */
-    public var originalY: CGFloat? {
-        return self._originalY
+    public var xOffset: CGFloat {
+        return (self.tempX ?? self.originalX) - self.originalX
     }
     
     /**
-     The original width of the view.  frame.size.width, if no temporary width is set.
+     The current y-offset of the view.  0, if no temporary y is set.
      */
-    public var originalWidth: CGFloat? {
-        return self._originalWidth
+    public var yOffset: CGFloat {
+        return (self.tempY ?? self.originalY) - self.originalY
     }
     
     /**
-     The original height of the view.  frame.size.width, if no temporary height is set.
+     The current width-offset of the view.  0, if no temporary width is set.
      */
-    public var originalHeight: CGFloat? {
-        return self._originalHeight
+    public var widthOffset: CGFloat {
+        return (self.tempWidth ?? self.originalWidth) - self.originalWidth
+    }
+    
+    /**
+     The current height-offset of the view.  0, if no temporary height is set.
+     */
+    public var heightOffset: CGFloat {
+        return (self.tempHeight ?? self.originalHeight) - self.originalHeight
     }
     
     // Functions
