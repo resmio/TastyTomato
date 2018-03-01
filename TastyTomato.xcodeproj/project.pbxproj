@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		016794C2166A998F5DCD79812840EF65 /* UIView (SizeWidthHeight).swift in Sources */ = {isa = PBXBuildFile; fileRef = A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */; };
+		03C0D627BE3D0EB717217AA252453906 /* UITextView (MinimumHeight).swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C781C0EB325627179B983DF7DBBE678 /* UITextView (MinimumHeight).swift */; };
 		05BC178930A735A7A30733F1D5B3E045 /* TextButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0512BAA02F0FBD019D3EE56A361BFE1C /* TextButtons.swift */; };
 		07D9391000BFA486E44C4497A1788C6A /* CGSize (Scaled).swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E0F301A67734A74C63533E21FEEDF /* CGSize (Scaled).swift */; };
 		0A9100AA8AD8E4B0E7367732D970B17A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905A0D02FB847E86970E50B1768AC71 /* TagView.swift */; };
@@ -123,6 +124,7 @@
 		1B1032762F44E9AFAAC244949B1E9E97 /* BundleHelper_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleHelper_.swift; sourceTree = "<group>"; };
 		1D1A60CE3AFFC68209D50DF5CC789F23 /* Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; sourceTree = "<group>"; };
 		286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (PredefinedColors).swift"; sourceTree = "<group>"; };
+		2C781C0EB325627179B983DF7DBBE678 /* UITextView (MinimumHeight).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView (MinimumHeight).swift"; sourceTree = "<group>"; };
 		2FD12FA602A05FA8F90A14D2DD8FA7A2 /* ImageTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextButton.swift; sourceTree = "<group>"; };
 		31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
 		3548C6B4D617159868EBE227290AFC0C /* FilledButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButtons.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				672790F9FBEF1DB75397020CEEDDC422 /* UIImage */,
 				458400216ECA6027907392A9F92C1A50 /* UIScrollView */,
 				5D5BF88A47261D2A7AF534030385A3CC /* UITableView */,
+				DC7025580607CF0C7EEDE614240A8339 /* UITextView */,
 				A01C37BAA2EDA30ED682D64F551DB64A /* UIView */,
 				DC10D825E2095495087364C672A77DF3 /* UIViewController */,
 				DFE967201D0969726A8588440FD28587 /* UIWindow */,
@@ -726,6 +729,14 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
+		DC7025580607CF0C7EEDE614240A8339 /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				2C781C0EB325627179B983DF7DBBE678 /* UITextView (MinimumHeight).swift */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
 		DFE967201D0969726A8588440FD28587 /* UIWindow */ = {
 			isa = PBXGroup;
 			children = (
@@ -1051,6 +1062,7 @@
 				9A8C438EC913820E7B32A6C0D41EE5C9 /* UIScrollView (ScrollingConvenience).swift in Sources */,
 				D8294936BE4CF32441B0D854D1F9DDEE /* UIScrollView (ZoomingConvenience).swift in Sources */,
 				B29BDBA0023131D713E51F8D95B96ADA /* UITableView (reloadSoftly).swift in Sources */,
+				03C0D627BE3D0EB717217AA252453906 /* UITextView (MinimumHeight).swift in Sources */,
 				800936DF4B2EC8E094396520F049EF4B /* UIView (Area).swift in Sources */,
 				9438FFB35B2B7340B87AD601C75C77D4 /* UIView (BarButtonItem).swift in Sources */,
 				13BFB81E9AE9A8BC5760E75496D1DFFC /* UIView (Centering).swift in Sources */,
