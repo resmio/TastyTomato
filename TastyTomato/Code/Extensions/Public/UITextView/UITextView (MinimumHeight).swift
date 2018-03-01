@@ -19,7 +19,7 @@ public extension UITextView {
     
     // Functions
     public func changeHeightToFitText(maxHeight: CGFloat = .greatestFiniteMagnitude) {
-        self._changeHeightToFitText(maxHeight: maxHeight)
+        self.height = self.sizeThatFits(CGSize(width: self.width, height: maxHeight)).height
     }
 }
 
@@ -28,12 +28,4 @@ public extension UITextView {
 // MARK: - AssociationKeys
 private extension ValueAssociationKey {
     static var _minimumHeight: ValueAssociationKey = ValueAssociationKey()
-}
-
-
-// MARK: Functions
-private extension UITextView {
-    func _changeHeightToFitText(maxHeight: CGFloat) {
-        self.height = self.sizeThatFits(CGSize(width: self.width, height: maxHeight)).height
-    }
 }
