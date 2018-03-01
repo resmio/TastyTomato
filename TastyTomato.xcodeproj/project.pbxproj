@@ -48,6 +48,7 @@
 		7B88BA2CAAD9CE534ACC63C4E654901C /* UIView (TemporaryPositionAndDimensions).swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281FC9CC0B750319F7F7A568E1BE01F /* UIView (TemporaryPositionAndDimensions).swift */; };
 		7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */; };
 		800936DF4B2EC8E094396520F049EF4B /* UIView (Area).swift in Sources */ = {isa = PBXBuildFile; fileRef = 15004413C96D0B4A03CF11D63DD6382A /* UIView (Area).swift */; };
+		82B04B09637A2BBE253B2B12F9E489F7 /* KeyboardStateListener (Utils).swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B69F1C5248906E76779559281B5932 /* KeyboardStateListener (Utils).swift */; };
 		84BB5378D9A297B753E679DBE872A69A /* CGRect (Scaled).swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E438216C6A16D137CD269349331D8F /* CGRect (Scaled).swift */; };
 		8AFD503F0DAAD95A1409CA097774D52E /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA80D821A6A11686B3549A015E50472E /* BaseLabel.swift */; };
 		935CB353F7CC151C86503DB41E3290C6 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12E3659104848DDD678FE37D39AEAF3 /* FilledButton.swift */; };
@@ -170,6 +171,7 @@
 		AC8C208AA1F468C889CFCD457BDCB8A2 /* Pods-TastyTomatoAbstract-TastyTomatoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomatoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomatoTests/Pods-TastyTomatoAbstract-TastyTomatoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE12E9AC9F91E1C3F23E1C2A25D9E463 /* TextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (ConvenienceInits).swift"; sourceTree = "<group>"; };
+		B0B69F1C5248906E76779559281B5932 /* KeyboardStateListener (Utils).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardStateListener (Utils).swift"; sourceTree = "<group>"; };
 		B242DBFE7AC263A838F81DB66F8D7280 /* UITableView (reloadSoftly).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView (reloadSoftly).swift"; sourceTree = "<group>"; };
 		B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutBar.swift; sourceTree = "<group>"; };
 		BA80D821A6A11686B3549A015E50472E /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
@@ -536,6 +538,7 @@
 		9175BD68A611CD1E3E32E23359D983CC /* KeyboardStateListener */ = {
 			isa = PBXGroup;
 			children = (
+				B0B69F1C5248906E76779559281B5932 /* KeyboardStateListener (Utils).swift */,
 				5D03779CA57CE9BFDBAC1FD36DBE96F9 /* KeyboardStateListener.swift */,
 			);
 			path = KeyboardStateListener;
@@ -1015,6 +1018,7 @@
 				729A9210630A3CCEA0E2CEB2550EB233 /* FilledButtons.swift in Sources */,
 				D2696B92DC2F081F73F0EEB14B91BE9F /* GridLayer.swift in Sources */,
 				CE914A1221694D4AE9F400582C49B62F /* ImageTextButton.swift in Sources */,
+				82B04B09637A2BBE253B2B12F9E489F7 /* KeyboardStateListener (Utils).swift in Sources */,
 				9AEB39847CB80139EBE0FD6B95FB0277 /* KeyboardStateListener.swift in Sources */,
 				1EB50168F0EB699E438CBBA6F754ABC7 /* LineLayer.swift in Sources */,
 				693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */,
