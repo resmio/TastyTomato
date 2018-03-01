@@ -9,16 +9,16 @@
 import SignificantSpices
 
 
-// MARK: // Internal
+// MARK: // Public
 // MARK: Interface extension
-extension UITextView {
-    var minimumHeight: CGFloat {
+public extension UITextView {
+    public var minimumHeight: CGFloat {
         get { return self.associatedValue(for: &._minimumHeight) ?? self.height }
         set { self.associate(newValue, by: &._minimumHeight) }
     }
     
     // Functions
-    func changeHeightToFitText(maxHeight: CGFloat = .greatestFiniteMagnitude) {
+    public func changeHeightToFitText(maxHeight: CGFloat = .greatestFiniteMagnitude) {
         self._changeHeightToFitText(maxHeight: maxHeight)
     }
 }
