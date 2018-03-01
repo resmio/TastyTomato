@@ -52,7 +52,7 @@ public class KeyboardStateListener: NSObject {
 // MARK: UIGestureRecognizerDelegate
 extension KeyboardStateListener: UIGestureRecognizerDelegate {
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        return self._gestureRecognizer(gestureRecognizer, shouldReceive: touch)
+        return self._dismissalBehaviourFor(touch: touch) == .dismissWithoutPassthrough
     }
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -366,36 +366,20 @@ private extension KeyboardStateListener {
 }
 
 
-// MARK: UIGestureRecognizerDelegate Implementation
-extension KeyboardStateListener/*: UIGestureRecognizerDelegate*/ {
-    func _gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        switch self._dismissalBehaviourFor(touch: touch) {
-        case .dismissWithoutPassthrough:
-            return true
-        case .passthroughAndDismiss:
-            return false
-        case .passthroughWithoutDismiss:
-            return false
-        }
-    }
-}
-
-
 // MARK: Helper Functions
 private extension KeyboardStateListener {
     func _dismissalBehaviourFor(touch: UITouch? = nil, recognizer: UIGestureRecognizer? = nil) -> KeyboardDismissalBehaviour {
-        if let view: KeyboardDismissalHandler = self._viewFor(touch, recognizer) {
-            // Instance behaviour handling is always prioritized over class behaviour handling
-            return view.keyboardDismissalBehaviour ?? type(of: view).keyboardDismissalBehaviour
+        guard let view: KeyboardDismissalHandler = self._viewFor(touch, recognizer) else {
+            return .dismissWithoutPassthrough
         }
-        return .dismissWithoutPassthrough
+        
+        // Instance behaviour handling is always prioritized over class behaviour handling
+        return view.keyboardDismissalBehaviour ?? type(of: view).keyboardDismissalBehaviour
     }
     
-    // Private Helper
+    // Private Helpers
     private func _viewFor(_ touch: UITouch?, _ gestureRecognizer: UIGestureRecognizer?) -> KeyboardDismissalHandler? {
-        guard let point: CGPoint = self._pointFor(touch, gestureRecognizer) else {
-            return nil
-        }
+        guard let point: CGPoint = self._pointFor(touch, gestureRecognizer) else { return nil }
         return self._keyWindow.hitTest(point, with: nil)
     }
     
