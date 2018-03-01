@@ -54,6 +54,7 @@
 		93EAC8CFEA337415C4B97B90F661E88B /* TastyTomatoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF12E5F5D09CC277B307C8A27456151 /* TastyTomatoTests.swift */; };
 		9438FFB35B2B7340B87AD601C75C77D4 /* UIView (BarButtonItem).swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAB831517E3851F87B951BE6881C71B /* UIView (BarButtonItem).swift */; };
 		9A8C438EC913820E7B32A6C0D41EE5C9 /* UIScrollView (ScrollingConvenience).swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F15D92B31E10526F4B2EB07123B63B /* UIScrollView (ScrollingConvenience).swift */; };
+		9AEB39847CB80139EBE0FD6B95FB0277 /* KeyboardStateListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03779CA57CE9BFDBAC1FD36DBE96F9 /* KeyboardStateListener.swift */; };
 		9BDC043C11EE63333651DFC6882AE8E4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB4A6B3512A21991AB80642E750A3A /* RootViewController.swift */; };
 		9D1FF5F9D96C6BE3F6A641D5CBDEC651 /* CalendarDaysVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11648945ADE6B76183DB64326F38A93 /* CalendarDaysVC.swift */; };
 		9EDC676FBB4296DB4C630B5E78379EBE /* UIButton (Color_).swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB2A0C35717ED674361E12EF4C5BAA /* UIButton (Color_).swift */; };
@@ -138,6 +139,7 @@
 		580BC6050B611219FDBB90C49361A752 /* CALayer (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		592F3B1F7E20B40701208459D6453448 /* BaseTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (UInt).swift"; sourceTree = "<group>"; };
+		5D03779CA57CE9BFDBAC1FD36DBE96F9 /* KeyboardStateListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardStateListener.swift; sourceTree = "<group>"; };
 		5DCC82CB1A56D60A4DF981960B5A667C /* BaseTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextView.swift; sourceTree = "<group>"; };
 		617BAD163949C9A08DE92862E903C2A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6281FC9CC0B750319F7F7A568E1BE01F /* UIView (TemporaryPositionAndDimensions).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView (TemporaryPositionAndDimensions).swift"; sourceTree = "<group>"; };
@@ -366,6 +368,14 @@
 			path = CALayer;
 			sourceTree = "<group>";
 		};
+		4163EBEB0077CEC8CB6FC28697527F80 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9175BD68A611CD1E3E32E23359D983CC /* KeyboardStateListener */,
+			);
+			path = HelperClasses;
+			sourceTree = "<group>";
+		};
 		458400216ECA6027907392A9F92C1A50 /* UIScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +390,7 @@
 			children = (
 				81E4DAC46F44F11E680BCD87739D7F33 /* ButtonClasses */,
 				88FC8021D486B569057F4800A4ADE98C /* CustomViews */,
+				4163EBEB0077CEC8CB6FC28697527F80 /* HelperClasses */,
 				AAD496374D60FA3D83572E9051E49F30 /* ImageClasses */,
 				1A2AF345D99AE2F606C662E97012958A /* LabelClasses */,
 				A3AB6252EFF7C31DBE40BB1578EF32AC /* LayerClasses */,
@@ -520,6 +531,14 @@
 				23F46E8BFE01453CA2299EB51CEC1DBC /* ZoomView */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		9175BD68A611CD1E3E32E23359D983CC /* KeyboardStateListener */ = {
+			isa = PBXGroup;
+			children = (
+				5D03779CA57CE9BFDBAC1FD36DBE96F9 /* KeyboardStateListener.swift */,
+			);
+			path = KeyboardStateListener;
 			sourceTree = "<group>";
 		};
 		9999FCCB3A774D4E83A754E53EFE8B64 /* Extensions */ = {
@@ -996,6 +1015,7 @@
 				729A9210630A3CCEA0E2CEB2550EB233 /* FilledButtons.swift in Sources */,
 				D2696B92DC2F081F73F0EEB14B91BE9F /* GridLayer.swift in Sources */,
 				CE914A1221694D4AE9F400582C49B62F /* ImageTextButton.swift in Sources */,
+				9AEB39847CB80139EBE0FD6B95FB0277 /* KeyboardStateListener.swift in Sources */,
 				1EB50168F0EB699E438CBBA6F754ABC7 /* LineLayer.swift in Sources */,
 				693E5BA8F4FB876E21E39F6E293B7A26 /* MetaImage.swift in Sources */,
 				2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */,
