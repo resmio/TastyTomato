@@ -14,7 +14,7 @@ import UIKit
 public extension KeyboardStateListener {
     public static var isEnabled: Bool {
         get { return self._shared._isEnabled }
-        set { self._shared._isEnabled = newValue }
+        set { newValue ? self._shared._enable() : self._shared._disable() }
     }
     
     // The minimum spacing between keyboard and textField.
@@ -263,6 +263,7 @@ private extension KeyboardStateListener {
         
         // Relative to the screen
         let currentWindowOffset: CGFloat = keyWindow.yOffset
+        
         // The keyboard frame is always relative to the screen
         let globalKeyboardFrameTop: CGFloat = keyboardFrame.top + currentWindowOffset
         let globalTextInputViewBottom: CGFloat = textInputViewBottom + currentWindowOffset
