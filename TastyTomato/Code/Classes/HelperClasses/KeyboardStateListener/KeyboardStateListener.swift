@@ -258,7 +258,7 @@ private extension KeyboardStateListener {
         
         // Relative to the window because we're doing the evasive maneuvers
         // with the windows origin.y value.
-        let textInputViewTop: CGFloat = textInputView.convert(textInputView.origin, to: nil).y
+        let textInputViewTop: CGFloat = textInputView.convert(.zero, to: nil).y
         let textInputViewBottom: CGFloat = textInputViewTop + textInputView.height
         
         // Relative to the screen
@@ -388,4 +388,3 @@ private extension KeyboardStateListener {
         return touch?.location(in: nil) ?? gestureRecognizer?.location(in: nil)
     }
 }
-
