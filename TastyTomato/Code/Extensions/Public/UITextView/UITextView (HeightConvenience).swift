@@ -1,5 +1,5 @@
 //
-//  UITextView (MinimumHeight).swift
+//  UITextView (HeightConvenience).swift
 //  TastyTomato
 //
 //  Created by Jan Nash (privat) on 01.03.18.
