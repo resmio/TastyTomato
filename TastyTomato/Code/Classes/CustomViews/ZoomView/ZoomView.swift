@@ -26,111 +26,68 @@ extension ZoomView {
     
     // ReadWrite
     public var delegate: ZoomViewDelegate? {
-        get {
-            return self._delegate
-        }
-        set(newDelegate) {
-            self._delegate = newDelegate
-        }
+        get { return self._delegate }
+        set { self._delegate = newValue }
+    }
+    
+    public var isScrollEnabled: Bool {
+        get { return self._scrollView.isScrollEnabled }
+        set { self._scrollView.isScrollEnabled = newValue }
     }
     
     public var zoomThreshold: CGFloat {
-        get {
-            return self._zoomThreshold
-        }
-        set(newZoomThreshold) {
-            self._zoomThreshold = newZoomThreshold
-        }
+        get { return self._zoomThreshold }
+        set { self._zoomThreshold = newValue }
     }
     
     public var maximumScale: CGFloat {
-        get {
-            return self._maximumZoomScale
-        }
-        set(newMaximumZoomScale) {
-            self._maximumZoomScale = newMaximumZoomScale
-        }
+        get { return self._maximumZoomScale }
+        set { self._maximumZoomScale = newValue }
     }
     
     public var showsHorizontalScrollIndicator: Bool {
-        get {
-            return self._scrollView.showsHorizontalScrollIndicator
-        }
-        set(newShowsHorizontalScrollIndicator) {
-            self._scrollView.showsHorizontalScrollIndicator = newShowsHorizontalScrollIndicator
-        }
+        get { return self._scrollView.showsHorizontalScrollIndicator }
+        set { self._scrollView.showsHorizontalScrollIndicator = newValue }
     }
     
     public var showsVerticalScrollIndicator: Bool {
-        get {
-            return self._scrollView.showsVerticalScrollIndicator
-        }
-        set(newShowsVerticalScrollIndicator) {
-            self._scrollView.showsVerticalScrollIndicator = newShowsVerticalScrollIndicator
-        }
+        get { return self._scrollView.showsVerticalScrollIndicator }
+        set { self._scrollView.showsVerticalScrollIndicator = newValue }
     }
     
     public var decelerationRate: CGFloat {
-        get {
-            return self._scrollView.decelerationRate
-        }
-        set(newDecelerationRate) {
-            self._scrollView.decelerationRate = newDecelerationRate
-        }
+        get { return self._scrollView.decelerationRate }
+        set { self._scrollView.decelerationRate = newValue }
     }
     
     public var bounces: Bool {
-        get {
-            return self._scrollView.bounces
-        }
-        set(newBounces) {
-            self._scrollView.bounces = newBounces
-        }
+        get { return self._scrollView.bounces }
+        set { self._scrollView.bounces = newValue }
     }
     
     public var bouncesZoom: Bool {
-        get {
-            return self._scrollView.bouncesZoom
-        }
-        set(newBouncesZoom) {
-            self._scrollView.bouncesZoom = newBouncesZoom
-        }
+        get { return self._scrollView.bouncesZoom }
+        set { self._scrollView.bouncesZoom = newValue }
     }
     
     public var doubleTapEnabled: Bool {
-        get {
-            return self._doubleTapEnabled
-        }
-        set(newDoubleTapEnabled) {
-            self._doubleTapEnabled = newDoubleTapEnabled
-        }
+        get { return self._doubleTapEnabled }
+        set { self._doubleTapEnabled = newValue }
     }
     
     public var zoomOutTapEnabled: Bool {
-        get {
-            return self._zoomOutTapEnabled
-        }
-        set(newZoomOutTapEnabled) {
-            self._zoomOutTapEnabled = newZoomOutTapEnabled
-        }
+        get { return self._zoomOutTapEnabled }
+        set { self._zoomOutTapEnabled = newValue }
     }
     
     public var centerHorizontally: Bool {
-        get {
-            return self._centerHorizontally
-        }
-        set(newCenterHorizontally) {
-            self._centerHorizontally = newCenterHorizontally
-        }
+        get { return self._centerHorizontally }
+        set { self._centerHorizontally = newValue }
     }
     
     public var centerVertically: Bool {
-        get {
-            return self._centerVertically
-        }
-        set(newCenterVertically) {
-            self._centerVertically = newCenterVertically
-        }
+        get { return self._centerVertically }
+        set { self._centerVertically = newValue }
     }
     
     // Functions
@@ -173,61 +130,45 @@ public class ZoomView: UIView {
     }
     
     // Private Weak Variables
-    fileprivate weak var _delegate: ZoomViewDelegate?
+    private weak var _delegate: ZoomViewDelegate?
     
     // Private Lazy Variables
-    fileprivate lazy var _scrollView: ZoomToPointScrollView = self._createScrollView()
+    private lazy var _scrollView: ZoomToPointScrollView = self._createScrollView()
     
     // Private Variables
-    fileprivate var _contentView: UIView
+    private var _contentView: UIView
     
-    fileprivate var __doubleTapRecognizer: UITapGestureRecognizer?
-    fileprivate var __zoomOutTapRecognizer: UITapGestureRecognizer?
+    private var __doubleTapRecognizer: UITapGestureRecognizer?
+    private var __zoomOutTapRecognizer: UITapGestureRecognizer?
     
-    fileprivate var _zoomThreshold: CGFloat = 0.2
-    fileprivate var __doubleTapEnabled: Bool = true
-    fileprivate var __zoomOutTapEnabled: Bool = true
-    fileprivate var _centerHorizontally: Bool = true
-    fileprivate var _centerVertically: Bool = true
-    fileprivate var __maximumZoomScale: CGFloat = 1
-    fileprivate var _doubleTapNextScale: CGFloat?
+    private var _zoomThreshold: CGFloat = 0.2
+    private var __doubleTapEnabled: Bool = true
+    private var __zoomOutTapEnabled: Bool = true
+    private var _centerHorizontally: Bool = true
+    private var _centerVertically: Bool = true
+    private var __maximumZoomScale: CGFloat = 1
+    private var _doubleTapNextScale: CGFloat?
 
     
     // MARK: Frame / Size Overrides
     override public var frame: CGRect {
-        get {
-            return self._frame
-        }
-        set(newFrame) {
-            self._frame = newFrame
-        }
+        get { return self._frame }
+        set { self._frame = newValue }
     }
     
     override public var size: CGSize {
-        get {
-            return self._size
-        }
-        set(newSize) {
-            self._size = newSize
-        }
+        get { return self._size }
+        set { self._size = newValue }
     }
     
     override public var width: CGFloat {
-        get {
-            return self._width
-        }
-        set(newWidth) {
-            self._width = newWidth
-        }
+        get { return self._width }
+        set { self._width = newValue }
     }
     
     override public var height: CGFloat {
-        get {
-            return self._height
-        }
-        set(newHeight) {
-            self._height = newHeight
-        }
+        get { return self._height }
+        set { self._height = newValue }
     }
 }
 
@@ -267,9 +208,7 @@ private extension ZoomView {
 // MARK: Computed Variables
 private extension ZoomView {
     var _maximumZoomScale: CGFloat {
-        get {
-            return self._scrollView.maximumZoomScale
-        }
+        get { return self._scrollView.maximumZoomScale }
         set(newMaximumZoomScale) {
             let scrollView: UIScrollView = self._scrollView
             scrollView.maximumZoomScale = newMaximumZoomScale
@@ -280,9 +219,7 @@ private extension ZoomView {
     }
     
     var _doubleTapEnabled: Bool {
-        get {
-            return self.__doubleTapEnabled
-        }
+        get { return self.__doubleTapEnabled }
         set(newDoubleTapEnabled) {
             self.__doubleTapEnabled = newDoubleTapEnabled
             self._updateDoubleTapRecognizer()
@@ -290,9 +227,7 @@ private extension ZoomView {
     }
     
     var _zoomOutTapEnabled: Bool {
-        get {
-            return self.__zoomOutTapEnabled
-        }
+        get { return self.__zoomOutTapEnabled }
         set(newZoomOutTapEnabled) {
             self.__zoomOutTapEnabled = newZoomOutTapEnabled
             self._updateZoomOutTapRecognizer()
@@ -333,9 +268,7 @@ private extension ZoomView {
 // MARK: Frame / Size Override Implementations
 private extension ZoomView {
     var _frame: CGRect {
-        get {
-            return super.frame
-        }
+        get { return super.frame }
         set(newFrame) {
             super.frame = newFrame
             self._scrollView.size = newFrame.size
@@ -344,9 +277,7 @@ private extension ZoomView {
     }
     
     var _size: CGSize {
-        get {
-            return super.size
-        }
+        get { return super.size }
         set(newSize) {
             super.size = newSize
             self._scrollView.size = newSize
@@ -355,9 +286,7 @@ private extension ZoomView {
     }
     
     var _width: CGFloat {
-        get {
-            return super.width
-        }
+        get { return super.width }
         set(newWidth) {
             super.width = newWidth
             self._scrollView.width = newWidth
@@ -366,9 +295,7 @@ private extension ZoomView {
     }
     
     var _height: CGFloat {
-        get {
-            return super.height
-        }
+        get { return super.height }
         set(newHeight) {
             super.height = newHeight
             self._scrollView.height = newHeight
