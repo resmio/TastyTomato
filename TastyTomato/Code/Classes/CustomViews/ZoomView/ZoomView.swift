@@ -130,24 +130,24 @@ public class ZoomView: UIView {
     }
     
     // Private Weak Variables
-    fileprivate weak var _delegate: ZoomViewDelegate?
+    private weak var _delegate: ZoomViewDelegate?
     
     // Private Lazy Variables
-    fileprivate lazy var _scrollView: ZoomToPointScrollView = self._createScrollView()
+    private lazy var _scrollView: ZoomToPointScrollView = self._createScrollView()
     
     // Private Variables
-    fileprivate var _contentView: UIView
+    private var _contentView: UIView
     
-    fileprivate var __doubleTapRecognizer: UITapGestureRecognizer?
-    fileprivate var __zoomOutTapRecognizer: UITapGestureRecognizer?
+    private var __doubleTapRecognizer: UITapGestureRecognizer?
+    private var __zoomOutTapRecognizer: UITapGestureRecognizer?
     
-    fileprivate var _zoomThreshold: CGFloat = 0.2
-    fileprivate var __doubleTapEnabled: Bool = true
-    fileprivate var __zoomOutTapEnabled: Bool = true
-    fileprivate var _centerHorizontally: Bool = true
-    fileprivate var _centerVertically: Bool = true
-    fileprivate var __maximumZoomScale: CGFloat = 1
-    fileprivate var _doubleTapNextScale: CGFloat?
+    private var _zoomThreshold: CGFloat = 0.2
+    private var __doubleTapEnabled: Bool = true
+    private var __zoomOutTapEnabled: Bool = true
+    private var _centerHorizontally: Bool = true
+    private var _centerVertically: Bool = true
+    private var __maximumZoomScale: CGFloat = 1
+    private var _doubleTapNextScale: CGFloat?
 
     
     // MARK: Frame / Size Overrides
