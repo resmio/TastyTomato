@@ -26,120 +26,68 @@ extension ZoomView {
     
     // ReadWrite
     public var delegate: ZoomViewDelegate? {
-        get {
-            return self._delegate
-        }
-        set(newDelegate) {
-            self._delegate = newDelegate
-        }
+        get { return self._delegate }
+        set { self._delegate = newValue }
     }
     
     public var isScrollEnabled: Bool {
-        get {
-            return self._scrollView.isScrollEnabled
-        }
-        set {
-            self._scrollView.isScrollEnabled = newValue
-        }
+        get { return self._scrollView.isScrollEnabled }
+        set { self._scrollView.isScrollEnabled = newValue }
     }
     
     public var zoomThreshold: CGFloat {
-        get {
-            return self._zoomThreshold
-        }
-        set(newZoomThreshold) {
-            self._zoomThreshold = newZoomThreshold
-        }
+        get { return self._zoomThreshold }
+        set { self._zoomThreshold = newValue }
     }
     
     public var maximumScale: CGFloat {
-        get {
-            return self._maximumZoomScale
-        }
-        set(newMaximumZoomScale) {
-            self._maximumZoomScale = newMaximumZoomScale
-        }
+        get { return self._maximumZoomScale }
+        set { self._maximumZoomScale = newValue }
     }
     
     public var showsHorizontalScrollIndicator: Bool {
-        get {
-            return self._scrollView.showsHorizontalScrollIndicator
-        }
-        set(newShowsHorizontalScrollIndicator) {
-            self._scrollView.showsHorizontalScrollIndicator = newShowsHorizontalScrollIndicator
-        }
+        get { return self._scrollView.showsHorizontalScrollIndicator }
+        set { self._scrollView.showsHorizontalScrollIndicator = newValue }
     }
     
     public var showsVerticalScrollIndicator: Bool {
-        get {
-            return self._scrollView.showsVerticalScrollIndicator
-        }
-        set(newShowsVerticalScrollIndicator) {
-            self._scrollView.showsVerticalScrollIndicator = newShowsVerticalScrollIndicator
-        }
+        get { return self._scrollView.showsVerticalScrollIndicator }
+        set { self._scrollView.showsVerticalScrollIndicator = newValue }
     }
     
     public var decelerationRate: CGFloat {
-        get {
-            return self._scrollView.decelerationRate
-        }
-        set(newDecelerationRate) {
-            self._scrollView.decelerationRate = newDecelerationRate
-        }
+        get { return self._scrollView.decelerationRate }
+        set { self._scrollView.decelerationRate = newValue }
     }
     
     public var bounces: Bool {
-        get {
-            return self._scrollView.bounces
-        }
-        set(newBounces) {
-            self._scrollView.bounces = newBounces
-        }
+        get { return self._scrollView.bounces }
+        set { self._scrollView.bounces = newValue }
     }
     
     public var bouncesZoom: Bool {
-        get {
-            return self._scrollView.bouncesZoom
-        }
-        set(newBouncesZoom) {
-            self._scrollView.bouncesZoom = newBouncesZoom
-        }
+        get { return self._scrollView.bouncesZoom }
+        set { self._scrollView.bouncesZoom = newValue }
     }
     
     public var doubleTapEnabled: Bool {
-        get {
-            return self._doubleTapEnabled
-        }
-        set(newDoubleTapEnabled) {
-            self._doubleTapEnabled = newDoubleTapEnabled
-        }
+        get { return self._doubleTapEnabled }
+        set { self._doubleTapEnabled = newValue }
     }
     
     public var zoomOutTapEnabled: Bool {
-        get {
-            return self._zoomOutTapEnabled
-        }
-        set(newZoomOutTapEnabled) {
-            self._zoomOutTapEnabled = newZoomOutTapEnabled
-        }
+        get { return self._zoomOutTapEnabled }
+        set { self._zoomOutTapEnabled = newValue }
     }
     
     public var centerHorizontally: Bool {
-        get {
-            return self._centerHorizontally
-        }
-        set(newCenterHorizontally) {
-            self._centerHorizontally = newCenterHorizontally
-        }
+        get { return self._centerHorizontally }
+        set { self._centerHorizontally = newValue }
     }
     
     public var centerVertically: Bool {
-        get {
-            return self._centerVertically
-        }
-        set(newCenterVertically) {
-            self._centerVertically = newCenterVertically
-        }
+        get { return self._centerVertically }
+        set { self._centerVertically = newValue }
     }
     
     // Functions
