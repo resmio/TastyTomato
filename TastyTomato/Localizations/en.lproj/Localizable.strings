@@ -1,9 +1,12 @@
 
 /* 1 word */
+"Back" =  "Back";
 "Cancel" = "Cancel";
 "Delete" = "Delete";
+"Done" = "Done";
 "Edit" = "Edit";
 "New" = "New";
+"Next" = "Next";
 "Save" = "Save";
 "Select" = "Select";
 
