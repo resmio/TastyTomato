@@ -34,6 +34,15 @@ extension ZoomView {
         }
     }
     
+    public var isScrollEnabled: Bool {
+        get {
+            return self._scrollView.isScrollEnabled
+        }
+        set {
+            self._scrollView.isScrollEnabled = newValue
+        }
+    }
+    
     public var zoomThreshold: CGFloat {
         get {
             return self._zoomThreshold
