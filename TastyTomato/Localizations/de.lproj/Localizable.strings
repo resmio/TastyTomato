@@ -1,9 +1,12 @@
 
 /* 1 word */
+"Back" = "Zurück";
 "Cancel" = "Abbrechen";
 "Delete" = "Löschen";
+"Done" = "Fertig";
 "Edit" = "Bearbeiten";
 "New" = "Neu";
+"Next" = "Weiter";
 "Save" = "Speichern";
 "Select" = "Auswählen";
 
