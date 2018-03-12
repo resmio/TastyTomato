@@ -152,39 +152,23 @@ public class ZoomView: UIView {
     
     // MARK: Frame / Size Overrides
     override public var frame: CGRect {
-        get {
-            return self._frame
-        }
-        set(newFrame) {
-            self._frame = newFrame
-        }
+        get { return self._frame }
+        set { self._frame = newValue }
     }
     
     override public var size: CGSize {
-        get {
-            return self._size
-        }
-        set(newSize) {
-            self._size = newSize
-        }
+        get { return self._size }
+        set { self._size = newValue }
     }
     
     override public var width: CGFloat {
-        get {
-            return self._width
-        }
-        set(newWidth) {
-            self._width = newWidth
-        }
+        get { return self._width }
+        set { self._width = newValue }
     }
     
     override public var height: CGFloat {
-        get {
-            return self._height
-        }
-        set(newHeight) {
-            self._height = newHeight
-        }
+        get { return self._height }
+        set { self._height = newValue }
     }
 }
 
@@ -224,9 +208,7 @@ private extension ZoomView {
 // MARK: Computed Variables
 private extension ZoomView {
     var _maximumZoomScale: CGFloat {
-        get {
-            return self._scrollView.maximumZoomScale
-        }
+        get { return self._scrollView.maximumZoomScale }
         set(newMaximumZoomScale) {
             let scrollView: UIScrollView = self._scrollView
             scrollView.maximumZoomScale = newMaximumZoomScale
@@ -237,9 +219,7 @@ private extension ZoomView {
     }
     
     var _doubleTapEnabled: Bool {
-        get {
-            return self.__doubleTapEnabled
-        }
+        get { return self.__doubleTapEnabled }
         set(newDoubleTapEnabled) {
             self.__doubleTapEnabled = newDoubleTapEnabled
             self._updateDoubleTapRecognizer()
@@ -247,9 +227,7 @@ private extension ZoomView {
     }
     
     var _zoomOutTapEnabled: Bool {
-        get {
-            return self.__zoomOutTapEnabled
-        }
+        get { return self.__zoomOutTapEnabled }
         set(newZoomOutTapEnabled) {
             self.__zoomOutTapEnabled = newZoomOutTapEnabled
             self._updateZoomOutTapRecognizer()
@@ -290,9 +268,7 @@ private extension ZoomView {
 // MARK: Frame / Size Override Implementations
 private extension ZoomView {
     var _frame: CGRect {
-        get {
-            return super.frame
-        }
+        get { return super.frame }
         set(newFrame) {
             super.frame = newFrame
             self._scrollView.size = newFrame.size
@@ -301,9 +277,7 @@ private extension ZoomView {
     }
     
     var _size: CGSize {
-        get {
-            return super.size
-        }
+        get { return super.size }
         set(newSize) {
             super.size = newSize
             self._scrollView.size = newSize
@@ -312,9 +286,7 @@ private extension ZoomView {
     }
     
     var _width: CGFloat {
-        get {
-            return super.width
-        }
+        get { return super.width }
         set(newWidth) {
             super.width = newWidth
             self._scrollView.width = newWidth
@@ -323,9 +295,7 @@ private extension ZoomView {
     }
     
     var _height: CGFloat {
-        get {
-            return super.height
-        }
+        get { return super.height }
         set(newHeight) {
             super.height = newHeight
             self._scrollView.height = newHeight
