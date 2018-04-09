@@ -43,12 +43,12 @@ jobs:
       ## Install bundle (cache-wrapped)
       - restore_cache:
           keys:
-            - v1-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - v1-bundle-cache-{{ .Branch }}
-            - v1-bundle-cache
+            - v2-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - v2-bundle-cache-{{ .Branch }}
+            - v2-bundle-cache
       - run: bundle install
       - save_cache:
-          key: v3-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: v2-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
             # This is basically GEM_HOME, hardcoded.
             # It MUST be updated if the ruby version changes!
@@ -57,7 +57,7 @@ jobs:
             # because these morons still haven't made it possible to interpolate
             # env vars throughout the config file. They even RECOMMEND hardcoding here:
             # https://discuss.circleci.com/t/can-i-use-variables-in-cache-paths/11393/3
-            - /Users/distiller/.gem/ruby/2.5.0
+            - /Users/distiller/.gem/ruby/2.5.1
 
       ## Install pods (cache-wrapped)
       - restore_cache:
