@@ -1,34 +1,81 @@
-machine:
-  environment:
-    LANG: en_US.UTF-8
-  xcode:
-    version: "9.2"
 
-dependencies:
-  override:
-    # We need this override, since circle inferably (and unnecessarily) fetches
-    # the complete Cocoapods specs repo from S3 (which takes around 1 minute),
-    # even though we're using our own, tiny Specs repo...
-    - pod install
+version: 2
 
-    # Also installing xcpretty from here, since Circle doesn't
-    # infer a gem install due to the override, thus just adding
-    # it to the Gemfile won't help
-    - gem install xcpretty
+jobs:
+  build:
+    macos:
+      xcode: "9.3.0"
+    shell: /bin/bash --login -eo pipefail
+    environment:
+      LANG: en_US.UTF-8
+      # So our build-scripts aren't coupled to Circle-specific environment-variables.
+      # If we should switch CI-provider someday, we just need to provide these two variables.
+      LOG_ROOT_DIR: "/Users/distiller/output"
+      RUBY_IS_SOURCED: "${CI}"
+    steps:
+      ## Pre-start iOS Simulator
+      # The `|| true` is necessary because xcrun will complain about incorrect usage.
+      # It says that `-t <instruments-template-name>` should be provided. If we provided
+      # that, it would take longer, work less reliable and create a bunch of trace files
+      # that we'd have to remove again so the project folder is empty on checkout.
+      # If we don't pass `-t`, the Simulator starts anyway...
+      - run:
+          name: Pre-start iOS Simulator
+          command: xcrun instruments -w "iPad Air 2 (11.3)" || true
+      
+      ## Create output directories
+      - run:
+          name: Create output directories
+          command: |
+            mkdir "/Users/distiller/output"
+            mkdir "/Users/distiller/output/xcodebuild-logs"
 
-test:
-  pre:
-    - mkdir "$CIRCLE_ARTIFACTS/xcodebuild-logs"
-  override:
-    - set -o pipefail &&
-      xcodebuild
-      -workspace TastyTomato.xcworkspace
-      -scheme "TastyTomato"
-      -destination 'platform=iOS Simulator,name=iPad Air,OS=latest'
-      clean
-      build
-      test
-      | tee "$CIRCLE_ARTIFACTS/xcodebuild-logs/xcodebuild-verbose.log"
-      | xcpretty
-      | tee "$CIRCLE_ARTIFACTS/xcodebuild-logs/xcodebuild-xcpretty.log"
+      ## Checkout source
+      - checkout
+      
+      ## Check ruby version and GEM_HOME
+      - run: 
+          name: Check ruby and GEM_HOME 
+          command: |
+            which ruby
+            echo ${GEM_HOME}
 
+      ## Install bundle (cache-wrapped)
+      - restore_cache:
+          keys:
+            - v2-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - v2-bundle-cache-{{ .Branch }}
+            - v2-bundle-cache
+      - run: bundle install
+      - save_cache:
+          key: v2-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            # This is basically GEM_HOME, hardcoded.
+            # It MUST be updated if the ruby version changes!
+            # Due to CircleCIs complete stupidity, there doesn't seem to be any
+            # decent way of setting the path by, say, using $GEM_HOME, for example,
+            # because these morons still haven't made it possible to interpolate
+            # env vars throughout the config file. They even RECOMMEND hardcoding here:
+            # https://discuss.circleci.com/t/can-i-use-variables-in-cache-paths/11393/3
+            - /Users/distiller/.gem/ruby/2.5.1
+
+      ## Install pods (cache-wrapped)
+      - restore_cache:
+          keys:
+            - v1-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
+            - v1-pod-cache-{{ .Branch }}
+            - v1-pod-cache
+      - run: bundle exec pod install
+      - save_cache:
+          key: v1-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
+          paths:
+            - ./Pods
+
+      ## Run tests
+      - run:
+          name: Run tests
+          command: xcodebuild -workspace TastyTomato.xcworkspace -scheme "TastyTomato" -destination 'platform=iOS Simulator,name=iPad Air 2,OS=11.3' clean build test | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-verbose.log" | xcpretty | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-xcpretty.log"
+      
+      ## Store artifacts
+      - store_artifacts:
+          path: "/Users/distiller/output"
