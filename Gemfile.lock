@@ -76,8 +76,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cocoapods
-  synx
+  cocoapods (= 1.5.0)
+  synx (= 0.2.1)
 
 BUNDLED WITH
    1.16.1
