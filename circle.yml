@@ -8,10 +8,6 @@ jobs:
     shell: /bin/bash --login -eo pipefail
     environment:
       LANG: en_US.UTF-8
-      # So our build-scripts aren't coupled to Circle-specific environment-variables.
-      # If we should switch CI-provider someday, we just need to provide these two variables.
-      LOG_ROOT_DIR: "/Users/distiller/output"
-      RUBY_IS_SOURCED: "${CI}"
     steps:
       ## Pre-start iOS Simulator
       # The `|| true` is necessary because xcrun will complain about incorrect usage.
@@ -43,12 +39,12 @@ jobs:
       ## Install bundle (cache-wrapped)
       - restore_cache:
           keys:
-            - v2-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - v2-bundle-cache-{{ .Branch }}
-            - v2-bundle-cache
+            - v3-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - v3-bundle-cache-{{ .Branch }}
+            - v3-bundle-cache
       - run: bundle install
       - save_cache:
-          key: v2-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: v3-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
             # This is basically GEM_HOME, hardcoded.
             # It MUST be updated if the ruby version changes!
