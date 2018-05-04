@@ -381,7 +381,7 @@ private extension KeyboardStateListener {
     // Private Helpers
     private func _viewFor(_ touch: UITouch?, _ gestureRecognizer: UIGestureRecognizer?) -> KeyboardDismissalHandler? {
         guard let point: CGPoint = self._pointFor(touch, gestureRecognizer) else { return nil }
-        return self._keyWindow.hitTest(point, with: nil)
+        return self._keyWindow.hitTest(point, with: nil) as? KeyboardDismissalHandler
     }
     
     private func _pointFor(_ touch: UITouch?, _ gestureRecognizer: UIGestureRecognizer?) -> CGPoint? {
