@@ -29,6 +29,8 @@ public class DismissKeyboardRecognizer: UITapGestureRecognizer {}
 }
 
 
+// FIXME: Remove these extensions, they're not overridable, which makes them quite useless
+// Instead, the default behaviour should be implemented as a stored class var in BaseTextField/View
 // MARK: - UITextView: KeyboardDismissalHandler
 extension UITextView/*: KeyboardDismissalHandler*/ {
     class var keyboardDismissalBehaviour: KeyboardDismissalBehaviour {
