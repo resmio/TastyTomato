@@ -15,14 +15,14 @@ public class DismissKeyboardRecognizer: UITapGestureRecognizer {}
 
 
 // MARK: - KeyboardDismissalHandler
-public protocol KeyboardDismissalHandler {
+@objc public protocol KeyboardDismissalHandler {
     static var keyboardDismissalBehaviour: KeyboardDismissalBehaviour { get }
     var keyboardDismissalBehaviour: KeyboardDismissalBehaviour? { get }
 }
 
 
 // MARK: - KeyboardDismissalBehaviour
-public enum KeyboardDismissalBehaviour {
+@objc public enum KeyboardDismissalBehaviour: Int {
     case dismissWithoutPassthrough
     case passthroughAndDismiss
     case passthroughWithoutDismiss
