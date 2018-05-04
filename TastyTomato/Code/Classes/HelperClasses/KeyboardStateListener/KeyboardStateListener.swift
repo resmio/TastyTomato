@@ -370,12 +370,12 @@ private extension KeyboardStateListener {
 // MARK: Helper Functions
 private extension KeyboardStateListener {
     func _dismissalBehaviourFor(touch: UITouch? = nil, recognizer: UIGestureRecognizer? = nil) -> KeyboardDismissalBehaviour {
-        guard let view: KeyboardDismissalHandler = self._viewFor(touch, recognizer) else {
+        guard let handler: KeyboardDismissalHandler = self._viewFor(touch, recognizer) else {
             return .dismissWithoutPassthrough
         }
         
         // Instance behaviour handling is always prioritized over class behaviour handling
-        return view.keyboardDismissalBehaviour ?? type(of: view).keyboardDismissalBehaviour
+        return handler.keyboardDismissalBehaviour ?? type(of: handler).keyboardDismissalBehaviour
     }
     
     // Private Helpers
