@@ -15,36 +15,22 @@ public class DismissKeyboardRecognizer: UITapGestureRecognizer {}
 
 
 // MARK: - KeyboardDismissalHandler
-public protocol KeyboardDismissalHandler: class {
+@objc public protocol KeyboardDismissalHandler {
     static var keyboardDismissalBehaviour: KeyboardDismissalBehaviour { get }
-    var keyboardDismissalBehaviour: KeyboardDismissalBehaviour? { get }
-}
-
-
-// MARK: Default Value Extension
-extension KeyboardDismissalHandler {
-    public static var keyboardDismissalBehaviour: KeyboardDismissalBehaviour {
-        return .dismissWithoutPassthrough
-    }
-    
-    public var keyboardDismissalBehaviour: KeyboardDismissalBehaviour? {
-        return nil
-    }
+    @objc optional var keyboardDismissalBehaviour: KeyboardDismissalBehaviour { get }
 }
 
 
 // MARK: - KeyboardDismissalBehaviour
-public enum KeyboardDismissalBehaviour {
+@objc public enum KeyboardDismissalBehaviour: Int {
     case dismissWithoutPassthrough
     case passthroughAndDismiss
     case passthroughWithoutDismiss
 }
 
 
-// MARK: - UIView: KeyboardDismissalHandler
-extension UIView: KeyboardDismissalHandler {}
-
-
+// FIXME: Remove these extensions, they're not overridable, which makes them quite useless
+// Instead, the default behaviour should be implemented as a stored class var in BaseTextField/View
 // MARK: - UITextView: KeyboardDismissalHandler
 extension UITextView/*: KeyboardDismissalHandler*/ {
     class var keyboardDismissalBehaviour: KeyboardDismissalBehaviour {
