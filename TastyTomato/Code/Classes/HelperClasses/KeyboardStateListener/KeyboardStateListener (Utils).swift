@@ -21,28 +21,12 @@ public protocol KeyboardDismissalHandler: class {
 }
 
 
-// MARK: Default Value Extension
-extension KeyboardDismissalHandler {
-    public static var keyboardDismissalBehaviour: KeyboardDismissalBehaviour {
-        return .dismissWithoutPassthrough
-    }
-    
-    public var keyboardDismissalBehaviour: KeyboardDismissalBehaviour? {
-        return nil
-    }
-}
-
-
 // MARK: - KeyboardDismissalBehaviour
 public enum KeyboardDismissalBehaviour {
     case dismissWithoutPassthrough
     case passthroughAndDismiss
     case passthroughWithoutDismiss
 }
-
-
-// MARK: - UIView: KeyboardDismissalHandler
-extension UIView: KeyboardDismissalHandler {}
 
 
 // MARK: - UITextView: KeyboardDismissalHandler
