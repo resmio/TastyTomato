@@ -15,7 +15,7 @@ public class DismissKeyboardRecognizer: UITapGestureRecognizer {}
 
 
 // MARK: - KeyboardDismissalHandler
-public protocol KeyboardDismissalHandler: class {
+public protocol KeyboardDismissalHandler {
     static var keyboardDismissalBehaviour: KeyboardDismissalBehaviour { get }
     var keyboardDismissalBehaviour: KeyboardDismissalBehaviour? { get }
 }
