@@ -88,16 +88,15 @@ class SeparatorCell: UITableViewCell {
     }
     
     // Private Variables
-    fileprivate var _topSeparator: LineLayer?
-    fileprivate var _bottomSeparator: LineLayer?
-    fileprivate var __separatorStyle: SeparatorStyle = .bottom
-    fileprivate var __topSeparatorColor: UIColor = .gray
-    fileprivate var __topSeparatorInset: CGFloat = 5
-    fileprivate var __topSeparatorLineWidth: CGFloat = SeparatorCell.defaultTopSeparatorLineWidth
-    fileprivate var __bottomSeparatorColor: UIColor = .gray
-    fileprivate var __bottomSeparatorInset: CGFloat = 5
-    fileprivate var __bottomSeparatorLineWidth: CGFloat = SeparatorCell.defaultBottomSeparatorLineWidth
-    
+    private var _topSeparator: LineLayer?
+    private var _bottomSeparator: LineLayer?
+    private var __separatorStyle: SeparatorStyle = .bottom
+    private var __topSeparatorColor: UIColor = .gray
+    private var __topSeparatorInset: CGFloat = 5
+    private var __topSeparatorLineWidth: CGFloat = SeparatorCell.defaultTopSeparatorLineWidth
+    private var __bottomSeparatorColor: UIColor = .gray
+    private var __bottomSeparatorInset: CGFloat = 5
+    private var __bottomSeparatorLineWidth: CGFloat = SeparatorCell.defaultBottomSeparatorLineWidth
     
     // Layout Overrides
     override func layoutSublayers(of layer: CALayer) {
