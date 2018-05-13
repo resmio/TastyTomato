@@ -164,7 +164,7 @@ private extension SeparatorCell {
         set(newTopSeparatorColor) {
             guard newTopSeparatorColor != self.__topSeparatorColor else { return }
             self.__topSeparatorColor = newTopSeparatorColor
-            self._updateTopSeparator(color: newTopSeparatorColor)
+            (self._topSeparator¿)?.strokeColor = newTopSeparatorColor.cgColor
         }
     }
     
@@ -173,7 +173,7 @@ private extension SeparatorCell {
         set(newTopSeparatorInset) {
             guard newTopSeparatorInset != self.__topSeparatorInset else { return }
             self.__topSeparatorInset = newTopSeparatorInset
-            self._updateTopSeparator(inset: newTopSeparatorInset)
+            
         }
     }
     
@@ -182,7 +182,7 @@ private extension SeparatorCell {
         set(newTopSeparatorLineWidth) {
             guard newTopSeparatorLineWidth != self.__topSeparatorLineWidth else { return }
             self.__topSeparatorLineWidth = newTopSeparatorLineWidth
-            self._updateTopSeparator(lineWidth: newTopSeparatorLineWidth)
+            (self._topSeparator¿)?.lineWidth = newTopSeparatorLineWidth
         }
     }
     
@@ -191,7 +191,7 @@ private extension SeparatorCell {
         set(newBottomSeparatorColor) {
             guard newBottomSeparatorColor != self.__bottomSeparatorColor else { return }
             self.__bottomSeparatorColor = newBottomSeparatorColor
-            self._updateBottomSeparator(color: newBottomSeparatorColor)
+            (self._bottomSeparator¿)?.strokeColor = newBottomSeparatorColor.cgColor
         }
     }
     
@@ -200,7 +200,7 @@ private extension SeparatorCell {
         set(newBottomSeparatorInset) {
             guard newBottomSeparatorInset != self.__bottomSeparatorInset else { return }
             self.__bottomSeparatorInset = newBottomSeparatorInset
-            self._updateBottomSeparator(inset: newBottomSeparatorInset)
+            
         }
     }
     
@@ -209,7 +209,7 @@ private extension SeparatorCell {
         set(newBottomSeparatorLineWidth) {
             guard newBottomSeparatorLineWidth != self.__bottomSeparatorLineWidth else { return }
             self.__bottomSeparatorLineWidth = newBottomSeparatorLineWidth
-            self._updateBottomSeparator(lineWidth: newBottomSeparatorLineWidth)
+            (self._bottomSeparator¿)?.lineWidth = newBottomSeparatorLineWidth
         }
     }
 }
@@ -236,58 +236,5 @@ private extension SeparatorCell {
             bottomSeparator.parallelPosition = inset
             bottomSeparator.orthogonalPosition = height - (bottomSeparator.lineWidth / 2)
         }
-    }
-}
-
-
-// MARK: Update Separators
-private extension SeparatorCell {
-    func _updateTopSeparator(color: UIColor? = nil, lineWidth: CGFloat? = nil, inset: CGFloat? = nil) {
-        guard self.separatorStyle != .bottom else {
-            self._removeSeparator(&self._topSeparator)
-            return
-        }
-        
-        self._updateSeparator(
-            &self._topSeparator,
-            color: color ?? self.topSeparatorColor,
-            lineWidth: lineWidth ?? self.topSeparatorLineWidth,
-            inset: inset ?? self.topSeparatorInset
-        )
-    }
-    
-    func _updateBottomSeparator(color: UIColor? = nil, lineWidth: CGFloat? = nil, inset: CGFloat? = nil) {
-        guard self.separatorStyle != .top else {
-            self._removeSeparator(&self._bottomSeparator)
-            return
-        }
-        
-        self._updateSeparator(
-            &self._bottomSeparator,
-            color: color ?? self.bottomSeparatorColor,
-            lineWidth: lineWidth ?? self.bottomSeparatorLineWidth,
-            inset: inset ?? self.bottomSeparatorInset
-        )
-    }
-    
-    // Private Helpers
-    private func _updateSeparator(_ separator: inout ALO<LineLayer>, color: UIColor, lineWidth: CGFloat, inset: CGFloat) {
-        guard color != .clear && lineWidth > 0 else {
-            self._removeSeparator(&separator)
-            return
-        }
-        
-        if let _separator: LineLayer = separator¿ {
-            _separator.strokeColor = color.cgColor
-            _separator.lineWidth = lineWidth
-            _separator.parallelPosition = inset
-        } else {
-            self.contentView.layer.addSublayer(separator¡)
-        }
-    }
-    
-    private func _removeSeparator(_ separator: inout ALO<LineLayer>) {
-        (separator¿)?.removeFromSuperlayer()
-        separator.clear()
     }
 }
