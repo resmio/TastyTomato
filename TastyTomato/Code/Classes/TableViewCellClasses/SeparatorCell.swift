@@ -20,76 +20,43 @@ extension SeparatorCell {
     }
     
     // Readonly
-    static var defaultTopSeparatorLineWidth: CGFloat {
-        return 0.3
-    }
-    
-    static var defaultBottomSeparatorLineWidth: CGFloat {
-        return 0.3
-    }
+    static let defaultTopSeparatorLineWidth: CGFloat = 0.3
+    static let defaultBottomSeparatorLineWidth: CGFloat = 0.3
     
     // ReadWrite
     var separatorStyle: SeparatorStyle {
-        get {
-            return self._separatorStyle
-        }
-        set(newSeparatorStyle) {
-            self._separatorStyle = newSeparatorStyle
-        }
+        get { return self._separatorStyle }
+        set { self._separatorStyle = newValue }
     }
     
     var topSeparatorColor: UIColor {
-        get {
-            return self._topSeparatorColor
-        }
-        set(newTopSeparatorColor) {
-            self._topSeparatorColor = newTopSeparatorColor
-        }
+        get { return self._topSeparatorColor }
+        set { self._topSeparatorColor = newValue }
     }
     
     var bottomSeparatorColor: UIColor {
-        get {
-            return self._bottomSeparatorColor
-        }
-        set(newBottomSeparatorColor) {
-            self._bottomSeparatorColor = newBottomSeparatorColor
-        }
+        get { return self._bottomSeparatorColor }
+        set { self._bottomSeparatorColor = newValue}
     }
     
     var topSeparatorLineWidth: CGFloat {
-        get {
-            return self._topSeparatorLineWidth
-        }
-        set(newTopSeparatorLineWidth) {
-            self._topSeparatorLineWidth = newTopSeparatorLineWidth
-        }
+        get { return self._topSeparatorLineWidth }
+        set { self._topSeparatorLineWidth = newValue }
     }
     
     var bottomSeparatorLineWidth: CGFloat {
-        get {
-            return self._bottomSeparatorLineWidth
-        }
-        set(newBottomSeparatorLineWidth) {
-            self._bottomSeparatorLineWidth = newBottomSeparatorLineWidth
-        }
+        get { return self._bottomSeparatorLineWidth }
+        set { self._bottomSeparatorLineWidth = newValue }
     }
     
     var topSeparatorInset: CGFloat {
-        get {
-            return self._topSeparatorInset
-        }
-        set(newTopSeparatorInset) {
-            self._topSeparatorInset = newTopSeparatorInset
-        }
+        get { return self._topSeparatorInset }
+        set { self._topSeparatorInset = newValue }
     }
     
     var bottomSeparatorInset: CGFloat {
-        get {
-            return self._bottomSeparatorInset
-        }
-        set(newBottomSeparatorInset) {
-            self._bottomSeparatorInset = newBottomSeparatorInset
-        }
+        get { return self._bottomSeparatorInset }
+        set { self._bottomSeparatorInset = newValue }
     }
 }
 
