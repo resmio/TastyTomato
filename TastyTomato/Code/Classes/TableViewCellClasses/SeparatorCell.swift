@@ -66,19 +66,25 @@ extension SeparatorCell {
 class SeparatorCell: UITableViewCell {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
-        fatalError("SeparatorCell does not support NSCoding")
+        super.init(coder: aDecoder)
+        self._init()
     }
     
     // Override Init
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self._updateTopSeparator()
-        self._updateBottomSeparator()
+        self._init()
     }
     
     // Convenience Init
     convenience init() {
         self.init(style: .default, reuseIdentifier: nil)
+    }
+    
+    // Common Init
+    private func _init() {
+        self._updateTopSeparator()
+        self._updateBottomSeparator()
     }
     
     // Private Variables
