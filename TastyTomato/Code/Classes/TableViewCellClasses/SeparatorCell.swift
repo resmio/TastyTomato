@@ -84,8 +84,15 @@ class SeparatorCell: UITableViewCell {
     
     // Common Init
     private func _init() {
-        self._updateTopSeparator()
-        self._updateBottomSeparator()
+        let separatorStyle: SeparatorStyle = self.separatorStyle
+        let layer: CALayer = self.contentView.layer
+        if separatorStyle <> [.topAndBottom, .top] {
+            layer.addSublayer(self._topSeparator¡)
+        }
+        
+        if separatorStyle <> [.topAndBottom, .bottom] {
+            layer.addSublayer(self._bottomSeparator¡)
+        }
     }
     
     // Private Lazy Variables
