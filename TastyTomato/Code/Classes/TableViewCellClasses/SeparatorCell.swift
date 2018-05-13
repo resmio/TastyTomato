@@ -134,10 +134,28 @@ private extension SeparatorCell {
     var _separatorStyle: SeparatorStyle {
         get { return self.__separatorStyle }
         set(newSeparatorStyle) {
-            guard newSeparatorStyle != self.__separatorStyle else { return }
+            let oldSeparatorStyle: SeparatorStyle = self.__separatorStyle
+            guard newSeparatorStyle != oldSeparatorStyle else { return }
             self.__separatorStyle = newSeparatorStyle
-            self._updateTopSeparator()
-            self._updateBottomSeparator()
+            
+            let addSeparator: (inout ALO<LineLayer>) -> Void = {
+                self.contentView.layer.addSublayer($0¡)
+            }
+            
+            let removeSeparator: (inout ALO<LineLayer>) -> Void = {
+                ($0¿)?.removeFromSuperlayer()
+                $0.clear()
+            }
+            
+            switch (oldSeparatorStyle, newSeparatorStyle) {
+            case (.top, .topAndBottom): addSeparator(&self._bottomSeparator)
+            case (.bottom, .topAndBottom): addSeparator(&self._topSeparator)
+            case (_, .top): removeSeparator(&self._bottomSeparator)
+            case (_, .bottom): removeSeparator(&self._topSeparator)
+            // The next case will never be executed, since we guard against
+            // equality of old and new value at the beginning of this setter
+            case (.topAndBottom, .topAndBottom): break
+            }
         }
     }
     
