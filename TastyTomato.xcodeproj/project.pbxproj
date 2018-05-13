@@ -80,6 +80,7 @@
 		CE914A1221694D4AE9F400582C49B62F /* ImageTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD12FA602A05FA8F90A14D2DD8FA7A2 /* ImageTextButton.swift */; };
 		CF8FDF1DFA8603E44D63E041A668BEC5 /* BaseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC82CB1A56D60A4DF981960B5A667C /* BaseTextView.swift */; };
 		D2696B92DC2F081F73F0EEB14B91BE9F /* GridLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFB79C0D23FF876BF39D0237EBB0E33 /* GridLayer.swift */; };
+		D2804EE8F777DFA97D1E5632AF6D9238 /* SeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6311D8D5C046A0F88C02C99090520 /* SeparatorCell.swift */; };
 		D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD60BF858BDA8D4E2F6F0015C302A /* ResmioLogo.swift */; };
 		D8294936BE4CF32441B0D854D1F9DDEE /* UIScrollView (ZoomingConvenience).swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA18CC2F9A526F518B9C154D07DDC7 /* UIScrollView (ZoomingConvenience).swift */; };
 		D89860B8B7094EF83C1DE152E1AAEDD6 /* UIImage (withTint).swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3880C48EE007201237477752C5E8F /* UIImage (withTint).swift */; };
@@ -179,6 +180,7 @@
 		BA80D821A6A11686B3549A015E50472E /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		BAC2B1E373A0B5FEF4430946F8B244B4 /* UIFont (PredefinedFonts).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont (PredefinedFonts).swift"; sourceTree = "<group>"; };
 		BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (FromHex_).swift"; sourceTree = "<group>"; };
+		BEB6311D8D5C046A0F88C02C99090520 /* SeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorCell.swift; sourceTree = "<group>"; };
 		C08B5813ECAE6108D8A3192D688E9D77 /* ArrowIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowIcon.swift; sourceTree = "<group>"; };
 		C11648945ADE6B76183DB64326F38A93 /* CalendarDaysVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDaysVC.swift; sourceTree = "<group>"; };
 		C12824249B7328133328FF9AE5640462 /* CGSize (CGRect).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (CGRect).swift"; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				AAD496374D60FA3D83572E9051E49F30 /* ImageClasses */,
 				1A2AF345D99AE2F606C662E97012958A /* LabelClasses */,
 				A3AB6252EFF7C31DBE40BB1578EF32AC /* LayerClasses */,
+				EA524247E80498325B062F5254745CBA /* TableViewCellClasses */,
 				02821F3BFC5F2DBE0FD2A172B54F594E /* TextFieldClasses */,
 				A35630EB3C15AE66CC75B9EA1FCFEA0A /* TextViewClasses */,
 				7AEA2B322FEE44C005AC3706654DCAC4 /* ViewControllerClasses */,
@@ -584,6 +587,14 @@
 				5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */,
 			);
 			path = CGFloat;
+			sourceTree = "<group>";
+		};
+		EA524247E80498325B062F5254745CBA /* TableViewCellClasses */ = {
+			isa = PBXGroup;
+			children = (
+				BEB6311D8D5C046A0F88C02C99090520 /* SeparatorCell.swift */,
+			);
+			path = TableViewCellClasses;
 			sourceTree = "<group>";
 		};
 		A01C37BAA2EDA30ED682D64F551DB64A /* UIView */ = {
@@ -1006,6 +1017,7 @@
 				26C9967D3E82CB12CD88A26329600F6E /* NSL_.swift in Sources */,
 				D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */,
 				9BDC043C11EE63333651DFC6882AE8E4 /* RootViewController.swift in Sources */,
+				D2804EE8F777DFA97D1E5632AF6D9238 /* SeparatorCell.swift in Sources */,
 				AF53E089D7041EDFD9F90E22C958AD7E /* ShortcutBar.swift in Sources */,
 				33D7CBF4CDA305FAE290B028790A338E /* ShortcutBarButton.swift in Sources */,
 				0A9100AA8AD8E4B0E7367732D970B17A /* TagView.swift in Sources */,
