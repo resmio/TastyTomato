@@ -109,9 +109,7 @@ class SeparatorCell: UITableViewCell {
 // MARK: Computed Variables
 private extension SeparatorCell {
     var _separatorStyle: SeparatorStyle {
-        get {
-            return self.__separatorStyle
-        }
+        get { return self.__separatorStyle }
         set(newSeparatorStyle) {
             guard newSeparatorStyle != self.__separatorStyle else { return }
             self.__separatorStyle = newSeparatorStyle
@@ -121,9 +119,7 @@ private extension SeparatorCell {
     }
     
     var _topSeparatorColor: UIColor {
-        get {
-            return self.__topSeparatorColor
-        }
+        get { return self.__topSeparatorColor }
         set(newTopSeparatorColor) {
             guard newTopSeparatorColor != self.__topSeparatorColor else { return }
             self.__topSeparatorColor = newTopSeparatorColor
@@ -132,9 +128,7 @@ private extension SeparatorCell {
     }
     
     var _topSeparatorInset: CGFloat {
-        get {
-            return self.__topSeparatorInset
-        }
+        get { return self.__topSeparatorInset }
         set(newTopSeparatorInset) {
             guard newTopSeparatorInset != self.__topSeparatorInset else { return }
             self.__topSeparatorInset = newTopSeparatorInset
@@ -143,9 +137,7 @@ private extension SeparatorCell {
     }
     
     var _topSeparatorLineWidth: CGFloat {
-        get {
-            return self.__topSeparatorLineWidth
-        }
+        get { return self.__topSeparatorLineWidth }
         set(newTopSeparatorLineWidth) {
             guard newTopSeparatorLineWidth != self.__topSeparatorLineWidth else { return }
             self.__topSeparatorLineWidth = newTopSeparatorLineWidth
@@ -154,9 +146,7 @@ private extension SeparatorCell {
     }
     
     var _bottomSeparatorColor: UIColor {
-        get {
-            return self.__bottomSeparatorColor
-        }
+        get { return self.__bottomSeparatorColor }
         set(newBottomSeparatorColor) {
             guard newBottomSeparatorColor != self.__bottomSeparatorColor else { return }
             self.__bottomSeparatorColor = newBottomSeparatorColor
@@ -165,9 +155,7 @@ private extension SeparatorCell {
     }
     
     var _bottomSeparatorInset: CGFloat {
-        get {
-            return self.__bottomSeparatorInset
-        }
+        get { return self.__bottomSeparatorInset }
         set(newBottomSeparatorInset) {
             guard newBottomSeparatorInset != self.__bottomSeparatorInset else { return }
             self.__bottomSeparatorInset = newBottomSeparatorInset
@@ -176,9 +164,7 @@ private extension SeparatorCell {
     }
     
     var _bottomSeparatorLineWidth: CGFloat {
-        get {
-            return self.__bottomSeparatorLineWidth
-        }
+        get { return self.__bottomSeparatorLineWidth }
         set(newBottomSeparatorLineWidth) {
             guard newBottomSeparatorLineWidth != self.__bottomSeparatorLineWidth else { return }
             self.__bottomSeparatorLineWidth = newBottomSeparatorLineWidth
