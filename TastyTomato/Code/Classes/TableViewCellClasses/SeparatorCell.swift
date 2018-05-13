@@ -13,72 +13,74 @@ import SignificantSpices
 // MARK: // Internal
 // MARK: Interface
 extension SeparatorCell {
+    public typealias SeparatorInsets = (left: CGFloat, right: CGFloat)
+    
     // SeparatorStyle enum
-    enum SeparatorStyle {
+    public enum SeparatorStyle {
         case top
         case bottom
         case topAndBottom
     }
     
     // Readonly
-    static let defaultTopSeparatorLineWidth: CGFloat = 0.3
-    static let defaultBottomSeparatorLineWidth: CGFloat = 0.3
+    public static let defaultTopSeparatorLineWidth: CGFloat = 0.3
+    public static let defaultBottomSeparatorLineWidth: CGFloat = 0.3
     
     // ReadWrite
-    var separatorStyle: SeparatorStyle {
+    public var separatorStyle: SeparatorStyle {
         get { return self._separatorStyle }
         set { self._separatorStyle = newValue }
     }
     
-    var topSeparatorColor: UIColor {
+    public var topSeparatorColor: UIColor {
         get { return self._topSeparatorColor }
         set { self._topSeparatorColor = newValue }
     }
     
-    var bottomSeparatorColor: UIColor {
+    public var bottomSeparatorColor: UIColor {
         get { return self._bottomSeparatorColor }
         set { self._bottomSeparatorColor = newValue}
     }
     
-    var topSeparatorLineWidth: CGFloat {
+    public var topSeparatorLineWidth: CGFloat {
         get { return self._topSeparatorLineWidth }
         set { self._topSeparatorLineWidth = newValue }
     }
     
-    var bottomSeparatorLineWidth: CGFloat {
+    public var bottomSeparatorLineWidth: CGFloat {
         get { return self._bottomSeparatorLineWidth }
         set { self._bottomSeparatorLineWidth = newValue }
     }
     
-    var topSeparatorInset: CGFloat {
-        get { return self._topSeparatorInset }
-        set { self._topSeparatorInset = newValue }
+    public var topSeparatorInsets: SeparatorInsets {
+        get { return self._topSeparatorInsets }
+        set { self._topSeparatorInsets = newValue }
     }
     
-    var bottomSeparatorInset: CGFloat {
-        get { return self._bottomSeparatorInset }
-        set { self._bottomSeparatorInset = newValue }
+    public var bottomSeparatorInsets: SeparatorInsets {
+        get { return self._bottomSeparatorInsets }
+        set { self._bottomSeparatorInsets = newValue }
     }
 }
 
 
 
 // MARK: Class Declaration
-class SeparatorCell: UITableViewCell {
+open class SeparatorCell: UITableViewCell {
     // Required Init
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self._init()
     }
     
     // Override Init
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self._init()
     }
     
     // Convenience Init
-    convenience init() {
+    public convenience init() {
         self.init(style: .default, reuseIdentifier: nil)
     }
     
@@ -102,14 +104,14 @@ class SeparatorCell: UITableViewCell {
     // Private Variables
     private var __separatorStyle: SeparatorStyle = .bottom
     private var __topSeparatorColor: UIColor = .gray
-    private var __topSeparatorInset: CGFloat = 5
-    private var __topSeparatorLineWidth: CGFloat = SeparatorCell.defaultTopSeparatorLineWidth
     private var __bottomSeparatorColor: UIColor = .gray
-    private var __bottomSeparatorInset: CGFloat = 5
+    private var __topSeparatorInsets: SeparatorInsets = (5, 0)
+    private var __bottomSeparatorInsets: SeparatorInsets = (5, 0)
+    private var __topSeparatorLineWidth: CGFloat = SeparatorCell.defaultTopSeparatorLineWidth
     private var __bottomSeparatorLineWidth: CGFloat = SeparatorCell.defaultBottomSeparatorLineWidth
     
     // Layout Overrides
-    override func layoutSublayers(of layer: CALayer) {
+    open override func layoutSublayers(of layer: CALayer) {
         self._layoutSublayers(of: layer)
     }
 }
@@ -122,7 +124,6 @@ private extension SeparatorCell {
         let separator: LineLayer = LineLayer()
         separator.strokeColor = self.topSeparatorColor.cgColor
         separator.lineWidth = self.topSeparatorLineWidth
-        separator.parallelPosition = self.topSeparatorInset
         return separator
     }
     
@@ -130,7 +131,6 @@ private extension SeparatorCell {
         let separator: LineLayer = LineLayer()
         separator.strokeColor = self.bottomSeparatorColor.cgColor
         separator.lineWidth = self.bottomSeparatorLineWidth
-        separator.parallelPosition = self.bottomSeparatorInset
         return separator
     }
 }
@@ -175,11 +175,11 @@ private extension SeparatorCell {
         }
     }
     
-    var _topSeparatorInset: CGFloat {
-        get { return self.__topSeparatorInset }
+    var _topSeparatorInsets: SeparatorInsets {
+        get { return self.__topSeparatorInsets }
         set(newTopSeparatorInset) {
-            guard newTopSeparatorInset != self.__topSeparatorInset else { return }
-            self.__topSeparatorInset = newTopSeparatorInset
+            guard newTopSeparatorInset != self.__topSeparatorInsets else { return }
+            self.__topSeparatorInsets = newTopSeparatorInset
             (self._topSeparator¿)?.superlayer?.setNeedsLayout()
         }
     }
@@ -202,11 +202,11 @@ private extension SeparatorCell {
         }
     }
     
-    var _bottomSeparatorInset: CGFloat {
-        get { return self.__bottomSeparatorInset }
+    var _bottomSeparatorInsets: SeparatorInsets {
+        get { return self.__bottomSeparatorInsets }
         set(newBottomSeparatorInset) {
-            guard newBottomSeparatorInset != self.__bottomSeparatorInset else { return }
-            self.__bottomSeparatorInset = newBottomSeparatorInset
+            guard newBottomSeparatorInset != self.__bottomSeparatorInsets else { return }
+            self.__bottomSeparatorInsets = newBottomSeparatorInset
             (self._bottomSeparator¿)?.superlayer?.setNeedsLayout()
         }
     }
@@ -231,16 +231,18 @@ private extension SeparatorCell {
         let height: CGFloat = layer.frame.height
         
         if let topSeparator: LineLayer = self._topSeparator¿ {
-            let inset: CGFloat = self.topSeparatorInset
-            topSeparator.length = width - inset
-            topSeparator.parallelPosition = inset
+            let insets: SeparatorInsets = self.topSeparatorInsets
+            let leftInset: CGFloat = insets.left
+            topSeparator.length = width - (leftInset + insets.right)
+            topSeparator.parallelPosition = leftInset
             topSeparator.orthogonalPosition = topSeparator.lineWidth / 2
         }
         
         if let bottomSeparator: LineLayer = self._bottomSeparator¿ {
-            let inset: CGFloat = self._bottomSeparatorInset
-            bottomSeparator.length = width - inset
-            bottomSeparator.parallelPosition = inset
+            let insets: SeparatorInsets = self.bottomSeparatorInsets
+            let leftInset: CGFloat = insets.left
+            bottomSeparator.length = width - (leftInset + insets.right)
+            bottomSeparator.parallelPosition = leftInset
             bottomSeparator.orthogonalPosition = height - (bottomSeparator.lineWidth / 2)
         }
     }
