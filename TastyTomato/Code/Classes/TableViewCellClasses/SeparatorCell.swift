@@ -180,7 +180,7 @@ private extension SeparatorCell {
         set(newTopSeparatorInset) {
             guard newTopSeparatorInset != self.__topSeparatorInset else { return }
             self.__topSeparatorInset = newTopSeparatorInset
-            
+            (self._topSeparator¿)?.superlayer?.setNeedsLayout()
         }
     }
     
@@ -207,7 +207,7 @@ private extension SeparatorCell {
         set(newBottomSeparatorInset) {
             guard newBottomSeparatorInset != self.__bottomSeparatorInset else { return }
             self.__bottomSeparatorInset = newBottomSeparatorInset
-            
+            (self._bottomSeparator¿)?.superlayer?.setNeedsLayout()
         }
     }
     
