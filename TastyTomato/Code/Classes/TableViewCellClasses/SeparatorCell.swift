@@ -102,10 +102,10 @@ class SeparatorCell: UITableViewCell {
     // Private Variables
     private var __separatorStyle: SeparatorStyle = .bottom
     private var __topSeparatorColor: UIColor = .gray
-    private var __topSeparatorInset: CGFloat = 5
-    private var __topSeparatorLineWidth: CGFloat = SeparatorCell.defaultTopSeparatorLineWidth
     private var __bottomSeparatorColor: UIColor = .gray
+    private var __topSeparatorInset: CGFloat = 5
     private var __bottomSeparatorInset: CGFloat = 5
+    private var __topSeparatorLineWidth: CGFloat = SeparatorCell.defaultTopSeparatorLineWidth
     private var __bottomSeparatorLineWidth: CGFloat = SeparatorCell.defaultBottomSeparatorLineWidth
     
     // Layout Overrides
