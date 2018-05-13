@@ -589,14 +589,6 @@
 			path = CGFloat;
 			sourceTree = "<group>";
 		};
-		EA524247E80498325B062F5254745CBA /* TableViewCellClasses */ = {
-			isa = PBXGroup;
-			children = (
-				BEB6311D8D5C046A0F88C02C99090520 /* SeparatorCell.swift */,
-			);
-			path = TableViewCellClasses;
-			sourceTree = "<group>";
-		};
 		A01C37BAA2EDA30ED682D64F551DB64A /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -754,6 +746,14 @@
 				4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */,
 			);
 			path = UIWindow;
+			sourceTree = "<group>";
+		};
+		EA524247E80498325B062F5254745CBA /* TableViewCellClasses */ = {
+			isa = PBXGroup;
+			children = (
+				BEB6311D8D5C046A0F88C02C99090520 /* SeparatorCell.swift */,
+			);
+			path = TableViewCellClasses;
 			sourceTree = "<group>";
 		};
 		EE22ED39034017661019E659F4958502 /* TastyTomato */ = {
