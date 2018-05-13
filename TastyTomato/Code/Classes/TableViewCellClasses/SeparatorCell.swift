@@ -13,51 +13,51 @@ import SignificantSpices
 // MARK: // Internal
 // MARK: Interface
 extension SeparatorCell {
-    typealias SeparatorInsets = (left: CGFloat, right: CGFloat)
+    public typealias SeparatorInsets = (left: CGFloat, right: CGFloat)
     
     // SeparatorStyle enum
-    enum SeparatorStyle {
+    public enum SeparatorStyle {
         case top
         case bottom
         case topAndBottom
     }
     
     // Readonly
-    static let defaultTopSeparatorLineWidth: CGFloat = 0.3
-    static let defaultBottomSeparatorLineWidth: CGFloat = 0.3
+    public static let defaultTopSeparatorLineWidth: CGFloat = 0.3
+    public static let defaultBottomSeparatorLineWidth: CGFloat = 0.3
     
     // ReadWrite
-    var separatorStyle: SeparatorStyle {
+    public var separatorStyle: SeparatorStyle {
         get { return self._separatorStyle }
         set { self._separatorStyle = newValue }
     }
     
-    var topSeparatorColor: UIColor {
+    public var topSeparatorColor: UIColor {
         get { return self._topSeparatorColor }
         set { self._topSeparatorColor = newValue }
     }
     
-    var bottomSeparatorColor: UIColor {
+    public var bottomSeparatorColor: UIColor {
         get { return self._bottomSeparatorColor }
         set { self._bottomSeparatorColor = newValue}
     }
     
-    var topSeparatorLineWidth: CGFloat {
+    public var topSeparatorLineWidth: CGFloat {
         get { return self._topSeparatorLineWidth }
         set { self._topSeparatorLineWidth = newValue }
     }
     
-    var bottomSeparatorLineWidth: CGFloat {
+    public var bottomSeparatorLineWidth: CGFloat {
         get { return self._bottomSeparatorLineWidth }
         set { self._bottomSeparatorLineWidth = newValue }
     }
     
-    var topSeparatorInsets: SeparatorInsets {
+    public var topSeparatorInsets: SeparatorInsets {
         get { return self._topSeparatorInsets }
         set { self._topSeparatorInsets = newValue }
     }
     
-    var bottomSeparatorInsets: SeparatorInsets {
+    public var bottomSeparatorInsets: SeparatorInsets {
         get { return self._bottomSeparatorInsets }
         set { self._bottomSeparatorInsets = newValue }
     }
@@ -66,21 +66,21 @@ extension SeparatorCell {
 
 
 // MARK: Class Declaration
-class SeparatorCell: UITableViewCell {
+open class SeparatorCell: UITableViewCell {
     // Required Init
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self._init()
     }
     
     // Override Init
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self._init()
     }
     
     // Convenience Init
-    convenience init() {
+    public convenience init() {
         self.init(style: .default, reuseIdentifier: nil)
     }
     
@@ -111,7 +111,7 @@ class SeparatorCell: UITableViewCell {
     private var __bottomSeparatorLineWidth: CGFloat = SeparatorCell.defaultBottomSeparatorLineWidth
     
     // Layout Overrides
-    override func layoutSublayers(of layer: CALayer) {
+    open override func layoutSublayers(of layer: CALayer) {
         self._layoutSublayers(of: layer)
     }
 }
