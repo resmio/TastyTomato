@@ -13,7 +13,7 @@ import UIKit
 // MARK: Interface
 extension SeparatorCell {
     // SeparatorStyle enum
-    enum SeparatorStyle: Int {
+    enum SeparatorStyle {
         case top
         case bottom
         case topAndBottom
