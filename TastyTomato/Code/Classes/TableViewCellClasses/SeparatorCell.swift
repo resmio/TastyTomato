@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SignificantSpices
 
 
 // MARK: // Internal
@@ -87,9 +88,11 @@ class SeparatorCell: UITableViewCell {
         self._updateBottomSeparator()
     }
     
+    // Private Lazy Variables
+    private lazy var _topSeparator: ALO<LineLayer> = ALO(self._createTopSeparator)
+    private lazy var _bottomSeparator: ALO<LineLayer> = ALO(self._createBottomSeparator)
+    
     // Private Variables
-    private var _topSeparator: LineLayer?
-    private var _bottomSeparator: LineLayer?
     private var __separatorStyle: SeparatorStyle = .bottom
     private var __topSeparatorColor: UIColor = .gray
     private var __topSeparatorInset: CGFloat = 5
@@ -106,6 +109,26 @@ class SeparatorCell: UITableViewCell {
 
 
 // MARK: // Private
+// MARK: Lazy Variable Creation
+private extension SeparatorCell {
+    func _createTopSeparator() -> LineLayer {
+        let separator: LineLayer = LineLayer()
+        separator.strokeColor = self.topSeparatorColor.cgColor
+        separator.lineWidth = self.topSeparatorLineWidth
+        separator.parallelPosition = self.topSeparatorInset
+        return separator
+    }
+    
+    func _createBottomSeparator() -> LineLayer {
+        let separator: LineLayer = LineLayer()
+        separator.strokeColor = self.bottomSeparatorColor.cgColor
+        separator.lineWidth = self.bottomSeparatorLineWidth
+        separator.parallelPosition = self.bottomSeparatorInset
+        return separator
+    }
+}
+
+
 // MARK: Computed Variables
 private extension SeparatorCell {
     var _separatorStyle: SeparatorStyle {
@@ -182,14 +205,14 @@ private extension SeparatorCell {
         let width: CGFloat = layer.frame.width
         let height: CGFloat = layer.frame.height
         
-        if let topSeparator: LineLayer = self._topSeparator {
+        if let topSeparator: LineLayer = self._topSeparator¿ {
             let inset: CGFloat = self.topSeparatorInset
             topSeparator.length = width - inset
             topSeparator.parallelPosition = inset
             topSeparator.orthogonalPosition = topSeparator.lineWidth / 2
         }
         
-        if let bottomSeparator: LineLayer = self._bottomSeparator {
+        if let bottomSeparator: LineLayer = self._bottomSeparator¿ {
             let inset: CGFloat = self._bottomSeparatorInset
             bottomSeparator.length = width - inset
             bottomSeparator.parallelPosition = inset
@@ -230,25 +253,23 @@ private extension SeparatorCell {
     }
     
     // Private Helpers
-    private func _updateSeparator(_ separator: inout LineLayer?, color: UIColor, lineWidth: CGFloat, inset: CGFloat) {
+    private func _updateSeparator(_ separator: inout ALO<LineLayer>, color: UIColor, lineWidth: CGFloat, inset: CGFloat) {
         guard color != .clear && lineWidth > 0 else {
             self._removeSeparator(&separator)
             return
         }
         
-        let _separator: LineLayer = separator ?? LineLayer()
-        _separator.strokeColor = color.cgColor
-        _separator.lineWidth = lineWidth
-        _separator.parallelPosition = inset
-        
-        if separator == nil {
-            separator = _separator
-            self.contentView.layer.addSublayer(_separator)
+        if let _separator: LineLayer = separator¿ {
+            _separator.strokeColor = color.cgColor
+            _separator.lineWidth = lineWidth
+            _separator.parallelPosition = inset
+        } else {
+            self.contentView.layer.addSublayer(separator¡)
         }
     }
     
-    private func _removeSeparator(_ separator: inout LineLayer?) {
-        separator?.removeFromSuperlayer()
-        separator = nil
+    private func _removeSeparator(_ separator: inout ALO<LineLayer>) {
+        (separator¿)?.removeFromSuperlayer()
+        separator.clear()
     }
 }
