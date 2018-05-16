@@ -177,10 +177,14 @@ private extension SeparatorCell {
     
     var _topSeparatorInsets: SeparatorInsets {
         get { return self.__topSeparatorInsets }
-        set(newTopSeparatorInset) {
-            guard newTopSeparatorInset != self.__topSeparatorInsets else { return }
-            self.__topSeparatorInsets = newTopSeparatorInset
-            (self._topSeparator¿)?.superlayer?.setNeedsLayout()
+        set(newTopSeparatorInsets) {
+            guard newTopSeparatorInsets != self.__topSeparatorInsets else { return }
+            self.__topSeparatorInsets = newTopSeparatorInsets
+            if let topSeparator: LineLayer = self._topSeparator¿ {
+                self._adjustLengthOf(
+                    separator: topSeparator, totalWidth: self.layer.frame.width, insets: newTopSeparatorInsets
+                )
+            }
         }
     }
     
@@ -204,10 +208,14 @@ private extension SeparatorCell {
     
     var _bottomSeparatorInsets: SeparatorInsets {
         get { return self.__bottomSeparatorInsets }
-        set(newBottomSeparatorInset) {
-            guard newBottomSeparatorInset != self.__bottomSeparatorInsets else { return }
-            self.__bottomSeparatorInsets = newBottomSeparatorInset
-            (self._bottomSeparator¿)?.superlayer?.setNeedsLayout()
+        set(newBottomSeparatorInsets) {
+            guard newBottomSeparatorInsets != self.__bottomSeparatorInsets else { return }
+            self.__bottomSeparatorInsets = newBottomSeparatorInsets
+            if let bottomSeparator: LineLayer = self._bottomSeparator¿ {
+                self._adjustLengthOf(
+                    separator: bottomSeparator, totalWidth: self.layer.frame.width, insets: newBottomSeparatorInsets
+                )
+            }
         }
     }
     
