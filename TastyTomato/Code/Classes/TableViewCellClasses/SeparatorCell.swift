@@ -177,10 +177,14 @@ private extension SeparatorCell {
     
     var _topSeparatorInsets: SeparatorInsets {
         get { return self.__topSeparatorInsets }
-        set(newTopSeparatorInset) {
-            guard newTopSeparatorInset != self.__topSeparatorInsets else { return }
-            self.__topSeparatorInsets = newTopSeparatorInset
-            (self._topSeparator¿)?.superlayer?.setNeedsLayout()
+        set(newTopSeparatorInsets) {
+            guard newTopSeparatorInsets != self.__topSeparatorInsets else { return }
+            self.__topSeparatorInsets = newTopSeparatorInsets
+            if let topSeparator: LineLayer = self._topSeparator¿ {
+                self._adjustLengthOf(
+                    separator: topSeparator, totalWidth: self.layer.frame.width, insets: newTopSeparatorInsets
+                )
+            }
         }
     }
     
@@ -204,10 +208,14 @@ private extension SeparatorCell {
     
     var _bottomSeparatorInsets: SeparatorInsets {
         get { return self.__bottomSeparatorInsets }
-        set(newBottomSeparatorInset) {
-            guard newBottomSeparatorInset != self.__bottomSeparatorInsets else { return }
-            self.__bottomSeparatorInsets = newBottomSeparatorInset
-            (self._bottomSeparator¿)?.superlayer?.setNeedsLayout()
+        set(newBottomSeparatorInsets) {
+            guard newBottomSeparatorInsets != self.__bottomSeparatorInsets else { return }
+            self.__bottomSeparatorInsets = newBottomSeparatorInsets
+            if let bottomSeparator: LineLayer = self._bottomSeparator¿ {
+                self._adjustLengthOf(
+                    separator: bottomSeparator, totalWidth: self.layer.frame.width, insets: newBottomSeparatorInsets
+                )
+            }
         }
     }
     
@@ -222,7 +230,7 @@ private extension SeparatorCell {
 }
 
 
-// MARK: View Lifecycle Override Implementations
+// MARK: Layout Override Implementations
 private extension SeparatorCell {
     func _layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
@@ -231,19 +239,27 @@ private extension SeparatorCell {
         let height: CGFloat = layer.frame.height
         
         if let topSeparator: LineLayer = self._topSeparator¿ {
-            let insets: SeparatorInsets = self.topSeparatorInsets
-            let leftInset: CGFloat = insets.left
-            topSeparator.length = width - (leftInset + insets.right)
-            topSeparator.parallelPosition = leftInset
+            self._adjustLengthOf(
+                separator: topSeparator, totalWidth: width, insets: self.topSeparatorInsets
+            )
             topSeparator.orthogonalPosition = topSeparator.lineWidth / 2
         }
         
         if let bottomSeparator: LineLayer = self._bottomSeparator¿ {
-            let insets: SeparatorInsets = self.bottomSeparatorInsets
-            let leftInset: CGFloat = insets.left
-            bottomSeparator.length = width - (leftInset + insets.right)
-            bottomSeparator.parallelPosition = leftInset
+            self._adjustLengthOf(
+                separator: bottomSeparator, totalWidth: width, insets: self.bottomSeparatorInsets
+            )
             bottomSeparator.orthogonalPosition = height - (bottomSeparator.lineWidth / 2)
         }
+    }
+}
+
+
+// MARK: Helpers
+private extension SeparatorCell {
+    func _adjustLengthOf(separator: LineLayer, totalWidth: CGFloat, insets: SeparatorInsets) {
+        let leftInset: CGFloat = insets.left
+        separator.length = totalWidth - (leftInset + insets.right)
+        separator.parallelPosition = leftInset
     }
 }
