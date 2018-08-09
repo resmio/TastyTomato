@@ -22,7 +22,7 @@ public class TriangleView: UIView {
     // Required Init
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self._addTriangleMaskLayer()
+        self._init()
     }
     
     // Public Init
@@ -30,15 +30,11 @@ public class TriangleView: UIView {
         let height: CGFloat = (baseWidth / 2) * sqrt(3.0)
         let frame: CGRect = CGRect(x: 0, y: 0, width: baseWidth, height: height)
         super.init(frame: frame)
-        self._addTriangleMaskLayer()
+        self._init()
     }
-}
-
-
-// MARK: // Private
-// MARK: Implementation
-private extension TriangleView {
-    func _addTriangleMaskLayer() {
+    
+    // Common Init
+    private func _init() {
         self.layer.mask = TriangleLayer(baseWidth: self.width, height: self.height)
     }
 }
