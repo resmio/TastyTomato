@@ -19,11 +19,17 @@ public extension TriangleView {
 
 // MARK: Class Declaration
 public class TriangleView: UIView {
-    // Convenience Init
-    convenience init(baseWidth: CGFloat) {
+    // Required Init
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self._addTriangleMaskLayer()
+    }
+    
+    // Public Init
+    public init(baseWidth: CGFloat) {
         let height: CGFloat = (baseWidth / 2) * sqrt(3.0)
         let frame: CGRect = CGRect(x: 0, y: 0, width: baseWidth, height: height)
-        self.init(frame: frame)
+        super.init(frame: frame)
         self._addTriangleMaskLayer()
     }
 }
