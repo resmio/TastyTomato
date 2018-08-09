@@ -307,9 +307,9 @@ private extension RAPopoverBackgroundView {
         // This hack is needed to get rid of the default dimming/blur-shadow
         let hideShadowImageViews: Bool = !(type(of: self).dimsBackground)
         self.superview?.superview?.subviews
-            .filter({ !($0 is RAPopoverBackgroundView || $0 is RAPopoverContainerView) })
+            .filter({ !($0 is RAPopoverBackgroundView || $0 is PopoverContainerView) })
             .reduce([], { $0 + $1.subviews })
-            .filter({ !($0 is RAPopoverBackgroundView || $0 is RAPopoverContainerView) })
+            .filter({ !($0 is RAPopoverBackgroundView || $0 is PopoverContainerView) })
             .forEach({ ($0 as? UIImageView)?.isHidden = hideShadowImageViews })
     }
 }

@@ -10,23 +10,23 @@ import UIKit
 
 
 // MARK: // Internal
-// MARK: - RAPopoverPresentationDelegate
-@objc protocol RAPopoverPresentationDelegate: class {
-    @objc optional func prepareToPresent(_ popover: RAPopover)
-    @objc optional func shouldDismiss(_ popover: RAPopover) -> Bool
-    @objc optional func didDismiss(_ popover: RAPopover)
+// MARK: - PopoverPresentationDelegate
+@objc protocol PopoverPresentationDelegate: class {
+    @objc optional func prepareToPresent(_ popover: PopoverVC)
+    @objc optional func shouldDismiss(_ popover: PopoverVC) -> Bool
+    @objc optional func didDismiss(_ popover: PopoverVC)
 }
 
 
-// MARK: - RAPopoverContainerView
-class RAPopoverContainerView: UIView {}
+// MARK: - PopoverContainerView
+class PopoverContainerView: UIView {}
 
 
-// MARK: - RAPopover
+// MARK: - PopoverVC
 // MARK: Interface
-extension RAPopover {
+extension PopoverVC {
     // ReadWrite
-    var presentationDelegate: RAPopoverPresentationDelegate? {
+    var presentationDelegate: PopoverPresentationDelegate? {
         get {
             return self._presentationDelegate
         }
@@ -135,7 +135,7 @@ extension RAPopover {
 
 
 // MARK: Present / Dismiss
-@objc extension RAPopover {
+@objc extension PopoverVC {
     func present(from viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
         self._present(
             from: viewController,
@@ -147,10 +147,10 @@ extension RAPopover {
 
 
 // MARK: Class Declaration
-class RAPopover: UIViewController {
+class PopoverVC: UIViewController {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
-        fatalError("RAPopover does not support NSCoding!")
+        fatalError("PopoverVC does not support NSCoding!")
     }
     
     // Init
@@ -160,7 +160,7 @@ class RAPopover: UIViewController {
     }
     
     // Private Weak Variables
-    fileprivate weak var _presentationDelegate: RAPopoverPresentationDelegate?
+    fileprivate weak var _presentationDelegate: PopoverPresentationDelegate?
     fileprivate weak var _sourceView: UIView?
     fileprivate weak var _barButtonItem: UIBarButtonItem?
     
@@ -177,7 +177,7 @@ class RAPopover: UIViewController {
     
     // View Lifecycle Overrides
     override func loadView() {
-        self.view = RAPopoverContainerView()
+        self.view = PopoverContainerView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -193,7 +193,7 @@ class RAPopover: UIViewController {
 
 // MARK: Delegates / DataSources
 // MARK: UIPopoverPresentationControllerDelegate
-extension RAPopover: UIPopoverPresentationControllerDelegate {
+extension PopoverVC: UIPopoverPresentationControllerDelegate {
     func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
         self.presentationDelegate?.prepareToPresent?(self)
     }
@@ -210,7 +210,7 @@ extension RAPopover: UIPopoverPresentationControllerDelegate {
 
 // MARK: // Private
 // MARK: Computed Variables
-private extension RAPopover {
+private extension PopoverVC {
     var _contentView: UIView? {
         get {
             return self.__contentView
@@ -244,7 +244,7 @@ private extension RAPopover {
 
 
 // MARK: View Lifecycle Override Implementations
-private extension RAPopover {
+private extension PopoverVC {
     func _viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self._updateContentSize()
@@ -253,7 +253,7 @@ private extension RAPopover {
 
 
 // MARK: Update Content Frame
-private extension RAPopover {
+private extension PopoverVC {
     func _updateContentSize() {
         let inset: CGFloat = self.inset
         var size: CGSize = self.__contentView?.bounds.size ?? .zero
@@ -266,7 +266,7 @@ private extension RAPopover {
 
 
 // MARK: Presentation
-private extension RAPopover {
+private extension PopoverVC {
     func _present(from viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
         if let presentingViewController: UIViewController = self.presentingViewController {
             guard presentingViewController != viewController else {
