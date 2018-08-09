@@ -10,8 +10,10 @@ import UIKit
 
 
 // MARK: // Public
-// MARK: Interface
-public extension PopoverBackgroundView {
+// MARK: Class Declaration / Interface
+public class PopoverBackgroundView: UIPopoverBackgroundView {
+    // Interface
+    // (These need to be inside the class declaration, so they are properly overridable)
     class var backgroundColor: UIColor {
         get { return self._backgroundColor }
         set { self._backgroundColor = newValue }
@@ -26,11 +28,7 @@ public extension PopoverBackgroundView {
         get { return self._displaysBorderShadow }
         set { self._displaysBorderShadow = newValue }
     }
-}
-
-
-// MARK: Class Declaration / Interface
-public class PopoverBackgroundView: UIPopoverBackgroundView {
+    
     // Required Init
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
