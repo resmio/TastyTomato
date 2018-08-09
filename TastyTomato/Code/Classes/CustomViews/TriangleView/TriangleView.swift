@@ -13,7 +13,7 @@ import UIKit
 // MARK: Interface
 public extension TriangleView {
     public func trianglePath() -> CGPath {
-        return self._trianglePath()
+        return (self.layer.mask as! CAShapeLayer).path!
     }
 }
 
@@ -40,10 +40,5 @@ public class TriangleView: UIView {
 private extension TriangleView {
     func _addTriangleMaskLayer() {
         self.layer.mask = TriangleLayer(baseWidth: self.width, height: self.height)
-    }
-    
-    func _trianglePath() -> CGPath {
-        let triangleLayer: CAShapeLayer = self.layer.mask as! CAShapeLayer
-        return triangleLayer.path!
     }
 }
