@@ -18,7 +18,7 @@ public extension TriangleView {
 }
 
 // MARK: Class Declaration
-open class TriangleView: UIView {
+public class TriangleView: UIView {
     // Convenience Init
     convenience init(baseWidth: CGFloat) {
         let height: CGFloat = (baseWidth / 2) * sqrt(3.0)
