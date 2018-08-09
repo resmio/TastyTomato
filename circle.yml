@@ -39,12 +39,12 @@ jobs:
       ## Install bundle (cache-wrapped)
       - restore_cache:
           keys:
-            - v3-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - v3-bundle-cache-{{ .Branch }}
-            - v3-bundle-cache
+            - v4-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - v4-bundle-cache-{{ .Branch }}
+            - v4-bundle-cache
       - run: bundle install
       - save_cache:
-          key: v3-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: v4-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
             # This is basically GEM_HOME, hardcoded.
             # It MUST be updated if the ruby version changes!
@@ -58,12 +58,12 @@ jobs:
       ## Install pods (cache-wrapped)
       - restore_cache:
           keys:
-            - v3-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
-            - v3-pod-cache-{{ .Branch }}
-            - v3-pod-cache
+            - v4-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
+            - v4-pod-cache-{{ .Branch }}
+            - v4-pod-cache
       - run: bundle exec pod install
       - save_cache:
-          key: v3-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
+          key: v4-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
           paths:
             - ./Pods
 
