@@ -93,6 +93,7 @@
 		F128D132603E4E0CE74EC979474A6F60 /* BookingStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */; };
 		F2E74DE0C5E277FAC2E75CCC8984885B /* UIImage (Named).swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1F525CF3F06186D126ECB7A005615 /* UIImage (Named).swift */; };
 		F3F0485D7B95F9B516AEC11BC8F5FB46 /* BundleHelper_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1032762F44E9AFAAC244949B1E9E97 /* BundleHelper_.swift */; };
+		F64CC5064E882669643A47F8D225BDE4 /* PopoverBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40311564990624D15082A8AED7FA68 /* PopoverBackgroundView.swift */; };
 		F7363F8CD1B8E2BF8206ED43F350E8EF /* UIView (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */; };
 		FEDE5B67B4C74086E15CA7BCAA26A666 /* CGRect (LeftRightTopBottomCenter).swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C581522222734865A3403552E044DA /* CGRect (LeftRightTopBottomCenter).swift */; };
 /* End PBXBuildFile section */
@@ -158,6 +159,7 @@
 		8A98E8296B3BD2970706F8D3BE1F63CB /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		8CB15454677793E311B1E258952332E7 /* UIView (Centering).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (Centering).swift"; sourceTree = "<group>"; };
 		8E24467D4568DC50711B01B3FBCD8958 /* CGFloat (Int).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat (Int).swift"; sourceTree = "<group>"; };
+		8F40311564990624D15082A8AED7FA68 /* PopoverBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverBackgroundView.swift; sourceTree = "<group>"; };
 		91C532ECB5C7CC6DE8FAAAD3F465DEAE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		930AD36178D8D1DE2BBCFC79532B52C2 /* CalendarDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDaysView.swift; sourceTree = "<group>"; };
 		94154F1BD684F2C672C76A4BFDB379C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 		CB8F35633CB70D91FEAA7E115E65CFB8 /* PopoverVC */ = {
 			isa = PBXGroup;
 			children = (
+				8F40311564990624D15082A8AED7FA68 /* PopoverBackgroundView.swift */,
 				F8F7ECA2CCD1B119B66749232E9C80B8 /* PopoverVC.swift */,
 			);
 			path = PopoverVC;
@@ -1026,6 +1029,7 @@
 				2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */,
 				B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */,
 				26C9967D3E82CB12CD88A26329600F6E /* NSL_.swift in Sources */,
+				F64CC5064E882669643A47F8D225BDE4 /* PopoverBackgroundView.swift in Sources */,
 				14BDBD38F1A9AE62967730F36B20B99C /* PopoverVC.swift in Sources */,
 				D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */,
 				9BDC043C11EE63333651DFC6882AE8E4 /* RootViewController.swift in Sources */,
