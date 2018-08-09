@@ -12,6 +12,7 @@
 		07D9391000BFA486E44C4497A1788C6A /* CGSize (Scaled).swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E0F301A67734A74C63533E21FEEDF /* CGSize (Scaled).swift */; };
 		0A9100AA8AD8E4B0E7367732D970B17A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905A0D02FB847E86970E50B1768AC71 /* TagView.swift */; };
 		13BFB81E9AE9A8BC5760E75496D1DFFC /* UIView (Centering).swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB15454677793E311B1E258952332E7 /* UIView (Centering).swift */; };
+		14BDBD38F1A9AE62967730F36B20B99C /* PopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F7ECA2CCD1B119B66749232E9C80B8 /* PopoverVC.swift */; };
 		19C92CD4A59B6B157BF3C003069DDC68 /* Pods_TastyTomatoAbstract_TastyTomatoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABA286658F68C0C07202547FFEF1BC7 /* Pods_TastyTomatoAbstract_TastyTomatoTests.framework */; };
 		1D182D1BB45EB8B648582A87B8CC2067 /* CGFloat (UInt).swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A54FF5C0D3BA210866F5B407D653FBA /* CGFloat (UInt).swift */; };
 		1EB50168F0EB699E438CBBA6F754ABC7 /* LineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2EE287EFE2E608FE430542E60BF82 /* LineLayer.swift */; };
@@ -203,6 +204,7 @@
 		EE11E8FF7E9AAEC21DBE2CC38CF76534 /* UIView (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		F10CB374E45CF24A4F503F48FD457BD8 /* Pods-TastyTomatoAbstract-TastyTomato.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomato.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato.debug.xcconfig"; sourceTree = "<group>"; };
 		F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (RenderingModes).swift"; sourceTree = "<group>"; };
+		F8F7ECA2CCD1B119B66749232E9C80B8 /* PopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVC.swift; sourceTree = "<group>"; };
 		FCEA541EFBE3319317C372C2703205D1 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -505,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				D6F531DA408846DA32C79A2C5C4A7CB1 /* CalendarVC */,
+				CB8F35633CB70D91FEAA7E115E65CFB8 /* PopoverVC */,
 				18C74A3382403F43E141517ABB23D673 /* RootViewController */,
 			);
 			path = ViewControllerClasses;
@@ -677,6 +680,14 @@
 				9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */,
 			);
 			path = UIColor;
+			sourceTree = "<group>";
+		};
+		CB8F35633CB70D91FEAA7E115E65CFB8 /* PopoverVC */ = {
+			isa = PBXGroup;
+			children = (
+				F8F7ECA2CCD1B119B66749232E9C80B8 /* PopoverVC.swift */,
+			);
+			path = PopoverVC;
 			sourceTree = "<group>";
 		};
 		CEA9ED81CA9819C760F0522AF4297510 /* NSLocalizedString */ = {
@@ -1015,6 +1026,7 @@
 				2019E88F5EDA689599E01366C30087AD /* MiscIcon.swift in Sources */,
 				B40D853AD52ACB98F1C2D0D60A988561 /* MiscImage.swift in Sources */,
 				26C9967D3E82CB12CD88A26329600F6E /* NSL_.swift in Sources */,
+				14BDBD38F1A9AE62967730F36B20B99C /* PopoverVC.swift in Sources */,
 				D5F5502E31B92D0F0FF7A0D43E8ED8CD /* ResmioLogo.swift in Sources */,
 				9BDC043C11EE63333651DFC6882AE8E4 /* RootViewController.swift in Sources */,
 				D2804EE8F777DFA97D1E5632AF6D9238 /* SeparatorCell.swift in Sources */,
