@@ -9,107 +9,97 @@
 import UIKit
 
 
-// MARK: Class Declaration / Interface
-class RAPopoverBackgroundView: UIPopoverBackgroundView {
-    // Interface
+// MARK: // Public
+// MARK: Interface
+public extension RAPopoverBackgroundView {
     class var backgroundColor: UIColor {
-        get {
-            return self._backgroundColor
-        }
-        set(newBackgroundColor) {
-            self._backgroundColor = newBackgroundColor
-        }
+        get { return self._backgroundColor }
+        set { self._backgroundColor = newValue }
     }
     
     class var dimsBackground: Bool {
-        get {
-            return self._dimsBackground
-        }
-        set(newDimsBackground) {
-            self._dimsBackground = newDimsBackground
-        }
+        get { return self._dimsBackground }
+        set { self._dimsBackground = newValue }
     }
     
     class var displaysBorderShadow: Bool {
-        get {
-            return self._displaysBorderShadow
-        }
-        set(newDisplaysBorderShadow) {
-            self._displaysBorderShadow = newDisplaysBorderShadow
-        }
+        get { return self._displaysBorderShadow }
+        set { self._displaysBorderShadow = newValue }
     }
-    
+}
+
+
+// MARK: Class Declaration / Interface
+public class RAPopoverBackgroundView: UIPopoverBackgroundView {
     // Required Init
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("RAPopoverBackgroundView does not support NSCoding!")
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self._init()
     }
     
     // Override Init
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self._init()
+    }
+    
+    // Common Init
+    private func _init() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self._addSubviews()
     }
     
     // Private Static Constants
-    fileprivate static let _defaultArrowBase: CGFloat = 18
-    fileprivate static let _defaultContentViewInsets: UIEdgeInsets = .zero
+    private static let _defaultArrowBase: CGFloat = 18
+    private static let _defaultContentViewInsets: UIEdgeInsets = .zero
     
     // Private Static Variables
-    fileprivate static var _backgroundColor: UIColor = .white
-    fileprivate static var _dimsBackground: Bool = true
-    fileprivate static var _displaysBorderShadow: Bool = true
+    private static var _backgroundColor: UIColor = .white
+    private static var _dimsBackground: Bool = true
+    private static var _displaysBorderShadow: Bool = true
     
     // Private Lazy Variables
-    fileprivate lazy var _borderView: UIView = self._createBorderView()
-    fileprivate lazy var _arrowView: TriangleView = self._createArrowView()
+    private lazy var _borderView: UIView = self._createBorderView()
+    private lazy var _arrowView: TriangleView = self._createArrowView()
     
     // Private Variables
-    fileprivate var __arrowOffset: CGFloat = 0
-    fileprivate var __arrowDirection: UIPopoverArrowDirection = .any
-    fileprivate var _borderShadowView: UIView?
-    fileprivate var _arrowShadowView: TriangleView?
+    private var __arrowOffset: CGFloat = 0
+    private var __arrowDirection: UIPopoverArrowDirection = .any
+    private var _borderShadowView: UIView?
+    private var _arrowShadowView: TriangleView?
     
     
     // Static Overrides
-    override static func arrowBase() -> CGFloat {
+    override public static func arrowBase() -> CGFloat {
         return self._defaultArrowBase
     }
     
-    override static func arrowHeight() -> CGFloat {
+    override public static func arrowHeight() -> CGFloat {
         return self._arrowHeight()
     }
     
-    override static func contentViewInsets() -> UIEdgeInsets {
+    override public static func contentViewInsets() -> UIEdgeInsets {
         return self._defaultContentViewInsets
     }
     
-    override class var wantsDefaultContentAppearance: Bool {
+    override public class var wantsDefaultContentAppearance: Bool {
         return false
     }
     
     // Layout Overrides
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         self._layoutSubviews()
     }
     
-    override var arrowOffset: CGFloat {
-        get {
-            return self._arrowOffset
-        }
-        set(newArrowOffset) {
-            self._arrowOffset = newArrowOffset
-        }
+    override public var arrowOffset: CGFloat {
+        get { return self._arrowOffset }
+        set { self._arrowOffset = newValue }
     }
     
-    override var arrowDirection: UIPopoverArrowDirection {
-        get {
-            return self._arrowDirection
-        }
-        set(newArrowDirection) {
-            self._arrowDirection = newArrowDirection
-        }
+    override public var arrowDirection: UIPopoverArrowDirection {
+        get { return self._arrowDirection }
+        set { self._arrowDirection = newValue }
     }
 }
 
@@ -158,9 +148,7 @@ private extension RAPopoverBackgroundView {
 // MARK: Computed Variables
 private extension RAPopoverBackgroundView {
     var _arrowOffset: CGFloat {
-        get {
-            return self.__arrowOffset
-        }
+        get { return self.__arrowOffset }
         set(newArrowOffset) {
             guard newArrowOffset != self.__arrowOffset else { return }
             self.__arrowOffset = newArrowOffset
@@ -169,9 +157,7 @@ private extension RAPopoverBackgroundView {
     }
     
     var _arrowDirection: UIPopoverArrowDirection {
-        get {
-            return self.__arrowDirection
-        }
+        get { return self.__arrowDirection }
         set(newArrowDirection) {
             guard newArrowDirection != self.__arrowDirection else { return }
             self.__arrowDirection = newArrowDirection
