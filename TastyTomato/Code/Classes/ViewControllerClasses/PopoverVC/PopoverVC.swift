@@ -9,9 +9,9 @@
 import UIKit
 
 
-// MARK: // Internal
+// MARK: // Public
 // MARK: - PopoverPresentationDelegate
-@objc protocol PopoverPresentationDelegate: class {
+@objc public protocol PopoverPresentationDelegate: class {
     @objc optional func prepareToPresent(_ popover: PopoverVC)
     @objc optional func shouldDismiss(_ popover: PopoverVC) -> Bool
     @objc optional func didDismiss(_ popover: PopoverVC)
@@ -96,45 +96,45 @@ extension PopoverVC {
 
 
 // MARK: Class Declaration
-class PopoverVC: UIViewController {
+open class PopoverVC: UIViewController {
     // Required Init
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("PopoverVC does not support NSCoding!")
     }
     
     // Init
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
         self.modalPresentationStyle = .popover
     }
     
     // Private Weak Variables
-    fileprivate weak var _presentationDelegate: PopoverPresentationDelegate?
-    fileprivate weak var _sourceView: UIView?
-    fileprivate weak var _barButtonItem: UIBarButtonItem?
+    private weak var _presentationDelegate: PopoverPresentationDelegate?
+    private weak var _sourceView: UIView?
+    private weak var _barButtonItem: UIBarButtonItem?
     
     // Private Variables
-    fileprivate var __inset: CGFloat = 15
-    fileprivate var __contentView: UIView?
-    fileprivate var _backgroundColor: UIColor?
-    fileprivate var _sourceRect: CGRect = .zero
-    fileprivate var _permittedArrowDirections: UIPopoverArrowDirection = .any
-    fileprivate var _dimsBackground: Bool = true
-    fileprivate var _displaysBorderShadow: Bool = true
-    fileprivate var _passthroughViews: [UIView] = []
+    private var __inset: CGFloat = 15
+    private var __contentView: UIView?
+    private var _backgroundColor: UIColor?
+    private var _sourceRect: CGRect = .zero
+    private var _permittedArrowDirections: UIPopoverArrowDirection = .any
+    private var _dimsBackground: Bool = true
+    private var _displaysBorderShadow: Bool = true
+    private var _passthroughViews: [UIView] = []
     
     
     // View Lifecycle Overrides
-    override func loadView() {
+    override open func loadView() {
         self.view = PopoverContainerView()
     }
     
-    override func viewDidLayoutSubviews() {
+    override open func viewDidLayoutSubviews() {
         self._viewDidLayoutSubviews()
     }
     
     // Readonly Overridable
-    var defaultBackgroundColor: UIColor {
+    open var defaultBackgroundColor: UIColor {
         return .white
     }
 }
@@ -143,15 +143,15 @@ class PopoverVC: UIViewController {
 // MARK: Delegates / DataSources
 // MARK: UIPopoverPresentationControllerDelegate
 extension PopoverVC: UIPopoverPresentationControllerDelegate {
-    func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
+    public func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
         self.presentationDelegate?.prepareToPresent?(self)
     }
     
-    func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
+    public func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
         return self.presentationDelegate?.shouldDismiss?(self) ?? true
     }
     
-    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+    public func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
         self.presentationDelegate?.didDismiss?(self)
     }
 }
@@ -161,9 +161,7 @@ extension PopoverVC: UIPopoverPresentationControllerDelegate {
 // MARK: Computed Variables
 private extension PopoverVC {
     var _contentView: UIView? {
-        get {
-            return self.__contentView
-        }
+        get { return self.__contentView }
         set(newContentView) {
             guard newContentView != self.__contentView else { return }
             self.__contentView?.removeFromSuperview()
@@ -179,9 +177,7 @@ private extension PopoverVC {
     }
     
     var _inset: CGFloat {
-        get {
-            return self.__inset
-        }
+        get { return self.__inset }
         set(newInset) {
             guard newInset != self.__inset else { return }
             self.__inset = newInset
@@ -201,7 +197,7 @@ private extension PopoverVC {
 }
 
 
-// MARK: Update Content Frame
+// MARK: Update Content Size
 private extension PopoverVC {
     func _updateContentSize() {
         let inset: CGFloat = self.inset
@@ -236,35 +232,23 @@ private extension PopoverVC {
     private func __present(from viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
         class _BGView: RAPopoverBackgroundView {
             override class var backgroundColor: UIColor {
-                get {
-                    return self._backgroundColor
-                }
-                set(newBackgroundColor) {
-                    self._backgroundColor = newBackgroundColor
-                }
+                get { return self._backgroundColor }
+                set { self._backgroundColor = newValue }
             }
             
             override class var dimsBackground: Bool {
-                get {
-                    return self._dimsBackground
-                }
-                set(newDimsBackground) {
-                    self._dimsBackground = newDimsBackground
-                }
+                get { return self._dimsBackground }
+                set { self._dimsBackground = newValue }
             }
             
             override class var displaysBorderShadow: Bool {
-                get {
-                    return self._displaysBorderShadow
-                }
-                set(newDisplaysBorderShadow) {
-                    self._displaysBorderShadow = newDisplaysBorderShadow
-                }
+                get { return self._displaysBorderShadow }
+                set { self._displaysBorderShadow = newValue }
             }
             
-            fileprivate static var _backgroundColor: UIColor = .white
-            fileprivate static var _dimsBackground: Bool = true
-            fileprivate static var _displaysBorderShadow: Bool = true
+            private static var _backgroundColor: UIColor = .white
+            private static var _dimsBackground: Bool = true
+            private static var _displaysBorderShadow: Bool = true
         }
         
         let bgViewClass: _BGView.Type = _BGView.self
