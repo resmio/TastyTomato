@@ -88,6 +88,7 @@
 		D9D8EA86DD5DE5CE144ED010353425A3 /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172042EA77DA17224778AA7DB33B6707 /* DropDownTextField.swift */; };
 		DA4FD8E31F32DAE00AFCA3A9CE81C160 /* UIImage (ColoredRect).swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CE20B670A02E13FB4A56517F58E300 /* UIImage (ColoredRect).swift */; };
 		E120F90B264A2076BE355CC29E789218 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */; };
+		E85C0EFAFEE44EC3F728995FEC22D112 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10AC072AF5EA3C5AF959E0F07662264 /* TriangleView.swift */; };
 		EC506565538E2DB12D3DC6A51D3BE3D8 /* CalendarVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91691515EBC3E7218FB4AB8592A22B /* CalendarVCView.swift */; };
 		EE32ADFFEBCC74C2EA342C807988D3A1 /* UIWindow (SetRootViewController).swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */; };
 		F128D132603E4E0CE74EC979474A6F60 /* BookingStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */; };
@@ -192,6 +193,7 @@
 		CDDA86B00BB8C1AE6C781872E597AF28 /* UIViewController (Embedding).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController (Embedding).swift"; sourceTree = "<group>"; };
 		CE06BAB5E34D33E9205557171C73CF6C /* NSL_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSL_.swift; sourceTree = "<group>"; };
 		CF57DBBABA83CFBB3428C32BBB42514E /* CGRect (Area).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (Area).swift"; sourceTree = "<group>"; };
+		D10AC072AF5EA3C5AF959E0F07662264 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
 		D43E0F301A67734A74C63533E21FEEDF /* CGSize (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (Scaled).swift"; sourceTree = "<group>"; };
 		D4C581522222734865A3403552E044DA /* CGRect (LeftRightTopBottomCenter).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (LeftRightTopBottomCenter).swift"; sourceTree = "<group>"; };
 		DC87E38A8D37FC92DD3A64DEC8AC1796 /* ShortcutBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutBarButton.swift; sourceTree = "<group>"; };
@@ -497,6 +499,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		759AB540B6CE624A70315DEDCDF71E78 /* TriangleView */ = {
+			isa = PBXGroup;
+			children = (
+				D10AC072AF5EA3C5AF959E0F07662264 /* TriangleView.swift */,
+			);
+			path = TriangleView;
+			sourceTree = "<group>";
+		};
 		7650E3E33692C33AAC5C9D10FB39AA60 /* Logos */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +551,7 @@
 			children = (
 				1BEDC49C5806846E908D79A81A8DE686 /* ShortcutBar */,
 				C61B4C06BBC4EB775183743E5167421C /* Tags */,
+				759AB540B6CE624A70315DEDCDF71E78 /* TriangleView */,
 				23F46E8BFE01453CA2299EB51CEC1DBC /* ZoomView */,
 			);
 			path = CustomViews;
@@ -1041,6 +1052,7 @@
 				42BB16D84A350E14BE177DA60F5977A0 /* TextButton.swift in Sources */,
 				05BC178930A735A7A30733F1D5B3E045 /* TextButtons.swift in Sources */,
 				48D0397391009A24265A5FEE06D16F89 /* TriangleLayer.swift in Sources */,
+				E85C0EFAFEE44EC3F728995FEC22D112 /* TriangleView.swift in Sources */,
 				5E455E4E43365F23CC167998F2559D7C /* UIBarButtonItem (Factories).swift in Sources */,
 				7C8AA1C87BF89C4D6142967CA426F23E /* UIButton (Color).swift in Sources */,
 				9EDC676FBB4296DB4C630B5E78379EBE /* UIButton (Color_).swift in Sources */,
