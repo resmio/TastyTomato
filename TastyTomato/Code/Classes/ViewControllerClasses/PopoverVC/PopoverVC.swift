@@ -26,117 +26,66 @@ class PopoverContainerView: UIView {}
 // MARK: Interface
 extension PopoverVC {
     // ReadWrite
-    var presentationDelegate: PopoverPresentationDelegate? {
-        get {
-            return self._presentationDelegate
-        }
-        set(newPresentationDelegate) {
-            self._presentationDelegate = newPresentationDelegate
-        }
+    public var presentationDelegate: PopoverPresentationDelegate? {
+        get { return self._presentationDelegate }
+        set { self._presentationDelegate = newValue }
     }
     
-    @objc var sourceView: UIView? {
-        get {
-            return self._sourceView
-        }
-        set(newSourceView) {
-            self._sourceView = newSourceView
-        }
+    @objc public var sourceView: UIView? {
+        get { return self._sourceView }
+        set { self._sourceView = newValue }
     }
     
-    @objc var sourceRect: CGRect {
-        get {
-            return self._sourceRect
-        }
-        set(newSourceRect) {
-            self._sourceRect = newSourceRect
-        }
+    @objc public var sourceRect: CGRect {
+        get { return self._sourceRect }
+        set { self._sourceRect = newValue }
     }
     
-    @objc var barButtonItem: UIBarButtonItem? {
-        get {
-            return self._barButtonItem
-        }
-        set(newBarButtonItem) {
-            self._barButtonItem = newBarButtonItem
-        }
+    @objc public var barButtonItem: UIBarButtonItem? {
+        get { return self._barButtonItem }
+        set { self._barButtonItem = newValue }
     }
     
-    @objc var permittedArrowDirections: UIPopoverArrowDirection {
-        get {
-            return self._permittedArrowDirections
-        }
-        set(newPermittedArrowDirections) {
-            self._permittedArrowDirections = newPermittedArrowDirections
-        }
+    @objc public var permittedArrowDirections: UIPopoverArrowDirection {
+        get { return self._permittedArrowDirections }
+        set { self._permittedArrowDirections = newValue }
     }
     
-    var inset: CGFloat {
-        get {
-            return self._inset
-        }
-        set(newInset) {
-            self._inset = newInset
-        }
+    public var inset: CGFloat {
+        get { return self._inset }
+        set{ self._inset = newValue }
     }
     
-    var contentView: UIView? {
-        get {
-            return self._contentView
-        }
-        set(newContentView) {
-            self._contentView = newContentView
-        }
+    public var contentView: UIView? {
+        get { return self._contentView }
+        set { self._contentView = newValue }
     }
     
-    var backgroundColor: UIColor? {
-        get {
-            return self._backgroundColor
-        }
-        set(newBackgroundColor) {
-            self._backgroundColor = newBackgroundColor
-        }
+    public var backgroundColor: UIColor? {
+        get { return self._backgroundColor }
+        set { self._backgroundColor = newValue }
     }
     
-    var dimsBackground: Bool {
-        get {
-            return self._dimsBackground
-        }
-        set(newDimsBackground) {
-            self._dimsBackground = newDimsBackground
-        }
+    public var dimsBackground: Bool {
+        get { return self._dimsBackground }
+        set { self._dimsBackground = newValue }
     }
     
-    var displaysBorderShadow: Bool {
-        get {
-            return self._displaysBorderShadow
-        }
-        set(newDisplaysBorderShadow) {
-            self._displaysBorderShadow = newDisplaysBorderShadow
-        }
+    public var displaysBorderShadow: Bool {
+        get { return self._displaysBorderShadow }
+        set { self._displaysBorderShadow = newValue }
     }
     
-    var passthroughViews: [UIView] {
-        get {
-            return self._passthroughViews
-        }
-        set(newPassthroughViews) {
-            self._passthroughViews = newPassthroughViews
-        }
+    public var passthroughViews: [UIView] {
+        get { return self._passthroughViews }
+        set { self._passthroughViews = newValue }
     }
-    
-    // To be used by subclasses when they change
-    // the size of the contentView without setting it
-    // See RAOfflinePopover for an example
-    func updateContentSize() {
+
+    public func updateContentSize() {
         self._updateContentSize()
     }
-}
-
-
-// MARK: Present / Dismiss
-@objc extension PopoverVC {
-    func present(from viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
+    
+    public func present(from viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
         self._present(
             from: viewController,
             animated: animated,
