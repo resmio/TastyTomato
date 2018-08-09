@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 // MARK: Interface
-public extension RAPopoverBackgroundView {
+public extension PopoverBackgroundView {
     class var backgroundColor: UIColor {
         get { return self._backgroundColor }
         set { self._backgroundColor = newValue }
@@ -30,7 +30,7 @@ public extension RAPopoverBackgroundView {
 
 
 // MARK: Class Declaration / Interface
-public class RAPopoverBackgroundView: UIPopoverBackgroundView {
+public class PopoverBackgroundView: UIPopoverBackgroundView {
     // Required Init
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -106,7 +106,7 @@ public class RAPopoverBackgroundView: UIPopoverBackgroundView {
 
 // MARK: // Private
 // MARK: Lazy Variable Creation
-private extension RAPopoverBackgroundView {
+private extension PopoverBackgroundView {
     func _createBorderView() -> UIView {
         let borderView: UIView = UIView()
         borderView.backgroundColor = type(of: self).backgroundColor
@@ -146,7 +146,7 @@ private extension RAPopoverBackgroundView {
 
 
 // MARK: Computed Variables
-private extension RAPopoverBackgroundView {
+private extension PopoverBackgroundView {
     var _arrowOffset: CGFloat {
         get { return self.__arrowOffset }
         set(newArrowOffset) {
@@ -168,7 +168,7 @@ private extension RAPopoverBackgroundView {
 
 
 // MARK: Arrow Shadow Helpers
-private extension RAPopoverBackgroundView {
+private extension PopoverBackgroundView {
     class func _arrowHeight() -> CGFloat {
         return ((self.arrowBase() / 2) * sqrt(CGFloat(3.0))) - 1
     }
@@ -184,7 +184,7 @@ private extension RAPopoverBackgroundView {
 
 
 // MARK: Layout Override Implementations
-private extension RAPopoverBackgroundView {
+private extension PopoverBackgroundView {
     func _layoutSubviews() {
         // No super-call here, so we get rid of the
         // default shadow and can create our own
@@ -293,16 +293,16 @@ private extension RAPopoverBackgroundView {
         // This hack is needed to get rid of the default dimming/blur-shadow
         let hideShadowImageViews: Bool = !(type(of: self).dimsBackground)
         self.superview?.superview?.subviews
-            .filter({ !($0 is RAPopoverBackgroundView || $0 is PopoverContainerView) })
+            .filter({ !($0 is PopoverBackgroundView || $0 is PopoverContainerView) })
             .reduce([], { $0 + $1.subviews })
-            .filter({ !($0 is RAPopoverBackgroundView || $0 is PopoverContainerView) })
+            .filter({ !($0 is PopoverBackgroundView || $0 is PopoverContainerView) })
             .forEach({ ($0 as? UIImageView)?.isHidden = hideShadowImageViews })
     }
 }
 
 
 // MARK: Add Subviews
-private extension RAPopoverBackgroundView {
+private extension PopoverBackgroundView {
     func _addSubviews() {
         self.addSubview(self._arrowView)
         self.addSubview(self._borderView)

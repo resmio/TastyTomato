@@ -230,7 +230,7 @@ private extension PopoverVC {
     
     // Private Helpers
     private func __present(from viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
-        class _BGView: RAPopoverBackgroundView {
+        class _BGView: PopoverBackgroundView {
             override class var backgroundColor: UIColor {
                 get { return self._backgroundColor }
                 set { self._backgroundColor = newValue }
