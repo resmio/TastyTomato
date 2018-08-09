@@ -63,13 +63,13 @@ class RAPopoverBackgroundView: UIPopoverBackgroundView {
     
     // Private Lazy Variables
     fileprivate lazy var _borderView: UIView = self._createBorderView()
-    fileprivate lazy var _arrowView: RATriangleView = self._createArrowView()
+    fileprivate lazy var _arrowView: TriangleView = self._createArrowView()
     
     // Private Variables
     fileprivate var __arrowOffset: CGFloat = 0
     fileprivate var __arrowDirection: UIPopoverArrowDirection = .any
     fileprivate var _borderShadowView: UIView?
-    fileprivate var _arrowShadowView: RATriangleView?
+    fileprivate var _arrowShadowView: TriangleView?
     
     
     // Static Overrides
@@ -123,8 +123,8 @@ private extension RAPopoverBackgroundView {
         return borderView
     }
     
-    func _createArrowView() -> RATriangleView {
-        let arrowView: RATriangleView = RATriangleView(baseWidth: type(of: self).arrowBase())
+    func _createArrowView() -> TriangleView {
+        let arrowView: TriangleView = TriangleView(baseWidth: type(of: self).arrowBase())
         arrowView.backgroundColor = type(of: self).backgroundColor
         return arrowView
     }
@@ -141,8 +141,8 @@ private extension RAPopoverBackgroundView {
         return borderShadowView
     }
     
-    func _createArrowShadowView() -> RATriangleView {
-        let arrowShadowView: RATriangleView = RATriangleView(baseWidth: type(of: self)._arrowShadowBase())
+    func _createArrowShadowView() -> TriangleView {
+        let arrowShadowView: TriangleView = TriangleView(baseWidth: type(of: self)._arrowShadowBase())
         let layer: CALayer = arrowShadowView.layer
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = .zero
@@ -263,7 +263,7 @@ private extension RAPopoverBackgroundView {
             height: borderHeight - 2
         )
         
-        let arrowView: RATriangleView = self._arrowView
+        let arrowView: TriangleView = self._arrowView
         arrowView.isHidden = arrowShouldBeHidden
         arrowView.origin = CGPoint(x: arrowX, y: arrowY)
         arrowView.transform = rotation
@@ -274,7 +274,7 @@ private extension RAPopoverBackgroundView {
             self.sendSubview(toBack: borderShadowView)
         }
         
-        if let arrowShadowView: RATriangleView = self._arrowShadowView {
+        if let arrowShadowView: TriangleView = self._arrowShadowView {
             let arrowShadowBase: CGFloat = type(of: self)._arrowShadowBase()
             let arrowShadowHeight: CGFloat = type(of: self)._arrowShadowHeight()
             var arrowShadowX: CGFloat = 0
@@ -326,7 +326,7 @@ private extension RAPopoverBackgroundView {
             self._borderShadowView = borderShadowView
             self.addSubview(borderShadowView)
             
-            let arrowShadowView: RATriangleView = self._createArrowShadowView()
+            let arrowShadowView: TriangleView = self._createArrowShadowView()
             self._arrowShadowView = arrowShadowView
             self.addSubview(arrowShadowView)
         }
