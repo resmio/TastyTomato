@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SignificantSpices
 
 
 // MARK: // Public
@@ -60,12 +61,12 @@ public class PopoverBackgroundView: UIPopoverBackgroundView {
     // Private Lazy Variables
     private lazy var _borderView: UIView = self._createBorderView()
     private lazy var _arrowView: TriangleView = self._createArrowView()
+    private lazy var _borderShadowView: ALO<UIView> = ALO(self._createBorderShadowView)
+    private lazy var _arrowShadowView: ALO<TriangleView> = ALO(self._createArrowShadowView)
     
     // Private Variables
     private var __arrowOffset: CGFloat = 0
     private var __arrowDirection: UIPopoverArrowDirection = .any
-    private var _borderShadowView: UIView?
-    private var _arrowShadowView: TriangleView?
     
     
     // Static Overrides
@@ -252,13 +253,13 @@ private extension PopoverBackgroundView {
         arrowView.origin = CGPoint(x: arrowX, y: arrowY)
         arrowView.transform = rotation
         
-        if let borderShadowView: UIView = self._borderShadowView {
+        if let borderShadowView: UIView = self._borderShadowView¿ {
             borderShadowView.frame = CGRect(x: borderX, y: borderY, width: borderWidth, height: borderHeight)
             borderShadowView.layer.shadowPath = UIBezierPath(rect: borderShadowView.layer.bounds).cgPath
             self.sendSubview(toBack: borderShadowView)
         }
         
-        if let arrowShadowView: TriangleView = self._arrowShadowView {
+        if let arrowShadowView: TriangleView = self._arrowShadowView¿ {
             let arrowShadowBase: CGFloat = type(of: self)._arrowShadowBase()
             let arrowShadowHeight: CGFloat = type(of: self)._arrowShadowHeight()
             var arrowShadowX: CGFloat = 0
@@ -306,13 +307,8 @@ private extension PopoverBackgroundView {
         self.addSubview(self._borderView)
         
         if type(of: self).displaysBorderShadow {
-            let borderShadowView: UIView = self._createBorderShadowView()
-            self._borderShadowView = borderShadowView
-            self.addSubview(borderShadowView)
-            
-            let arrowShadowView: TriangleView = self._createArrowShadowView()
-            self._arrowShadowView = arrowShadowView
-            self.addSubview(arrowShadowView)
+            self.addSubview(self._borderShadowView¡)
+            self.addSubview(self._arrowShadowView¡)
         }
     }
 }
