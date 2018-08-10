@@ -264,6 +264,10 @@ private extension PopoverVC {
         bgViewClass.displaysBorderShadow = self.displaysBorderShadow
         
         let cont: UIPopoverPresentationController? = self.popoverPresentationController
+        
+        // Right now, these are only set initially.
+        // Should it be possible to change some or all
+        // of them while the popover is being presented?
         cont?.delegate = self
         cont?.popoverBackgroundViewClass = bgViewClass
         cont?.sourceView = self.sourceView ?? viewController.view
