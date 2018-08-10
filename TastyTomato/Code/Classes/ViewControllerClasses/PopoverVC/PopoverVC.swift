@@ -86,7 +86,7 @@ extension PopoverVC {
         self._updateContentSize()
     }
     
-    public func present(from viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
+    @objc public func present(from viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
         self._present(
             from: viewController,
             animated: animated,
@@ -237,7 +237,7 @@ private extension PopoverVC {
     
     // Private Helpers
     private func __present(from viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
-        class _BGView: PopoverBackgroundView_ {
+        class _BGView: PopoverBackgroundView {
             override class var backgroundColor: UIColor {
                 get { return self._backgroundColor }
                 set { self._backgroundColor = newValue }
