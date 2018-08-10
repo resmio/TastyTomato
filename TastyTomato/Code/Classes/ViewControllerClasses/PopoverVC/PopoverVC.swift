@@ -86,6 +86,10 @@ extension PopoverVC {
         self._updateContentSize()
     }
     
+    public func dismiss(animated: Bool = true, honorShouldDismiss: Bool = false, callDidDismiss: Bool = false, completion: (() -> Void)? = nil) {
+        self._dismiss(animated: animated, honorShouldDismiss: honorShouldDismiss, callDidDismiss: callDidDismiss, completion: completion)
+    }
+    
     @objc public func present(from viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
         self._present(
             from: viewController,
@@ -155,7 +159,7 @@ extension PopoverVC: UIPopoverPresentationControllerDelegate {
     }
     
     public func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
-        return self.presentationDelegate?.shouldDismiss?(self) ?? true
+        return self._shouldBeDismissed()
     }
     
     public func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
@@ -200,6 +204,14 @@ private extension PopoverVC {
     func _viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self._updateContentSize()
+    }
+}
+
+
+// MARK: Delegate Forwarding
+private extension PopoverVC {
+    func _shouldBeDismissed() -> Bool {
+        return self.presentationDelegate?.shouldDismiss?(self) ?? true
     }
 }
 
@@ -280,3 +292,21 @@ private extension PopoverVC {
     }
 }
 
+
+// MARK: Dismissal
+private extension PopoverVC {
+    func _dismiss(animated: Bool, honorShouldDismiss: Bool, callDidDismiss: Bool, completion: (() -> Void)?) {
+        if honorShouldDismiss && !self._shouldBeDismissed() {
+            return
+        }
+        
+        if callDidDismiss {
+            self.dismiss(animated: animated) {
+                self.presentationDelegate?.didDismiss?(self)
+                completion?()
+            }
+        } else {
+            self.dismiss(animated: animated, completion: completion)
+        }
+    }
+}
