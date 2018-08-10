@@ -1,5 +1,5 @@
 //
-//  PopoverBackgroundView.swift
+//  PopoverBackgroundView_.swift
 //  TastyTomato
 //
 //  Created by Jan Nash (resmio) on 09.08.18.
@@ -10,9 +10,9 @@ import UIKit
 import SignificantSpices
 
 
-// MARK: // Public
-// MARK: Class Declaration / Interface
-public class PopoverBackgroundView: UIPopoverBackgroundView {
+// MARK: // Internal
+// MARK: Interface / Class Declaration
+class PopoverBackgroundView_: UIPopoverBackgroundView {
     // Interface
     // (These need to be inside the class declaration, so they are properly overridable)
     class var backgroundColor: UIColor {
@@ -31,7 +31,7 @@ public class PopoverBackgroundView: UIPopoverBackgroundView {
     }
     
     // Required Init
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self._init()
     }
@@ -70,33 +70,33 @@ public class PopoverBackgroundView: UIPopoverBackgroundView {
     
     
     // Static Overrides
-    override public static func arrowBase() -> CGFloat {
+    override static func arrowBase() -> CGFloat {
         return self._defaultArrowBase
     }
     
-    override public static func arrowHeight() -> CGFloat {
+    override static func arrowHeight() -> CGFloat {
         return self._arrowHeight()
     }
     
-    override public static func contentViewInsets() -> UIEdgeInsets {
+    override static func contentViewInsets() -> UIEdgeInsets {
         return self._defaultContentViewInsets
     }
     
-    override public class var wantsDefaultContentAppearance: Bool {
+    override class var wantsDefaultContentAppearance: Bool {
         return false
     }
     
     // Layout Overrides
-    override public func layoutSubviews() {
+    override func layoutSubviews() {
         self._layoutSubviews()
     }
     
-    override public var arrowOffset: CGFloat {
+    override var arrowOffset: CGFloat {
         get { return self._arrowOffset }
         set { self._arrowOffset = newValue }
     }
     
-    override public var arrowDirection: UIPopoverArrowDirection {
+    override var arrowDirection: UIPopoverArrowDirection {
         get { return self._arrowDirection }
         set { self._arrowDirection = newValue }
     }
@@ -105,7 +105,7 @@ public class PopoverBackgroundView: UIPopoverBackgroundView {
 
 // MARK: // Private
 // MARK: Lazy Variable Creation
-private extension PopoverBackgroundView {
+private extension PopoverBackgroundView_ {
     func _createBorderView() -> UIView {
         let borderView: UIView = UIView()
         borderView.backgroundColor = type(of: self).backgroundColor
@@ -145,7 +145,7 @@ private extension PopoverBackgroundView {
 
 
 // MARK: Computed Variables
-private extension PopoverBackgroundView {
+private extension PopoverBackgroundView_ {
     var _arrowOffset: CGFloat {
         get { return self.__arrowOffset }
         set(newArrowOffset) {
@@ -167,7 +167,7 @@ private extension PopoverBackgroundView {
 
 
 // MARK: Arrow Shadow Helpers
-private extension PopoverBackgroundView {
+private extension PopoverBackgroundView_ {
     class func _arrowHeight() -> CGFloat {
         return ((self.arrowBase() / 2) * sqrt(CGFloat(3.0))) - 1
     }
@@ -183,7 +183,7 @@ private extension PopoverBackgroundView {
 
 
 // MARK: Layout Override Implementations
-private extension PopoverBackgroundView {
+private extension PopoverBackgroundView_ {
     func _layoutSubviews() {
         // No super-call here, so we get rid of the
         // default shadow and can create our own
@@ -292,16 +292,16 @@ private extension PopoverBackgroundView {
         // This hack is needed to get rid of the default dimming/blur-shadow
         let hideShadowImageViews: Bool = !(type(of: self).dimsBackground)
         self.superview?.superview?.subviews
-            .filter({ !($0 is PopoverBackgroundView || $0 is PopoverContainerView) })
+            .filter({ !($0 is PopoverBackgroundView_ || $0 is PopoverContainerView) })
             .reduce([], { $0 + $1.subviews })
-            .filter({ !($0 is PopoverBackgroundView || $0 is PopoverContainerView) })
+            .filter({ !($0 is PopoverBackgroundView_ || $0 is PopoverContainerView) })
             .forEach({ ($0 as? UIImageView)?.isHidden = hideShadowImageViews })
     }
 }
 
 
 // MARK: Add Subviews
-private extension PopoverBackgroundView {
+private extension PopoverBackgroundView_ {
     func _addSubviews() {
         self.addSubview(self._arrowView)
         self.addSubview(self._borderView)
