@@ -81,6 +81,7 @@ extension PopoverVC {
         set { self._passthroughViews = newValue }
     }
 
+    // Functions
     public func updateContentSize() {
         self._updateContentSize()
     }
@@ -99,12 +100,18 @@ extension PopoverVC {
 open class PopoverVC: UIViewController {
     // Required Init
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("PopoverVC does not support NSCoding!")
+        super.init(coder: aDecoder)
+        self._init()
     }
     
     // Init
     public init() {
         super.init(nibName: nil, bundle: nil)
+        self._init()
+    }
+    
+    // Common Init
+    private func _init() {
         self.modalPresentationStyle = .popover
     }
     
