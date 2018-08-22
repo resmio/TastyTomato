@@ -193,7 +193,7 @@ private extension PopoverVC {
             guard newInset != self.__inset else { return }
             self.__inset = newInset
             self.contentView?.origin = CGPoint(x: newInset, y: newInset)
-            self._updateContentSize()
+            self.updateContentSize()
         }
     }
 }
@@ -203,7 +203,7 @@ private extension PopoverVC {
 private extension PopoverVC {
     func _viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self._updateContentSize()
+        self.updateContentSize()
     }
 }
 
