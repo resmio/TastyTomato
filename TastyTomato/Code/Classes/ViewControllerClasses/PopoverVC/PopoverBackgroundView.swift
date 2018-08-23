@@ -292,10 +292,13 @@ private extension PopoverBackgroundView {
         // This hack is needed to get rid of the default dimming/blur-shadow
         let hideShadowImageViews: Bool = !(type(of: self).dimsBackground)
         self.superview?.superview?.subviews
-            .filter({ !($0 is PopoverBackgroundView || $0 is PopoverContainerView) })
-            .reduce([], { $0 + $1.subviews })
-            .filter({ !($0 is PopoverBackgroundView || $0 is PopoverContainerView) })
+            .filter(self._isNotPopoverBackgroundOrContainerView)
+            .reduce([], { $0 + $1.subviews.filter(self._isNotPopoverBackgroundOrContainerView) })
             .forEach({ ($0 as? UIImageView)?.isHidden = hideShadowImageViews })
+    }
+    
+    private func _isNotPopoverBackgroundOrContainerView(_ view: UIView) -> Bool {
+        return !(view is PopoverBackgroundView || view is PopoverContainerView)
     }
 }
 

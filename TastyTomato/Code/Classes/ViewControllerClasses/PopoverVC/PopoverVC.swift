@@ -23,6 +23,18 @@ class PopoverContainerView: UIView {}
 
 
 // MARK: - PopoverVC
+// MARK: ObjC Extrawurst
+extension PopoverVC {
+    @objc public func setSourceRect(_ sourceRect: CGRect) {
+        self.sourceRect = sourceRect
+    }
+    
+    @objc public func unsetSourceRect() {
+        self.sourceRect = nil
+    }
+}
+
+
 // MARK: Interface
 extension PopoverVC {
     // ReadWrite
@@ -36,7 +48,7 @@ extension PopoverVC {
         set { self._sourceView = newValue }
     }
     
-    @objc public var sourceRect: CGRect {
+    public var sourceRect: CGRect? {
         get { return self._sourceRect }
         set { self._sourceRect = newValue }
     }
@@ -120,15 +132,15 @@ open class PopoverVC: UIViewController {
     }
     
     // Private Weak Variables
+    private weak var __sourceView: UIView?
     private weak var _presentationDelegate: PopoverPresentationDelegate?
-    private weak var _sourceView: UIView?
     private weak var _barButtonItem: UIBarButtonItem?
     
     // Private Variables
     private var __inset: CGFloat = 15
     private var __contentView: UIView?
+    private var __sourceRect: CGRect?
     private var _backgroundColor: UIColor?
-    private var _sourceRect: CGRect = .zero
     private var _permittedArrowDirections: UIPopoverArrowDirection = .any
     private var _dimsBackground: Bool = true
     private var _displaysBorderShadow: Bool = true
@@ -171,6 +183,48 @@ extension PopoverVC: UIPopoverPresentationControllerDelegate {
 // MARK: // Private
 // MARK: Computed Variables
 private extension PopoverVC {
+    var _sourceView: UIView? {
+        get { return self.__sourceView }
+        set(newSourceView) {
+            guard newSourceView != self.__sourceView else { return }
+            self.__sourceView = newSourceView
+            
+            if let cont: UIPopoverPresentationController = self.popoverPresentationController {
+                cont.sourceView = newSourceView
+                
+                if self.sourceRect == nil {
+                    cont.sourceRect = newSourceView?.bounds ?? .zero
+                }
+                
+                self._triggerPopoverRepositioning()
+            }
+        }
+    }
+    
+    var _sourceRect: CGRect? {
+        get { return self.__sourceRect }
+        set(newSourceRect) {
+            guard newSourceRect != self.__sourceRect else { return }
+            self.__sourceRect = newSourceRect
+            
+            if let cont: UIPopoverPresentationController = self.popoverPresentationController {
+                cont.sourceRect = newSourceRect ?? self.sourceView?.bounds ?? .zero
+                self._triggerPopoverRepositioning()
+            }
+        }
+    }
+    
+    var _inset: CGFloat {
+        get { return self.__inset }
+        set(newInset) {
+            guard newInset != self.__inset else { return }
+            self.__inset = newInset
+            
+            self.contentView?.origin = CGPoint(x: newInset, y: newInset)
+            self.updateContentSize()
+        }
+    }
+    
     var _contentView: UIView? {
         get { return self.__contentView }
         set(newContentView) {
@@ -186,16 +240,6 @@ private extension PopoverVC {
             self.updateContentSize()
         }
     }
-    
-    var _inset: CGFloat {
-        get { return self.__inset }
-        set(newInset) {
-            guard newInset != self.__inset else { return }
-            self.__inset = newInset
-            self.contentView?.origin = CGPoint(x: newInset, y: newInset)
-            self._updateContentSize()
-        }
-    }
 }
 
 
@@ -203,7 +247,7 @@ private extension PopoverVC {
 private extension PopoverVC {
     func _viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self._updateContentSize()
+        self.updateContentSize()
     }
 }
 
@@ -225,6 +269,15 @@ private extension PopoverVC {
         size.height += 2 * inset
         self.view.size = size
         self.preferredContentSize = size
+    }
+}
+
+
+// MARK: Hack to trigger repositioning after changing sourceView or sourceRect
+private extension PopoverVC {
+    func _triggerPopoverRepositioning() {
+        self.preferredContentSize.height += 0.01
+        self.preferredContentSize.height -= 0.01
     }
 }
 
@@ -282,8 +335,10 @@ private extension PopoverVC {
         // of them while the popover is being presented?
         cont?.delegate = self
         cont?.popoverBackgroundViewClass = bgViewClass
-        cont?.sourceView = self.sourceView ?? viewController.view
-        cont?.sourceRect = self.sourceRect
+        
+        let sourceView: UIView = self.sourceView ?? viewController.view
+        cont?.sourceView = sourceView
+        cont?.sourceRect = self.sourceRect ?? sourceView.bounds
         cont?.barButtonItem = self.barButtonItem
         cont?.permittedArrowDirections = self.permittedArrowDirections
         cont?.passthroughViews = self.passthroughViews
