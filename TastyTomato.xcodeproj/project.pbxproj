@@ -92,6 +92,7 @@
 		E120F90B264A2076BE355CC29E789218 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */; };
 		E85C0EFAFEE44EC3F728995FEC22D112 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10AC072AF5EA3C5AF959E0F07662264 /* TriangleView.swift */; };
 		EC506565538E2DB12D3DC6A51D3BE3D8 /* CalendarVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91691515EBC3E7218FB4AB8592A22B /* CalendarVCView.swift */; };
+		ED1DDF10C4962502BC79DEE4A7CA4AA4 /* CGSize (pointAt).swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6DA58EB3D0C03E647E09661A8ABD2 /* CGSize (pointAt).swift */; };
 		EE32ADFFEBCC74C2EA342C807988D3A1 /* UIWindow (SetRootViewController).swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B983C3C231C9E14CC5FD6A3276D63 /* UIWindow (SetRootViewController).swift */; };
 		F128D132603E4E0CE74EC979474A6F60 /* BookingStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */; };
 		F2E74DE0C5E277FAC2E75CCC8984885B /* UIImage (Named).swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1F525CF3F06186D126ECB7A005615 /* UIImage (Named).swift */; };
@@ -194,6 +195,7 @@
 		C12824249B7328133328FF9AE5640462 /* CGSize (CGRect).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (CGRect).swift"; sourceTree = "<group>"; };
 		C6E438216C6A16D137CD269349331D8F /* CGRect (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (Scaled).swift"; sourceTree = "<group>"; };
 		CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (OriginLeftRightTopBottom).swift"; sourceTree = "<group>"; };
+		CDA6DA58EB3D0C03E647E09661A8ABD2 /* CGSize (pointAt).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize (pointAt).swift"; sourceTree = "<group>"; };
 		CDDA86B00BB8C1AE6C781872E597AF28 /* UIViewController (Embedding).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController (Embedding).swift"; sourceTree = "<group>"; };
 		CE06BAB5E34D33E9205557171C73CF6C /* NSL_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSL_.swift; sourceTree = "<group>"; };
 		CF57DBBABA83CFBB3428C32BBB42514E /* CGRect (Area).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (Area).swift"; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 				B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */,
 				D43E0F301A67734A74C63533E21FEEDF /* CGSize (Scaled).swift */,
 				3230C85271CB80C7EC4BF110F91BD049 /* CGSize (Transformed).swift */,
+				CDA6DA58EB3D0C03E647E09661A8ABD2 /* CGSize (pointAt).swift */,
 			);
 			path = CGSize;
 			sourceTree = "<group>";
@@ -1038,6 +1041,7 @@
 				5C8AA03C6C4B4DCDAA601D7775D8EA1A /* CGSize (ConvenienceInits).swift in Sources */,
 				07D9391000BFA486E44C4497A1788C6A /* CGSize (Scaled).swift in Sources */,
 				3A0F7EE1392DB0B9786B4B068FFAFC9C /* CGSize (Transformed).swift in Sources */,
+				ED1DDF10C4962502BC79DEE4A7CA4AA4 /* CGSize (pointAt).swift in Sources */,
 				9D1FF5F9D96C6BE3F6A641D5CBDEC651 /* CalendarDaysVC.swift in Sources */,
 				A31B237A1B09363250352EDA89688036 /* CalendarDaysView.swift in Sources */,
 				65F0CED14F5601098CE2CC8796241477 /* CalendarHeaderView.swift in Sources */,
