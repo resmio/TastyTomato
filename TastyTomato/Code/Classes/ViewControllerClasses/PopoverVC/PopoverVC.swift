@@ -23,6 +23,18 @@ class PopoverContainerView: UIView {}
 
 
 // MARK: - PopoverVC
+// MARK: ObjC Extrawurst
+extension PopoverVC {
+    @objc public func setSourceRect(_ sourceRect: CGRect) {
+        self.sourceRect = sourceRect
+    }
+    
+    @objc public func unsetSourceRect() {
+        self.sourceRect = nil
+    }
+}
+
+
 // MARK: Interface
 extension PopoverVC {
     // ReadWrite
