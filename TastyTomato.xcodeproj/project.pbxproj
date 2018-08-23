@@ -29,6 +29,7 @@
 		33D7CBF4CDA305FAE290B028790A338E /* ShortcutBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC87E38A8D37FC92DD3A64DEC8AC1796 /* ShortcutBarButton.swift */; };
 		3466F939EFAD784C51D7B5EC69F54B42 /* ArrowIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B5813ECAE6108D8A3192D688E9D77 /* ArrowIcon.swift */; };
 		36619180DB22B571E2199B3C6CDD67A4 /* UIColor (WithAlpha).swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */; };
+		3A0F7EE1392DB0B9786B4B068FFAFC9C /* CGSize (Transformed).swift in Sources */ = {isa = PBXBuildFile; fileRef = 3230C85271CB80C7EC4BF110F91BD049 /* CGSize (Transformed).swift */; };
 		3DE684BA7159AEA557CDE0F4F775B5A0 /* CGFloat (Int).swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24467D4568DC50711B01B3FBCD8958 /* CGFloat (Int).swift */; };
 		42BB16D84A350E14BE177DA60F5977A0 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12E9AC9F91E1C3F23E1C2A25D9E463 /* TextButton.swift */; };
 		48D0397391009A24265A5FEE06D16F89 /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */; };
@@ -66,6 +67,7 @@
 		A43281AE7F5ED34889BF39E8FA61D6F5 /* UIView (OriginLeftRightTopBottom).swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */; };
 		AA722217EC3B0D09B4E3E43283C98EA6 /* CGSize (CGRect).swift in Sources */ = {isa = PBXBuildFile; fileRef = C12824249B7328133328FF9AE5640462 /* CGSize (CGRect).swift */; };
 		AA8512B64D36C58068B677B56BD11C09 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */; };
+		AB82D9EAE93E46B9024DFBE028BD950E /* CGFloat (Transform).swift in Sources */ = {isa = PBXBuildFile; fileRef = B66BDB785DA04061D6D57D0E1EF6CC7C /* CGFloat (Transform).swift */; };
 		AC9D9866E065E12DCB2AD07AC6627022 /* TastyTomato.h in Headers */ = {isa = PBXBuildFile; fileRef = 083386230915027A1693F0088C82312B /* TastyTomato.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */; };
 		AF53E089D7041EDFD9F90E22C958AD7E /* ShortcutBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */; };
@@ -130,6 +132,7 @@
 		286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (PredefinedColors).swift"; sourceTree = "<group>"; };
 		2FD12FA602A05FA8F90A14D2DD8FA7A2 /* ImageTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextButton.swift; sourceTree = "<group>"; };
 		31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
+		3230C85271CB80C7EC4BF110F91BD049 /* CGSize (Transformed).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize (Transformed).swift"; sourceTree = "<group>"; };
 		3548C6B4D617159868EBE227290AFC0C /* FilledButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButtons.swift; sourceTree = "<group>"; };
 		384AF30C7CBCCA18C890168B4288522E /* UITextView (HeightConvenience).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView (HeightConvenience).swift"; sourceTree = "<group>"; };
 		38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint (ConvenienceInits).swift"; sourceTree = "<group>"; };
@@ -180,6 +183,7 @@
 		B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (ConvenienceInits).swift"; sourceTree = "<group>"; };
 		B0B69F1C5248906E76779559281B5932 /* KeyboardStateListener (Utils).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardStateListener (Utils).swift"; sourceTree = "<group>"; };
 		B242DBFE7AC263A838F81DB66F8D7280 /* UITableView (reloadSoftly).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView (reloadSoftly).swift"; sourceTree = "<group>"; };
+		B66BDB785DA04061D6D57D0E1EF6CC7C /* CGFloat (Transform).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat (Transform).swift"; sourceTree = "<group>"; };
 		B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutBar.swift; sourceTree = "<group>"; };
 		BA80D821A6A11686B3549A015E50472E /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		BAC2B1E373A0B5FEF4430946F8B244B4 /* UIFont (PredefinedFonts).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont (PredefinedFonts).swift"; sourceTree = "<group>"; };
@@ -356,6 +360,7 @@
 			children = (
 				323024B9C32DBCD16579A5D0E1898452 /* CALayer */,
 				0995E6863C2FACBFB7642BD7F38401CB /* CAShapeLayer */,
+				563D5AF16A6BD4FA7F68E1055FF42406 /* CGFloat */,
 				A2C7788C50EBFA6A19AD6E5D21DDA7F0 /* CGPoint */,
 				2A82240FC7459054B0D58710F81524F0 /* CGRect */,
 				9A89BE72D4671CAB9BB7FFB4B3B4F96D /* CGSize */,
@@ -441,6 +446,14 @@
 				E9175C1A832EEF0F37AEE33411A20042 /* Localizable.strings */,
 			);
 			path = Localizations;
+			sourceTree = "<group>";
+		};
+		563D5AF16A6BD4FA7F68E1055FF42406 /* CGFloat */ = {
+			isa = PBXGroup;
+			children = (
+				B66BDB785DA04061D6D57D0E1EF6CC7C /* CGFloat (Transform).swift */,
+			);
+			path = CGFloat;
 			sourceTree = "<group>";
 		};
 		5D5BF88A47261D2A7AF534030385A3CC /* UITableView */ = {
@@ -582,6 +595,7 @@
 				C12824249B7328133328FF9AE5640462 /* CGSize (CGRect).swift */,
 				B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */,
 				D43E0F301A67734A74C63533E21FEEDF /* CGSize (Scaled).swift */,
+				3230C85271CB80C7EC4BF110F91BD049 /* CGSize (Transformed).swift */,
 			);
 			path = CGSize;
 			sourceTree = "<group>";
@@ -1012,6 +1026,7 @@
 				C2E279A4ED34081F1C983150B1F45061 /* CALayer (ConvenienceInits).swift in Sources */,
 				ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */,
 				3DE684BA7159AEA557CDE0F4F775B5A0 /* CGFloat (Int).swift in Sources */,
+				AB82D9EAE93E46B9024DFBE028BD950E /* CGFloat (Transform).swift in Sources */,
 				1D182D1BB45EB8B648582A87B8CC2067 /* CGFloat (UInt).swift in Sources */,
 				2F3E948D83ABEF456118C56CC1ADA20E /* CGPoint (ConvenienceInits).swift in Sources */,
 				2E894736E4858AC80DCD8D499E0FD708 /* CGRect (Area).swift in Sources */,
@@ -1022,6 +1037,7 @@
 				AA722217EC3B0D09B4E3E43283C98EA6 /* CGSize (CGRect).swift in Sources */,
 				5C8AA03C6C4B4DCDAA601D7775D8EA1A /* CGSize (ConvenienceInits).swift in Sources */,
 				07D9391000BFA486E44C4497A1788C6A /* CGSize (Scaled).swift in Sources */,
+				3A0F7EE1392DB0B9786B4B068FFAFC9C /* CGSize (Transformed).swift in Sources */,
 				9D1FF5F9D96C6BE3F6A641D5CBDEC651 /* CalendarDaysVC.swift in Sources */,
 				A31B237A1B09363250352EDA89688036 /* CalendarDaysView.swift in Sources */,
 				65F0CED14F5601098CE2CC8796241477 /* CalendarHeaderView.swift in Sources */,
