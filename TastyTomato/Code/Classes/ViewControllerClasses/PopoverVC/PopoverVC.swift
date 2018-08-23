@@ -140,7 +140,6 @@ open class PopoverVC: UIViewController {
     private var __inset: CGFloat = 15
     private var __contentView: UIView?
     private var __sourceRect: CGRect?
-    private var _useCustomSourceRect: Bool = false
     private var _backgroundColor: UIColor?
     private var _permittedArrowDirections: UIPopoverArrowDirection = .any
     private var _dimsBackground: Bool = true
