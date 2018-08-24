@@ -13,12 +13,8 @@ import Foundation
 // MARK: Interface
 public extension BorderLayer {
     public var borderEdgeInsets: UIEdgeInsets {
-        get {
-            return self._borderEdgeInsets
-        }
-        set(newBorderEdgeInsets) {
-            self._borderEdgeInsets = newBorderEdgeInsets
-        }
+        get { return self._borderEdgeInsets }
+        set { self._borderEdgeInsets = newValue }
     }
 }
 
@@ -27,32 +23,34 @@ public extension BorderLayer {
 public class BorderLayer: CAShapeLayer {
     // Required Init
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("BorderLayer does not support NSCoding")
+        super.init(coder: aDecoder)
+        self._init()
     }
     
     // Override Inits
     public override init() {
         super.init()
-        self.lineWidth = 1
-        self.strokeColor = UIColor.black.cgColor
+        self._init()
     }
     
     public override init(layer: Any) {
         super.init(layer: layer)
     }
     
+    // Common Init
+    private func _init() {
+        self.lineWidth = 1
+        self.strokeColor = UIColor.black.cgColor
+    }
+    
     // Private Variables
-    fileprivate var __borderEdgeInsets: UIEdgeInsets = .zero
+    private var __borderEdgeInsets: UIEdgeInsets = .zero
     
     
     // MARK: Overrides
     public override var frame: CGRect {
-        get {
-            return self._frame
-        }
-        set(newFrame) {
-            self._frame = newFrame
-        }
+        get { return self._frame }
+        set { self._frame = newValue }
     }
     
     public override func action(forKey event: String) -> CAAction? {
@@ -94,9 +92,7 @@ extension BorderLayer {
 // MARK: BorderInset
 private extension BorderLayer {
     var _borderEdgeInsets: UIEdgeInsets {
-        get {
-            return self.__borderEdgeInsets
-        }
+        get { return self.__borderEdgeInsets }
         set(newBorderEdgeInsets) {
             guard newBorderEdgeInsets != self.__borderEdgeInsets else { return }
             self.__borderEdgeInsets = newBorderEdgeInsets
@@ -109,9 +105,7 @@ private extension BorderLayer {
 // MARK: Override Implementations
 private extension BorderLayer {
     var _frame: CGRect {
-        get {
-            return super.frame
-        }
+        get { return super.frame }
         set(newFrame) {
             guard newFrame != super.frame else { return }
             super.frame = newFrame
