@@ -29,156 +29,88 @@ public extension GridLayer {
     
     // ReadWrite
     public var numOfRows: UInt {
-        get {
-            return self._numOfRows
-        }
-        set(newNumOfRows) {
-            self._numOfRows = newNumOfRows
-        }
+        get { return self._numOfRows }
+        set { self._numOfRows = newValue }
     }
     
     public var numOfColumns: UInt {
-        get {
-            return self._numOfColumns
-        }
-        set(newNumOfColumns) {
-            self._numOfColumns = newNumOfColumns
-        }
+        get { return self._numOfColumns }
+        set { self._numOfColumns = newValue }
     }
 
     public var subdivision: GridLayer.Subdivision {
-        get {
-            return self._subdivision
-        }
-        set(newSubdivision) {
-            self._subdivision = newSubdivision
-        }
+        get { return self._subdivision }
+        set { self._subdivision = newValue }
     }
     
     public var gridIsShown: Bool {
-        get {
-            return self._gridIsShown
-        }
-        set(newGridIsShown) {
-            self._gridIsShown = newGridIsShown
-        }
+        get { return self._gridIsShown }
+        set { self._gridIsShown = newValue }
     }
     
     public var borderIsShown: Bool {
-        get {
-            return self._borderIsShown
-        }
-        set(newBorderIsShown) {
-            self._borderIsShown = newBorderIsShown
-        }
+        get { return self._borderIsShown }
+        set { self._borderIsShown = newValue }
     }
     
     public var rowHeight: CGFloat {
-        get {
-            return self._rowHeight
-        }
-        set(newRowWidth) {
-            self._rowHeight = newRowWidth
-        }
+        get { return self._rowHeight }
+        set { self._rowHeight = newValue }
     }
     
     public var columnWidth: CGFloat {
-        get {
-            return self._columnWidth
-        }
-        set(newColumnWidth) {
-            self._columnWidth = newColumnWidth
-        }
+        get { return self._columnWidth }
+        set { self._columnWidth = newValue }
     }
     
     public var borderLineColor: CGColor {
-        get {
-            return self._borderLineColor
-        }
-        set(newBorderLineColor) {
-            self._borderLineColor = newBorderLineColor
-        }
+        get { return self._borderLineColor }
+        set { self._borderLineColor = newValue }
     }
     
     public var mainGridLineColor: CGColor {
-        get {
-            return self._mainGridLineColor
-        }
-        set(newMainGridLineColor) {
-            self._mainGridLineColor = newMainGridLineColor
-        }
+        get { return self._mainGridLineColor }
+        set { self._mainGridLineColor = newValue }
     }
     
     public var subGridLineColor: CGColor {
-        get {
-            return self._subGridLineColor
-        }
-        set(newSubGridLineColor) {
-            self._subGridLineColor = newSubGridLineColor
-        }
+        get { return self._subGridLineColor }
+        set { self._subGridLineColor = newValue }
     }
     
     public var borderLineWidth: CGFloat {
-        get {
-            return self._borderLineWidth
-        }
-        set(newBorderLineWidth) {
-            self._borderLineWidth = newBorderLineWidth
-        }
+        get { return self._borderLineWidth }
+        set { self._borderLineWidth = newValue }
     }
     
     public var gridLineWidth: CGFloat {
-        get {
-            return self._gridLineWidth
-        }
-        set(newGridLineWidth) {
-            self._gridLineWidth = newGridLineWidth
-        }
+        get { return self._gridLineWidth }
+        set { self._gridLineWidth = newValue }
     }
     
     public var borderDashPattern: [CGFloat] {
-        get {
-            return self._borderDashPattern as! [CGFloat]
-        }
-        set(newBorderDashPattern) {
-            self._borderDashPattern = newBorderDashPattern as [NSNumber]
-        }
+        get { return self._borderDashPattern as! [CGFloat] }
+        set { self._borderDashPattern = newValue as [NSNumber] }
     }
     
     public var gridDashPattern: [CGFloat] {
-        get {
-            return self._gridDashPattern as! [CGFloat]
-        }
-        set(newGridDashPattern) {
-            self._gridDashPattern = newGridDashPattern as [NSNumber]
-        }
+        get { return self._gridDashPattern as! [CGFloat] }
+        set { self._gridDashPattern = newValue as [NSNumber] }
     }
     
     public var borderEdgeInsets: UIEdgeInsets {
-        get {
-            return self._borderEdgeInsets
-        }
-        set(newBorderEdgeInsets) {
-            self._borderEdgeInsets = newBorderEdgeInsets
-        }
+        get { return self._borderEdgeInsets }
+        set { self._borderEdgeInsets = newValue }
     }
     
     public var gridInsetFactor: CGFloat {
-        get {
-            return self._gridInsetFactor
-        }
-        set(newGridInsetFactor) {
-            self._gridInsetFactor = newGridInsetFactor
-        }
+        get { return self._gridInsetFactor }
+        set { self._gridInsetFactor = newValue }
     }
     
     public var gridLineOverlapFactor: CGFloat {
-        get {
-            return self._gridLineOverlapFactor
-        }
-        set(newGridLineOverlapFactor) {
-            self._gridLineOverlapFactor = newGridLineOverlapFactor
-        }
+        get { return self._gridLineOverlapFactor }
+        set { self._gridLineOverlapFactor = newValue }
     }
 
     // Functions
