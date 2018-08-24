@@ -192,9 +192,7 @@ public class GridLayer: CALayer {
 // MARK: Computed Properties
 private extension GridLayer {
     var _numOfRows: UInt {
-        get {
-            return self.__numOfRows
-        }
+        get { return self.__numOfRows }
         set(newNumOfRows) {
             guard newNumOfRows != self.__numOfRows else { return }
             if self.gridIsShown {
@@ -210,9 +208,7 @@ private extension GridLayer {
     }
     
     var _numOfColumns: UInt {
-        get {
-            return self.__numOfColumns
-        }
+        get { return self.__numOfColumns }
         set(newNumOfColumns) {
             guard newNumOfColumns != self.__numOfColumns else { return }
             if self.gridIsShown {
@@ -228,9 +224,7 @@ private extension GridLayer {
     }
     
     var _subdivision: GridLayer.Subdivision {
-        get {
-            return self.__subdivision
-        }
+        get { return self.__subdivision }
         set(newSubdivision) {
             guard newSubdivision != self.__subdivision else { return }
             if self.gridIsShown {
@@ -244,9 +238,7 @@ private extension GridLayer {
     }
     
     var _gridIsShown: Bool {
-        get {
-            return self.__gridIsShown
-        }
+        get { return self.__gridIsShown }
         set(newGridIsShown) {
             guard newGridIsShown != self.__gridIsShown else { return }
             self.__gridIsShown = newGridIsShown
@@ -255,9 +247,7 @@ private extension GridLayer {
     }
     
     var _borderIsShown: Bool {
-        get {
-            return self.__borderIsShown
-        }
+        get { return self.__borderIsShown }
         set(newBorderIsShown) {
             guard newBorderIsShown != self.__borderIsShown else { return }
             self.__borderIsShown = newBorderIsShown
@@ -266,9 +256,7 @@ private extension GridLayer {
     }
     
     var _rowHeight: CGFloat {
-        get {
-            return self.__rowHeight
-        }
+        get { return self.__rowHeight }
         set(newRowHeight) {
             guard newRowHeight != self.__rowHeight else { return }
             self.__rowHeight = newRowHeight
@@ -279,9 +267,7 @@ private extension GridLayer {
     }
     
     var _columnWidth: CGFloat {
-        get {
-            return self.__columnWidth
-        }
+        get { return self.__columnWidth }
         set(newColumnWidth) {
             guard newColumnWidth != self.__columnWidth else { return }
             self.__columnWidth = newColumnWidth
@@ -292,9 +278,7 @@ private extension GridLayer {
     }
     
     var _borderLineColor: CGColor {
-        get {
-            return self.__borderLineColor
-        }
+        get { return self.__borderLineColor }
         set(newBorderLineColor) {
             guard newBorderLineColor != self.__borderLineColor else { return }
             self.__borderLineColor = newBorderLineColor
@@ -303,9 +287,7 @@ private extension GridLayer {
     }
     
     var _mainGridLineColor: CGColor {
-        get {
-            return self.__mainGridLineColor
-        }
+        get { return self.__mainGridLineColor }
         set(newMainGridLineColor) {
             guard newMainGridLineColor != self.__mainGridLineColor else { return }
             self.__mainGridLineColor = newMainGridLineColor
@@ -317,9 +299,7 @@ private extension GridLayer {
     }
     
     var _subGridLineColor: CGColor {
-        get {
-            return self.__subGridLineColor
-        }
+        get { return self.__subGridLineColor }
         set(newSubGridLineColor) {
             guard newSubGridLineColor != self.__subGridLineColor else { return }
             self.__subGridLineColor = newSubGridLineColor
@@ -331,9 +311,7 @@ private extension GridLayer {
     }
     
     var _borderLineWidth: CGFloat {
-        get {
-            return self.__borderLineWidth
-        }
+        get { return self.__borderLineWidth }
         set(newBorderLineWidth) {
             guard newBorderLineWidth != self.__borderLineWidth else { return }
             self.__borderLineWidth = newBorderLineWidth
@@ -342,9 +320,7 @@ private extension GridLayer {
     }
     
     var _gridLineWidth: CGFloat {
-        get {
-            return self.__gridLineWidth
-        }
+        get { return self.__gridLineWidth }
         set(newGridLineWidth) {
             guard newGridLineWidth != self.__gridLineWidth else { return }
             self.__gridLineWidth = newGridLineWidth
@@ -353,9 +329,7 @@ private extension GridLayer {
     }
     
     var _borderDashPattern: [NSNumber] {
-        get {
-            return self.__borderDashPattern
-        }
+        get { return self.__borderDashPattern }
         set(newBorderDashPattern) {
             guard newBorderDashPattern != self.__borderDashPattern else { return }
             self.__borderDashPattern = newBorderDashPattern
@@ -364,9 +338,7 @@ private extension GridLayer {
     }
     
     var _gridDashPattern: [NSNumber] {
-        get {
-            return self.__gridDashPattern
-        }
+        get { return self.__gridDashPattern }
         set(newGridDashPattern) {
             guard newGridDashPattern != self.__gridDashPattern else { return }
             self.__gridDashPattern = newGridDashPattern
@@ -375,9 +347,7 @@ private extension GridLayer {
     }
     
     var _borderEdgeInsets: UIEdgeInsets {
-        get {
-            return self.__borderEdgeInsets
-        }
+        get { return self.__borderEdgeInsets }
         set(newBorderEdgeInsets) {
             guard newBorderEdgeInsets != self.__borderEdgeInsets else { return }
             self.__borderEdgeInsets = newBorderEdgeInsets
@@ -386,9 +356,7 @@ private extension GridLayer {
     }
     
     var _gridInsetFactor: CGFloat {
-        get {
-            return self.__gridInsetFactor
-        }
+        get { return self.__gridInsetFactor }
         set(newGridInsetFactor) {
             guard newGridInsetFactor != self.__gridInsetFactor else { return }
             self.__gridInsetFactor = newGridInsetFactor
@@ -396,9 +364,7 @@ private extension GridLayer {
     }
     
     var _gridLineOverlapFactor: CGFloat {
-        get {
-            return self.__gridLineOverlapFactor
-        }
+        get { return self.__gridLineOverlapFactor }
         set(newGridLineOverlapFactor) {
             guard newGridLineOverlapFactor != self.__gridLineOverlapFactor else { return }
             self.__gridLineOverlapFactor = newGridLineOverlapFactor
@@ -486,12 +452,8 @@ private extension ValueAssociationKey {
 extension LineLayer: AssociationOwner {}
 private extension LineLayer {
     var _positionIndex: _PositionIndex {
-        get {
-            return self.associatedValue(for: &._positionIndex)!
-        }
-        set(newPositionIndex) {
-            self.associate(newPositionIndex, by: &._positionIndex)
-        }
+        get { return self.associatedValue(for: &._positionIndex)! }
+        set { self.associate(newValue, by: &._positionIndex) }
     }
 }
 
