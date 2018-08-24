@@ -150,27 +150,27 @@ public class GridLayer: CALayer {
     }
     
     // Private Variables
-    fileprivate var _borderLayer: BorderLayer?
-    fileprivate var _lineLayers: [LineLayer] = []
+    private var _borderLayer: BorderLayer?
+    private var _lineLayers: [LineLayer] = []
     
-    fileprivate var __subdivision: GridLayer.Subdivision = .none
-    fileprivate var __gridIsShown: Bool = false
-    fileprivate var __borderIsShown: Bool = true
-    fileprivate var __rowHeight: CGFloat = 150
-    fileprivate var __columnWidth: CGFloat = 150
-    fileprivate var __borderLineColor: CGColor = UIColor.gray999999.withAlpha(0.8).cgColor
-    fileprivate var __mainGridLineColor: CGColor = UIColor.gray999999.withAlpha(0.8).cgColor
-    fileprivate var __subGridLineColor: CGColor = UIColor.gray999999.withAlpha(0.4).cgColor
-    fileprivate var __borderLineWidth: CGFloat = 1
-    fileprivate var __gridLineWidth: CGFloat = 1
-    fileprivate var __borderDashPattern: [NSNumber] = []
-    fileprivate var __gridDashPattern: [NSNumber] = []
-    fileprivate var __borderEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-    fileprivate var __gridInsetFactor: CGFloat = 0.6
-    fileprivate var __gridLineOverlapFactor: CGFloat = 0.4
+    private var __subdivision: GridLayer.Subdivision = .none
+    private var __gridIsShown: Bool = false
+    private var __borderIsShown: Bool = true
+    private var __rowHeight: CGFloat = 150
+    private var __columnWidth: CGFloat = 150
+    private var __borderLineColor: CGColor = UIColor.gray999999.withAlpha(0.8).cgColor
+    private var __mainGridLineColor: CGColor = UIColor.gray999999.withAlpha(0.8).cgColor
+    private var __subGridLineColor: CGColor = UIColor.gray999999.withAlpha(0.4).cgColor
+    private var __borderLineWidth: CGFloat = 1
+    private var __gridLineWidth: CGFloat = 1
+    private var __borderDashPattern: [NSNumber] = []
+    private var __gridDashPattern: [NSNumber] = []
+    private var __borderEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    private var __gridInsetFactor: CGFloat = 0.6
+    private var __gridLineOverlapFactor: CGFloat = 0.4
     
-    fileprivate var __numOfRows: UInt = 8
-    fileprivate var __numOfColumns: UInt = 8
+    private var __numOfRows: UInt = 8
+    private var __numOfColumns: UInt = 8
     
     
     // MARK: Overrides
