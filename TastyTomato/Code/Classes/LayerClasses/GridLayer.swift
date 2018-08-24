@@ -128,19 +128,25 @@ public extension GridLayer {
 public class GridLayer: CALayer {
     // Required Init
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("GridLayer does not support NSCoding")
+        super.init(coder: aDecoder)
+        self._init()
     }
     
     // Override Inits
     public override init() {
         super.init()
-        self._createOrDestroyBorderLayer()
-        self._updateLineLayers()
-        self._sizeFrame()
+        self._init()
     }
     
     public override init(layer: Any) {
         super.init(layer: layer)
+    }
+    
+    // Common Init
+    private func _init() {
+        self._createOrDestroyBorderLayer()
+        self._updateLineLayers()
+        self._sizeFrame()
     }
     
     // Private Variables
