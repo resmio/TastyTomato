@@ -145,7 +145,7 @@ public class GridLayer: CALayer {
     // Common Init
     private func _init() {
         self._createOrDestroyBorderLayer()
-        self._updateLineLayers()
+        self._addOrRemoveLineLayers()
         self._sizeFrame()
     }
     
@@ -196,7 +196,7 @@ private extension GridLayer {
         set(newNumOfRows) {
             guard newNumOfRows != self.__numOfRows else { return }
             if self.gridIsShown {
-                self._updateRowLineLayers(
+                self._addOrRemoveRowLineLayers(
                     oldNumOfRows: self.__numOfRows,
                     newNumOfRows: newNumOfRows
                 )
@@ -212,7 +212,7 @@ private extension GridLayer {
         set(newNumOfColumns) {
             guard newNumOfColumns != self.__numOfColumns else { return }
             if self.gridIsShown {
-                self._updateColumnLineLayers(
+                self._addOrRemoveColumnLineLayers(
                     oldNumOfColumns: self.__numOfColumns,
                     newNumOfColumns: newNumOfColumns
                 )
@@ -228,7 +228,7 @@ private extension GridLayer {
         set(newSubdivision) {
             guard newSubdivision != self.__subdivision else { return }
             if self.gridIsShown {
-                self._updateLineLayers(
+                self._addOrRemoveLineLayers(
                     oldSubdivision: self.__subdivision,
                     newSubdivision: newSubdivision
                 )
@@ -242,7 +242,7 @@ private extension GridLayer {
         set(newGridIsShown) {
             guard newGridIsShown != self.__gridIsShown else { return }
             self.__gridIsShown = newGridIsShown
-            self._updateLineLayers()
+            self._addOrRemoveLineLayers()
         }
     }
     
@@ -539,42 +539,15 @@ private extension GridLayer {
     func _orthogonalPositionFor(column: LineLayer) -> CGFloat {
         return self._horizontalAbsOffset(forGridPosition: column._positionIndex.value)
     }
+    
+    func _overlapFactor(for line: LineLayer) -> CGFloat {
+        return line._positionIndex.subdivision.rawValue * self.gridLineOverlapFactor
+    }
 }
 
 
+// MARK: Update LineLayers
 private extension GridLayer {
-    func _updateLineLayers() {
-        if self.gridIsShown {
-            self._addLineLayers()
-        } else {
-            self._removeLineLayers()
-        }
-    }
-    
-    func _updateRowLineLayers(oldNumOfRows: UInt, newNumOfRows: UInt) {
-        if newNumOfRows > oldNumOfRows {
-            self._addLines(withOrientation: .horizontal, after: oldNumOfRows, through: newNumOfRows)
-        } else if newNumOfRows < oldNumOfRows {
-            self._purgeRows(downTo: newNumOfRows)
-        }
-    }
-    
-    func _updateColumnLineLayers(oldNumOfColumns: UInt, newNumOfColumns: UInt) {
-        if newNumOfColumns > oldNumOfColumns {
-            self._addLines(withOrientation: .vertical, after: oldNumOfColumns, through: newNumOfColumns)
-        } else if newNumOfColumns < oldNumOfColumns {
-            self._purgeColumns(downTo: newNumOfColumns)
-        }
-    }
-    
-    func _updateLineLayers(oldSubdivision: GridLayer.Subdivision, newSubdivision: GridLayer.Subdivision) {
-        if newSubdivision.rawValue < oldSubdivision.rawValue {
-            self._addLines(after: oldSubdivision, through: newSubdivision)
-        } else if newSubdivision.rawValue > oldSubdivision.rawValue {
-            self._purgeLines(upTo: newSubdivision)
-        }
-    }
-    
     func _updateRowLineLengths() {
         self._forEachLine(
             where: { $0.orientation == .horizontal },
@@ -595,6 +568,38 @@ private extension GridLayer {
                 execute($0)
             }
         })
+    }
+}
+
+
+// MARK: Add Or Remove LineLayers
+private extension GridLayer {
+    func _addOrRemoveLineLayers() {
+        self.gridIsShown ? self._addLineLayers() : self._removeLineLayers()
+    }
+    
+    func _addOrRemoveRowLineLayers(oldNumOfRows: UInt, newNumOfRows: UInt) {
+        if newNumOfRows > oldNumOfRows {
+            self._addLines(withOrientation: .horizontal, after: oldNumOfRows, through: newNumOfRows)
+        } else if newNumOfRows < oldNumOfRows {
+            self._purgeRows(downTo: newNumOfRows)
+        }
+    }
+    
+    func _addOrRemoveColumnLineLayers(oldNumOfColumns: UInt, newNumOfColumns: UInt) {
+        if newNumOfColumns > oldNumOfColumns {
+            self._addLines(withOrientation: .vertical, after: oldNumOfColumns, through: newNumOfColumns)
+        } else if newNumOfColumns < oldNumOfColumns {
+            self._purgeColumns(downTo: newNumOfColumns)
+        }
+    }
+    
+    func _addOrRemoveLineLayers(oldSubdivision: GridLayer.Subdivision, newSubdivision: GridLayer.Subdivision) {
+        if newSubdivision.rawValue < oldSubdivision.rawValue {
+            self._addLines(after: oldSubdivision, through: newSubdivision)
+        } else if newSubdivision.rawValue > oldSubdivision.rawValue {
+            self._purgeLines(upTo: newSubdivision)
+        }
     }
     
     // Private Helper Functions
@@ -765,11 +770,6 @@ private extension GridLayer {
         } else {
             return self.subGridLineColor
         }
-    }
-    
-    private func _overlapFactor(for line: LineLayer) -> CGFloat {
-        let subdivisionFactor: CGFloat = line._positionIndex.subdivision.rawValue
-        return subdivisionFactor * self.gridLineOverlapFactor
     }
 }
 
