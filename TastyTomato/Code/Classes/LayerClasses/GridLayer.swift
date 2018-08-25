@@ -780,8 +780,8 @@ private extension GridLayer {
 // MARK: Point <-> Location <-> SlotIndex Calculation
 private extension GridLayer {
     func _point(for location: GridLayer.Location) -> CGPoint {
-        let x: CGFloat = self._horizontalAbsOffset(forGridPosition: CGFloat(location.column))
-        let y: CGFloat = self._verticalAbsOffset(forGridPosition: CGFloat(location.row))
+        let x: CGFloat = self._horizontalAbsOffset(forGridPosition: location.column)
+        let y: CGFloat = self._verticalAbsOffset(forGridPosition: location.row)
         return CGPoint(x: x, y: y)
     }
     
