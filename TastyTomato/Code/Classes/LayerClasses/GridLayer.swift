@@ -393,13 +393,13 @@ private extension GridLayer {
         self._lineLayers.forEach({ line in
             switch line.orientation {
             case .horizontal:
-                self._updateLengthOf(row: line)
-                self._updateParallelPositionOf(row: line)
-                self._updateOrthogonalPositionOf(row: line)
+                line.length = self._lengthFor(row: line)
+                line.parallelPosition = self._parallelPositionFor(row: line)
+                line.orthogonalPosition = self._orthogonalPositionFor(row: line)
             case .vertical:
-                self._updateLengthOf(column: line)
-                self._updateParallelPositionOf(column: line)
-                self._updateOrthogonalPositionOf(column: line)
+                line.length = self._lengthFor(column: line)
+                line.parallelPosition = self._parallelPositionFor(column: line)
+                line.orthogonalPosition = self._orthogonalPositionFor(column: line)
             }
         })
     }
@@ -514,7 +514,34 @@ private typealias _PositionIndexSets = (
 
 
 // MARK: - GridLayer
-// MARK: LineLayers
+// MARK: Position And Length Calculation For LineLayers
+private extension GridLayer {
+    func _lengthFor(row: LineLayer) -> CGFloat {
+        return (CGFloat(self._zeroedNumOfColumns) + self._overlapFactor(for: row)) * self.columnWidth
+    }
+    
+    func _lengthFor(column: LineLayer) -> CGFloat {
+        return (CGFloat(self._zeroedNumOfRows) + self._overlapFactor(for: column)) * self.rowHeight
+    }
+    
+    func _parallelPositionFor(row: LineLayer) -> CGFloat {
+        return (self._width() - self._lengthFor(row: row)) / 2
+    }
+    
+    func _parallelPositionFor(column: LineLayer) -> CGFloat {
+        return (self._width() - self._lengthFor(column: column)) / 2
+    }
+    
+    func _orthogonalPositionFor(row: LineLayer) -> CGFloat {
+        return self._verticalAbsOffset(forGridPosition: row._positionIndex.value)
+    }
+    
+    func _orthogonalPositionFor(column: LineLayer) -> CGFloat {
+        return self._horizontalAbsOffset(forGridPosition: column._positionIndex.value)
+    }
+}
+
+
 private extension GridLayer {
     func _updateLineLayers() {
         if self.gridIsShown {
@@ -551,14 +578,14 @@ private extension GridLayer {
     func _updateRowLineLengths() {
         self._forEachLine(
             where: { $0.orientation == .horizontal },
-            execute: self._updateLengthOf(row:)
+            execute: { $0.length = self._lengthFor(row: $0) }
         )
     }
     
     func _updateColumnLineLengths() {
         self._forEachLine(
             where: { $0.orientation == .vertical },
-            execute: self._updateLengthOf(column:)
+            execute: { $0.length = self._lengthFor(column: $0) }
         )
     }
     
@@ -568,30 +595,6 @@ private extension GridLayer {
                 execute($0)
             }
         })
-    }
-    
-    func _updateLengthOf(row: LineLayer) {
-        row.length = (CGFloat(self._zeroedNumOfColumns) + self._overlapFactor(for: row)) * self.columnWidth
-    }
-    
-    func _updateLengthOf(column: LineLayer) {
-        column.length = (CGFloat(self._zeroedNumOfRows) + self._overlapFactor(for: column)) * self.rowHeight
-    }
-    
-    func _updateParallelPositionOf(row: LineLayer) {
-        row.parallelPosition = (self._width() - self._lengthForRow(row)) / 2
-    }
-    
-    func _updateParallelPositionOf(column: LineLayer) {
-        column.parallelPosition = (self._width() - self._lengthForRow(column)) / 2
-    }
-    
-    func _updateOrthogonalPositionOf(row: LineLayer) {
-        row.orthogonalPosition = self._verticalAbsOffset(forGridPosition: row._positionIndex.value)
-    }
-    
-    func _updateOrthogonalPositionOf(column: LineLayer) {
-        column.orthogonalPosition = self._horizontalAbsOffset(forGridPosition: column._positionIndex.value)
     }
     
     // Private Helper Functions
@@ -674,6 +677,13 @@ private extension GridLayer {
     }
     
     private func _addLines(withOrientation orientation: LineLayer.Orientation, for positionIndexSet: _PositionIndexSet) {
+        let __lengthOf: (LineLayer) -> CGFloat = {
+            switch orientation {
+            case .horizontal:   return self._lengthFor(row:)
+            case .vertical:     return self._lengthFor(column:)
+            }
+        }()
+        
         for positionIndex in positionIndexSet {
             let lineLayer: LineLayer = LineLayer()
             
@@ -682,7 +692,7 @@ private extension GridLayer {
             lineLayer.strokeColor = self._lineColor(for: lineLayer)
             lineLayer.lineWidth = self.gridLineWidth
             lineLayer.lineDashPattern = self.gridDashPattern as [NSNumber]
-            lineLayer.length = self._length(for: lineLayer)
+            lineLayer.length = __lengthOf(lineLayer)
             
             self._lineLayers.append(lineLayer)
             self.addSublayer(lineLayer)
@@ -755,40 +765,6 @@ private extension GridLayer {
         } else {
             return self.subGridLineColor
         }
-    }
-    
-    private func _orthogonalOffset(for line: LineLayer) -> CGFloat {
-        if line.orientation == .horizontal {
-            return self._verticalAbsOffset(forGridPosition: line._positionIndex.value)
-        } else /*if line.orientation == .vertical*/ {
-            return self._horizontalAbsOffset(forGridPosition: line._positionIndex.value)
-        }
-    }
-    
-    private func _parallelInset(for line: LineLayer) -> CGFloat {
-        if line.orientation == .horizontal {
-            return (self._width() - self._lengthForRow(line)) / 2
-        } else /*if line.orientation == .vertical*/ {
-            return (self._height() - self._lengthForColumn(line)) / 2
-        }
-    }
-    
-    private func _length(for line: LineLayer) -> CGFloat {
-        if line.orientation == .horizontal {
-            return self._lengthForRow(line)
-        } else /*if line.orientation == .vertical*/ {
-            return self._lengthForColumn(line)
-        }
-    }
-    
-    private func _lengthForRow(_ row: LineLayer) -> CGFloat {
-        // The layer is a row so its length is linear to the number of columns
-        return (CGFloat(self._zeroedNumOfColumns) + self._overlapFactor(for: row)) * self.columnWidth
-    }
-    
-    private func _lengthForColumn(_ column: LineLayer) -> CGFloat {
-        // The layer is a column so its length is linear to the number of rows
-        return (CGFloat(self._zeroedNumOfRows) + self._overlapFactor(for: column)) * self.rowHeight
     }
     
     private func _overlapFactor(for line: LineLayer) -> CGFloat {
