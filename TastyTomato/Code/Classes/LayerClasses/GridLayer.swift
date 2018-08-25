@@ -324,7 +324,7 @@ private extension GridLayer {
         set(newGridLineWidth) {
             guard newGridLineWidth != self.__gridLineWidth else { return }
             self.__gridLineWidth = newGridLineWidth
-            self._updateLineLayers({ $0.lineWidth = newGridLineWidth })
+            self._lineLayers.forEach({ $0.lineWidth = newGridLineWidth })
         }
     }
     
@@ -342,7 +342,7 @@ private extension GridLayer {
         set(newGridDashPattern) {
             guard newGridDashPattern != self.__gridDashPattern else { return }
             self.__gridDashPattern = newGridDashPattern
-            self._updateLineLayers({ $0.lineDashPattern = newGridDashPattern })
+            self._lineLayers.forEach({ $0.lineDashPattern = newGridDashPattern })
         }
     }
     
@@ -360,6 +360,7 @@ private extension GridLayer {
         set(newGridInsetFactor) {
             guard newGridInsetFactor != self.__gridInsetFactor else { return }
             self.__gridInsetFactor = newGridInsetFactor
+            
         }
     }
     
@@ -378,11 +379,6 @@ private extension GridLayer {
     
     var _zeroedNumOfRows: Int {
         return Int(self.numOfRows - 1)
-    }
-    
-    // Private Helpers
-    private func _updateLineLayers(_ block: ((LineLayer) -> Void)) {
-        self._lineLayers.forEach(block)
     }
 }
 
@@ -552,9 +548,26 @@ private extension GridLayer {
         }
     }
     
-    func _updatePosition(for line: LineLayer) {
-        line.parallelPosition = self._parallelInset(for: line)
-        line.orthogonalPosition = self._orthogonalOffset(for: line)
+    func _updateRowLineLengths() {
+        self._forEachLine(
+            where: { $0.orientation == .horizontal },
+            execute: self._updateLengthOf(row:)
+        )
+    }
+    
+    func _updateColumnLineLengths() {
+        self._forEachLine(
+            where: { $0.orientation == .vertical },
+            execute: self._updateLengthOf(column:)
+        )
+    }
+    
+    func _forEachLine(where condition: ((LineLayer) -> Bool), execute: (LineLayer) -> Void) {
+        self._lineLayers.forEach({
+            if condition($0) {
+                execute($0)
+            }
+        })
     }
     
     func _updateLengthOf(row: LineLayer) {
@@ -579,28 +592,6 @@ private extension GridLayer {
     
     func _updateOrthogonalPositionOf(column: LineLayer) {
         column.orthogonalPosition = self._horizontalAbsOffset(forGridPosition: column._positionIndex.value)
-    }
-    
-    func _updateRowLineLengths() {
-        self._forEachLine(
-            where: { $0.orientation == .horizontal },
-            execute: { $0.length = self._lengthForRow($0) }
-        )
-    }
-    
-    func _updateColumnLineLengths() {
-        self._forEachLine(
-            where: { $0.orientation == .vertical },
-            execute: { $0.length = self._lengthForColumn($0) }
-        )
-    }
-    
-    func _forEachLine(where condition: ((LineLayer) -> Bool), execute: (LineLayer) -> Void) {
-        self._lineLayers.forEach({
-            if condition($0) {
-                execute($0)
-            }
-        })
     }
     
     // Private Helper Functions
