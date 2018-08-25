@@ -546,6 +546,17 @@ private extension GridLayer {
 }
 
 
+// MARK: Color Calculation for LineLayer
+private extension GridLayer {
+    func _lineColor(for line: LineLayer) -> CGColor {
+        switch line._positionIndex.subdivision {
+        case .none: return self.mainGridLineColor
+        default:    return self.subGridLineColor
+        }
+    }
+}
+
+
 // MARK: Update LineLayers
 private extension GridLayer {
     func _updateRowLineLengths() {
@@ -634,10 +645,9 @@ private extension GridLayer {
         var columnIndices: [_PositionIndex] = []
         
         for line in self._lineLayers {
-            if line.orientation == .horizontal {
-                rowIndices.append(line._positionIndex)
-            } else /*if line.orientation == .vertical*/ {
-                columnIndices.append(line._positionIndex)
+            switch line.orientation {
+            case .horizontal:   rowIndices.append(line._positionIndex)
+            case .vertical:     columnIndices.append(line._positionIndex)
             }
         }
         
@@ -762,14 +772,6 @@ private extension GridLayer {
             through: through,
             by: subdiv.rawValue
         ).map({ _PositionIndex(value: $0, subdivision: subdiv) })
-    }
-    
-    private func _lineColor(for line: LineLayer) -> CGColor {
-        if line._positionIndex.subdivision == .none {
-            return self.mainGridLineColor
-        } else {
-            return self.subGridLineColor
-        }
     }
 }
 
