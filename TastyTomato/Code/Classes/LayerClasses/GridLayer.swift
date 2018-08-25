@@ -118,8 +118,8 @@ public extension GridLayer {
         return self._point(for: location)
     }
 
-    public func location(for point: CGPoint) -> GridLayer.Location {
-        return self._location(for: point)
+    public func location(for point: CGPoint, snapToGrid: Bool) -> GridLayer.Location {
+        return self._location(for: point, snapToGrid: snapToGrid)
     }
 }
 
@@ -786,7 +786,7 @@ private extension GridLayer {
         )
     }
     
-    func _location(for point: CGPoint) -> GridLayer.Location {
+    func _location(for point: CGPoint, snapToGrid: Bool) -> GridLayer.Location {
         let nearestRowAbsOffset: CGFloat = self._absOffset(
             nearestToAbsOffset: point.y,
             minAbsOffset: self._verticalAbsOffset(forGridPosition: 0),
@@ -801,17 +801,20 @@ private extension GridLayer {
             absStepUnit: self.columnWidth
         )
         
+        let insetFactor: CGFloat = self.gridInsetFactor
+        let exactRowValue: CGFloat = (nearestRowAbsOffset / self.rowHeight) - insetFactor
+        let exactColumnValue: CGFloat = (nearestColumnAbsOffset / self.columnWidth) - insetFactor
+        
+        guard snapToGrid else {
+            return (exactRowValue, exactColumnValue)
+        }
+        
         func roundToSubdiv(_ position: CGFloat) -> CGFloat {
             let invertedSubdivision: CGFloat = 1 / self.subdivision.rawValue
             return round(position * invertedSubdivision) / invertedSubdivision
         }
         
-        let insetFactor: CGFloat = self.gridInsetFactor
-        
-        return (
-            roundToSubdiv((nearestRowAbsOffset / self.rowHeight) - insetFactor),
-            roundToSubdiv((nearestColumnAbsOffset / self.columnWidth) - insetFactor)
-        )
+        return (roundToSubdiv(exactRowValue), roundToSubdiv(exactColumnValue))
     }
     
     // Helpers
