@@ -118,8 +118,8 @@ public extension GridLayer {
         return self._point(for: location)
     }
 
-    public func location(nearestTo point: CGPoint) -> GridLayer.Location {
-        return self._location(nearestTo: point)
+    public func location(for point: CGPoint) -> GridLayer.Location {
+        return self._location(for: point)
     }
 }
 
@@ -786,7 +786,7 @@ private extension GridLayer {
         )
     }
     
-    func _location(nearestTo point: CGPoint) -> GridLayer.Location {
+    func _location(for point: CGPoint) -> GridLayer.Location {
         let nearestRowAbsOffset: CGFloat = self._absOffset(
             nearestToAbsOffset: point.y,
             minAbsOffset: self._verticalAbsOffset(forGridPosition: 0),
