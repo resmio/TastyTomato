@@ -394,7 +394,18 @@ private extension GridLayer {
     }
     
     func _layoutSublayers() {
-        self._lineLayers.forEach(self._updatePosition)
+        self._lineLayers.forEach({ line in
+            switch line.orientation {
+            case .horizontal:
+                self._updateLengthOf(row: line)
+                self._updateParallelPositionOf(row: line)
+                self._updateOrthogonalPositionOf(row: line)
+            case .vertical:
+                self._updateLengthOf(column: line)
+                self._updateParallelPositionOf(column: line)
+                self._updateOrthogonalPositionOf(column: line)
+            }
+        })
     }
     
     // Helpers
@@ -544,6 +555,30 @@ private extension GridLayer {
     func _updatePosition(for line: LineLayer) {
         line.parallelPosition = self._parallelInset(for: line)
         line.orthogonalPosition = self._orthogonalOffset(for: line)
+    }
+    
+    func _updateLengthOf(row: LineLayer) {
+        row.length = (CGFloat(self._zeroedNumOfColumns) + self._overlapFactor(for: row)) * self.columnWidth
+    }
+    
+    func _updateLengthOf(column: LineLayer) {
+        column.length = (CGFloat(self._zeroedNumOfRows) + self._overlapFactor(for: column)) * self.rowHeight
+    }
+    
+    func _updateParallelPositionOf(row: LineLayer) {
+        row.parallelPosition = (self._width() - self._lengthForRow(row)) / 2
+    }
+    
+    func _updateParallelPositionOf(column: LineLayer) {
+        column.parallelPosition = (self._width() - self._lengthForRow(column)) / 2
+    }
+    
+    func _updateOrthogonalPositionOf(row: LineLayer) {
+        row.orthogonalPosition = self._verticalAbsOffset(forGridPosition: row._positionIndex.value)
+    }
+    
+    func _updateOrthogonalPositionOf(column: LineLayer) {
+        column.orthogonalPosition = self._horizontalAbsOffset(forGridPosition: column._positionIndex.value)
     }
     
     func _updateRowLineLengths() {
