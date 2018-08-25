@@ -144,13 +144,16 @@ public class GridLayer: CALayer {
     
     // Common Init
     private func _init() {
-        self._createOrDestroyBorderLayer()
+        self._addOrRemoveBorderLayer()
         self._addOrRemoveLineLayers()
         self._sizeFrame()
     }
     
+    // Private Lazy Variables
+    // ALOs
+    private lazy var _borderLayer: ALO<BorderLayer> = ALO(self._createBorderLayer)
+    
     // Private Variables
-    private var _borderLayer: BorderLayer?
     private var _lineLayers: [LineLayer] = []
     
     private var __subdivision: GridLayer.Subdivision = .none
@@ -189,6 +192,18 @@ public class GridLayer: CALayer {
 
 
 // MARK: // Private
+// MARK: Lazy Variable Creation
+private extension GridLayer {
+    func _createBorderLayer() -> BorderLayer {
+        let borderLayer: BorderLayer = BorderLayer()
+        borderLayer.lineWidth = self.borderLineWidth
+        borderLayer.lineDashPattern = self.borderDashPattern as [NSNumber]
+        borderLayer.borderEdgeInsets = self.borderEdgeInsets
+        return borderLayer
+    }
+}
+
+
 // MARK: Computed Properties
 private extension GridLayer {
     var _numOfRows: UInt {
@@ -251,7 +266,7 @@ private extension GridLayer {
         set(newBorderIsShown) {
             guard newBorderIsShown != self.__borderIsShown else { return }
             self.__borderIsShown = newBorderIsShown
-            self._createOrDestroyBorderLayer()
+            self._addOrRemoveBorderLayer()
         }
     }
     
@@ -282,7 +297,7 @@ private extension GridLayer {
         set(newBorderLineColor) {
             guard newBorderLineColor != self.__borderLineColor else { return }
             self.__borderLineColor = newBorderLineColor
-            self._borderLayer?.strokeColor = newBorderLineColor
+            (self._borderLayer¿)?.strokeColor = newBorderLineColor
         }
     }
     
@@ -315,7 +330,7 @@ private extension GridLayer {
         set(newBorderLineWidth) {
             guard newBorderLineWidth != self.__borderLineWidth else { return }
             self.__borderLineWidth = newBorderLineWidth
-            self._borderLayer?.lineWidth = newBorderLineWidth
+            (self._borderLayer¿)?.lineWidth = newBorderLineWidth
         }
     }
     
@@ -333,7 +348,7 @@ private extension GridLayer {
         set(newBorderDashPattern) {
             guard newBorderDashPattern != self.__borderDashPattern else { return }
             self.__borderDashPattern = newBorderDashPattern
-            self._borderLayer?.lineDashPattern = newBorderDashPattern
+            (self._borderLayer¿)?.lineDashPattern = newBorderDashPattern
         }
     }
     
@@ -351,7 +366,7 @@ private extension GridLayer {
         set(newBorderEdgeInsets) {
             guard newBorderEdgeInsets != self.__borderEdgeInsets else { return }
             self.__borderEdgeInsets = newBorderEdgeInsets
-            self._borderLayer?.borderEdgeInsets = newBorderEdgeInsets
+            (self._borderLayer¿)?.borderEdgeInsets = newBorderEdgeInsets
         }
     }
     
@@ -408,7 +423,7 @@ private extension GridLayer {
     func _sizeFrame() {
         let frameSize: CGSize = self.preferredFrameSize()
         self.frame.size = frameSize
-        self._borderLayer?.frame.size = frameSize
+        (self._borderLayer¿)?.frame.size = frameSize
     }
     
     func _width() -> CGFloat {
@@ -417,33 +432,6 @@ private extension GridLayer {
     
     func _height() -> CGFloat {
         return ((2 * self.gridInsetFactor) + CGFloat(self._zeroedNumOfRows)) * self.rowHeight
-    }
-}
-
-
-// MARK: Border
-private extension GridLayer {
-    func _createOrDestroyBorderLayer() {
-        if self.borderIsShown && self.gridInsetFactor != 0 {
-            self._addBorderLayer()
-        } else {
-            self._removeBorderLayer()
-        }
-    }
-    
-    // Private Helpers
-    private func _addBorderLayer() {
-        let borderLayer: BorderLayer = BorderLayer()
-        borderLayer.lineWidth = self.borderLineWidth
-        borderLayer.lineDashPattern = self.borderDashPattern as [NSNumber]
-        borderLayer.borderEdgeInsets = self.borderEdgeInsets
-        self._borderLayer = borderLayer
-        self.addSublayer(borderLayer)
-    }
-    
-    private func _removeBorderLayer() {
-        self._borderLayer?.removeFromSuperlayer()
-        self._borderLayer = nil
     }
 }
 
@@ -579,6 +567,19 @@ private extension GridLayer {
                 execute($0)
             }
         })
+    }
+}
+
+
+// MARK: Add Or Remove BorderLayer
+private extension GridLayer {
+    func _addOrRemoveBorderLayer() {
+        if self.borderIsShown && self.gridInsetFactor != 0 {
+            self.addSublayer(self._borderLayer¡)
+        } else {
+            (self._borderLayer¿)?.removeFromSuperlayer()
+            self._borderLayer.clear()
+        }
     }
 }
 
