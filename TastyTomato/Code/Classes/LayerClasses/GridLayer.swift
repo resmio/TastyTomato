@@ -517,7 +517,7 @@ private extension GridLayer {
     }
     
     func _parallelPositionFor(column: LineLayer) -> CGFloat {
-        return (self._width() - self._lengthFor(column: column)) / 2
+        return (self._height() - self._lengthFor(column: column)) / 2
     }
     
     func _orthogonalPositionFor(row: LineLayer) -> CGFloat {
