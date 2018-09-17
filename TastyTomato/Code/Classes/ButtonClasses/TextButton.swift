@@ -44,12 +44,12 @@ public class TextButton: BaseButton {
     }
     
     // setTitle Override
-    public override func setTitle(_ title: String?, for state: UIControlState) {
+    public override func setTitle(_ title: String?, for state: State) {
         self._setTitle(title, for: state)
     }
     
     // setTitleColor Override
-    public override func setTitleColor(_ color: UIColor?, for state: UIControlState) {
+    public override func setTitleColor(_ color: UIColor?, for state: State) {
         self._setTitleColor(color, for: state)
     }
 }
@@ -96,7 +96,7 @@ private extension TextButton {
 
 // MARK: setTitle Override Implementation
 private extension TextButton {
-    func _setTitle(_ title: String?, for state: UIControlState) {
+    func _setTitle(_ title: String?, for state: State) {
         super.setTitle(title, for: state)
         self._setAttributedTitle(title, for: state)
     }
@@ -105,7 +105,7 @@ private extension TextButton {
 
 // MARK: setTitleColor Override Implementation
 private extension TextButton {
-    func _setTitleColor(_ color: UIColor?, for state: UIControlState) {
+    func _setTitleColor(_ color: UIColor?, for state: State) {
         super.setTitleColor(color, for: state)
         if state == .normal {
             super.setTitleColor(color?.withAlpha(self.highlightedAlpha), for: .highlighted)
@@ -117,7 +117,7 @@ private extension TextButton {
 
 // MARK: Update Title
 private extension TextButton {
-    func _updateAttributedTitle(for state: UIControlState) {
+    func _updateAttributedTitle(for state: State) {
         let title: String? = super.title(for: state)
         self._setAttributedTitle(title, for: state)
     }
@@ -126,7 +126,7 @@ private extension TextButton {
 
 // MARK: Set Attributed Title
 private extension TextButton {
-    func _setAttributedTitle(_ title: String?, for state: UIControlState) {
+    func _setAttributedTitle(_ title: String?, for state: State) {
         guard let title: String = title else {
             self.setAttributedTitle(nil, for: state)
             return
@@ -137,7 +137,7 @@ private extension TextButton {
             for: state
         )
         
-        for otherState in UIControlState._states {
+        for otherState in UIControl.State._states {
             guard otherState != state else { continue }
             self.setAttributedTitle(
                 self._createAttributedTitle(for: otherState),
@@ -147,7 +147,7 @@ private extension TextButton {
     }
     
     // Helper
-    func _createAttributedTitle(from title: String? = nil, for state: UIControlState) -> NSAttributedString? {
+    func _createAttributedTitle(from title: String? = nil, for state: State) -> NSAttributedString? {
         guard let color: UIColor = super.titleColor(for: state) else { return nil }
         guard let title: String = title ?? super.title(for: state) else { return nil }
         
@@ -165,6 +165,6 @@ private extension TextButton {
 
 // MARK: - UIControlState
 // MARK: _states extension
-private extension UIControlState {
-    static var _states: [UIControlState] = [.normal, .highlighted, .disabled, .selected]
+private extension UIControl.State {
+    static var _states: [UIControl.State] = [.normal, .highlighted, .disabled, .selected]
 }
