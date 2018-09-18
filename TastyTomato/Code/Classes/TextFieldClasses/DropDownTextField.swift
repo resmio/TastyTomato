@@ -139,7 +139,7 @@ extension DropDownTextField: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier: String = "identifier"
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: identifier) ?? UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: identifier) ?? UITableViewCell(style: .default, reuseIdentifier: identifier)
         cell.size = self.size
         cell.textLabel?.text = "\((indexPath as NSIndexPath).row)"
         cell.backgroundColor = UIColor.white
