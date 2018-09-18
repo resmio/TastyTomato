@@ -172,9 +172,7 @@ private extension CalendarVC {
         let pageVC: UIPageViewController = UIPageViewController(
             transitionStyle: .scroll,
             navigationOrientation: .horizontal,
-            options: [
-                UIPageViewControllerOptionInterPageSpacingKey: 20
-            ]
+            options: [.interPageSpacing: 20]
         )
         
         let initialVC: CalendarDaysVC = self._daysVC(for: Date().startOf(component: .month))
