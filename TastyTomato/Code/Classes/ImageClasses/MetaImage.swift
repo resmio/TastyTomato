@@ -40,7 +40,7 @@ public class MetaImage: UIImage {
         super.init(cgImage: cgImage)
     }
     
-    internal override init(cgImage: CGImage, scale: CGFloat, orientation: UIImageOrientation) {
+    internal override init(cgImage: CGImage, scale: CGFloat, orientation: Orientation) {
         super.init(cgImage: cgImage, scale: scale, orientation: orientation)
     }
     
@@ -48,7 +48,7 @@ public class MetaImage: UIImage {
         super.init(ciImage: ciImage)
     }
     
-    internal override init(ciImage: CoreImage.CIImage, scale: CGFloat, orientation: UIImageOrientation) {
+    internal override init(ciImage: CoreImage.CIImage, scale: CGFloat, orientation: Orientation) {
         super.init(ciImage: ciImage, scale: scale, orientation: orientation)
     }
 }
