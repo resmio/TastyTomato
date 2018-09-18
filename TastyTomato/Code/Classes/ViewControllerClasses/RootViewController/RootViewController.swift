@@ -40,9 +40,9 @@ private extension RootViewController {
         set(newChild) {
             guard newChild != self.__child else { return }
             if let oldChild: UIViewController = self.__child {
-                oldChild.willMove(toParentViewController: nil)
+                oldChild.willMove(toParent: nil)
                 oldChild.view.removeFromSuperview()
-                oldChild.removeFromParentViewController()
+                oldChild.removeFromParent()
             }
             
             if let newChild: UIViewController = newChild {
