@@ -10,8 +10,8 @@ import UIKit
 
 
 // MARK: // Public
-extension UIImage {
-    convenience init?(color: UIColor) {
+public extension UIImage {
+    public convenience init?(color: UIColor) {
         self.init(_color: color)
     }
 }
