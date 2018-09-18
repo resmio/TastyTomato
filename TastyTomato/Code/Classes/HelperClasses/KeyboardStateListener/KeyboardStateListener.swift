@@ -43,7 +43,7 @@ public class KeyboardStateListener: NSObject {
     private var _keyboardIsVisible: Bool? = false
     private var _keyboardFrame: CGRect?
     private var _animationDuration: TimeInterval?
-    private var _animationCurve: UIViewAnimationOptions?
+    private var _animationCurve: UIView.AnimationOptions?
     private var _dismissKeyboardRecognizer: DismissKeyboardRecognizer?
 }
 
@@ -242,7 +242,7 @@ private extension KeyboardStateListener {
         self._animationDuration = TimeInterval(animationDurationValue.doubleValue)
         
         let animationCurveValue: NSNumber = userInfoDict.object(forKey: UIKeyboardAnimationCurveUserInfoKey) as! NSNumber
-        self._animationCurve = UIViewAnimationOptions(rawValue: animationCurveValue.uintValue)
+        self._animationCurve = UIView.AnimationOptions(rawValue: animationCurveValue.uintValue)
     }
 }
 

@@ -15,7 +15,7 @@ public extension UIWindow {
         return self._rootVC
     }
     
-    public func setRootVC(_ newRootVC: UIViewController, transition: UIViewAnimationTransition = .none, completion: (() -> Void)? = nil) {
+    public func setRootVC(_ newRootVC: UIViewController, transition: AnimationTransition = .none, completion: (() -> Void)? = nil) {
         self._setRootVC(newRootVC, transition: transition, completion: completion)
     }
 }
@@ -32,7 +32,7 @@ private extension UIWindow {
 
 // MARK: Function Implementation
 private extension UIWindow {
-    func _setRootVC(_ newRootVC: UIViewController, transition: UIViewAnimationTransition, completion: (() -> Void)?) {
+    func _setRootVC(_ newRootVC: UIViewController, transition: AnimationTransition, completion: (() -> Void)?) {
         let setNewChildAndCallCompletion: ((RootViewController) -> Void) = {
             $0.child = newRootVC
             completion?()
@@ -50,7 +50,7 @@ private extension UIWindow {
             return
         }
         
-        guard let transitionOptions: UIViewAnimationOptions = self._getAnimationOptions(for: transition) else {
+        guard let transitionOptions: AnimationOptions = self._getAnimationOptions(for: transition) else {
             setNewChildAndCallCompletion(realRootVC)
             return
         }
@@ -65,9 +65,9 @@ private extension UIWindow {
     }
     
     // Private Helper
-    private func _getAnimationOptions(for transition: UIViewAnimationTransition) -> UIViewAnimationOptions? {
-        let defaultOptions: UIViewAnimationOptions = [.allowAnimatedContent, .curveEaseInOut]
-        var additionalOptions: UIViewAnimationOptions
+    private func _getAnimationOptions(for transition: AnimationTransition) -> AnimationOptions? {
+        let defaultOptions: AnimationOptions = [.allowAnimatedContent, .curveEaseInOut]
+        var additionalOptions: AnimationOptions
         
         switch transition {
         case .curlUp:
