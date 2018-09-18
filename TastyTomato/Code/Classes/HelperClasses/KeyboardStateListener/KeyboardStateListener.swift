@@ -357,7 +357,9 @@ private extension KeyboardStateListener {
         case .passthroughWithoutDismiss:
             return
         case .dismissWithoutPassthrough, .passthroughAndDismiss:
-            // ???:
+            // ???: Is the touch actually passed through here?
+            // If so, it shouldn't be for .dismissWithoutPassthrough.
+            // If not, it should for .passthroughAndDismiss.
             let location: CGPoint = recognizer.location(in: inputView)
             if !inputView.point(inside: location, with: nil) {
                 inputView.endEditing(false)
