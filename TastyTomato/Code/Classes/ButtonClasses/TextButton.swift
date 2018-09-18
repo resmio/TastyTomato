@@ -151,8 +151,8 @@ private extension TextButton {
         guard let color: UIColor = super.titleColor(for: state) else { return nil }
         guard let title: String = title ?? super.title(for: state) else { return nil }
         
-        let underlineStyle: NSUnderlineStyle = self.underlined ? .styleSingle : .styleNone
-        let attributes: [NSAttributedStringKey : Any] = [
+        let underlineStyle: NSUnderlineStyle = self.underlined ? .single : []
+        let attributes: [NSAttributedString.Key : Any] = [
             .foregroundColor: color,
             .underlineStyle: underlineStyle.rawValue,
             .underlineColor: color
