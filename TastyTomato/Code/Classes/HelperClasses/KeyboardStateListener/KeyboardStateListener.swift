@@ -231,17 +231,17 @@ private extension KeyboardStateListener {
 private extension KeyboardStateListener {
     func _setKeyboardFrame(from notification: Notification) {
         let userInfoDict: NSDictionary = (notification as NSNotification).userInfo! as NSDictionary
-        let keyboardFrameValue: NSValue = userInfoDict.object(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardFrameValue: NSValue = userInfoDict.object(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
         self._keyboardFrame = keyboardFrameValue.cgRectValue
     }
     
     func _setAnimationProperties(from notification: Notification) {
         let userInfoDict: NSDictionary = (notification as NSNotification).userInfo! as NSDictionary
         
-        let animationDurationValue: NSNumber = userInfoDict.object(forKey: UIKeyboardAnimationDurationUserInfoKey) as! NSNumber
+        let animationDurationValue: NSNumber = userInfoDict.object(forKey: UIResponder.keyboardAnimationDurationUserInfoKey) as! NSNumber
         self._animationDuration = TimeInterval(animationDurationValue.doubleValue)
         
-        let animationCurveValue: NSNumber = userInfoDict.object(forKey: UIKeyboardAnimationCurveUserInfoKey) as! NSNumber
+        let animationCurveValue: NSNumber = userInfoDict.object(forKey: UIResponder.keyboardAnimationCurveUserInfoKey) as! NSNumber
         self._animationCurve = UIView.AnimationOptions(rawValue: animationCurveValue.uintValue)
     }
 }
