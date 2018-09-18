@@ -114,26 +114,26 @@ private extension KeyboardStateListener {
     // Private Helpers
     private func _registerForKeyboardNotifications() {
         self._observe([
-            (NSNotification.Name.UIKeyboardWillShow, #selector(_keyboardWillShow(_:))),
-            (NSNotification.Name.UIKeyboardDidShow, #selector(_keyboardDidShow(_:))),
-            (NSNotification.Name.UIKeyboardWillHide, #selector(_keyboardWillHide(_:))),
-            (NSNotification.Name.UIKeyboardDidHide, #selector(_keyboardDidHide(_:))),
+            (UIResponder.keyboardWillShowNotification, #selector(_keyboardWillShow(_:))),
+            (UIResponder.keyboardDidShowNotification, #selector(_keyboardDidShow(_:))),
+            (UIResponder.keyboardWillHideNotification, #selector(_keyboardWillHide(_:))),
+            (UIResponder.keyboardDidHideNotification, #selector(_keyboardDidHide(_:))),
         ])
     }
     
     private func _registerForTextFieldNotifications() {
         self._observe([
-            (NSNotification.Name.UITextFieldTextDidBeginEditing, #selector(_textInputViewDidBeginEditing(_:))),
-            (NSNotification.Name.UITextFieldTextDidChange, #selector(_textInputViewTextDidChange(_:))),
-            (NSNotification.Name.UITextFieldTextDidEndEditing, #selector(_textInputViewDidEndEditing(_:))),
+            (UITextField.textDidBeginEditingNotification, #selector(_textInputViewDidBeginEditing(_:))),
+            (UITextField.textDidChangeNotification, #selector(_textInputViewTextDidChange(_:))),
+            (UITextField.textDidEndEditingNotification, #selector(_textInputViewDidEndEditing(_:))),
         ])
     }
     
     private func _registerForTextViewNotifications() {
         self._observe([
-            (NSNotification.Name.UITextViewTextDidBeginEditing, #selector(_textInputViewDidBeginEditing(_:))),
-            (NSNotification.Name.UITextViewTextDidChange, #selector(_textInputViewTextDidChange(_:))),
-            (NSNotification.Name.UITextViewTextDidEndEditing, #selector(_textInputViewDidEndEditing(_:))),
+            (UITextView.textDidBeginEditingNotification, #selector(_textInputViewDidBeginEditing(_:))),
+            (UITextView.textDidChangeNotification, #selector(_textInputViewTextDidChange(_:))),
+            (UITextView.textDidEndEditingNotification, #selector(_textInputViewDidEndEditing(_:))),
         ])
     }
     
