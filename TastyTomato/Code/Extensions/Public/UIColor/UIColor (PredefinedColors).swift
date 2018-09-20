@@ -29,6 +29,10 @@ import UIKit
 
 // MARK: // Public
 public extension UIColor {
+    public static var brown7B4900: UIColor {
+        return UIColor(fromHex_: "7B4900")
+    }
+    
     public static var redBC213F: UIColor {
         return UIColor(fromHex_: "BC213F")
     }
@@ -107,6 +111,10 @@ public extension UIColor {
     
     public static var grayEEEEEE: UIColor {
         return UIColor(fromHex_: "EEEEEE")
+    }
+    
+    public static var gray3E4862: UIColor {
+        return UIColor(fromHex_: "3E4862")
     }
     
     public static var whiteF7F7F7: UIColor {
