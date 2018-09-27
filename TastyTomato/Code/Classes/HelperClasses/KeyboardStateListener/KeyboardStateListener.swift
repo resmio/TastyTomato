@@ -43,7 +43,7 @@ public class KeyboardStateListener: NSObject {
     private var _keyboardIsVisible: Bool? = false
     private var _keyboardFrame: CGRect?
     private var _animationDuration: TimeInterval?
-    private var _animationCurve: UIViewAnimationOptions?
+    private var _animationCurve: UIView.AnimationOptions?
     private var _dismissKeyboardRecognizer: DismissKeyboardRecognizer?
 }
 
@@ -114,26 +114,26 @@ private extension KeyboardStateListener {
     // Private Helpers
     private func _registerForKeyboardNotifications() {
         self._observe([
-            (NSNotification.Name.UIKeyboardWillShow, #selector(_keyboardWillShow(_:))),
-            (NSNotification.Name.UIKeyboardDidShow, #selector(_keyboardDidShow(_:))),
-            (NSNotification.Name.UIKeyboardWillHide, #selector(_keyboardWillHide(_:))),
-            (NSNotification.Name.UIKeyboardDidHide, #selector(_keyboardDidHide(_:))),
+            (UIResponder.keyboardWillShowNotification, #selector(_keyboardWillShow(_:))),
+            (UIResponder.keyboardDidShowNotification, #selector(_keyboardDidShow(_:))),
+            (UIResponder.keyboardWillHideNotification, #selector(_keyboardWillHide(_:))),
+            (UIResponder.keyboardDidHideNotification, #selector(_keyboardDidHide(_:))),
         ])
     }
     
     private func _registerForTextFieldNotifications() {
         self._observe([
-            (NSNotification.Name.UITextFieldTextDidBeginEditing, #selector(_textInputViewDidBeginEditing(_:))),
-            (NSNotification.Name.UITextFieldTextDidChange, #selector(_textInputViewTextDidChange(_:))),
-            (NSNotification.Name.UITextFieldTextDidEndEditing, #selector(_textInputViewDidEndEditing(_:))),
+            (UITextField.textDidBeginEditingNotification, #selector(_textInputViewDidBeginEditing(_:))),
+            (UITextField.textDidChangeNotification, #selector(_textInputViewTextDidChange(_:))),
+            (UITextField.textDidEndEditingNotification, #selector(_textInputViewDidEndEditing(_:))),
         ])
     }
     
     private func _registerForTextViewNotifications() {
         self._observe([
-            (NSNotification.Name.UITextViewTextDidBeginEditing, #selector(_textInputViewDidBeginEditing(_:))),
-            (NSNotification.Name.UITextViewTextDidChange, #selector(_textInputViewTextDidChange(_:))),
-            (NSNotification.Name.UITextViewTextDidEndEditing, #selector(_textInputViewDidEndEditing(_:))),
+            (UITextView.textDidBeginEditingNotification, #selector(_textInputViewDidBeginEditing(_:))),
+            (UITextView.textDidChangeNotification, #selector(_textInputViewTextDidChange(_:))),
+            (UITextView.textDidEndEditingNotification, #selector(_textInputViewDidEndEditing(_:))),
         ])
     }
     
@@ -231,18 +231,18 @@ private extension KeyboardStateListener {
 private extension KeyboardStateListener {
     func _setKeyboardFrame(from notification: Notification) {
         let userInfoDict: NSDictionary = (notification as NSNotification).userInfo! as NSDictionary
-        let keyboardFrameValue: NSValue = userInfoDict.object(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardFrameValue: NSValue = userInfoDict.object(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue
         self._keyboardFrame = keyboardFrameValue.cgRectValue
     }
     
     func _setAnimationProperties(from notification: Notification) {
         let userInfoDict: NSDictionary = (notification as NSNotification).userInfo! as NSDictionary
         
-        let animationDurationValue: NSNumber = userInfoDict.object(forKey: UIKeyboardAnimationDurationUserInfoKey) as! NSNumber
+        let animationDurationValue: NSNumber = userInfoDict.object(forKey: UIResponder.keyboardAnimationDurationUserInfoKey) as! NSNumber
         self._animationDuration = TimeInterval(animationDurationValue.doubleValue)
         
-        let animationCurveValue: NSNumber = userInfoDict.object(forKey: UIKeyboardAnimationCurveUserInfoKey) as! NSNumber
-        self._animationCurve = UIViewAnimationOptions(rawValue: animationCurveValue.uintValue)
+        let animationCurveValue: NSNumber = userInfoDict.object(forKey: UIResponder.keyboardAnimationCurveUserInfoKey) as! NSNumber
+        self._animationCurve = UIView.AnimationOptions(rawValue: animationCurveValue.uintValue)
     }
 }
 
@@ -357,7 +357,9 @@ private extension KeyboardStateListener {
         case .passthroughWithoutDismiss:
             return
         case .dismissWithoutPassthrough, .passthroughAndDismiss:
-            // ???:
+            // ???: Is the touch actually passed through here?
+            // If so, it shouldn't be for .dismissWithoutPassthrough.
+            // If not, it should for .passthroughAndDismiss.
             let location: CGPoint = recognizer.location(in: inputView)
             if !inputView.point(inside: location, with: nil) {
                 inputView.endEditing(false)

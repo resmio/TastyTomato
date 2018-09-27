@@ -256,7 +256,7 @@ private extension PopoverBackgroundView {
         if let borderShadowView: UIView = self._borderShadowView¿ {
             borderShadowView.frame = CGRect(x: borderX, y: borderY, width: borderWidth, height: borderHeight)
             borderShadowView.layer.shadowPath = UIBezierPath(rect: borderShadowView.layer.bounds).cgPath
-            self.sendSubview(toBack: borderShadowView)
+            self.sendSubviewToBack(borderShadowView)
         }
         
         if let arrowShadowView: TriangleView = self._arrowShadowView¿ {
@@ -286,7 +286,7 @@ private extension PopoverBackgroundView {
             arrowShadowView.transform = rotation
             arrowShadowView.layer.shadowPath = arrowShadowView.trianglePath()
             arrowShadowView.isHidden = arrowShouldBeHidden
-            self.sendSubview(toBack: arrowShadowView)
+            self.sendSubviewToBack(arrowShadowView)
         }
         
         // This hack is needed to get rid of the default dimming/blur-shadow

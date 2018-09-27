@@ -172,9 +172,7 @@ private extension CalendarVC {
         let pageVC: UIPageViewController = UIPageViewController(
             transitionStyle: .scroll,
             navigationOrientation: .horizontal,
-            options: [
-                UIPageViewControllerOptionInterPageSpacingKey: 20
-            ]
+            options: [.interPageSpacing: 20]
         )
         
         let initialVC: CalendarDaysVC = self._daysVC(for: Date().startOf(component: .month))
@@ -265,7 +263,7 @@ private extension CalendarVC {
         self._switchTo(daysVC: vc, direction: .forward, animated: false)
     }
     
-    func _switchTo(daysVC: CalendarDaysVC, direction: UIPageViewControllerNavigationDirection, animated: Bool = true) {
+    func _switchTo(daysVC: CalendarDaysVC, direction: UIPageViewController.NavigationDirection, animated: Bool = true) {
         guard !self._isPaging else { return }
         self._isPaging = true
         
@@ -306,7 +304,7 @@ private extension CalendarVC {
         let vc: CalendarDaysVC = self._daysVC(for: roundedDate)
         
         let isLaterMonth: Bool = roundedDate.isAfter(date: month, granularity: .month)
-        let direction: UIPageViewControllerNavigationDirection = isLaterMonth ? .forward : .reverse
+        let direction: UIPageViewController.NavigationDirection = isLaterMonth ? .forward : .reverse
         
         self._switchTo(daysVC: vc, direction: direction, animated: animated)
         

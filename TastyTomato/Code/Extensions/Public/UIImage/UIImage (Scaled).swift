@@ -33,7 +33,7 @@ private extension UIImage {
         }
         
         let isOpaque: Bool = self.cgImage!.alphaInfo == .none
-        let renderingMode: UIImageRenderingMode = self.renderingMode
+        let renderingMode: RenderingMode = self.renderingMode
         UIGraphicsBeginImageContextWithOptions(size, isOpaque, 0)
         self.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         let result: UIImage = UIGraphicsGetImageFromCurrentImageContext()!.withRenderingMode(renderingMode)

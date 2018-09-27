@@ -79,7 +79,7 @@ public class BaseButton: UIButton {
         self.setTitle(title, for: .normal)
     }
     
-    public override func setTitle(_ title: String?, for state: UIControlState) {
+    public override func setTitle(_ title: String?, for state: State) {
         self._setTitle(title, for: state)
     }
     
@@ -115,7 +115,7 @@ private extension BaseButton {
 
 // MARK: setTitle Override Implementation
 private extension BaseButton {
-    func _setTitle(_ title: String?, for state: UIControlState) {
+    func _setTitle(_ title: String?, for state: State) {
         super.setTitle(title, for: state)
         if self.adjustsWidthOnTitleSet {
             self.width = self.sizeThatFits(.zero).width

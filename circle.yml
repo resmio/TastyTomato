@@ -4,7 +4,7 @@ version: 2
 jobs:
   build:
     macos:
-      xcode: "9.3.0"
+      xcode: "10.0.0"
     shell: /bin/bash --login -eo pipefail
     environment:
       LANG: en_US.UTF-8
@@ -17,7 +17,7 @@ jobs:
       # If we don't pass `-t`, the Simulator starts anyway...
       - run:
           name: Pre-start iOS Simulator
-          command: xcrun instruments -w "iPad Air 2 (11.3)" || true
+          command: xcrun instruments -w "iPad Air 2 (12.0)" || true
       
       ## Create output directories
       - run:
@@ -58,19 +58,19 @@ jobs:
       ## Install pods (cache-wrapped)
       - restore_cache:
           keys:
-            - v4-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
-            - v4-pod-cache-{{ .Branch }}
-            - v4-pod-cache
+            - v5-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
+            - v5-pod-cache-{{ .Branch }}
+            - v5-pod-cache
       - run: bundle exec pod install
       - save_cache:
-          key: v4-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
+          key: v5-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
           paths:
             - ./Pods
 
       ## Run tests
       - run:
           name: Run tests
-          command: xcodebuild -workspace TastyTomato.xcworkspace -scheme "TastyTomato" -destination 'platform=iOS Simulator,name=iPad Air 2,OS=11.3' clean build test | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-verbose.log" | xcpretty | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-xcpretty.log"
+          command: xcodebuild -workspace TastyTomato.xcworkspace -scheme "TastyTomato" -destination 'platform=iOS Simulator,name=iPad Air 2,OS=12.0' clean build test | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-verbose.log" | xcpretty | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-xcpretty.log"
       
       ## Store artifacts
       - store_artifacts:

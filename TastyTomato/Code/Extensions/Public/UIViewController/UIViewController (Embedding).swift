@@ -36,9 +36,9 @@ private extension UIViewController {
         let containerFrame: CGRect = frame ?? containerView.bounds
         let vcView: UIView = viewController.view
         
-        self.addChildViewController(viewController)
+        self.addChild(viewController)
         vcView.frame = containerFrame
         containerView.addSubview(vcView)
-        viewController.didMove(toParentViewController: self)
+        viewController.didMove(toParent: self)
     }
 }

@@ -55,7 +55,7 @@ extension ZoomView {
         set { self._scrollView.showsVerticalScrollIndicator = newValue }
     }
     
-    public var decelerationRate: CGFloat {
+    public var decelerationRate: UIScrollView.DecelerationRate {
         get { return self._scrollView.decelerationRate }
         set { self._scrollView.decelerationRate = newValue }
     }

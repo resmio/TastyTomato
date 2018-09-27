@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Internal
 extension UIButton {
-    func setColor_(_ color: UIColor, for state: UIControlState) {
+    func setColor_(_ color: UIColor, for state: State) {
         self._setColor(color, for: state)
     }
 }
@@ -19,7 +19,7 @@ extension UIButton {
 
 // MARK: // Private
 private extension UIButton {
-    func _setColor(_ color: UIColor, for state: UIControlState) {
+    func _setColor(_ color: UIColor, for state: State) {
         self.setBackgroundImage(UIImage(color: color), for: state)
     }
 }
