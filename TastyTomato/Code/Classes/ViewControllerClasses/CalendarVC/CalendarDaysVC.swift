@@ -86,14 +86,14 @@ class CalendarDaysVC: UIViewController {
         let month: Date = Date().startOf(component: .month)
         self._month = month
         super.init(coder: aDecoder)
-        self._calendarDaysView.title = month.string(custom: "MMMM YYYY")
+        self._calendarDaysView.title = month.toString(.custom("MMMM YYYY"))
     }
     
     // Init
     init(month: Date) {
         self._month = month
         super.init(nibName: nil, bundle: nil)
-        self._calendarDaysView.title = month.string(custom: "MMMM YYYY")
+        self._calendarDaysView.title = month.toString(.custom("MMMM YYYY"))
     }
     
     // Private Weak Variables
@@ -150,7 +150,7 @@ private extension CalendarDaysVC {
 private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
     func _configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
         let date: Date = self.month.startWeek + indexPath.row.days
-        dateCell.title = date.string(custom: "d")
+        dateCell.title = date.toString(.custom("d"))
         
         let design: CalendarDaysVCDesign = self._design
         
