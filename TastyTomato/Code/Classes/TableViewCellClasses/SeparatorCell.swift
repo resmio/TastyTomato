@@ -13,13 +13,14 @@ import SignificantSpices
 // MARK: // Internal
 // MARK: Interface
 extension SeparatorCell {
-    public typealias SeparatorInsets = (left: CGFloat, right: CGFloat)
-    
-    // SeparatorStyle enum
-    public enum SeparatorStyle {
-        case top
-        case bottom
-        case topAndBottom
+    public enum Separator {
+        public typealias Insets = (left: CGFloat, right: CGFloat)
+        
+        public enum Style {
+            case top
+            case bottom
+            case topAndBottom
+        }
     }
     
     // Readonly
@@ -27,7 +28,7 @@ extension SeparatorCell {
     public static let defaultBottomSeparatorLineWidth: CGFloat = 0.3
     
     // ReadWrite
-    public var separatorStyle: SeparatorStyle {
+    public var separatorStyle: Separator.Style {
         get { return self._separatorStyle }
         set { self._separatorStyle = newValue }
     }
@@ -52,12 +53,12 @@ extension SeparatorCell {
         set { self._bottomSeparatorLineWidth = newValue }
     }
     
-    public var topSeparatorInsets: SeparatorInsets {
+    public var topSeparatorInsets: Separator.Insets {
         get { return self._topSeparatorInsets }
         set { self._topSeparatorInsets = newValue }
     }
     
-    public var bottomSeparatorInsets: SeparatorInsets {
+    public var bottomSeparatorInsets: Separator.Insets {
         get { return self._bottomSeparatorInsets }
         set { self._bottomSeparatorInsets = newValue }
     }
@@ -86,7 +87,7 @@ open class SeparatorCell: UITableViewCell {
     
     // Common Init
     private func _init() {
-        let separatorStyle: SeparatorStyle = self.separatorStyle
+        let separatorStyle: Separator.Style = self.separatorStyle
         let layer: CALayer = self.contentView.layer
         if separatorStyle <> [.topAndBottom, .top] {
             layer.addSublayer(self._topSeparator¡)
@@ -102,11 +103,11 @@ open class SeparatorCell: UITableViewCell {
     private lazy var _bottomSeparator: ALO<LineLayer> = ALO(self._createBottomSeparator)
     
     // Private Variables
-    private var __separatorStyle: SeparatorStyle = .bottom
+    private var __separatorStyle: Separator.Style = .bottom
     private var __topSeparatorColor: UIColor = .gray
     private var __bottomSeparatorColor: UIColor = .gray
-    private var __topSeparatorInsets: SeparatorInsets = (5, 0)
-    private var __bottomSeparatorInsets: SeparatorInsets = (5, 0)
+    private var __topSeparatorInsets: Separator.Insets = (5, 0)
+    private var __bottomSeparatorInsets: Separator.Insets = (5, 0)
     private var __topSeparatorLineWidth: CGFloat = SeparatorCell.defaultTopSeparatorLineWidth
     private var __bottomSeparatorLineWidth: CGFloat = SeparatorCell.defaultBottomSeparatorLineWidth
     
@@ -138,10 +139,10 @@ private extension SeparatorCell {
 
 // MARK: Computed Variables
 private extension SeparatorCell {
-    var _separatorStyle: SeparatorStyle {
+    var _separatorStyle: Separator.Style {
         get { return self.__separatorStyle }
         set(newSeparatorStyle) {
-            let oldSeparatorStyle: SeparatorStyle = self.__separatorStyle
+            let oldSeparatorStyle: Separator.Style = self.__separatorStyle
             guard newSeparatorStyle != oldSeparatorStyle else { return }
             self.__separatorStyle = newSeparatorStyle
             
@@ -175,7 +176,7 @@ private extension SeparatorCell {
         }
     }
     
-    var _topSeparatorInsets: SeparatorInsets {
+    var _topSeparatorInsets: Separator.Insets {
         get { return self.__topSeparatorInsets }
         set(newTopSeparatorInsets) {
             guard newTopSeparatorInsets != self.__topSeparatorInsets else { return }
@@ -206,7 +207,7 @@ private extension SeparatorCell {
         }
     }
     
-    var _bottomSeparatorInsets: SeparatorInsets {
+    var _bottomSeparatorInsets: Separator.Insets {
         get { return self.__bottomSeparatorInsets }
         set(newBottomSeparatorInsets) {
             guard newBottomSeparatorInsets != self.__bottomSeparatorInsets else { return }
@@ -257,7 +258,7 @@ private extension SeparatorCell {
 
 // MARK: Helpers
 private extension SeparatorCell {
-    func _adjustLengthOf(separator: LineLayer, totalWidth: CGFloat, insets: SeparatorInsets) {
+    func _adjustLengthOf(separator: LineLayer, totalWidth: CGFloat, insets: Separator.Insets) {
         let leftInset: CGFloat = insets.left
         separator.length = totalWidth - (leftInset + insets.right)
         separator.parallelPosition = leftInset
