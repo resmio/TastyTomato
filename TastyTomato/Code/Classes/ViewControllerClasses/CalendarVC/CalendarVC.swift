@@ -315,7 +315,7 @@ private extension CalendarVC {
         // so the correct month will be shown on the next
         // button tap or swipe.  Unfortunately, it seems
         // as though there's no better way to do this...
-        if month >< [roundedDate.prevMonth, roundedDate.nextMonth] {
+        if month >< [roundedDate.prevMonth(at: .auto), roundedDate.nextMonth(at: .auto)] {
             let pageVC: UIPageViewController = self._pageVC
             pageVC.dataSource = nil
             pageVC.dataSource = self
