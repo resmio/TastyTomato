@@ -149,7 +149,7 @@ private extension CalendarDaysVC {
 // MARK: CalendarDaysViewDelegate
 private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
     func _configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
-        let date: Date = self.month.startWeek + indexPath.row.days
+        let date: Date = self.month.dateAtStartOf(.weekOfMonth) + indexPath.row.days
         dateCell.title = date.toString(.custom("d"))
         
         let design: CalendarDaysVCDesign = self._design
@@ -175,13 +175,13 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
     
     func _shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool {
         guard let delegate: CalendarDaysVCDelegate = self.delegate else { return true }
-        let date: Date = self.month.startWeek + indexPath.row.days
+        let date: Date = self.month.dateAtStartOf(.weekOfMonth) + indexPath.row.days
         return delegate.shouldSelect(date, on: self)
     }
     
     func _didSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
         guard let delegate: CalendarDaysVCDelegate = self.delegate else { return }
-        let date: Date = self.month.startWeek + indexPath.row.days
+        let date: Date = self.month.dateAtStartOf(.weekOfMonth) + indexPath.row.days
         delegate.didSelect(date, on: self)
     }
 }
@@ -192,7 +192,7 @@ private extension CalendarDaysVC {
     func _selectDate(_ date: Date?) {
         var indexPath: IndexPath? = nil
         hasDate: if let date: Date = date {
-            let firstDisplayedDay: Date = self.month.startWeek
+            let firstDisplayedDay: Date = self.month.dateAtStartOf(.weekOfMonth)
             let lastDisplayedDay: Date = firstDisplayedDay + 41.days
             guard date.isBetween(date: firstDisplayedDay, and: lastDisplayedDay) else { break hasDate }
             guard let row: Int = self.month.startWeek.component(.day, to: date) else { break hasDate }

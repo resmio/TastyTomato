@@ -202,7 +202,7 @@ private extension CalendarVC {
     }
     
     var _firstDisplayedDay: Date {
-        return self._displayedMonthAndYear.startWeek
+        return self._displayedMonthAndYear.dateAtStartOf(.weekOfMonth)
     }
     
     // ReadWrite
@@ -215,7 +215,7 @@ private extension CalendarVC {
             guard roundedNewSelectedDate != self.__selectedDate else { return }
             
             let currentDaysVC: CalendarDaysVC = self._currentDaysVC
-            let firstDisplayedDay: Date = currentDaysVC.month.startWeek
+            let firstDisplayedDay: Date = currentDaysVC.month.dateAtStartOf(.weekOfMonth)
             let lastDisplayedDay: Date = firstDisplayedDay + 41.days
             if roundedNewSelectedDate?.isBetween(date: firstDisplayedDay, and: lastDisplayedDay) ?? true {
                 currentDaysVC.selectDate(roundedNewSelectedDate)
