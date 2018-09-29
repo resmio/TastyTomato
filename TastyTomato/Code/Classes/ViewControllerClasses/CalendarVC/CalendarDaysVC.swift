@@ -165,7 +165,7 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
             titleFont = design.todayDayNumberFont
         } else if !dateIsInCurrentMonth {
             titleColor = design.differentMonthDayNumberTextColor
-        } else if date.isBefore(date: Date(), granularity: .day) {
+        } else if date.isBeforeDate(Date(), granularity: .day) {
             titleColor = design.pastDayNumberTextColor
         }
         
