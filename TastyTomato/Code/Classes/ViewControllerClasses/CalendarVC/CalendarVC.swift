@@ -211,7 +211,7 @@ private extension CalendarVC {
             return self.__selectedDate
         }
         set(newSelectedDate) {
-            let roundedNewSelectedDate: Date? = newSelectedDate?.startOfDay
+            let roundedNewSelectedDate: Date? = newSelectedDate?.dateAtStartOf(.day)
             guard roundedNewSelectedDate != self.__selectedDate else { return }
             
             let currentDaysVC: CalendarDaysVC = self._currentDaysVC
