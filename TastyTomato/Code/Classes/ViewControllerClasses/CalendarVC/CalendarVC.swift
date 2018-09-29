@@ -217,7 +217,7 @@ private extension CalendarVC {
             let currentDaysVC: CalendarDaysVC = self._currentDaysVC
             let firstDisplayedDay: Date = currentDaysVC.month.dateAtStartOf(.weekOfMonth)
             let lastDisplayedDay: Date = firstDisplayedDay + 41.days
-            if roundedNewSelectedDate?.isBetween(date: firstDisplayedDay, and: lastDisplayedDay) ?? true {
+            if roundedNewSelectedDate?.isInRange(date: firstDisplayedDay, and: lastDisplayedDay) ?? true {
                 currentDaysVC.selectDate(roundedNewSelectedDate)
             }
             
