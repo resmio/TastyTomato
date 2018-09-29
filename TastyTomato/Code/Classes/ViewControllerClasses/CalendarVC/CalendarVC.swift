@@ -303,7 +303,7 @@ private extension CalendarVC {
         let roundedDate: Date = date.dateAtStartOf(.month)
         let vc: CalendarDaysVC = self._daysVC(for: roundedDate)
         
-        let isLaterMonth: Bool = roundedDate.isAfter(date: month, granularity: .month)
+        let isLaterMonth: Bool = roundedDate.isAfterDate(month, granularity: .month)
         let direction: UIPageViewController.NavigationDirection = isLaterMonth ? .forward : .reverse
         
         self._switchTo(daysVC: vc, direction: direction, animated: animated)
