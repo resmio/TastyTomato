@@ -175,7 +175,7 @@ private extension CalendarVC {
             options: [.interPageSpacing: 20]
         )
         
-        let initialVC: CalendarDaysVC = self._daysVC(for: Date().startOf(component: .month))
+        let initialVC: CalendarDaysVC = self._daysVC(for: Date().dateAtStartOf(.month))
         pageVC.setViewControllers(
             [initialVC],
             direction: .forward,
@@ -300,7 +300,7 @@ private extension CalendarVC {
     func _setDisplayedMonthAndYear(from date: Date, animated: Bool) {
         let month: Date = self._displayedMonthAndYear
         guard !date.isIn(date: month, granularity: .month) else { return }
-        let roundedDate: Date = date.startOf(component: .month)
+        let roundedDate: Date = date.dateAtStartOf(.month)
         let vc: CalendarDaysVC = self._daysVC(for: roundedDate)
         
         let isLaterMonth: Bool = roundedDate.isAfter(date: month, granularity: .month)

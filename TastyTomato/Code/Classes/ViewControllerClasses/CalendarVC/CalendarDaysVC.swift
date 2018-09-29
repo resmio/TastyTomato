@@ -83,7 +83,7 @@ extension CalendarDaysVC {
 class CalendarDaysVC: UIViewController {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
-        let month: Date = Date().startOf(component: .month)
+        let month: Date = Date().dateAtStartOf(.month)
         self._month = month
         super.init(coder: aDecoder)
         self._calendarDaysView.title = month.toString(.custom("MMMM YYYY"))
