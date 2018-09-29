@@ -299,7 +299,7 @@ private extension CalendarVC {
 private extension CalendarVC {
     func _setDisplayedMonthAndYear(from date: Date, animated: Bool) {
         let month: Date = self._displayedMonthAndYear
-        guard !date.isIn(date: month, granularity: .month) else { return }
+        guard !date.isInside(date: month, granularity: .month) else { return }
         let roundedDate: Date = date.dateAtStartOf(.month)
         let vc: CalendarDaysVC = self._daysVC(for: roundedDate)
         

@@ -155,7 +155,7 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
         let design: CalendarDaysVCDesign = self._design
         
         let dateIsToday: Bool = date.isToday
-        let dateIsInCurrentMonth: Bool = date.isIn(date: self.month, granularity: .month)
+        let dateIsInCurrentMonth: Bool = date.isInside(date: self.month, granularity: .month)
         
         var titleColor: UIColor = design.normalDayNumberTextColor
         var titleFont: UIFont = design.dayNumberFont
