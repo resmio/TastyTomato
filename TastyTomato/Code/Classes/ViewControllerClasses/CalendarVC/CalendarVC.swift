@@ -298,12 +298,12 @@ private extension CalendarVC {
 // MARK: Set Displayed Month
 private extension CalendarVC {
     func _setDisplayedMonthAndYear(from date: Date, animated: Bool) {
-        let month: Date = self._displayedMonthAndYear
-        guard !date.isInside(date: month, granularity: .month) else { return }
-        let roundedDate: Date = date.dateAtStartOf(.month)
-        let vc: CalendarDaysVC = self._daysVC(for: roundedDate)
+        let currentMonthAndYear: Date = self._displayedMonthAndYear
+        guard !date.isInside(date: currentMonthAndYear, granularity: .month) else { return }
+        let startOfNewMonth: Date = date.dateAtStartOf(.month)
+        let vc: CalendarDaysVC = self._daysVC(for: startOfNewMonth)
         
-        let isLaterMonth: Bool = roundedDate.isAfterDate(month, granularity: .month)
+        let isLaterMonth: Bool = startOfNewMonth.isAfterDate(currentMonthAndYear, granularity: .month)
         let direction: UIPageViewController.NavigationDirection = isLaterMonth ? .forward : .reverse
         
         self._switchTo(daysVC: vc, direction: direction, animated: animated)
@@ -313,7 +313,9 @@ private extension CalendarVC {
         // so the correct month will be shown on the next
         // button tap or swipe.  Unfortunately, it seems
         // as though there's no better way to do this...
-        if month >< [roundedDate.prevMonth(at: .auto), roundedDate.nextMonth(at: .auto)] {
+        let startOfPreviousMonth: Date = currentMonthAndYear - 1.months
+        let startOfNextMonth: Date = currentMonthAndYear + 1.months
+        if startOfNewMonth >< [startOfPreviousMonth, startOfNextMonth] {
             let pageVC: UIPageViewController = self._pageVC
             pageVC.dataSource = nil
             pageVC.dataSource = self
