@@ -133,11 +133,11 @@ extension CalendarVC: UIPageViewControllerDelegate {
 // MARK: UIPageViewControllerDataSource
 extension CalendarVC: UIPageViewControllerDataSource {
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return self._daysVC(for: (viewController as! CalendarDaysVC).month - 1.month)
+        return self._daysVC(for: (viewController as! CalendarDaysVC).month - 1.months)
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return self._daysVC(for: (viewController as! CalendarDaysVC).month + 1.month)
+        return self._daysVC(for: (viewController as! CalendarDaysVC).month + 1.months)
     }
 }
 
@@ -254,12 +254,12 @@ private extension CalendarVC/*: CalendarDaysVCDelegate*/ {
 // MARK: PageViewController Helpers
 private extension CalendarVC {
     func _showPreviousMonth() {
-        let vc: CalendarDaysVC = self._daysVC(for: self._currentDaysVC.month - 1.month)
+        let vc: CalendarDaysVC = self._daysVC(for: self._currentDaysVC.month - 1.months)
         self._switchTo(daysVC: vc, direction: .reverse, animated: false)
     }
     
     func _showNextMonth() {
-        let vc: CalendarDaysVC = self._daysVC(for: self._currentDaysVC.month + 1.month)
+        let vc: CalendarDaysVC = self._daysVC(for: self._currentDaysVC.month + 1.months)
         self._switchTo(daysVC: vc, direction: .forward, animated: false)
     }
     
