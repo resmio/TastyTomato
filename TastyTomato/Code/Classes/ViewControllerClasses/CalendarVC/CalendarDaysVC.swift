@@ -195,7 +195,7 @@ private extension CalendarDaysVC {
             let firstDisplayedDay: Date = self.month.dateAtStartOf(.weekOfMonth)
             let lastDisplayedDay: Date = firstDisplayedDay + 41.days
             guard date.isBetween(date: firstDisplayedDay, and: lastDisplayedDay) else { break hasDate }
-            guard let row: Int = self.month.startWeek.component(.day, to: date) else { break hasDate }
+            guard let row: Int = (date - self.month.dateAtStartOf(.weekOfMonth)).day else { break hasDate }
             indexPath = IndexPath(row: row, section: 0)
         }
         self._calendarDaysView.selectDateCell(at: indexPath)
