@@ -83,17 +83,17 @@ extension CalendarDaysVC {
 class CalendarDaysVC: UIViewController {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
-        let month: Date = Date().startOf(component: .month)
+        let month: Date = Date().dateAtStartOf(.month)
         self._month = month
         super.init(coder: aDecoder)
-        self._calendarDaysView.title = month.string(custom: "MMMM YYYY")
+        self._calendarDaysView.title = month.toString(.custom("MMMM YYYY"))
     }
     
     // Init
     init(month: Date) {
         self._month = month
         super.init(nibName: nil, bundle: nil)
-        self._calendarDaysView.title = month.string(custom: "MMMM YYYY")
+        self._calendarDaysView.title = month.toString(.custom("MMMM YYYY"))
     }
     
     // Private Weak Variables
@@ -149,13 +149,13 @@ private extension CalendarDaysVC {
 // MARK: CalendarDaysViewDelegate
 private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
     func _configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
-        let date: Date = self.month.startWeek + indexPath.row.days
-        dateCell.title = date.string(custom: "d")
+        let date: Date = self.month.dateAtStartOf(.weekOfMonth) + indexPath.row.days
+        dateCell.title = date.toString(.custom("d"))
         
         let design: CalendarDaysVCDesign = self._design
         
         let dateIsToday: Bool = date.isToday
-        let dateIsInCurrentMonth: Bool = date.isIn(date: self.month, granularity: .month)
+        let dateIsInCurrentMonth: Bool = date.isInside(date: self.month, granularity: .month)
         
         var titleColor: UIColor = design.normalDayNumberTextColor
         var titleFont: UIFont = design.dayNumberFont
@@ -165,7 +165,7 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
             titleFont = design.todayDayNumberFont
         } else if !dateIsInCurrentMonth {
             titleColor = design.differentMonthDayNumberTextColor
-        } else if date.isBefore(date: Date(), granularity: .day) {
+        } else if date.isBeforeDate(Date(), granularity: .day) {
             titleColor = design.pastDayNumberTextColor
         }
         
@@ -175,13 +175,13 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
     
     func _shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool {
         guard let delegate: CalendarDaysVCDelegate = self.delegate else { return true }
-        let date: Date = self.month.startWeek + indexPath.row.days
+        let date: Date = self.month.dateAtStartOf(.weekOfMonth) + indexPath.row.days
         return delegate.shouldSelect(date, on: self)
     }
     
     func _didSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
         guard let delegate: CalendarDaysVCDelegate = self.delegate else { return }
-        let date: Date = self.month.startWeek + indexPath.row.days
+        let date: Date = self.month.dateAtStartOf(.weekOfMonth) + indexPath.row.days
         delegate.didSelect(date, on: self)
     }
 }
@@ -192,10 +192,10 @@ private extension CalendarDaysVC {
     func _selectDate(_ date: Date?) {
         var indexPath: IndexPath? = nil
         hasDate: if let date: Date = date {
-            let firstDisplayedDay: Date = self.month.startWeek
+            let firstDisplayedDay: Date = self.month.dateAtStartOf(.weekOfMonth)
             let lastDisplayedDay: Date = firstDisplayedDay + 41.days
-            guard date.isBetween(date: firstDisplayedDay, and: lastDisplayedDay) else { break hasDate }
-            guard let row: Int = self.month.startWeek.component(.day, to: date) else { break hasDate }
+            guard date.isInRange(date: firstDisplayedDay, and: lastDisplayedDay) else { break hasDate }
+            guard let row: Int = (date - self.month.dateAtStartOf(.weekOfMonth)).day else { break hasDate }
             indexPath = IndexPath(row: row, section: 0)
         }
         self._calendarDaysView.selectDateCell(at: indexPath)

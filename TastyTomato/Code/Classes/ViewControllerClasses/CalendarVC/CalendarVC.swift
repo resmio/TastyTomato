@@ -133,11 +133,11 @@ extension CalendarVC: UIPageViewControllerDelegate {
 // MARK: UIPageViewControllerDataSource
 extension CalendarVC: UIPageViewControllerDataSource {
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return self._daysVC(for: (viewController as! CalendarDaysVC).month - 1.month)
+        return self._daysVC(for: (viewController as! CalendarDaysVC).month - 1.months)
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return self._daysVC(for: (viewController as! CalendarDaysVC).month + 1.month)
+        return self._daysVC(for: (viewController as! CalendarDaysVC).month + 1.months)
     }
 }
 
@@ -175,7 +175,7 @@ private extension CalendarVC {
             options: [.interPageSpacing: 20]
         )
         
-        let initialVC: CalendarDaysVC = self._daysVC(for: Date().startOf(component: .month))
+        let initialVC: CalendarDaysVC = self._daysVC(for: Date().dateAtStartOf(.month))
         pageVC.setViewControllers(
             [initialVC],
             direction: .forward,
@@ -202,7 +202,7 @@ private extension CalendarVC {
     }
     
     var _firstDisplayedDay: Date {
-        return self._displayedMonthAndYear.startWeek
+        return self._displayedMonthAndYear.dateAtStartOf(.weekOfMonth)
     }
     
     // ReadWrite
@@ -211,13 +211,13 @@ private extension CalendarVC {
             return self.__selectedDate
         }
         set(newSelectedDate) {
-            let roundedNewSelectedDate: Date? = newSelectedDate?.startOfDay
+            let roundedNewSelectedDate: Date? = newSelectedDate?.dateAtStartOf(.day)
             guard roundedNewSelectedDate != self.__selectedDate else { return }
             
             let currentDaysVC: CalendarDaysVC = self._currentDaysVC
-            let firstDisplayedDay: Date = currentDaysVC.month.startWeek
+            let firstDisplayedDay: Date = currentDaysVC.month.dateAtStartOf(.weekOfMonth)
             let lastDisplayedDay: Date = firstDisplayedDay + 41.days
-            if roundedNewSelectedDate?.isBetween(date: firstDisplayedDay, and: lastDisplayedDay) ?? true {
+            if roundedNewSelectedDate?.isInRange(date: firstDisplayedDay, and: lastDisplayedDay) ?? true {
                 currentDaysVC.selectDate(roundedNewSelectedDate)
             }
             
@@ -254,12 +254,12 @@ private extension CalendarVC/*: CalendarDaysVCDelegate*/ {
 // MARK: PageViewController Helpers
 private extension CalendarVC {
     func _showPreviousMonth() {
-        let vc: CalendarDaysVC = self._daysVC(for: self._currentDaysVC.month - 1.month)
+        let vc: CalendarDaysVC = self._daysVC(for: self._currentDaysVC.month - 1.months)
         self._switchTo(daysVC: vc, direction: .reverse, animated: false)
     }
     
     func _showNextMonth() {
-        let vc: CalendarDaysVC = self._daysVC(for: self._currentDaysVC.month + 1.month)
+        let vc: CalendarDaysVC = self._daysVC(for: self._currentDaysVC.month + 1.months)
         self._switchTo(daysVC: vc, direction: .forward, animated: false)
     }
     
@@ -298,12 +298,12 @@ private extension CalendarVC {
 // MARK: Set Displayed Month
 private extension CalendarVC {
     func _setDisplayedMonthAndYear(from date: Date, animated: Bool) {
-        let month: Date = self._displayedMonthAndYear
-        guard !date.isIn(date: month, granularity: .month) else { return }
-        let roundedDate: Date = date.startOf(component: .month)
-        let vc: CalendarDaysVC = self._daysVC(for: roundedDate)
+        let currentMonthAndYear: Date = self._displayedMonthAndYear
+        guard !date.isInside(date: currentMonthAndYear, granularity: .month) else { return }
+        let startOfNewMonth: Date = date.dateAtStartOf(.month)
+        let vc: CalendarDaysVC = self._daysVC(for: startOfNewMonth)
         
-        let isLaterMonth: Bool = roundedDate.isAfter(date: month, granularity: .month)
+        let isLaterMonth: Bool = startOfNewMonth.isAfterDate(currentMonthAndYear, granularity: .month)
         let direction: UIPageViewController.NavigationDirection = isLaterMonth ? .forward : .reverse
         
         self._switchTo(daysVC: vc, direction: direction, animated: animated)
@@ -313,7 +313,9 @@ private extension CalendarVC {
         // so the correct month will be shown on the next
         // button tap or swipe.  Unfortunately, it seems
         // as though there's no better way to do this...
-        if month >< [roundedDate.prevMonth(at: .auto), roundedDate.nextMonth(at: .auto)] {
+        let startOfPreviousMonth: Date = currentMonthAndYear - 1.months
+        let startOfNextMonth: Date = currentMonthAndYear + 1.months
+        if startOfNewMonth >< [startOfPreviousMonth, startOfNextMonth] {
             let pageVC: UIPageViewController = self._pageVC
             pageVC.dataSource = nil
             pageVC.dataSource = self

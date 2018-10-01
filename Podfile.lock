@@ -4,11 +4,11 @@ PODS:
     - SignificantSpices/SwiftExtensions (= 0.9.1)
   - SignificantSpices/ObjectiveCExtensions (0.9.1)
   - SignificantSpices/SwiftExtensions (0.9.1)
-  - SwiftDate (4.5.1)
+  - SwiftDate (5.0.9)
 
 DEPENDENCIES:
   - SignificantSpices (~> 0.9.1)
-  - SwiftDate (~> 4.5.1)
+  - SwiftDate (~> 5.0.9)
 
 SPEC REPOS:
   https://github.com/resmio/CocoaPodsSpecs.git:
@@ -17,8 +17,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   SignificantSpices: c6de9cf1454a3a417f493992af4fe9cf0518d740
-  SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
+  SwiftDate: 52b718d32ec006861a2be2756cbfa482d438e781
 
-PODFILE CHECKSUM: 13406c00aedfd9410265e3a52f0184dbec6f2b7f
+PODFILE CHECKSUM: 6e256c263a5f0f8f39477640bdb7f5831726e09a
 
 COCOAPODS: 1.5.3
