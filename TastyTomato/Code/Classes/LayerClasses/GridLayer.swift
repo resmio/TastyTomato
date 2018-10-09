@@ -275,9 +275,7 @@ private extension GridLayer {
         set(newRowHeight) {
             guard newRowHeight != self.__rowHeight else { return }
             self.__rowHeight = newRowHeight
-            self._updateColumnLineLengths()
-            self._sizeFrame()
-            self.setNeedsLayout()
+            self._sizeFrameAndSetNeedsLayout()
         }
     }
     
@@ -286,9 +284,7 @@ private extension GridLayer {
         set(newColumnWidth) {
             guard newColumnWidth != self.__columnWidth else { return }
             self.__columnWidth = newColumnWidth
-            self._updateRowLineLengths()
-            self._sizeFrame()
-            self.setNeedsLayout()
+            self._sizeFrameAndSetNeedsLayout()
         }
     }
     
@@ -424,6 +420,11 @@ private extension GridLayer {
         let frameSize: CGSize = self.preferredFrameSize()
         self.frame.size = frameSize
         (self._borderLayer¿)?.frame.size = frameSize
+    }
+    
+    func _sizeFrameAndSetNeedsLayout() {
+        self._sizeFrame()
+        self.setNeedsLayout()
     }
     
     func _width() -> CGFloat {
