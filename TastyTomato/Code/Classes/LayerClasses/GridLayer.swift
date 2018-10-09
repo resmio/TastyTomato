@@ -215,9 +215,12 @@ private extension GridLayer {
                     oldNumOfRows: self.__numOfRows,
                     newNumOfRows: newNumOfRows
                 )
+                self._forEachLine(
+                    where: { $0.orientation == .vertical },
+                    execute: { $0.length = self._lengthFor(column: $0) }
+                )
             }
             self.__numOfRows = newNumOfRows
-            self._updateColumnLineLengths()
             self._sizeFrame()
         }
     }
@@ -231,9 +234,12 @@ private extension GridLayer {
                     oldNumOfColumns: self.__numOfColumns,
                     newNumOfColumns: newNumOfColumns
                 )
+                self._forEachLine(
+                    where: { $0.orientation == .horizontal },
+                    execute: { $0.length = self._lengthFor(row: $0) }
+                )
             }
             self.__numOfColumns = newNumOfColumns
-            self._updateRowLineLengths()
             self._sizeFrame()
         }
     }
@@ -548,20 +554,6 @@ private extension GridLayer {
 
 // MARK: Update LineLayers
 private extension GridLayer {
-    func _updateRowLineLengths() {
-        self._forEachLine(
-            where: { $0.orientation == .horizontal },
-            execute: { $0.length = self._lengthFor(row: $0) }
-        )
-    }
-    
-    func _updateColumnLineLengths() {
-        self._forEachLine(
-            where: { $0.orientation == .vertical },
-            execute: { $0.length = self._lengthFor(column: $0) }
-        )
-    }
-    
     func _forEachLine(where condition: ((LineLayer) -> Bool), execute: (LineLayer) -> Void) {
         self._lineLayers.forEach({
             if condition($0) {
