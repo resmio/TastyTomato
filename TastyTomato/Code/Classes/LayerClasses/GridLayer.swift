@@ -377,7 +377,7 @@ private extension GridLayer {
         set(newGridInsetFactor) {
             guard newGridInsetFactor != self.__gridInsetFactor else { return }
             self.__gridInsetFactor = newGridInsetFactor
-            
+            self._sizeFrameAndSetNeedsLayout()
         }
     }
     
@@ -386,6 +386,7 @@ private extension GridLayer {
         set(newGridLineOverlapFactor) {
             guard newGridLineOverlapFactor != self.__gridLineOverlapFactor else { return }
             self.__gridLineOverlapFactor = newGridLineOverlapFactor
+            self._sizeFrameAndSetNeedsLayout()
         }
     }
     
