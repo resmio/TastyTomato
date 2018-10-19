@@ -190,15 +190,14 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
 // MARK: Select Date
 private extension CalendarDaysVC {
     func _selectDate(_ date: Date?) {
-        var indexPath: IndexPath? = nil
-        hasDate: if let date: Date = date {
+        self._calendarDaysView.selectDateCell(at: {
+            guard let date: Date = date else { return nil }
             let firstDisplayedDay: Date = self.month.dateAtStartOf(.weekOfMonth)
             let lastDisplayedDay: Date = firstDisplayedDay + 41.days
-            guard date.isInRange(date: firstDisplayedDay, and: lastDisplayedDay) else { break hasDate }
-            guard let row: Int = (date - self.month.dateAtStartOf(.weekOfMonth)).day else { break hasDate }
-            indexPath = IndexPath(row: row, section: 0)
-        }
-        self._calendarDaysView.selectDateCell(at: indexPath)
+            guard date.isInRange(date: firstDisplayedDay, and: lastDisplayedDay) else { return nil }
+            let row: Int = Int(firstDisplayedDay.getInterval(toDate: date, component: .day))
+            return IndexPath(row: row, section: 0)
+        }())
     }
 }
 
