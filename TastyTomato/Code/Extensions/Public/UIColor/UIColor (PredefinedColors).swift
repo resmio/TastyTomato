@@ -133,6 +133,10 @@ public extension UIColor {
         return UIColor(fromHex_: "543EAC")
     }
     
+    public static var purple7563BC: UIColor {
+        return UIColor(fromHex_: "7563BC")
+    }
+    
     public static var pinkFCE9ED: UIColor {
         return UIColor(fromHex_: "FCE9ED")
     }
