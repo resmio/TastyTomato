@@ -97,6 +97,10 @@ public extension UIColor {
         return UIColor(fromHex_: "555555")
     }
     
+    public static var gray909295: UIColor {
+        return UIColor(fromHex_: "909295")
+    }
+    
     public static var gray999999: UIColor {
         return UIColor(fromHex_: "999999")
     }
@@ -131,6 +135,10 @@ public extension UIColor {
     
     public static var purple543EAC: UIColor {
         return UIColor(fromHex_: "543EAC")
+    }
+    
+    public static var purple7563BC: UIColor {
+        return UIColor(fromHex_: "7563BC")
     }
     
     public static var pinkFCE9ED: UIColor {
