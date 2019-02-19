@@ -65,7 +65,12 @@ extension PopoverVC {
     
     public var inset: CGFloat {
         get { return self._inset }
-        set{ self._inset = newValue }
+        set { self._inset = newValue }
+    }
+    
+    public var cornerRadius: CGFloat {
+        get { return self._cornerRadius }
+        set { self._cornerRadius = newValue }
     }
     
     public var contentView: UIView? {
@@ -103,11 +108,7 @@ extension PopoverVC {
     }
     
     @objc public func present(from viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
-        self._present(
-            from: viewController,
-            animated: animated,
-            completion: completion
-        )
+        self._present(from: viewController, animated: animated, completion: completion)
     }
 }
 
@@ -138,6 +139,7 @@ open class PopoverVC: UIViewController {
     
     // Private Variables
     private var __inset: CGFloat = 15
+    private var __cornerRadius: CGFloat = 0
     private var __contentView: UIView?
     private var __sourceRect: CGRect?
     private var _backgroundColor: UIColor?
@@ -225,6 +227,15 @@ private extension PopoverVC {
         }
     }
     
+    var _cornerRadius: CGFloat {
+        get { return self.__cornerRadius }
+        set(newCornerRadius) {
+            guard newCornerRadius != self.__cornerRadius else { return }
+            self.__cornerRadius = newCornerRadius
+            self._updateCornerRadius(to: newCornerRadius)
+        }
+    }
+    
     var _contentView: UIView? {
         get { return self.__contentView }
         set(newContentView) {
@@ -248,6 +259,7 @@ private extension PopoverVC {
     func _viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.updateContentSize()
+        self._updateCornerRadius(to: self.cornerRadius)
     }
 }
 
@@ -256,6 +268,16 @@ private extension PopoverVC {
 private extension PopoverVC {
     func _shouldBeDismissed() -> Bool {
         return self.presentationDelegate?.shouldDismiss?(self) ?? true
+    }
+}
+
+
+// MARK: Update Corner Radius
+private extension PopoverVC {
+    func _updateCornerRadius(to radius: CGFloat) {
+        let view: UIView = self.view
+        view.layer.cornerRadius = radius
+        view.superview?.layer.cornerRadius = radius
     }
 }
 
