@@ -65,7 +65,7 @@ extension PopoverVC {
     
     public var inset: CGFloat {
         get { return self._inset }
-        set{ self._inset = newValue }
+        set { self._inset = newValue }
     }
     
     public var contentView: UIView? {
@@ -103,11 +103,7 @@ extension PopoverVC {
     }
     
     @objc public func present(from viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
-        self._present(
-            from: viewController,
-            animated: animated,
-            completion: completion
-        )
+        self._present(from: viewController, animated: animated, completion: completion)
     }
 }
 
