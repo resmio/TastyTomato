@@ -134,6 +134,7 @@
 		2FD12FA602A05FA8F90A14D2DD8FA7A2 /* ImageTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextButton.swift; sourceTree = "<group>"; };
 		31ACC2EEE69C108CCC35FA74032BE6E1 /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
 		3230C85271CB80C7EC4BF110F91BD049 /* CGSize (Transformed).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize (Transformed).swift"; sourceTree = "<group>"; };
+		34D0E16928856EC4BC2DBB865478D8BD /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3548C6B4D617159868EBE227290AFC0C /* FilledButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButtons.swift; sourceTree = "<group>"; };
 		384AF30C7CBCCA18C890168B4288522E /* UITextView (HeightConvenience).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView (HeightConvenience).swift"; sourceTree = "<group>"; };
 		38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint (ConvenienceInits).swift"; sourceTree = "<group>"; };
@@ -900,6 +901,7 @@
 				en,
 				de,
 				fr,
+				it,
 			);
 			mainGroup = 0797CADAA242E6EF3AC04B83BE063FFA;
 			productRefGroup = 087D62F85789E9BA2921482544C68BB4 /* Products */;
@@ -1123,6 +1125,7 @@
 				91C532ECB5C7CC6DE8FAAAD3F465DEAE /* de */,
 				617BAD163949C9A08DE92862E903C2A8 /* en */,
 				019B1845FE1BCB19271320DCDCAE1B32 /* fr */,
+				34D0E16928856EC4BC2DBB865478D8BD /* it */,
 			);
 			name = Localizable.strings;
 			path = .;
