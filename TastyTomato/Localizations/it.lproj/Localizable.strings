@@ -1,0 +1,18 @@
+
+/* 1 word */
+"Back" = "Indietro";
+"Cancel" = "Cancelli";
+"Delete" = "Cancella";
+"Done" = "Fatto";
+"Edit" = "Modifica";
+"New" = "Nuovo";
+"Next" = "Prossimo";
+"Save" = "Salva";
+"Select" = "Seleziona";
+
+/* 2 words */
+"Sign in" = "Registrati";
+
+/* 3 words */
+"Forgotten your password?" = "Hai dimenticato tuo password?";
+"No tags found" = "Nessun tag trovato";
