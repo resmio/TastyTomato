@@ -59,6 +59,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("logout")
     }
     
+    public static var NotificationFeed: MiscIcon {
+        return MiscIcon.suffixed_("notification-feed")
+    }
+    
     @objc public static var Offline: MiscIcon {
         return MiscIcon.suffixed_("offline")
     }
