@@ -24,9 +24,13 @@ private extension UIImage {
         let size: CGSize = self.size
         
         UIGraphicsBeginImageContextWithOptions(size, false, self.scale)
+        defer { UIGraphicsEndImageContext() }
         guard let cgImage: CGImage = self.cgImage, let context: CGContext = UIGraphicsGetCurrentContext() else {
             return nil
         }
+        
+        context.scaleBy(x: 1, y: -1)
+        context.translateBy(x: 0, y: -size.height)
         
         let drawRect: CGRect = size.asCGRect()
         context.clip(to: drawRect, mask: cgImage)
@@ -34,9 +38,6 @@ private extension UIImage {
         UIRectFill(drawRect)
         self.draw(in: drawRect)
         
-        let tintedImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return tintedImage
+        return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
