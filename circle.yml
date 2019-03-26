@@ -46,9 +46,9 @@ jobs:
                 echo "${RUBY_NAME} is already installed"
             fi
       - save_cache:
-          key: v1-ruby-cache-{{ .Branch }}-{{ checksum ".ruby-version" }}
+          key: v1-ruby-cache-{{ .Branch }}-2.6.1
           paths:
-            - /Users/distiller/.rubies/
+            - /Users/distiller/.rubies/2.6.1
 
       ## Check ruby version and GEM_HOME
       - run: 
