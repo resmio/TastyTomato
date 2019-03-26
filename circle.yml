@@ -29,6 +29,20 @@ jobs:
       ## Checkout source
       - checkout
       
+      ## Install ruby (cache-wrapped)
+      - restore_cache:
+          keys:
+            - v1-ruby-cache-{{ .Branch }}-{{ checksum ".ruby-version" }}
+            - v1-ruby-cache-{{ .Branch }}
+            - v1-ruby-cache
+      - run:
+          name: Install ruby
+          command: ruby-install ruby $(cat .ruby-version)
+      - save_cache:
+          key: v1-ruby-cache-{{ .Branch }}-{{ checksum ".ruby-version" }}
+          paths:
+            - /Users/distiller/.rubies/
+
       ## Check ruby version and GEM_HOME
       - run: 
           name: Check ruby and GEM_HOME 
