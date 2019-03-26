@@ -84,7 +84,7 @@ jobs:
       ## Run tests
       - run:
           name: Run tests
-          command: xcodebuild -workspace TastyTomato.xcworkspace -scheme "TastyTomato" -destination 'platform=iOS Simulator,name=iPad Air 2,OS=12.0' clean build test | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-verbose.log" | xcpretty | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-xcpretty.log"
+          command: xcodebuild -workspace TastyTomato.xcworkspace -scheme "TastyTomato" -destination 'platform=iOS Simulator,name=iPad Air 2,OS=12.1' clean build test | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-verbose.log" | xcpretty | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-xcpretty.log"
       
       ## Store artifacts
       - store_artifacts:
