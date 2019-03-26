@@ -25,9 +25,6 @@ jobs:
           command: |
             mkdir "/Users/distiller/output"
             mkdir "/Users/distiller/output/xcodebuild-logs"
-
-      ## Checkout source
-      - checkout
       
       ## Install ruby (cache-wrapped)
       - restore_cache:
@@ -56,6 +53,9 @@ jobs:
           command: |
             which ruby
             echo ${GEM_HOME}
+
+      ## Checkout source
+      - checkout
 
       ## Install bundle (cache-wrapped)
       - restore_cache:
