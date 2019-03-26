@@ -17,7 +17,7 @@ jobs:
       # If we don't pass `-t`, the Simulator starts anyway...
       - run:
           name: Pre-start iOS Simulator
-          command: xcrun instruments -w "iPad Air 2 (12.0)" || true
+          command: xcrun instruments -w "iPad Air 2 (12.1)" || true
       
       ## Create output directories
       - run:
