@@ -47,15 +47,15 @@ jobs:
           paths:
             - /Users/distiller/.rubies/2.6.1
 
+      ## Checkout source
+      - checkout
+
       ## Check ruby version and GEM_HOME
       - run: 
           name: Check ruby and GEM_HOME 
           command: |
             which ruby
             echo ${GEM_HOME}
-
-      ## Checkout source
-      - checkout
 
       ## Install bundle (cache-wrapped)
       - restore_cache:
