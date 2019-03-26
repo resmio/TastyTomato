@@ -38,6 +38,9 @@ jobs:
       - run:
           name: Install ruby
           command: |
+            ls /Users/distiller/.rubies/
+            which ruby
+            ruby -v
             ruby-install ruby $(cat .ruby-version)
             ruby-install ruby $(cat .ruby-version)
       - save_cache:
