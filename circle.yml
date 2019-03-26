@@ -4,7 +4,7 @@ version: 2
 jobs:
   build:
     macos:
-      xcode: "10.0.0"
+      xcode: "10.1.0"
     shell: /bin/bash --login -eo pipefail
     environment:
       LANG: en_US.UTF-8
@@ -17,7 +17,7 @@ jobs:
       # If we don't pass `-t`, the Simulator starts anyway...
       - run:
           name: Pre-start iOS Simulator
-          command: xcrun instruments -w "iPad Air 2 (12.0)" || true
+          command: xcrun instruments -w "iPad Air 2 (12.1)" || true
       
       ## Create output directories
       - run:
@@ -29,6 +29,27 @@ jobs:
       ## Checkout source
       - checkout
       
+      ## Install ruby (cache-wrapped)
+      - restore_cache:
+          keys:
+            - v1-ruby-cache-{{ .Branch }}-{{ checksum ".ruby-version" }}
+            - v1-ruby-cache-{{ .Branch }}
+            - v1-ruby-cache
+      - run:
+          name: Install ruby
+          command: |
+            RUBY_VERSION="$(cat .ruby-version)"
+            RUBY_NAME="ruby-${RUBY_VERSION}"
+            if [ ! -d "/Users/distiller/.rubies/${RUBY_NAME}" ]; then 
+                ruby-install ruby ${RUBY_VERSION}
+            else
+                echo "${RUBY_NAME} is already installed"
+            fi
+      - save_cache:
+          key: v1-ruby-cache-{{ .Branch }}-{{ checksum ".ruby-version" }}
+          paths:
+            - /Users/distiller/.rubies/
+
       ## Check ruby version and GEM_HOME
       - run: 
           name: Check ruby and GEM_HOME 
@@ -39,12 +60,12 @@ jobs:
       ## Install bundle (cache-wrapped)
       - restore_cache:
           keys:
-            - v5-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - v5-bundle-cache-{{ .Branch }}
-            - v5-bundle-cache
+            - v6-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - v6-bundle-cache-{{ .Branch }}
+            - v6-bundle-cache
       - run: bundle install
       - save_cache:
-          key: v5-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: v6-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
             # This is basically GEM_HOME, hardcoded.
             # It MUST be updated if the ruby version changes!
@@ -53,7 +74,7 @@ jobs:
             # because these morons still haven't made it possible to interpolate
             # env vars throughout the config file. They even RECOMMEND hardcoding here:
             # https://discuss.circleci.com/t/can-i-use-variables-in-cache-paths/11393/3
-            - /Users/distiller/.gem/ruby/2.5.1
+            - /Users/distiller/.gem/ruby/2.6.1
 
       ## Install pods (cache-wrapped)
       - restore_cache:
@@ -70,7 +91,7 @@ jobs:
       ## Run tests
       - run:
           name: Run tests
-          command: xcodebuild -workspace TastyTomato.xcworkspace -scheme "TastyTomato" -destination 'platform=iOS Simulator,name=iPad Air 2,OS=12.0' clean build test | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-verbose.log" | xcpretty | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-xcpretty.log"
+          command: xcodebuild -workspace TastyTomato.xcworkspace -scheme "TastyTomato" -destination 'platform=iOS Simulator,name=iPad Air 2,OS=12.1' clean build test | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-verbose.log" | xcpretty | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-xcpretty.log"
       
       ## Store artifacts
       - store_artifacts:
