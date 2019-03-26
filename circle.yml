@@ -35,6 +35,7 @@ jobs:
       - run:
           name: Install ruby
           command: |
+            export HOMEBREW_NO_AUTO_UPDATE=1
             RUBY_VERSION="2.6.1"
             RUBY_NAME="ruby-${RUBY_VERSION}"
             RUBY_DIRECTORY="/Users/distiller/.rubies/${RUBY_NAME}"
