@@ -39,12 +39,12 @@ jobs:
       ## Install bundle (cache-wrapped)
       - restore_cache:
           keys:
-            - v5-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - v5-bundle-cache-{{ .Branch }}
-            - v5-bundle-cache
+            - v6-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - v6-bundle-cache-{{ .Branch }}
+            - v6-bundle-cache
       - run: bundle install
       - save_cache:
-          key: v5-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: v6-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
             # This is basically GEM_HOME, hardcoded.
             # It MUST be updated if the ruby version changes!
