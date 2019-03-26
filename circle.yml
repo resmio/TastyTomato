@@ -53,7 +53,7 @@ jobs:
             # because these morons still haven't made it possible to interpolate
             # env vars throughout the config file. They even RECOMMEND hardcoding here:
             # https://discuss.circleci.com/t/can-i-use-variables-in-cache-paths/11393/3
-            - /Users/distiller/.gem/ruby/2.5.1
+            - /Users/distiller/.gem/ruby/2.6.1
 
       ## Install pods (cache-wrapped)
       - restore_cache:
