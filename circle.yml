@@ -38,7 +38,8 @@ jobs:
       - run:
           name: Install ruby
           command: |
-            if [ ! -d "/Users/distiller/.rubies/$(cat .ruby-version)" ]; then 
+            echo "/Users/distiller/.rubies/ruby-$(cat .ruby-version)"
+            if [ ! -d "/Users/distiller/.rubies/ruby-$(cat .ruby-version)" ]; then 
               ruby-install ruby $(cat .ruby-version)
             fi
       - save_cache:
