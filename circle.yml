@@ -32,9 +32,9 @@ jobs:
       ## Install ruby (cache-wrapped)
       - restore_cache:
           keys:
-            - v1-ruby-cache-{{ .Branch }}-{{ checksum ".ruby-version" }}
-            - v1-ruby-cache-{{ .Branch }}
-            - v1-ruby-cache
+            - v1_ruby-cache_{{ .Branch }}_2.6.1
+            - v1_ruby-cache_{{ .Branch }}
+            - v1_ruby-cache
       - run:
           name: Install ruby
           command: |
@@ -46,7 +46,7 @@ jobs:
                 echo "${RUBY_NAME} is already installed"
             fi
       - save_cache:
-          key: v1-ruby-cache-{{ .Branch }}-2.6.1
+          key: v1_ruby-cache_{{ .Branch }}_2.6.1
           paths:
             - /Users/distiller/.rubies/2.6.1
 
@@ -60,12 +60,12 @@ jobs:
       ## Install bundle (cache-wrapped)
       - restore_cache:
           keys:
-            - v7-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - v7-bundle-cache-{{ .Branch }}
-            - v7-bundle-cache
+            - v1_bundle-cache_{{ .Branch }}_{{ checksum "Gemfile.lock" }}
+            - v1_bundle-cache_{{ .Branch }}
+            - v1_bundle-cache
       - run: bundle install
       - save_cache:
-          key: v7-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: v1_bundle-cache_{{ .Branch }}_{{ checksum "Gemfile.lock" }}
           paths:
             # This is basically GEM_HOME, hardcoded.
             # It MUST be updated if the ruby version changes!
@@ -79,12 +79,12 @@ jobs:
       ## Install pods (cache-wrapped)
       - restore_cache:
           keys:
-            - v7-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
-            - v7-pod-cache-{{ .Branch }}
-            - v7-pod-cache
+            - v1_pod-cache_{{ .Branch }}_{{ checksum "Podfile.lock" }}
+            - v1_pod-cache_{{ .Branch }}
+            - v1_pod-cache
       - run: bundle exec pod install
       - save_cache:
-          key: v7-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
+          key: v1_pod-cache_{{ .Branch }}_{{ checksum "Podfile.lock" }}
           paths:
             - ./Pods
 
