@@ -38,6 +38,7 @@ jobs:
             RUBY_VERSION="2.6.1"
             RUBY_NAME="ruby-${RUBY_VERSION}"
             RUBY_DIRECTORY="/Users/distiller/.rubies/${RUBY_NAME}"
+            ls /Users/distiller/.rubies
             ls "${RUBY_DIRECTORY}"
             if [ ! -d "${RUBY_DIRECTORY}" ]; then 
                 ruby-install ruby ${RUBY_VERSION}
