@@ -57,6 +57,10 @@ public extension UIColor {
         return UIColor(fromHex_: "F8C150")
     }
     
+    public static var yellowFFF1D4: UIColor {
+        return UIColor(fromHex_: "FFF1D4")
+    }
+    
     @objc public static var green22CCAA: UIColor {
         return UIColor(fromHex_: "22CCAA")
     }
@@ -87,6 +91,10 @@ public extension UIColor {
     
     public static var blue3E4862: UIColor {
         return UIColor(fromHex_: "3E4862")
+    }
+    
+    public static var blueC0F6FF: UIColor {
+        return UIColor(fromHex_: "C0F6FF")
     }
     
     public static var gray222222: UIColor {
