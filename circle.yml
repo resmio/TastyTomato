@@ -37,7 +37,9 @@ jobs:
             - v1-ruby-cache
       - run:
           name: Install ruby
-          command: ruby-install ruby $(cat .ruby-version)
+          command: |
+            ruby-install ruby $(cat .ruby-version)
+            ruby-install ruby $(cat .ruby-version)
       - save_cache:
           key: v1-ruby-cache-{{ .Branch }}-{{ checksum ".ruby-version" }}
           paths:
