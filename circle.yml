@@ -35,7 +35,7 @@ jobs:
       - run:
           name: Install ruby
           command: |
-            RUBY_VERSION="$(cat .ruby-version)"
+            RUBY_VERSION="2.6.1"
             RUBY_NAME="ruby-${RUBY_VERSION}"
             if [ ! -d "/Users/distiller/.rubies/${RUBY_NAME}" ]; then 
                 ruby-install ruby ${RUBY_VERSION}
