@@ -30,7 +30,6 @@ jobs:
       - restore_cache:
           keys:
             - v4_ruby-2.6.1_{{ .Branch }}
-            - v4_ruby-2.6.1_{{ .Branch }}
             - v4_ruby-2.6.1
       - run:
           name: Install ruby
