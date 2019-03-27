@@ -25,30 +25,30 @@ jobs:
           command: |
             mkdir "/Users/distiller/output"
             mkdir "/Users/distiller/output/xcodebuild-logs"
-
-      ## Checkout source
-      - checkout
       
       ## Install ruby (cache-wrapped)
       - restore_cache:
           keys:
-            - v1-ruby-cache-{{ .Branch }}-{{ checksum ".ruby-version" }}
-            - v1-ruby-cache-{{ .Branch }}
-            - v1-ruby-cache
+            - v4_ruby-2.6.1_{{ .Branch }}
+            - v4_ruby-2.6.1
       - run:
           name: Install ruby
           command: |
-            RUBY_VERSION="$(cat .ruby-version)"
+            RUBY_VERSION="2.6.1"
             RUBY_NAME="ruby-${RUBY_VERSION}"
-            if [ ! -d "/Users/distiller/.rubies/${RUBY_NAME}" ]; then 
+            RUBY_DIRECTORY="/Users/distiller/.rubies/${RUBY_NAME}"
+            if [ ! -d "${RUBY_DIRECTORY}" ]; then 
                 ruby-install ruby ${RUBY_VERSION}
             else
                 echo "${RUBY_NAME} is already installed"
             fi
       - save_cache:
-          key: v1-ruby-cache-{{ .Branch }}-{{ checksum ".ruby-version" }}
+          key: v4_ruby-2.6.1_{{ .Branch }}
           paths:
-            - /Users/distiller/.rubies/
+            - /Users/distiller/.rubies/ruby-2.6.1
+
+      ## Checkout source
+      - checkout
 
       ## Check ruby version and GEM_HOME
       - run: 
@@ -60,12 +60,12 @@ jobs:
       ## Install bundle (cache-wrapped)
       - restore_cache:
           keys:
-            - v7-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - v7-bundle-cache-{{ .Branch }}
-            - v7-bundle-cache
+            - v2_bundle-cache_{{ .Branch }}_{{ checksum "Gemfile.lock" }}
+            - v2_bundle-cache_{{ .Branch }}
+            - v2_bundle-cache
       - run: bundle install
       - save_cache:
-          key: v7-bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: v2_bundle-cache_{{ .Branch }}_{{ checksum "Gemfile.lock" }}
           paths:
             # This is basically GEM_HOME, hardcoded.
             # It MUST be updated if the ruby version changes!
@@ -79,12 +79,12 @@ jobs:
       ## Install pods (cache-wrapped)
       - restore_cache:
           keys:
-            - v7-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
-            - v7-pod-cache-{{ .Branch }}
-            - v7-pod-cache
+            - v2_pod-cache_{{ .Branch }}_{{ checksum "Podfile.lock" }}
+            - v2_pod-cache_{{ .Branch }}
+            - v2_pod-cache
       - run: bundle exec pod install
       - save_cache:
-          key: v7-pod-cache-{{ .Branch }}-{{ checksum "Podfile.lock" }}
+          key: v2_pod-cache_{{ .Branch }}_{{ checksum "Podfile.lock" }}
           paths:
             - ./Pods
 
