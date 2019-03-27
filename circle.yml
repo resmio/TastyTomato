@@ -29,9 +29,9 @@ jobs:
       ## Install ruby (cache-wrapped)
       - restore_cache:
           keys:
-            - v3_ruby-2.6.1_{{ .Branch }}
-            - v3_ruby-2.6.1_{{ .Branch }}
-            - v3_ruby-2.6.1
+            - v4_ruby-2.6.1_{{ .Branch }}
+            - v4_ruby-2.6.1_{{ .Branch }}
+            - v4_ruby-2.6.1
       - run:
           name: Install ruby
           command: |
@@ -39,12 +39,12 @@ jobs:
             RUBY_NAME="ruby-${RUBY_VERSION}"
             RUBY_DIRECTORY="/Users/distiller/.rubies/${RUBY_NAME}"
             if [ ! -d "${RUBY_DIRECTORY}" ]; then 
-                HOMEBREW_NO_AUTO_UPDATE=1 ruby-install ruby ${RUBY_VERSION}
+                ruby-install ruby ${RUBY_VERSION}
             else
                 echo "${RUBY_NAME} is already installed"
             fi
       - save_cache:
-          key: v3_ruby-2.6.1_{{ .Branch }}
+          key: v4_ruby-2.6.1_{{ .Branch }}
           paths:
             - /Users/distiller/.rubies/ruby-2.6.1
 
