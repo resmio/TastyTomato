@@ -206,6 +206,7 @@
 		DC87E38A8D37FC92DD3A64DEC8AC1796 /* ShortcutBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutBarButton.swift; sourceTree = "<group>"; };
 		DCF12E5F5D09CC277B307C8A27456151 /* TastyTomatoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastyTomatoTests.swift; sourceTree = "<group>"; };
 		E12E3659104848DDD678FE37D39AEAF3 /* FilledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
+		E29F5232707F01E19316EFB574205368 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logos.xcassets; sourceTree = "<group>"; };
 		E4A3880C48EE007201237477752C5E8F /* UIImage (withTint).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage (withTint).swift"; sourceTree = "<group>"; };
 		EA7FFA17FC0A5D6DF5FAF4475A4BE503 /* Pods_TastyTomatoAbstract_TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomatoAbstract_TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -902,6 +903,7 @@
 				de,
 				fr,
 				it,
+				es,
 			);
 			mainGroup = 0797CADAA242E6EF3AC04B83BE063FFA;
 			productRefGroup = 087D62F85789E9BA2921482544C68BB4 /* Products */;
@@ -1124,6 +1126,7 @@
 			children = (
 				91C532ECB5C7CC6DE8FAAAD3F465DEAE /* de */,
 				617BAD163949C9A08DE92862E903C2A8 /* en */,
+				E29F5232707F01E19316EFB574205368 /* es */,
 				019B1845FE1BCB19271320DCDCAE1B32 /* fr */,
 				34D0E16928856EC4BC2DBB865478D8BD /* it */,
 			);
