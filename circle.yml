@@ -17,7 +17,7 @@ jobs:
       # If we don't pass `-t`, the Simulator starts anyway...
       - run:
           name: Pre-start iOS Simulator
-          command: xcrun instruments -w "iPad Air 2 (12.1)" || true
+          command: xcrun instruments -w "iPad Air 2 (12.2)" || true
       
       ## Create output directories
       - run:
@@ -91,7 +91,7 @@ jobs:
       ## Run tests
       - run:
           name: Run tests
-          command: xcodebuild -workspace TastyTomato.xcworkspace -scheme "TastyTomato" -destination 'platform=iOS Simulator,name=iPad Air 2,OS=12.1' clean build test | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-verbose.log" | xcpretty | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-xcpretty.log"
+          command: xcodebuild -workspace TastyTomato.xcworkspace -scheme "TastyTomato" -destination 'platform=iOS Simulator,name=iPad Air 2,OS=12.2' clean build test | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-verbose.log" | xcpretty | tee "/Users/distiller/output/xcodebuild-logs/xcodebuild-xcpretty.log"
       
       ## Store artifacts
       - store_artifacts:
