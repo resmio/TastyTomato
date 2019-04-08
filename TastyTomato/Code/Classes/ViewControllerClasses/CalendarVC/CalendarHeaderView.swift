@@ -104,7 +104,7 @@ private extension CalendarHeaderView {
         leftArrowButton.contentMode = .scaleAspectFit
         leftArrowButton.addTarget(
             self,
-            action: #selector(_leftArrowButtonTapped),
+            action: #selector(self._leftArrowButtonTapped),
             for: .touchUpInside
         )
         return leftArrowButton
@@ -117,7 +117,7 @@ private extension CalendarHeaderView {
         rightArrowButton.contentMode = .scaleAspectFit
         rightArrowButton.addTarget(
             self,
-            action: #selector(_rightArrowButtonTapped),
+            action: #selector(self._rightArrowButtonTapped),
             for: .touchUpInside
         )
         return rightArrowButton
@@ -226,12 +226,12 @@ private extension CalendarHeaderView {
 
 
 // MARK: Button Target Selectors
-@objc private extension CalendarHeaderView {
-    func _leftArrowButtonTapped() {
+private extension CalendarHeaderView {
+    @objc func _leftArrowButtonTapped() {
         self.delegate?.tappedLeftArrowButton(on: self)
     }
     
-    func _rightArrowButtonTapped() {
+    @objc func _rightArrowButtonTapped() {
         self.delegate?.tappedRightArrowButton(on: self)
     }
 }
