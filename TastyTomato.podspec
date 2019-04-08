@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     "Jan Nash" => "jan@resmio.com" 
   }
   s.platform = :ios, "8.0"
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   s.source = {
     :git => "https://github.com/resmio/TastyTomato.git",
     :tag => "v#{s.version}"
