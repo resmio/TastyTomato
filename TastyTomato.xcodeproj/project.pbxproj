@@ -896,7 +896,7 @@
 			};
 			buildConfigurationList = 060A183A5F89CDDB0C50EDA6279C87A8 /* Build configuration list for PBXProject "TastyTomato" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -904,6 +904,7 @@
 				fr,
 				it,
 				es,
+				Base,
 			);
 			mainGroup = 0797CADAA242E6EF3AC04B83BE063FFA;
 			productRefGroup = 087D62F85789E9BA2921482544C68BB4 /* Products */;
