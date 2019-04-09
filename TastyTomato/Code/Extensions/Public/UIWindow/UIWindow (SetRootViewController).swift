@@ -78,7 +78,7 @@ private extension UIWindow {
             additionalOptions = .transitionFlipFromLeft
         case .flipFromRight:
             additionalOptions = .transitionFlipFromRight
-        case .none:
+        default:
             return nil
         }
         
