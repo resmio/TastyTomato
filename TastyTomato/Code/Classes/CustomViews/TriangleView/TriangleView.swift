@@ -12,7 +12,7 @@ import UIKit
 // MARK: // Public
 // MARK: Interface
 public extension TriangleView {
-    public func trianglePath() -> CGPath {
+    func trianglePath() -> CGPath {
         return (self.layer.mask as! CAShapeLayer).path!
     }
 }

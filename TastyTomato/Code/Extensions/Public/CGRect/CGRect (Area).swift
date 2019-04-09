@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: // Public
 public extension CGRect {
-    public var area: CGFloat {
+    var area: CGFloat {
         return self._area
     }
 }

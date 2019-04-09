@@ -12,7 +12,7 @@ import UIKit
 // MARK: // Public
 // MARK: Interface
 public extension ShortcutBar {
-    public func setItems(_ items: [UIBarButtonItem], animated: Bool) {
+    func setItems(_ items: [UIBarButtonItem], animated: Bool) {
         self._setItems(items, animated: animated)
     }
 }

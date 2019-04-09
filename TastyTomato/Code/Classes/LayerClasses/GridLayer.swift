@@ -14,9 +14,9 @@ import SignificantSpices
 // MARK: Interface
 public extension GridLayer {
     // MARK: Location
-    public typealias Location = (row: CGFloat, column: CGFloat)
+    typealias Location = (row: CGFloat, column: CGFloat)
     
-    public enum Subdivision: CGFloat {
+    enum Subdivision: CGFloat {
         case none = 1.0
         case half = 0.5
         case quarter = 0.25
@@ -28,97 +28,97 @@ public extension GridLayer {
     }
     
     // ReadWrite
-    public var numOfRows: UInt {
+    var numOfRows: UInt {
         get { return self._numOfRows }
         set { self._numOfRows = newValue }
     }
     
-    public var numOfColumns: UInt {
+    var numOfColumns: UInt {
         get { return self._numOfColumns }
         set { self._numOfColumns = newValue }
     }
 
-    public var subdivision: GridLayer.Subdivision {
+    var subdivision: GridLayer.Subdivision {
         get { return self._subdivision }
         set { self._subdivision = newValue }
     }
     
-    public var gridIsShown: Bool {
+    var gridIsShown: Bool {
         get { return self._gridIsShown }
         set { self._gridIsShown = newValue }
     }
     
-    public var borderIsShown: Bool {
+    var borderIsShown: Bool {
         get { return self._borderIsShown }
         set { self._borderIsShown = newValue }
     }
     
-    public var rowHeight: CGFloat {
+    var rowHeight: CGFloat {
         get { return self._rowHeight }
         set { self._rowHeight = newValue }
     }
     
-    public var columnWidth: CGFloat {
+    var columnWidth: CGFloat {
         get { return self._columnWidth }
         set { self._columnWidth = newValue }
     }
     
-    public var borderLineColor: CGColor {
+    var borderLineColor: CGColor {
         get { return self._borderLineColor }
         set { self._borderLineColor = newValue }
     }
     
-    public var mainGridLineColor: CGColor {
+    var mainGridLineColor: CGColor {
         get { return self._mainGridLineColor }
         set { self._mainGridLineColor = newValue }
     }
     
-    public var subGridLineColor: CGColor {
+    var subGridLineColor: CGColor {
         get { return self._subGridLineColor }
         set { self._subGridLineColor = newValue }
     }
     
-    public var borderLineWidth: CGFloat {
+    var borderLineWidth: CGFloat {
         get { return self._borderLineWidth }
         set { self._borderLineWidth = newValue }
     }
     
-    public var gridLineWidth: CGFloat {
+    var gridLineWidth: CGFloat {
         get { return self._gridLineWidth }
         set { self._gridLineWidth = newValue }
     }
     
-    public var borderDashPattern: [CGFloat] {
+    var borderDashPattern: [CGFloat] {
         get { return self._borderDashPattern as! [CGFloat] }
         set { self._borderDashPattern = newValue as [NSNumber] }
     }
     
-    public var gridDashPattern: [CGFloat] {
+    var gridDashPattern: [CGFloat] {
         get { return self._gridDashPattern as! [CGFloat] }
         set { self._gridDashPattern = newValue as [NSNumber] }
     }
     
-    public var borderEdgeInsets: UIEdgeInsets {
+    var borderEdgeInsets: UIEdgeInsets {
         get { return self._borderEdgeInsets }
         set { self._borderEdgeInsets = newValue }
     }
     
-    public var gridInsetFactor: CGFloat {
+    var gridInsetFactor: CGFloat {
         get { return self._gridInsetFactor }
         set { self._gridInsetFactor = newValue }
     }
     
-    public var gridLineOverlapFactor: CGFloat {
+    var gridLineOverlapFactor: CGFloat {
         get { return self._gridLineOverlapFactor }
         set { self._gridLineOverlapFactor = newValue }
     }
 
     // Functions
-    public func point(for location: GridLayer.Location) -> CGPoint {
+    func point(for location: GridLayer.Location) -> CGPoint {
         return self._point(for: location)
     }
 
-    public func location(for point: CGPoint, snapToGrid: Bool) -> GridLayer.Location {
+    func location(for point: CGPoint, snapToGrid: Bool) -> GridLayer.Location {
         return self._location(for: point, snapToGrid: snapToGrid)
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UIView {
-    public var area: CGFloat {
+    var area: CGFloat {
         return self._area
     }
 }

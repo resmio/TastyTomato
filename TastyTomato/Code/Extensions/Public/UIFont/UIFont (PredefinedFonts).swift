@@ -11,40 +11,40 @@ import UIKit
 
 // MARK: // Public
 @objc public extension UIFont {
-    public static var xxs: UIFont {
+    static var xxs: UIFont {
         return .systemFont(ofSize: 12)
     }
     
-    public static var xs: UIFont {
+    static var xs: UIFont {
         return .systemFont(ofSize: 14)
     }
     
-    public static var s: UIFont {
+    static var s: UIFont {
         return .systemFont(ofSize: 16)
     }
     
-    public static var m: UIFont {
+    static var m: UIFont {
         return .systemFont(ofSize: 18)
     }
     
-    public static var l: UIFont {
+    static var l: UIFont {
         return .systemFont(ofSize: 20)
     }
     
-    public static var xl: UIFont {
+    static var xl: UIFont {
         return .systemFont(ofSize: 22)
     }
     
-    public static var xxl: UIFont {
+    static var xxl: UIFont {
         return .systemFont(ofSize: 24)
     }
     
     // Functions
-    public func bold() -> UIFont {
+    func bold() -> UIFont {
         return .boldSystemFont(ofSize: self.pointSize)
     }
     
-    public func normal() -> UIFont {
+    func normal() -> UIFont {
         return .systemFont(ofSize: self.pointSize)
     }
 }

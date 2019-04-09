@@ -12,7 +12,7 @@ import Foundation
 // MARK: // Public
 // MARK: Interface
 public extension TextButton {
-    public var highlightedAlpha: CGFloat {
+    var highlightedAlpha: CGFloat {
         get {
             return self._highlightedAlpha
         }
@@ -21,7 +21,7 @@ public extension TextButton {
         }
     }
     
-    public var underlined: Bool {
+    var underlined: Bool {
         get {
             return self._underlined
         }

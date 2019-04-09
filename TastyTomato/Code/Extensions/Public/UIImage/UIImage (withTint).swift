@@ -12,7 +12,7 @@ import QuartzCore
 
 // MARK: // Public
 public extension UIImage {
-    public func withTint(color: UIColor) -> UIImage? {
+    func withTint(color: UIColor) -> UIImage? {
         return self._withTint(color: color)
     }
 }

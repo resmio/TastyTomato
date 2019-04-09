@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension CGSize {
-    public func asCGRect() -> CGRect {
+    func asCGRect() -> CGRect {
         return self._asCGRect()
     }
 }

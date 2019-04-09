@@ -13,13 +13,13 @@ import UIKit
 // MARK: Interface
 public extension LineLayer {
     // Enum Orientation
-    public enum Orientation {
+    enum Orientation {
         case horizontal
         case vertical
     }
     
     // ReadWrite
-    public var parallelPosition: CGFloat {
+    var parallelPosition: CGFloat {
         get {
             return self._parallelPosition
         }
@@ -28,7 +28,7 @@ public extension LineLayer {
         }
     }
     
-    public var orthogonalPosition: CGFloat {
+    var orthogonalPosition: CGFloat {
         get {
             return self._orthogonalPosition
         }
@@ -37,7 +37,7 @@ public extension LineLayer {
         }
     }
     
-    public var orientation: LineLayer.Orientation {
+    var orientation: LineLayer.Orientation {
         get {
             return self._orientation
         }
@@ -46,7 +46,7 @@ public extension LineLayer {
         }
     }
     
-    public var length: CGFloat {
+    var length: CGFloat {
         get {
             return self._length
         }

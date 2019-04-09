@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UIView {
-    public func scale(byFactor factor: CGFloat) {
+    func scale(byFactor factor: CGFloat) {
         self._scale(byFactor: factor)
     }
 }

@@ -11,11 +11,11 @@ import UIKit
 
 // MARK: // Public
 public extension UIWindow {
-    public var rootVC: UIViewController? {
+    var rootVC: UIViewController? {
         return self._rootVC
     }
     
-    public func setRootVC(_ newRootVC: UIViewController, transition: AnimationTransition = .none, completion: (() -> Void)? = nil) {
+    func setRootVC(_ newRootVC: UIViewController, transition: AnimationTransition = .none, completion: (() -> Void)? = nil) {
         self._setRootVC(newRootVC, transition: transition, completion: completion)
     }
 }

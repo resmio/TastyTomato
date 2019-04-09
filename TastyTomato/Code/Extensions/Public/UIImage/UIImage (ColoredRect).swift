@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UIImage {
-    public convenience init?(color: UIColor) {
+    convenience init?(color: UIColor) {
         self.init(_color: color)
     }
 }

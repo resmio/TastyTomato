@@ -11,12 +11,12 @@ import UIKit
 
 // MARK: // Public
 public extension CAShapeLayer {
-    @objc public convenience init(path p: UIBezierPath) {
+    @objc convenience init(path p: UIBezierPath) {
         self.init()
         self.path = p.cgPath
     }
     
-    @objc public convenience init(rect r: CGRect) {
+    @objc convenience init(rect r: CGRect) {
         self.init(path: UIBezierPath(rect: r))
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UIColor {
-    @objc public func withAlpha(_ alpha: CGFloat) -> UIColor {
+    @objc func withAlpha(_ alpha: CGFloat) -> UIColor {
         return self.withAlphaComponent(alpha)
     }
 }

@@ -11,11 +11,11 @@ import UIKit
 
 // MARK: // Public
 public extension UIImage {
-    public func scaledByFactor(_ factor: CGFloat) -> UIImage {
+    func scaledByFactor(_ factor: CGFloat) -> UIImage {
         return self._scaledByFactor(factor)
     }
     
-    public func scaledToSize(_ size: CGSize) -> UIImage {
+    func scaledToSize(_ size: CGSize) -> UIImage {
         return self._scaledToSize(size)
     }
 }

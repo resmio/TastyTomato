@@ -12,5 +12,5 @@ import Foundation
 // MARK: // Public
 // MARK: -
 public extension CGFloat {
-    public typealias Transform = (CGFloat) -> CGFloat
+    typealias Transform = (CGFloat) -> CGFloat
 }

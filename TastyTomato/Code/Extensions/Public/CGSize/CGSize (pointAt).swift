@@ -11,11 +11,11 @@ import UIKit
 
 // MARK: // Public
 public extension CGSize {
-    public func pointAt(_ commonTransform: CGFloat.Transform = { $0 }) -> CGPoint {
+    func pointAt(_ commonTransform: CGFloat.Transform = { $0 }) -> CGPoint {
         return CGPoint(x: commonTransform(self.width), y: commonTransform(self.height))
     }
     
-    public func pointAt(_ widthTransform: CGFloat.Transform = { $0 }, _ heightTransform: CGFloat.Transform = { $0 }) -> CGPoint {
+    func pointAt(_ widthTransform: CGFloat.Transform = { $0 }, _ heightTransform: CGFloat.Transform = { $0 }) -> CGPoint {
         return CGPoint(x: widthTransform(self.width), y: heightTransform(self.height))
     }
 }

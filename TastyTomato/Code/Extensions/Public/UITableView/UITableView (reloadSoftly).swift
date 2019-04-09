@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UITableView {
-    public func reloadSoftly(animated: Bool = true, duration: TimeInterval = 0.4, additionalAnimations: (() -> Void)? = nil) {
+    func reloadSoftly(animated: Bool = true, duration: TimeInterval = 0.4, additionalAnimations: (() -> Void)? = nil) {
         self._reloadSoftly(animated: animated, duration: duration, additionalAnimations: additionalAnimations)
     }
 }

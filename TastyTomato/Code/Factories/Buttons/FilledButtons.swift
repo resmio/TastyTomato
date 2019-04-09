@@ -11,11 +11,11 @@ import Foundation
 
 // MARK: // Public
 public extension FilledButton {
-    public static func makeSignInButton() -> FilledButton {
+    static func makeSignInButton() -> FilledButton {
         return self._makeSignInButton()
     }
     
-    public static func makeSelectFacilityButton() -> FilledButton {
+    static func makeSelectFacilityButton() -> FilledButton {
         return self._makeSelectFacilityButton()
     }
 }

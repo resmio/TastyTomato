@@ -26,28 +26,28 @@ public extension UIView {
     /**
      The temporary x-position of the view.  nil, if no temporary x is set.
      */
-    public var tempX: CGFloat? {
+    var tempX: CGFloat? {
         return self._tempX
     }
     
     /**
      The temporary y-position of the view.  nil, if no temporary y is set.
      */
-    public var tempY: CGFloat? {
+    var tempY: CGFloat? {
         return self._tempY
     }
     
     /**
      The temporary width of the view.  nil, if no temporary width is set.
      */
-    public var tempWidth: CGFloat? {
+    var tempWidth: CGFloat? {
         return self._tempWidth
     }
     
     /**
      The temporary height of the view.  nil, if no temporary height is set.
      */
-    public var tempHeight: CGFloat? {
+    var tempHeight: CGFloat? {
         return self._tempHeight
     }
     
@@ -55,28 +55,28 @@ public extension UIView {
     /**
      The original x-position of the view.  frame.origin.x, if no temporary x is set.
      */
-    public var originalX: CGFloat {
+    var originalX: CGFloat {
         return self._originalX ?? self.frame.origin.x
     }
     
     /**
      The original y-position of the view.  frame.origin.y, if no temporary y is set.
      */
-    public var originalY: CGFloat {
+    var originalY: CGFloat {
         return self._originalY ?? self.frame.origin.y
     }
     
     /**
      The original width of the view.  frame.size.width, if no temporary width is set.
      */
-    public var originalWidth: CGFloat {
+    var originalWidth: CGFloat {
         return self._originalWidth ?? self.frame.size.width
     }
     
     /**
      The original height of the view.  frame.size.height, if no temporary height is set.
      */
-    public var originalHeight: CGFloat {
+    var originalHeight: CGFloat {
         return self._originalHeight ?? self.frame.size.height
     }
     
@@ -84,28 +84,28 @@ public extension UIView {
     /**
      The current x-offset of the view.  0, if no temporary x is set.
      */
-    public var xOffset: CGFloat {
+    var xOffset: CGFloat {
         return (self.tempX ?? self.originalX) - self.originalX
     }
     
     /**
      The current y-offset of the view.  0, if no temporary y is set.
      */
-    public var yOffset: CGFloat {
+    var yOffset: CGFloat {
         return (self.tempY ?? self.originalY) - self.originalY
     }
     
     /**
      The current width-offset of the view.  0, if no temporary width is set.
      */
-    public var widthOffset: CGFloat {
+    var widthOffset: CGFloat {
         return (self.tempWidth ?? self.originalWidth) - self.originalWidth
     }
     
     /**
      The current height-offset of the view.  0, if no temporary height is set.
      */
-    public var heightOffset: CGFloat {
+    var heightOffset: CGFloat {
         return (self.tempHeight ?? self.originalHeight) - self.originalHeight
     }
     
@@ -113,56 +113,56 @@ public extension UIView {
     /**
      Sets the temporary x position of the view.
      */
-    public func setTempX(_ tempX: CGFloat) {
+    func setTempX(_ tempX: CGFloat) {
         self._setTempX(tempX)
     }
     
     /**
      Sets the temporary y position of the view.
      */
-    public func setTempY(_ tempY: CGFloat) {
+    func setTempY(_ tempY: CGFloat) {
         self._setTempY(tempY)
     }
     
     /**
      Sets the temporary width of the view.
      */
-    public func setTempWidth(_ tempWidth: CGFloat) {
+    func setTempWidth(_ tempWidth: CGFloat) {
         self._setTempWidth(tempWidth)
     }
     
     /**
      Sets the temporary height of the view.
      */
-    public func setTempHeight(_ tempHeight: CGFloat) {
+    func setTempHeight(_ tempHeight: CGFloat) {
         self._setTempHeight(tempHeight)
     }
     
     /**
      Resets the x-position of the view to its original value.
      */
-    public func resetX() {
+    func resetX() {
         self._resetX()
     }
     
     /**
      Resets the y-position of the view to its original value.
      */
-    public func resetY() {
+    func resetY() {
         self._resetY()
     }
     
     /**
      Resets the width of the view to its original value.
      */
-    public func resetWidth() {
+    func resetWidth() {
         self._resetWidth()
     }
     
     /**
      Resets the height of the view to its original value.
      */
-    public func resetHeight() {
+    func resetHeight() {
         self._resetHeight()
     }
 }
