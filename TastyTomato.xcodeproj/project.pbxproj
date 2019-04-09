@@ -842,7 +842,7 @@
 				35B3724FC1ADEC6AA7F2193760DA11CA /* Sources */,
 				630DD274FF90B1048DD886A760489593 /* Frameworks */,
 				94181FE122095712F9F3E596F62187C8 /* Resources */,
-				8867512E05BFE2DA8FAB2FA321A4D9EE /* [CP] Embed Pods Frameworks */,
+				50DBCC6EFC3EA69BC2292325D9189DBF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -970,7 +970,7 @@
 			shellPath = /bin/sh;
 			shellScript = "KEYWORDS=\"\\/\\/ ERROR:|\\/\\/ WARNING:|\\/\\/ TODO:|\\/\\/ FIXME:|\\/\\/ \\?\\?\\?:|\\/\\/ \\!\\!\\!:\"\nfind \"${SRCROOT}/TastyTomato/\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
 		};
-		8867512E05BFE2DA8FAB2FA321A4D9EE /* [CP] Embed Pods Frameworks */ = {
+		50DBCC6EFC3EA69BC2292325D9189DBF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
