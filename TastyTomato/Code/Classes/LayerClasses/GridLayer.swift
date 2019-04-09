@@ -478,8 +478,8 @@ private func ==(lhs: _PositionIndex, rhs: _PositionIndex) -> Bool {
 
 // MARK: Hashable
 extension _PositionIndex: Hashable {
-    var hashValue: Int {
-        return self.value.hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.value)
     }
 }
 
