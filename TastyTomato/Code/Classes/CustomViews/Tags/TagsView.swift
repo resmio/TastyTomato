@@ -262,7 +262,7 @@ private extension TagsView {
     }
     
     func _removeTagView(_ tagView: TagView, animated: Bool) {
-        guard let index: Int = self._tagViews.index(of: tagView) else { return }
+        guard let index: Int = self._tagViews.firstIndex(of: tagView) else { return }
         tagView.removeFromSuperview()
         self._tagViews.remove(at: index)
         self._rearrangeTagViews(startIndex: index, width: self.width, animated: animated)
