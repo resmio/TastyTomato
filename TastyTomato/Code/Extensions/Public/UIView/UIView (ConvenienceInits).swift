@@ -11,11 +11,11 @@ import UIKit
 
 // MARK: // Public
 public extension UIView {
-    public convenience init(origin: CGPoint) {
+    convenience init(origin: CGPoint) {
         self.init(frame: CGRect(origin: origin))
     }
     
-    @objc public convenience init(size: CGSize) {
+    @objc convenience init(size: CGSize) {
         self.init(frame: CGRect(size: size))
     }
 }

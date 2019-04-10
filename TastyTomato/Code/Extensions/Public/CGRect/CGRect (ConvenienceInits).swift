@@ -11,11 +11,11 @@ import UIKit
 
 // MARK: // Public
 public extension CGRect {
-    public init(origin: CGPoint) {
+    init(origin: CGPoint) {
         self.init(origin: origin, size: CGSize.zero)
     }
     
-    public init(size: CGSize) {
+    init(size: CGSize) {
         self.init(origin: CGPoint.zero, size: size)
     }
 }

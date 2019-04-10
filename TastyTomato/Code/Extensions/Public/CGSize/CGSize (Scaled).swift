@@ -11,11 +11,11 @@ import UIKit
 
 // MARK: // Public
 public extension CGSize {
-    public func scaledByFactor(_ factor: CGFloat) -> CGSize {
+    func scaledByFactor(_ factor: CGFloat) -> CGSize {
         return self._scaledByFactor(factor)
     }
     
-    public mutating func scaleByFactor(_ factor: CGFloat) {
+    mutating func scaleByFactor(_ factor: CGFloat) {
         self._scaleByFactor(factor)
     }
 }

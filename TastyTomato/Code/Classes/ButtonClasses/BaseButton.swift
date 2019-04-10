@@ -13,7 +13,7 @@ import UIKit
 // MARK: Interface
 public extension BaseButton {
     // ReadWrite
-    public var adjustsWidthOnTitleSet: Bool {
+    var adjustsWidthOnTitleSet: Bool {
         get {
             return self._adjustsWidthOnTitleSet
         }
@@ -22,7 +22,7 @@ public extension BaseButton {
         }
     }
     
-    public var xPadding: CGFloat {
+    var xPadding: CGFloat {
         get {
             return self._xPadding
         }
@@ -31,7 +31,7 @@ public extension BaseButton {
         }
     }
     
-    public var yPadding: CGFloat {
+    var yPadding: CGFloat {
         get {
             return self._yPadding
         }

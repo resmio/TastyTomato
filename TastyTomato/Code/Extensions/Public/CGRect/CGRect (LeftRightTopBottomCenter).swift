@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension CGRect {
-    public var left: CGFloat {
+    var left: CGFloat {
         get {
             return self._left
         }
@@ -20,7 +20,7 @@ public extension CGRect {
         }
     }
     
-    public var right: CGFloat {
+    var right: CGFloat {
         get {
             return self._right
         }
@@ -29,7 +29,7 @@ public extension CGRect {
         }
     }
     
-    public var top: CGFloat {
+    var top: CGFloat {
         get {
             return self._top
         }
@@ -38,7 +38,7 @@ public extension CGRect {
         }
     }
     
-    public var bottom: CGFloat {
+    var bottom: CGFloat {
         get {
             return self._bottom
         }
@@ -47,7 +47,7 @@ public extension CGRect {
         }
     }
     
-    public var center: CGPoint {
+    var center: CGPoint {
         get {
             return self._center
         }

@@ -29,23 +29,23 @@ public extension TagsView {
     }
     
     // Functions
-    public func rearrangeTagViews() {
+    func rearrangeTagViews() {
         self._rearrangeTagViews(startIndex: 0, width: self.width, animated: false)
     }
     
-    public func addTagView(_ tagView: TagView) {
+    func addTagView(_ tagView: TagView) {
         self._addTagView(tagView)
     }
     
-    public func addTagViews(_ tagViews: [TagView]) {
+    func addTagViews(_ tagViews: [TagView]) {
         self._addTagViews(tagViews)
     }
     
-    public func removeTagView(_ tagView: TagView, animated: Bool = true) {
+    func removeTagView(_ tagView: TagView, animated: Bool = true) {
         self._removeTagView(tagView, animated: animated)
     }
     
-    public func removeAllTagViews() {
+    func removeAllTagViews() {
         self._removeAllTagViews()
     }
 }
@@ -262,7 +262,7 @@ private extension TagsView {
     }
     
     func _removeTagView(_ tagView: TagView, animated: Bool) {
-        guard let index: Int = self._tagViews.index(of: tagView) else { return }
+        guard let index: Int = self._tagViews.firstIndex(of: tagView) else { return }
         tagView.removeFromSuperview()
         self._tagViews.remove(at: index)
         self._rearrangeTagViews(startIndex: index, width: self.width, animated: animated)

@@ -12,7 +12,7 @@ import UIKit
 // MARK: // Public
 // MARK: Factory
 public extension UIView {
-    public func asBarButtonItem() -> UIBarButtonItem {
+    func asBarButtonItem() -> UIBarButtonItem {
         return self._asBarButtonItem()
     }
 }

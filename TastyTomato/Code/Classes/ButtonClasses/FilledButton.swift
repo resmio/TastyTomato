@@ -12,7 +12,7 @@ import Foundation
 // MARK: // Public
 // MARK: Interface
 public extension FilledButton {
-    public var fillColor: UIColor {
+    var fillColor: UIColor {
         get {
             return self._fillColor
         }
@@ -21,7 +21,7 @@ public extension FilledButton {
         }
     }
     
-    public var highlightedAlpha: CGFloat {
+    var highlightedAlpha: CGFloat {
         get {
             return self._highlightedAlpha
         }

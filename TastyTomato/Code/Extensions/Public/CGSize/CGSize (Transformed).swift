@@ -11,11 +11,11 @@ import UIKit
 
 // MARK: // Public
 public extension CGSize {
-    public func transformed(_ commonTransform: CGFloat.Transform = { $0 }) -> CGSize {
+    func transformed(_ commonTransform: CGFloat.Transform = { $0 }) -> CGSize {
         return CGSize(width: commonTransform(self.width), height: commonTransform(self.height))
     }
     
-    public func transformed(_ widthTransform: CGFloat.Transform = { $0 }, _ heightTransform: CGFloat.Transform = { $0 }) -> CGSize {
+    func transformed(_ widthTransform: CGFloat.Transform = { $0 }, _ heightTransform: CGFloat.Transform = { $0 }) -> CGSize {
         return CGSize(width: widthTransform(self.width), height: heightTransform(self.height))
     }
 }

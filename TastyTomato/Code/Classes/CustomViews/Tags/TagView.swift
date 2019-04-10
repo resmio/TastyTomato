@@ -19,7 +19,7 @@ import UIKit
 // MARK: - TagView
 // MARK: Interface
 public extension TagView {
-    public var delegate: TagViewDelegate? {
+    var delegate: TagViewDelegate? {
         get {
             return self._delegate
         }
@@ -28,7 +28,7 @@ public extension TagView {
         }
     }
     
-    public var showsDeleteButton: Bool {
+    var showsDeleteButton: Bool {
         get {
             return self._showsDeleteButton
         }

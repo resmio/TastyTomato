@@ -12,7 +12,7 @@ import Foundation
 // MARK: // Public
 // MARK: Interface
 public extension BorderLayer {
-    public var borderEdgeInsets: UIEdgeInsets {
+    var borderEdgeInsets: UIEdgeInsets {
         get { return self._borderEdgeInsets }
         set { self._borderEdgeInsets = newValue }
     }

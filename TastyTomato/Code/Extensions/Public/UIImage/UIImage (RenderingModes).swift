@@ -11,15 +11,15 @@ import Foundation
 
 // MARK: // Public
 public extension UIImage {
-    public func inAutomaticMode() -> UIImage {
+    func inAutomaticMode() -> UIImage {
         return self._inAutomaticMode()
     }
     
-    public func asOriginal() -> UIImage {
+    func asOriginal() -> UIImage {
         return self._asOriginal()
     }
     
-    @objc public func asTemplate() -> UIImage {
+    @objc func asTemplate() -> UIImage {
         return self._asTemplate()
     }
 }

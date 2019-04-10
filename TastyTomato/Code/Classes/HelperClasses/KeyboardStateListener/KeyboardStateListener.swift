@@ -12,14 +12,14 @@ import UIKit
 // MARK: // Public
 // MARK: Interface
 public extension KeyboardStateListener {
-    public static var isEnabled: Bool {
+    static var isEnabled: Bool {
         get { return self._shared._isEnabled }
         set { newValue ? self._shared._enable() : self._shared._disable() }
     }
     
     // The minimum spacing between keyboard and textField.
     // Changes will be applied the next time the keyboard is shown.
-    public static var minimumSpacing: CGFloat {
+    static var minimumSpacing: CGFloat {
         get { return self._shared._minimumSpacing }
         set { self._shared._minimumSpacing = newValue }
     }

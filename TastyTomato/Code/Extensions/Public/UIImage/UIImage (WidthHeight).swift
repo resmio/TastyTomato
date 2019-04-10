@@ -11,11 +11,11 @@ import UIKit
 
 // MARK: // Public
 @objc public extension UIImage {
-    public var width: CGFloat {
+    var width: CGFloat {
         return self._width
     }
     
-    public var height: CGFloat {
+    var height: CGFloat {
         return self._height
     }
 }

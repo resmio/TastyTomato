@@ -34,7 +34,7 @@ import UIKit
 // MARK: // Public
 // MARK: Interface
 public extension DropDownTextField {
-    public var delegate: DropDownTextFieldDelegate? {
+    var delegate: DropDownTextFieldDelegate? {
         get {
             return self._delegate
         }
@@ -43,7 +43,7 @@ public extension DropDownTextField {
         }
     }
     
-    public var dataSource: DropDownTextFieldDataSource? {
+    var dataSource: DropDownTextFieldDataSource? {
         get {
             return self._dataSource
         }
@@ -52,11 +52,11 @@ public extension DropDownTextField {
         }
     }
     
-    public func showDropDown(_ animated: Bool) {
+    func showDropDown(_ animated: Bool) {
         self._showDropDown(true, animated: animated)
     }
     
-    public func hideDropDown(_ animated: Bool) {
+    func hideDropDown(_ animated: Bool) {
         self._showDropDown(false, animated: animated)
     }
     

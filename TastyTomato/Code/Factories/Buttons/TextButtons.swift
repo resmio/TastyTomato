@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: // Public
 public extension TextButton {
-    public static func makeForgotPasswordButton() -> TextButton {
+    static func makeForgotPasswordButton() -> TextButton {
         return self._makeForgotPasswordButton()
     }
 }

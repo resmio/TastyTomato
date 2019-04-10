@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 public extension UIViewController {
-    @objc public func embed(_ viewController: UIViewController, into view: UIView? = nil) {
+    @objc func embed(_ viewController: UIViewController, into view: UIView? = nil) {
         self._embed(
             viewController,
             into: view,
@@ -19,7 +19,7 @@ public extension UIViewController {
         )
     }
     
-    public func embed(_ viewController: UIViewController, into view: UIView? = nil, in frame: CGRect) {
+    func embed(_ viewController: UIViewController, into view: UIView? = nil, in frame: CGRect) {
         self._embed(
             viewController,
             into: view,
