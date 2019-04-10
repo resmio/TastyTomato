@@ -4,7 +4,7 @@ __dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "${__dir}"
 
 
-RUBY_VERSION='2.5.1'
+RUBY_VERSION='2.6.1'
 
 
 echo "# # # # #"
@@ -254,9 +254,9 @@ echo "$RUBY_VERSION" > ".ruby-version"
 cat <<\EOF > "Gemfile"
 source 'https://rubygems.org'
 
-gem 'cocoapods', '1.5.0'
+gem 'cocoapods', '1.6.1'
 gem 'synx', '0.2.1'
-gem 'xcpretty', '0.2.8'
+gem 'xcpretty', '0.3.0'
 EOF
 #
 # # # # # # # # # # # # # # # # # # # # #
