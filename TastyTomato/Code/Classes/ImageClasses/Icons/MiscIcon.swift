@@ -55,6 +55,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("location")
     }
     
+    public static var Lock: MiscIcon {
+        return MiscIcon.suffixed_("lock")
+    }
+    
     public static var Logout: MiscIcon {
         return MiscIcon.suffixed_("logout")
     }
