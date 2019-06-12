@@ -11,40 +11,31 @@ import Foundation
 
 // MARK: // Public
 public extension FilledButton {
-    static func makeSignInButton() -> FilledButton {
-        return self._makeSignInButton()
+    static func makeDefaultBlueButton(title: String) -> FilledButton {
+        return self._makeDefaultBlueButton(title: title)
     }
     
-    static func makeSelectFacilityButton() -> FilledButton {
-        return self._makeSelectFacilityButton()
+    static func makeSignInButton() -> FilledButton {
+        return self._makeDefaultBlueButton(title: NSL_("Sign in"))
+    }
+    
+    static func makeSelectButton() -> FilledButton {
+        return self._makeDefaultBlueButton(title: NSL_("Select"))
     }
 }
 
 
 // MARK: // Private
 private extension FilledButton {
-    static func _makeSignInButton() -> FilledButton {
-        let signInButton: FilledButton = self._makeSignInAndSelectFacilityButton()
-        signInButton.setTitle(NSL_("Sign in"))
-        return signInButton
-    }
-    
-    static func _makeSelectFacilityButton() -> FilledButton {
-        let selectButton: FilledButton = self._makeSignInAndSelectFacilityButton()
-        selectButton.setTitle(NSL_("Select"))
-        return selectButton
-    }
-    
-    // Helper
-    static func _makeSignInAndSelectFacilityButton() -> FilledButton {
+    static func _makeDefaultBlueButton(title: String) -> FilledButton {
         let button: FilledButton = FilledButton()
         
+        button.setTitle(title)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel!.font = .s
         button.adjustsWidthOnTitleSet = false
         
         button.height = 44
-        button.width = 330
         
         return button
     }

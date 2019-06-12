@@ -103,7 +103,7 @@ extension PopoverVC {
         self._updateContentSize()
     }
     
-    public func dismiss(animated: Bool = true, honorShouldDismiss: Bool = false, callDidDismiss: Bool = false, completion: (() -> Void)? = nil) {
+    @objc public func dismiss(animated: Bool = true, honorShouldDismiss: Bool = false, callDidDismiss: Bool = false, completion: (() -> Void)? = nil) {
         self._dismiss(animated: animated, honorShouldDismiss: honorShouldDismiss, callDidDismiss: callDidDismiss, completion: completion)
     }
     
