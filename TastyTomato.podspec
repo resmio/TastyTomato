@@ -26,6 +26,6 @@ Pod::Spec.new do |s|
   }
   s.resources = ['TastyTomato/Images/*.{xcassets, png}']
   s.public_header_files = []
-  s.dependency 'SignificantSpices', '~> 0.11.0'
-  s.dependency 'SwiftDate', '~> 6.0.2'
+  s.dependency 'SignificantSpices', '~> 0.12.0'
+  s.dependency 'SwiftDate', '~> 6.0.3'
 end
