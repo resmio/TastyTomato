@@ -138,6 +138,7 @@
 		3548C6B4D617159868EBE227290AFC0C /* FilledButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButtons.swift; sourceTree = "<group>"; };
 		384AF30C7CBCCA18C890168B4288522E /* UITextView (HeightConvenience).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView (HeightConvenience).swift"; sourceTree = "<group>"; };
 		38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint (ConvenienceInits).swift"; sourceTree = "<group>"; };
+		3E808C50F6C617D32F6656CB28DB9157 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3FBC82B6AD23E06DAA22DC3B2FEAC599 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		41EC6FAC54AA2A974B870699327AD8DE /* BookingStatusIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingStatusIcon.swift; sourceTree = "<group>"; };
 		43F15D92B31E10526F4B2EB07123B63B /* UIScrollView (ScrollingConvenience).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView (ScrollingConvenience).swift"; sourceTree = "<group>"; };
@@ -189,12 +190,14 @@
 		B84340444BA67315B74D0094CE22E3DF /* ShortcutBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutBar.swift; sourceTree = "<group>"; };
 		BA80D821A6A11686B3549A015E50472E /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		BAC2B1E373A0B5FEF4430946F8B244B4 /* UIFont (PredefinedFonts).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont (PredefinedFonts).swift"; sourceTree = "<group>"; };
+		BD1D00C88B4E6855372CADF00EE111E6 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BD526FE5A6DE506D27BB624219ADC4CF /* UIColor (FromHex_).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (FromHex_).swift"; sourceTree = "<group>"; };
 		BEB6311D8D5C046A0F88C02C99090520 /* SeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorCell.swift; sourceTree = "<group>"; };
 		C08B5813ECAE6108D8A3192D688E9D77 /* ArrowIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowIcon.swift; sourceTree = "<group>"; };
 		C11648945ADE6B76183DB64326F38A93 /* CalendarDaysVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDaysVC.swift; sourceTree = "<group>"; };
 		C12824249B7328133328FF9AE5640462 /* CGSize (CGRect).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize (CGRect).swift"; sourceTree = "<group>"; };
 		C6E438216C6A16D137CD269349331D8F /* CGRect (Scaled).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect (Scaled).swift"; sourceTree = "<group>"; };
+		CC1639217D5A5D73472FD3A951EE955C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CC85C32067728778599D735CE9A77864 /* UIView (OriginLeftRightTopBottom).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (OriginLeftRightTopBottom).swift"; sourceTree = "<group>"; };
 		CDA6DA58EB3D0C03E647E09661A8ABD2 /* CGSize (pointAt).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize (pointAt).swift"; sourceTree = "<group>"; };
 		CDDA86B00BB8C1AE6C781872E597AF28 /* UIViewController (Embedding).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController (Embedding).swift"; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 		E29F5232707F01E19316EFB574205368 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E46CF3C89E0EB17A793ACD301991F9A2 /* Logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logos.xcassets; sourceTree = "<group>"; };
 		E4A3880C48EE007201237477752C5E8F /* UIImage (withTint).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage (withTint).swift"; sourceTree = "<group>"; };
+		E5636FF29299AC8B9B7C1F2284FFC753 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E9A8560419F054E37197E42478DAB59B /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EA7FFA17FC0A5D6DF5FAF4475A4BE503 /* Pods_TastyTomatoAbstract_TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomatoAbstract_TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EABA286658F68C0C07202547FFEF1BC7 /* Pods_TastyTomatoAbstract_TastyTomatoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyTomatoAbstract_TastyTomatoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8EED43E773C4DCAFFB7E4271AFCD6F /* UIBarButtonItem (Factories).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem (Factories).swift"; sourceTree = "<group>"; };
@@ -905,6 +910,11 @@
 				it,
 				es,
 				Base,
+				nl,
+				tr,
+				sv,
+				cs,
+				da,
 			);
 			mainGroup = 0797CADAA242E6EF3AC04B83BE063FFA;
 			productRefGroup = 087D62F85789E9BA2921482544C68BB4 /* Products */;
@@ -1125,11 +1135,16 @@
 		E9175C1A832EEF0F37AEE33411A20042 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
+				CC1639217D5A5D73472FD3A951EE955C /* cs */,
+				E9A8560419F054E37197E42478DAB59B /* da */,
 				91C532ECB5C7CC6DE8FAAAD3F465DEAE /* de */,
 				617BAD163949C9A08DE92862E903C2A8 /* en */,
 				E29F5232707F01E19316EFB574205368 /* es */,
 				019B1845FE1BCB19271320DCDCAE1B32 /* fr */,
 				34D0E16928856EC4BC2DBB865478D8BD /* it */,
+				3E808C50F6C617D32F6656CB28DB9157 /* nl */,
+				E5636FF29299AC8B9B7C1F2284FFC753 /* sv */,
+				BD1D00C88B4E6855372CADF00EE111E6 /* tr */,
 			);
 			name = Localizable.strings;
 			path = .;
