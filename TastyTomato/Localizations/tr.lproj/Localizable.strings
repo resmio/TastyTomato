@@ -1,18 +1,18 @@
 
 /* 1 word */
-"Back" = "Back";
-"Cancel" = "Cancel";
-"Delete" = "Delete";
-"Done" = "Done";
-"Edit" = "Edit";
-"New" = "New";
-"Next" = "Next";
-"Save" = "Save";
-"Select" = "Select";
+"Back" =  "Geri";
+"Cancel" = "İptal";
+"Delete" = "Sil";
+"Done" = "Tamam";
+"Edit" = "Düzenle";
+"New" = "Yeni";
+"Next" = "İleri";
+"Save" = "Kaydet";
+"Select" = "Seç";
 
 /* 2 words */
-"Sign in" = "Sign in";
+"Sign in" = "Giriş yap";
 
 /* 3 words */
-"Forgotten your password?" = "Forgotten your password?";
-"No tags found" = "No tags found";
+"Forgotten your password?" = "Şifrenizi mi unuttunuz?";
+"No tags found" = "Etiket bulunamadı";

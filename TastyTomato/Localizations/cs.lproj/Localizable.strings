@@ -1,18 +1,18 @@
 
 /* 1 word */
-"Back" = "Back";
-"Cancel" = "Cancel";
-"Delete" = "Delete";
-"Done" = "Done";
-"Edit" = "Edit";
-"New" = "New";
-"Next" = "Next";
-"Save" = "Save";
-"Select" = "Select";
+"Back" =  "Zpět";
+"Cancel" = "Zrušit";
+"Delete" = "Odstranit";
+"Done" = "Hotovo";
+"Edit" = "Upravit";
+"New" = "Nové";
+"Next" = "Další";
+"Save" = "Uložit";
+"Select" = "Zvolit";
 
 /* 2 words */
-"Sign in" = "Sign in";
+"Sign in" = "Přihlásit se";
 
 /* 3 words */
-"Forgotten your password?" = "Forgotten your password?";
-"No tags found" = "No tags found";
+"Forgotten your password?" = "Zapomněli jste heslo?";
+"No tags found" = "Nebyly nalezeny žádné štítky";

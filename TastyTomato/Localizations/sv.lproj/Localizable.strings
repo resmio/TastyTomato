@@ -1,18 +1,18 @@
 
 /* 1 word */
-"Back" = "Back";
-"Cancel" = "Cancel";
-"Delete" = "Delete";
-"Done" = "Done";
-"Edit" = "Edit";
-"New" = "New";
-"Next" = "Next";
-"Save" = "Save";
-"Select" = "Select";
+"Back" =  "Tillbaka";
+"Cancel" = "Avbryt";
+"Delete" = "Radera";
+"Done" = "Klart";
+"Edit" = "Redigera";
+"New" = "Ny";
+"Next" = "Nästa";
+"Save" = "Spara";
+"Select" = "Välj";
 
 /* 2 words */
-"Sign in" = "Sign in";
+"Sign in" = "Logga in";
 
 /* 3 words */
-"Forgotten your password?" = "Forgotten your password?";
-"No tags found" = "No tags found";
+"Forgotten your password?" = "Glömt lösenordet?";
+"No tags found" = "Inga taggar hittades";

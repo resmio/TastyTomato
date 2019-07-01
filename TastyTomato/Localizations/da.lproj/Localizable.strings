@@ -1,18 +1,18 @@
 
 /* 1 word */
-"Back" = "Back";
-"Cancel" = "Cancel";
-"Delete" = "Delete";
-"Done" = "Done";
-"Edit" = "Edit";
-"New" = "New";
-"Next" = "Next";
-"Save" = "Save";
-"Select" = "Select";
+"Back" =  "Tilbage";
+"Cancel" = "Annuller";
+"Delete" = "Slet";
+"Done" = "Færdig";
+"Edit" = "Rediger";
+"New" = "Ny";
+"Next" = "Næste";
+"Save" = "Gem";
+"Select" = "Vælg ";
 
 /* 2 words */
-"Sign in" = "Sign in";
+"Sign in" = "Log ind";
 
 /* 3 words */
-"Forgotten your password?" = "Forgotten your password?";
-"No tags found" = "No tags found";
+"Forgotten your password?" = "Har du glemt dit kodeord?";
+"No tags found" = "Ingen tags fundet";
