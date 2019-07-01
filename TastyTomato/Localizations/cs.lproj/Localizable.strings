@@ -1,0 +1,18 @@
+
+/* 1 word */
+"Back" =  "Zpět";
+"Cancel" = "Zrušit";
+"Delete" = "Odstranit";
+"Done" = "Hotovo";
+"Edit" = "Upravit";
+"New" = "Nové";
+"Next" = "Další";
+"Save" = "Uložit";
+"Select" = "Zvolit";
+
+/* 2 words */
+"Sign in" = "Přihlásit se";
+
+/* 3 words */
+"Forgotten your password?" = "Zapomněli jste heslo?";
+"No tags found" = "Nebyly nalezeny žádné štítky";

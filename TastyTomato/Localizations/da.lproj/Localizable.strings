@@ -1,0 +1,18 @@
+
+/* 1 word */
+"Back" =  "Tilbage";
+"Cancel" = "Annuller";
+"Delete" = "Slet";
+"Done" = "Færdig";
+"Edit" = "Rediger";
+"New" = "Ny";
+"Next" = "Næste";
+"Save" = "Gem";
+"Select" = "Vælg ";
+
+/* 2 words */
+"Sign in" = "Log ind";
+
+/* 3 words */
+"Forgotten your password?" = "Har du glemt dit kodeord?";
+"No tags found" = "Ingen tags fundet";

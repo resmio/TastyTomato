@@ -1,0 +1,18 @@
+
+/* 1 word */
+"Back" =  "Tillbaka";
+"Cancel" = "Avbryt";
+"Delete" = "Radera";
+"Done" = "Klart";
+"Edit" = "Redigera";
+"New" = "Ny";
+"Next" = "Nästa";
+"Save" = "Spara";
+"Select" = "Välj";
+
+/* 2 words */
+"Sign in" = "Logga in";
+
+/* 3 words */
+"Forgotten your password?" = "Glömt lösenordet?";
+"No tags found" = "Inga taggar hittades";

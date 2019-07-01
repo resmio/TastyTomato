@@ -1,0 +1,18 @@
+
+/* 1 word */
+"Back" =  "Terug";
+"Cancel" = "Annuleren";
+"Delete" = "Verwijderen";
+"Done" = "Klaar";
+"Edit" = "Wijzigen";
+"New" = "Nieuw";
+"Next" = "Volgende";
+"Save" = "Opslaan";
+"Select" = "Selecteer";
+
+/* 2 words */
+"Sign in" = "Inschrijven";
+
+/* 3 words */
+"Forgotten your password?" = "Wachtwoord vergeten?";
+"No tags found" = "Geen labels gevonden";

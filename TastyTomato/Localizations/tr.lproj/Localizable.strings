@@ -1,0 +1,18 @@
+
+/* 1 word */
+"Back" =  "Geri";
+"Cancel" = "İptal";
+"Delete" = "Sil";
+"Done" = "Tamam";
+"Edit" = "Düzenle";
+"New" = "Yeni";
+"Next" = "İleri";
+"Save" = "Kaydet";
+"Select" = "Seç";
+
+/* 2 words */
+"Sign in" = "Giriş yap";
+
+/* 3 words */
+"Forgotten your password?" = "Şifrenizi mi unuttunuz?";
+"No tags found" = "Etiket bulunamadı";
