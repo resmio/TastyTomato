@@ -303,7 +303,7 @@
 		18306EDC2A57EEE4D03157F13936E91A /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				46D48A3DF2B901CAD57244D34D089FF9 /* Classes */,
+				46D48A3DF2B901CAD57244D34D089FF9 /* Types */,
 				9999FCCB3A774D4E83A754E53EFE8B64 /* Extensions */,
 				5DB428B95C6E6A7A04AF988224358816 /* Factories */,
 				D23210E99B6D5D3E3FEB6708B0CC452F /* Meta */,
@@ -412,7 +412,7 @@
 			path = UIScrollView;
 			sourceTree = "<group>";
 		};
-		46D48A3DF2B901CAD57244D34D089FF9 /* Classes */ = {
+		46D48A3DF2B901CAD57244D34D089FF9 /* Types */ = {
 			isa = PBXGroup;
 			children = (
 				81E4DAC46F44F11E680BCD87739D7F33 /* ButtonClasses */,
@@ -426,7 +426,7 @@
 				A35630EB3C15AE66CC75B9EA1FCFEA0A /* TextViewClasses */,
 				7AEA2B322FEE44C005AC3706654DCAC4 /* ViewControllerClasses */,
 			);
-			path = Classes;
+			path = Types;
 			sourceTree = "<group>";
 		};
 		46E7F64B4FE1F823B9CE5441A548B3C2 /* Internal */ = {
