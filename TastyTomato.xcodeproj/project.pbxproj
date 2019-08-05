@@ -61,6 +61,7 @@
 		9AEB39847CB80139EBE0FD6B95FB0277 /* KeyboardStateListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03779CA57CE9BFDBAC1FD36DBE96F9 /* KeyboardStateListener.swift */; };
 		9BDC043C11EE63333651DFC6882AE8E4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB4A6B3512A21991AB80642E750A3A /* RootViewController.swift */; };
 		9C6CAC7B22F2F7F800725C62 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6CAC7A22F2F7F800725C62 /* ColorScheme.swift */; };
+		9C9ED20B22F888B80073F4D1 /* UIView (ColorScheme).swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9ED20A22F888B80073F4D1 /* UIView (ColorScheme).swift */; };
 		9D1FF5F9D96C6BE3F6A641D5CBDEC651 /* CalendarDaysVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11648945ADE6B76183DB64326F38A93 /* CalendarDaysVC.swift */; };
 		9EDC676FBB4296DB4C630B5E78379EBE /* UIButton (Color_).swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB2A0C35717ED674361E12EF4C5BAA /* UIButton (Color_).swift */; };
 		A31B237A1B09363250352EDA89688036 /* CalendarDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AD36178D8D1DE2BBCFC79532B52C2 /* CalendarDaysView.swift */; };
@@ -177,6 +178,7 @@
 		9905A0D02FB847E86970E50B1768AC71 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		9A91691515EBC3E7218FB4AB8592A22B /* CalendarVCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVCView.swift; sourceTree = "<group>"; };
 		9C6CAC7A22F2F7F800725C62 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		9C9ED20A22F888B80073F4D1 /* UIView (ColorScheme).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView (ColorScheme).swift"; sourceTree = "<group>"; };
 		9E44E7E7FD7D953F91AD9935AA1C0709 /* UIColor (WithAlpha).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (WithAlpha).swift"; sourceTree = "<group>"; };
 		9FFB79C0D23FF876BF39D0237EBB0E33 /* GridLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayer.swift; sourceTree = "<group>"; };
 		A0C61A532AD392FBEFDFAA4BDA484C9C /* TriangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
@@ -651,6 +653,7 @@
 				978EA7B188BA3CCA15536BA105B324A5 /* UIView (ScaleByFactor).swift */,
 				A962BC1498C30634120C1D0FC724E828 /* UIView (SizeWidthHeight).swift */,
 				6281FC9CC0B750319F7F7A568E1BE01F /* UIView (TemporaryPositionAndDimensions).swift */,
+				9C9ED20A22F888B80073F4D1 /* UIView (ColorScheme).swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1117,6 +1120,7 @@
 				9A8C438EC913820E7B32A6C0D41EE5C9 /* UIScrollView (ScrollingConvenience).swift in Sources */,
 				D8294936BE4CF32441B0D854D1F9DDEE /* UIScrollView (ZoomingConvenience).swift in Sources */,
 				B29BDBA0023131D713E51F8D95B96ADA /* UITableView (reloadSoftly).swift in Sources */,
+				9C9ED20B22F888B80073F4D1 /* UIView (ColorScheme).swift in Sources */,
 				24CA93F6CC22F98C1D267BE0455095A1 /* UITextView (HeightConvenience).swift in Sources */,
 				800936DF4B2EC8E094396520F049EF4B /* UIView (Area).swift in Sources */,
 				9438FFB35B2B7340B87AD601C75C77D4 /* UIView (BarButtonItem).swift in Sources */,
