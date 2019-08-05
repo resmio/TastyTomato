@@ -11,10 +11,16 @@ import SignificantSpices
 
 
 // MARK: // Public
-public extension UIView {
-    var adjustColors: (() -> Void)? {
-        get { return self._adjustColors }
-        set { self._adjustColors = newValue }
+// MARK: Interface
+@objc public extension UIView {
+    // Setters
+    func setColorAdjustment(_ closure: (() -> Void)?) {
+        self._colorAdjustment = closure
+    }
+    
+    // Adjust Colors (Recurses Subviews)
+    func adjustColors() {
+        self._adjustColors()
     }
 }
 
@@ -22,17 +28,27 @@ public extension UIView {
 // MARK: // Private
 // MARK: -
 private extension ValueAssociationKey {
-    static var _adjustColors: ValueAssociationKey = ValueAssociationKey()
+    static var _colorAdjustment: ValueAssociationKey = ValueAssociationKey()
 }
 
 
 // MARK: -
+// MARK: Associated Variables
 private extension UIView {
-    var _adjustColors: (() -> Void)? {
-        get { return self.associatedValue(for: &._adjustColors) }
-        set(newAdjustColors) {
-            self.associate(newAdjustColors, by: &._adjustColors)
-            newAdjustColors?()
+    var _colorAdjustment: (() -> Void)? {
+        get { return self.associatedValue(for: &._colorAdjustment) }
+        set(newColorAdjustment) {
+            self.associate(newColorAdjustment, by: &._colorAdjustment)
+            newColorAdjustment?()
         }
+    }
+}
+
+
+// MARK: Interface Implementations
+private extension UIView {
+    func _adjustColors() {
+        self.subviews.forEach({ $0.adjustColors() })
+        self._colorAdjustment?()
     }
 }
