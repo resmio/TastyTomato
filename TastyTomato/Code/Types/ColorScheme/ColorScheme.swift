@@ -13,7 +13,10 @@ import UIKit
 // MARK: Interface
 @objc public extension ColorScheme {
     // Current ColorScheme
-    static var current: ColorScheme = .light
+    static var current: ColorScheme {
+        get { return self.__current }
+        set { self._setCurrentScheme(newValue) }
+    }
     
     // Predefined ColorSchemes
     static let light: ColorScheme = ColorScheme(
@@ -138,6 +141,12 @@ import UIKit
         self.text = _text
         self.bookingStatus = _bookingStatus
     }
+    
+    // Public Static Constants
+    public static let currentSchemeChanged: Notification.Name = Notification.Name(rawValue: "TastyTomato.ColorScheme.currentSchemeChanged")
+    
+    // Private Static Variables
+    private static var __current: ColorScheme = .light
 
     // Public Readonly Variables
     public private(set) var background: Background
@@ -306,5 +315,16 @@ public extension ColorScheme {
         let finished: UIColor
         let noShow: UIColor
         let cancelled: UIColor
+    }
+}
+
+
+// MARK: // Private
+// MARK: Setters
+private extension ColorScheme {
+    static func _setCurrentScheme(_ currentScheme: ColorScheme) {
+        guard currentScheme != self.__current else { return }
+        self.__current = currentScheme
+        NotificationCenter.default.post(name: self.currentSchemeChanged, object: nil)
     }
 }
