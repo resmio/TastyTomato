@@ -35,14 +35,18 @@ private extension ValueAssociationKey {
 // MARK: -
 // MARK: Associated Variables
 private extension UIView {
-    func _adjustColors<T: UIView>(of view: T) {
-        guard let closure: ((T) -> Void) = self.associatedValue(for: &._colorAdjustment) else { return }
-        closure(view)
-    }
-    
     func _setColorAdjustment<T: UIView>(_ closure: ((T) -> Void)?) {
         guard let slf: T = self as? T else { return }
         self.associate(closure, by: &._colorAdjustment)
+        
+        if let cls: (T) -> Void = closure {
+            NotificationCenter.default.addObserver(
+                self, selector: #selector(self._adjustColors), name: ColorScheme.currentSchemeChanged, object: nil
+            )
+        } else {
+            NotificationCenter.default.removeObserver(self)
+        }
+        
         closure?(slf)
     }
 }
@@ -50,8 +54,8 @@ private extension UIView {
 
 // MARK: Interface Implementations
 private extension UIView {
-    func _adjustColors() {
-        self.subviews.forEach({ $0.adjustColors() })
-        self._adjustColors(of: self)
+    @objc func _adjustColors() {
+        guard let closure: ((UIView) -> Void) = self.associatedValue(for: &._colorAdjustment) else { return }
+        closure(self)
     }
 }

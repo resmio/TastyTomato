@@ -38,8 +38,8 @@ import UIKit
         self.bookingStatus = bookingStatus_
     }
     
-    // Public Static Constants
-    public static let currentSchemeChanged: Notification.Name = Notification.Name(rawValue: "TastyTomato.ColorScheme.currentSchemeChanged")
+    // Internal Static Constants
+    static let currentSchemeChanged: Notification.Name = Notification.Name(rawValue: "TastyTomato.ColorScheme.currentSchemeChanged")
     
     // Private Static Variables
     private static var __current: ColorScheme = .light
