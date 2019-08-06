@@ -23,121 +23,197 @@ import UIKit
         return [.light]
     }
     
-    // Predefined ColorSchemes
+    // MARK: -
+    // MARK: Predefined ColorSchemes
+    // MARK: -
     static let light: ColorScheme = ColorScheme(
         _name: "Light",
         _background: Background(
-            navigationBar: .blue333B4F,
-            defaultPopover: .whiteFFFFFF,
-            defaultSelected: .blue00A7C4,
-            newBookingFlow: .whiteFFFFFF,
-            selectButton: .blue00A7C4,
-            createButton: .blue00A7C4,
-            deleteButton: .redE62C4F,
-            switchOn: .blue00A7C4,
-            switchOff: .whiteF7F7F7,
-            login: .whiteFFFFFF,
-            signInButton: .blue00A7C4,
-            mainMenu: .blue333B4F,
-            mainMenuHeader: .blue293140,
-            mainMenuSelectedItem: .blue293140,
-            mainMenuSelectedSubItem: .blue00A7C4,
-            mainMenuSelectedItemBanner: .blue1E2532,
-            searchFieldContainer: .whiteFFFFFF,
-            searchField: .whiteF7F7F7,
-            bookingCell: .whiteF7F7F7,
-            roomsView: .whiteFFFFFF,
-            numOfSeatsInfoPerfect: .green22CCAA,
-            numOfSeatsInfoWarning: .yellowF8C150,
-            overlapWarning: .yellowF8C150,
-            freeTable: .gray999999,
-            partiallyOccupiedTable: .green22CCAA,
-            fullTable: .blue00A7C4,
-            blockedTableStripe: .gray555555,
-            chairColor: .gray555555,
-            timelineView: .whiteFFFFFF,
-            timeIndicatorLabel: .blue00A7C4,
-            settingsView: .whiteFFFFFF,
-            selectedDay: .blue00A7C4,
-            notificationButtonBadge: .redE62C4F,
-            notificationsView: .whiteFFFFFF,
-            notificationsViewSectionHeader: .whiteF7F7F7,
-            noteCell: .blue00A7C4, // FIXME: Alpha 0.2?
-            taskCellUnread: .yellowF8C150, // FIXME: Alpha 0.2?
-            taskCellRead: .whiteFFFFFF,
-            offlineView: .whiteFFFFFF,
-            successHUD: .green22CCAA
+            // MARK: // General
+            navigationBar: .blue333B4F, // headerBackgroundColor
+            defaultPopover: .whiteFFFFFF, // popoverBackgroundColor
+            defaultSelected: .blue00A7C4, // selection / focus
+            newBookingFlow: .whiteFFFFFF, // walkIn / newBookingBackgroundColor
+            selectButton: .blue00A7C4, // selectButton
+            createButton: .blue00A7C4, // createButton
+            deleteButton: .redE62C4F, // deleteButton
+            switchOn: .blue00A7C4, // switchButtonON
+            switchOff: .whiteF7F7F7, // switchButtonOFF
+            
+            // MARK: // Specific
+            // MARK: LoginView
+            // FIXME: what does "(background image +)" mean?
+            login: .whiteFFFFFF, // SignInBackgroundColor (background image +)
+            signInButton: .blue00A7C4, // SignInButton
+            
+            // MARK: MainMenuView
+            mainMenu: .blue333B4F, // navigationbarBackgroundColor
+            mainMenuHeader: .blue293140, // navigationbarTopBackgroundColor
+            mainMenuSelectedItem: .blue293140, // selectedItemNavigationbarBackgroundColor
+            mainMenuSelectedSubItem: .blue00A7C4, // selectedItemNavigationbarBackgroundColor (second hierarchy)
+            mainMenuSelectedItemBanner: .blue1E2532, // selectedItemNavigationbarLeftBorderColor
+            
+            // MARK: BookingsView
+            searchFieldContainer: .whiteFFFFFF, // aroundSearchFieldBackgroundColor
+            searchField: .whiteF7F7F7, // searchFieldFillColor
+            bookingStatusSectionHeader: .whiteFFFFFF, // statusBookingListBackgroundColor
+            bookingCell: .whiteF7F7F7, // bookingsBookingListBackgroundColor
+            
+            // MARK: RoomsView
+            // FIXME: roomWithoutFloorBackgroundColor and diningAreasBackgroundColor have been left out,
+            // rooms without floor simply have a clear background.
+            roomsView: .whiteFFFFFF, // roomAreaBackgroundColor
+            
+            // MARK: ChooseTablesView
+            numOfSeatsInfoPerfect: .green22CCAA, // newBookingSeatsPerfect
+            numOfSeatsInfoWarning: .yellowF8C150, // newBookingSeatsAreNeeded /Overlapping
+            overlapWarning: .yellowF8C150, // newBookingSeatsAreNeeded /Overlapping
+            
+            // MARK: TischView
+            freeTable: .gray999999, // freeTable
+            partiallyOccupiedTable: .green22CCAA, // occupiedTableWithFreeSeats
+            fullTable: .blue00A7C4, // fullyOccupiedTableNoSeats
+            blockedTableStripe: .gray555555, // blockedTable (stripes)
+            chairColor: .gray555555, // Seats
+            
+            // MARK: TimelineView
+            timelineView: .whiteFFFFFF, // timelineBackgroundColor
+            timeIndicatorLabel: .blue00A7C4, // timeFocusFillColor
+            
+            // MARK: SettingsView
+            settingsView: .whiteFFFFFF, // settingsBackgroundColor
+            
+            // MARK: CalendarView
+            selectedDay: .blue00A7C4, // BackgroundFilled
+            
+            // MARK: NotificationsPopover
+            notificationButtonBadge: .redE62C4F, // notificationBadgeBackgroundColor
+            notificationsView: .whiteFFFFFF, // notificationfeedBackgroundColor
+            notificationsViewSectionHeader: .whiteF7F7F7, // notificationfeedheadingsBackgroundColor
+            // FIXME: Alpha 0.2?
+            noteCell: .blue00A7C4, // notificationfeedNotesBackgroundColor
+            // FIXME: Alpha 0.2?
+            taskCellUnread: .yellowF8C150, // notificationsfeedNewOpenTasksBackgroundColor
+            taskCellRead: .whiteFFFFFF, // notificationsfeedReadOpenTasksBackgroundColor
+            
+            // MARK: OfflinePopover
+            offlineView: .whiteFFFFFF, // noInternetAlertBackgroundColor
+            
+            // MARK: TableInfoPopover
+            tableInfoPopoverButton: .blue333B4F, // buttonInPopover (newBooking/ walkIn/ blocking)
+            
+            // MARK: SuccessHUD
+            successHUD: .green22CCAA // successBackgroundColor
         ),
         _lines: Lines(
-            separator: .grayCCCCCC,
-            borderUnfocussed: .grayCCCCCC,
-            borderFocussed: .blue00A7C4,
-            buttonBorder: .blue3E4862, // FIXME: This should be 3F4962
-            stepper: .gray555555,
-            segmentedControl: .blue00A7C4,
-            iconOnLightBackground: .gray555555,
-            iconOnDarkBackground: .whiteFFFFFF,
-            hamburgerIcon: .whiteFFFFFF,
-            arrowIcon: .whiteFFFFFF,
-            nowButtonDisabled: .blue3E4862, // FIXME: This should be 3F4962
-            offlineIcon: .redE62C4F,
-            notificationButtonDisabled: .blue3E4862,
-            notificationButtonNotes: .blue00A7C4,
-            notificationButtonNotesAndTasks: .whiteFFFFFF,
-            newBookingButton: .whiteFFFFFF,
-            newWalkinButton: .whiteFFFFFF,
-            horizontalSeparator: .grayCCCCCC,
-            verticalSeparator: .blue3E4862, // FIXME: This should be 3F4962
-            verticalSubSeparator: .grayCCCCCC,
-            timeIndicatorLine: .blue00A7C4
+            // MARK: // General
+            separator: .grayCCCCCC, // separatorColor
+            borderUnfocussed: .grayCCCCCC, // borderColor
+            borderFocussed: .blue00A7C4, // focusBorderColor
+            switchBorder: .grayCCCCCC, // switchButtonOutline
+            stepperTint: .gray555555, // minusPlusButton
+            segmentedControl: .blue00A7C4, // selectButton
+            iconOnLightBackground: .gray555555, // iconsOnWhitebackground
+            iconOnDarkBackground: .whiteFFFFFF, // iconsOnDarkbackground
+            
+            // MARK: // Specific
+            // MARK: MainTitleView
+            buttonBorder: .blue3E4862, // buttonBorderColor (all, except hamburger)
+            hamburgerIcon: .whiteFFFFFF, // hamburgerIcon
+            arrowIcon: .whiteFFFFFF, // arrows / time / date
+            nowButtonEnabled: .whiteFFFFFF, // nowButtonActiveBorderColor
+            nowButtonDisabled: .blue3E4862, // nowButtonBorderInactiveColor
+            offlineIcon: .redE62C4F, // noInternetIcon
+            notificationButtonDisabled: .blue3E4862, // notificationfeedIconInactive
+            notificationButtonNotes: .blue00A7C4, // notificationfeedIconNotes
+            notificationButtonNotesAndTasks: .whiteFFFFFF, // notificationfeedIconNotesAndOpenTasks
+            newBookingButton: .whiteFFFFFF, // newBooking / walkIn
+            newWalkinButton: .whiteFFFFFF, // newBooking / walkIn
+            
+            // MARK: TimelineView
+            horizontalSeparator: .grayCCCCCC, // horizontalSeparatorColor
+            verticalSeparator: .blue3E4862, // verticalSeparatorColor (full hours)
+            verticalSubSeparator: .grayCCCCCC, // verticalSeparatorColor (quarter & half hour)
+            timeIndicatorLine: .blue00A7C4, // timeFocusVerticalLineColor
+            
+            // MARK: LinkIcon
+            linkIconPartiallyOccupiedTable: .green22CCAA, // linkedTableOccupiedFreeSeatsIcon
+            linkIconFullTable: .blue00A7C4, // linkedTableFullyOccupiedIcon
         ),
         _text: Text(
-            defaultText: .gray999999,
-            onDarkBackground: .whiteFFFFFF,
-            onLightBackground: .gray555555,
-            navigationBar: .blue3E4862, // FIXME: This should be 3F4962
-            mainMenuItem: .grayDDDDDD,
-            mainMenuSelectedItem: .whiteFFFFFF,
-            nowButtonEnabled: .whiteFFFFFF,
-            nowButtonDisabled: .blue3E4862, // FIXME: This should be 3F4962
-            notificationButtonBadge: .whiteFFFFFF,
-            notificationsViewSectionHeader: .gray555555,
-            notesCell: .blue018EA6,
-            taskCellUnread: .yellowD7A43B,
-            taskCellRead: .gray555555,
-            partiallyOccupiedTable: .green22CCAA,
-            fullTable: .blue00A7C4,
-            blocking: .redE62C4F,
-            monthHeading: .gray555555,
-            weekdayName: .gray555555,
-            pastDay: .grayCCCCCC,
-            today: .blue00A7C4,
-            selectedDay: .whiteFFFFFF,
-            dateInCurrentMonth: .gray555555,
-            dateInOtherMonth: .gray999999,
-            saveButton: .green22CCAA,
-            cancelButton: .redE62C4F,
-            nextButton: .whiteFFFFFF,
-            backButton: .whiteFFFFFF,
-            doneButton: .green22CCAA,
-            newButton: .blue00A7C4,
-            editButton: .blue00A7C4
+            // MARK: // General
+            default: .gray999999, // defaultTextColor
+            onDarkBackground: .whiteFFFFFF, // darkBackgroundTextColor
+            // FIXME: what does the TextColor mean: lightBackgroundTextColor / TextColor
+            onLightBackground: .gray555555, // lightBackgroundTextColor / TextColor
+            navigationBar: .blue3E4862, // headerTextColor
+            // FIXME: what is: public let inputHelp: UIColor
+            // FIXME: what is: public let today/highlighted: UIColor
+            
+            // MARK: // Specific
+            // MARK: MainMenuView
+            mainMenuSectionHeader: .blue3E4862, // headingTextColor
+            mainMenuItem: .grayDDDDDD, // navigationBarTextColor
+            mainMenuSelectedItem: .whiteFFFFFF, // selectedItemNavigationsBarTextColor
+            
+            // MARK: MainTitleView
+            mainTitleView: .whiteFFFFFF, // arrows / time / date
+            // FIXME: I've left out nowButtonActive and nowButtonInactive
+            // since they are in both color schemes similar to the
+            // border colors of the enabled/disabled states
+            
+            // MARK: NotificationsPopover
+            notificationButtonBadge: .whiteFFFFFF, // notificationBadgeTextColor
+            notificationsViewSectionHeader: .gray555555, // notificationfeedHeadingColor
+            notesCell: .blue018EA6, // notificationfeedNoteTextColor
+            taskCellUnread: .yellowD7A43B, // notificationfeedNewOpenTasksTextColor
+            taskCellRead: .gray555555, // notificationsfeedReadOpenTasksBackgroundColor
+            
+            // MARK: TischView
+            partiallyOccupiedTable: .green22CCAA, // occupiedTableWithFreeSeats
+            fullTable: .blue00A7C4, // occupiedTableNoSeats
+            blocking: .redE62C4F, // blocking
+            
+            // MARK: CalendarView
+            monthHeading: .gray555555, // monthHeadingTextColor
+            weekdayName: .gray555555, // weekdayLabelsTextColor
+            pastDay: .grayCCCCCC, // pastDaysTextColor
+            today: .blue00A7C4, // todayTextColor
+            selectedDay: .whiteFFFFFF, // selectedDayTextColor
+            dateInCurrentMonth: .gray555555, // currentMonthDaysTextColor
+            dateInOtherMonth: .gray999999, // nextMonthDatesTextColor
+            
+            // MARK: TimelineView
+            timeIndicatorLabel: .whiteFFFFFF, // timeFocusTextColor (time)
+            
+            // MARK: TextButtons
+            saveButton: .green22CCAA, // saveButton
+            cancelButton: .redE62C4F, // cancelButton
+            nextButton: .whiteFFFFFF, // nextButton
+            backButton: .whiteFFFFFF, // backButton
+            doneButton: .green22CCAA, // doneButton
+            newButton: .blue00A7C4, // newButton
+            editButton: .blue00A7C4 // editButton
         ),
         _bookingStatus: BookingStatus(
-            unconfirmed: .yellowD7A43B,
-            confirmed: .blue00A7C4,
-            arrived: .green22CCAA,
-            seated: .yellowF8C150,
-            finished: .gray999999,
-            noShow: .blue3E4862,
-            cancelled: .redE62C4F
+            unconfirmed: .yellowD7A43B, // Unconfirmed
+            confirmed: .blue00A7C4, // Confirmed
+            arrived: .green22CCAA, // Arrived
+            seated: .yellowF8C150, // Seated
+            finished: .gray999999, // Finished
+            noShow: .blue3E4862, // No-Show
+            cancelled: .redE62C4F // Cancelled
         )
     )
 
-    //    static let dark: ColorScheme = ColorScheme()
+//    static let dark: ColorScheme = ColorScheme(
+//        _name: "Dark",
+//    )
 }
 
 
+// MARK: -
+// MARK: -
 // MARK: Class Declaration
 @objc public class ColorScheme: NSObject {
     // Private Init
@@ -171,7 +247,7 @@ import UIKit
 public extension ColorScheme {
     // Nested Types
     struct Background {
-        // // General
+        // MARK: // General
         public let navigationBar: UIColor
         public let defaultPopover: UIColor
         public let defaultSelected: UIColor
@@ -182,49 +258,50 @@ public extension ColorScheme {
         public let switchOn: UIColor
         public let switchOff: UIColor
         
-        // // Specific
-        // LoginView
+        // MARK: // Specific
+        // MARK: LoginView
         public let login: UIColor
         public let signInButton: UIColor
         
-        // MainMenuView
+        // MARK: MainMenuView
         public let mainMenu: UIColor
         public let mainMenuHeader: UIColor
         public let mainMenuSelectedItem: UIColor
         public let mainMenuSelectedSubItem: UIColor
         public let mainMenuSelectedItemBanner: UIColor
         
-        // BookingsView
+        // MARK: BookingsView
         public let searchFieldContainer: UIColor
         public let searchField: UIColor
+        public let bookingStatusSectionHeader: UIColor
         public let bookingCell: UIColor
         
-        // RoomsView
+        // MARK: RoomsView
         public let roomsView: UIColor
         
-        // ChooseTablesView
+        // MARK: ChooseTablesView
         public let numOfSeatsInfoPerfect: UIColor
         public let numOfSeatsInfoWarning: UIColor
         public let overlapWarning: UIColor
         
-        // TischView
+        // MARK: TischView
         public let freeTable: UIColor
         public let partiallyOccupiedTable: UIColor
         public let fullTable: UIColor
         public let blockedTableStripe: UIColor
         public let chairColor: UIColor
         
-        // TimelineView
+        // MARK: TimelineView
         public let timelineView: UIColor
         public let timeIndicatorLabel: UIColor
         
-        // SettingsView
+        // MARK: SettingsView
         public let settingsView: UIColor
         
-        // CalendarView
+        // MARK: CalendarView
         public let selectedDay: UIColor
         
-        // NotificationsPopover
+        // MARK: NotificationsPopover
         public let notificationButtonBadge: UIColor
         public let notificationsView: UIColor
         public let notificationsViewSectionHeader: UIColor
@@ -232,27 +309,33 @@ public extension ColorScheme {
         public let taskCellUnread: UIColor
         public let taskCellRead: UIColor
         
-        // OfflinePopover
+        // MARK: OfflinePopover
         public let offlineView: UIColor
+        
+        // MARK: TableInfoPopover
+        public let tableInfoPopoverButton: UIColor
+        
+        // MARK: SuccessHUD
         public let successHUD: UIColor
     }
     
     struct Lines {
-        // // General
+        // MARK: // General
         public let separator: UIColor
         public let borderUnfocussed: UIColor
         public let borderFocussed: UIColor
-        public let buttonBorder: UIColor
-        // FIXME: public let switchBorder: UIColor
-        public let stepper: UIColor
+        public let switchBorder: UIColor
+        public let stepperTint: UIColor
         public let segmentedControl: UIColor
         public let iconOnLightBackground: UIColor
         public let iconOnDarkBackground: UIColor
         
-        // // Specific
-        // MainTitleView
+        // MARK: // Specific
+        // MARK: MainTitleView
+        public let buttonBorder: UIColor
         public let hamburgerIcon: UIColor
         public let arrowIcon: UIColor
+        public let nowButtonEnabled: UIColor
         public let nowButtonDisabled: UIColor
         public let offlineIcon: UIColor
         public let notificationButtonDisabled: UIColor
@@ -261,44 +344,48 @@ public extension ColorScheme {
         public let newBookingButton: UIColor
         public let newWalkinButton: UIColor
         
-        // TimelineView
+        // MARK: TimelineView
         public let horizontalSeparator: UIColor
         public let verticalSeparator: UIColor
         public let verticalSubSeparator: UIColor
         public let timeIndicatorLine: UIColor
+        
+        // MARK: LinkIcon
+        public let linkIconPartiallyOccupiedTable: UIColor
+        public let linkIconFullTable: UIColor
     }
     
     struct Text {
-        // // General
-        public let defaultText: UIColor
+        // MARK: // General
+        public let `default`: UIColor
         public let onDarkBackground: UIColor
         public let onLightBackground: UIColor
         public let navigationBar: UIColor
         // FIXME: public let inputHelp: UIColor
         // FIXME: public let today/highlighted: UIColor
         
-        // // Specific
-        // MainMenuView
+        // MARK: // Specific
+        // MARK: MainMenuView
+        public let mainMenuSectionHeader: UIColor
         public let mainMenuItem: UIColor
         public let mainMenuSelectedItem: UIColor
         
-        // MainTitleView
-        public let nowButtonEnabled: UIColor
-        public let nowButtonDisabled: UIColor
+        // MARK: MainTitleView
+        public let mainTitleView: UIColor
         
-        // NotificationsPopover
+        // MARK: NotificationsPopover
         public let notificationButtonBadge: UIColor
         public let notificationsViewSectionHeader: UIColor
         public let notesCell: UIColor
         public let taskCellUnread: UIColor
         public let taskCellRead: UIColor
         
-        // TischView
+        // MARK: TischView
         public let partiallyOccupiedTable: UIColor
         public let fullTable: UIColor
         public let blocking: UIColor
         
-        // CalendarView
+        // MARK: CalendarView
         public let monthHeading: UIColor
         public let weekdayName: UIColor
         public let pastDay: UIColor
@@ -307,7 +394,10 @@ public extension ColorScheme {
         public let dateInCurrentMonth: UIColor
         public let dateInOtherMonth: UIColor
         
-        // TextButtons
+        // MARK: TimelineView
+        public let timeIndicatorLabel: UIColor
+        
+        // MARK: TextButtons
         public let saveButton: UIColor
         public let cancelButton: UIColor
         public let nextButton: UIColor
