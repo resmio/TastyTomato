@@ -162,159 +162,159 @@ public extension ColorScheme {
     // Nested Types
     struct Background {
         // // General
-        let navigationBar: UIColor
-        let defaultPopover: UIColor
-        let defaultSelected: UIColor
-        let newBookingFlow: UIColor
-        let selectButton: UIColor
-        let createButton: UIColor
-        let deleteButton: UIColor
-        let switchOn: UIColor
-        let switchOff: UIColor
+        public let navigationBar: UIColor
+        public let defaultPopover: UIColor
+        public let defaultSelected: UIColor
+        public let newBookingFlow: UIColor
+        public let selectButton: UIColor
+        public let createButton: UIColor
+        public let deleteButton: UIColor
+        public let switchOn: UIColor
+        public let switchOff: UIColor
         
         // // Specific
         // LoginView
-        let login: UIColor
-        let signInButton: UIColor
+        public let login: UIColor
+        public let signInButton: UIColor
         
         // MainMenuView
-        let mainMenu: UIColor
-        let mainMenuHeader: UIColor
-        let mainMenuSelectedItem: UIColor
-        let mainMenuSelectedSubItem: UIColor
-        let mainMenuSelectedItemBanner: UIColor
+        public let mainMenu: UIColor
+        public let mainMenuHeader: UIColor
+        public let mainMenuSelectedItem: UIColor
+        public let mainMenuSelectedSubItem: UIColor
+        public let mainMenuSelectedItemBanner: UIColor
         
         // BookingsView
-        let searchFieldContainer: UIColor
-        let searchField: UIColor
-        let bookingCell: UIColor
+        public let searchFieldContainer: UIColor
+        public let searchField: UIColor
+        public let bookingCell: UIColor
         
         // RoomsView
-        let roomsView: UIColor
+        public let roomsView: UIColor
         
         // ChooseTablesView
-        let numOfSeatsInfoPerfect: UIColor
-        let numOfSeatsInfoWarning: UIColor
-        let overlapWarning: UIColor
+        public let numOfSeatsInfoPerfect: UIColor
+        public let numOfSeatsInfoWarning: UIColor
+        public let overlapWarning: UIColor
         
         // TischView
-        let freeTable: UIColor
-        let partiallyOccupiedTable: UIColor
-        let fullTable: UIColor
-        let blockedTableStripe: UIColor
-        let chairColor: UIColor
+        public let freeTable: UIColor
+        public let partiallyOccupiedTable: UIColor
+        public let fullTable: UIColor
+        public let blockedTableStripe: UIColor
+        public let chairColor: UIColor
         
         // TimelineView
-        let timelineView: UIColor
-        let timeIndicatorLabel: UIColor
+        public let timelineView: UIColor
+        public let timeIndicatorLabel: UIColor
         
         // SettingsView
-        let settingsView: UIColor
+        public let settingsView: UIColor
         
         // CalendarView
-        let selectedDay: UIColor
+        public let selectedDay: UIColor
         
         // NotificationsPopover
-        let notificationButtonBadge: UIColor
-        let notificationsView: UIColor
-        let notificationsViewSectionHeader: UIColor
-        let noteCell: UIColor
-        let taskCellUnread: UIColor
-        let taskCellRead: UIColor
+        public let notificationButtonBadge: UIColor
+        public let notificationsView: UIColor
+        public let notificationsViewSectionHeader: UIColor
+        public let noteCell: UIColor
+        public let taskCellUnread: UIColor
+        public let taskCellRead: UIColor
         
         // OfflinePopover
-        let offlineView: UIColor
-        let successHUD: UIColor
+        public let offlineView: UIColor
+        public let successHUD: UIColor
     }
     
     struct Lines {
         // // General
-        let separator: UIColor
-        let borderUnfocussed: UIColor
-        let borderFocussed: UIColor
-        let buttonBorder: UIColor
-        // FIXME: let switchBorder: UIColor
-        let stepper: UIColor
-        let segmentedControl: UIColor
-        let iconOnLightBackground: UIColor
-        let iconOnDarkBackground: UIColor
+        public let separator: UIColor
+        public let borderUnfocussed: UIColor
+        public let borderFocussed: UIColor
+        public let buttonBorder: UIColor
+        // FIXME: public let switchBorder: UIColor
+        public let stepper: UIColor
+        public let segmentedControl: UIColor
+        public let iconOnLightBackground: UIColor
+        public let iconOnDarkBackground: UIColor
         
         // // Specific
         // MainTitleView
-        let hamburgerIcon: UIColor
-        let arrowIcon: UIColor
-        let nowButtonDisabled: UIColor
-        let offlineIcon: UIColor
-        let notificationButtonDisabled: UIColor
-        let notificationButtonNotes: UIColor
-        let notificationButtonNotesAndTasks: UIColor
-        let newBookingButton: UIColor
-        let newWalkinButton: UIColor
+        public let hamburgerIcon: UIColor
+        public let arrowIcon: UIColor
+        public let nowButtonDisabled: UIColor
+        public let offlineIcon: UIColor
+        public let notificationButtonDisabled: UIColor
+        public let notificationButtonNotes: UIColor
+        public let notificationButtonNotesAndTasks: UIColor
+        public let newBookingButton: UIColor
+        public let newWalkinButton: UIColor
         
         // TimelineView
-        let horizontalSeparator: UIColor
-        let verticalSeparator: UIColor
-        let verticalSubSeparator: UIColor
-        let timeIndicatorLine: UIColor
+        public let horizontalSeparator: UIColor
+        public let verticalSeparator: UIColor
+        public let verticalSubSeparator: UIColor
+        public let timeIndicatorLine: UIColor
     }
     
     struct Text {
         // // General
-        let defaultText: UIColor
-        let onDarkBackground: UIColor
-        let onLightBackground: UIColor
-        let navigationBar: UIColor
-        // FIXME: let inputHelp: UIColor
-        // FIXME: let today/highlighted: UIColor
+        public let defaultText: UIColor
+        public let onDarkBackground: UIColor
+        public let onLightBackground: UIColor
+        public let navigationBar: UIColor
+        // FIXME: public let inputHelp: UIColor
+        // FIXME: public let today/highlighted: UIColor
         
         // // Specific
         // MainMenuView
-        let mainMenuItem: UIColor
-        let mainMenuSelectedItem: UIColor
+        public let mainMenuItem: UIColor
+        public let mainMenuSelectedItem: UIColor
         
         // MainTitleView
-        let nowButtonEnabled: UIColor
-        let nowButtonDisabled: UIColor
+        public let nowButtonEnabled: UIColor
+        public let nowButtonDisabled: UIColor
         
         // NotificationsPopover
-        let notificationButtonBadge: UIColor
-        let notificationsViewSectionHeader: UIColor
-        let notesCell: UIColor
-        let taskCellUnread: UIColor
-        let taskCellRead: UIColor
+        public let notificationButtonBadge: UIColor
+        public let notificationsViewSectionHeader: UIColor
+        public let notesCell: UIColor
+        public let taskCellUnread: UIColor
+        public let taskCellRead: UIColor
         
         // TischView
-        let partiallyOccupiedTable: UIColor
-        let fullTable: UIColor
-        let blocking: UIColor
+        public let partiallyOccupiedTable: UIColor
+        public let fullTable: UIColor
+        public let blocking: UIColor
         
         // CalendarView
-        let monthHeading: UIColor
-        let weekdayName: UIColor
-        let pastDay: UIColor
-        let today: UIColor
-        let selectedDay: UIColor
-        let dateInCurrentMonth: UIColor
-        let dateInOtherMonth: UIColor
+        public let monthHeading: UIColor
+        public let weekdayName: UIColor
+        public let pastDay: UIColor
+        public let today: UIColor
+        public let selectedDay: UIColor
+        public let dateInCurrentMonth: UIColor
+        public let dateInOtherMonth: UIColor
         
         // TextButtons
-        let saveButton: UIColor
-        let cancelButton: UIColor
-        let nextButton: UIColor
-        let backButton: UIColor
-        let doneButton: UIColor
-        let newButton: UIColor
-        let editButton: UIColor
+        public let saveButton: UIColor
+        public let cancelButton: UIColor
+        public let nextButton: UIColor
+        public let backButton: UIColor
+        public let doneButton: UIColor
+        public let newButton: UIColor
+        public let editButton: UIColor
     }
     
     struct BookingStatus {
-        let unconfirmed: UIColor
-        let confirmed: UIColor
-        let arrived: UIColor
-        let seated: UIColor
-        let finished: UIColor
-        let noShow: UIColor
-        let cancelled: UIColor
+        public let unconfirmed: UIColor
+        public let confirmed: UIColor
+        public let arrived: UIColor
+        public let seated: UIColor
+        public let finished: UIColor
+        public let noShow: UIColor
+        public let cancelled: UIColor
     }
 }
 
