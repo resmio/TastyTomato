@@ -18,8 +18,14 @@ import UIKit
         set { self._setCurrentScheme(newValue) }
     }
     
+    // All Color Schemes
+    static var all: [ColorScheme] {
+        return [.light]
+    }
+    
     // Predefined ColorSchemes
     static let light: ColorScheme = ColorScheme(
+        _name: "Light",
         _background: Background(
             navigationBar: .blue333B4F,
             defaultPopover: .whiteFFFFFF,
@@ -135,7 +141,8 @@ import UIKit
 // MARK: Class Declaration
 @objc public class ColorScheme: NSObject {
     // Private Init
-    private init(_background: Background, _lines: Lines, _text: Text, _bookingStatus: BookingStatus) {
+    private init(_name: String, _background: Background, _lines: Lines, _text: Text, _bookingStatus: BookingStatus) {
+        self.name = _name
         self.background = _background
         self.lines = _lines
         self.text = _text
@@ -148,6 +155,9 @@ import UIKit
     // Private Static Variables
     private static var __current: ColorScheme = .light
 
+    // Public Constants
+    public let name: String
+    
     // Public Readonly Variables
     public private(set) var background: Background
     public private(set) var lines: Lines
