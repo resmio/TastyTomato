@@ -20,7 +20,7 @@ import UIKit
     
     // All Color Schemes
     static var all: [ColorScheme] {
-        return [.light]
+        return [.light, .dark]
     }
 }
 
