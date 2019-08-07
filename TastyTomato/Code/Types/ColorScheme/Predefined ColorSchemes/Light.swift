@@ -143,7 +143,7 @@ import Foundation
             onDarkBackground: .whiteFFFFFF, // darkBackgroundTextColor
             // FIXME: what does the TextColor mean: lightBackgroundTextColor / TextColor
             onLightBackground: .gray555555, // lightBackgroundTextColor / TextColor
-            navigationBar: .blue3E4862, // headerTextColor
+            navigationBar: .whiteFFFFFF, // headerTextColor
             // FIXME: what is: public let inputHelp: UIColor
             // FIXME: what is: public let today/highlighted: UIColor
             
