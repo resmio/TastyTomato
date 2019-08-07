@@ -162,7 +162,7 @@ import Foundation
             // MARK: NotificationsPopover
             notificationButtonBadge: .whiteFFFFFF, // notificationBadgeTextColor
             notificationsViewSectionHeader: .whiteFFFFFF, // notificationfeedHeadingColor
-            notesCell: .blue018EA6, // notificationfeedNoteTextColor
+            noteCell: .blue018EA6, // notificationfeedNoteTextColor
             taskCellUnread: .yellowD7A43B, // notificationfeedNewOpenTasksTextColor
             taskCellRead: .whiteFFFFFF, // notificationsfeedReadOpenTasksBackgroundColor
             

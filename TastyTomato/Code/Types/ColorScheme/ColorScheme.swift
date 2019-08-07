@@ -192,7 +192,7 @@ public extension ColorScheme {
         // MARK: NotificationsPopover
         public let notificationButtonBadge: UIColor
         public let notificationsViewSectionHeader: UIColor
-        public let notesCell: UIColor
+        public let noteCell: UIColor
         public let taskCellUnread: UIColor
         public let taskCellRead: UIColor
         
