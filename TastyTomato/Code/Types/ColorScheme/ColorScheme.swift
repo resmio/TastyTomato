@@ -140,8 +140,8 @@ public extension ColorScheme {
         public let switchBorder: UIColor
         public let stepperTint: UIColor
         public let segmentedControl: UIColor
-        public let iconOnLightBackground: UIColor
-        public let iconOnDarkBackground: UIColor
+        public let defaultIcon: UIColor
+        public let invertedIcon: UIColor
         
         // MARK: // Specific
         // MARK: MainTitleView
@@ -174,12 +174,13 @@ public extension ColorScheme {
     struct Text {
         // MARK: // General
         public let `default`: UIColor
-        public let onDarkBackground: UIColor
-        public let onLightBackground: UIColor
+        public let inverted: UIColor
         public let navigationBar: UIColor
         public let titleLabel: UIColor
-        // FIXME: public let inputHelp: UIColor
-        // FIXME: public let today/highlighted: UIColor
+        public let descriptionLabel: UIColor
+        public let valueLabel: UIColor
+        public let placeholder: UIColor
+        public let highlighted: UIColor
         
         // MARK: // Specific
         // MARK: MainMenuView

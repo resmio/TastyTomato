@@ -30,7 +30,6 @@ import Foundation
             
             // MARK: // Specific
             // MARK: LoginView
-            // FIXME: what does "(background image +)" mean?
             login: .blue293140, // SignInBackgroundColor (background image +)
             signInButton: .blue00A7C4, // SignInButton
             
@@ -48,8 +47,6 @@ import Foundation
             bookingCell: .blue333B4F, // bookingsBookingListBackgroundColor
             
             // MARK: RoomsView
-            // FIXME: roomWithoutFloorBackgroundColor and diningAreasBackgroundColor have been left out,
-            // rooms without floor simply have a clear background.
             roomsView: .blue293140, // roomAreaBackgroundColor
             
             // MARK: ChooseTablesView
@@ -78,10 +75,8 @@ import Foundation
             notificationButtonBadge: .redE62C4F, // notificationBadgeBackgroundColor
             notificationsView: .blue293140, // notificationfeedBackgroundColor
             notificationsViewSectionHeader: .blue333B4F, // notificationfeedheadingsBackgroundColor
-            // FIXME: Alpha 0.2?
-            noteCell: .blue00A7C4, // notificationfeedNotesBackgroundColor
-            // FIXME: Alpha 0.2?
-            taskCellUnread: .yellowF8C150, // notificationsfeedNewOpenTasksBackgroundColor
+            noteCell: UIColor.blue00A7C4.withAlpha(0.2), // notificationfeedNotesBackgroundColor
+            taskCellUnread: UIColor.yellowF8C150.withAlpha(0.2), // notificationsfeedNewOpenTasksBackgroundColor
             taskCellRead: .whiteFFFFFF, // notificationsfeedReadOpenTasksBackgroundColor
             
             // MARK: OfflinePopover
@@ -104,8 +99,8 @@ import Foundation
             switchBorder: .grayCCCCCC, // switchButtonOutline
             stepperTint: .whiteFFFFFF, // minusPlusButton
             segmentedControl: .blue00A7C4, // selectButton
-            iconOnLightBackground: .gray555555, // iconsOnWhitebackground
-            iconOnDarkBackground: .whiteFFFFFF, // iconsOnDarkbackground
+            defaultIcon: .gray555555, // iconsOnWhitebackground
+            invertedIcon: .whiteFFFFFF, // iconsOnDarkbackground
             
             // MARK: // Specific
             // MARK: MainTitleView
@@ -139,14 +134,14 @@ import Foundation
         // MARK: // Text
         text_: Text(
             // MARK: // General
-            default: .grayDDDDDD, // defaultTextColor
-            onDarkBackground: .whiteFFFFFF, // darkBackgroundTextColor
-            // FIXME: what does the TextColor mean: lightBackgroundTextColor / TextColor
-            onLightBackground: .gray555555, // lightBackgroundTextColor / TextColor
+            default: .whiteFFFFFF, // darkBackgroundTextColor
+            inverted: .gray555555, // lightBackgroundTextColor / TextColor
             navigationBar: .whiteFFFFFF, // headerTextColor
             titleLabel: .whiteFFFFFF, // headingTextColor
-            // FIXME: what is: public let inputHelp: UIColor
-            // FIXME: what is: public let today/highlighted: UIColor
+            descriptionLabel: .grayDDDDDD,
+            valueLabel: .whiteFFFFFF,
+            placeholder: .blue3E4862, // inputHelpTextColor
+            highlighted: .blue00A7C4, // today/highlightedTextColor
             
             // MARK: // Specific
             // MARK: MainMenuView
@@ -155,9 +150,6 @@ import Foundation
             
             // MARK: MainTitleView
             mainTitleView: .whiteFFFFFF, // arrows / time / date
-            // FIXME: I've left out nowButtonActive and nowButtonInactive
-            // since they are in both color schemes similar to the
-            // border colors of the enabled/disabled states
             
             // MARK: NotificationsPopover
             notificationButtonBadge: .whiteFFFFFF, // notificationBadgeTextColor
