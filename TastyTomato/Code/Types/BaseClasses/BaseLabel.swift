@@ -13,22 +13,13 @@ import SignificantSpices
 // MARK: // Public
 // MARK: Interface
 public extension BaseLabel {
-    var placeholder: String? {
-        get {
-            return self._placeholder
-        }
-        set(newPlaceholder) {
-            self._placeholder = newPlaceholder
-        }
+    // Setters
+    func setPlaceholder(_ placeholder: String?) {
+        self._setPlaceholder(placeholder)
     }
     
-    var placeholderTextColor: UIColor? {
-        get {
-            return self._placeholderTextColor
-        }
-        set(newPlaceholderTextColor) {
-            self._placeholderTextColor = newPlaceholderTextColor
-        }
+    func setPlaceholderTextColor(_ color: UIColor?) {
+        self._setPlaceholderTextColor(color)
     }
 }
 
@@ -38,20 +29,20 @@ public class BaseLabel: UILabel {
     // Required Init
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self._setup()
+        self._init()
     }
     
     // Override Init
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self._setup()
+        self._init()
     }
     
     // Private Setup Implementation
-    private func _setup() {
+    private func _init() {
         if self._isShowingPlaceholder {
-            super.text = self.placeholder
-            super.textColor = self.placeholderTextColor
+            super.text = self._placeholder
+            super.textColor = self._placeholderTextColor
         }
     }
     
@@ -63,98 +54,74 @@ public class BaseLabel: UILabel {
      let key = "_placeholderLabel"
      let label = textField.value(forKey: key) as! UILabel
      label.textColor
-     */
-    fileprivate let _defaultPlaceholderTextColor: UIColor = UIColor(red: 0, green: 0, blue: 0.098, alpha: 0.22)
+    **/
+    private let _defaultPlaceholderTextColor: UIColor = UIColor(red: 0, green: 0, blue: 0.098, alpha: 0.22)
     
     // Private Lazy Variables
-    fileprivate lazy var __placeholderTextColor: UIColor = self._defaultPlaceholderTextColor
+    private lazy var _placeholderTextColor: UIColor = self._defaultPlaceholderTextColor
     
     // Private Variables
-    fileprivate var __placeholder: String?
-    fileprivate var __textColorBackup: UIColor = .black
-    fileprivate var _isShowingPlaceholder: Bool = true
-    
+    private var _placeholder: String?
+    private var _textColorBackup: UIColor = .black
+    private var _isShowingPlaceholder: Bool = true
     
     // Variable Overrides
     public override var text: String? {
-        get {
-            return self._text
-        }
-        set(newText) {
-            self._text = newText
-        }
+        get { return self._isShowingPlaceholder ? "" : super.text }
+        set { self._setText(newValue) }
     }
     
     public override var textColor: UIColor! {
-        get {
-            return self._textColor
-        }
-        set(newTextColor) {
-            self._textColor = newTextColor
-        }
+        get { return self._isShowingPlaceholder ? self._textColorBackup : super.textColor }
+        set { self._setTextColor(newValue) }
     }
 }
 
 
 // MARK: // Private
-// MARK: Computed Variables
+// MARK: Override Implementations
 private extension BaseLabel {
-    var _placeholder: String? {
-        get {
-            return self.__placeholder
-        }
-        set(newPlaceholder) {
-            guard newPlaceholder != self.__placeholder else { return }
-            self.__placeholder = newPlaceholder
-            if self._isShowingPlaceholder {
-                super.text = newPlaceholder
-            }
-        }
-    }
-    
-    var _placeholderTextColor: UIColor? {
-        get {
-            return self.__placeholderTextColor
-        }
-        set(newPlaceholderTextColor) {
-            guard newPlaceholderTextColor != self.__placeholderTextColor else { return }
-            let newColor: UIColor = newPlaceholderTextColor ?? self._defaultPlaceholderTextColor
-            self.__placeholderTextColor = newColor
-            if self._isShowingPlaceholder {
-                super.textColor = newColor
-            }
+    func _setText(_ text: String?) {
+        let currentText: String? = self._isShowingPlaceholder ? "" : super.text
+        guard text != currentText else { return }
+        if text.isNilOrEmpty {
+            self._isShowingPlaceholder = true
+            super.text = self._placeholder
+            self._textColorBackup = super.textColor
+            super.textColor = self._placeholderTextColor
+        } else {
+            self._isShowingPlaceholder = false
+            super.text = text
+            super.textColor = self._textColorBackup
         }
     }
     
-    var _text: String? {
-        get {
-            return self._isShowingPlaceholder ? "" : super.text
+    func _setTextColor(_ color: UIColor) {
+        if self._isShowingPlaceholder {
+            self._textColorBackup = color
+        } else {
+            super.textColor = color
         }
-        set(newText) {
-            guard newText != self._text else { return }
-            if newText.isNilOrEmpty {
-                self._isShowingPlaceholder = true
-                super.text = self.placeholder
-                self.__textColorBackup = super.textColor
-                super.textColor = self.placeholderTextColor
-            } else {
-                self._isShowingPlaceholder = false
-                super.text = newText
-                super.textColor = self.__textColorBackup
-            }
+    }
+}
+
+
+// MARK: Setter Implementations
+private extension BaseLabel {
+    func _setPlaceholder(_ placeholder: String?) {
+        guard placeholder != self._placeholder else { return }
+        self._placeholder = placeholder
+        if self._isShowingPlaceholder {
+            super.text = placeholder
         }
     }
     
-    var _textColor: UIColor! {
-        get {
-            return self._isShowingPlaceholder ? self.__textColorBackup : super.textColor
-        }
-        set(newTextColor) {
-            if self._isShowingPlaceholder {
-                self.__textColorBackup = newTextColor
-            } else {
-                super.textColor = newTextColor
-            }
+    func _setPlaceholderTextColor(_ color: UIColor?) {
+        guard color != self._placeholderTextColor else { return }
+        let newColor: UIColor = color ?? self._defaultPlaceholderTextColor
+        self._placeholderTextColor = newColor
+        if self._isShowingPlaceholder {
+            super.textColor = newColor
         }
     }
 }
