@@ -39,7 +39,7 @@ private extension UIView {
         guard let slf: T = self as? T else { return }
         self.associate(closure, by: &._colorAdjustment)
         
-        if let cls: (T) -> Void = closure {
+        if let _: (T) -> Void = closure {
             NotificationCenter.default.addObserver(
                 self, selector: #selector(self._adjustColors), name: ColorScheme.currentSchemeChanged, object: nil
             )
