@@ -177,12 +177,12 @@ public extension ColorScheme {
         public let onDarkBackground: UIColor
         public let onLightBackground: UIColor
         public let navigationBar: UIColor
+        public let titleLabel: UIColor
         // FIXME: public let inputHelp: UIColor
         // FIXME: public let today/highlighted: UIColor
         
         // MARK: // Specific
         // MARK: MainMenuView
-        public let mainMenuSectionHeader: UIColor
         public let mainMenuItem: UIColor
         public let mainMenuSelectedItem: UIColor
         

@@ -144,12 +144,12 @@ import Foundation
             // FIXME: what does the TextColor mean: lightBackgroundTextColor / TextColor
             onLightBackground: .gray555555, // lightBackgroundTextColor / TextColor
             navigationBar: .whiteFFFFFF, // headerTextColor
+            titleLabel: .whiteFFFFFF, // headingTextColor
             // FIXME: what is: public let inputHelp: UIColor
             // FIXME: what is: public let today/highlighted: UIColor
             
             // MARK: // Specific
             // MARK: MainMenuView
-            mainMenuSectionHeader: .whiteFFFFFF, // headingTextColor
             mainMenuItem: .grayDDDDDD, // navigationBarTextColor
             mainMenuSelectedItem: .whiteFFFFFF, // selectedItemNavigationsBarTextColor
             
