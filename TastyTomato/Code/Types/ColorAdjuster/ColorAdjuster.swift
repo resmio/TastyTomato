@@ -19,16 +19,16 @@ public extension ColorAdjuster {
 
 
 // MARK: Class Declaration
-public class ColorAdjuster<T: UIView>: NSObject {
+public class ColorAdjuster: NSObject {
     // Init
-    public init(_ view: T, _ closure: @escaping (T?) -> Void) {
+    public init(_ view: UIView, _ closure: @escaping (UIView?) -> Void) {
         self._view = view
         self._closure = closure
     }
     
     // Private Constants
-    private let _closure: (T?) -> Void
+    private let _closure: (UIView?) -> Void
     
     // Private Weak Variables
-    private weak var _view: T?
+    private weak var _view: UIView?
 }
