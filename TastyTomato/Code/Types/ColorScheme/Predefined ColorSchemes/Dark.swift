@@ -94,7 +94,7 @@ import Foundation
         lines_: Lines(
             // MARK: // General
             separator: .blue1E2532, // separatorColor
-            borderUnfocussed: .blue3E4862, // borderColor
+            borderUnfocussed: .blue3F4962, // borderColor
             borderFocussed: .blue00A7C4, // focusBorderColor
             switchBorder: .grayCCCCCC, // switchButtonOutline
             stepperTint: .whiteFFFFFF, // minusPlusButton
@@ -104,7 +104,7 @@ import Foundation
             
             // MARK: // Specific
             // MARK: MainTitleView
-            buttonBorder: .blue3E4862, // buttonBorderColor (all, except hamburger)
+            buttonBorder: .blue3F4962, // buttonBorderColor (all, except hamburger)
             hamburgerIcon: .whiteFFFFFF, // hamburgerIcon
             arrowIcon: .whiteFFFFFF, // arrows / time / date
             nowButtonEnabled: .whiteFFFFFF, // nowButtonActiveBorderColor
@@ -118,7 +118,7 @@ import Foundation
             
             // MARK: TimelineView
             horizontalSeparator: .blue1E2532, // horizontalSeparatorColor
-            verticalSeparator: .blue3E4862, // verticalSeparatorColor (full hours)
+            verticalSeparator: .blue3F4962, // verticalSeparatorColor (full hours)
             verticalSubSeparator: .blue1E2532, // verticalSeparatorColor (quarter & half hour)
             timeIndicatorLine: .blue00A7C4, // timeFocusVerticalLineColor
             
@@ -140,7 +140,7 @@ import Foundation
             titleLabel: .whiteFFFFFF, // headingTextColor
             descriptionLabel: .grayDDDDDD,
             valueLabel: .whiteFFFFFF,
-            placeholder: .blue3E4862, // inputHelpTextColor
+            placeholder: .blue3F4962, // inputHelpTextColor
             highlighted: .blue00A7C4, // today/highlightedTextColor
             
             // MARK: // Specific
@@ -193,7 +193,7 @@ import Foundation
             arrived: .green22CCAA, // Arrived
             seated: .yellowF8C150, // Seated
             finished: .gray999999, // Finished
-            noShow: .blue3E4862, // No-Show
+            noShow: .blue3F4962, // No-Show
             cancelled: .redE62C4F // Cancelled
         )
     )
