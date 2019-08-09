@@ -25,6 +25,26 @@ import UIKit
 }
 
 
+// MARK: nonobjc Shorthands
+@nonobjc public extension ColorScheme {
+    static var background: Background {
+        return self.current.background
+    }
+    
+    static var lines: Lines {
+        return self.current.lines
+    }
+    
+    static var text: Text {
+        return self.current.text
+    }
+    
+    static var bookingStatus: BookingStatus {
+        return self.current.bookingStatus
+    }
+}
+
+
 // MARK: -
 // MARK: -
 // MARK: Class Declaration
