@@ -101,6 +101,7 @@ import Foundation
             segmentedControl: .blue00A7C4, // selectButton
             defaultIcon: .gray555555, // iconsOnWhitebackground
             invertedIcon: .whiteFFFFFF, // iconsOnDarkbackground
+            highlighted: .blue00A7C4, // today/highlightedTextColor
             
             // MARK: // Specific
             // MARK: MainTitleView

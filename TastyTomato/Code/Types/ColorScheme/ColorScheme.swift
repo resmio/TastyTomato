@@ -139,6 +139,7 @@ public extension ColorScheme {
         public let segmentedControl: UIColor
         public let defaultIcon: UIColor
         public let invertedIcon: UIColor
+        public let highlighted: UIColor
         
         // MARK: // Specific
         // MARK: MainTitleView
