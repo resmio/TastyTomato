@@ -104,13 +104,13 @@ import Foundation
             
             // MARK: // Specific
             // MARK: MainTitleView
-            buttonBorder: .blue3E4862, // buttonBorderColor (all, except hamburger)
+            buttonBorder: .blue3F4962, // buttonBorderColor (all, except hamburger)
             hamburgerIcon: .whiteFFFFFF, // hamburgerIcon
             arrowIcon: .whiteFFFFFF, // arrows / time / date
             nowButtonEnabled: .whiteFFFFFF, // nowButtonActiveBorderColor
-            nowButtonDisabled: .blue3E4862, // nowButtonBorderInactiveColor
+            nowButtonDisabled: .blue3F4962, // nowButtonBorderInactiveColor
             offlineIcon: .redE62C4F, // noInternetIcon
-            notificationButtonDisabled: .blue3E4862, // notificationfeedIconInactive
+            notificationButtonDisabled: .blue3F4962, // notificationfeedIconInactive
             notificationButtonNotes: .blue00A7C4, // notificationfeedIconNotes
             notificationButtonNotesAndTasks: .whiteFFFFFF, // notificationfeedIconNotesAndOpenTasks
             newBookingButton: .whiteFFFFFF, // newBooking / walkIn
@@ -118,7 +118,7 @@ import Foundation
             
             // MARK: TimelineView
             horizontalSeparator: .grayCCCCCC, // horizontalSeparatorColor
-            verticalSeparator: .blue3E4862, // verticalSeparatorColor (full hours)
+            verticalSeparator: .blue3F4962, // verticalSeparatorColor (full hours)
             verticalSubSeparator: .grayCCCCCC, // verticalSeparatorColor (quarter & half hour)
             timeIndicatorLine: .blue00A7C4, // timeFocusVerticalLineColor
             
@@ -137,7 +137,7 @@ import Foundation
             default: .gray555555, // defaultTextColor
             inverted: .whiteFFFFFF, // darkBackgroundTextColor
             navigationBar: .whiteFFFFFF, // headerTextColor
-            titleLabel: .blue3E4862, // headingTextColor
+            titleLabel: .blue3F4962, // headingTextColor
             descriptionLabel: .gray999999,
             valueLabel: .gray555555,
             placeholder: .grayCCCCCC, // inputHelpTextColor
@@ -193,7 +193,7 @@ import Foundation
             arrived: .green22CCAA, // Arrived
             seated: .yellowF8C150, // Seated
             finished: .gray999999, // Finished
-            noShow: .blue3E4862, // No-Show
+            noShow: .blue3F4962, // No-Show
             cancelled: .redE62C4F // Cancelled
         )
     )
