@@ -24,6 +24,7 @@
 		26C9967D3E82CB12CD88A26329600F6E /* NSL_.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06BAB5E34D33E9205557171C73CF6C /* NSL_.swift */; };
 		26EC6657182DD1C1402AD2C3A89486BB /* UIFont (PredefinedFonts).swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2B1E373A0B5FEF4430946F8B244B4 /* UIFont (PredefinedFonts).swift */; };
 		2CCA94476E3333C634E936EC9EECA2AE /* UIImage (Scaled).swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A908324B2B4B669470F0A3864A426C6 /* UIImage (Scaled).swift */; };
+		2D680F6FE41FE9C609AD5BD6C2532DAD /* BaseSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A192A26977F441FC22B8266DAAB0C3 /* BaseSwitch.swift */; };
 		2E894736E4858AC80DCD8D499E0FD708 /* CGRect (Area).swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57DBBABA83CFBB3428C32BBB42514E /* CGRect (Area).swift */; };
 		2F374B0977A60AC13C6247BC40B13DEC /* BorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DB287B4CBD08CB1C224AEA6B8B9B7F /* BorderLayer.swift */; };
 		2F3E948D83ABEF456118C56CC1ADA20E /* CGPoint (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 38695237639647DC1871B8DCC1F4B719 /* CGPoint (ConvenienceInits).swift */; };
@@ -166,6 +167,7 @@
 		6281FC9CC0B750319F7F7A568E1BE01F /* UIView (TemporaryPositionAndDimensions).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView (TemporaryPositionAndDimensions).swift"; sourceTree = "<group>"; };
 		6AC97CD77F94015FE7030F93828B3B62 /* UIView (ColorScheme).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView (ColorScheme).swift"; sourceTree = "<group>"; };
 		6E47334521F4C829C657385516AF55E3 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		75A192A26977F441FC22B8266DAAB0C3 /* BaseSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSwitch.swift; sourceTree = "<group>"; };
 		7A3EF5DA21FC7D9A1456494182F7295B /* DropDownTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownTextField.swift; sourceTree = "<group>"; };
 		7DAB831517E3851F87B951BE6881C71B /* UIView (BarButtonItem).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView (BarButtonItem).swift"; sourceTree = "<group>"; };
 		7EC88A94DDF26B9532AD8A6346A250E9 /* UIImage (WidthHeight).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage (WidthHeight).swift"; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			children = (
 				E3501BBD5DF0C52C788CB5796A659BD6 /* BaseButton.swift */,
 				9AC1248BC9394D8C6F465C9ED2087AB2 /* BaseLabel.swift */,
+				75A192A26977F441FC22B8266DAAB0C3 /* BaseSwitch.swift */,
 				526EBCB4C91C9664B47B9B7BE021F1D8 /* BaseTextField.swift */,
 				ADA1BCF946E3FD268458BFB0A9F35787 /* BaseTextView.swift */,
 			);
@@ -1067,6 +1070,7 @@
 				BC59F8A8FD33C76221899BD6785BA268 /* ArrowIcon.swift in Sources */,
 				D877D7AC8688BD38070B988CEC7606B3 /* BaseButton.swift in Sources */,
 				1EACCEE0A46BC7B7C1FD1275EC3BD727 /* BaseLabel.swift in Sources */,
+				2D680F6FE41FE9C609AD5BD6C2532DAD /* BaseSwitch.swift in Sources */,
 				30A753D9F75A4C9AC116385B122679A0 /* BaseTextField.swift in Sources */,
 				71040BEEB21943177F57FD4714D0673C /* BaseTextView.swift in Sources */,
 				CE00B3F7934298D8B7F4E72DA201667D /* BookingStatusIcon.swift in Sources */,
