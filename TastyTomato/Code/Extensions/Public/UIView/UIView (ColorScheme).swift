@@ -13,47 +13,25 @@ import SignificantSpices
 // MARK: // Public
 // MARK: Interface
 public extension UIView {
-    // Setters
-    func setColorAdjustment<T: UIView>(_ closure: ((T) -> Void)?) {
-        self._setColorAdjustment(closure)
+    // Adjust Colors Of All Registered Views
+    static func adjustColorsOfAllRegisteredViews() {
+        self._colorAdjusters.forEach({ $1.adjust($0) })
     }
     
-    // Adjust Colors (Recurses Subviews)
+    // Adjust Colors Of This View
     func adjustColors() {
-        self._adjustColors()
+        UIView._colorAdjusters[self]?.adjust(self)
+    }
+    
+    // Setters
+    func setColorAdjustment(_ colorAdjustment: @escaping (UIView) -> Void) {
+        UIView._colorAdjusters[self] = ColorAdjuster(colorAdjustment)
     }
 }
 
 
 // MARK: // Private
-// MARK: -
-private extension ValueAssociationKey {
-    static var _colorAdjustment: ValueAssociationKey = ValueAssociationKey()
-}
-
-
-// MARK: -
-// MARK: Associated Variables
+// MARK: Color Adjusters
 private extension UIView {
-    func _setColorAdjustment<T: UIView>(_ closure: ((T) -> Void)?) {
-        guard let slf: T = self as? T else { return }
-        self.associate(closure, by: &._colorAdjustment)
-        
-        NotificationCenter.default.removeObserver(self)
-        if let _: (T) -> Void = closure {
-            NotificationCenter.default.addObserver(
-                self, selector: #selector(self._adjustColors), name: ColorScheme.currentSchemeChanged, object: nil
-            )
-            closure?(slf)
-        }
-    }
-}
-
-
-// MARK: Interface Implementations
-private extension UIView {
-    @objc func _adjustColors() {
-        guard let closure: ((UIView) -> Void) = self.associatedValue(for: &._colorAdjustment) else { return }
-        closure(self)
-    }
+    static var _colorAdjusters: WeakKeyDict<UIView, ColorAdjuster> = [:]
 }

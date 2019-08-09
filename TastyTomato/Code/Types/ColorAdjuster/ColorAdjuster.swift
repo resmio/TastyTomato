@@ -12,8 +12,8 @@ import Foundation
 // MARK: // Public
 // MARK: Interface
 public extension ColorAdjuster {
-    func adjust() {
-        self._closure(self._view)
+    func adjust(_ view: UIView) {
+        self._closure(view)
     }
 }
 
@@ -21,14 +21,10 @@ public extension ColorAdjuster {
 // MARK: Class Declaration
 public class ColorAdjuster: NSObject {
     // Init
-    public init(_ view: UIView, _ closure: @escaping (UIView?) -> Void) {
-        self._view = view
+    public init(_ closure: @escaping (UIView) -> Void) {
         self._closure = closure
     }
     
     // Private Constants
-    private let _closure: (UIView?) -> Void
-    
-    // Private Weak Variables
-    private weak var _view: UIView?
+    private let _closure: (UIView) -> Void
 }

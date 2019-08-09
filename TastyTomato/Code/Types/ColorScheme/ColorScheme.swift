@@ -38,9 +38,6 @@ import UIKit
         self.bookingStatus = bookingStatus_
     }
     
-    // Internal Static Constants
-    static let currentSchemeChanged: Notification.Name = Notification.Name(rawValue: "TastyTomato.ColorScheme.currentSchemeChanged")
-    
     // Private Static Variables
     private static var __current: ColorScheme = .light
 
@@ -242,6 +239,6 @@ private extension ColorScheme {
     static func _setCurrentScheme(_ currentScheme: ColorScheme) {
         guard currentScheme != self.__current else { return }
         self.__current = currentScheme
-        NotificationCenter.default.post(name: self.currentSchemeChanged, object: nil)
+        UIView.adjustColorsOfAllRegisteredViews()
     }
 }
