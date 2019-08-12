@@ -29,6 +29,7 @@ import Foundation
             deleteButton: .redE62C4F, // deleteButton
             switchOn: .blue00A7C4, // switchButtonON
             switchOff: .whiteF7F7F7, // switchButtonOFF
+            warningTextView: .yellowF8C150,
             
             // MARK: // Specific
             // MARK: LoginView
@@ -52,8 +53,6 @@ import Foundation
             
             // MARK: ChooseTablesView
             numOfSeatsInfoPerfect: .green22CCAA, // newBookingSeatsPerfect
-            numOfSeatsInfoWarning: .yellowF8C150, // newBookingSeatsAreNeeded /Overlapping
-            overlapWarning: .yellowF8C150, // newBookingSeatsAreNeeded /Overlapping
             
             // MARK: TischView
             freeTable: .gray999999, // freeTable
@@ -145,6 +144,7 @@ import Foundation
             placeholder: .grayCCCCCC, // inputHelpTextColor
             highlighted: .blue00A7C4, // today/highlightedTextColor
             filledButton: .whiteFFFFFF,
+            warningTextView: .whiteFFFFFF,
             
             // MARK: // Specific
             // MARK: MainMenuView

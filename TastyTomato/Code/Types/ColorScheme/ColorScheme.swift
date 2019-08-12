@@ -89,6 +89,7 @@ public extension ColorScheme {
         public let deleteButton: UIColor
         public let switchOn: UIColor
         public let switchOff: UIColor
+        public let warningTextView: UIColor
         
         // MARK: // Specific
         // MARK: LoginView
@@ -112,8 +113,6 @@ public extension ColorScheme {
         
         // MARK: ChooseTablesView
         public let numOfSeatsInfoPerfect: UIColor
-        public let numOfSeatsInfoWarning: UIColor
-        public let overlapWarning: UIColor
         
         // MARK: TischView
         public let freeTable: UIColor
@@ -201,6 +200,7 @@ public extension ColorScheme {
         public let placeholder: UIColor
         public let highlighted: UIColor
         public let filledButton: UIColor
+        public let warningTextView: UIColor
         
         // MARK: // Specific
         // MARK: MainMenuView
