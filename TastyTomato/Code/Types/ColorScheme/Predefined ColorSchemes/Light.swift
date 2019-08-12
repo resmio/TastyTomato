@@ -102,6 +102,7 @@ import Foundation
             defaultIcon: .gray555555, // iconsOnWhitebackground
             invertedIcon: .whiteFFFFFF, // iconsOnDarkbackground
             highlighted: .blue00A7C4, // today/highlightedTextColor
+            warning: .yellowF8C150,
             
             // MARK: // Specific
             // MARK: MainTitleView

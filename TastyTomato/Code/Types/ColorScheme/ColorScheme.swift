@@ -160,6 +160,7 @@ public extension ColorScheme {
         public let defaultIcon: UIColor
         public let invertedIcon: UIColor
         public let highlighted: UIColor
+        public let warning: UIColor
         
         // MARK: // Specific
         // MARK: MainTitleView
