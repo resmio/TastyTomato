@@ -17,6 +17,10 @@ public extension TextButton {
         return ._makeForgotPasswordButton()
     }
     
+    static func makeSaveButton() -> TextButton {
+        return ._makeSaveButton()
+    }
+    
     // ReadWrite
     var highlightedAlpha: CGFloat {
         get { return self._highlightedAlpha }
@@ -168,6 +172,18 @@ private extension TextButton {
         button.titleLabel!.font = .xs
         button.setTitle(NSL_("Forgotten your password?"))
         button.underlined = true
+        button.sizeToFit()
+        return button
+    }
+    
+    static func _makeSaveButton() -> TextButton {
+        let button: TextButton = TextButton()
+        button.setColorAdjustment({
+            ($0 as? TextButton)?.setTitleColor(ColorScheme.text.saveButton, for: .normal)
+        })
+        button.adjustsWidthOnTitleSet = false
+        button.titleLabel!.font = .m
+        button.setTitle(NSL_("Save"))
         button.sizeToFit()
         return button
     }
