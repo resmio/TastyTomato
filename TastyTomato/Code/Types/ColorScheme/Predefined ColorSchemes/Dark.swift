@@ -23,17 +23,16 @@ import Foundation
             defaultPopover: .blue293140, // popoverBackgroundColor
             defaultSelected: .blue00A7C4, // selection / focus
             newBookingFlow: .blue293140, // walkIn / newBookingBackgroundColor
-            selectButton: .blue00A7C4, // selectButton
+            filledButton: .blue00A7C4,
+            filledButtonDimmed: UIColor.blue00A7C4.withAlpha(0.2),
             createButton: .blue00A7C4, // createButton
             deleteButton: .redE62C4F, // deleteButton
             switchOn: .blue00A7C4, // switchButtonON
             switchOff: .whiteF7F7F7, // switchButtonOFF
-            disabledFilledButton: UIColor.blue00A7C4.withAlpha(0.2),
             
             // MARK: // Specific
             // MARK: LoginView
             login: .blue293140, // SignInBackgroundColor (background image +)
-            signInButton: .blue00A7C4, // SignInButton
             
             // MARK: MainMenuView
             mainMenu: .blue1E2532, // navigationbarBackgroundColor

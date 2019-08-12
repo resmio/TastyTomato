@@ -83,17 +83,16 @@ public extension ColorScheme {
         public let defaultPopover: UIColor
         public let defaultSelected: UIColor
         public let newBookingFlow: UIColor
-        public let selectButton: UIColor
+        public let filledButton: UIColor
+        public let filledButtonDimmed: UIColor
         public let createButton: UIColor
         public let deleteButton: UIColor
         public let switchOn: UIColor
         public let switchOff: UIColor
-        public let disabledFilledButton: UIColor
         
         // MARK: // Specific
         // MARK: LoginView
         public let login: UIColor
-        public let signInButton: UIColor
         
         // MARK: MainMenuView
         public let mainMenu: UIColor
