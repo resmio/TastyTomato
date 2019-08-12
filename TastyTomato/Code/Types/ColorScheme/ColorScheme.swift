@@ -78,6 +78,7 @@ public extension ColorScheme {
     // Nested Types
     struct Background {
         // MARK: // General
+        public let `default`: UIColor
         public let navigationBar: UIColor
         public let defaultPopover: UIColor
         public let defaultSelected: UIColor

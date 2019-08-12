@@ -18,6 +18,7 @@ import Foundation
         // MARK: // Background
         background_: Background(
             // MARK: // General
+            default: .blue293140,
             navigationBar: .blue1E2532, // headerBackgroundColor
             defaultPopover: .blue293140, // popoverBackgroundColor
             defaultSelected: .blue00A7C4, // selection / focus
