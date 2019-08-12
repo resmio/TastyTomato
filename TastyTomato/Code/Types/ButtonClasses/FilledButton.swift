@@ -13,21 +13,13 @@ import Foundation
 // MARK: Interface
 public extension FilledButton {
     var fillColor: UIColor {
-        get {
-            return self._fillColor
-        }
-        set(newFillColor) {
-            self._fillColor = newFillColor
-        }
+        get { return self._fillColor }
+        set { self._fillColor = newValue }
     }
     
     var highlightedAlpha: CGFloat {
-        get {
-            return self._highlightedAlpha
-        }
-        set(newHighlightedAlpha) {
-            self._highlightedAlpha = newHighlightedAlpha
-        }
+        get { return self._highlightedAlpha }
+        set { self._highlightedAlpha = newValue }
     }
 }
 
@@ -67,16 +59,10 @@ private extension FilledButton {
 // MARK: Update Color Helpers
 private extension FilledButton {
     func _updateNormalColor() {
-        self.setColor(
-            self.fillColor,
-            for: .normal
-        )
+        self.setColor(self.fillColor, for: .normal)
     }
     
     func _updateHighlightedColor() {
-        self.setColor(
-            self.fillColor.withAlpha(self.highlightedAlpha),
-            for: .highlighted
-        )
+        self.setColor(self.fillColor.withAlpha(self.highlightedAlpha), for: .highlighted)
     }
 }
