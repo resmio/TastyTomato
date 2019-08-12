@@ -183,7 +183,10 @@ private extension TextButton {
     static func _makeSaveButton() -> TextButton {
         let button: TextButton = ._makeDefaultButton()
         button.setColorAdjustment({
-            ($0 as? TextButton)?.setTitleColor(ColorScheme.text.saveButton, for: .normal)
+            let textButton: TextButton? = $0 as? TextButton
+            let textColor: UIColor = ColorScheme.text.saveButton
+            textButton?.setTitleColor(textColor, for: .normal)
+            textButton?.setTitleColor(textColor.withAlpha(0.2), for: .disabled)
         })
         button.setTitle(NSL_("Save"))
         button.sizeToFit()
