@@ -87,6 +87,7 @@ public extension ColorScheme {
         public let deleteButton: UIColor
         public let switchOn: UIColor
         public let switchOff: UIColor
+        public let disabledFilledButton: UIColor
         
         // MARK: // Specific
         // MARK: LoginView

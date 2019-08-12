@@ -27,6 +27,7 @@ import Foundation
             deleteButton: .redE62C4F, // deleteButton
             switchOn: .blue00A7C4, // switchButtonON
             switchOff: .whiteF7F7F7, // switchButtonOFF
+            disabledFilledButton: UIColor.blue00A7C4.withAlpha(0.2),
             
             // MARK: // Specific
             // MARK: LoginView
