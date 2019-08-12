@@ -38,7 +38,7 @@ private extension UIView {
     func _setColorAdjustment(_ colorAdjustment: ((UIView) -> Void)?) {
         if let adjustment: (UIView) -> Void = colorAdjustment {
             UIView._colorAdjusters[self] = ColorAdjuster(adjustment)
-            colorAdjustment(self)
+            adjustment(self)
         } else {
             UIView._colorAdjusters[self] = nil
         }
