@@ -21,6 +21,10 @@ public extension TextButton {
         return ._makeSaveButton()
     }
     
+    static func makeCancelButton() -> TextButton {
+        return ._makeCancelButton()
+    }
+    
     // ReadWrite
     var highlightedAlpha: CGFloat {
         get { return self._highlightedAlpha }
@@ -177,14 +181,29 @@ private extension TextButton {
     }
     
     static func _makeSaveButton() -> TextButton {
-        let button: TextButton = TextButton()
+        let button: TextButton = ._makeDefaultButton()
         button.setColorAdjustment({
             ($0 as? TextButton)?.setTitleColor(ColorScheme.text.saveButton, for: .normal)
         })
-        button.adjustsWidthOnTitleSet = false
-        button.titleLabel!.font = .m
         button.setTitle(NSL_("Save"))
         button.sizeToFit()
+        return button
+    }
+    
+    static func _makeCancelButton() -> TextButton {
+        let button: TextButton = ._makeDefaultButton()
+        button.setColorAdjustment({
+            ($0 as? TextButton)?.setTitleColor(ColorScheme.text.cancelButton, for: .normal)
+        })
+        button.setTitle(NSL_("Cancel"))
+        button.sizeToFit()
+        return button
+    }
+    
+    static func _makeDefaultButton() -> TextButton {
+        let button: TextButton = TextButton()
+        button.adjustsWidthOnTitleSet = false
+        button.titleLabel!.font = .m
         return button
     }
 }
