@@ -12,57 +12,67 @@ import Foundation
 // MARK: // Public
 // MARK: Interface
 public extension FilledButton {
-    var fillColor: UIColor {
-        get { return self._fillColor }
-        set { self._fillColor = newValue }
+    // Factories
+    static func makeDefaultButton(title: String) -> FilledButton {
+        return ._makeDefaultButton(title: title)
     }
     
-    var highlightedAlpha: CGFloat {
-        get { return self._highlightedAlpha }
-        set { self._highlightedAlpha = newValue }
+    static func makeSignInButton() -> FilledButton {
+        return .makeDefaultButton(title: NSL_("Sign in"))
+    }
+    
+    static func makeSelectButton() -> FilledButton {
+        return .makeDefaultButton(title: NSL_("Select"))
+    }
+    
+    // Dim
+    func dim(_ dim: Bool) {
+        self._dim(dim)
     }
 }
 
 
 // MARK: Class Declaration
 public class FilledButton: BaseButton {
+    // Public Constants
+    public let highlightedAlpha: CGFloat = 0.6
+    
     // Private Variables
-    private var _fillColor: UIColor = .blue00A7C4 {
-        didSet {
-            self._updateNormalColor()
-            self._updateHighlightedColor()
-        }
-    }
-    
-    private var _highlightedAlpha: CGFloat = 0.6 {
-        didSet { self._updateHighlightedColor() }
-    }
-    
-    // Setup Override
-    public override func setup() {
-        self._setup()
-    }
+    private var _isDimmed: Bool = false
+    private var _fillColor: UIColor = .blue00A7C4
 }
 
 
 // MARK: // Private
-// MARK: Setup Override Implementation
+// MARK: Factories
 private extension FilledButton {
-    func _setup() {
-        super.setup()
-        self._updateNormalColor()
-        self._updateHighlightedColor()
+    static func _makeDefaultButton(title: String) -> FilledButton {
+        let button: FilledButton = FilledButton()
+        button.setTitle(title)
+        button.titleLabel!.font = .s
+        button.adjustsWidthOnTitleSet = false
+        button.height = 44
+        
+        button.setColorAdjustment({
+            guard let filledButton: FilledButton = $0 as? FilledButton else { return }
+            let background: ColorScheme.Background = ColorScheme.background
+            let dimmed: Bool = filledButton._isDimmed
+            let fillColor: UIColor = dimmed ? background.filledButtonDimmed : background.filledButton
+            filledButton.setColor(fillColor, for: .normal)
+            filledButton.setColor(fillColor.withAlpha(filledButton.highlightedAlpha), for: .highlighted)
+            filledButton.setTitleColor(ColorScheme.text.inverted, for: .normal)
+        })
+        
+        return button
     }
 }
 
 
-// MARK: Update Color Helpers
+// MARK: Dim Implementation
 private extension FilledButton {
-    func _updateNormalColor() {
-        self.setColor(self.fillColor, for: .normal)
-    }
-    
-    func _updateHighlightedColor() {
-        self.setColor(self.fillColor.withAlpha(self.highlightedAlpha), for: .highlighted)
+    func _dim(_ dim: Bool) {
+        guard dim != self._isDimmed else { return }
+        self._isDimmed = dim
+        self.adjustColors()
     }
 }
