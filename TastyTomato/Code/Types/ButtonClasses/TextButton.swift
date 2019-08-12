@@ -12,22 +12,20 @@ import Foundation
 // MARK: // Public
 // MARK: Interface
 public extension TextButton {
+    // Factories
+    static func makeForgotPasswordButton() -> TextButton {
+        return ._makeForgotPasswordButton()
+    }
+    
+    // ReadWrite
     var highlightedAlpha: CGFloat {
-        get {
-            return self._highlightedAlpha
-        }
-        set(newHighlightedAlpha) {
-            self._highlightedAlpha = newHighlightedAlpha
-        }
+        get { return self._highlightedAlpha }
+        set { self._highlightedAlpha = newValue }
     }
     
     var underlined: Bool {
-        get {
-            return self._underlined
-        }
-        set(newUnderlined) {
-            self._underlined = newUnderlined
-        }
+        get { return self._underlined }
+        set { self._underlined = newValue }
     }
 }
 
@@ -59,9 +57,7 @@ public class TextButton: BaseButton {
 // MARK: Computed Variables
 private extension TextButton {
     var _highlightedAlpha: CGFloat {
-        get {
-            return self.__highlightedAlpha
-        }
+        get { return self.__highlightedAlpha }
         set(newHighlightedAlpha) {
             guard newHighlightedAlpha != self.__highlightedAlpha else { return }
             self.__highlightedAlpha = newHighlightedAlpha
@@ -72,13 +68,11 @@ private extension TextButton {
     }
     
     var _underlined: Bool {
-        get {
-            return self.__underlined
-        }
+        get { return self.__underlined }
         set(newUnderlined) {
             guard newUnderlined != self.__underlined else { return }
             self.__underlined = newUnderlined
-            self._updateAttributedTitle(for: state)
+            self._updateAttributedTitle(for: self.state)
         }
     }
 }
@@ -159,6 +153,23 @@ private extension TextButton {
         ]
         
         return NSAttributedString(string: title, attributes: attributes)
+    }
+}
+
+
+// MARK: Factory Implementations
+private extension TextButton {
+    static func _makeForgotPasswordButton() -> TextButton {
+        let button: TextButton = TextButton()
+        button.setColorAdjustment({
+            ($0 as? TextButton)?.setTitleColor(ColorScheme.text.default, for: .normal)
+        })
+        button.adjustsWidthOnTitleSet = false
+        button.titleLabel!.font = .xs
+        button.setTitle(NSL_("Forgotten your password?"))
+        button.underlined = true
+        button.sizeToFit()
+        return button
     }
 }
 
