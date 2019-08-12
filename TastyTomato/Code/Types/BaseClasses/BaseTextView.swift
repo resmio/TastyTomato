@@ -30,8 +30,11 @@ public class BaseTextView: UITextView {
 // MARK: Common Init
 private extension BaseTextView {
     func _init() {
-        self.layer.borderColor = UIColor.grayDDDDDD.cgColor
-        self.textColor = .gray555555
+        self.setColorAdjustment({
+            $0.layer.borderColor = ColorScheme.lines.borderUnfocussed.cgColor
+            let textView: UITextView? = $0 as? UITextView
+            textView?.textColor = ColorScheme.text.default
+        })
         
         let layer: CALayer = self.layer
         layer.cornerRadius = 4
