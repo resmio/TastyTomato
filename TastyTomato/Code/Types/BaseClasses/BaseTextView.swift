@@ -12,31 +12,36 @@ import UIKit
 // MARK: // Public
 // MARK: Class Declaration
 public class BaseTextView: UITextView {
+    // Required Init
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self._setup()
+        self._init()
     }
     
+    // Override Init
     public override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
-        self._setup()
+        self._init()
     }
 }
 
 
 // MARK: // Private
-// MARK: Setup
+// MARK: Common Init
 private extension BaseTextView {
-    func _setup() {
-        self.layer.cornerRadius = 4
-        self.layer.borderWidth = 1
+    func _init() {
         self.layer.borderColor = UIColor.grayDDDDDD.cgColor
+        self.textColor = .gray555555
+        
+        let layer: CALayer = self.layer
+        layer.cornerRadius = 4
+        layer.borderWidth = 1
+        
         self.clipsToBounds = true
         
         self.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
         self.font = .m
-        self.textColor = .gray555555
         self.autocapitalizationType = .none
         self.autocorrectionType = .no
     }
