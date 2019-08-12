@@ -24,7 +24,7 @@ public extension UIView {
     }
     
     // Setters
-    func setColorAdjustment(_ colorAdjustment: @escaping (UIView) -> Void) {
+    func setColorAdjustment(_ colorAdjustment: ((UIView) -> Void)?) {
         self._setColorAdjustment(colorAdjustment)
     }
 }
@@ -35,8 +35,12 @@ public extension UIView {
 private extension UIView {
     static var _colorAdjusters: WeakKeyDict<UIView, ColorAdjuster> = [:]
 
-    func _setColorAdjustment(_ colorAdjustment: @escaping (UIView) -> Void) {
-        UIView._colorAdjusters[self] = ColorAdjuster(colorAdjustment)
-        colorAdjustment(self)
+    func _setColorAdjustment(_ colorAdjustment: ((UIView) -> Void)?) {
+        if let adjustment: (UIView) -> Void = colorAdjustment {
+            UIView._colorAdjusters[self] = ColorAdjuster(adjustment)
+            colorAdjustment(self)
+        } else {
+            UIView._colorAdjusters[self] = nil
+        }
     }
 }
