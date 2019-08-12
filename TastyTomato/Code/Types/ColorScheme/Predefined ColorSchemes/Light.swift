@@ -148,6 +148,7 @@ import Foundation
             
             // MARK: // Specific
             // MARK: MainMenuView
+            mainMenuHeader: .whiteFFFFFF,
             mainMenuItem: .grayDDDDDD, // navigationBarTextColor
             mainMenuSelectedItem: .whiteFFFFFF, // selectedItemNavigationsBarTextColor
             

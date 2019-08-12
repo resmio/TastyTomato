@@ -204,6 +204,7 @@ public extension ColorScheme {
         
         // MARK: // Specific
         // MARK: MainMenuView
+        public let mainMenuHeader: UIColor
         public let mainMenuItem: UIColor
         public let mainMenuSelectedItem: UIColor
         
