@@ -13,16 +13,20 @@ import Foundation
 // MARK: Interface
 public extension FilledButton {
     // Factories
-    static func makeDefaultButton(title: String) -> FilledButton {
-        return ._makeDefaultButton(title: title)
+    static func makeBlueButton(title: String) -> FilledButton {
+        return ._makeBlueButton(title: title)
     }
     
     static func makeSignInButton() -> FilledButton {
-        return .makeDefaultButton(title: NSL_("Sign in"))
+        return .makeBlueButton(title: NSL_("Sign in"))
     }
     
     static func makeSelectButton() -> FilledButton {
-        return .makeDefaultButton(title: NSL_("Select"))
+        return .makeBlueButton(title: NSL_("Select"))
+    }
+    
+    static func makeDeleteButton() -> FilledButton {
+        return ._makeDeleteButton()
     }
     
     // Dim
@@ -46,13 +50,8 @@ public class FilledButton: BaseButton {
 // MARK: // Private
 // MARK: Factories
 private extension FilledButton {
-    static func _makeDefaultButton(title: String) -> FilledButton {
-        let button: FilledButton = FilledButton()
-        button.setTitle(title)
-        button.titleLabel!.font = .s
-        button.adjustsWidthOnTitleSet = false
-        button.height = 44
-        
+    static func _makeBlueButton(title: String) -> FilledButton {
+        let button: FilledButton = ._makeDefaultButton(title: title)
         button.setColorAdjustment({
             guard let filledButton: FilledButton = $0 as? FilledButton else { return }
             let background: ColorScheme.Background = ColorScheme.background
@@ -62,7 +61,28 @@ private extension FilledButton {
             filledButton.setColor(fillColor.withAlpha(filledButton.highlightedAlpha), for: .highlighted)
             filledButton.setTitleColor(ColorScheme.text.filledButton, for: .normal)
         })
-        
+        return button
+    }
+    
+    static func _makeDeleteButton() -> FilledButton {
+        let button: FilledButton = ._makeDefaultButton(title: NSL_("Delete"))
+        button.titleLabel!.font = .xs
+        button.setColorAdjustment({
+            guard let filledButton: FilledButton = $0 as? FilledButton else { return }
+            let fillColor: UIColor = ColorScheme.background.deleteButton
+            filledButton.setColor(fillColor, for: .normal)
+            filledButton.setColor(fillColor.withAlpha(filledButton.highlightedAlpha), for: .highlighted)
+            filledButton.setTitleColor(ColorScheme.text.filledButton, for: .normal)
+        })
+        return button
+    }
+    
+    static func _makeDefaultButton(title: String) -> FilledButton {
+        let button: FilledButton = FilledButton()
+        button.setTitle(title)
+        button.titleLabel!.font = .s
+        button.adjustsWidthOnTitleSet = false
+        button.height = 44
         return button
     }
 }
