@@ -44,7 +44,7 @@ private extension BaseTextView {
         
         self.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
-        self.font = .m
+        self.font = .s
         self.autocapitalizationType = .none
         self.autocorrectionType = .no
     }
