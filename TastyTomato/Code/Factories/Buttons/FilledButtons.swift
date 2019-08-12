@@ -11,23 +11,23 @@ import Foundation
 
 // MARK: // Public
 public extension FilledButton {
-    static func makeDefaultBlueButton(title: String) -> FilledButton {
-        return self._makeDefaultBlueButton(title: title)
+    static func makeDefaultButton(title: String) -> FilledButton {
+        return self._makeDefaultButton(title: title)
     }
     
     static func makeSignInButton() -> FilledButton {
-        return self._makeDefaultBlueButton(title: NSL_("Sign in"))
+        return self._makeDefaultButton(title: NSL_("Sign in"))
     }
     
     static func makeSelectButton() -> FilledButton {
-        return self._makeDefaultBlueButton(title: NSL_("Select"))
+        return self._makeDefaultButton(title: NSL_("Select"))
     }
 }
 
 
 // MARK: // Private
 private extension FilledButton {
-    static func _makeDefaultBlueButton(title: String) -> FilledButton {
+    static func _makeDefaultButton(title: String) -> FilledButton {
         let button: FilledButton = FilledButton()
         
         button.setTitle(title)
