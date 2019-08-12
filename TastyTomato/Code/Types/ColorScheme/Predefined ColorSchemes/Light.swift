@@ -144,6 +144,7 @@ import Foundation
             valueLabel: .gray555555,
             placeholder: .grayCCCCCC, // inputHelpTextColor
             highlighted: .blue00A7C4, // today/highlightedTextColor
+            filledButton: .whiteFFFFFF,
             
             // MARK: // Specific
             // MARK: MainMenuView

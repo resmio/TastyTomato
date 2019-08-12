@@ -60,7 +60,7 @@ private extension FilledButton {
             let fillColor: UIColor = dimmed ? background.filledButtonDimmed : background.filledButton
             filledButton.setColor(fillColor, for: .normal)
             filledButton.setColor(fillColor.withAlpha(filledButton.highlightedAlpha), for: .highlighted)
-            filledButton.setTitleColor(ColorScheme.text.inverted, for: .normal)
+            filledButton.setTitleColor(ColorScheme.text.filledButton, for: .normal)
         })
         
         return button

@@ -200,6 +200,7 @@ public extension ColorScheme {
         public let valueLabel: UIColor
         public let placeholder: UIColor
         public let highlighted: UIColor
+        public let filledButton: UIColor
         
         // MARK: // Specific
         // MARK: MainMenuView
