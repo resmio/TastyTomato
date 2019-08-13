@@ -76,8 +76,8 @@ import Foundation
             notificationsView: .blue293140, // notificationfeedBackgroundColor
             notificationsViewSectionHeader: .blue333B4F, // notificationfeedheadingsBackgroundColor
             noteCell: UIColor.blue00A7C4.withAlpha(0.2), // notificationfeedNotesBackgroundColor
-            taskCellUnread: UIColor.yellowF8C150.withAlpha(0.2), // notificationsfeedNewOpenTasksBackgroundColor
-            taskCellRead: .whiteFFFFFF, // notificationsfeedReadOpenTasksBackgroundColor
+            taskCellUnread: .yellowFFF2D8, // notificationsfeedNewOpenTasksBackgroundColor
+            taskCellRead: .clear, // notificationsfeedReadOpenTasksBackgroundColor
             
             // MARK: OfflinePopover
             offlineView: .blue293140, // noInternetAlertBackgroundColor
