@@ -28,7 +28,6 @@ import Foundation
             createButton: .blue00A7C4, // createButton
             deleteButton: .redE62C4F, // deleteButton
             switchOn: .blue00A7C4, // switchButtonON
-            switchOff: .whiteF7F7F7, // switchButtonOFF
             warningTextView: .yellowF8C150,
             
             // MARK: // Specific

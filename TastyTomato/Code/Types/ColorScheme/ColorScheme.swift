@@ -88,7 +88,6 @@ public extension ColorScheme {
         public let createButton: UIColor
         public let deleteButton: UIColor
         public let switchOn: UIColor
-        public let switchOff: UIColor
         public let warningTextView: UIColor
         
         // MARK: // Specific

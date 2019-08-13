@@ -31,7 +31,6 @@ public class BaseSwitch: UISwitch {
             let swtch: BaseSwitch? = $0 as? BaseSwitch
             swtch?.tintColor = ColorScheme.lines.switchBorder
             swtch?.onTintColor = ColorScheme.background.switchOn
-            swtch?.backgroundColor = ColorScheme.background.switchOff
         })
     }
 }
