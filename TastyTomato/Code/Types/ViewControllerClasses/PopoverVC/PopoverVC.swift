@@ -160,7 +160,7 @@ open class PopoverVC: UIViewController {
     
     // Readonly Overridable
     open var defaultBackgroundColor: UIColor {
-        return .white
+        return ColorScheme.background.defaultPopover
     }
 }
 
@@ -340,7 +340,7 @@ private extension PopoverVC {
                 set { self._displaysBorderShadow = newValue }
             }
             
-            private static var _backgroundColor: UIColor = .white
+            private static var _backgroundColor: UIColor = ColorScheme.background.defaultPopover
             private static var _dimsBackground: Bool = true
             private static var _displaysBorderShadow: Bool = true
         }
