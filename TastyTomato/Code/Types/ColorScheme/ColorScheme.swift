@@ -164,9 +164,9 @@ public extension ColorScheme {
         
         // MARK: // Specific
         // MARK: MainTitleView
-        public let buttonBorder: UIColor
+        public let mainTitleViewButtonBorder: UIColor
         public let hamburgerIcon: UIColor
-        public let arrowIcon: UIColor
+        public let mainTitleViewArrowIcon: UIColor
         public let nowButtonEnabled: UIColor
         public let nowButtonDisabled: UIColor
         public let offlineIcon: UIColor

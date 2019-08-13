@@ -106,9 +106,9 @@ import Foundation
             
             // MARK: // Specific
             // MARK: MainTitleView
-            buttonBorder: .blue3F4962, // buttonBorderColor (all, except hamburger)
+            mainTitleViewButtonBorder: .blue3F4962, // buttonBorderColor (all, except hamburger)
             hamburgerIcon: .whiteFFFFFF, // hamburgerIcon
-            arrowIcon: .whiteFFFFFF, // arrows / time / date
+            mainTitleViewArrowIcon: .whiteFFFFFF, // arrows / time / date
             nowButtonEnabled: .whiteFFFFFF, // nowButtonActiveBorderColor
             nowButtonDisabled: .blue3F4962, // nowButtonBorderInactiveColor
             offlineIcon: .redE62C4F, // noInternetIcon

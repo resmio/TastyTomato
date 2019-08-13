@@ -99,16 +99,16 @@ import Foundation
             switchBorder: .grayCCCCCC, // switchButtonOutline
             stepperTint: .whiteFFFFFF, // minusPlusButton
             segmentedControl: .blue00A7C4, // selectButton
-            defaultIcon: .gray555555, // iconsOnWhitebackground
-            invertedIcon: .whiteFFFFFF, // iconsOnDarkbackground
+            defaultIcon: .whiteFFFFFF, // iconsOnWhitebackground
+            invertedIcon: .gray555555, // iconsOnDarkbackground
             highlighted: .blue00A7C4, // today/highlightedTextColor
             warning: .yellowF8C150,
             
             // MARK: // Specific
             // MARK: MainTitleView
-            buttonBorder: .blue3F4962, // buttonBorderColor (all, except hamburger)
+            mainTitleViewButtonBorder: .blue3F4962, // buttonBorderColor (all, except hamburger)
             hamburgerIcon: .whiteFFFFFF, // hamburgerIcon
-            arrowIcon: .whiteFFFFFF, // arrows / time / date
+            mainTitleViewArrowIcon: .whiteFFFFFF, // arrows / time / date
             nowButtonEnabled: .whiteFFFFFF, // nowButtonActiveBorderColor
             nowButtonDisabled: .blue333B4F, // nowButtonBorderInactiveColor
             offlineIcon: .redE62C4F, // noInternetIcon
