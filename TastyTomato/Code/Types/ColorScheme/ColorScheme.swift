@@ -10,8 +10,32 @@ import UIKit
 
 
 // MARK: // Public
-// MARK: Interface
+// MARK: Objc Extrawurst
 @objc public extension ColorScheme {
+    static var defaultBackground: UIColor {
+        return self.background.default
+    }
+    
+    static var switchOnTint: UIColor {
+        return self.lines.switchOnTint
+    }
+    
+    static var titleText: UIColor {
+        return self.text.titleLabel
+    }
+    
+    static var valueText: UIColor {
+        return self.text.valueLabel
+    }
+    
+    static var placeholderText: UIColor {
+        return self.text.placeholder
+    }
+}
+
+
+// MARK: Interface
+public extension ColorScheme {
     // Current ColorScheme
     static var current: ColorScheme {
         get { return self.__current }
