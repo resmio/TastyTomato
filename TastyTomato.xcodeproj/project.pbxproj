@@ -79,6 +79,7 @@
 		AC9D9866E065E12DCB2AD07AC6627022 /* TastyTomato.h in Headers */ = {isa = PBXBuildFile; fileRef = 083386230915027A1693F0088C82312B /* TastyTomato.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCA3B0989D99B356D42394A91C5D95A /* CAShapeLayer (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACEC5A50D3C8A05F4477DA6013A23F /* CAShapeLayer (ConvenienceInits).swift */; };
 		ADE31E9B1E8FA3E2E5FE2F1454CAB67A /* CalendarDaysVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AEE256D89E4C6411A148D5C6C1B7D5 /* CalendarDaysVC.swift */; };
+		AF0D5A671E352F345F27F7B1CA92416F /* BaseSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A3ADDD2B28679F6DCBDD186376261 /* BaseSlider.swift */; };
 		B29BDBA0023131D713E51F8D95B96ADA /* UITableView (reloadSoftly).swift in Sources */ = {isa = PBXBuildFile; fileRef = B242DBFE7AC263A838F81DB66F8D7280 /* UITableView (reloadSoftly).swift */; };
 		BC59F8A8FD33C76221899BD6785BA268 /* ArrowIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618FAC31D63B49A68A9BAAAA6340A75A /* ArrowIcon.swift */; };
 		BC76266AA1CF72ADF61A38D4EDB8C2A7 /* Pods_TastyTomatoAbstract_TastyTomato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7FFA17FC0A5D6DF5FAF4475A4BE503 /* Pods_TastyTomatoAbstract_TastyTomato.framework */; };
@@ -123,6 +124,7 @@
 		017FD5AC4B77DD63D2FB3296908EAF16 /* KeyboardStateListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardStateListener.swift; sourceTree = "<group>"; };
 		019B1845FE1BCB19271320DCDCAE1B32 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		039A3ADDD2B28679F6DCBDD186376261 /* BaseSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlider.swift; sourceTree = "<group>"; };
 		0538E4586B05FE6B1C4EC4E6CD98C6C1 /* TastyTomato.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TastyTomato.playground; sourceTree = "<group>"; };
 		05BA18CC2F9A526F518B9C154D07DDC7 /* UIScrollView (ZoomingConvenience).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView (ZoomingConvenience).swift"; sourceTree = "<group>"; };
 		083386230915027A1693F0088C82312B /* TastyTomato.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TastyTomato.h; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				E3501BBD5DF0C52C788CB5796A659BD6 /* BaseButton.swift */,
 				9AC1248BC9394D8C6F465C9ED2087AB2 /* BaseLabel.swift */,
 				8AC1872E16F4B9C5B698F6D9DA194801 /* BaseSegmentedControl.swift */,
+				039A3ADDD2B28679F6DCBDD186376261 /* BaseSlider.swift */,
 				60E673F27573D53E526C110022D33D60 /* BaseStepper.swift */,
 				75A192A26977F441FC22B8266DAAB0C3 /* BaseSwitch.swift */,
 				526EBCB4C91C9664B47B9B7BE021F1D8 /* BaseTextField.swift */,
@@ -1074,6 +1077,7 @@
 				D877D7AC8688BD38070B988CEC7606B3 /* BaseButton.swift in Sources */,
 				1EACCEE0A46BC7B7C1FD1275EC3BD727 /* BaseLabel.swift in Sources */,
 				48555BBB7874BD35C047A1C494FCE3FE /* BaseSegmentedControl.swift in Sources */,
+				AF0D5A671E352F345F27F7B1CA92416F /* BaseSlider.swift in Sources */,
 				6DE61322645064D2A6EFF6370F5DEB6B /* BaseStepper.swift in Sources */,
 				2D680F6FE41FE9C609AD5BD6C2532DAD /* BaseSwitch.swift in Sources */,
 				30A753D9F75A4C9AC116385B122679A0 /* BaseTextField.swift in Sources */,
