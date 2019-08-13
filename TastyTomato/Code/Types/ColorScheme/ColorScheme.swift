@@ -155,6 +155,7 @@ public extension ColorScheme {
         public let switchTint: UIColor
         public let switchOnTint: UIColor
         public let stepperTint: UIColor
+        public let sliderTint: UIColor
         public let segmentedControl: UIColor
         public let defaultIcon: UIColor
         public let invertedIcon: UIColor

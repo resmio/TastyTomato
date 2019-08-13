@@ -97,6 +97,7 @@ import Foundation
             switchTint: .grayCCCCCC, // switchButtonOutline
             switchOnTint: .blue00A7C4, // switchButtonON
             stepperTint: .gray555555, // minusPlusButton
+            sliderTint: .blue00A7C4,
             segmentedControl: .blue00A7C4, // selectButton
             defaultIcon: .gray555555, // iconsOnWhitebackground
             invertedIcon: .whiteFFFFFF, // iconsOnDarkbackground
