@@ -53,13 +53,23 @@ class CalendarHeaderView: UIView {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self._addSubviews()
+        self._init()
     }
     
     // Override Init
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self._init()
+    }
+    
+    private func _init() {
         self._addSubviews()
+        self.setColorAdjustment({
+            guard let header: CalendarHeaderView = $0 as? CalendarHeaderView else { return }
+            let clear: CGColor = UIColor.clear.cgColor
+            let normal: CGColor = ColorScheme.background.default.cgColor
+            header._gradientLayer.colors = [normal, normal, clear, clear, normal, normal]
+        })
     }
     
     // Private Constants
@@ -87,11 +97,7 @@ class CalendarHeaderView: UIView {
 // MARK: Lazy Variable Creation
 private extension CalendarHeaderView {
     func _createGradientLayer() -> CAGradientLayer {
-        let whiteClear: CGColor = UIColor.white.withAlpha(0).cgColor
-        let white: CGColor = UIColor.white.cgColor
-        
         let gradientLayer: CAGradientLayer = CAGradientLayer()
-        gradientLayer.colors = [white, white, whiteClear, whiteClear, white, white]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
         return gradientLayer
@@ -99,7 +105,7 @@ private extension CalendarHeaderView {
     
     func _createLeftArrowButton() -> UIButton {
         let leftArrowButton: UIButton = UIButton(type: .system)
-        leftArrowButton.tintColor = .black
+        leftArrowButton.setColorAdjustment({ $0.tintColor = ColorScheme.lines.defaultIcon })
         leftArrowButton.setImage(ArrowIcon.Left.asTemplate().scaledByFactor(0.8), for: .normal)
         leftArrowButton.contentMode = .scaleAspectFit
         leftArrowButton.addTarget(
@@ -112,7 +118,7 @@ private extension CalendarHeaderView {
     
     func _createRightArrowButton() -> UIButton {
         let rightArrowButton: UIButton = UIButton(type: .system)
-        rightArrowButton.tintColor = .black
+        rightArrowButton.setColorAdjustment({ $0.tintColor = ColorScheme.lines.defaultIcon })
         rightArrowButton.setImage(ArrowIcon.Right.asTemplate().scaledByFactor(0.8), for: .normal)
         rightArrowButton.contentMode = .scaleAspectFit
         rightArrowButton.addTarget(
@@ -143,8 +149,8 @@ private extension CalendarHeaderView {
         
         return shiftedShortWeekdaySymbols.map({
             let dayNameLabel: UILabel = UILabel()
+            dayNameLabel.setColorAdjustment({ ($0 as? UILabel)?.textColor = ColorScheme.text.weekdayName })
             dayNameLabel.font = .xxs
-            dayNameLabel.textColor = .gray555555
             dayNameLabel.textAlignment = .center
             dayNameLabel.text = $0
             return dayNameLabel
