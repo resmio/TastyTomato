@@ -25,6 +25,10 @@ public extension TextButton {
         return ._makeCancelButton()
     }
     
+    static func makeDoneButton() -> TextButton {
+        return ._makeDoneButton()
+    }
+    
     // ReadWrite
     var highlightedAlpha: CGFloat {
         get { return self._highlightedAlpha }
@@ -203,8 +207,19 @@ private extension TextButton {
         return button
     }
     
+    static func _makeDoneButton() -> TextButton {
+        let button: TextButton = ._makeDefaultButton()
+        button.setColorAdjustment({
+            ($0 as? TextButton)?.setTitleColor(ColorScheme.text.doneButton, for: .normal)
+        })
+        button.setTitle(NSL_("Done"), for: .normal)
+        button.sizeToFit()
+        return button
+    }
+    
     static func _makeDefaultButton() -> TextButton {
         let button: TextButton = TextButton()
+        button.showsTouchWhenHighlighted = true
         button.adjustsWidthOnTitleSet = false
         button.titleLabel!.font = .m
         return button
