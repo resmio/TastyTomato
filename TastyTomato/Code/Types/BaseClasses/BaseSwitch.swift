@@ -29,8 +29,8 @@ public class BaseSwitch: UISwitch {
         self.layer.cornerRadius = self.height / 2
         self.setColorAdjustment({
             let swtch: BaseSwitch? = $0 as? BaseSwitch
-            swtch?.tintColor = ColorScheme.lines.switchBorder
-            swtch?.onTintColor = ColorScheme.background.switchOn
+            swtch?.tintColor = ColorScheme.lines.switchTint
+            swtch?.onTintColor = ColorScheme.lines.switchOnTint
         })
     }
 }

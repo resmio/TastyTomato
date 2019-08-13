@@ -27,7 +27,6 @@ import Foundation
             filledButtonDimmed: .blueC0F6FF,
             createButton: .blue00A7C4, // createButton
             deleteButton: .redE62C4F, // deleteButton
-            switchOn: .blue00A7C4, // switchButtonON
             warningTextView: .yellowF8C150,
             
             // MARK: // Specific
@@ -95,7 +94,8 @@ import Foundation
             separator: .blue1E2532, // separatorColor
             borderUnfocussed: .blue3F4962, // borderColor
             borderFocussed: .blue00A7C4, // focusBorderColor
-            switchBorder: .grayCCCCCC, // switchButtonOutline
+            switchTint: .grayCCCCCC, // switchButtonOutline
+            switchOnTint: .blue00A7C4, // switchButtonON
             stepperTint: .whiteFFFFFF, // minusPlusButton
             segmentedControl: .blue00A7C4, // selectButton
             defaultIcon: .whiteFFFFFF, // iconsOnWhitebackground

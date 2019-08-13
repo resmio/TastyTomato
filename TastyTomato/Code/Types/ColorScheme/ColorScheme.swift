@@ -87,7 +87,6 @@ public extension ColorScheme {
         public let filledButtonDimmed: UIColor
         public let createButton: UIColor
         public let deleteButton: UIColor
-        public let switchOn: UIColor
         public let warningTextView: UIColor
         
         // MARK: // Specific
@@ -153,7 +152,8 @@ public extension ColorScheme {
         public let separator: UIColor
         public let borderUnfocussed: UIColor
         public let borderFocussed: UIColor
-        public let switchBorder: UIColor
+        public let switchTint: UIColor
+        public let switchOnTint: UIColor
         public let stepperTint: UIColor
         public let segmentedControl: UIColor
         public let defaultIcon: UIColor
