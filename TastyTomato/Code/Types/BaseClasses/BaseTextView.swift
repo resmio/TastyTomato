@@ -30,6 +30,7 @@ public class BaseTextView: UITextView {
 // MARK: Common Init
 private extension BaseTextView {
     func _init() {
+        self.backgroundColor = .clear
         self.setColorAdjustment({
             $0.layer.borderColor = ColorScheme.lines.borderUnfocussed.cgColor
             let textView: UITextView? = $0 as? UITextView
