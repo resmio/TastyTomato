@@ -24,7 +24,7 @@ import Foundation
             defaultSelected: .blue00A7C4, // selection / focus
             newBookingFlow: .blue293140, // walkIn / newBookingBackgroundColor
             filledButton: .blue00A7C4,
-            filledButtonDimmed: UIColor.blue00A7C4.withAlpha(0.2),
+            filledButtonDimmed: .blueC0F6FF,
             createButton: .blue00A7C4, // createButton
             deleteButton: .redE62C4F, // deleteButton
             switchOn: .blue00A7C4, // switchButtonON
@@ -75,7 +75,7 @@ import Foundation
             notificationButtonBadge: .redE62C4F, // notificationBadgeBackgroundColor
             notificationsView: .blue293140, // notificationfeedBackgroundColor
             notificationsViewSectionHeader: .blue333B4F, // notificationfeedheadingsBackgroundColor
-            noteCell: UIColor.blue00A7C4.withAlpha(0.2), // notificationfeedNotesBackgroundColor
+            noteCell: .blueC0F6FF, // notificationfeedNotesBackgroundColor
             taskCellUnread: .yellowFFF2D8, // notificationsfeedNewOpenTasksBackgroundColor
             taskCellRead: .clear, // notificationsfeedReadOpenTasksBackgroundColor
             
