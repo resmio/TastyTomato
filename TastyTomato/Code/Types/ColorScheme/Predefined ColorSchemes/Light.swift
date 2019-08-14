@@ -18,11 +18,13 @@ import Foundation
         // MARK: // Background
         background_: Background(
             // MARK: // General
+            default: .whiteFFFFFF,
             navigationBar: .blue333B4F, // headerBackgroundColor
             defaultPopover: .whiteFFFFFF, // popoverBackgroundColor
             defaultSelected: .blue00A7C4, // selection / focus
             newBookingFlow: .whiteFFFFFF, // walkIn / newBookingBackgroundColor
-            selectButton: .blue00A7C4, // selectButton
+            filledButton: .blue00A7C4,
+            filledButtonDimmed: UIColor.blue00A7C4.withAlpha(0.2),
             createButton: .blue00A7C4, // createButton
             deleteButton: .redE62C4F, // deleteButton
             switchOn: .blue00A7C4, // switchButtonON
@@ -31,7 +33,6 @@ import Foundation
             // MARK: // Specific
             // MARK: LoginView
             login: .whiteFFFFFF, // SignInBackgroundColor (background image +)
-            signInButton: .blue00A7C4, // SignInButton
             
             // MARK: MainMenuView
             mainMenu: .blue333B4F, // navigationbarBackgroundColor
@@ -101,6 +102,7 @@ import Foundation
             segmentedControl: .blue00A7C4, // selectButton
             defaultIcon: .gray555555, // iconsOnWhitebackground
             invertedIcon: .whiteFFFFFF, // iconsOnDarkbackground
+            highlighted: .blue00A7C4, // today/highlightedTextColor
             
             // MARK: // Specific
             // MARK: MainTitleView

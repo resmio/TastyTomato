@@ -15,7 +15,7 @@ import SignificantSpices
 public extension UIView {
     // Adjust Colors Of All Registered Views
     static func adjustColorsOfAllRegisteredViews() {
-        self._colorAdjusters.forEach({ $1.adjust($0) })
+        UIView.animate(withDuration: 0.2) { self._colorAdjusters.forEach({ $1.adjust($0) }) }
     }
     
     // Adjust Colors Of This View

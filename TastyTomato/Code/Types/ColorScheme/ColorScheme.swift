@@ -25,6 +25,26 @@ import UIKit
 }
 
 
+// MARK: nonobjc Shorthands
+@nonobjc public extension ColorScheme {
+    static var background: Background {
+        return self.current.background
+    }
+    
+    static var lines: Lines {
+        return self.current.lines
+    }
+    
+    static var text: Text {
+        return self.current.text
+    }
+    
+    static var bookingStatus: BookingStatus {
+        return self.current.bookingStatus
+    }
+}
+
+
 // MARK: -
 // MARK: -
 // MARK: Class Declaration
@@ -58,11 +78,13 @@ public extension ColorScheme {
     // Nested Types
     struct Background {
         // MARK: // General
+        public let `default`: UIColor
         public let navigationBar: UIColor
         public let defaultPopover: UIColor
         public let defaultSelected: UIColor
         public let newBookingFlow: UIColor
-        public let selectButton: UIColor
+        public let filledButton: UIColor
+        public let filledButtonDimmed: UIColor
         public let createButton: UIColor
         public let deleteButton: UIColor
         public let switchOn: UIColor
@@ -71,7 +93,6 @@ public extension ColorScheme {
         // MARK: // Specific
         // MARK: LoginView
         public let login: UIColor
-        public let signInButton: UIColor
         
         // MARK: MainMenuView
         public let mainMenu: UIColor
@@ -139,6 +160,7 @@ public extension ColorScheme {
         public let segmentedControl: UIColor
         public let defaultIcon: UIColor
         public let invertedIcon: UIColor
+        public let highlighted: UIColor
         
         // MARK: // Specific
         // MARK: MainTitleView
