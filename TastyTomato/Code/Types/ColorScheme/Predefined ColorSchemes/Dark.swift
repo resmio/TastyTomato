@@ -24,11 +24,10 @@ import Foundation
             defaultSelected: .blue00A7C4, // selection / focus
             newBookingFlow: .blue293140, // walkIn / newBookingBackgroundColor
             filledButton: .blue00A7C4,
-            filledButtonDimmed: UIColor.blue00A7C4.withAlpha(0.2),
+            filledButtonDimmed: .blueC0F6FF,
             createButton: .blue00A7C4, // createButton
             deleteButton: .redE62C4F, // deleteButton
-            switchOn: .blue00A7C4, // switchButtonON
-            switchOff: .whiteF7F7F7, // switchButtonOFF
+            warningTextView: .yellowF8C150,
             
             // MARK: // Specific
             // MARK: LoginView
@@ -52,8 +51,6 @@ import Foundation
             
             // MARK: ChooseTablesView
             numOfSeatsInfoPerfect: .green22CCAA, // newBookingSeatsPerfect
-            numOfSeatsInfoWarning: .yellowF8C150, // newBookingSeatsAreNeeded /Overlapping
-            overlapWarning: .yellowF8C150, // newBookingSeatsAreNeeded /Overlapping
             
             // MARK: TischView
             freeTable: .gray999999, // freeTable
@@ -76,9 +73,9 @@ import Foundation
             notificationButtonBadge: .redE62C4F, // notificationBadgeBackgroundColor
             notificationsView: .blue293140, // notificationfeedBackgroundColor
             notificationsViewSectionHeader: .blue333B4F, // notificationfeedheadingsBackgroundColor
-            noteCell: UIColor.blue00A7C4.withAlpha(0.2), // notificationfeedNotesBackgroundColor
-            taskCellUnread: UIColor.yellowF8C150.withAlpha(0.2), // notificationsfeedNewOpenTasksBackgroundColor
-            taskCellRead: .whiteFFFFFF, // notificationsfeedReadOpenTasksBackgroundColor
+            noteCell: .blueC0F6FF, // notificationfeedNotesBackgroundColor
+            taskCellUnread: .yellowFFF2D8, // notificationsfeedNewOpenTasksBackgroundColor
+            taskCellRead: .clear, // notificationsfeedReadOpenTasksBackgroundColor
             
             // MARK: OfflinePopover
             offlineView: .blue293140, // noInternetAlertBackgroundColor
@@ -97,18 +94,21 @@ import Foundation
             separator: .blue1E2532, // separatorColor
             borderUnfocussed: .blue3F4962, // borderColor
             borderFocussed: .blue00A7C4, // focusBorderColor
-            switchBorder: .grayCCCCCC, // switchButtonOutline
+            switchTint: .grayCCCCCC, // switchButtonOutline
+            switchOnTint: .blue00A7C4, // switchButtonON
             stepperTint: .whiteFFFFFF, // minusPlusButton
+            sliderTint: .blue00A7C4,
             segmentedControl: .blue00A7C4, // selectButton
-            defaultIcon: .gray555555, // iconsOnWhitebackground
-            invertedIcon: .whiteFFFFFF, // iconsOnDarkbackground
+            defaultIcon: .whiteFFFFFF, // iconsOnWhitebackground
+            invertedIcon: .gray555555, // iconsOnDarkbackground
             highlighted: .blue00A7C4, // today/highlightedTextColor
+            warning: .yellowF8C150,
             
             // MARK: // Specific
             // MARK: MainTitleView
-            buttonBorder: .blue3F4962, // buttonBorderColor (all, except hamburger)
+            mainTitleViewButtonBorder: .blue3F4962, // buttonBorderColor (all, except hamburger)
             hamburgerIcon: .whiteFFFFFF, // hamburgerIcon
-            arrowIcon: .whiteFFFFFF, // arrows / time / date
+            mainTitleViewArrowIcon: .whiteFFFFFF, // arrows / time / date
             nowButtonEnabled: .whiteFFFFFF, // nowButtonActiveBorderColor
             nowButtonDisabled: .blue333B4F, // nowButtonBorderInactiveColor
             offlineIcon: .redE62C4F, // noInternetIcon
@@ -144,9 +144,12 @@ import Foundation
             valueLabel: .whiteFFFFFF,
             placeholder: .blue3F4962, // inputHelpTextColor
             highlighted: .blue00A7C4, // today/highlightedTextColor
+            filledButton: .whiteFFFFFF,
+            warningTextView: .whiteFFFFFF,
             
             // MARK: // Specific
             // MARK: MainMenuView
+            mainMenuHeader: .whiteFFFFFF,
             mainMenuItem: .grayDDDDDD, // navigationBarTextColor
             mainMenuSelectedItem: .whiteFFFFFF, // selectedItemNavigationsBarTextColor
             

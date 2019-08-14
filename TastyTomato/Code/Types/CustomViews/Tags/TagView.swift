@@ -49,6 +49,7 @@ public class TagView: UIView {
     // Init
     public init(name: String) {
         super.init(frame: CGRect(size: CGSize(height: TagView.defaultHeight)))
+        self.backgroundColor = .white
         
         let label: UILabel = self._label
         label.text = name
@@ -79,6 +80,7 @@ public class TagView: UIView {
     fileprivate weak var _delegate: TagViewDelegate?
     
     // Private Lazy Variables
+    private lazy var _backgroundView: UIView = UIView()
     fileprivate lazy var _leftBannerView: UIView = self._createLeftBannerView()
     fileprivate lazy var _label: UILabel = self._createLabel()
     
@@ -91,6 +93,14 @@ public class TagView: UIView {
     // Layout Overrides
     public override func sizeThatFits(_ size: CGSize) -> CGSize {
         return self._sizeThatFits(size)
+    }
+    
+    public override var frame: CGRect {
+        get { return super.frame }
+        set(newFrame) {
+            super.frame = newFrame
+            self._backgroundView.size = newFrame.size
+        }
     }
 }
 
@@ -203,6 +213,7 @@ private extension TagView {
 // MARK: Add Subviews
 private extension TagView {
     func _addSubviews() {
+        self.addSubview(self._backgroundView)
         self.addSubview(self._leftBannerView)
         self.addSubview(self._label)
         
@@ -216,7 +227,7 @@ private extension TagView {
 // MARK: Set Color
 private extension TagView {
     func _setColor(_ color: UIColor, temporary: Bool) {
-        self.backgroundColor = color.withAlpha(TagView._backgroundAlpha)
+        self._backgroundView.backgroundColor = color.withAlpha(TagView._backgroundAlpha)
         self.layer.borderColor = color.cgColor
         self._leftBannerView.backgroundColor = color
         if !temporary {

@@ -26,13 +26,19 @@ class CalendarVCView: UIView {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self._addSubviews()
+        self._init()
     }
     
     // Override Init
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self._init()
+    }
+    
+    // Common Init
+    private func _init() {
         self._addSubviews()
+        self.setColorAdjustment({ $0.backgroundColor = ColorScheme.background.default })
     }
     
     // Private Lazy Variables

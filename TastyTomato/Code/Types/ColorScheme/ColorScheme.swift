@@ -10,8 +10,32 @@ import UIKit
 
 
 // MARK: // Public
-// MARK: Interface
+// MARK: Objc Extrawurst
 @objc public extension ColorScheme {
+    static var defaultBackground: UIColor {
+        return self.background.default
+    }
+    
+    static var switchOnTint: UIColor {
+        return self.lines.switchOnTint
+    }
+    
+    static var titleText: UIColor {
+        return self.text.titleLabel
+    }
+    
+    static var valueText: UIColor {
+        return self.text.valueLabel
+    }
+    
+    static var placeholderText: UIColor {
+        return self.text.placeholder
+    }
+}
+
+
+// MARK: Interface
+public extension ColorScheme {
     // Current ColorScheme
     static var current: ColorScheme {
         get { return self.__current }
@@ -87,8 +111,7 @@ public extension ColorScheme {
         public let filledButtonDimmed: UIColor
         public let createButton: UIColor
         public let deleteButton: UIColor
-        public let switchOn: UIColor
-        public let switchOff: UIColor
+        public let warningTextView: UIColor
         
         // MARK: // Specific
         // MARK: LoginView
@@ -112,8 +135,6 @@ public extension ColorScheme {
         
         // MARK: ChooseTablesView
         public let numOfSeatsInfoPerfect: UIColor
-        public let numOfSeatsInfoWarning: UIColor
-        public let overlapWarning: UIColor
         
         // MARK: TischView
         public let freeTable: UIColor
@@ -155,18 +176,21 @@ public extension ColorScheme {
         public let separator: UIColor
         public let borderUnfocussed: UIColor
         public let borderFocussed: UIColor
-        public let switchBorder: UIColor
+        public let switchTint: UIColor
+        public let switchOnTint: UIColor
         public let stepperTint: UIColor
+        public let sliderTint: UIColor
         public let segmentedControl: UIColor
         public let defaultIcon: UIColor
         public let invertedIcon: UIColor
         public let highlighted: UIColor
+        public let warning: UIColor
         
         // MARK: // Specific
         // MARK: MainTitleView
-        public let buttonBorder: UIColor
+        public let mainTitleViewButtonBorder: UIColor
         public let hamburgerIcon: UIColor
-        public let arrowIcon: UIColor
+        public let mainTitleViewArrowIcon: UIColor
         public let nowButtonEnabled: UIColor
         public let nowButtonDisabled: UIColor
         public let offlineIcon: UIColor
@@ -200,9 +224,12 @@ public extension ColorScheme {
         public let valueLabel: UIColor
         public let placeholder: UIColor
         public let highlighted: UIColor
+        public let filledButton: UIColor
+        public let warningTextView: UIColor
         
         // MARK: // Specific
         // MARK: MainMenuView
+        public let mainMenuHeader: UIColor
         public let mainMenuItem: UIColor
         public let mainMenuSelectedItem: UIColor
         

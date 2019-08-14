@@ -163,7 +163,6 @@ extension CalendarVC: CalendarDaysVCDelegate {
 private extension CalendarVC {
     func _createCalendarVCView() -> CalendarVCView {
         let calendarVCView: CalendarVCView = CalendarVCView()
-        calendarVCView.backgroundColor = .white
         calendarVCView.headerView.delegate = self
         return calendarVCView
     }

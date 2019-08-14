@@ -12,22 +12,32 @@ import Foundation
 // MARK: // Public
 // MARK: Interface
 public extension TextButton {
+    // Factories
+    static func makeForgotPasswordButton() -> TextButton {
+        return ._makeForgotPasswordButton()
+    }
+    
+    static func makeSaveButton() -> TextButton {
+        return ._makeSaveButton()
+    }
+    
+    static func makeCancelButton() -> TextButton {
+        return ._makeCancelButton()
+    }
+    
+    static func makeDoneButton() -> TextButton {
+        return ._makeDoneButton()
+    }
+    
+    // ReadWrite
     var highlightedAlpha: CGFloat {
-        get {
-            return self._highlightedAlpha
-        }
-        set(newHighlightedAlpha) {
-            self._highlightedAlpha = newHighlightedAlpha
-        }
+        get { return self._highlightedAlpha }
+        set { self._highlightedAlpha = newValue }
     }
     
     var underlined: Bool {
-        get {
-            return self._underlined
-        }
-        set(newUnderlined) {
-            self._underlined = newUnderlined
-        }
+        get { return self._underlined }
+        set { self._underlined = newValue }
     }
 }
 
@@ -59,9 +69,7 @@ public class TextButton: BaseButton {
 // MARK: Computed Variables
 private extension TextButton {
     var _highlightedAlpha: CGFloat {
-        get {
-            return self.__highlightedAlpha
-        }
+        get { return self.__highlightedAlpha }
         set(newHighlightedAlpha) {
             guard newHighlightedAlpha != self.__highlightedAlpha else { return }
             self.__highlightedAlpha = newHighlightedAlpha
@@ -72,13 +80,11 @@ private extension TextButton {
     }
     
     var _underlined: Bool {
-        get {
-            return self.__underlined
-        }
+        get { return self.__underlined }
         set(newUnderlined) {
             guard newUnderlined != self.__underlined else { return }
             self.__underlined = newUnderlined
-            self._updateAttributedTitle(for: state)
+            self._updateAttributedTitle(for: self.state)
         }
     }
 }
@@ -159,6 +165,64 @@ private extension TextButton {
         ]
         
         return NSAttributedString(string: title, attributes: attributes)
+    }
+}
+
+
+// MARK: Factory Implementations
+private extension TextButton {
+    static func _makeForgotPasswordButton() -> TextButton {
+        let button: TextButton = TextButton()
+        button.setColorAdjustment({
+            ($0 as? TextButton)?.setTitleColor(ColorScheme.text.default, for: .normal)
+        })
+        button.adjustsWidthOnTitleSet = false
+        button.titleLabel!.font = .xs
+        button.setTitle(NSL_("Forgotten your password?"))
+        button.underlined = true
+        button.sizeToFit()
+        return button
+    }
+    
+    static func _makeSaveButton() -> TextButton {
+        let button: TextButton = ._makeDefaultButton()
+        button.setColorAdjustment({
+            let textButton: TextButton? = $0 as? TextButton
+            let textColor: UIColor = ColorScheme.text.saveButton
+            textButton?.setTitleColor(textColor, for: .normal)
+            textButton?.setTitleColor(textColor.withAlpha(0.2), for: .disabled)
+        })
+        button.setTitle(NSL_("Save"))
+        button.sizeToFit()
+        return button
+    }
+    
+    static func _makeCancelButton() -> TextButton {
+        let button: TextButton = ._makeDefaultButton()
+        button.setColorAdjustment({
+            ($0 as? TextButton)?.setTitleColor(ColorScheme.text.cancelButton, for: .normal)
+        })
+        button.setTitle(NSL_("Cancel"))
+        button.sizeToFit()
+        return button
+    }
+    
+    static func _makeDoneButton() -> TextButton {
+        let button: TextButton = ._makeDefaultButton()
+        button.setColorAdjustment({
+            ($0 as? TextButton)?.setTitleColor(ColorScheme.text.doneButton, for: .normal)
+        })
+        button.setTitle(NSL_("Done"), for: .normal)
+        button.sizeToFit()
+        return button
+    }
+    
+    static func _makeDefaultButton() -> TextButton {
+        let button: TextButton = TextButton()
+        button.showsTouchWhenHighlighted = true
+        button.adjustsWidthOnTitleSet = false
+        button.titleLabel!.font = .m
+        return button
     }
 }
 
