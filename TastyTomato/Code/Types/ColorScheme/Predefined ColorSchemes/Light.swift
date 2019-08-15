@@ -199,7 +199,8 @@ import Foundation
             backButton: .whiteFFFFFF, // backButton
             doneButton: .green22CCAA, // doneButton
             newButton: .blue00A7C4, // newButton
-            editButton: .blue00A7C4 // editButton
+            editButton: .blue00A7C4, // editButton
+            deleteButton: .redE62C4F
         ),
         
         // MARK: -

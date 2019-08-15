@@ -280,6 +280,7 @@ public extension ColorScheme {
         public let doneButton: UIColor
         public let newButton: UIColor
         public let editButton: UIColor
+        public let deleteButton: UIColor
     }
     
     struct BookingStatus {
