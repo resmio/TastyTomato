@@ -25,11 +25,11 @@ extension DateCell {
         self._label.font = font
     }
     
-    func setBackgroundColor(_ color: UIColor, for state: State) {
+    func setBackgroundColor(_ color: @escaping () -> UIColor, for state: State) {
         self._setBackgroundColor(color, for: state)
     }
     
-    func setTitleColor(_ color: UIColor, for state: State) {
+    func setTitleColor(_ color: @escaping () -> UIColor, for state: State) {
         self._setTitleColor(color, for: state)
     }
 }
@@ -61,16 +61,16 @@ class DateCell: UICollectionViewCell {
     private lazy var _label: UILabel = self._createLabel()
     
     // Private Variables
-    private var _backgroundColors: [State: UIColor] = [
-        .normal: .white,
-        .highlighted: UIColor.blue00A7C4.withAlpha(0.5),
-        .selected: .blue00A7C4
+    private var _backgroundColors: [State: () -> UIColor] = [
+        .normal: { ColorScheme.background.default },
+        .highlighted: { ColorScheme.background.selectedDay.withAlpha(0.5) },
+        .selected: { ColorScheme.background.selectedDay }
     ]
     
-    private var _titleColors: [State: UIColor] = [
-        .normal: .black,
-        .highlighted: .white,
-        .selected: .white
+    private var _titleColors: [State: () -> UIColor] = [
+        .normal: { .black },
+        .highlighted: { .white },
+        .selected: { .white }
     ]
     
     // Layout Overrides
@@ -113,14 +113,14 @@ private extension DateCell {
 
 // MARK: Setter Implementations
 private extension DateCell {
-    func _setTitleColor(_ color: UIColor, for state: State) {
+    func _setTitleColor(_ color: @escaping () -> UIColor, for state: State) {
         self._titleColors[state] = color
         if state == self._state {
             self._updateColors()
         }
     }
     
-    func _setBackgroundColor(_ color: UIColor, for state: State) {
+    func _setBackgroundColor(_ color: @escaping () -> UIColor, for state: State) {
         self._backgroundColors[state] = color
         if state == self._state {
             self._updateColors()
@@ -149,7 +149,7 @@ private extension DateCell {
 private extension DateCell {
     func _updateColors() {
         let state: State = self._state
-        self.backgroundColor = self._backgroundColors[state]
-        self._label.textColor = self._titleColors[state]
+        self.backgroundColor = self._backgroundColors[state]?()
+        self._label.textColor = self._titleColors[state]?()
     }
 }
