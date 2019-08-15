@@ -163,7 +163,7 @@ extension CalendarVC: CalendarDaysVCDelegate {
 private extension CalendarVC {
     func _createCalendarVCView() -> CalendarVCView {
         let calendarVCView: CalendarVCView = CalendarVCView()
-        calendarVCView.headerView.delegate = self
+        calendarVCView.headerView.setDelegate(self)
         return calendarVCView
     }
     

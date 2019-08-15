@@ -10,21 +10,21 @@ import UIKit
 
 
 // MARK: // Internal
-// MARK: - CalendarHeaderViewDelegate
+// MARK: -
 protocol CalendarHeaderViewDelegate: class {
     func tappedLeftArrowButton(on calendarHeaderView: CalendarHeaderView)
     func tappedRightArrowButton(on calendarHeaderView: CalendarHeaderView)
 }
 
 
-// MARK: - CalendarHeaderViewDesign
+// MARK: -
 struct CalendarHeaderViewDesign {
     var dayNamesFont: UIFont              = CalendarVCDesign.defaultDesign.dayNamesFont
     var dayNamesTextColor: () -> UIColor  = CalendarVCDesign.defaultDesign.dayNamesTextColor
 }
 
 
-// MARK: - CalendarHeaderView
+// MARK: -
 // MARK: Interface
 extension CalendarHeaderView {
     // Readonly
@@ -32,21 +32,16 @@ extension CalendarHeaderView {
         return self._titleFrame
     }
     
-    // ReadWrite
-    var delegate: CalendarHeaderViewDelegate? {
-        get {
-            return self._delegate
-        }
-        set(newDelegate) {
-            self._delegate = newDelegate
-        }
+    // Setters
+    func setDelegate(_ delegate: CalendarHeaderViewDelegate?) {
+        self._delegate = delegate
     }
     
-    // Functions
     func setDesign(_ design: CalendarHeaderViewDesign) {
         self._setDesign(design)
     }
 }
+
 
 // MARK: Class Declaration
 class CalendarHeaderView: UIView {
@@ -62,29 +57,23 @@ class CalendarHeaderView: UIView {
         self._init()
     }
     
+    // Common Init
     private func _init() {
-        self._addSubviews()
-        self.setColorAdjustment({
-            guard let header: CalendarHeaderView = $0 as? CalendarHeaderView else { return }
-            let clear: CGColor = UIColor.clear.cgColor
-            let normal: CGColor = ColorScheme.background.default.cgColor
-            header._gradientLayer.colors = [normal, normal, clear, clear, normal, normal]
-        })
+        self.backgroundColor = .clear
+        [self._leftArrowButton, self._dayNamesView, self._rightArrowButton].forEach(self.addSubview)
     }
     
     // Private Constants
-    fileprivate let _buttonHeightRatio: CGFloat = 0.6
-    fileprivate let _gradientWidthRatio: CGFloat = 0.05
+    private let _buttonHeightRatio: CGFloat = 0.6
     
     // Private Weak Variables
-    fileprivate weak var _delegate: CalendarHeaderViewDelegate?
+    private weak var _delegate: CalendarHeaderViewDelegate?
     
     // Private Lazy Variables
-    fileprivate lazy var _gradientLayer: CAGradientLayer = self._createGradientLayer()
-    fileprivate lazy var _leftArrowButton: UIButton = self._createLeftArrowButton()
-    fileprivate lazy var _rightArrowButton: UIButton = self._createRightArrowButton()
-    fileprivate lazy var _dayNamesView: UIView = self._createDayNamesView()
-    fileprivate lazy var _dayNameLabels: [UILabel] = self._createDayNameLabels()
+    private lazy var _leftArrowButton: UIButton = self._createLeftArrowButton()
+    private lazy var _rightArrowButton: UIButton = self._createRightArrowButton()
+    private lazy var _dayNamesView: UIView = self._createDayNamesView()
+    private lazy var _dayNameLabels: [UILabel] = self._createDayNameLabels()
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -96,13 +85,6 @@ class CalendarHeaderView: UIView {
 // MARK: // Private
 // MARK: Lazy Variable Creation
 private extension CalendarHeaderView {
-    func _createGradientLayer() -> CAGradientLayer {
-        let gradientLayer: CAGradientLayer = CAGradientLayer()
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-        return gradientLayer
-    }
-    
     func _createLeftArrowButton() -> UIButton {
         let leftArrowButton: UIButton = UIButton(type: .system)
         leftArrowButton.setColorAdjustment({ $0.tintColor = ColorScheme.lines.defaultIcon })
@@ -163,9 +145,8 @@ private extension CalendarHeaderView {
 private extension CalendarHeaderView {
     var _titleFrame: CGRect {
         let buttonSideLength: CGFloat = self.height * self._buttonHeightRatio
-        let gradientWidth: CGFloat = buttonSideLength * (1 + self._gradientWidthRatio)
-        let width: CGFloat = self.width - (2 * gradientWidth)
-        return CGRect(x: gradientWidth, y: 0, width: width, height: buttonSideLength)
+        let width: CGFloat = self.width - (2 * buttonSideLength)
+        return CGRect(x: buttonSideLength, y: 0, width: width, height: buttonSideLength)
     }
 }
 
@@ -183,21 +164,6 @@ private extension CalendarHeaderView {
         
         let buttonSize: CGSize = CGSize(width: buttonSideLength, height: buttonSideLength)
         let dayNamesViewFrame: CGRect = CGRect(x: 0, y: buttonSideLength, width: width, height: dayNamesHeight)
-        
-        let buttonSideLengthRatio: CGFloat = buttonSideLength / width
-        let gradientRatio: CGFloat = self._gradientWidthRatio
-        let buttonSideLengthPlusGradientRatio: CGFloat = buttonSideLengthRatio + gradientRatio
-        
-        let gradientLayer: CAGradientLayer = self._gradientLayer
-        gradientLayer.frame.size = CGSize(width: width, height: buttonSize.height)
-        gradientLayer.locations = [
-            0,
-            buttonSideLengthRatio,
-            buttonSideLengthPlusGradientRatio,
-            1 - buttonSideLengthPlusGradientRatio,
-            1 - buttonSideLengthRatio,
-            1
-        ] as [NSNumber]
         
         self._leftArrowButton.size = buttonSize
         
@@ -220,25 +186,14 @@ private extension CalendarHeaderView {
 }
 
 
-// MARK: Add Subviews
-private extension CalendarHeaderView {
-    func _addSubviews() {
-        self.layer.addSublayer(self._gradientLayer)
-        self.addSubview(self._leftArrowButton)
-        self.addSubview(self._rightArrowButton)
-        self.addSubview(self._dayNamesView)
-    }
-}
-
-
 // MARK: Button Target Selectors
 private extension CalendarHeaderView {
     @objc func _leftArrowButtonTapped() {
-        self.delegate?.tappedLeftArrowButton(on: self)
+        self._delegate?.tappedLeftArrowButton(on: self)
     }
     
     @objc func _rightArrowButtonTapped() {
-        self.delegate?.tappedRightArrowButton(on: self)
+        self._delegate?.tappedRightArrowButton(on: self)
     }
 }
 
