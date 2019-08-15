@@ -150,7 +150,7 @@ private extension CalendarDaysVC {
 private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
     func _configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
         let date: Date = self.month.dateAtStartOf(.weekOfMonth) + indexPath.row.days
-        dateCell.title = date.toString(.custom("d"))
+        dateCell.setTitle(date.toString(.custom("d")))
         
         let design: CalendarDaysVCDesign = self._design
         
@@ -169,8 +169,8 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
             titleColor = design.pastDayNumberTextColor
         }
         
-        dateCell.titleColor = titleColor
-        dateCell.titleFont = titleFont
+        dateCell.setTitleColor(titleColor)
+        dateCell.setTitleFont(titleFont)
     }
     
     func _shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool {

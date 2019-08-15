@@ -12,19 +12,17 @@ import UIKit
 // MARK: // Internal
 // MARK: Interface
 extension DateCell {
-    var title: String {
-        get { return self._label.text ?? "" }
-        set { self._label.text = newValue }
+    // Setters
+    func setTitle(_ title: String) {
+        self._label.text = title
     }
     
-    var titleColor: UIColor {
-        get { return self._label.textColor }
-        set { self._setTitleColor(newValue) }
+    func setTitleColor(_ color: UIColor) {
+        self._setTitleColor(color)
     }
     
-    var titleFont: UIFont {
-        get { return self._label.font }
-        set { self._label.font = newValue }
+    func setTitleFont(_ font: UIFont) {
+        self._label.font = font
     }
 }
 
