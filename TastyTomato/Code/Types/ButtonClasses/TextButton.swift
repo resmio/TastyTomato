@@ -219,7 +219,6 @@ private extension TextButton {
     
     static func _makeDefaultButton() -> TextButton {
         let button: TextButton = TextButton()
-        button.showsTouchWhenHighlighted = true
         button.adjustsWidthOnTitleSet = false
         button.titleLabel!.font = .m
         return button
