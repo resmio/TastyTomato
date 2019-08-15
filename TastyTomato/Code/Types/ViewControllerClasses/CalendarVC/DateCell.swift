@@ -12,17 +12,25 @@ import UIKit
 // MARK: // Internal
 // MARK: Interface
 extension DateCell {
+    enum State: Hashable {
+        case normal, highlighted, selected
+    }
+    
     // Setters
     func setTitle(_ title: String) {
         self._label.text = title
     }
     
-    func setTitleColor(_ color: UIColor) {
-        self._setTitleColor(color)
-    }
-    
     func setTitleFont(_ font: UIFont) {
         self._label.font = font
+    }
+    
+    func setBackgroundColor(_ color: UIColor, for state: State) {
+        self._setBackgroundColor(color, for: state)
+    }
+    
+    func setTitleColor(_ color: UIColor, for state: State) {
+        self._setTitleColor(color, for: state)
     }
 }
 
@@ -53,7 +61,17 @@ class DateCell: UICollectionViewCell {
     private lazy var _label: UILabel = self._createLabel()
     
     // Private Variables
-    private var _backupTitleColor: UIColor = .black
+    private var _backgroundColors: [State: UIColor] = [
+        .normal: .white,
+        .highlighted: UIColor.blue00A7C4.withAlpha(0.5),
+        .selected: .blue00A7C4
+    ]
+    
+    private var _titleColors: [State: UIColor] = [
+        .normal: .black,
+        .highlighted: .white,
+        .selected: .white
+    ]
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -87,58 +105,51 @@ private extension DateCell {
 
 // MARK: Computed Variables
 private extension DateCell {
+    var _state: State {
+        return self.isSelected ? .selected : (self.isHighlighted ? .highlighted : .normal)
+    }
+}
+
+
+// MARK: Setter Implementations
+private extension DateCell {
+    func _setTitleColor(_ color: UIColor, for state: State) {
+        self._titleColors[state] = color
+        if state == self._state {
+            self._updateColors()
+        }
+    }
+    
+    func _setBackgroundColor(_ color: UIColor, for state: State) {
+        self._backgroundColors[state] = color
+        if state == self._state {
+            self._updateColors()
+        }
+    }
+}
+
+
+// MARK: isSelected / isHighlighted Override Implementations
+private extension DateCell {
     func _setIsHighlighted(_ highlighted: Bool) {
         guard highlighted != super.isHighlighted else { return }
         super.isHighlighted = highlighted
-        self.backgroundColor = self._backgroundColorForState(highlighted: highlighted)
-        self._label.textColor = self._textColorForState(highlighted: highlighted)
+        self._updateColors()
     }
     
     func _setIsSelected(_ selected: Bool) {
         guard selected != super.isSelected else { return }
-        self.backgroundColor = self._backgroundColorForState(selected: selected)
-        self._label.textColor = self._textColorForState(selected: selected)
         super.isSelected = selected
-    }
-    
-    func _setTitleColor(_ color: UIColor) {
-        self._backupTitleColor = color
-        self._label.textColor = self._textColorForState()
+        self._updateColors()
     }
 }
 
 
-// MARK: Color Helpers
+// MARK: Update Colors
 private extension DateCell {
-    func _backgroundColorForState(highlighted: Bool? = nil, selected: Bool? = nil) -> UIColor {
-        let highlighted: Bool = highlighted ?? self.isHighlighted
-        let selected: Bool = selected ?? self.isSelected
-        if highlighted {
-            return UIColor.blue00A7C4.withAlpha(0.5)
-        } else if selected {
-            return .blue00A7C4
-        } else {
-            return .white
-        }
-    }
-    
-    func _textColorForState(highlighted: Bool? = nil, selected: Bool? = nil) -> UIColor {
-        let highlighted: Bool = highlighted ?? self.isHighlighted
-        let selected: Bool = selected ?? self.isSelected
-        if highlighted || selected {
-            return .white
-        } else {
-            return self._backupTitleColor
-        }
-    }
-}
-
-
-// MARK: Display Title in bold
-private extension DateCell {
-    func _displayTitleInBold(_ bold: Bool) {
-        let label: UILabel = self._label
-        let currentFont: UIFont = label.font
-        label.font = bold ? currentFont.bold() : currentFont.normal()
+    func _updateColors() {
+        let state: State = self._state
+        self.backgroundColor = self._backgroundColors[state]
+        self._label.textColor = self._titleColors[state]
     }
 }
