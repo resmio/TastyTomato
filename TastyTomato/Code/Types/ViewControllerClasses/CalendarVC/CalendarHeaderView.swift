@@ -87,7 +87,10 @@ class CalendarHeaderView: UIView {
 private extension CalendarHeaderView {
     func _createLeftArrowButton() -> UIButton {
         let leftArrowButton: UIButton = UIButton(type: .system)
-        leftArrowButton.setColorAdjustment({ $0.tintColor = ColorScheme.lines.defaultIcon })
+        leftArrowButton.setColorAdjustment({
+            $0.backgroundColor = ColorScheme.background.default
+            $0.tintColor = ColorScheme.lines.defaultIcon
+        })
         leftArrowButton.setImage(ArrowIcon.Left.asTemplate().scaledByFactor(0.8), for: .normal)
         leftArrowButton.contentMode = .scaleAspectFit
         leftArrowButton.addTarget(
@@ -100,7 +103,10 @@ private extension CalendarHeaderView {
     
     func _createRightArrowButton() -> UIButton {
         let rightArrowButton: UIButton = UIButton(type: .system)
-        rightArrowButton.setColorAdjustment({ $0.tintColor = ColorScheme.lines.defaultIcon })
+        rightArrowButton.setColorAdjustment({
+            $0.backgroundColor = ColorScheme.background.default
+            $0.tintColor = ColorScheme.lines.defaultIcon
+        })
         rightArrowButton.setImage(ArrowIcon.Right.asTemplate().scaledByFactor(0.8), for: .normal)
         rightArrowButton.contentMode = .scaleAspectFit
         rightArrowButton.addTarget(
