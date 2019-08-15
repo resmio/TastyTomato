@@ -190,6 +190,7 @@ public extension ColorScheme {
         public let contrastIcon: UIColor
         public let highlighted: UIColor
         public let warning: UIColor
+        public let criticalWarning: UIColor
         
         // MARK: // Specific
         // MARK: MainTitleView
