@@ -270,6 +270,7 @@ public extension ColorScheme {
         public let selectedDay: UIColor
         public let dateInCurrentMonth: UIColor
         public let dateInOtherMonth: UIColor
+        public let dateInPast: UIColor
         
         // MARK: TimelineView
         public let timeIndicatorLabel: UIColor

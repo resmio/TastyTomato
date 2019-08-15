@@ -190,6 +190,7 @@ import Foundation
             selectedDay: .whiteFFFFFF, // selectedDayTextColor
             dateInCurrentMonth: .whiteFFFFFF, // currentMonthDaysTextColor
             dateInOtherMonth: .grayDDDDDD, // nextMonthDatesTextColor
+            dateInPast: .grayCCCCCC,
             
             // MARK: TimelineView
             timeIndicatorLabel: .whiteFFFFFF, // timeFocusTextColor (time)
