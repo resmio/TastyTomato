@@ -45,7 +45,7 @@ import Foundation
             settingsMenuSelectedItemBanner: .blue00A7C4, // selectedItemNavigationbarLeftBorderColor
             
             // MARK: BookingsView
-            searchFieldContainer: .whiteFFFFFF, // aroundSearchFieldBackgroundColor
+            searchFieldContainer: .grayCCCCCC, // aroundSearchFieldBackgroundColor
             searchField: .whiteF7F7F7, // searchFieldFillColor
             bookingStatusSectionHeader: .whiteFFFFFF, // statusBookingListBackgroundColor
             bookingCell: .whiteF7F7F7, // bookingsBookingListBackgroundColor
