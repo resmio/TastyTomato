@@ -12,7 +12,7 @@ import Foundation
 // MARK: // Public
 @objc public extension ColorScheme {
     static let light: ColorScheme = ColorScheme(
-        name_: "Light",
+        name_: NSL_("Light"),
         
         // MARK: -
         // MARK: // Background
