@@ -105,6 +105,7 @@ import Foundation
             segmentedControl: .blue00A7C4, // selectButton
             defaultIcon: .whiteFFFFFF, // iconsOnWhitebackground
             invertedIcon: .gray555555, // iconsOnDarkbackground
+            contrastIcon: .whiteFFFFFF,
             highlighted: .blue00A7C4, // today/highlightedTextColor
             warning: .yellowF8C150,
             

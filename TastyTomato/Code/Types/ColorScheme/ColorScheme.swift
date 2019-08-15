@@ -187,6 +187,7 @@ public extension ColorScheme {
         public let segmentedControl: UIColor
         public let defaultIcon: UIColor
         public let invertedIcon: UIColor
+        public let contrastIcon: UIColor
         public let highlighted: UIColor
         public let warning: UIColor
         
