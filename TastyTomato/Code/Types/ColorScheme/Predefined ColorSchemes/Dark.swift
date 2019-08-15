@@ -37,8 +37,12 @@ import Foundation
             mainMenu: .blue1E2532, // navigationbarBackgroundColor
             mainMenuHeader: .blue293140, // navigationbarTopBackgroundColor
             mainMenuSelectedItem: .blue293140, // selectedItemNavigationbarBackgroundColor
-            mainMenuSelectedSubItem: .blue1E2532, // selectedItemNavigationbarBackgroundColor (second hierarchy)
             mainMenuSelectedItemBanner: .blue00A7C4, // selectedItemNavigationbarLeftBorderColor
+            
+            // MARK: SettingsMenu
+            settingsMenu: .blue293140,
+            settingsMenuSelectedItem: .blue1E2532, // selectedItemNavigationbarBackgroundColor (second hierarchy)
+            settingsMenuSelectedItemBanner: .blue00A7C4, // selectedItemNavigationbarLeftBorderColor
             
             // MARK: BookingsView
             searchFieldContainer: .blue293140, // aroundSearchFieldBackgroundColor
@@ -155,6 +159,10 @@ import Foundation
             mainMenuHeader: .whiteFFFFFF,
             mainMenuItem: .grayDDDDDD, // navigationBarTextColor
             mainMenuSelectedItem: .whiteFFFFFF, // selectedItemNavigationsBarTextColor
+            
+            // MARK: SettingsMenuView
+            settingsMenuItem: .grayDDDDDD,
+            settingsMenuSelectedItem: .whiteFFFFFF,
             
             // MARK: MainTitleView
             mainTitleView: .whiteFFFFFF, // arrows / time / date

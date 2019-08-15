@@ -121,8 +121,12 @@ public extension ColorScheme {
         public let mainMenu: UIColor
         public let mainMenuHeader: UIColor
         public let mainMenuSelectedItem: UIColor
-        public let mainMenuSelectedSubItem: UIColor
         public let mainMenuSelectedItemBanner: UIColor
+        
+        // MARK: SettingsMenuView
+        public let settingsMenu: UIColor
+        public let settingsMenuSelectedItem: UIColor
+        public let settingsMenuSelectedItemBanner: UIColor
         
         // MARK: BookingsView
         public let searchFieldContainer: UIColor
@@ -235,6 +239,10 @@ public extension ColorScheme {
         public let mainMenuHeader: UIColor
         public let mainMenuItem: UIColor
         public let mainMenuSelectedItem: UIColor
+        
+        // MARK: SettingsMenuView
+        public let settingsMenuItem: UIColor
+        public let settingsMenuSelectedItem: UIColor
         
         // MARK: MainTitleView
         public let mainTitleView: UIColor
