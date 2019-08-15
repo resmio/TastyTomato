@@ -118,6 +118,9 @@ import Foundation
             newBookingButton: .whiteFFFFFF, // newBooking / walkIn
             newWalkinButton: .whiteFFFFFF, // newBooking / walkIn
             
+            // MARK: MainMenuView
+            mainMenuHeaderSeparator: .blue1E2532,
+            
             // MARK: TimelineView
             horizontalSeparator: .blue1E2532, // horizontalSeparatorColor
             verticalSeparator: .blue3F4962, // verticalSeparatorColor (full hours)

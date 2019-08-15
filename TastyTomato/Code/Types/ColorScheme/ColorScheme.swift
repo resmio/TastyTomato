@@ -200,6 +200,9 @@ public extension ColorScheme {
         public let newBookingButton: UIColor
         public let newWalkinButton: UIColor
         
+        // MARK: MainMenuView
+        public let mainMenuHeaderSeparator: UIColor
+        
         // MARK: TimelineView
         public let horizontalSeparator: UIColor
         public let verticalSeparator: UIColor

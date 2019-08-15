@@ -37,8 +37,8 @@ import Foundation
             mainMenu: .blue333B4F, // navigationbarBackgroundColor
             mainMenuHeader: .blue293140, // navigationbarTopBackgroundColor
             mainMenuSelectedItem: .blue293140, // selectedItemNavigationbarBackgroundColor
-            mainMenuSelectedSubItem: .blue00A7C4, // selectedItemNavigationbarBackgroundColor (second hierarchy)
-            mainMenuSelectedItemBanner: .blue1E2532, // selectedItemNavigationbarLeftBorderColor
+            mainMenuSelectedSubItem: .blue1E2532, // selectedItemNavigationbarBackgroundColor (second hierarchy)
+            mainMenuSelectedItemBanner: .blue00A7C4, // selectedItemNavigationbarLeftBorderColor
             
             // MARK: BookingsView
             searchFieldContainer: .whiteFFFFFF, // aroundSearchFieldBackgroundColor
@@ -117,6 +117,9 @@ import Foundation
             notificationButtonNotesAndTasks: .whiteFFFFFF, // notificationfeedIconNotesAndOpenTasks
             newBookingButton: .whiteFFFFFF, // newBooking / walkIn
             newWalkinButton: .whiteFFFFFF, // newBooking / walkIn
+            
+            // MARK: MainMenuView
+            mainMenuHeaderSeparator: .blue333B4F,
             
             // MARK: TimelineView
             horizontalSeparator: .grayCCCCCC, // horizontalSeparatorColor
