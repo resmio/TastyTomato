@@ -66,6 +66,7 @@ import Foundation
             // MARK: TimelineView
             timelineView: .whiteFFFFFF, // timelineBackgroundColor
             timeIndicatorLabel: .blue00A7C4, // timeFocusFillColor
+            timelineNumOfSeatsLabel: .grayCCCCCC,
             
             // MARK: SettingsView
             settingsView: .whiteFFFFFF, // settingsBackgroundColor

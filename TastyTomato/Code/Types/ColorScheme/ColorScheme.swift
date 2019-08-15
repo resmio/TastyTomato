@@ -150,6 +150,7 @@ public extension ColorScheme {
         // MARK: TimelineView
         public let timelineView: UIColor
         public let timeIndicatorLabel: UIColor
+        public let timelineNumOfSeatsLabel: UIColor
         
         // MARK: SettingsView
         public let settingsView: UIColor
