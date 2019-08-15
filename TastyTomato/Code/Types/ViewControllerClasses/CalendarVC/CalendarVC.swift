@@ -29,12 +29,12 @@ public struct CalendarVCDesign {
     public var dayNumberFont: UIFont = .m
     public var todayDayNumberFont: UIFont = .m
     
-    public var monthNameAndYearTextColor: UIColor = .black
-    public var dayNamesTextColor: UIColor = .gray555555
-    public var normalDayNumberTextColor: UIColor = .black
-    public var todayDayNumberTextColor: UIColor = .blue018EA6
-    public var differentMonthDayNumberTextColor: UIColor = .grayCCCCCC
-    public var pastDayNumberTextColor: UIColor = .gray999999
+    public var monthNameAndYearTextColor: () -> UIColor = { ColorScheme.text.monthHeading }
+    public var dayNamesTextColor: () -> UIColor = { ColorScheme.text.weekdayName }
+    public var normalDayNumberTextColor: () -> UIColor = { ColorScheme.text.dateInCurrentMonth }
+    public var todayDayNumberTextColor: () -> UIColor = { ColorScheme.text.today }
+    public var differentMonthDayNumberTextColor: () -> UIColor = { ColorScheme.text.dateInOtherMonth }
+    public var pastDayNumberTextColor: () -> UIColor = { ColorScheme.text.dateInPast }
 }
 
 

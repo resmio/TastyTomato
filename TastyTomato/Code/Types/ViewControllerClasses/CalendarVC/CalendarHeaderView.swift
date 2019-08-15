@@ -19,8 +19,8 @@ protocol CalendarHeaderViewDelegate: class {
 
 // MARK: - CalendarHeaderViewDesign
 struct CalendarHeaderViewDesign {
-    var dayNamesFont: UIFont        = CalendarVCDesign.defaultDesign.dayNamesFont
-    var dayNamesTextColor: UIColor  = CalendarVCDesign.defaultDesign.dayNamesTextColor
+    var dayNamesFont: UIFont              = CalendarVCDesign.defaultDesign.dayNamesFont
+    var dayNamesTextColor: () -> UIColor  = CalendarVCDesign.defaultDesign.dayNamesTextColor
 }
 
 
@@ -246,9 +246,11 @@ private extension CalendarHeaderView {
 // MARK: Set Design
 private extension CalendarHeaderView {
     func _setDesign(_ design: CalendarHeaderViewDesign) {
-        self._dayNameLabels.forEach({
-            $0.font = design.dayNamesFont
-            $0.textColor = design.dayNamesTextColor
+        self._dayNameLabels.forEach({ label in
+            label.font = design.dayNamesFont
+            label.setColorAdjustment({
+                ($0 as? UILabel)?.textColor = design.dayNamesTextColor()
+            })
         })
     }
 }

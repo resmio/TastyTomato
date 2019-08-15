@@ -24,11 +24,11 @@ struct CalendarDaysVCDesign {
     var dayNumberFont: UIFont                       = CalendarVCDesign.defaultDesign.dayNumberFont
     var todayDayNumberFont: UIFont                  = CalendarVCDesign.defaultDesign.todayDayNumberFont
     
-    var monthNameAndYearTextColor: UIColor          = CalendarVCDesign.defaultDesign.monthNameAndYearTextColor
-    var normalDayNumberTextColor: UIColor           = CalendarVCDesign.defaultDesign.normalDayNumberTextColor
-    var todayDayNumberTextColor: UIColor            = CalendarVCDesign.defaultDesign.todayDayNumberTextColor
-    var differentMonthDayNumberTextColor: UIColor   = CalendarVCDesign.defaultDesign.differentMonthDayNumberTextColor
-    var pastDayNumberTextColor: UIColor             = CalendarVCDesign.defaultDesign.pastDayNumberTextColor
+    var monthNameAndYearTextColor: () -> UIColor          = CalendarVCDesign.defaultDesign.monthNameAndYearTextColor
+    var normalDayNumberTextColor: () -> UIColor           = CalendarVCDesign.defaultDesign.normalDayNumberTextColor
+    var todayDayNumberTextColor: () -> UIColor            = CalendarVCDesign.defaultDesign.todayDayNumberTextColor
+    var differentMonthDayNumberTextColor: () -> UIColor   = CalendarVCDesign.defaultDesign.differentMonthDayNumberTextColor
+    var pastDayNumberTextColor: () -> UIColor             = CalendarVCDesign.defaultDesign.pastDayNumberTextColor
 }
 
 
@@ -137,9 +137,11 @@ private extension CalendarDaysVC {
         let design: CalendarDaysVCDesign = self._design
         
         let calendarDaysView: CalendarDaysView = CalendarDaysView()
+        calendarDaysView.setColorAdjustment({
+            ($0 as? CalendarDaysView)?.titleColor = design.monthNameAndYearTextColor()
+        })
         calendarDaysView.delegate = self
         calendarDaysView.titleFont = design.monthNameAndYearFont
-        calendarDaysView.titleColor = design.monthNameAndYearTextColor
         return calendarDaysView
     }
 }
@@ -157,7 +159,7 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
         let dateIsToday: Bool = date.isToday
         let dateIsInCurrentMonth: Bool = date.isInside(date: self.month, granularity: .month)
         
-        var titleColor: UIColor = design.normalDayNumberTextColor
+        var titleColor: () -> UIColor = design.normalDayNumberTextColor
         var titleFont: UIFont = design.dayNumberFont
         
         if dateIsToday {
@@ -169,7 +171,7 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
             titleColor = design.pastDayNumberTextColor
         }
         
-        dateCell.setTitleColor(titleColor)
+        dateCell.setTitleColor(titleColor, for: .normal)
         dateCell.setTitleFont(titleFont)
     }
     
@@ -208,8 +210,10 @@ private extension CalendarDaysVC {
         self._design = design
         
         let calendarDaysView: CalendarDaysView = self._calendarDaysView
+        calendarDaysView.setColorAdjustment({
+            ($0 as? CalendarDaysView)?.titleColor = design.monthNameAndYearTextColor()
+        })
         calendarDaysView.reloadCells()
         calendarDaysView.titleFont = design.monthNameAndYearFont
-        calendarDaysView.titleColor = design.monthNameAndYearTextColor
     }
 }
