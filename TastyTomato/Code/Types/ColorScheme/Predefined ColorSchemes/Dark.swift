@@ -189,8 +189,8 @@ import Foundation
             today: .blue00A7C4, // todayTextColor
             selectedDay: .whiteFFFFFF, // selectedDayTextColor
             dateInCurrentMonth: .whiteFFFFFF, // currentMonthDaysTextColor
-            dateInOtherMonth: .grayDDDDDD, // nextMonthDatesTextColor
-            dateInPast: .grayCCCCCC,
+            dateInOtherMonth: .grayCCCCCC, // nextMonthDatesTextColor
+            dateInPast: .blue3F4962,
             
             // MARK: TimelineView
             timeIndicatorLabel: .whiteFFFFFF, // timeFocusTextColor (time)
