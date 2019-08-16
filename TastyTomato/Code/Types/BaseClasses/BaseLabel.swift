@@ -40,7 +40,6 @@ public class BaseLabel: UILabel {
     
     // Private Setup Implementation
     private func _init() {
-        self.setColorAdjustment({ ($0 as? BaseLabel)?.textColor = .red })
         if self._isShowingPlaceholder {
             super.text = self._placeholder
             super.textColor = self._placeholderTextColor
