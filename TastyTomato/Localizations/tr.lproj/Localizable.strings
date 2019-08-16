@@ -1,10 +1,13 @@
 
 /* 1 word */
-"Back" =  "Geri";
+"Back" = "Geri";
 "Cancel" = "İptal";
+"Create" = "Yarat";
+"Dark" = "Koyu";
 "Delete" = "Sil";
 "Done" = "Tamam";
 "Edit" = "Düzenle";
+"Light" = "Açık";
 "New" = "Yeni";
 "Next" = "İleri";
 "Save" = "Kaydet";

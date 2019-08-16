@@ -1,10 +1,13 @@
 
 /* 1 word */
-"Back" =  "Terug";
+"Back" = "Terug";
 "Cancel" = "Annuleren";
+"Create" = "Creëer";
+"Dark" = "Donker";
 "Delete" = "Verwijderen";
 "Done" = "Klaar";
 "Edit" = "Wijzigen";
+"Light" = "Licht";
 "New" = "Nieuw";
 "Next" = "Volgende";
 "Save" = "Opslaan";

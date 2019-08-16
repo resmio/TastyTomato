@@ -1,10 +1,13 @@
 
 /* 1 word */
-"Back" =  "Atrás";
+"Back" = "Atrás";
 "Cancel" = "Cancelar";
+"Create" = "Crear";
+"Dark" = "Oscuro";
 "Delete" = "Eliminar";
 "Done" = "Listo";
 "Edit" = "Editar";
+"Light" = "Claro";
 "New" = "Nuevo";
 "Next" = "Siguiente";
 "Save" = "Guardar";

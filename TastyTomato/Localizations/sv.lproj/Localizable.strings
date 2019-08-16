@@ -1,10 +1,13 @@
 
 /* 1 word */
-"Back" =  "Tillbaka";
+"Back" = "Tillbaka";
 "Cancel" = "Avbryt";
+"Create" = "Skapa";
+"Dark" = "Mörkt";
 "Delete" = "Radera";
 "Done" = "Klart";
 "Edit" = "Redigera";
+"Light" = "Ljust";
 "New" = "Ny";
 "Next" = "Nästa";
 "Save" = "Spara";
