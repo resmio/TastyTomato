@@ -165,10 +165,10 @@ private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
         if dateIsToday {
             titleColor = design.todayDayNumberTextColor
             titleFont = design.todayDayNumberFont
-        } else if !dateIsInCurrentMonth {
-            titleColor = design.differentMonthDayNumberTextColor
         } else if date.isBeforeDate(Date(), granularity: .day) {
             titleColor = design.pastDayNumberTextColor
+        } else if !dateIsInCurrentMonth {
+            titleColor = design.differentMonthDayNumberTextColor
         }
         
         dateCell.setTitleColor(titleColor, for: .normal)
