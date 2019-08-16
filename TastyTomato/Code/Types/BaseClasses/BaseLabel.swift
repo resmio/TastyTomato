@@ -18,7 +18,7 @@ public extension BaseLabel {
         self._setPlaceholder(placeholder)
     }
     
-    func setPlaceholderTextColor(_ color: UIColor?) {
+    func setPlaceholderTextColor(_ color: UIColor) {
         self._setPlaceholderTextColor(color)
     }
 }
@@ -40,11 +40,10 @@ public class BaseLabel: UILabel {
     
     // Private Setup Implementation
     private func _init() {
-        self.setColorAdjustment({ ($0 as? BaseLabel)?.textColor = ColorScheme.text.default })
-        if self._isShowingPlaceholder {
-            super.text = self._placeholder
-            super.textColor = self._placeholderTextColor
-        }
+//        if self._isShowingPlaceholder {
+//            super.text = self._placeholder
+//            super.textColor = self._placeholderTextColor
+//        }
     }
     
     // Private Constants
@@ -63,8 +62,8 @@ public class BaseLabel: UILabel {
     
     // Private Variables
     private var _placeholder: String?
-    private var _textColorBackup: UIColor = .black
-    private var _isShowingPlaceholder: Bool = true
+    private var _normalTextColor: UIColor = .black
+    private var _isShowingPlaceholder: Bool = false
     
     // Variable Overrides
     public override var text: String? {
@@ -73,7 +72,7 @@ public class BaseLabel: UILabel {
     }
     
     public override var textColor: UIColor! {
-        get { return self._isShowingPlaceholder ? self._textColorBackup : super.textColor }
+        get { return self._isShowingPlaceholder ? self._normalTextColor : super.textColor }
         set { self._setTextColor(newValue) }
     }
 }
@@ -84,23 +83,21 @@ public class BaseLabel: UILabel {
 private extension BaseLabel {
     func _setText(_ text: String?) {
         let currentText: String? = self._isShowingPlaceholder ? "" : super.text
-        guard text != currentText else { return }
         if text.isNilOrEmpty {
             self._isShowingPlaceholder = true
             super.text = self._placeholder
-            self._textColorBackup = super.textColor
+            self._normalTextColor = super.textColor
             super.textColor = self._placeholderTextColor
         } else {
             self._isShowingPlaceholder = false
             super.text = text
-            super.textColor = self._textColorBackup
+            super.textColor = self._normalTextColor
         }
     }
     
     func _setTextColor(_ color: UIColor) {
-        if self._isShowingPlaceholder {
-            self._textColorBackup = color
-        } else {
+        self._normalTextColor = color
+        if !self._isShowingPlaceholder {
             super.textColor = color
         }
     }

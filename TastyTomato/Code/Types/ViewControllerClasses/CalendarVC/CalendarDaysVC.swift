@@ -24,11 +24,11 @@ struct CalendarDaysVCDesign {
     var dayNumberFont: UIFont                       = CalendarVCDesign.defaultDesign.dayNumberFont
     var todayDayNumberFont: UIFont                  = CalendarVCDesign.defaultDesign.todayDayNumberFont
     
-    var monthNameAndYearTextColor: UIColor          = CalendarVCDesign.defaultDesign.monthNameAndYearTextColor
-    var normalDayNumberTextColor: UIColor           = CalendarVCDesign.defaultDesign.normalDayNumberTextColor
-    var todayDayNumberTextColor: UIColor            = CalendarVCDesign.defaultDesign.todayDayNumberTextColor
-    var differentMonthDayNumberTextColor: UIColor   = CalendarVCDesign.defaultDesign.differentMonthDayNumberTextColor
-    var pastDayNumberTextColor: UIColor             = CalendarVCDesign.defaultDesign.pastDayNumberTextColor
+    var monthNameAndYearTextColor: () -> UIColor          = CalendarVCDesign.defaultDesign.monthNameAndYearTextColor
+    var normalDayNumberTextColor: () -> UIColor           = CalendarVCDesign.defaultDesign.normalDayNumberTextColor
+    var todayDayNumberTextColor: () -> UIColor            = CalendarVCDesign.defaultDesign.todayDayNumberTextColor
+    var differentMonthDayNumberTextColor: () -> UIColor   = CalendarVCDesign.defaultDesign.differentMonthDayNumberTextColor
+    var pastDayNumberTextColor: () -> UIColor             = CalendarVCDesign.defaultDesign.pastDayNumberTextColor
 }
 
 
@@ -137,9 +137,11 @@ private extension CalendarDaysVC {
         let design: CalendarDaysVCDesign = self._design
         
         let calendarDaysView: CalendarDaysView = CalendarDaysView()
+        calendarDaysView.setColorAdjustment({
+            ($0 as? CalendarDaysView)?.titleColor = design.monthNameAndYearTextColor()
+        })
         calendarDaysView.delegate = self
         calendarDaysView.titleFont = design.monthNameAndYearFont
-        calendarDaysView.titleColor = design.monthNameAndYearTextColor
         return calendarDaysView
     }
 }
@@ -150,27 +152,27 @@ private extension CalendarDaysVC {
 private extension CalendarDaysVC/*: CalendarDaysViewDelegate*/ {
     func _configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView) {
         let date: Date = self.month.dateAtStartOf(.weekOfMonth) + indexPath.row.days
-        dateCell.title = date.toString(.custom("d"))
+        dateCell.setTitle(date.toString(.custom("d")))
         
         let design: CalendarDaysVCDesign = self._design
         
         let dateIsToday: Bool = date.isToday
         let dateIsInCurrentMonth: Bool = date.isInside(date: self.month, granularity: .month)
         
-        var titleColor: UIColor = design.normalDayNumberTextColor
+        var titleColor: () -> UIColor = design.normalDayNumberTextColor
         var titleFont: UIFont = design.dayNumberFont
         
         if dateIsToday {
             titleColor = design.todayDayNumberTextColor
             titleFont = design.todayDayNumberFont
-        } else if !dateIsInCurrentMonth {
-            titleColor = design.differentMonthDayNumberTextColor
         } else if date.isBeforeDate(Date(), granularity: .day) {
             titleColor = design.pastDayNumberTextColor
+        } else if !dateIsInCurrentMonth {
+            titleColor = design.differentMonthDayNumberTextColor
         }
         
-        dateCell.titleColor = titleColor
-        dateCell.titleFont = titleFont
+        dateCell.setTitleColor(titleColor, for: .normal)
+        dateCell.setTitleFont(titleFont)
     }
     
     func _shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool {
@@ -208,8 +210,10 @@ private extension CalendarDaysVC {
         self._design = design
         
         let calendarDaysView: CalendarDaysView = self._calendarDaysView
+        calendarDaysView.setColorAdjustment({
+            ($0 as? CalendarDaysView)?.titleColor = design.monthNameAndYearTextColor()
+        })
         calendarDaysView.reloadCells()
         calendarDaysView.titleFont = design.monthNameAndYearFont
-        calendarDaysView.titleColor = design.monthNameAndYearTextColor
     }
 }

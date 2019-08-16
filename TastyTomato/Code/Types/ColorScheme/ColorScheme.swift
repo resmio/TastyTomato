@@ -121,8 +121,12 @@ public extension ColorScheme {
         public let mainMenu: UIColor
         public let mainMenuHeader: UIColor
         public let mainMenuSelectedItem: UIColor
-        public let mainMenuSelectedSubItem: UIColor
         public let mainMenuSelectedItemBanner: UIColor
+        
+        // MARK: SettingsMenuView
+        public let settingsMenu: UIColor
+        public let settingsMenuSelectedItem: UIColor
+        public let settingsMenuSelectedItemBanner: UIColor
         
         // MARK: BookingsView
         public let searchFieldContainer: UIColor
@@ -146,6 +150,7 @@ public extension ColorScheme {
         // MARK: TimelineView
         public let timelineView: UIColor
         public let timeIndicatorLabel: UIColor
+        public let timelineNumOfSeatsLabel: UIColor
         
         // MARK: SettingsView
         public let settingsView: UIColor
@@ -183,8 +188,10 @@ public extension ColorScheme {
         public let segmentedControl: UIColor
         public let defaultIcon: UIColor
         public let invertedIcon: UIColor
+        public let contrastIcon: UIColor
         public let highlighted: UIColor
         public let warning: UIColor
+        public let criticalWarning: UIColor
         
         // MARK: // Specific
         // MARK: MainTitleView
@@ -199,6 +206,9 @@ public extension ColorScheme {
         public let notificationButtonNotesAndTasks: UIColor
         public let newBookingButton: UIColor
         public let newWalkinButton: UIColor
+        
+        // MARK: MainMenuView
+        public let mainMenuHeaderSeparator: UIColor
         
         // MARK: TimelineView
         public let horizontalSeparator: UIColor
@@ -233,6 +243,10 @@ public extension ColorScheme {
         public let mainMenuItem: UIColor
         public let mainMenuSelectedItem: UIColor
         
+        // MARK: SettingsMenuView
+        public let settingsMenuItem: UIColor
+        public let settingsMenuSelectedItem: UIColor
+        
         // MARK: MainTitleView
         public let mainTitleView: UIColor
         
@@ -256,6 +270,7 @@ public extension ColorScheme {
         public let selectedDay: UIColor
         public let dateInCurrentMonth: UIColor
         public let dateInOtherMonth: UIColor
+        public let dateInPast: UIColor
         
         // MARK: TimelineView
         public let timeIndicatorLabel: UIColor
@@ -268,6 +283,7 @@ public extension ColorScheme {
         public let doneButton: UIColor
         public let newButton: UIColor
         public let editButton: UIColor
+        public let deleteButton: UIColor
     }
     
     struct BookingStatus {

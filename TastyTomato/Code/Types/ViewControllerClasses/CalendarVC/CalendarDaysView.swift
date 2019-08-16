@@ -148,6 +148,7 @@ extension CalendarDaysView: UICollectionViewDataSource {
 private extension CalendarDaysView {
     func _createTitleLabel() -> UILabel {
         let titleLabel: UILabel = UILabel()
+        titleLabel.setColorAdjustment({ ($0 as? UILabel)?.textColor = ColorScheme.text.titleLabel })
         titleLabel.textAlignment = .center
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.text = "Monthname Year"

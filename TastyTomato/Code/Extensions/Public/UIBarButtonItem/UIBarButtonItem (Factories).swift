@@ -66,17 +66,27 @@ public extension UIBarButtonItem {
 private extension UIBarButtonItem {
     static func _makeCancelItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getNormalButton(targetAction)
+        button.setColorAdjustment({
+            guard let btn: UIButton = $0 as? UIButton else { return }
+            let color: UIColor = ColorScheme.text.cancelButton
+            btn.setTitleColor(color, for: .normal)
+            btn.setTitleColor(color.withAlpha(0.5), for: .highlighted)
+        })
         button.setTitle(NSL_("Cancel"), for: .normal)
         button.sizeToFit()
-        button.tintColor = .redE62C4F
         return UIBarButtonItem(customView: button)
     }
     
     static func _makeDeleteItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getNormalButton(targetAction)
+        button.setColorAdjustment({
+            guard let btn: UIButton = $0 as? UIButton else { return }
+            let color: UIColor = ColorScheme.text.deleteButton
+            btn.setTitleColor(color, for: .normal)
+            btn.setTitleColor(color.withAlpha(0.5), for: .highlighted)
+        })
         button.setTitle(NSL_("Delete"), for: .normal)
         button.sizeToFit()
-        button.tintColor = .redE62C4F
         return UIBarButtonItem(customView: button)
     }
     
@@ -84,23 +94,27 @@ private extension UIBarButtonItem {
         let offlineImage: UIImage = MiscIcon.Offline.asTemplate()
         let button: UIButton = self._getNormalButton(targetAction)
         button.setBackgroundImage(offlineImage, for: .normal)
+        button.setColorAdjustment({ $0.tintColor = ColorScheme.lines.offlineIcon })
         button.sizeToFit()
-        button.tintColor = .redE62C4F
         return UIBarButtonItem(customView: button)
     }
     
     static func _makeBackItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: ImageTextButton = ImageTextButton()
         self._configure(button: button, with: targetAction)
-        let arrowIcon: UIImage = ArrowIcon.Left.asTemplate()
-        let blueColor: UIColor = .blue00A7C4
-        let highlightedBlueColor: UIColor = blueColor.withAlpha(0.5)
         
-        button.setImage(arrowIcon.withTint(color: blueColor), for: .normal)
-        button.setImage(arrowIcon.withTint(color: blueColor.withAlpha(0.5)), for: .highlighted)
+        let icon: UIImage = ArrowIcon.Left.asTemplate()
+        button.setColorAdjustment({
+            guard let btn: ImageTextButton = $0 as? ImageTextButton else { return }
+            let color: UIColor = ColorScheme.text.backButton
+            let highlightedColor: UIColor = color.withAlpha(0.5)
+            btn.setTitleColor(color, for: .normal)
+            btn.setTitleColor(highlightedColor, for: .highlighted)
+            btn.setImage(icon.withTint(color: color), for: .normal)
+            btn.setImage(icon.withTint(color: highlightedColor), for: .highlighted)
+        })
+        
         button.text = NSL_("Back")
-        button.setTitleColor(blueColor, for: .normal)
-        button.setTitleColor(highlightedBlueColor, for: .highlighted)
         button.sizeToFit()
         return UIBarButtonItem(customView: button)
     }
@@ -108,50 +122,73 @@ private extension UIBarButtonItem {
     static func _makeNextItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: ImageTextButton = ImageTextButton()
         self._configure(button: button, with: targetAction)
-        button.imageAnchoring = .right
-        let arrowIcon: UIImage = ArrowIcon.Right.asTemplate()
-        let blueColor: UIColor = .blue00A7C4
-        let highlightedBlueColor: UIColor = blueColor.withAlpha(0.5)
-        button.setImage(arrowIcon.withTint(color: blueColor), for: .normal)
-        button.setImage(arrowIcon.withTint(color: highlightedBlueColor), for: .highlighted)
         button.text = NSL_("Next")
-        button.setTitleColor(blueColor, for: .normal)
-        button.setTitleColor(highlightedBlueColor, for: .highlighted)
         button.sizeToFit()
+        button.imageAnchoring = .right
+        
+        let icon: UIImage = ArrowIcon.Right.asTemplate()
+        button.setColorAdjustment({
+            guard let btn: ImageTextButton = $0 as? ImageTextButton else { return }
+            let color: UIColor = ColorScheme.text.backButton
+            let highlightedColor: UIColor = color.withAlpha(0.5)
+            btn.setTitleColor(color, for: .normal)
+            btn.setTitleColor(highlightedColor, for: .highlighted)
+            btn.setImage(icon.withTint(color: color), for: .normal)
+            btn.setImage(icon.withTint(color: highlightedColor), for: .highlighted)
+        })
+        
         return UIBarButtonItem(customView: button)
     }
     
     static func _makeEditItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getNormalButton(targetAction)
+        button.setColorAdjustment({
+            guard let btn: UIButton = $0 as? UIButton else { return }
+            let color: UIColor = ColorScheme.text.editButton
+            btn.setTitleColor(color, for: .normal)
+            btn.setTitleColor(color.withAlpha(0.5), for: .highlighted)
+        })
         button.setTitle(NSL_("Edit"), for: .normal)
         button.sizeToFit()
-        button.tintColor = .blue00A7C4
         return UIBarButtonItem(customView: button)
     }
     
     static func _makeNewItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getNormalButton(targetAction)
+        button.setColorAdjustment({
+            guard let btn: UIButton = $0 as? UIButton else { return }
+            let color: UIColor = ColorScheme.text.newButton
+            btn.setTitleColor(color, for: .normal)
+            btn.setTitleColor(color.withAlpha(0.5), for: .highlighted)
+        })
         button.setTitle(NSL_("New"), for: .normal)
         button.sizeToFit()
-        button.tintColor = .blue00A7C4
         return UIBarButtonItem(customView: button)
     }
     
     static func _makeSaveItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getNormalButton(targetAction)
+        button.setColorAdjustment({
+            guard let btn: UIButton = $0 as? UIButton else { return }
+            let color: UIColor = ColorScheme.text.saveButton
+            btn.setTitleColor(color, for: .normal)
+            btn.setTitleColor(color.withAlpha(0.5), for: .highlighted)
+        })
         button.setTitle(NSL_("Save"), for: .normal)
         button.sizeToFit()
-        button.tintColor = .blue00A7C4
-        
         return UIBarButtonItem(customView: button)
     }
     
     static func _makeDoneItem(targetAction: TargetAction?) -> UIBarButtonItem {
         let button: UIButton = self._getNormalButton(targetAction)
+        button.setColorAdjustment({
+            guard let btn: UIButton = $0 as? UIButton else { return }
+            let color: UIColor = ColorScheme.text.doneButton
+            btn.setTitleColor(color, for: .normal)
+            btn.setTitleColor(color.withAlpha(0.5), for: .highlighted)
+        })
         button.setTitle(NSL_("Done"), for: .normal)
         button.sizeToFit()
-        button.tintColor = .blue00A7C4
-        
         return UIBarButtonItem(customView: button)
     }
     

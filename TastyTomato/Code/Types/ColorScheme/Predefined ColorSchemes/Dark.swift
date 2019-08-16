@@ -37,8 +37,12 @@ import Foundation
             mainMenu: .blue1E2532, // navigationbarBackgroundColor
             mainMenuHeader: .blue293140, // navigationbarTopBackgroundColor
             mainMenuSelectedItem: .blue293140, // selectedItemNavigationbarBackgroundColor
-            mainMenuSelectedSubItem: .blue1E2532, // selectedItemNavigationbarBackgroundColor (second hierarchy)
             mainMenuSelectedItemBanner: .blue00A7C4, // selectedItemNavigationbarLeftBorderColor
+            
+            // MARK: SettingsMenu
+            settingsMenu: .blue293140,
+            settingsMenuSelectedItem: .blue1E2532, // selectedItemNavigationbarBackgroundColor (second hierarchy)
+            settingsMenuSelectedItemBanner: .blue00A7C4, // selectedItemNavigationbarLeftBorderColor
             
             // MARK: BookingsView
             searchFieldContainer: .blue293140, // aroundSearchFieldBackgroundColor
@@ -62,6 +66,7 @@ import Foundation
             // MARK: TimelineView
             timelineView: .blue293140, // timelineBackgroundColor
             timeIndicatorLabel: .blue00A7C4, // timeFocusFillColor
+            timelineNumOfSeatsLabel: .blue1E2532,
             
             // MARK: SettingsView
             settingsView: .blue293140, // settingsBackgroundColor
@@ -101,8 +106,10 @@ import Foundation
             segmentedControl: .blue00A7C4, // selectButton
             defaultIcon: .whiteFFFFFF, // iconsOnWhitebackground
             invertedIcon: .gray555555, // iconsOnDarkbackground
+            contrastIcon: .whiteFFFFFF,
             highlighted: .blue00A7C4, // today/highlightedTextColor
             warning: .yellowF8C150,
+            criticalWarning: .redE62C4F,
             
             // MARK: // Specific
             // MARK: MainTitleView
@@ -117,6 +124,9 @@ import Foundation
             notificationButtonNotesAndTasks: .whiteFFFFFF, // notificationfeedIconNotesAndOpenTasks
             newBookingButton: .whiteFFFFFF, // newBooking / walkIn
             newWalkinButton: .whiteFFFFFF, // newBooking / walkIn
+            
+            // MARK: MainMenuView
+            mainMenuHeaderSeparator: .blue1E2532,
             
             // MARK: TimelineView
             horizontalSeparator: .blue1E2532, // horizontalSeparatorColor
@@ -153,6 +163,10 @@ import Foundation
             mainMenuItem: .grayDDDDDD, // navigationBarTextColor
             mainMenuSelectedItem: .whiteFFFFFF, // selectedItemNavigationsBarTextColor
             
+            // MARK: SettingsMenuView
+            settingsMenuItem: .grayDDDDDD,
+            settingsMenuSelectedItem: .whiteFFFFFF,
+            
             // MARK: MainTitleView
             mainTitleView: .whiteFFFFFF, // arrows / time / date
             
@@ -175,7 +189,8 @@ import Foundation
             today: .blue00A7C4, // todayTextColor
             selectedDay: .whiteFFFFFF, // selectedDayTextColor
             dateInCurrentMonth: .whiteFFFFFF, // currentMonthDaysTextColor
-            dateInOtherMonth: .grayDDDDDD, // nextMonthDatesTextColor
+            dateInOtherMonth: .grayCCCCCC, // nextMonthDatesTextColor
+            dateInPast: .blue3F4962,
             
             // MARK: TimelineView
             timeIndicatorLabel: .whiteFFFFFF, // timeFocusTextColor (time)
@@ -187,7 +202,8 @@ import Foundation
             backButton: .whiteFFFFFF, // backButton
             doneButton: .green22CCAA, // doneButton
             newButton: .blue00A7C4, // newButton
-            editButton: .blue00A7C4 // editButton
+            editButton: .blue00A7C4, // editButton
+            deleteButton: .redE62C4F
         ),
         
         // MARK: -

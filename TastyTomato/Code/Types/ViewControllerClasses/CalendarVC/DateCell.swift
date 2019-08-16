@@ -12,31 +12,25 @@ import UIKit
 // MARK: // Internal
 // MARK: Interface
 extension DateCell {
-    var title: String {
-        get {
-            return self._label.text ?? ""
-        }
-        set(newTitle) {
-            self._label.text = newTitle
-        }
+    enum State: Hashable {
+        case normal, highlighted, selected
     }
     
-    var titleColor: UIColor {
-        get {
-            return self._titleColor
-        }
-        set(newTitleColor) {
-            self._titleColor = newTitleColor
-        }
+    // Setters
+    func setTitle(_ title: String) {
+        self._label.text = title
     }
     
-    var titleFont: UIFont {
-        get {
-            return self._label.font
-        }
-        set(newTitleFont) {
-            self._label.font = newTitleFont
-        }
+    func setTitleFont(_ font: UIFont) {
+        self._label.font = font
+    }
+    
+    func setBackgroundColor(_ color: @escaping () -> UIColor, for state: State) {
+        self._setBackgroundColor(color, for: state)
+    }
+    
+    func setTitleColor(_ color: @escaping () -> UIColor, for state: State) {
+        self._setTitleColor(color, for: state)
     }
 }
 
@@ -46,12 +40,17 @@ class DateCell: UICollectionViewCell {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.contentView.addSubview(self._label)
+        self._init()
     }
     
     // Override Init
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self._init()
+    }
+    
+    // Common Init
+    private func _init() {
         self.contentView.addSubview(self._label)
     }
     
@@ -59,10 +58,20 @@ class DateCell: UICollectionViewCell {
     static let reuseIdentifier: String = "DateCellReuseIdentifier"
     
     // Private Lazy Variables
-    fileprivate lazy var _label: UILabel = self._createLabel()
+    private lazy var _label: UILabel = self._createLabel()
     
     // Private Variables
-    fileprivate var _backupTitleColor: UIColor = .black
+    private var _backgroundColors: [State: () -> UIColor] = [
+        .normal: { ColorScheme.background.default },
+        .highlighted: { ColorScheme.background.selectedDay.withAlpha(0.5) },
+        .selected: { ColorScheme.background.selectedDay }
+    ]
+    
+    private var _titleColors: [State: () -> UIColor] = [
+        .normal: { .black },
+        .highlighted: { .white },
+        .selected: { .white }
+    ]
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -71,21 +80,13 @@ class DateCell: UICollectionViewCell {
     
     // isHighlighted / isSelected Overrides
     override var isHighlighted: Bool {
-        get {
-            return self._isHighlighted
-        }
-        set(newIsHighlighted) {
-            self._isHighlighted = newIsHighlighted
-        }
+        get { return super.isHighlighted }
+        set { self._setIsHighlighted(newValue) }
     }
     
     override var isSelected: Bool {
-        get {
-            return self._isSelected
-        }
-        set(newIsSelected) {
-            self._isSelected = newIsSelected
-        }
+        get { return super.isSelected }
+        set { self._setIsSelected(newValue) }
     }
 }
 
@@ -96,7 +97,6 @@ private extension DateCell {
     func _createLabel() -> UILabel {
         let label: UILabel = UILabel()
         label.textAlignment = .center
-        label.textColor = self._backupTitleColor
         label.text = "31"
         return label
     }
@@ -105,73 +105,51 @@ private extension DateCell {
 
 // MARK: Computed Variables
 private extension DateCell {
-    var _isHighlighted: Bool {
-        get {
-            return super.isHighlighted
-        }
-        set(newIsHighlighted) {
-            guard newIsHighlighted != super.isHighlighted else { return }
-            self.backgroundColor = self._backgroundColorForState(highlighted: newIsHighlighted)
-            self._label.textColor = self._textColorForState(highlighted: newIsHighlighted)
-            super.isHighlighted = newIsHighlighted
+    var _state: State {
+        return self.isSelected ? .selected : (self.isHighlighted ? .highlighted : .normal)
+    }
+}
+
+
+// MARK: Setter Implementations
+private extension DateCell {
+    func _setTitleColor(_ color: @escaping () -> UIColor, for state: State) {
+        self._titleColors[state] = color
+        if state == self._state {
+            self._updateColors()
         }
     }
     
-    var _isSelected: Bool {
-        get {
-            return super.isSelected
-        }
-        set(newIsSelected) {
-            guard newIsSelected != super.isSelected else { return }
-            self.backgroundColor = self._backgroundColorForState(selected: newIsSelected)
-            self._label.textColor = self._textColorForState(selected: newIsSelected)
-            super.isSelected = newIsSelected
-        }
-    }
-    
-    var _titleColor: UIColor {
-        get {
-            return self._label.textColor
-        }
-        set(newTitleColor) {
-            self._backupTitleColor = newTitleColor
-            self._label.textColor = self._textColorForState()
+    func _setBackgroundColor(_ color: @escaping () -> UIColor, for state: State) {
+        self._backgroundColors[state] = color
+        if state == self._state {
+            self._updateColors()
         }
     }
 }
 
 
-// MARK: Color Helpers
+// MARK: isSelected / isHighlighted Override Implementations
 private extension DateCell {
-    func _backgroundColorForState(highlighted: Bool? = nil, selected: Bool? = nil) -> UIColor {
-        let highlighted: Bool = highlighted ?? self.isHighlighted
-        let selected: Bool = selected ?? self.isSelected
-        if highlighted {
-            return UIColor.blue00A7C4.withAlpha(0.5)
-        } else if selected {
-            return .blue00A7C4
-        } else {
-            return .white
-        }
+    func _setIsHighlighted(_ highlighted: Bool) {
+        guard highlighted != super.isHighlighted else { return }
+        super.isHighlighted = highlighted
+        self._updateColors()
     }
     
-    func _textColorForState(highlighted: Bool? = nil, selected: Bool? = nil) -> UIColor {
-        let highlighted: Bool = highlighted ?? self.isHighlighted
-        let selected: Bool = selected ?? self.isSelected
-        if highlighted || selected {
-            return .white
-        } else {
-            return self._backupTitleColor
-        }
+    func _setIsSelected(_ selected: Bool) {
+        guard selected != super.isSelected else { return }
+        super.isSelected = selected
+        self._updateColors()
     }
 }
 
 
-// MARK: Display Title in bold
+// MARK: Update Colors
 private extension DateCell {
-    func _displayTitleInBold(_ bold: Bool) {
-        let label: UILabel = self._label
-        let currentFont: UIFont = label.font
-        label.font = bold ? currentFont.bold() : currentFont.normal()
+    func _updateColors() {
+        let state: State = self._state
+        self.backgroundColor = self._backgroundColors[state]?()
+        self._label.textColor = self._titleColors[state]?()
     }
 }
