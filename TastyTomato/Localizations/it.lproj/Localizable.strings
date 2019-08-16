@@ -2,9 +2,12 @@
 /* 1 word */
 "Back" = "Indietro";
 "Cancel" = "Cancelli";
+"Create" = "Crea ";
+"Dark" = "Scuro";
 "Delete" = "Cancella";
 "Done" = "Fatto";
 "Edit" = "Modifica";
+"Light" = "Chiaro";
 "New" = "Nuovo";
 "Next" = "Prossimo";
 "Save" = "Salva";

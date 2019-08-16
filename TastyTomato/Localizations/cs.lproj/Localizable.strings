@@ -1,10 +1,13 @@
 
 /* 1 word */
-"Back" =  "Zpět";
+"Back" = "Zpět";
 "Cancel" = "Zrušit";
+"Create" = "Vytvořit";
+"Dark" = "Tmavé";
 "Delete" = "Odstranit";
 "Done" = "Hotovo";
 "Edit" = "Upravit";
+"Light" = "Světlé";
 "New" = "Nové";
 "Next" = "Další";
 "Save" = "Uložit";

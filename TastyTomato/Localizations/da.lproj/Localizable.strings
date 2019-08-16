@@ -1,10 +1,13 @@
 
 /* 1 word */
-"Back" =  "Tilbage";
+"Back" = "Tilbage";
 "Cancel" = "Annuller";
+"Create" = "Opret";
+"Dark" = "Mørk";
 "Delete" = "Slet";
 "Done" = "Færdig";
 "Edit" = "Rediger";
+"Light" = "Lys";
 "New" = "Ny";
 "Next" = "Næste";
 "Save" = "Gem";
