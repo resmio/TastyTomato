@@ -19,203 +19,203 @@ import Foundation
         background_: Background(
             // MARK: // General
             default: .whiteFFFFFF,
-            navigationBar: .blue333B4F, // headerBackgroundColor
-            defaultPopover: .whiteFFFFFF, // popoverBackgroundColor
-            defaultSelected: .blue00A7C4, // selection / focus
-            newBookingFlow: .whiteFFFFFF, // walkIn / newBookingBackgroundColor
+            navigationBar: .blue333B4F,
+            defaultPopover: .whiteFFFFFF,
+            defaultSelected: .blue00A7C4,
+            newBookingFlow: .whiteFFFFFF,
             filledButton: .blue00A7C4,
             filledButtonDimmed: .blueC0F6FF,
-            createButton: .blue00A7C4, // createButton
-            deleteButton: .redE62C4F, // deleteButton
+            createButton: .blue00A7C4,
+            deleteButton: .redE62C4F,
             warningTextView: .yellowF8C150,
             
             // MARK: // Specific
             // MARK: LoginView
-            login: .whiteFFFFFF, // SignInBackgroundColor (background image +)
+            login: .whiteFFFFFF,
             
             // MARK: MainMenuView
-            mainMenu: .blue333B4F, // navigationbarBackgroundColor
-            mainMenuHeader: .blue293140, // navigationbarTopBackgroundColor
-            mainMenuSelectedItem: .blue293140, // selectedItemNavigationbarBackgroundColor
-            mainMenuSelectedItemBanner: .blue00A7C4, // selectedItemNavigationbarLeftBorderColor
+            mainMenu: .blue333B4F,
+            mainMenuHeader: .blue293140,
+            mainMenuSelectedItem: .blue293140,
+            mainMenuSelectedItemBanner: .blue00A7C4,
             
             // MARK: SettingsMenu
             settingsMenu: .blue293140,
-            settingsMenuSelectedItem: .blue1E2532, // selectedItemNavigationbarBackgroundColor (second hierarchy)
-            settingsMenuSelectedItemBanner: .blue00A7C4, // selectedItemNavigationbarLeftBorderColor
+            settingsMenuSelectedItem: .blue1E2532,
+            settingsMenuSelectedItemBanner: .blue00A7C4,
             
             // MARK: BookingsView
-            searchFieldContainer: .grayCCCCCC, // aroundSearchFieldBackgroundColor
-            searchField: .whiteF7F7F7, // searchFieldFillColor
-            bookingStatusSectionHeader: .whiteFFFFFF, // statusBookingListBackgroundColor
-            bookingCell: .whiteF7F7F7, // bookingsBookingListBackgroundColor
+            searchFieldContainer: .grayCCCCCC,
+            searchField: .whiteF7F7F7,
+            bookingStatusSectionHeader: .whiteFFFFFF,
+            bookingCell: .whiteF7F7F7,
             
             // MARK: RoomsView
-            roomsView: .whiteFFFFFF, // roomAreaBackgroundColor
+            roomsView: .whiteFFFFFF,
             
             // MARK: ChooseTablesView
-            numOfSeatsInfoPerfect: .green22CCAA, // newBookingSeatsPerfect
+            numOfSeatsInfoPerfect: .green22CCAA,
             
             // MARK: TischView
-            freeTable: .gray999999, // freeTable
-            partiallyOccupiedTable: .green22CCAA, // occupiedTableWithFreeSeats
-            fullTable: .blue00A7C4, // fullyOccupiedTableNoSeats
-            blockedTableStripe: .gray555555, // blockedTable (stripes)
-            chairColor: .gray555555, // Seats
+            freeTable: .gray999999,
+            partiallyOccupiedTable: .green22CCAA,
+            fullTable: .blue00A7C4,
+            blockedTableStripe: .gray555555,
+            chairColor: .gray555555,
             
             // MARK: TimelineView
-            timelineView: .whiteFFFFFF, // timelineBackgroundColor
-            timeIndicatorLabel: .blue00A7C4, // timeFocusFillColor
+            timelineView: .whiteFFFFFF,
+            timeIndicatorLabel: .blue00A7C4,
             timelineNumOfSeatsLabel: .grayCCCCCC,
             
             // MARK: SettingsView
-            settingsView: .whiteFFFFFF, // settingsBackgroundColor
+            settingsView: .whiteFFFFFF,
             
             // MARK: CalendarView
-            selectedDay: .blue00A7C4, // BackgroundFilled
+            selectedDay: .blue00A7C4,
             
             // MARK: NotificationsPopover
-            notificationButtonBadge: .redE62C4F, // notificationBadgeBackgroundColor
-            notificationsView: .whiteFFFFFF, // notificationfeedBackgroundColor
-            notificationsViewSectionHeader: .whiteF7F7F7, // notificationfeedheadingsBackgroundColor
-            noteCell: .blueC0F6FF, // notificationfeedNotesBackgroundColor
-            taskCellUnread: .yellowFFF2D8, // notificationsfeedNewOpenTasksBackgroundColor
-            taskCellRead: .clear, // notificationsfeedReadOpenTasksBackgroundColor
+            notificationButtonBadge: .redE62C4F,
+            notificationsView: .whiteFFFFFF,
+            notificationsViewSectionHeader: .whiteF7F7F7,
+            noteCell: .blueC0F6FF,
+            taskCellUnread: .yellowFFF2D8,
+            taskCellRead: .clear,
             
             // MARK: OfflinePopover
-            offlineView: .whiteFFFFFF, // noInternetAlertBackgroundColor
+            offlineView: .whiteFFFFFF,
             
             // MARK: TableInfoPopover
-            tableInfoPopoverButton: .blue333B4F, // buttonInPopover (newBooking/ walkIn/ blocking)
+            tableInfoPopoverButton: .blue333B4F,
             
             // MARK: SuccessHUD
-            successHUD: .green22CCAA // successBackgroundColor
+            successHUD: .green22CCAA
         ),
         
         // MARK: -
         // MARK: // Lines
         lines_: Lines(
             // MARK: // General
-            separator: .grayCCCCCC, // separatorColor
-            borderUnfocussed: .grayCCCCCC, // borderColor
-            borderFocussed: .blue00A7C4, // focusBorderColor
-            switchTint: .grayCCCCCC, // switchButtonOutline
-            switchOnTint: .blue00A7C4, // switchButtonON
-            stepperTint: .gray555555, // minusPlusButton
+            separator: .grayCCCCCC,
+            borderUnfocussed: .grayCCCCCC,
+            borderFocussed: .blue00A7C4,
+            switchTint: .grayCCCCCC,
+            switchOnTint: .blue00A7C4,
+            stepperTint: .gray555555,
             sliderTint: .blue00A7C4,
-            segmentedControl: .blue00A7C4, // selectButton
-            defaultIcon: .gray555555, // iconsOnWhitebackground
-            invertedIcon: .whiteFFFFFF, // iconsOnDarkbackground
+            segmentedControl: .blue00A7C4,
+            defaultIcon: .gray555555,
+            invertedIcon: .whiteFFFFFF,
             contrastIcon: .gray555555,
-            highlighted: .blue00A7C4, // today/highlightedTextColor
+            highlighted: .blue00A7C4,
             warning: .yellowF8C150,
             criticalWarning: .redE62C4F,
             
             // MARK: // Specific
             // MARK: MainTitleView
-            mainTitleViewButtonBorder: .blue3F4962, // buttonBorderColor (all, except hamburger)
-            hamburgerIcon: .whiteFFFFFF, // hamburgerIcon
-            mainTitleViewArrowIcon: .whiteFFFFFF, // arrows / time / date
-            nowButtonEnabled: .whiteFFFFFF, // nowButtonActiveBorderColor
-            nowButtonDisabled: .blue3F4962, // nowButtonBorderInactiveColor
-            offlineIcon: .redE62C4F, // noInternetIcon
-            notificationButtonDisabled: .blue3F4962, // notificationfeedIconInactive
-            notificationButtonNotes: .blue00A7C4, // notificationfeedIconNotes
-            notificationButtonNotesAndTasks: .whiteFFFFFF, // notificationfeedIconNotesAndOpenTasks
-            newBookingButton: .whiteFFFFFF, // newBooking / walkIn
-            newWalkinButton: .whiteFFFFFF, // newBooking / walkIn
+            mainTitleViewButtonBorder: .blue3F4962,
+            hamburgerIcon: .whiteFFFFFF,
+            mainTitleViewArrowIcon: .whiteFFFFFF,
+            nowButtonEnabled: .whiteFFFFFF,
+            nowButtonDisabled: .blue3F4962,
+            offlineIcon: .redE62C4F,
+            notificationButtonDisabled: .blue3F4962,
+            notificationButtonNotes: .blue00A7C4,
+            notificationButtonNotesAndTasks: .whiteFFFFFF,
+            newBookingButton: .whiteFFFFFF,
+            newWalkinButton: .whiteFFFFFF,
             
             // MARK: MainMenuView
             mainMenuHeaderSeparator: .blue333B4F,
             
             // MARK: TimelineView
-            horizontalSeparator: .grayCCCCCC, // horizontalSeparatorColor
-            verticalSeparator: .blue3F4962, // verticalSeparatorColor (full hours)
-            verticalSubSeparator: .grayCCCCCC, // verticalSeparatorColor (quarter & half hour)
-            timeIndicatorLine: .blue00A7C4, // timeFocusVerticalLineColor
+            horizontalSeparator: .grayCCCCCC,
+            verticalSeparator: .blue3F4962,
+            verticalSubSeparator: .grayCCCCCC,
+            timeIndicatorLine: .blue00A7C4,
             
             // MARK: LinkIcon
-            linkIconPartiallyOccupiedTable: .green22CCAA, // linkedTableOccupiedFreeSeatsIcon
-            linkIconFullTable: .blue00A7C4, // linkedTableFullyOccupiedIcon
+            linkIconPartiallyOccupiedTable: .green22CCAA,
+            linkIconFullTable: .blue00A7C4,
             
             // MARK: OfflinePopover
-            offlineViewBorder: .whiteFFFFFF // noInternetAlertBackgroundColor
+            offlineViewBorder: .whiteFFFFFF
         ),
         
         // MARK: -
         // MARK: // Text
         text_: Text(
             // MARK: // General
-            default: .gray555555, // defaultTextColor
-            inverted: .whiteFFFFFF, // darkBackgroundTextColor
-            navigationBar: .whiteFFFFFF, // headerTextColor
-            titleLabel: .blue3F4962, // headingTextColor
+            default: .gray555555,
+            inverted: .whiteFFFFFF,
+            navigationBar: .whiteFFFFFF,
+            titleLabel: .blue3F4962,
             descriptionLabel: .gray999999,
             valueLabel: .gray555555,
-            placeholder: .grayCCCCCC, // inputHelpTextColor
-            highlighted: .blue00A7C4, // today/highlightedTextColor
+            placeholder: .grayCCCCCC,
+            highlighted: .blue00A7C4,
             filledButton: .whiteFFFFFF,
             warningTextView: .whiteFFFFFF,
             
             // MARK: // Specific
             // MARK: MainMenuView
             mainMenuHeader: .whiteFFFFFF,
-            mainMenuItem: .grayDDDDDD, // navigationBarTextColor
-            mainMenuSelectedItem: .whiteFFFFFF, // selectedItemNavigationsBarTextColor
+            mainMenuItem: .grayDDDDDD,
+            mainMenuSelectedItem: .whiteFFFFFF,
             
             // MARK: SettingsMenuView
             settingsMenuItem: .grayDDDDDD,
             settingsMenuSelectedItem: .whiteFFFFFF,
             
             // MARK: MainTitleView
-            mainTitleView: .whiteFFFFFF, // arrows / time / date
+            mainTitleView: .whiteFFFFFF,
             
             // MARK: NotificationsPopover
-            notificationButtonBadge: .whiteFFFFFF, // notificationBadgeTextColor
-            notificationsViewSectionHeader: .gray555555, // notificationfeedHeadingColor
-            noteCell: .blue018EA6, // notificationfeedNoteTextColor
-            taskCellUnread: .yellowD7A43B, // notificationfeedNewOpenTasksTextColor
-            taskCellRead: .gray555555, // notificationsfeedReadOpenTasksBackgroundColor
+            notificationButtonBadge: .whiteFFFFFF,
+            notificationsViewSectionHeader: .gray555555,
+            noteCell: .blue018EA6,
+            taskCellUnread: .yellowD7A43B,
+            taskCellRead: .gray555555,
             
             // MARK: TischView
-            partiallyOccupiedTable: .green22CCAA, // occupiedTableWithFreeSeats
-            fullTable: .blue00A7C4, // occupiedTableNoSeats
-            blocking: .redE62C4F, // blocking
+            partiallyOccupiedTable: .green22CCAA,
+            fullTable: .blue00A7C4,
+            blocking: .redE62C4F,
             
             // MARK: CalendarView
-            monthHeading: .gray555555, // monthHeadingTextColor
-            weekdayName: .gray555555, // weekdayLabelsTextColor
-            pastDay: .grayCCCCCC, // pastDaysTextColor
-            today: .blue00A7C4, // todayTextColor
-            selectedDay: .whiteFFFFFF, // selectedDayTextColor
-            dateInCurrentMonth: .gray555555, // currentMonthDaysTextColor
-            dateInOtherMonth: .gray999999, // nextMonthDatesTextColor
+            monthHeading: .gray555555,
+            weekdayName: .gray555555,
+            pastDay: .grayCCCCCC,
+            today: .blue00A7C4,
+            selectedDay: .whiteFFFFFF,
+            dateInCurrentMonth: .gray555555,
+            dateInOtherMonth: .gray999999,
             dateInPast: .grayCCCCCC,
             
             // MARK: TimelineView
-            timeIndicatorLabel: .whiteFFFFFF, // timeFocusTextColor (time)
+            timeIndicatorLabel: .whiteFFFFFF,
             
             // MARK: TextButtons
-            saveButton: .green22CCAA, // saveButton
-            cancelButton: .redE62C4F, // cancelButton
-            nextButton: .whiteFFFFFF, // nextButton
-            backButton: .whiteFFFFFF, // backButton
-            doneButton: .green22CCAA, // doneButton
-            newButton: .blue00A7C4, // newButton
-            editButton: .blue00A7C4, // editButton
+            saveButton: .green22CCAA,
+            cancelButton: .redE62C4F,
+            nextButton: .whiteFFFFFF,
+            backButton: .whiteFFFFFF,
+            doneButton: .green22CCAA,
+            newButton: .blue00A7C4,
+            editButton: .blue00A7C4,
             deleteButton: .redE62C4F
         ),
         
         // MARK: -
         // MARK: // BookingStatus
         bookingStatus_: BookingStatus(
-            unconfirmed: .yellowD7A43B, // Unconfirmed
-            confirmed: .blue00A7C4, // Confirmed
-            arrived: .green22CCAA, // Arrived
-            seated: .yellowF8C150, // Seated
-            finished: .gray999999, // Finished
-            noShow: .blue3F4962, // No-Show
-            cancelled: .redE62C4F // Cancelled
+            unconfirmed: .yellowD7A43B,
+            confirmed: .blue00A7C4,
+            arrived: .green22CCAA,
+            seated: .yellowF8C150,
+            finished: .gray999999,
+            noShow: .blue3F4962,
+            cancelled: .redE62C4F
         )
     )
 }
