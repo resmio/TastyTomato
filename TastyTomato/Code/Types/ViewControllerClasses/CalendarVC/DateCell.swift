@@ -51,6 +51,7 @@ class DateCell: UICollectionViewCell {
     
     // Common Init
     private func _init() {
+        self.setColorAdjustment(self._adjustColors)
         self.contentView.addSubview(self._label)
     }
     
@@ -116,14 +117,14 @@ private extension DateCell {
     func _setTitleColor(_ color: @escaping () -> UIColor, for state: State) {
         self._titleColors[state] = color
         if state == self._state {
-            self._updateColors()
+            self.adjustColors()
         }
     }
     
     func _setBackgroundColor(_ color: @escaping () -> UIColor, for state: State) {
         self._backgroundColors[state] = color
         if state == self._state {
-            self._updateColors()
+            self.adjustColors()
         }
     }
 }
@@ -134,22 +135,23 @@ private extension DateCell {
     func _setIsHighlighted(_ highlighted: Bool) {
         guard highlighted != super.isHighlighted else { return }
         super.isHighlighted = highlighted
-        self._updateColors()
+        self.adjustColors()
     }
     
     func _setIsSelected(_ selected: Bool) {
         guard selected != super.isSelected else { return }
         super.isSelected = selected
-        self._updateColors()
+        self.adjustColors()
     }
 }
 
 
 // MARK: Update Colors
 private extension DateCell {
-    func _updateColors() {
-        let state: State = self._state
-        self.backgroundColor = self._backgroundColors[state]?()
-        self._label.textColor = self._titleColors[state]?()
+    func _adjustColors(_ view: UIView) {
+        guard let cell: DateCell = view as? DateCell else { return }
+        let state: State = cell._state
+        cell.backgroundColor = cell._backgroundColors[state]?()
+        cell._label.textColor = cell._titleColors[state]?()
     }
 }
