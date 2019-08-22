@@ -71,10 +71,6 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("offline")
     }
     
-    public static var Persons: MiscIcon {
-        return MiscIcon.suffixed_("persons")
-    }
-    
     public static var Phone: MiscIcon {
         return MiscIcon.suffixed_("phone")
     }
