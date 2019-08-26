@@ -106,7 +106,7 @@ public extension ColorScheme {
         public let navigationBar: UIColor
         public let defaultPopover: UIColor
         public let defaultSelected: UIColor
-        public let newBookingFlow: UIColor
+        public let addBookingFlow: UIColor
         public let filledButton: UIColor
         public let filledButtonDimmed: UIColor
         public let createButton: UIColor

@@ -22,7 +22,7 @@ import Foundation
             navigationBar: .blue333B4F,
             defaultPopover: .whiteFFFFFF,
             defaultSelected: .blue00A7C4,
-            newBookingFlow: .whiteFFFFFF,
+            addBookingFlow: .whiteFFFFFF,
             filledButton: .blue00A7C4,
             filledButtonDimmed: .blueC0F6FF,
             createButton: .blue00A7C4,
