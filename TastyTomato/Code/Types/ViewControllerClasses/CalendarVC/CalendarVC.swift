@@ -14,6 +14,7 @@ import SwiftDate
 // MARK: // Public
 // MARK: - CalendarVCDelegate
 public protocol CalendarVCDelegate: class {
+    func shouldSelectDate(_ date: Date, on calendarVC: CalendarVC) -> Bool
     func didSelectDate(_ date: Date, on calendarVC: CalendarVC)
 }
 
@@ -144,7 +145,7 @@ extension CalendarVC: CalendarDaysVCDelegate {
     }
     
     func shouldSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC) -> Bool {
-        return true
+        return self._delegate?.shouldSelectDate(date, on: self) ?? true
     }
     
     func didSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC) {
