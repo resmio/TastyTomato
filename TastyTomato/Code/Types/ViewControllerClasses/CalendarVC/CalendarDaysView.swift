@@ -27,9 +27,7 @@ extension CalendarDaysView {
     }
     
     var titleLabelFrame: CGRect {
-        get {
-            return self._titleLabel.frame
-        }
+        get { return self._titleLabel.frame }
         set { self._titleLabel.frame = newValue }
     }
     
