@@ -278,7 +278,7 @@ private extension CalendarVC {
     
     func _daysVC(for month: Date) -> CalendarDaysVC {
         let daysVC: CalendarDaysVC = CalendarDaysVC(month: month)
-        daysVC.delegate = self
+        daysVC.setDelegate(self)
         daysVC.selectDate(self.selectedDate)
         self._adjustDaysVCLayout(daysVC)
         self._applyDesign(design: self._design, to: daysVC)
