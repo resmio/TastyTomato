@@ -53,7 +53,8 @@ extension CalendarDaysView {
     
     // Functions
     func selectDateCell(at indexPath: IndexPath?) {
-        self._collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
+        self._selectedIndexPath = indexPath
+        self.reloadCells()
     }
     
     func reloadCells() {
@@ -91,6 +92,7 @@ class CalendarDaysView: UIView {
     
     // Private Variables
     private var __topInset: CGFloat = 0
+    private var _selectedIndexPath: IndexPath?
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -102,12 +104,8 @@ class CalendarDaysView: UIView {
 // MARK: Protocol Conformances
 // MARK: UICollectionViewDelegate
 extension CalendarDaysView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return self._collectionView(collectionView, shouldHighlightItemAt: indexPath)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self._collectionView(collectionView, didSelectItemAt: indexPath)
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return self._collectionView(collectionView, shouldSelectItemAt: indexPath)
     }
 }
 
@@ -203,14 +201,18 @@ private extension CalendarDaysView {
 // MARK: Protocol Conformance Implementations
 // MARK: UICollectionViewDelegate
 private extension CalendarDaysView/*: UICollectionViewDelegate*/ {
-    func _collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+    func _collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         let cell: DateCell = collectionView.cellForItem(at: indexPath) as! DateCell
-        return self._delegate?.shouldSelect(cell, at: indexPath, on: self) ?? true
-    }
-    
-    func _collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell: DateCell = collectionView.cellForItem(at: indexPath) as! DateCell
+        guard self._delegate?.shouldSelect(cell, at: indexPath, on: self) ?? true else { return false }
+        
+        if let selectedIndexPath: IndexPath = self._selectedIndexPath {
+            collectionView.cellForItem(at: selectedIndexPath)?.isSelected = false
+        }
+        
+        cell.isSelected = true
+        self._selectedIndexPath = indexPath
         self._delegate?.didSelect(cell, at: indexPath, on: self)
+        return false
     }
 }
 
@@ -223,6 +225,7 @@ private extension CalendarDaysView/*: UICollectionViewDataSource*/ {
             for: indexPath
         ) as! DateCell
         self._delegate?.configure(cell, for: indexPath, on: self)
+        cell.isSelected = indexPath == self._selectedIndexPath
         return cell
     }
 }
