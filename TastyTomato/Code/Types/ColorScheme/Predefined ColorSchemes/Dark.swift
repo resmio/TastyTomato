@@ -110,6 +110,7 @@ import Foundation
             highlighted: .blue00A7C4,
             warning: .yellowF8C150,
             criticalWarning: .redE62C4F,
+            navBarButtonDisabled: .blue333B4F,
             
             // MARK: // Specific
             // MARK: MainTitleView
@@ -117,7 +118,6 @@ import Foundation
             hamburgerIcon: .whiteFFFFFF,
             mainTitleViewArrowIcon: .whiteFFFFFF,
             nowButtonEnabled: .whiteFFFFFF,
-            nowButtonDisabled: .blue333B4F,
             offlineIcon: .redE62C4F,
             notificationButtonDisabled: .blue333B4F,
             notificationButtonNotes: .blue00A7C4,
