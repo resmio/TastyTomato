@@ -131,7 +131,7 @@ private extension CalendarDaysVC {
         calendarDaysView.setColorAdjustment({
             ($0 as? CalendarDaysView)?.titleColor = design.monthNameAndYearTextColor()
         })
-        calendarDaysView.delegate = self
+        calendarDaysView.setDelegate(self)
         calendarDaysView.titleFont = design.monthNameAndYearFont
         return calendarDaysView
     }

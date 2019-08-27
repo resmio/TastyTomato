@@ -10,7 +10,7 @@ import UIKit
 
 
 // MARK: // Internal
-// MARK: - CalendarDaysViewDelegate
+// MARK: -
 protocol CalendarDaysViewDelegate: class {
     func configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView)
     func shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool
@@ -18,61 +18,39 @@ protocol CalendarDaysViewDelegate: class {
 }
 
 
-// MARK: - CalendarView
+// MARK: -
 // MARK: Interface
 extension CalendarDaysView {
-    var delegate: CalendarDaysViewDelegate? {
-        get {
-            return self._delegate
-        }
-        set(newDelegate) {
-            self._delegate = newDelegate
-        }
-    }
-    
     var topInset: CGFloat {
-        get {
-            return self._topInset
-        }
-        set(newTopInset) {
-            self._topInset = newTopInset
-        }
+        get { return self._topInset }
+        set { self._topInset = newValue }
     }
     
     var titleLabelFrame: CGRect {
         get {
             return self._titleLabel.frame
         }
-        set(newTitleLabelFrame) {
-            self._titleLabel.frame = newTitleLabelFrame
-        }
+        set { self._titleLabel.frame = newValue }
     }
     
     var title: String {
-        get {
-            return self._titleLabel.text ?? ""
-        }
-        set(newTitle) {
-            self._titleLabel.text = newTitle
-        }
+        get { return self._titleLabel.text ?? "" }
+        set { self._titleLabel.text = newValue }
     }
     
     var titleFont: UIFont {
-        get {
-            return self._titleLabel.font
-        }
-        set(newFont) {
-            self._titleLabel.font = newFont
-        }
+        get { return self._titleLabel.font }
+        set { self._titleLabel.font = newValue }
     }
     
     var titleColor: UIColor {
-        get {
-            return self._titleLabel.textColor
-        }
-        set(newTitleColor) {
-            self._titleLabel.textColor = newTitleColor
-        }
+        get { return self._titleLabel.textColor }
+        set { self._titleLabel.textColor = newValue }
+    }
+    
+    // Setters
+    func setDelegate(_ delegate: CalendarDaysViewDelegate?) {
+        self._delegate = delegate
     }
     
     // Functions
@@ -91,25 +69,30 @@ class CalendarDaysView: UIView {
     // Required Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self._addSubviews()
+        self._init()
     }
     
     // Override Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self._addSubviews()
+        self._init()
+    }
+    
+    // Common Init
+    private func _init() {
+        [self._titleLabel, self._collectionView].forEach(self.addSubview)
     }
     
     // Private Weak Variables
-    fileprivate weak var _delegate: CalendarDaysViewDelegate?
+    private weak var _delegate: CalendarDaysViewDelegate?
     
     // Private Lazy Variables
-    fileprivate lazy var _titleLabel: UILabel = self._createTitleLabel()
-    fileprivate lazy var _collectionView: UICollectionView = self._createCollectionView()
-    fileprivate lazy var _collectionViewLayout: UICollectionViewFlowLayout = self._createCollectionViewLayout()
+    private lazy var _titleLabel: UILabel = self._createTitleLabel()
+    private lazy var _collectionView: UICollectionView = self._createCollectionView()
+    private lazy var _collectionViewLayout: UICollectionViewFlowLayout = self._createCollectionViewLayout()
     
     // Private Variables
-    fileprivate var __topInset: CGFloat = 0
+    private var __topInset: CGFloat = 0
     
     // Layout Overrides
     override func layoutSubviews() {
@@ -118,7 +101,7 @@ class CalendarDaysView: UIView {
 }
 
 
-// MARK: Delegates / DataSources
+// MARK: Protocol Conformances
 // MARK: UICollectionViewDelegate
 extension CalendarDaysView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
@@ -219,26 +202,17 @@ private extension CalendarDaysView {
 }
 
 
-// MARK: Add Subviews
-private extension CalendarDaysView {
-    func _addSubviews() {
-        self.addSubview(self._titleLabel)
-        self.addSubview(self._collectionView)
-    }
-}
-
-
-// MARK: Delegates / DataSources
+// MARK: Protocol Conformance Implementations
 // MARK: UICollectionViewDelegate
 private extension CalendarDaysView/*: UICollectionViewDelegate*/ {
     func _collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         let cell: DateCell = collectionView.cellForItem(at: indexPath) as! DateCell
-        return self.delegate?.shouldSelect(cell, at: indexPath, on: self) ?? true
+        return self._delegate?.shouldSelect(cell, at: indexPath, on: self) ?? true
     }
     
     func _collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell: DateCell = collectionView.cellForItem(at: indexPath) as! DateCell
-        self.delegate?.didSelect(cell, at: indexPath, on: self)
+        self._delegate?.didSelect(cell, at: indexPath, on: self)
     }
 }
 
@@ -250,7 +224,7 @@ private extension CalendarDaysView/*: UICollectionViewDataSource*/ {
             withReuseIdentifier: DateCell.reuseIdentifier,
             for: indexPath
         ) as! DateCell
-        self.delegate?.configure(cell, for: indexPath, on: self)
+        self._delegate?.configure(cell, for: indexPath, on: self)
         return cell
     }
 }
