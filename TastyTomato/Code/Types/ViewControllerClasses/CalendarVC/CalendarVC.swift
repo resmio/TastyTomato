@@ -47,15 +47,6 @@ public extension CalendarVC {
     }
     
     // ReadWrite
-    var delegate: CalendarVCDelegate? {
-        get {
-            return self._delegate
-        }
-        set(newDelegate) {
-            self._delegate = newDelegate
-        }
-    }
-    
     var selectedDate: Date? {
         get {
             return self._selectedDate
@@ -65,7 +56,11 @@ public extension CalendarVC {
         }
     }
     
-    // Functions
+    // Setters
+    func setDelegate(_ delegate: CalendarVCDelegate?) {
+        self._delegate = delegate
+    }
+    
     func setDisplayedMonthAndYear(from date: Date, animated: Bool = true) {
         self._setDisplayedMonthAndYear(from: date, animated: animated)
     }
@@ -79,18 +74,18 @@ public extension CalendarVC {
 // MARK: Class Declaration
 public class CalendarVC: UIViewController {
     // Private Weak Variables
-    fileprivate weak var _delegate: CalendarVCDelegate?
+    private weak var _delegate: CalendarVCDelegate?
     
     // Private Lazy Variables
-    fileprivate lazy var _calendarVCView: CalendarVCView = self._createCalendarVCView()
-    fileprivate lazy var _pageVC: UIPageViewController = self._createPageVC()
+    private lazy var _calendarVCView: CalendarVCView = self._createCalendarVCView()
+    private lazy var _pageVC: UIPageViewController = self._createPageVC()
     
     // Private Variables
-    fileprivate var _isPaging: Bool = false
-    fileprivate var __selectedDate: Date?
-    fileprivate var _design: CalendarVCDesign = CalendarVCDesign()
+    private var _isPaging: Bool = false
+    private var __selectedDate: Date?
+    private var _design: CalendarVCDesign = CalendarVCDesign()
     
-    // Lifecycle Overrides
+    // View Lifecycle Overrides
     public override func loadView() {
         self.view = self._calendarVCView
     }
@@ -105,7 +100,7 @@ public class CalendarVC: UIViewController {
 }
 
 
-// MARK: Delegates / DataSources
+// MARK: Protocol Conformances
 // MARK: CalendarHeaderViewDelegate
 extension CalendarVC: CalendarHeaderViewDelegate {
     func tappedLeftArrowButton(on calendarHeaderView: CalendarHeaderView) {
@@ -226,7 +221,7 @@ private extension CalendarVC {
 }
 
 
-// MARK: Lifecycle Override Implementations
+// MARK: View Lifecycle Override Implementations
 private extension CalendarVC {
     func _viewDidLoad() {
         super.viewDidLoad()
@@ -240,12 +235,12 @@ private extension CalendarVC {
 }
 
 
-// MARK: Delegate / DataSource Implementations
+// MARK: Protocol Conformance Implementations
 // MARK: CalendarDaysVCDelegate
 private extension CalendarVC/*: CalendarDaysVCDelegate*/ {
     func _didSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC) {
         self.__selectedDate = date
-        self.delegate?.didSelectDate(date, on: self)
+        self._delegate?.didSelectDate(date, on: self)
     }
 }
 
