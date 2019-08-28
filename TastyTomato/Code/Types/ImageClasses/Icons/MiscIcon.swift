@@ -27,8 +27,16 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("booking")
     }
     
+    public static var Calendar: MiscIcon {
+        return MiscIcon.suffixed_("calendar")
+    }
+    
     public static var Checkmark: MiscIcon {
         return MiscIcon.suffixed_("checkmark")
+    }
+    
+    public static var Clock: MiscIcon {
+        return MiscIcon.suffixed_("clock")
     }
     
     public static var Direction: MiscIcon {
@@ -45,10 +53,6 @@ public class MiscIcon: MetaImage {
     
     public static var Guests: MiscIcon {
         return MiscIcon.suffixed_("guests")
-    }
-    
-    public static var Hamburger: MiscIcon {
-        return MiscIcon.suffixed_("hamburger")
     }
     
     public static var Location: MiscIcon {
@@ -71,10 +75,6 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("offline")
     }
     
-    public static var Persons: MiscIcon {
-        return MiscIcon.suffixed_("persons")
-    }
-    
     public static var Phone: MiscIcon {
         return MiscIcon.suffixed_("phone")
     }
@@ -89,6 +89,10 @@ public class MiscIcon: MetaImage {
     
     public static var Statistics: MiscIcon {
         return MiscIcon.suffixed_("statistics")
+    }
+    
+    public static var Table: MiscIcon {
+        return MiscIcon.suffixed_("table")
     }
     
     public static var WalkIn: MiscIcon {
