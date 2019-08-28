@@ -106,7 +106,7 @@ public extension ColorScheme {
         public let navigationBar: UIColor
         public let defaultPopover: UIColor
         public let defaultSelected: UIColor
-        public let newBookingFlow: UIColor
+        public let addBookingFlow: UIColor
         public let filledButton: UIColor
         public let filledButtonDimmed: UIColor
         public let createButton: UIColor
@@ -192,6 +192,7 @@ public extension ColorScheme {
         public let highlighted: UIColor
         public let warning: UIColor
         public let criticalWarning: UIColor
+        public let navBarButtonDisabled: UIColor
         
         // MARK: // Specific
         // MARK: MainTitleView
@@ -199,7 +200,6 @@ public extension ColorScheme {
         public let hamburgerIcon: UIColor
         public let mainTitleViewArrowIcon: UIColor
         public let nowButtonEnabled: UIColor
-        public let nowButtonDisabled: UIColor
         public let offlineIcon: UIColor
         public let notificationButtonDisabled: UIColor
         public let notificationButtonNotes: UIColor

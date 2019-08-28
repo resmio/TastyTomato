@@ -22,7 +22,7 @@ import Foundation
             navigationBar: .blue1E2532,
             defaultPopover: .blue293140,
             defaultSelected: .blue00A7C4,
-            newBookingFlow: .blue293140,
+            addBookingFlow: .blue293140,
             filledButton: .blue00A7C4,
             filledButtonDimmed: .blueC0F6FF,
             createButton: .blue00A7C4,
@@ -110,6 +110,7 @@ import Foundation
             highlighted: .blue00A7C4,
             warning: .yellowF8C150,
             criticalWarning: .redE62C4F,
+            navBarButtonDisabled: .blue333B4F,
             
             // MARK: // Specific
             // MARK: MainTitleView
@@ -117,7 +118,6 @@ import Foundation
             hamburgerIcon: .whiteFFFFFF,
             mainTitleViewArrowIcon: .whiteFFFFFF,
             nowButtonEnabled: .whiteFFFFFF,
-            nowButtonDisabled: .blue333B4F,
             offlineIcon: .redE62C4F,
             notificationButtonDisabled: .blue333B4F,
             notificationButtonNotes: .blue00A7C4,
