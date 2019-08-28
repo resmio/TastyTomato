@@ -53,8 +53,7 @@ extension CalendarDaysView {
     
     // Functions
     func selectDateCell(at indexPath: IndexPath?) {
-        self._selectedIndexPath = indexPath
-        self.reloadCells()
+        self._selectDateCell(at: indexPath)
     }
     
     func reloadCells() {
@@ -231,8 +230,13 @@ private extension CalendarDaysView/*: UICollectionViewDataSource*/ {
 }
 
 
-// MARK: Reload Cells
+// MARK: Interface Implementations
 private extension CalendarDaysView {
+    func _selectDateCell(at indexPath: IndexPath?) {
+        self._selectedIndexPath = indexPath
+        self.reloadCells()
+    }
+    
     func _reloadCells() {
         let selectedIndexPath: IndexPath? = self._collectionView.indexPathsForSelectedItems?.first
         self._collectionView.reloadData()
