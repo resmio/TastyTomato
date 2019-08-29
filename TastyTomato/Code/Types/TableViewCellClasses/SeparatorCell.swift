@@ -79,12 +79,7 @@ open class SeparatorCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self._init()
     }
-    
-    // Convenience Init
-    public convenience init() {
-        self.init(style: .default, reuseIdentifier: nil)
-    }
-    
+        
     // Common Init
     private func _init() {
         let separatorStyle: Separator.Style = self.separatorStyle
