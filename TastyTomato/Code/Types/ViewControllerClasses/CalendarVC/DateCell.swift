@@ -76,7 +76,7 @@ class DateCell: UICollectionViewCell {
     
     // Layout Overrides
     override func layoutSubviews() {
-        self._label.size = self.size
+        self._layoutSubviews()
     }
     
     // isHighlighted / isSelected Overrides
@@ -112,20 +112,11 @@ private extension DateCell {
 }
 
 
-// MARK: Setter Implementations
+// MARK: Layout Override Implementations
 private extension DateCell {
-    func _setTitleColor(_ color: @escaping () -> UIColor, for state: State) {
-        self._titleColors[state] = color
-        if state == self._state {
-            self.adjustColors()
-        }
-    }
-    
-    func _setBackgroundColor(_ color: @escaping () -> UIColor, for state: State) {
-        self._backgroundColors[state] = color
-        if state == self._state {
-            self.adjustColors()
-        }
+    func _layoutSubviews() {
+        super.layoutSubviews()
+        self._label.size = self.size
     }
 }
 
@@ -142,6 +133,24 @@ private extension DateCell {
         guard selected != super.isSelected else { return }
         super.isSelected = selected
         self.adjustColors()
+    }
+}
+
+
+// MARK: Setter Implementations
+private extension DateCell {
+    func _setTitleColor(_ color: @escaping () -> UIColor, for state: State) {
+        self._titleColors[state] = color
+        if state == self._state {
+            self.adjustColors()
+        }
+    }
+    
+    func _setBackgroundColor(_ color: @escaping () -> UIColor, for state: State) {
+        self._backgroundColors[state] = color
+        if state == self._state {
+            self.adjustColors()
+        }
     }
 }
 
