@@ -27,7 +27,8 @@ import Foundation
             filledButtonDimmed: .blueC0F6FF,
             createButton: .blue00A7C4,
             deleteButton: .redE62C4F,
-            warningTextView: .yellowF8C150,
+            warning: .yellowF8C150,
+            criticalWarning: .redE62C4F,
             
             // MARK: // Specific
             // MARK: LoginView

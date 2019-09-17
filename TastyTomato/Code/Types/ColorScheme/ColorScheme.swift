@@ -111,7 +111,8 @@ public extension ColorScheme {
         public let filledButtonDimmed: UIColor
         public let createButton: UIColor
         public let deleteButton: UIColor
-        public let warningTextView: UIColor
+        public let warning: UIColor
+        public let criticalWarning: UIColor
         
         // MARK: // Specific
         // MARK: LoginView
