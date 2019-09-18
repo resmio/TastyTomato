@@ -211,6 +211,7 @@ private extension TextButton {
         let button: TextButton = ._makeDefaultButton()
         button.setColorAdjustment({
             ($0 as? TextButton)?.setTitleColor(ColorScheme.text.doneButton, for: .normal)
+            ($0 as? TextButton)?.setTitleColor(ColorScheme.lines.navBarButtonDisabled, for: .disabled)
         })
         button.setTitle(NSL_("Done"), for: .normal)
         button.sizeToFit()
