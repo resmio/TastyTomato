@@ -21,9 +21,6 @@ import UIKit
         return self.redE62C4F.withAlpha(0.3)
     }
     
-    static var separatorColor: UIColor {
-        return self.grayDDDDDD
-    }
 }
 
 
