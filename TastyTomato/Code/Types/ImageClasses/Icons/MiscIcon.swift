@@ -55,6 +55,14 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("guests")
     }
     
+    public static var InternetBooking: MiscIcon {
+        return MiscIcon.suffixed_("internet-booking")
+    }
+    
+    public static var IPadApp: MiscIcon {
+        return MiscIcon.suffixed_("ipad-app")
+    }
+    
     public static var Location: MiscIcon {
         return MiscIcon.suffixed_("location")
     }
@@ -79,6 +87,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("phone")
     }
     
+    public static var RecurrentBooking: MiscIcon {
+        return MiscIcon.suffixed_("recurrent-booking")
+    }
+    
     public static var Search: MiscIcon {
         return MiscIcon.suffixed_("search")
     }
@@ -93,6 +105,10 @@ public class MiscIcon: MetaImage {
     
     public static var Table: MiscIcon {
         return MiscIcon.suffixed_("table")
+    }
+    
+    public static var Vitas: MiscIcon {
+        return MiscIcon.suffixed_("vitas")
     }
     
     public static var WalkIn: MiscIcon {
