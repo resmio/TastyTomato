@@ -26,6 +26,14 @@ public class BaseStepper: UIStepper {
     
     // Common Init
     private func _init() {
-        self.setColorAdjustment({ $0.tintColor = ColorScheme.lines.stepperTint })
+        self.setColorAdjustment({
+            guard let stepper: UIStepper = $0 as? UIStepper else { return }
+            // This seems to be necessary due to a bug in iOS 13
+            // See https://forums.developer.apple.com/thread/121495
+            let state: UIControl.State = .normal
+            stepper.setDecrementImage(nil, for: state)
+            stepper.setIncrementImage(nil, for: state)
+            stepper.tintColor = ColorScheme.lines.stepperTint
+        })
     }
 }
