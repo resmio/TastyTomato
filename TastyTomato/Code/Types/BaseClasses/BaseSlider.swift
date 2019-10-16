@@ -26,6 +26,6 @@ public class BaseSlider: UISlider {
     
     // Common Init
     private func _init() {
-        self.setColorAdjustment({ $0.tintColor = ColorScheme.lines.sliderTint })
+        self.setColorAdjustment({ ($0 as? UISlider)?.minimumTrackTintColor = ColorScheme.lines.sliderTint })
     }
 }
