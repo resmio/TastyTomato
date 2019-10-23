@@ -33,6 +33,10 @@ public extension FilledButton {
         return ._makeDeleteButton()
     }
     
+    static func makeNextButton() -> FilledButton {
+        return ._makeNextButton()
+    }
+    
     // Dim
     func dim(_ dim: Bool) {
         self._dim(dim)
@@ -90,6 +94,23 @@ private extension FilledButton {
             filledButton.setColor(fillColor, for: .normal)
             filledButton.setColor(fillColor.withAlpha(filledButton.highlightedAlpha), for: .highlighted)
             filledButton.setTitleColor(ColorScheme.text.filledButton, for: .normal)
+        })
+        return button
+    }
+    
+    static func _makeNextButton() -> FilledButton {
+        let button: FilledButton = ._makeDefaultButton(title: NSL_("Next"))
+        let image: UIImage = ArrowIcon.Right.asTemplate()
+        button.setImage(image, for: .normal)
+        button.setColorAdjustment({
+            guard let filledButton: FilledButton = $0 as? FilledButton else { return }
+            let background: ColorScheme.Background = ColorScheme.background
+            let dimmed: Bool = filledButton._isDimmed
+            let fillColor: UIColor = dimmed ? background.filledButtonDimmed : background.filledButton
+            filledButton.setColor(fillColor, for: .normal)
+            filledButton.setColor(fillColor.withAlpha(filledButton.highlightedAlpha), for: .highlighted)
+            filledButton.setTitleColor(ColorScheme.text.filledButton, for: .normal)
+            filledButton.tintColor = ColorScheme.lines.filledNextButtonImage
         })
         return button
     }
