@@ -194,6 +194,7 @@ public extension ColorScheme {
         public let warning: UIColor
         public let criticalWarning: UIColor
         public let navBarButtonDisabled: UIColor
+        public let filledNextButtonImage: UIColor
         
         // MARK: // Specific
         // MARK: MainTitleView

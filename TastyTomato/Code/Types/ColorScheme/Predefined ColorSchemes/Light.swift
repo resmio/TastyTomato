@@ -112,6 +112,7 @@ import Foundation
             warning: .yellowF8C150,
             criticalWarning: .redE62C4F,
             navBarButtonDisabled: .blue3F4962,
+            filledNextButtonImage: .whiteFFFFFF,
             
             // MARK: // Specific
             // MARK: MainTitleView
