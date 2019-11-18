@@ -111,6 +111,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("table")
     }
     
+    public static var Timeshifts: MiscIcon {
+        return MiscIcon.suffixed_("timeshifts")
+    }
+    
     public static var Vitas: MiscIcon {
         return MiscIcon.suffixed_("vitas")
     }
