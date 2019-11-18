@@ -115,6 +115,9 @@ public extension ColorScheme {
         public let criticalWarning: UIColor
         
         // MARK: // Specific
+        // MARK: MainTitleView
+        public let nowButtonEnabled: UIColor
+        
         // MARK: LoginView
         public let login: UIColor
         

@@ -31,6 +31,9 @@ import Foundation
             criticalWarning: .redE62C4F,
             
             // MARK: // Specific
+            // MARK: MainTitleView
+            nowButtonEnabled: .blue3F4962,
+            
             // MARK: LoginView
             login: .blue293140,
             
