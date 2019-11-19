@@ -79,6 +79,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("notification-feed")
     }
     
+    public static var Now: MiscIcon {
+        return MiscIcon.suffixed_("now")
+    }
+    
     @objc public static var Offline: MiscIcon {
         return MiscIcon.suffixed_("offline")
     }
@@ -105,6 +109,10 @@ public class MiscIcon: MetaImage {
     
     public static var Table: MiscIcon {
         return MiscIcon.suffixed_("table")
+    }
+    
+    public static var Timeshifts: MiscIcon {
+        return MiscIcon.suffixed_("timeshifts")
     }
     
     public static var Vitas: MiscIcon {

@@ -31,6 +31,9 @@ import Foundation
             criticalWarning: .redE62C4F,
             
             // MARK: // Specific
+            // MARK: MainTitleView
+            nowButtonEnabled: .blue3F4962,
+            
             // MARK: LoginView
             login: .blue293140,
             
@@ -120,6 +123,8 @@ import Foundation
             hamburgerIcon: .whiteFFFFFF,
             mainTitleViewArrowIcon: .whiteFFFFFF,
             nowButtonEnabled: .whiteFFFFFF,
+            timeshiftsButtonInactive: .whiteFFFFFF,
+            timeshiftsButtonActive: .blue00A7C4,
             offlineIcon: .redE62C4F,
             notificationButtonDisabled: .blue333B4F,
             notificationButtonNotes: .blue00A7C4,
