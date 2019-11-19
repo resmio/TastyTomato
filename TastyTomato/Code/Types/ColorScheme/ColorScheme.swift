@@ -205,6 +205,8 @@ public extension ColorScheme {
         public let hamburgerIcon: UIColor
         public let mainTitleViewArrowIcon: UIColor
         public let nowButtonEnabled: UIColor
+        public let timeshiftsButtonInactive: UIColor
+        public let timeshiftsButtonActive: UIColor
         public let offlineIcon: UIColor
         public let notificationButtonDisabled: UIColor
         public let notificationButtonNotes: UIColor

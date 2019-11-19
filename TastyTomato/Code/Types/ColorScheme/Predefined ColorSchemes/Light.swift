@@ -123,6 +123,8 @@ import Foundation
             hamburgerIcon: .whiteFFFFFF,
             mainTitleViewArrowIcon: .whiteFFFFFF,
             nowButtonEnabled: .whiteFFFFFF,
+            timeshiftsButtonInactive: .whiteFFFFFF,
+            timeshiftsButtonActive: .blue00A7C4,
             offlineIcon: .redE62C4F,
             notificationButtonDisabled: .blue3F4962,
             notificationButtonNotes: .blue00A7C4,
