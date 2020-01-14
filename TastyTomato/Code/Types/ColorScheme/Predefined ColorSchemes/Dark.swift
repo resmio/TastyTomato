@@ -25,7 +25,7 @@ import Foundation
             addBookingFlow: .blue293140,
             filledButton: .blue00A7C4,
             filledButtonDimmed: .blueC0F6FF,
-            createButton: .blue00A7C4,
+            createButton: .green22CCAA,
             deleteButton: .redE62C4F,
             warning: .yellowF8C150,
             criticalWarning: .redE62C4F,
