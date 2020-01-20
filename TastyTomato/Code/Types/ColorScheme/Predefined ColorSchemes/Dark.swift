@@ -74,6 +74,7 @@ import Foundation
             
             // MARK: OrderCell
             cardView: .blue1E2532,
+            newBanner: .yellowD7A43B,
             remainingMinutesBannerRemaining: .blue018EA6,
             remainingMinutesBannerOverdue: .redE62C4F,
             

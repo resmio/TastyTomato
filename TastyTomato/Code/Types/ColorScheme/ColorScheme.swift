@@ -158,6 +158,7 @@ public extension ColorScheme {
         
         // MARK: OrderCell
         public let cardView: UIColor
+        public let newBanner: UIColor
         public let remainingMinutesBannerRemaining: UIColor
         public let remainingMinutesBannerOverdue: UIColor
         
