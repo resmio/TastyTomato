@@ -157,6 +157,7 @@ public extension ColorScheme {
         public let timelineNumOfSeatsLabel: UIColor
         
         // MARK: OrderCell
+        public let cardView: UIColor
         public let remainingMinutesBannerRemaining: UIColor
         public let remainingMinutesBannerOverdue: UIColor
         

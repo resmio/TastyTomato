@@ -73,6 +73,7 @@ import Foundation
             timelineNumOfSeatsLabel: .grayCCCCCC,
             
             // MARK: OrderCell
+            cardView: .blue1E2532, // FIXME:
             remainingMinutesBannerRemaining: .blue018EA6,
             remainingMinutesBannerOverdue: .redE62C4F,
             
