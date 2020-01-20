@@ -72,6 +72,10 @@ import Foundation
             timeIndicatorLabel: .blue00A7C4,
             timelineNumOfSeatsLabel: .grayCCCCCC,
             
+            // MARK: OrderCell
+            remainingMinutesBannerRemaining: .blue018EA6,
+            remainingMinutesBannerOverdue: .redE62C4F,
+            
             // MARK: SettingsView
             settingsView: .whiteFFFFFF,
             
