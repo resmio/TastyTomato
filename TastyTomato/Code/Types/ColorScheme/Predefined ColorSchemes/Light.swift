@@ -229,6 +229,15 @@ import Foundation
             finished: .gray999999,
             noShow: .blue3F4962,
             cancelled: .redE62C4F
+        ),
+        
+        // MARK: -
+        // MARK: // OrderStatus
+        orderStatus_: OrderStatus( // FIXME: FIXME
+            new: .yellowD7A43B,
+            inProgress: .blue00A7C4,
+            completed: .gray999999,
+            cancelled: .redE62C4F
         )
     )
 }

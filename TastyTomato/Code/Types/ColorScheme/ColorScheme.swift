@@ -66,6 +66,10 @@ public extension ColorScheme {
     static var bookingStatus: BookingStatus {
         return self.current.bookingStatus
     }
+    
+    static var orderStatus: OrderStatus {
+        return self.current.orderStatus
+    }
 }
 
 
@@ -74,12 +78,13 @@ public extension ColorScheme {
 // MARK: Class Declaration
 @objc public class ColorScheme: NSObject {
     // Internal Init
-    internal init(name_: String, background_: Background, lines_: Lines, text_: Text, bookingStatus_: BookingStatus) {
+    internal init(name_: String, background_: Background, lines_: Lines, text_: Text, bookingStatus_: BookingStatus, orderStatus_: OrderStatus) {
         self.name = name_
         self.background = background_
         self.lines = lines_
         self.text = text_
         self.bookingStatus = bookingStatus_
+        self.orderStatus = orderStatus_
     }
     
     // Private Static Variables
@@ -93,6 +98,7 @@ public extension ColorScheme {
     public private(set) var lines: Lines
     public private(set) var text: Text
     public private(set) var bookingStatus: BookingStatus
+    public private(set) var orderStatus: OrderStatus
 }
 
 
@@ -306,6 +312,13 @@ public extension ColorScheme {
         public let seated: UIColor
         public let finished: UIColor
         public let noShow: UIColor
+        public let cancelled: UIColor
+    }
+    
+    struct OrderStatus {
+        public let new: UIColor
+        public let inProgress: UIColor
+        public let completed: UIColor
         public let cancelled: UIColor
     }
 }
