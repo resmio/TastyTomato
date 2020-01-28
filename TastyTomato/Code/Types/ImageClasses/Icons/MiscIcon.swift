@@ -87,6 +87,18 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("offline")
     }
     
+    public static var OrderDelivery: MiscIcon {
+        return MiscIcon.suffixed_("order-delivery")
+    }
+    
+    public static var OrderPickup: MiscIcon {
+        return MiscIcon.suffixed_("order-pickup")
+    }
+    
+    public static var OrderPreOrder: MiscIcon {
+        return MiscIcon.suffixed_("order-preorder")
+    }
+    
     public static var Phone: MiscIcon {
         return MiscIcon.suffixed_("phone")
     }
