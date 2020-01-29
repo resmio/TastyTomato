@@ -251,10 +251,12 @@ public extension ColorScheme {
         public let titleLabel: UIColor
         public let descriptionLabel: UIColor
         public let valueLabel: UIColor
+        public let linkLabel: UIColor
         public let placeholder: UIColor
         public let highlighted: UIColor
         public let filledButton: UIColor
         public let warningTextView: UIColor
+        public let warning: UIColor
         
         // MARK: // Specific
         // MARK: MainMenuView

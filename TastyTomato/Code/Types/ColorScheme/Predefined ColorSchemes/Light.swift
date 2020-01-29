@@ -165,10 +165,12 @@ import Foundation
             titleLabel: .blue3F4962,
             descriptionLabel: .gray999999,
             valueLabel: .gray555555,
+            linkLabel: .blue00A7C4,
             placeholder: .grayCCCCCC,
             highlighted: .blue00A7C4,
             filledButton: .whiteFFFFFF,
             warningTextView: .whiteFFFFFF,
+            warning: .redE62C4F,
             
             // MARK: // Specific
             // MARK: MainMenuView

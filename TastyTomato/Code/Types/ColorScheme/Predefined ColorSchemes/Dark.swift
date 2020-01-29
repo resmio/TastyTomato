@@ -73,7 +73,7 @@ import Foundation
             timelineNumOfSeatsLabel: .blue1E2532,
             
             // MARK: OrderCell
-            cardView: .blue1E2532,
+            cardView: .blue1E2532, // FIXME: FIXME
             newBanner: .yellowD7A43B,
             remainingMinutesBannerRemaining: .blue018EA6,
             remainingMinutesBannerOverdue: .redE62C4F,
@@ -165,10 +165,12 @@ import Foundation
             titleLabel: .whiteFFFFFF,
             descriptionLabel: .grayDDDDDD,
             valueLabel: .whiteFFFFFF,
+            linkLabel: .blue00A7C4,
             placeholder: .blue3F4962,
             highlighted: .blue00A7C4,
             filledButton: .whiteFFFFFF,
             warningTextView: .whiteFFFFFF,
+            warning: .redE62C4F,
             
             // MARK: // Specific
             // MARK: MainMenuView
