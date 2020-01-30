@@ -20,6 +20,10 @@ public extension BaseLabel {
     func setPlaceholderColor(_ color: UIColor?) {
         self._setPlaceholderColor(color)
     }
+    
+    func setIsUnderlined(_ underlined: Bool) {
+        self._setIsUnderlined(underlined)
+    }
 }
 
 
@@ -41,6 +45,7 @@ public class BaseLabel: UILabel {
     private var _placeholder: String?
     private var _textColor: UIColor = .black
     private var _placeholderColor: UIColor?
+    private var _isUnderlined: Bool = false
     
     // Variable Overrides
     public override var text: String? {
@@ -83,9 +88,25 @@ private extension BaseLabel {
         self._updateTextColor()
     }
     
+    func _setIsUnderlined(_ underlined: Bool) {
+        guard underlined != self._isUnderlined else { return }
+        self._isUnderlined = underlined
+        self._updateText()
+    }
+    
     // Helper
     func _updateText() {
-        super.text = self._text.isNilOrEmpty ? self._placeholder : self._text
+        let text: String? = self._text.isNilOrEmpty ? self._placeholder : self._text
+        if self._isUnderlined, let _text: String = text {
+            let color: UIColor = self.textColor
+            self.attributedText = NSAttributedString(string: _text, attributes: [
+                .foregroundColor: color,
+                .underlineStyle: NSUnderlineStyle.single.rawValue,
+                .underlineColor: color
+            ])
+        } else {
+            super.text = text
+        }
     }
     
     func _updateTextColor() {
