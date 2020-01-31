@@ -78,6 +78,9 @@ import Foundation
             remainingMinutesBannerRemaining: .blue018EA6,
             remainingMinutesBannerOverdue: .redE62C4F,
             
+            // MARK: OrderDetailView
+            orderNote: .blue018EA6,
+            
             // MARK: SettingsView
             settingsView: .blue293140,
             
@@ -209,6 +212,9 @@ import Foundation
             
             // MARK: TimelineView
             timeIndicatorLabel: .whiteFFFFFF,
+            
+            // MARK: OrderDetailView
+            orderNote: .whiteFFFFFF,
             
             // MARK: TextButtons
             saveButton: .green22CCAA,

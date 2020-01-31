@@ -168,6 +168,9 @@ public extension ColorScheme {
         public let remainingMinutesBannerRemaining: UIColor
         public let remainingMinutesBannerOverdue: UIColor
         
+        // MARK: OrderDetailView
+        public let orderNote: UIColor
+        
         // MARK: SettingsView
         public let settingsView: UIColor
         
@@ -295,6 +298,9 @@ public extension ColorScheme {
         
         // MARK: TimelineView
         public let timeIndicatorLabel: UIColor
+        
+        // MARK: OrderDetailView
+        public let orderNote: UIColor
         
         // MARK: TextButtons
         public let saveButton: UIColor
