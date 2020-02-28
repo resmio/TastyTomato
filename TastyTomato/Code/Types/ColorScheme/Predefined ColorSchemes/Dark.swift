@@ -31,6 +31,10 @@ import Foundation
             criticalWarning: .redE62C4F,
             
             // MARK: // Specific
+            // MARK: BottomRightButton
+            bottomRightButtonNormal: .blue333B4F,
+            bottomRightButtonSelected: .yellowD7A43B,
+    
             // MARK: MainTitleView
             nowButtonEnabled: .blue3F4962,
             

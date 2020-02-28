@@ -121,6 +121,10 @@ public extension ColorScheme {
         public let criticalWarning: UIColor
         
         // MARK: // Specific
+        // MARK: BottomRightButton
+        public let bottomRightButtonNormal: UIColor
+        public let bottomRightButtonSelected: UIColor
+        
         // MARK: MainTitleView
         public let nowButtonEnabled: UIColor
         
