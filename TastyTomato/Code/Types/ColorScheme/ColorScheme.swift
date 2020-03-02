@@ -173,6 +173,7 @@ public extension ColorScheme {
         public let remainingMinutesBannerOverdue: UIColor
         
         // MARK: OrderDetailView
+        public let orderDetailViewBackground: UIColor
         public let orderNote: UIColor
         
         // MARK: SettingsView

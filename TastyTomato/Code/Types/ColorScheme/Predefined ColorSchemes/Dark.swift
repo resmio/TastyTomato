@@ -77,12 +77,13 @@ import Foundation
             timelineNumOfSeatsLabel: .blue1E2532,
             
             // MARK: OrderCell
-            cardView: .blue1E2532, // FIXME: FIXME
+            cardView: .blue1E2532,
             newBanner: .yellowD7A43B,
             remainingMinutesBannerRemaining: .blue018EA6,
             remainingMinutesBannerOverdue: .redE62C4F,
             
             // MARK: OrderDetailView
+            orderDetailViewBackground: .blue1E2532,
             orderNote: .blue018EA6,
             
             // MARK: SettingsView
