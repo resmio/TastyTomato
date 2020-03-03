@@ -66,6 +66,10 @@ public extension ColorScheme {
     static var bookingStatus: BookingStatus {
         return self.current.bookingStatus
     }
+    
+    static var orderStatus: OrderStatus {
+        return self.current.orderStatus
+    }
 }
 
 
@@ -74,12 +78,13 @@ public extension ColorScheme {
 // MARK: Class Declaration
 @objc public class ColorScheme: NSObject {
     // Internal Init
-    internal init(name_: String, background_: Background, lines_: Lines, text_: Text, bookingStatus_: BookingStatus) {
+    internal init(name_: String, background_: Background, lines_: Lines, text_: Text, bookingStatus_: BookingStatus, orderStatus_: OrderStatus) {
         self.name = name_
         self.background = background_
         self.lines = lines_
         self.text = text_
         self.bookingStatus = bookingStatus_
+        self.orderStatus = orderStatus_
     }
     
     // Private Static Variables
@@ -93,6 +98,7 @@ public extension ColorScheme {
     public private(set) var lines: Lines
     public private(set) var text: Text
     public private(set) var bookingStatus: BookingStatus
+    public private(set) var orderStatus: OrderStatus
 }
 
 
@@ -115,6 +121,10 @@ public extension ColorScheme {
         public let criticalWarning: UIColor
         
         // MARK: // Specific
+        // MARK: BottomRightButton
+        public let bottomRightButtonNormal: UIColor
+        public let bottomRightButtonSelected: UIColor
+        
         // MARK: MainTitleView
         public let nowButtonEnabled: UIColor
         
@@ -155,6 +165,16 @@ public extension ColorScheme {
         public let timelineView: UIColor
         public let timeIndicatorLabel: UIColor
         public let timelineNumOfSeatsLabel: UIColor
+        
+        // MARK: OrderCell
+        public let cardView: UIColor
+        public let newBanner: UIColor
+        public let remainingMinutesBannerRemaining: UIColor
+        public let remainingMinutesBannerOverdue: UIColor
+        
+        // MARK: OrderDetailView
+        public let orderDetailViewBackground: UIColor
+        public let orderNote: UIColor
         
         // MARK: SettingsView
         public let settingsView: UIColor
@@ -239,10 +259,12 @@ public extension ColorScheme {
         public let titleLabel: UIColor
         public let descriptionLabel: UIColor
         public let valueLabel: UIColor
+        public let linkLabel: UIColor
         public let placeholder: UIColor
         public let highlighted: UIColor
         public let filledButton: UIColor
         public let warningTextView: UIColor
+        public let warning: UIColor
         
         // MARK: // Specific
         // MARK: MainMenuView
@@ -282,6 +304,9 @@ public extension ColorScheme {
         // MARK: TimelineView
         public let timeIndicatorLabel: UIColor
         
+        // MARK: OrderDetailView
+        public let orderNote: UIColor
+        
         // MARK: TextButtons
         public let saveButton: UIColor
         public let cancelButton: UIColor
@@ -300,6 +325,13 @@ public extension ColorScheme {
         public let seated: UIColor
         public let finished: UIColor
         public let noShow: UIColor
+        public let cancelled: UIColor
+    }
+    
+    struct OrderStatus {
+        public let new: UIColor
+        public let inProgress: UIColor
+        public let completed: UIColor
         public let cancelled: UIColor
     }
 }

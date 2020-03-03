@@ -25,12 +25,16 @@ import Foundation
             addBookingFlow: .whiteFFFFFF,
             filledButton: .blue00A7C4,
             filledButtonDimmed: .blueC0F6FF,
-            createButton: .blue00A7C4,
+            createButton: .green22CCAA,
             deleteButton: .redE62C4F,
             warning: .yellowF8C150,
             criticalWarning: .redE62C4F,
             
             // MARK: // Specific
+            // MARK: BottomRightButton
+            bottomRightButtonNormal: .blue333B4F,
+            bottomRightButtonSelected: .yellowD7A43B,
+            
             // MARK: MainTitleView
             nowButtonEnabled: .blue3F4962,
             
@@ -71,6 +75,16 @@ import Foundation
             timelineView: .whiteFFFFFF,
             timeIndicatorLabel: .blue00A7C4,
             timelineNumOfSeatsLabel: .grayCCCCCC,
+            
+            // MARK: OrderCell
+            cardView: .whiteF7F7F7,
+            newBanner: .yellowD7A43B,
+            remainingMinutesBannerRemaining: .blue018EA6,
+            remainingMinutesBannerOverdue: .redE62C4F,
+            
+            // MARK: OrderDetailView
+            orderDetailViewBackground: .whiteFFFFFF,
+            orderNote: .blue018EA6,
             
             // MARK: SettingsView
             settingsView: .whiteFFFFFF,
@@ -159,10 +173,12 @@ import Foundation
             titleLabel: .blue3F4962,
             descriptionLabel: .gray999999,
             valueLabel: .gray555555,
+            linkLabel: .blue00A7C4,
             placeholder: .grayCCCCCC,
             highlighted: .blue00A7C4,
             filledButton: .whiteFFFFFF,
             warningTextView: .whiteFFFFFF,
+            warning: .redE62C4F,
             
             // MARK: // Specific
             // MARK: MainMenuView
@@ -202,6 +218,9 @@ import Foundation
             // MARK: TimelineView
             timeIndicatorLabel: .whiteFFFFFF,
             
+            // MARK: OrderDetailView
+            orderNote: .whiteFFFFFF,
+            
             // MARK: TextButtons
             saveButton: .green22CCAA,
             cancelButton: .redE62C4F,
@@ -222,6 +241,15 @@ import Foundation
             seated: .yellowF8C150,
             finished: .gray999999,
             noShow: .blue3F4962,
+            cancelled: .redE62C4F
+        ),
+        
+        // MARK: -
+        // MARK: // OrderStatus
+        orderStatus_: OrderStatus( // FIXME: FIXME
+            new: .yellowD7A43B,
+            inProgress: .blue00A7C4,
+            completed: .gray999999,
             cancelled: .redE62C4F
         )
     )
