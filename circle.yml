@@ -77,12 +77,12 @@ jobs:
       ## Install pods (cache-wrapped)
       - restore_cache:
           keys:
-            - v8_pod-cache_{{ .Branch }}_{{ checksum "Podfile.lock" }}
-            - v8_pod-cache_{{ .Branch }}
-            - v8_pod-cache
+            - v9_pod-cache_{{ .Branch }}_{{ checksum "Podfile.lock" }}
+            - v9_pod-cache_{{ .Branch }}
+            - v9_pod-cache
       - run: bundle exec pod install
       - save_cache:
-          key: v8_pod-cache_{{ .Branch }}_{{ checksum "Podfile.lock" }}
+          key: v9_pod-cache_{{ .Branch }}_{{ checksum "Podfile.lock" }}
           paths:
             - ./Pods
 
