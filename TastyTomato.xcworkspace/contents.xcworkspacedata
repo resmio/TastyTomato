@@ -21,9 +21,6 @@
    <FileRef
       location = "group:TastyTomato.podspec">
    </FileRef>
-   <FileRef
-      location = "group:circle.yml">
-   </FileRef>
    <Group
       location = "container:"
       name = "xcode-project-setup">
