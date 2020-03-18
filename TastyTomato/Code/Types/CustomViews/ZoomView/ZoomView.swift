@@ -10,88 +10,70 @@ import Foundation
 
 
 // MARK: // Public
-// MARK: - ZoomViewDelegate
+// MARK: -
 public protocol ZoomViewDelegate: class {
     func zoomed(to scale: CGFloat, in zoomView: ZoomView)
 }
 
 
-// MARK: - ZoomView
+// MARK: -
 // MARK: Interface
-extension ZoomView {
-    // ReadOnly
-    public var contentView: UIView? {
-        return self._contentView
+public extension ZoomView {
+    // Setters
+    func setDelegate(_ delegate: ZoomViewDelegate?) {
+        self._delegate = delegate
     }
     
-    // ReadWrite
-    public var delegate: ZoomViewDelegate? {
-        get { return self._delegate }
-        set { self._delegate = newValue }
+    func setScrollEnabled(_ enabled: Bool) {
+        self._scrollView.isScrollEnabled = enabled
     }
     
-    public var isScrollEnabled: Bool {
-        get { return self._scrollView.isScrollEnabled }
-        set { self._scrollView.isScrollEnabled = newValue }
+    func setZoomThreshold(_ threshold: CGFloat) {
+        self._zoomThreshold = threshold
     }
     
-    public var zoomThreshold: CGFloat {
-        get { return self._zoomThreshold }
-        set { self._zoomThreshold = newValue }
+    func setMaximumScale(_ scale: CGFloat) {
+        self._setMaximumZoomScale(scale)
     }
     
-    public var maximumScale: CGFloat {
-        get { return self._maximumZoomScale }
-        set { self._maximumZoomScale = newValue }
+    func setShowsHorizontalScrollIndicator(_ shows: Bool) {
+        self._scrollView.showsHorizontalScrollIndicator = shows
     }
     
-    public var showsHorizontalScrollIndicator: Bool {
-        get { return self._scrollView.showsHorizontalScrollIndicator }
-        set { self._scrollView.showsHorizontalScrollIndicator = newValue }
+    func setShowsVerticalScrollIndicator(_ shows: Bool) {
+        self._scrollView.showsVerticalScrollIndicator = shows
     }
     
-    public var showsVerticalScrollIndicator: Bool {
-        get { return self._scrollView.showsVerticalScrollIndicator }
-        set { self._scrollView.showsVerticalScrollIndicator = newValue }
+    func setDecelerationRate(_ rate: UIScrollView.DecelerationRate) {
+        self._scrollView.decelerationRate = rate
     }
     
-    public var decelerationRate: UIScrollView.DecelerationRate {
-        get { return self._scrollView.decelerationRate }
-        set { self._scrollView.decelerationRate = newValue }
+    func setBounces(_ bounces: Bool) {
+        self._scrollView.bounces = bounces
     }
     
-    public var bounces: Bool {
-        get { return self._scrollView.bounces }
-        set { self._scrollView.bounces = newValue }
+    func setBouncesZoom(_ bounces: Bool) {
+        self._scrollView.bouncesZoom = bounces
     }
     
-    public var bouncesZoom: Bool {
-        get { return self._scrollView.bouncesZoom }
-        set { self._scrollView.bouncesZoom = newValue }
+    func setDoubleTapEnabled(_ enabled: Bool) {
+        self._setDoubleTapEnabled(enabled)
     }
     
-    public var doubleTapEnabled: Bool {
-        get { return self._doubleTapEnabled }
-        set { self._doubleTapEnabled = newValue }
+    func setZoomOutTapEnabled(_ enabled: Bool) {
+        self._setZoomOutTapEnabled(enabled)
     }
     
-    public var zoomOutTapEnabled: Bool {
-        get { return self._zoomOutTapEnabled }
-        set { self._zoomOutTapEnabled = newValue }
+    func setCenterHorizontally(_ center: Bool) {
+        self._centerHorizontally = center
     }
     
-    public var centerHorizontally: Bool {
-        get { return self._centerHorizontally }
-        set { self._centerHorizontally = newValue }
-    }
-    
-    public var centerVertically: Bool {
-        get { return self._centerVertically }
-        set { self._centerVertically = newValue }
+    func setCenterVertically(_ center: Bool) {
+        self._centerVertically = center
     }
     
     // Functions
-    public func zoomOut(animated: Bool = true) {
+    func zoomOut(animated: Bool = true) {
         self._zoomOut(animated: animated)
     }
     
@@ -99,7 +81,7 @@ extension ZoomView {
     // contentView to ensure that the minimum and 
     // maximum zoomScale as well as the scrollView-
     // contentSize are updated accordingly
-    public func contentViewSizeChanged() {
+    func contentViewSizeChanged() {
         self._contentViewSizeChanged()
     }
 }
@@ -205,33 +187,24 @@ private extension ZoomView {
 }
 
 
-// MARK: Computed Variables
+// MARK: Setter Implementations
 private extension ZoomView {
-    var _maximumZoomScale: CGFloat {
-        get { return self._scrollView.maximumZoomScale }
-        set(newMaximumZoomScale) {
-            let scrollView: UIScrollView = self._scrollView
-            scrollView.maximumZoomScale = newMaximumZoomScale
-            if scrollView.zoomScale > newMaximumZoomScale {
-                scrollView.zoomIn(animated: false)
-            }
+    func _setMaximumZoomScale(_ scale: CGFloat) {
+        let scrollView: UIScrollView = self._scrollView
+        scrollView.maximumZoomScale = scale
+        if scrollView.zoomScale > scale {
+            scrollView.zoomIn(animated: false)
         }
     }
     
-    var _doubleTapEnabled: Bool {
-        get { return self.__doubleTapEnabled }
-        set(newDoubleTapEnabled) {
-            self.__doubleTapEnabled = newDoubleTapEnabled
-            self._updateDoubleTapRecognizer()
-        }
+    func _setDoubleTapEnabled(_ enabled: Bool) {
+        self.__doubleTapEnabled = enabled
+        self._updateDoubleTapRecognizer()
     }
     
-    var _zoomOutTapEnabled: Bool {
-        get { return self.__zoomOutTapEnabled }
-        set(newZoomOutTapEnabled) {
-            self.__zoomOutTapEnabled = newZoomOutTapEnabled
-            self._updateZoomOutTapRecognizer()
-        }
+    func _setZoomOutTapEnabled(_ enabled: Bool) {
+        self.__zoomOutTapEnabled = enabled
+        self._updateZoomOutTapRecognizer()
     }
     
     var _doubleTapRecognizer: UITapGestureRecognizer {
@@ -309,7 +282,7 @@ private extension ZoomView {
 private extension ZoomView {
     func _didZoom(in scrollView: UIScrollView) {
         self._adjustScrollViewContentInsets()
-        self.delegate?.zoomed(to: scrollView.zoomScale, in: self)
+        self._delegate?.zoomed(to: scrollView.zoomScale, in: self)
     }
 }
 
@@ -322,11 +295,11 @@ private extension ZoomView {
     }
     
     func _updateDoubleTapRecognizer() {
-        guard (self.doubleTapEnabled == (self.__doubleTapRecognizer == nil)) else {
+        guard (self.__doubleTapEnabled == (self.__doubleTapRecognizer == nil)) else {
             return
         }
         
-        if self.doubleTapEnabled {
+        if self.__doubleTapEnabled {
             self._scrollView.addGestureRecognizer(self._doubleTapRecognizer)
         } else {
             self._scrollView.removeGestureRecognizer(self._doubleTapRecognizer)
@@ -335,11 +308,11 @@ private extension ZoomView {
     }
     
     func _updateZoomOutTapRecognizer() {
-        guard (self.zoomOutTapEnabled == (self.__zoomOutTapRecognizer == nil)) else {
+        guard (self.__zoomOutTapEnabled == (self.__zoomOutTapRecognizer == nil)) else {
             return
         }
         
-        if self.zoomOutTapEnabled {
+        if self.__zoomOutTapEnabled {
             self._scrollView.addGestureRecognizer(self._zoomOutTapRecognizer)
         } else {
             self._scrollView.removeGestureRecognizer(self._zoomOutTapRecognizer)
@@ -356,7 +329,7 @@ private extension ZoomView {
         
         let minScale: CGFloat = scrollView.minimumZoomScale
         let maxScale: CGFloat = scrollView.maximumZoomScale
-        guard abs(minScale - maxScale) > self.zoomThreshold else {
+        guard abs(minScale - maxScale) > self._zoomThreshold else {
             return
         }
         
@@ -426,8 +399,8 @@ private extension ZoomView {
     }
     
     func _adjustScrollViewContentInsets() {
-        let centerH: Bool = self.centerHorizontally
-        let centerV: Bool = self.centerVertically
+        let centerH: Bool = self._centerHorizontally
+        let centerV: Bool = self._centerVertically
         
         guard centerH || centerV else {
             return
@@ -463,7 +436,7 @@ private extension ZoomView {
         if currentZoomScale < minScale {
             self._scrollView.zoomOut(animated: false)
         } else {
-            self.delegate?.zoomed(to: currentZoomScale, in: self)
+            self._delegate?.zoomed(to: currentZoomScale, in: self)
         }
     }
 }
