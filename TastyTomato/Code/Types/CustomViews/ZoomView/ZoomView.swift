@@ -73,6 +73,10 @@ public extension ZoomView {
         self._setCenterVertically(center)
     }
     
+    func setContentInset(_ inset: UIEdgeInsets) {
+        self._scrollView.contentInset = inset
+    }
+    
     // Functions
     func zoomOut(animated: Bool = true) {
         self._zoomOut(animated: animated)
