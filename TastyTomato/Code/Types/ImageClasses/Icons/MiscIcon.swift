@@ -99,6 +99,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("order-preorder")
     }
     
+    public static var OrderTableOrder: MiscIcon {
+        return MiscIcon.suffixed_("order-tableorder")
+    }
+    
     public static var Phone: MiscIcon {
         return MiscIcon.suffixed_("phone")
     }
