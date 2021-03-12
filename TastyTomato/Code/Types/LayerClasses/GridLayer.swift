@@ -151,7 +151,7 @@ public class GridLayer: CALayer {
     
     // Private Lazy Variables
     // ALOs
-    private lazy var _borderLayer: ALO<BorderLayer> = ALO(self._createBorderLayer)
+    private lazy var _borderLayer: ALO<BorderLayer> = ALO({ [unowned self] in self._createBorderLayer() })
     
     // Private Variables
     private var _lineLayers: [LineLayer] = []

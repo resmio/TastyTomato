@@ -94,8 +94,8 @@ open class SeparatorCell: UITableViewCell {
     }
     
     // Private Lazy Variables
-    private lazy var _topSeparator: ALO<LineLayer> = ALO(self._createTopSeparator)
-    private lazy var _bottomSeparator: ALO<LineLayer> = ALO(self._createBottomSeparator)
+    private lazy var _topSeparator: ALO<LineLayer> = ALO({ [unowned self] in self._createTopSeparator() })
+    private lazy var _bottomSeparator: ALO<LineLayer> = ALO({ [unowned self] in self._createBottomSeparator() })
     
     // Private Variables
     private var __separatorStyle: Separator.Style = .bottom
