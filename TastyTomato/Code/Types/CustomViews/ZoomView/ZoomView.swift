@@ -124,8 +124,8 @@ public class ZoomView: UIView {
     private lazy var _scrollView: ZoomToPointScrollView = self._createScrollView()
     
     // ALOs
-    private lazy var _doubleTapRecognizer: ALO<UITapGestureRecognizer> = ALO(self._createDoubleTapRecognizer)
-    private lazy var _zoomOutTapRecognizer: ALO<UITapGestureRecognizer> = ALO(self._createZoomOutTapRecognizer)
+    private lazy var _doubleTapRecognizer: ALO<UITapGestureRecognizer> = ALO({ [unowned self] in self._createDoubleTapRecognizer() })
+    private lazy var _zoomOutTapRecognizer: ALO<UITapGestureRecognizer> = ALO({ [unowned self] in self._createZoomOutTapRecognizer() })
     
     // Private Variables
     private var _contentView: UIView

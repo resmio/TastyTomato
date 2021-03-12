@@ -61,8 +61,8 @@ public class PopoverBackgroundView: UIPopoverBackgroundView {
     // Private Lazy Variables
     private lazy var _borderView: UIView = self._createBorderView()
     private lazy var _arrowView: TriangleView = self._createArrowView()
-    private lazy var _borderShadowView: ALO<UIView> = ALO(self._createBorderShadowView)
-    private lazy var _arrowShadowView: ALO<TriangleView> = ALO(self._createArrowShadowView)
+    private lazy var _borderShadowView: ALO<UIView> = ALO({ [unowned self] in self._createBorderShadowView() })
+    private lazy var _arrowShadowView: ALO<TriangleView> = ALO({ [unowned self] in self._createArrowShadowView() })
     
     // Private Variables
     private var __arrowOffset: CGFloat = 0
