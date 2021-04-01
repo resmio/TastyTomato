@@ -1,13 +1,13 @@
 PODS:
-  - SignificantSpices (0.15.3):
-    - SignificantSpices/ObjectiveCExtensions (= 0.15.3)
-    - SignificantSpices/SwiftExtensions (= 0.15.3)
-  - SignificantSpices/ObjectiveCExtensions (0.15.3)
-  - SignificantSpices/SwiftExtensions (0.15.3)
+  - SignificantSpices (0.15.4):
+    - SignificantSpices/ObjectiveCExtensions (= 0.15.4)
+    - SignificantSpices/SwiftExtensions (= 0.15.4)
+  - SignificantSpices/ObjectiveCExtensions (0.15.4)
+  - SignificantSpices/SwiftExtensions (0.15.4)
   - SwiftDate (6.1.0)
 
 DEPENDENCIES:
-  - SignificantSpices (~> 0.15.3)
+  - SignificantSpices (~> 0.15.4)
   - SwiftDate (~> 6.1.0)
 
 SPEC REPOS:
@@ -16,9 +16,9 @@ SPEC REPOS:
     - SwiftDate
 
 SPEC CHECKSUMS:
-  SignificantSpices: d33bc24ca8891d4e35e571ad2ef67971079bc1d9
+  SignificantSpices: df2ffe02ea07da8fca1627c2fabdebd4f30ee39e
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
 
-PODFILE CHECKSUM: 53afdf5831980f7145a24d8a904c1afe049b661d
+PODFILE CHECKSUM: 8e556eaea60aa834f10c465b9a8b20b835822be2
 
 COCOAPODS: 1.9.3
