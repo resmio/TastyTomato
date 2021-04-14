@@ -139,6 +139,10 @@ public class MiscIcon: MetaImage {
         return MiscIcon.suffixed_("vitas")
     }
     
+    public static var Waitlist: MiscIcon {
+        return MiscIcon.suffixed_("waitlist")
+    }
+    
     public static var WalkIn: MiscIcon {
         return MiscIcon.suffixed_("walk-in")
     }
