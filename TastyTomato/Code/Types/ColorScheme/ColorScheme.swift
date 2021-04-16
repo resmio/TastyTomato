@@ -231,6 +231,7 @@ public extension ColorScheme {
         public let notificationButtonDisabled: UIColor
         public let notificationButtonNotes: UIColor
         public let notificationButtonNotesAndTasks: UIColor
+        public let newWaitlistElementButton: UIColor
         public let newBookingButton: UIColor
         public let newWalkinButton: UIColor
         

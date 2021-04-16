@@ -143,6 +143,7 @@ import Foundation
             notificationButtonDisabled: .blue333B4F,
             notificationButtonNotes: .blue00A7C4,
             notificationButtonNotesAndTasks: .whiteFFFFFF,
+            newWaitlistElementButton: .whiteFFFFFF,
             newBookingButton: .whiteFFFFFF,
             newWalkinButton: .whiteFFFFFF,
             
