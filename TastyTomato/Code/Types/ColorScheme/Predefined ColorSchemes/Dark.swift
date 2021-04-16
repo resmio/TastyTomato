@@ -143,6 +143,7 @@ import Foundation
             notificationButtonDisabled: .blue333B4F,
             notificationButtonNotes: .blue00A7C4,
             notificationButtonNotesAndTasks: .whiteFFFFFF,
+            newWaitlistElementButton: .whiteFFFFFF,
             newBookingButton: .whiteFFFFFF,
             newWalkinButton: .whiteFFFFFF,
             
@@ -246,7 +247,7 @@ import Foundation
         
         // MARK: -
         // MARK: // OrderStatus
-        orderStatus_: OrderStatus( // FIXME: FIXME
+        orderStatus_: OrderStatus( // FIXME:
             new: .yellowD7A43B,
             inProgress: .blue00A7C4,
             completed: .gray999999,
