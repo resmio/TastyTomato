@@ -42,7 +42,6 @@
 		58553661C119FAC95156619850713435 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13A94DD966224A32780B63A66B726658 /* Icons.xcassets */; };
 		5A17A3E7FF74BF8938A74A135969B1CE /* UIView (ScaleByFactor).swift in Sources */ = {isa = PBXBuildFile; fileRef = 978EA7B188BA3CCA15536BA105B324A5 /* UIView (ScaleByFactor).swift */; };
 		5C8AA03C6C4B4DCDAA601D7775D8EA1A /* CGSize (ConvenienceInits).swift in Sources */ = {isa = PBXBuildFile; fileRef = B070B8399B4B109A28594202D08619CD /* CGSize (ConvenienceInits).swift */; };
-		5CC4A1046B2161650155F1A336DBE1E7 /* ColorAdjuster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FE6FA07D15A66D10548223071227C /* ColorAdjuster.swift */; };
 		5FBBB08F482C2EF8829D937D432DB0AA /* UIImage (RenderingModes).swift in Sources */ = {isa = PBXBuildFile; fileRef = F4343B818E71BB8FE07479C990F00752 /* UIImage (RenderingModes).swift */; };
 		602C7B0FB544D4544D48A622A050FC8A /* Dark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90305E40C7530A8D6B8818BDA344AEC2 /* Dark.swift */; };
 		64CB3875A63443F5A28AC5847D1BD2CF /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEFA4FC50655A8EE71419CA8AB7334C /* TriangleLayer.swift */; };
@@ -142,7 +141,6 @@
 		1D1A60CE3AFFC68209D50DF5CC789F23 /* Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; path = "Target Support Files/Pods-TastyTomatoAbstract-TastyTomato/Pods-TastyTomatoAbstract-TastyTomato.release.xcconfig"; sourceTree = "<group>"; };
 		1D69DF914488E5BCEF15C613961E5F29 /* ZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
 		286A04009DB4A9D07DDD2C4BBC906120 /* UIColor (PredefinedColors).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor (PredefinedColors).swift"; sourceTree = "<group>"; };
-		286FE6FA07D15A66D10548223071227C /* ColorAdjuster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAdjuster.swift; sourceTree = "<group>"; };
 		3230C85271CB80C7EC4BF110F91BD049 /* CGSize (Transformed).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize (Transformed).swift"; sourceTree = "<group>"; };
 		32CC46F845723E767F6F74D3C45FD7DC /* ShortcutBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutBarButton.swift; sourceTree = "<group>"; };
 		34AEE256D89E4C6411A148D5C6C1B7D5 /* CalendarDaysVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDaysVC.swift; sourceTree = "<group>"; };
@@ -268,14 +266,6 @@
 				0B14A897E13645806DC0454C9E7D25E8 /* UIButton (Color).swift */,
 			);
 			path = UIButton;
-			sourceTree = "<group>";
-		};
-		053EB4176B061C7B569655FF27B0D8D1 /* ColorAdjuster */ = {
-			isa = PBXGroup;
-			children = (
-				286FE6FA07D15A66D10548223071227C /* ColorAdjuster.swift */,
-			);
-			path = ColorAdjuster;
 			sourceTree = "<group>";
 		};
 		0797CADAA242E6EF3AC04B83BE063FFA = {
@@ -597,7 +587,6 @@
 			children = (
 				196C16576E66CB9FC206346D6F95A440 /* BaseClasses */,
 				B7B3609CAD36D300BDD0887BCC7D3877 /* ButtonClasses */,
-				053EB4176B061C7B569655FF27B0D8D1 /* ColorAdjuster */,
 				AA181D935AF02C69C39469BBF3DCF720 /* ColorScheme */,
 				F76C214311DEEFF0DEEBF796542442E1 /* CustomViews */,
 				4CC4339D6F59D9465D8AE1F39B4B7050 /* HelperClasses */,
@@ -1106,7 +1095,6 @@
 				F990B60CA61AD7F60C0144F58C3FFF72 /* CalendarHeaderView.swift in Sources */,
 				8A38757CC4626CE6DE10268636C654EB /* CalendarVC.swift in Sources */,
 				810AAF8307C61D75A182A55A79F2615D /* CalendarVCView.swift in Sources */,
-				5CC4A1046B2161650155F1A336DBE1E7 /* ColorAdjuster.swift in Sources */,
 				7D4BE03DA8CFA1A9E5ED7817708306F6 /* ColorScheme.swift in Sources */,
 				602C7B0FB544D4544D48A622A050FC8A /* Dark.swift in Sources */,
 				EE4DD30732D87D75521FFA35A21606F8 /* DateCell.swift in Sources */,
