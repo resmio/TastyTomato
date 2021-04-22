@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectiveC
 import SignificantSpices
 
 
@@ -15,12 +16,15 @@ import SignificantSpices
 public extension UIView {
     // Adjust Colors Of All Registered Views
     static func adjustColorsOfAllRegisteredViews() {
-        UIView.animate(withDuration: 0.2) { self._colorAdjusters.forEach({ $1.adjust($0) }) }
+        let adjustments = UIView._colorAdjustments.values
+        UIView.animate(withDuration: 0.2) { adjustments.forEach({ $0() }) }
     }
     
     // Adjust Colors Of This View
     func adjustColors() {
-        UIView._colorAdjusters[self]?.adjust(self)
+        let id: ObjectIdentifier = ObjectIdentifier(self)
+        let adjustment: (() -> Void)? = UIView._colorAdjustments[id]
+        adjustment?()
     }
     
     // Setters
@@ -33,14 +37,32 @@ public extension UIView {
 // MARK: // Private
 // MARK: Implementation
 private extension UIView {
-    static var _colorAdjusters: WeakKeyDict<UIView, ColorAdjuster> = [:]
+    class DeinitCallback {
+        init(_ callback: @escaping () -> Void) { self._callback = callback }
+        private let _callback: () -> Void
+        deinit { _callback() }
+    }
+    
+    static var _colorAdjustments: [ObjectIdentifier: () -> Void] = [:]
 
     func _setColorAdjustment(_ colorAdjustment: ((UIView) -> Void)?) {
+        let id: ObjectIdentifier = ObjectIdentifier(self)
+        
+        var associationKey: Void?
+        objc_setAssociatedObject(
+            self, &associationKey,
+            DeinitCallback({ UIView._colorAdjustments[id] = nil }),
+            .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+        )
+        
         if let adjustment: (UIView) -> Void = colorAdjustment {
-            UIView._colorAdjusters[self] = ColorAdjuster(adjustment)
+            UIView._colorAdjustments[id] = { [weak self] in
+                guard let self = self else { return }
+                adjustment(self)
+            }
             adjustment(self)
         } else {
-            UIView._colorAdjusters[self] = nil
+            UIView._colorAdjustments[id] = nil
         }
     }
 }
