@@ -13,7 +13,7 @@ import SwiftDate
 
 // MARK: // Public
 // MARK: - CalendarVCDelegate
-public protocol CalendarVCDelegate: class {
+public protocol CalendarVCDelegate: AnyObject {
     func shouldSelectDate(_ date: Date, on calendarVC: CalendarVC) -> Bool
     func didSelectDate(_ date: Date, on calendarVC: CalendarVC)
 }

@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Internal
 // MARK: -
-protocol CalendarHeaderViewDelegate: class {
+protocol CalendarHeaderViewDelegate: AnyObject {
     func tappedLeftArrowButton(on calendarHeaderView: CalendarHeaderView)
     func tappedRightArrowButton(on calendarHeaderView: CalendarHeaderView)
 }

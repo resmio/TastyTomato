@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 // MARK: - TagsViewDelegate
-public protocol TagsViewDelegate: class {
+public protocol TagsViewDelegate: AnyObject {
     func changedContentHeight(to height: CGFloat, in tagsView: TagsView)
 }
 

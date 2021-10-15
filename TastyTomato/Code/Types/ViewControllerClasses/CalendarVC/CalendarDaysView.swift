@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Internal
 // MARK: -
-protocol CalendarDaysViewDelegate: class {
+protocol CalendarDaysViewDelegate: AnyObject {
     func configure(_ dateCell: DateCell, for indexPath: IndexPath, on calendarDaysView: CalendarDaysView)
     func shouldSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView) -> Bool
     func didSelect(_ dateCell: DateCell, at indexPath: IndexPath, on calendarDaysView: CalendarDaysView)

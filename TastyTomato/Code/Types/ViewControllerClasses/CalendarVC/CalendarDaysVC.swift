@@ -12,7 +12,7 @@ import SwiftDate
 
 // MARK: // Internal
 // MARK: -
-protocol CalendarDaysVCDelegate: class {
+protocol CalendarDaysVCDelegate: AnyObject {
     func shouldSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC) -> Bool
     func didSelect(_ date: Date, on calendarDaysVC: CalendarDaysVC)
 }

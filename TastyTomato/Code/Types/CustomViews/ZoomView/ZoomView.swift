@@ -12,7 +12,7 @@ import SignificantSpices
 
 // MARK: // Public
 // MARK: -
-public protocol ZoomViewDelegate: class {
+public protocol ZoomViewDelegate: AnyObject {
     func zoomed(to scale: CGFloat, in zoomView: ZoomView)
 }
 

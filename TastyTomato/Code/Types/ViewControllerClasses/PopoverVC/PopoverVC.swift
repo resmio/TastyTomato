@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 // MARK: - PopoverPresentationDelegate
-@objc public protocol PopoverPresentationDelegate: class {
+@objc public protocol PopoverPresentationDelegate: AnyObject {
     @objc optional func prepareToPresent(_ popover: PopoverVC)
     @objc optional func shouldDismiss(_ popover: PopoverVC) -> Bool
     @objc optional func didDismiss(_ popover: PopoverVC)
