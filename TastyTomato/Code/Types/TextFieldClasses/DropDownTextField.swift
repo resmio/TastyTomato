@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 // MARK: Protocol Declaration
-@objc public protocol DropDownTextFieldDelegate: class {
+@objc public protocol DropDownTextFieldDelegate: AnyObject {
     // Copied and Adapted from UITextFieldDelegate
     @objc optional func dropDownTextFieldShouldBeginEditing(_ dropDownTextField: DropDownTextField) -> Bool
     @objc optional func dropDownTextFieldDidBeginEditing(_ dropDownTextField: DropDownTextField)
@@ -28,7 +28,7 @@ import UIKit
     @objc optional func dropDownTextFieldShouldHideDropDown(_ dropDownTextField: DropDownTextField) -> Bool
 }
 
-@objc public protocol DropDownTextFieldDataSource: class {}
+@objc public protocol DropDownTextFieldDataSource: AnyObject {}
 
 
 // MARK: // Public

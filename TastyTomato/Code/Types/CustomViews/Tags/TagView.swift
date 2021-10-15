@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 // MARK: - TagViewDelegate
-@objc public protocol TagViewDelegate: class {
+@objc public protocol TagViewDelegate: AnyObject {
     func deleteButtonTapped(on tagView: TagView)
 }
 
