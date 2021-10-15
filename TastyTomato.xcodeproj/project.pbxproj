@@ -907,7 +907,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = resmio;
 				TargetAttributes = {
 					0E7680876764C3020A8CF0627D6E3476 = {
