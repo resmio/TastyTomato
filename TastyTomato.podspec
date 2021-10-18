@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     "Jan Nash" => "jan@resmio.com" 
   }
   s.platform = :ios, "10.0"
-  s.swift_version = '5.3'
+  s.swift_version = '5.5'
   s.source = {
     :git => "https://github.com/resmio/TastyTomato.git",
     :tag => "v#{s.version}"
@@ -26,6 +26,6 @@ Pod::Spec.new do |s|
   }
   s.resources = ['TastyTomato/Images/*.{xcassets, png}']
   s.public_header_files = []
-  s.dependency 'SignificantSpices', '~> 0.15.7'
+  s.dependency 'SignificantSpices', '~> 0.15.8'
   s.dependency 'SwiftDate', '~> 6.3.1'
 end
