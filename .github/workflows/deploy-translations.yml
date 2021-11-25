@@ -1,0 +1,25 @@
+name: Deploy Translations
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-translations-build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Install translation client
+        run: |
+          pip3 install -r scripts/requirements.txt
+      - name: Push translations to Poeditor
+        run: |
+          python3 scripts/translationupload.py --project_id=493075 --filepath=TastyTomato/Localizations/en.lproj/Localizable.strings
+        env:
+          POEDITOR_API_TOKEN: ${{ secrets.POEDITOR_API_TOKEN }}
