@@ -124,7 +124,7 @@
 		019B1845FE1BCB19271320DCDCAE1B32 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		01F8CFBC214803F0D77371D34103D883 /* TastyTomato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TastyTomato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		039A3ADDD2B28679F6DCBDD186376261 /* BaseSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlider.swift; sourceTree = "<group>"; };
-		0538E4586B05FE6B1C4EC4E6CD98C6C1 /* TastyTomato.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TastyTomato.playground; sourceTree = "<group>"; };
+		0538E4586B05FE6B1C4EC4E6CD98C6C1 /* TastyTomato.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TastyTomato.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		05BA18CC2F9A526F518B9C154D07DDC7 /* UIScrollView (ZoomingConvenience).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView (ZoomingConvenience).swift"; sourceTree = "<group>"; };
 		083386230915027A1693F0088C82312B /* TastyTomato.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TastyTomato.h; sourceTree = "<group>"; };
 		0A49203DA22BFAC2396F2E836F7D7A71 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -1253,11 +1253,13 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 0.44.11;
 				DEFINES_MODULE = YES;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TastyTomato/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.44.11;
 				PRODUCT_BUNDLE_IDENTIFIER = resmio.TastyTomato;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1283,11 +1285,13 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 0.44.11;
 				DEFINES_MODULE = YES;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TastyTomato/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.44.11;
 				PRODUCT_BUNDLE_IDENTIFIER = resmio.TastyTomato;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

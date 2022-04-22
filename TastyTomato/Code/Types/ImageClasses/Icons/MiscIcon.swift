@@ -154,4 +154,12 @@ public class MiscIcon: MetaImage {
     public static var X: MiscIcon {
         return MiscIcon.suffixed_("x")
     }
+    
+    public static var MobileApp: MiscIcon {
+        return MiscIcon.suffixed_("mobile-app")
+    }
+    
+    public static var PartnerNetwork: MiscIcon {
+        return MiscIcon.suffixed_("partner-network")
+    }
 }
