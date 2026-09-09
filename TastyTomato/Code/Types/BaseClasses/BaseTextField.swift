@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: // Public
 // MARK: Class Declaration
-public class BaseTextField: UITextField {
+open class BaseTextField: UITextField {
     // Required Init
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
