@@ -13,9 +13,6 @@
       </Group>
    </Group>
    <FileRef
-      location = "group:LICENSE">
-   </FileRef>
-   <FileRef
       location = "group:README.md">
    </FileRef>
    <FileRef
@@ -45,9 +42,6 @@
       </FileRef>
       <FileRef
          location = "group:run_synx_and_xUnique">
-      </FileRef>
-      <FileRef
-         location = "group:setup">
       </FileRef>
    </Group>
    <FileRef
