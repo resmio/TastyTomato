@@ -31,21 +31,11 @@ public class BaseSegmentedControl: UISegmentedControl {
     
     // Common Init
     private func _init() {
-        let commonColorAdjustment: (UIView) -> Void = {
+        self.setColorAdjustment({
+            guard let control = $0 as? UISegmentedControl else { return }
             $0.backgroundColor = .clear
-            ($0 as? UISegmentedControl)?.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        }
-        
-        if #available(iOS 13, *) {
-            self.setColorAdjustment({
-                commonColorAdjustment($0)
-                ($0 as? UISegmentedControl)?.selectedSegmentTintColor = ColorScheme.lines.segmentedControl
-            })
-        } else {
-            self.setColorAdjustment({
-                commonColorAdjustment($0)
-                $0.tintColor = ColorScheme.lines.segmentedControl
-            })
-        }
+            control.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+            control.selectedSegmentTintColor = ColorScheme.lines.segmentedControl
+        })
     }
 }
