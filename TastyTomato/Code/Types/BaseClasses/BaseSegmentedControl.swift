@@ -36,16 +36,9 @@ public class BaseSegmentedControl: UISegmentedControl {
             ($0 as? UISegmentedControl)?.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         }
         
-        if #available(iOS 13, *) {
-            self.setColorAdjustment({
-                commonColorAdjustment($0)
-                ($0 as? UISegmentedControl)?.selectedSegmentTintColor = ColorScheme.lines.segmentedControl
-            })
-        } else {
-            self.setColorAdjustment({
-                commonColorAdjustment($0)
-                $0.tintColor = ColorScheme.lines.segmentedControl
-            })
-        }
+        self.setColorAdjustment({
+            commonColorAdjustment($0)
+            ($0 as? UISegmentedControl)?.selectedSegmentTintColor = ColorScheme.lines.segmentedControl
+        })
     }
 }
